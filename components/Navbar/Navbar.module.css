@@ -1,0 +1,207 @@
+@reference "../../app/globals.css";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 1s ease-in-out;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr; /* 3-column layout at navbar level */
+  align-items: start;
+}
+
+.scrolled {
+  background-color: transparent;
+  padding: 0;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-start; /* Ensure items stay left */
+  min-width: 400px; /* Prevent shrinking */
+  height: 4rem;
+  padding-left: 2rem;
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  min-width: 400px; /* Prevent shrinking */
+  height: 4rem;
+  padding-right: 2rem;
+}
+
+.scrolled .leftContainer,
+.scrolled .rightContainer {
+  background-color: var(--color-bfriends-butter);
+  transition: all 0.5s ease-in-out;
+}
+
+.navLink {
+  color: var(--color-bfriends-darkbluegray);
+  text-decoration: none;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  font-weight: 400;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.programLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plusIcon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2px;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Contain absolute positioned logos */
+  height: 5rem; /* Fixed height for the container to align with content */
+  /* Added transition for background */
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 0 0 8px 8px; /* Rounded pill shape for background */
+  padding: 0; 
+  /* Removed margin-top: -1rem; as height is now explicit and aligned top */
+}
+
+.scrolled .centerContainer {
+  background-color: var(--color-bfriends-darkbluegray);
+  /* Optional: Add shadow to logo container instead of navbar */
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 0; /* Wider padding for horizontal logo */
+}
+
+.logoVertical {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.logoHorizontal {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hide vertical logo when scrolled, show horizontal */
+.scrolled .logoVertical {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -60%); /* Slight upward fade */
+}
+
+.scrolled .logoHorizontal {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -60%);
+}
+
+.default .logoHorizontal {
+  /* Ensure it's hidden by default styles above, but explicit here too */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Button Styles */
+.langSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-bfriends-darkbluegray);
+  border-radius: 999px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(0.75rem, 0.7rem + 0.5vw, 0.9rem);
+  color: var(--color-bfriends-darkbluegray);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.langSelector:hover {
+  background: rgba(46, 67, 101, 0.05);
+}
+
+.bookButton {
+  background-color: var(--color-bfriends-butter);
+  color: var(--color-bfriends-darkbluegray);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.bookButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+
+.scrolled .bookButton {
+  background-color: var(--color-bfriends-darkbluegray);
+  color: var(--color-bfriends-beige);
+  transition: all 0.5s ease-in-out;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.scrolled .leftContainer .navLink,
+.scrolled .rightContainer .navLink,
+.scrolled .rightContainer .langSelector {
+  color: var(--color-bfriends-darkbluegray);
+}
+
+/* Mobile responsive - hide complex nav on mobile for now or adjust */
+@media (max-width: 1024px) {
+  .leftContainer, .rightContainer {
+    display: none;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+}

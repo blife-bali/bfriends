@@ -1,0 +1,317 @@
+@reference "../../app/globals.css";
+
+.footer {
+  background-color: var(--color-bfriends-darkbluegray);
+  color: var(--color-bfriends-beige);
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  font-family: var(--font-pontano);
+  position: relative;
+  z-index: 50;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 320px;
+  }
+
+@media (max-width: 768px) {
+  .column1 {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 420px !important;
+}
+
+@media (max-width: 768px) {
+  .column2 {
+    width: 100% !important;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.logo {
+  height: 2.4rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  object-position: left;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    object-position: center;
+  }
+}
+
+.address {
+  font-size: clamp(0.8rem, 0.75rem + 0.5vw, 1rem);
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 250px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  display: block; /* ensure it behaves like a block/p tag */
+}
+
+.address:hover {
+  opacity: 1;
+  color: var(--color-bfriends-orange-100);
+}
+
+@media (max-width: 768px) {
+  .address {
+    max-width: 100%;
+  }
+}
+
+.heading {
+  font-family: var(--font-belleza);
+  font-size: clamp(1.1rem, 1rem + 0.8vw, 1.4rem);
+  margin-bottom: 1rem;
+  color: var(--color-bfriends-beige);
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .menuList {
+    align-items: center;
+  }
+}
+
+.menuItem {
+  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  opacity: 1;
+  color: var(--color-bfriends-orange-100);
+}
+
+.bottomBar {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(246, 244, 221, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: clamp(0.65rem, 0.6rem + 0.5vw, 0.85rem);
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.legalLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .legalLinks {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+.legalLink {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+  color: var(--color-bfriends-orange-100);
+}
+
+/* Newsletter styles matching SubscriptionForm */
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletterInputWrapper {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .newsletterForm {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .newsletterInputWrapper {
+    width: 100%;
+  }
+}
+
+.newsletterInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(246, 244, 221, 0.2);
+  border-radius: 0.75rem;
+  color: var(--color-bfriends-beige);
+  font-family: var(--font-pontano);
+  font-size: clamp(0.8rem, 0.75rem + 0.5vw, 1rem);
+}
+
+.newsletterInput:focus {
+  outline: none;
+  border-color: var(--color-bfriends-orange-100);
+}
+
+.submitButton {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translate(0, 0);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.submitButton:hover {
+  transform: scale(1.02);
+}
+
+.submitButtonText {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--color-bfriends-orange-100);
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  color: white;
+  font-weight: 400;
+  font-family: var(--font-pontano);
+  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.submitButton:hover .submitButtonText {
+  background-color: rgba(229, 133, 44, 0.9);
+}
+
+.submitButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: var(--color-bfriends-orange-100);
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  color: white;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.submitButton:hover .submitButtonIcon {
+  background-color: rgba(229, 133, 44, 0.9);
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(246, 244, 221, 0.2);
+  border-radius: 0.75rem;
+  color: var(--color-bfriends-beige);
+  font-family: var(--font-pontano);
+  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+}
+
+.successIcon {
+  color: var(--color-bfriends-orange-100);
+}

@@ -1,0 +1,116 @@
+/* [project]/components/ui/Button/Button.module.css [app-client] (css) */
+.Button-module__LCT47W__buttonWrapper {
+  cursor: pointer;
+  background: none;
+  border: none;
+  align-items: stretch;
+  padding: 0;
+  text-decoration: none;
+  transition: transform .15s cubic-bezier(.4, 0, .2, 1);
+  display: inline-flex;
+}
+
+.Button-module__LCT47W__buttonWrapper:hover {
+  transform: scale(1.02);
+}
+
+.Button-module__LCT47W__buttonWrapper:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.Button-module__LCT47W__primary {
+  min-width: 180px;
+}
+
+.Button-module__LCT47W__primary .Button-module__LCT47W__textPart {
+  text-align: left;
+  background-color: var(--color-bfriends-orange-100);
+  color: #fff;
+  border-radius: .75rem;
+  justify-content: flex-start;
+}
+
+.Button-module__LCT47W__primary:hover .Button-module__LCT47W__textPart {
+  background-color: #e5852ce6;
+}
+
+.Button-module__LCT47W__primary .Button-module__LCT47W__iconPart {
+  background-color: var(--color-bfriends-orange-100);
+  color: #fff;
+  border-radius: .75rem;
+}
+
+.Button-module__LCT47W__primary:hover .Button-module__LCT47W__iconPart {
+  background-color: #e5852ce6;
+}
+
+.Button-module__LCT47W__secondary .Button-module__LCT47W__textPart, .Button-module__LCT47W__secondary .Button-module__LCT47W__iconPart {
+  border: 1px solid var(--color-bfriends-darkbluegray);
+  color: var(--color-bfriends-darkbluegray);
+  border-radius: .75rem;
+}
+
+.Button-module__LCT47W__textPart {
+  font-family: var(--font-pontano);
+  white-space: nowrap;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 1rem;
+  font-size: clamp(.85rem, .8rem + .5vw, 1rem);
+  font-weight: 400;
+  transition: all .15s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+}
+
+.Button-module__LCT47W__iconPart {
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  transition: all .15s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+}
+
+.Button-module__LCT47W__fullWidth {
+  width: 100%;
+}
+
+.Button-module__LCT47W__fullWidth .Button-module__LCT47W__textPart {
+  justify-content: flex-start;
+}
+
+.Button-module__LCT47W__underline {
+  font-family: var(--font-pontano);
+  color: var(--color-bfriends-darkbluegray);
+  border-bottom: 1px solid var(--color-bfriends-darkbluegray);
+  border-radius: 0;
+  align-items: center;
+  gap: .5rem;
+  padding-bottom: 2px;
+  font-size: clamp(.85rem, .8rem + .5vw, 1rem);
+  transition: opacity .2s;
+  display: inline-flex;
+}
+
+.Button-module__LCT47W__underline:hover {
+  opacity: .7;
+  transform: none;
+}
+
+.Button-module__LCT47W__text {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--color-bfriends-darkbluegray);
+  align-items: center;
+  gap: .5rem;
+  font-size: clamp(.85rem, .8rem + .5vw, 1rem);
+  transition: opacity .2s;
+  display: inline-flex;
+}
+
+.Button-module__LCT47W__text:hover {
+  opacity: .7;
+  transform: none;
+}
+
+/*# sourceMappingURL=components_ui_Button_Button_module_css_bad6b30c._.single.css.map*/
