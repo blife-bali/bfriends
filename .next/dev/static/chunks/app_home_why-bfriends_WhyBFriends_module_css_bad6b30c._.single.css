@@ -106,7 +106,7 @@
   font-family: var(--font-display);
 }
 
-.WhyBFriends-module__ZT0-hG__headingEmphasis {
+.WhyBFriends-module__ZT0-hG__headingText em {
   font-family: var(--font-script);
   font-style: italic;
   font-weight: 400;
@@ -182,21 +182,21 @@
   display: flex;
 }
 
-.WhyBFriends-module__ZT0-hG__pointsRow {
-  justify-content: center;
-  align-self: stretch;
-  align-items: flex-end;
+.WhyBFriends-module__ZT0-hG__pointsGrid {
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  display: flex;
+  width: 100%;
+  display: grid;
 }
 
 .WhyBFriends-module__ZT0-hG__pointItem {
-  border: none;
   border-bottom: 1px solid var(--color-white-100);
   cursor: pointer;
   background: none;
+  border-top: none;
+  border-left: none;
   flex-direction: row;
-  flex: 1;
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
@@ -252,6 +252,14 @@
 }
 
 @media (max-width: 1024px) {
+  .WhyBFriends-module__ZT0-hG__headingText, .WhyBFriends-module__ZT0-hG__pointText {
+    font-size: clamp(24px, 4vw, 32px);
+  }
+
+  .WhyBFriends-module__ZT0-hG__subPoint {
+    font-size: clamp(20px, 4vw, 28px);
+  }
+
   .WhyBFriends-module__ZT0-hG__section {
     height: auto;
     min-height: 800px;
@@ -259,29 +267,27 @@
 
   .WhyBFriends-module__ZT0-hG__imageContainer {
     flex: 1;
-    padding: 48px;
   }
 
-  .WhyBFriends-module__ZT0-hG__pointsSection {
-    padding: 48px 48px 64px;
+  .WhyBFriends-module__ZT0-hG__contentOverlay {
+    padding: 48px 24px;
   }
 
-  .WhyBFriends-module__ZT0-hG__pointsRow {
-    flex-direction: column;
+  .WhyBFriends-module__ZT0-hG__pointsContainer {
+    padding: 24px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointsGrid {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .WhyBFriends-module__ZT0-hG__pointItem {
     border-bottom: 1px solid var(--color-white-100);
-    border-right: none;
-    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .WhyBFriends-module__ZT0-hG__imageContainer {
-    padding: 32px 24px;
-  }
-
   .WhyBFriends-module__ZT0-hG__mainHeading {
     font-size: clamp(32px, 8vw, 40px);
   }
@@ -294,8 +300,17 @@
     font-size: 20px;
   }
 
-  .WhyBFriends-module__ZT0-hG__pointsSection {
-    padding: 32px 24px 48px;
+  .WhyBFriends-module__ZT0-hG__pointsGrid {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointItem {
+    border-bottom: 1px solid var(--color-white-100);
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointItem:last-child {
+    border-bottom: none;
   }
 
   .WhyBFriends-module__ZT0-hG__pointTitle {

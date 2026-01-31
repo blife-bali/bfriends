@@ -2,7 +2,7 @@
 
 .intro {
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background-color: var(--color-white-100);
   display: flex;
   flex-direction: row;
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 96px 64px;
+  padding: 128px 64px;
   box-sizing: border-box;
   gap: 32px;
 }
@@ -73,14 +73,19 @@
   font-style: italic;
 }
 
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .description {
   font-family: var(--font-sans);
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(16px, 1.8vw, 20px);
   line-height: 1.5;
   letter-spacing: -0.04em;
   color: var(--color-cream-140);
   margin: 0;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .button {
@@ -92,38 +97,43 @@
   align-self: stretch;
   flex: 1;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
   flex-shrink: 0;
   min-height: 0;
 }
 
 .imageWrapper {
-  height: 486px;
+  position: absolute;
+  bottom: 128px;
+  right: 64px;
+  height: 432px;
   display: flex;
   align-items: flex-end;
-  gap: 32px;
+  gap: 24px;
   flex-shrink: 0;
 }
 
 .imageTop {
-  height: 278px;
-  width: 248px;
+  height: 280px;
+  width: 240px;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  border-radius: 8px;
 }
 
 .imageBottom {
   align-self: stretch;
-  width: 370px;
+  width: 360px;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  border-radius: 8px;
 }
 
 .image {
@@ -143,36 +153,21 @@
 }
 
 
-/* Responsive Design */
 @media (max-width: 1024px) {
-  .container {
-    padding: 64px 48px;
-    gap: 24px;
+  .intro {
+    height: 100svh;
   }
 
-  .imageWrapper {
-    height: 400px;
-    gap: 24px;
-  }
-
-  .imageTop {
-    width: 200px;
-    height: 240px;
-  }
-
-  .imageBottom {
-    width: 300px;
-  }
-}
-
-@media (max-width: 768px) {
   .container {
     gap: 24px;
     padding: 48px 24px;
+    height: 100%;
+    min-height: 0;
   }
 
   .textColumn {
     gap: 24px;
+    flex-shrink: 0;
   }
 
   .heading {
@@ -184,23 +179,55 @@
   }
 
   .description {
-    font-size: 14px;
+    font-size: clamp(16px, 1.8vw, 18px);
+  }
+
+  .descriptionContainer {
+    flex-shrink: 0;
+    margin-bottom: 24px;
+  }
+
+  .imageColumn {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
   }
 
   .imageWrapper {
-    height: 300px;
-    gap: 16px;
+    position: relative;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    bottom: 0;
+    right: 0;
+    flex: 1;
+    min-height: 0;
+    display: flex;
   }
 
   .imageTop {
-    width: 150px;
-    height: 180px;
+    display: none;
   }
 
   .imageBottom {
-    width: 200px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .image {
+    width: 180%;
+    height: 180%;
+    object-fit: cover;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    
   }
 }

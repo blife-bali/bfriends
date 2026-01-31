@@ -20,7 +20,7 @@
 }
 
 .Hero-module__hfJxlq__overlay {
-  background-color: #0000000d;
+  background-color: #0000001a;
   position: absolute;
   inset: 0;
 }
@@ -56,12 +56,29 @@
 
 .Hero-module__hfJxlq__buttonGroup {
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   display: flex;
 }
 
 .Hero-module__hfJxlq__buttonGroup .Hero-module__hfJxlq__button {
   --button-border-color: var(--color-cream-100, #f5f0e8);
+}
+
+@media (max-width: 768px) {
+  .Hero-module__hfJxlq__content {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    height: 100svh;
+    padding: 64px 24px;
+  }
+
+  .Hero-module__hfJxlq__title {
+    text-align: center;
+    max-width: 100%;
+    font-size: clamp(44px, 5vw, 48px);
+  }
 }
 
 /*# sourceMappingURL=app_home_hero_Hero_module_css_bad6b30c._.single.css.map*/

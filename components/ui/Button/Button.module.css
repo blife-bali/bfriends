@@ -31,6 +31,9 @@
   background-color: var(--button-primary-fill);
   border: none;
   gap: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .primary:hover .iconPart {
@@ -39,7 +42,7 @@
 
 @media (max-width: 768px) {
   .primary {
-    height: 32px;
+    height: 40px;
   }
 }
 
@@ -82,9 +85,12 @@
   border: 1px solid color-mix(in srgb, var(--button-border-color) 50%, transparent);
   gap: 4px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   /* Semi-transparent background - must be present for backdrop-filter */
-  background-color: rgba(178, 154, 124, 0.15);
+  background-color: rgba(0, 0, 0  , 0.05);
   
   /* Backdrop Blur */
   backdrop-filter: blur(80px);
@@ -101,13 +107,13 @@
 
 @media (max-width: 768px) {
   .border {
-    height: 32px;
+    height: 36px;
   }
 }
 
 .border .textPart {
   font-family: var(--font-sans);
-  font-size: clamp(12px, 3vw, 14px);
+  font-size: clamp(13px, 3vw, 14px);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--button-border-color);

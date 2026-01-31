@@ -10,14 +10,23 @@ export default function Intro() {
         {/* Left Column: Text Content */}
         <div className={styles.textColumn}>
           <div className={styles.headingContainer}>
-          <h2 className={styles.heading}>
-           A <em>journey</em> to become your own friend.
-          </h2>
-          <h2 className={styles.heading2}>
-            BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
-          </h2>
+          <p className={styles.combinedParagraph}>
+            <span className={styles.heading}>
+              A <em>journey</em> to become your own friend.{" "}
+            </span>
+            <span className={styles.heading2}>
+              BFriends is a wellness hub in Kerobokan, Bali. A place created to
+            reconnect with the oldest companion in your life, <em>yourself</em>.
+            </span>
+          </p>
           </div>
-          <p className={styles.description}>
+          
+        </div>
+
+        {/* Image Container */}
+        <div className={styles.imageColumn}>
+        <div className={styles.descriptionContainer}>
+        <p className={styles.description}>
             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
           </p>
           <Button
@@ -29,10 +38,7 @@ export default function Intro() {
           >
             About Us
           </Button>
-        </div>
-
-        {/* Image Container */}
-        <div className={styles.imageColumn}>
+          </div>
           <div className={styles.imageWrapper}>
             <div className={styles.imageTop}>
               <Image

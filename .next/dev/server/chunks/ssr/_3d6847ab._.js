@@ -6,7 +6,6 @@ __turbopack_context__.v({
   "fadeIn": "WhyBFriends-module__ZT0-hG__fadeIn",
   "fadeInScale": "WhyBFriends-module__ZT0-hG__fadeInScale",
   "fadeOut": "WhyBFriends-module__ZT0-hG__fadeOut",
-  "headingEmphasis": "WhyBFriends-module__ZT0-hG__headingEmphasis",
   "headingText": "WhyBFriends-module__ZT0-hG__headingText",
   "image": "WhyBFriends-module__ZT0-hG__image",
   "imageContainer": "WhyBFriends-module__ZT0-hG__imageContainer",
@@ -23,11 +22,12 @@ __turbopack_context__.v({
   "pointText": "WhyBFriends-module__ZT0-hG__pointText",
   "pointTitle": "WhyBFriends-module__ZT0-hG__pointTitle",
   "pointsContainer": "WhyBFriends-module__ZT0-hG__pointsContainer",
-  "pointsRow": "WhyBFriends-module__ZT0-hG__pointsRow",
+  "pointsGrid": "WhyBFriends-module__ZT0-hG__pointsGrid",
   "pointsSection": "WhyBFriends-module__ZT0-hG__pointsSection",
   "section": "WhyBFriends-module__ZT0-hG__section",
   "slideUp": "WhyBFriends-module__ZT0-hG__slideUp",
   "subHeading": "WhyBFriends-module__ZT0-hG__subHeading",
+  "subPoint": "WhyBFriends-module__ZT0-hG__subPoint",
   "subpoint": "WhyBFriends-module__ZT0-hG__subpoint",
 });
 }),
@@ -167,33 +167,25 @@ function WhyBFriends() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].mainHeading,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].headingText,
-                                        children: "Why "
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                        lineNumber: 59,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].headingEmphasis,
-                                        children: "BFriend"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                        lineNumber: 60,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].headingText,
-                                        children: " Exists?"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                        lineNumber: 61,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].headingText,
+                                    children: [
+                                        "Why ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
+                                            children: " BFirends "
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
+                                            lineNumber: 59,
+                                            columnNumber: 54
+                                        }, this),
+                                        " Exists? "
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
+                                    lineNumber: 59,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
                                 lineNumber: 58,
                                 columnNumber: 11
@@ -209,13 +201,13 @@ function WhyBFriends() {
                                                 selectedData.point,
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 63,
                                                     columnNumber: 70
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 63,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -223,18 +215,18 @@ function WhyBFriends() {
                                             children: selectedData.subpoint
                                         }, void 0, false, {
                                             fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                            lineNumber: 66,
+                                            lineNumber: 64,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, selectedId, true, {
                                     fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 62,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                lineNumber: 63,
+                                lineNumber: 61,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -253,82 +245,47 @@ function WhyBFriends() {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointsSection,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointsContainer,
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointsRow,
-                            children: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$whybfriends$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["whyBFriendsData"].slice(0, 3).map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointItem} ${selectedId === item.id ? __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointItemSelected : ""}`,
-                                    onClick: ()=>setSelectedId(item.id),
-                                    children: [
-                                        selectedId === item.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointNumber,
-                                            children: formatId(item.id)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                            lineNumber: 83,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointTitle,
-                                            children: item.point
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                            lineNumber: 85,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, item.id, true, {
-                                    fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                    lineNumber: 77,
-                                    columnNumber: 15
-                                }, this))
-                        }, void 0, false, {
-                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                            lineNumber: 75,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointsRow,
-                            children: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$whybfriends$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["whyBFriendsData"].slice(3, 6).map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointItem} ${selectedId === item.id ? __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointItemSelected : ""}`,
-                                    onClick: ()=>setSelectedId(item.id),
-                                    children: [
-                                        selectedId === item.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointNumber,
-                                            children: formatId(item.id)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                            lineNumber: 97,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointTitle,
-                                            children: item.point
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                            lineNumber: 99,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, item.id, true, {
-                                    fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                                    lineNumber: 91,
-                                    columnNumber: 15
-                                }, this))
-                        }, void 0, false, {
-                            fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                            lineNumber: 89,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointsGrid,
+                        children: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$whybfriends$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["whyBFriendsData"].map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointItem} ${selectedId === item.id ? __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointItemSelected : ""}`,
+                                onClick: ()=>setSelectedId(item.id),
+                                children: [
+                                    selectedId === item.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointNumber,
+                                        children: formatId(item.id)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
+                                        lineNumber: 81,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$home$2f$why$2d$bfriends$2f$WhyBFriends$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].pointTitle,
+                                        children: item.point
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
+                                        lineNumber: 83,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, item.id, true, {
+                                fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
+                                lineNumber: 75,
+                                columnNumber: 15
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
+                        lineNumber: 73,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                    lineNumber: 74,
+                    lineNumber: 72,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/home/why-bfriends/WhyBFriends.tsx",
-                lineNumber: 73,
+                lineNumber: 71,
                 columnNumber: 7
             }, this)
         ]

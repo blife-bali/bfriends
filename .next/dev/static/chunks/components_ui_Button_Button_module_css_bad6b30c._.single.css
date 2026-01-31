@@ -26,10 +26,13 @@
   background-color: var(--button-primary-fill);
   border: none;
   border-radius: 999px;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
   width: fit-content;
   height: 40px;
   padding: 8px 24px;
+  display: flex;
 }
 
 .Button-module__LCT47W__primary:hover .Button-module__LCT47W__iconPart {
@@ -38,7 +41,7 @@
 
 @media (max-width: 768px) {
   .Button-module__LCT47W__primary {
-    height: 32px;
+    height: 40px;
   }
 }
 
@@ -76,12 +79,15 @@
   border: 1px solid color-mix(in srgb, var(--button-border-color) 50%, transparent);
   -webkit-backdrop-filter: blur(80px);
   will-change: auto;
-  background-color: #b29a7c26;
+  background-color: #0000000d;
   border-radius: 999px;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
   width: fit-content;
   height: 40px;
   padding: 8px 24px;
+  display: flex;
   position: relative;
   transform: none;
 }
@@ -92,7 +98,7 @@
 
 @media (max-width: 768px) {
   .Button-module__LCT47W__border {
-    height: 32px;
+    height: 36px;
   }
 }
 
@@ -104,7 +110,7 @@
   background: none;
   border-radius: 0;
   padding: 0;
-  font-size: clamp(12px, 3vw, 14px);
+  font-size: clamp(13px, 3vw, 14px);
   font-weight: 500;
   position: relative;
 }

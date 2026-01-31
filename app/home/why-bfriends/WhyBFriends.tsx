@@ -56,9 +56,7 @@ export default function WhyBFriends() {
         </div>
         <div className={styles.contentOverlay}>
           <div className={styles.mainHeading}>
-            <span className={styles.headingText}>Why </span>
-            <em className={styles.headingEmphasis}>BFriend</em>
-            <span className={styles.headingText}> Exists?</span>
+            <span className={styles.headingText}>Why <em> BFirends </em> Exists? </span>
           </div>
           <div className={styles.subHeading}>
             <div className={styles.pointDetails} key={selectedId}>
@@ -72,22 +70,8 @@ export default function WhyBFriends() {
       {/* Points Selection Section */}
       <div className={styles.pointsSection}>
         <div className={styles.pointsContainer}>
-          <div className={styles.pointsRow}>
-            {whyBFriendsData.slice(0, 3).map((item) => (
-              <button
-                key={item.id}
-                className={`${styles.pointItem} ${selectedId === item.id ? styles.pointItemSelected : ""}`}
-                onClick={() => setSelectedId(item.id)}
-              >
-                {selectedId === item.id && (
-                  <span className={styles.pointNumber}>{formatId(item.id)}</span>
-                )}
-                <div className={styles.pointTitle}>{item.point}</div>
-              </button>
-            ))}
-          </div>
-          <div className={styles.pointsRow}>
-            {whyBFriendsData.slice(3, 6).map((item) => (
+          <div className={styles.pointsGrid}>
+            {whyBFriendsData.map((item) => (
               <button
                 key={item.id}
                 className={`${styles.pointItem} ${selectedId === item.id ? styles.pointItemSelected : ""}`}
