@@ -2,16 +2,16 @@
 
 .main {
   min-height: 100vh;
-  background-color: var(--color-bfriends-beige);
-  color: var(--color-bfriends-darkbluegray);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: var(--color-beige-100);
+  color: var(--color-blue-100);
+  font-family: var(--font-sans);
   overflow: hidden;
   position: relative;
 }
 
 .main::selection {
-  background-color: var(--color-bfriends-orange-100);
-  color: white;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
 }
 
 .absoluteContainer {
@@ -39,7 +39,7 @@
 .container {
   position: relative;
   height: 250vh;
-  background-color: var(--color-bfriends-beige);
+  background-color: var(--color-beige-100);
 }
 
 .stickyWrapper {
@@ -91,46 +91,46 @@
 
 @media (max-width: 1440px) {
   .imgTop {
-    width: 28rem !important; /* Scale down from 32rem */
+    width: 448px !important; /* Scale down from 32rem */
   }
   .imgLeft {
-    width: 28rem !important;
+    width: 448px !important;
     left: -5% !important;
   }
   .imgRight {
-    width: 28rem !important;
+    width: 448px !important;
     right: -5% !important;
   }
   .imgBottomLeft {
-    width: 28rem !important;
+    width: 448px !important;
     left: -5% !important;
   }
   .imgBottomRight {
-    width: 28rem !important;
+    width: 448px !important;
     right: -5% !important;
   }
 }
 
 @media (max-width: 1280px) {
   .imgTop {
-    width: 24rem !important;
+    width: 384px !important;
   }
   .imgLeft {
-    width: 20rem !important;
+    width: 320px !important;
     left: 2% !important; /* Bring inside viewport */
     top: 60% !important;
   }
   .imgRight {
-    width: 20rem !important;
+    width: 320px !important;
     right: 2% !important; /* Bring inside viewport */
     top: 60% !important;
   }
   .imgBottomLeft {
-    width: 22rem !important;
+    width: 352px !important;
     left: 5% !important;
   }
   .imgBottomRight {
-    width: 22rem !important;
+    width: 352px !important;
     right: 5% !important;
   }
 }
@@ -138,28 +138,28 @@
 @media (max-width: 1024px) {
   /* Tablet Landscape */
   .imgTop {
-    width: 36rem !important;
+    width: 576px !important;
     top: 0% !important;
   }
   /* On tablets, we might want to show the side images but smaller, or hide them if they clash. 
      The original code had 'hidden md:block', meaning visible on 768+. */
   .imgLeft {
-    width: 32rem !important;
+    width: 512px !important;
     left: -28% !important;
     top: 33% !important;
   }
   .imgRight {
-    width: 32rem !important;
+    width: 512px !important;
     right: -28% !important;
     top: 33% !important;
   }
   .imgBottomLeft {
-    width: 36rem !important;
+    width: 576px !important;
     left: -34% !important;
     bottom: 15% !important;
   }
   .imgBottomRight {
-    width: 36rem !important;
+    width: 576px !important;
     right: -34% !important;
     bottom: 15% !important;
   }
@@ -172,7 +172,7 @@
      We'll stick to the original design's hiding behavior for cleaner mobile look, but adjust the Top image which is visible. */
   
   .imgTop {
-    width: 16rem !important; /* w-64 */
+    width: 256px !important; /* w-64 */
     top: -12% !important;
   }
 }
@@ -251,8 +251,8 @@
   position: absolute;
   z-index: 30;
   width: 100%;
-  max-width: 28rem; /* max-w-md */
-  padding: 2rem;
+  max-width: 448px; /* max-w-md */
+  padding: 32px;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px); /* backdrop-blur-xl (approx 24px) */
   border-width: 1px;
@@ -260,22 +260,22 @@
   border-color: rgba(255, 255, 255, 0.2);
   text-align: center;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 @media (max-width: 640px) {
   .layer3 {
     max-width: 90%;
-    padding: 1.5rem;
+    padding: 24px;
   }
 }
 
 .formTitle {
-  font-family: var(--font-belleza);
-  font-size: clamp(1.5rem, 1.25rem + 1.5vw, 2.5rem);
-  color: white;
-  margin-bottom: 1rem;
+  font-family: var(--font-script);
+  font-size: clamp(24px, 20px + 1.5vw, 40px);
+  color: var(--color-white-100);
+  margin-bottom: 16px;
 }
 
 @media (min-width: 768px) {
@@ -285,20 +285,22 @@
 }
 
 .formSubtitle {
-  font-family: var(--font-pontano);
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
+  font-family: var(--font-sans);
+  color: var(--color-white-100);
+  opacity: 0.9;
+  margin-bottom: 32px;
 }
 
 .privacyText {
-  margin-top: 1.5rem;
-  font-size: clamp(0.5rem, 0.45rem + 0.4vw, 0.75rem);
-  color: rgba(255, 255, 255, 0.5);
+  margin-top: 24px;
+  font-size: clamp(8px, 7px + 0.4vw, 12px);
+  color: var(--color-white-100);
+  opacity: 0.5;
 }
 
 .footer {
   position: absolute;
-  bottom: 1rem;
+  bottom: 16px;
   width: 100%;
   text-align: center;
   z-index: 50;
@@ -306,8 +308,8 @@
 }
 
 .footerText {
-  color: var(--color-bfriends-beige);
-  font-size: clamp(0.5rem, 0.45rem + 0.4vw, 0.75rem);
-  font-family: var(--font-pontano);
+  color: var(--color-beige-100);
+  font-size: clamp(8px, 7px + 0.4vw, 12px);
+  font-family: var(--font-sans);
   opacity: 0.8;
 }

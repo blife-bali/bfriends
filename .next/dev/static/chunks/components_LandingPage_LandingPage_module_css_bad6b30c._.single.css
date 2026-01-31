@@ -1,16 +1,16 @@
 /* [project]/components/LandingPage/LandingPage.module.css [app-client] (css) */
 .LandingPage-module__rkQY6G__main {
-  background-color: var(--color-bfriends-beige);
+  background-color: var(--color-beige-100);
   min-height: 100vh;
-  color: var(--color-bfriends-darkbluegray);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  color: var(--color-blue-100);
+  font-family: var(--font-sans);
   position: relative;
   overflow: hidden;
 }
 
 .LandingPage-module__rkQY6G__main::selection {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
 }
 
 .LandingPage-module__rkQY6G__absoluteContainer {
@@ -35,7 +35,7 @@
 }
 
 .LandingPage-module__rkQY6G__container {
-  background-color: var(--color-bfriends-beige);
+  background-color: var(--color-beige-100);
   height: 250vh;
   position: relative;
 }
@@ -265,20 +265,22 @@
 }
 
 .LandingPage-module__rkQY6G__formTitle {
-  font-family: var(--font-belleza);
-  color: #fff;
+  font-family: var(--font-script);
+  color: var(--color-white-100);
   margin-bottom: 1rem;
   font-size: clamp(1.5rem, 1.25rem + 1.5vw, 2.5rem);
 }
 
 .LandingPage-module__rkQY6G__formSubtitle {
-  font-family: var(--font-pontano);
-  color: #ffffffe6;
+  font-family: var(--font-sans);
+  color: var(--color-white-100);
+  opacity: .9;
   margin-bottom: 2rem;
 }
 
 .LandingPage-module__rkQY6G__privacyText {
-  color: #ffffff80;
+  color: var(--color-white-100);
+  opacity: .5;
   margin-top: 1.5rem;
   font-size: clamp(.5rem, .45rem + .4vw, .75rem);
 }
@@ -293,9 +295,9 @@
 }
 
 .LandingPage-module__rkQY6G__footerText {
-  color: var(--color-bfriends-beige);
+  color: var(--color-beige-100);
   font-size: clamp(.5rem, .45rem + .4vw, .75rem);
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   opacity: .8;
 }
 

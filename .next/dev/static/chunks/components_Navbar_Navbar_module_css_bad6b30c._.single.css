@@ -1,197 +1,132 @@
 /* [project]/components/Navbar/Navbar.module.css [app-client] (css) */
 .Navbar-module__dVeNwG__navbar {
   z-index: 1000;
-  grid-template-columns: 1fr 200px 1fr;
-  align-items: start;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   width: 100%;
-  padding: 0;
-  transition: all 1s ease-in-out;
+  min-height: 64px;
+  padding: 0 24px;
+  transition: background-color .3s, color .3s;
   display: grid;
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.Navbar-module__dVeNwG__scrolled {
+.Navbar-module__dVeNwG__navbar.Navbar-module__dVeNwG__default {
   background-color: #0000;
-  padding: 0;
 }
 
-.Navbar-module__dVeNwG__leftContainer {
+.Navbar-module__dVeNwG__navbar.Navbar-module__dVeNwG__scrolled {
+  background-color: var(--color-white-100);
+}
+
+.Navbar-module__dVeNwG__left {
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
-  min-width: 400px;
-  height: 4rem;
-  padding-left: 2rem;
   display: flex;
 }
 
-.Navbar-module__dVeNwG__rightContainer {
-  justify-content: flex-end;
+.Navbar-module__dVeNwG__logoLink {
   align-items: center;
-  gap: 2rem;
-  min-width: 400px;
-  height: 4rem;
-  padding-right: 2rem;
+  text-decoration: none;
   display: flex;
 }
 
-.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__leftContainer, .Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__rightContainer {
-  background-color: var(--color-bfriends-butter);
-  transition: all .5s ease-in-out;
+.Navbar-module__dVeNwG__logo {
+  object-fit: contain;
+  width: auto;
+  height: 32px;
+  transition: filter .3s;
 }
 
-.Navbar-module__dVeNwG__navLink {
-  color: var(--color-bfriends-darkbluegray);
-  font-family: var(--font-inter), sans-serif;
+.Navbar-module__dVeNwG__default .Navbar-module__dVeNwG__logo {
+  filter: brightness(0) invert();
+}
+
+.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__logo {
+  filter: none;
+}
+
+.Navbar-module__dVeNwG__menuContainer {
+  background-color: #ffffff1a;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 40px;
+  padding: 0 24px;
+  display: flex;
+}
+
+.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__menuContainer {
+  background-color: #1340530f;
+}
+
+.Navbar-module__dVeNwG__menuLink {
+  font-family: var(--font-sans);
+  color: var(--color-white-100);
   white-space: nowrap;
-  align-items: center;
-  gap: .25rem;
-  font-size: clamp(.85rem, .8rem + .5vw, 1rem);
+  font-size: 14px;
   font-weight: 400;
   text-decoration: none;
   transition: opacity .2s;
-  display: flex;
 }
 
-.Navbar-module__dVeNwG__navLink:hover {
-  opacity: .7;
+.Navbar-module__dVeNwG__menuLink:hover {
+  opacity: .8;
 }
 
-.Navbar-module__dVeNwG__programLink {
+.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__menuLink {
+  color: var(--color-blue-100);
+}
+
+.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__menuLink:hover {
+  opacity: .8;
+}
+
+.Navbar-module__dVeNwG__right {
+  justify-content: flex-end;
   align-items: center;
-  gap: .5rem;
+  gap: 12px;
   display: flex;
 }
 
-.Navbar-module__dVeNwG__plusIcon {
-  stroke-width: 2px;
-  width: 14px;
-  height: 14px;
+.Navbar-module__dVeNwG__contactButton {
+  --button-border-color: var(--color-white-100);
 }
 
-.Navbar-module__dVeNwG__centerContainer {
-  border-radius: 0 0 8px 8px;
-  justify-content: center;
-  align-items: center;
-  height: 5rem;
-  padding: 0;
-  transition: background-color .5s ease-in-out;
-  display: flex;
-  position: relative;
+.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__contactButton {
+  --button-border-color: var(--color-blue-100);
 }
 
-.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__centerContainer {
-  background-color: var(--color-bfriends-darkbluegray);
-  padding: 0;
-  box-shadow: 0 2px 6px -1px #0000000d;
+.Navbar-module__dVeNwG__contactButton .Navbar-module__dVeNwG__textPart, .Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__contactButton .Navbar-module__dVeNwG__textPart {
+  color: inherit;
 }
 
-.Navbar-module__dVeNwG__logoVertical {
-  object-fit: contain;
-  opacity: 1;
-  width: auto;
-  height: 120px;
-  transition: all .5s ease-in-out;
-  position: absolute;
-  top: 140%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.Navbar-module__dVeNwG__default .Navbar-module__dVeNwG__contactButton {
+  color: var(--color-white-100);
 }
 
-.Navbar-module__dVeNwG__logoHorizontal {
-  object-fit: contain;
-  opacity: 0;
-  pointer-events: none;
-  width: auto;
-  height: 32px;
-  transition: all .5s ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__logoVertical {
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -60%);
-}
-
-.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__logoHorizontal {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, -60%);
-}
-
-.Navbar-module__dVeNwG__default .Navbar-module__dVeNwG__logoHorizontal {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.Navbar-module__dVeNwG__langSelector {
-  border: 1px solid var(--color-bfriends-darkbluegray);
-  font-family: var(--font-inter), sans-serif;
-  color: var(--color-bfriends-darkbluegray);
-  cursor: pointer;
-  background: none;
-  border-radius: 999px;
-  align-items: center;
-  gap: .5rem;
-  padding: .4rem .8rem;
-  font-size: clamp(.75rem, .7rem + .5vw, .9rem);
-  transition: all .2s;
-  display: flex;
-}
-
-.Navbar-module__dVeNwG__langSelector:hover {
-  background: #2e43650d;
+.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__contactButton {
+  color: var(--color-blue-100);
 }
 
 .Navbar-module__dVeNwG__bookButton {
-  background-color: var(--color-bfriends-butter);
-  color: var(--color-bfriends-darkbluegray);
-  font-family: var(--font-inter), sans-serif;
-  border-radius: .5rem;
-  align-items: center;
-  gap: .5rem;
-  padding: .5rem 1.25rem;
-  font-size: clamp(.85rem, .8rem + .5vw, 1rem);
-  font-weight: 500;
-  text-decoration: none;
-  transition: transform .2s, background-color .2s;
-  display: flex;
-}
-
-.Navbar-module__dVeNwG__bookButton:hover {
-  filter: brightness(.95);
-  transform: translateY(-1px);
-}
-
-.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__bookButton {
-  background-color: var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-beige);
-  transition: all .5s ease-in-out;
-}
-
-.Navbar-module__dVeNwG__arrowIcon {
-  width: 16px;
-  height: 16px;
-}
-
-.Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__leftContainer .Navbar-module__dVeNwG__navLink, .Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__rightContainer .Navbar-module__dVeNwG__navLink, .Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__rightContainer .Navbar-module__dVeNwG__langSelector {
-  color: var(--color-bfriends-darkbluegray);
+  --button-primary-fill: var(--color-cream-100);
 }
 
 @media (max-width: 1024px) {
-  .Navbar-module__dVeNwG__leftContainer, .Navbar-module__dVeNwG__rightContainer {
+  .Navbar-module__dVeNwG__menuContainer {
     display: none;
   }
 
   .Navbar-module__dVeNwG__navbar {
-    justify-content: center;
-    display: flex;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Navbar-module__dVeNwG__right {
+    justify-content: flex-end;
   }
 }
 

@@ -12,27 +12,27 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  max-width: 36rem; /* max-w-xl */
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-top: 4rem;
+  max-width: 576px; /* max-w-xl */
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 64px;
   pointer-events: auto;
 }
 
 .heroSubtitle {
-  font-family: var(--font-pontano);
-  font-size: clamp(0.65rem, 0.6rem + 0.5vw, 0.85rem);
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 10px + 0.5vw, 14px);
   letter-spacing: 0.6em;
-  color: var(--color-bfriends-darkbluegray);
+  color: var(--color-blue-100);
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 640px) {
   .heroSubtitle {
     /* font-size: 0.65rem; handled by clamp */
     letter-spacing: 0.4em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 12px;
   }
 }
 
@@ -43,10 +43,10 @@
 }
 
 .heroTitle {
-  font-family: var(--font-belleza);
-  font-size: clamp(2rem, 1.5rem + 3vw, 4rem); /* Responsive clamp */
-  color: var(--color-bfriends-darkbluegray);
-  margin-bottom: 2.5rem;
+  font-family: var(--font-script);
+  font-size: clamp(32px, 24px + 3vw, 64px); /* Responsive clamp */
+  color: var(--color-blue-100);
+  margin-bottom: 40px;
   line-height: 1.1;
 }
 
@@ -66,21 +66,21 @@
 @media (max-width: 1024px) {
   .heroTitle {
     /* font-size: 3.8rem; handled by clamp */
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 640px) {
   .heroTitle {
     /* font-size: 2rem; handled by clamp */
-    margin-bottom: 1.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    margin-bottom: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
 .heroHighlight {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
   font-style: italic;
 }
 
@@ -88,7 +88,7 @@
   position: relative;
   display: inline-block;
   white-space: nowrap;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
   font-style: italic;
 }
 
@@ -98,7 +98,7 @@
   right: 0;
   bottom: 0;
   height: 3px;
-  background-color: var(--color-bfriends-orange-100);
+  background-color: var(--color-cream-100);
   transform-origin: center bottom;
 }
 
@@ -120,20 +120,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(46, 69, 101, 1); /* var(--color-bfriends-darkbluegray) assumed hex */
-  border-top-left-radius: 0.75rem; /* xl */
-  border-bottom-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  color: var(--color-bfriends-darkbluegray);
+  border-color: var(--color-blue-100);
+  border-top-left-radius: 12px; /* xl */
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: var(--color-blue-100);
   font-weight: 400; /* normal */
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -144,16 +144,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 16px;
+  padding-right: 16px;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--color-bfriends-darkbluegray);
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  color: var(--color-bfriends-darkbluegray);
+  border-color: var(--color-blue-100);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  color: var(--color-blue-100);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;

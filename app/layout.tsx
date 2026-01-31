@@ -1,36 +1,45 @@
 import type { Metadata } from "next";
-import { Belleza, Pontano_Sans, Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { Libre_Bodoni, Hanken_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 
-
-const belleza = Belleza({
-  weight: "400",
-  variable: "--font-belleza",
+const libreBodoni = Libre_Bodoni({
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-libre-bodoni",
 });
 
-const pontanoSans = Pontano_Sans({
-  weight: "400",
-  variable: "--font-pontano-sans",
+const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-hanken-grotesk",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bfriends.id"),
   title: "BFriends | Kerobokan Wellness Center | Opening 2026",
-  description: "A wellness journey that begins with becoming a friend to yourself. Join bfriends in Kerobokan, Bali. Gym, Spa, and Community. Opening 2026.",
-  keywords: ["wellness", "gym", "spa", "bali", "kerobokan", "bfriends", "recovery", "health", "fitness", "community"],
+  description:
+    "A wellness journey that begins with becoming a friend to yourself. Join bfriends in Kerobokan, Bali. Gym, Spa, and Community. Opening 2026.",
+  keywords: [
+    "wellness",
+    "gym",
+    "spa",
+    "bali",
+    "kerobokan",
+    "bfriends",
+    "recovery",
+    "health",
+    "fitness",
+    "community",
+  ],
   authors: [{ name: "BFriends" }],
   openGraph: {
     title: "BFriends | Kerobokan Wellness Center",
-    description: "A wellness journey that begins with becoming a friend to yourself. Opening soon in 2026.",
-    url: "https://bfriends.id", // Placeholder URL, update when deployed
+    description:
+      "A wellness journey that begins with becoming a friend to yourself. Opening soon in 2026.",
+    url: "https://bfriends.id",
     siteName: "BFriends",
     images: [
       {
@@ -46,12 +55,24 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BFriends - Kerobokan Wellness Center",
-    description: "A wellness journey that begins with becoming a friend to yourself. Opening soon in 2026.",
+    description:
+      "A wellness journey that begins with becoming a friend to yourself. Opening soon in 2026.",
     images: ["/images/icons/logo-bfriends hor.png"],
   },
   icons: {
     icon: "/images/icons/B-logo.png",
     apple: "/images/icons/B-logo.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://bfriends.id",
   },
 };
 
@@ -61,10 +82,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={` ${belleza.variable} ${pontanoSans.variable} ${inter.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${libreBodoni.variable} ${hankenGrotesk.variable}`}
+    >
+      <body className="antialiased">
         <Navbar />
         {children}
       </body>

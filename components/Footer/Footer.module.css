@@ -1,11 +1,11 @@
 @reference "../../app/globals.css";
 
 .footer {
-  background-color: var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-beige);
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-  font-family: var(--font-pontano);
+  background-color: var(--color-blue-100);
+  color: var(--color-beige-100);
+  padding-top: 64px;
+  padding-bottom: 32px;
+  font-family: var(--font-sans);
   position: relative;
   z-index: 50;
 }
@@ -14,8 +14,8 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .grid {
@@ -27,7 +27,7 @@
 @media (max-width: 768px) {
   .grid {
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
   }
 }
 
@@ -42,7 +42,7 @@
 .column1 {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
     width: 320px;
   }
 
@@ -57,7 +57,7 @@
 .column {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
   width: 200px;
 }
 
@@ -72,7 +72,7 @@
 .column2 {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
     width: 420px !important;
 }
 
@@ -85,9 +85,9 @@
 }
 
 .logo {
-  height: 2.4rem;
+  height: 38px;
   object-fit: contain;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   object-position: left;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .address {
-  font-size: clamp(0.8rem, 0.75rem + 0.5vw, 1rem);
+  font-size: clamp(13px, 12px + 0.5vw, 16px);
   line-height: 1.6;
   opacity: 0.8;
   max-width: 250px;
@@ -110,7 +110,7 @@
 
 .address:hover {
   opacity: 1;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 @media (max-width: 768px) {
@@ -120,16 +120,16 @@
 }
 
 .heading {
-  font-family: var(--font-belleza);
-  font-size: clamp(1.1rem, 1rem + 0.8vw, 1.4rem);
-  margin-bottom: 1rem;
-  color: var(--color-bfriends-beige);
+  font-family: var(--font-script);
+  font-size: clamp(18px, 16px + 0.8vw, 22px);
+  margin-bottom: 16px;
+  color: var(--color-beige-100);
 }
 
 .menuList {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 @media (max-width: 768px) {
@@ -139,7 +139,7 @@
 }
 
 .menuItem {
-  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  font-size: clamp(14px, 13px + 0.5vw, 16px);
   opacity: 0.8;
   transition: opacity 0.2s ease, color 0.2s ease;
   text-decoration: none;
@@ -149,18 +149,18 @@
 
 .menuItem:hover {
   opacity: 1;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 .bottomBar {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(246, 244, 221, 0.1);
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-beige-20);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  font-size: clamp(0.65rem, 0.6rem + 0.5vw, 0.85rem);
+  gap: 16px;
+  font-size: clamp(10px, 10px + 0.5vw, 14px);
   opacity: 0.6;
 }
 
@@ -173,13 +173,13 @@
 
 .legalLinks {
   display: flex;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 @media (max-width: 640px) {
   .legalLinks {
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
     text-align: center;
   }
 }
@@ -191,14 +191,14 @@
 }
 
 .legalLink:hover {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 /* Newsletter styles matching SubscriptionForm */
 .newsletterForm {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .newsletterInputWrapper {
@@ -218,18 +218,18 @@
 
 .newsletterInput {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 12px 16px;
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(246, 244, 221, 0.2);
-  border-radius: 0.75rem;
-  color: var(--color-bfriends-beige);
-  font-family: var(--font-pontano);
-  font-size: clamp(0.8rem, 0.75rem + 0.5vw, 1rem);
+  border: 1px solid var(--color-beige-40);
+  border-radius: 12px;
+  color: var(--color-beige-100);
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 12px + 0.5vw, 16px);
 }
 
 .newsletterInput:focus {
   outline: none;
-  border-color: var(--color-bfriends-orange-100);
+  border-color: var(--color-cream-100);
 }
 
 .submitButton {
@@ -256,62 +256,62 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: var(--color-bfriends-orange-100);
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: var(--color-cream-100);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
-  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 13px + 0.5vw, 16px);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .submitButton:hover .submitButtonText {
-  background-color: rgba(229, 133, 44, 0.9);
+  background-color: var(--color-cream-120);
 }
 
 .submitButtonIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: var(--color-bfriends-orange-100);
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: var(--color-cream-100);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  color: var(--color-white-100);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .submitButton:hover .submitButtonIcon {
-  background-color: rgba(229, 133, 44, 0.9);
+  background-color: var(--color-cream-120);
 }
 
 .successMessage {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 12px;
+  padding: 16px;
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(246, 244, 221, 0.2);
-  border-radius: 0.75rem;
-  color: var(--color-bfriends-beige);
-  font-family: var(--font-pontano);
-  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  border: 1px solid var(--color-beige-40);
+  border-radius: 12px;
+  color: var(--color-beige-100);
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 13px + 0.5vw, 16px);
 }
 
 .successIcon {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }

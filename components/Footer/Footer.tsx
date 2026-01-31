@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Column 4: Newsletter */}
           <div className={styles.column2}>
-            <h3 className={styles.heading}>Get our latest updates,<i className="font-semibold text-bfriends-orange-100"> friends!</i></h3>
+            <h3 className={styles.heading}>Get our latest updates,<i className="font-semibold text-cream-100"> friends!</i></h3>
             {!isSubmitted ? (
               <form className={styles.newsletterForm} onSubmit={handleSubmit}>
                 <div className={styles.newsletterInputWrapper}>

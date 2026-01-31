@@ -1,11 +1,5 @@
-import LandingPage from "@/components/LandingPage/LandingPage";
-import Footer from "@/components/Footer/Footer";
+import HomePage from "@/app/home/page";
 
 export default function Page() {
-  return (
-    <>
-      <LandingPage />
-      <Footer />
-    </>
-  );
+  return <HomePage />;
 }

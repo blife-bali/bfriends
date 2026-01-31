@@ -14,9 +14,9 @@
 }
 
 .SubscriptionForm-module__i73kDa__inputIcon {
-  color: #f6f4ddb3;
   width: 1.25rem;
   height: 1.25rem;
+  color: var(--color-beige-80);
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -24,11 +24,13 @@
 }
 
 .SubscriptionForm-module__i73kDa__inputField {
-  color: #fff;
-  background-color: #ffffff0d;
-  border: 1px solid #fff3;
-  border-radius: .75rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-40);
   width: 100%;
+  color: var(--color-white-100);
+  background-color: #ffffff0d;
+  border-radius: .75rem;
   padding: 1rem 1rem 1rem 3rem;
   transition-property: all;
   transition-duration: .15s;
@@ -36,11 +38,11 @@
 }
 
 .SubscriptionForm-module__i73kDa__inputField::placeholder {
-  color: #ffffff80;
+  color: var(--color-white-80);
 }
 
 .SubscriptionForm-module__i73kDa__inputField:focus {
-  box-shadow: 0 0 0 2px var(--color-bfriends-orange-100);
+  box-shadow: 0 0 0 2px var(--color-cream-100);
   border-color: #0000;
   outline: none;
 }
@@ -62,10 +64,10 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButtonText {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: flex-start;
@@ -78,12 +80,12 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__submitButtonText {
-  background-color: #e5852ce6;
+  background-color: var(--color-cream-120);
 }
 
 .SubscriptionForm-module__i73kDa__submitButtonIcon {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
@@ -96,7 +98,7 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__submitButtonIcon {
-  background-color: #e5852ce6;
+  background-color: var(--color-cream-120);
 }
 
 .SubscriptionForm-module__i73kDa__successContainer {
@@ -114,7 +116,7 @@
 }
 
 .SubscriptionForm-module__i73kDa__successIconWrapper {
-  background-color: var(--color-bfriends-orange-100);
+  background-color: var(--color-cream-100);
   border-radius: 9999px;
   justify-content: center;
   align-items: center;
@@ -127,24 +129,27 @@
 }
 
 .SubscriptionForm-module__i73kDa__successTitle {
-  color: #fff;
-  font-family: var(--font-belleza);
+  color: var(--color-white-100);
+  font-family: var(--font-script);
   margin-bottom: .5rem;
   font-size: clamp(1.1rem, 1rem + .5vw, 1.4rem);
 }
 
 .SubscriptionForm-module__i73kDa__successText {
-  color: #fffc;
-  font-family: var(--font-pontano);
+  color: var(--color-white-100);
+  opacity: .8;
+  font-family: var(--font-sans);
   font-size: clamp(.8rem, .75rem + .5vw, 1rem);
 }
 
 .SubscriptionForm-module__i73kDa__resetButtonText {
-  color: #fff;
+  background-color: var(--color-white-20);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-40);
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
-  background-color: #ffffff1a;
-  border: 1px solid #fff3;
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: flex-start;
@@ -157,13 +162,15 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__resetButtonText {
-  background-color: #fff3;
+  background-color: var(--color-white-40);
 }
 
 .SubscriptionForm-module__i73kDa__resetButtonIcon {
-  color: #fff;
-  background-color: #ffffff1a;
-  border: 1px solid #fff3;
+  background-color: var(--color-white-20);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-40);
+  color: var(--color-white-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
@@ -176,7 +183,7 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__resetButtonIcon {
-  background-color: #fff3;
+  background-color: var(--color-white-40);
 }
 
 /*# sourceMappingURL=components_LandingPage_SubscriptionForm_module_css_bad6b30c._.single.css.map*/

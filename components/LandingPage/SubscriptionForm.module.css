@@ -6,7 +6,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .inputWrapper {
@@ -15,38 +15,38 @@
 
 .inputIcon {
   position: absolute;
-  left: 1rem;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  width: 1.25rem;
-  height: 1.25rem;
-  color: rgba(246, 244, 221, 0.7); /* beige/70 */
+  width: 20px;
+  height: 20px;
+  color: var(--color-beige-80);
 }
 
 .inputField {
   width: 100%;
-  padding-left: 3rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-left: 48px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.05);
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0.75rem;
-  color: white;
+  border-color: var(--color-white-40);
+  border-radius: 12px;
+  color: var(--color-white-100);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .inputField::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-white-80);
 }
 
 .inputField:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-bfriends-orange-100);
+  box-shadow: 0 0 0 2px var(--color-cream-100);
   border-color: transparent;
 }
 
@@ -71,52 +71,52 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: var(--color-bfriends-orange-100);
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem; /* initially rounded */
-  border-bottom-right-radius: 0.75rem;
-  color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: var(--color-cream-100);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px; /* initially rounded */
+  border-bottom-right-radius: 12px;
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .submitButton:hover .submitButtonText {
-  background-color: rgba(229, 133, 44, 0.9);
+  background-color: var(--color-cream-120);
 }
 
 .submitButtonIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: var(--color-bfriends-orange-100);
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: var(--color-cream-100);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  color: var(--color-white-100);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .submitButton:hover .submitButtonIcon {
-  background-color: rgba(229, 133, 44, 0.9);
+  background-color: var(--color-cream-120);
 }
 
 .successContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .successMessage {
@@ -124,35 +124,36 @@
   border-width: 1px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.2);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  border-radius: 16px;
+  padding: 24px;
   text-align: center;
 }
 
 .successIconWrapper {
-  width: 3rem;
-  height: 3rem;
-  background-color: var(--color-bfriends-orange-100);
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-cream-100);
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .successTitle {
-  color: white;
-  font-family: var(--font-belleza);
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
-  margin-bottom: 0.5rem;
+  color: var(--color-white-100);
+  font-family: var(--font-script);
+  font-size: clamp(18px, 16px + 0.5vw, 22px);
+  margin-bottom: 8px;
 }
 
 .successText {
-  color: rgba(255, 255, 255, 0.8);
-  font-family: var(--font-pontano);
-  font-size: clamp(0.8rem, 0.75rem + 0.5vw, 1rem);
+  color: var(--color-white-100);
+  opacity: 0.8;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 12px + 0.5vw, 16px);
 }
 
 .resetButtonText {
@@ -160,50 +161,50 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: var(--color-white-20);
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  color: white;
+  border-color: var(--color-white-40);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .submitButton:hover .resetButtonText {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-white-40);
 }
 
 .resetButtonIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: var(--color-white-20);
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  color: white;
+  border-color: var(--color-white-40);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  color: var(--color-white-100);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .submitButton:hover .resetButtonIcon {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-white-40);
 }

@@ -21,9 +21,9 @@
 }
 
 .HeroContent-module__c7kSgW__heroSubtitle {
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   letter-spacing: .6em;
-  color: var(--color-bfriends-darkbluegray);
+  color: var(--color-blue-100);
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: clamp(.65rem, .6rem + .5vw, .85rem);
@@ -37,8 +37,8 @@
 }
 
 .HeroContent-module__c7kSgW__heroTitle {
-  font-family: var(--font-belleza);
-  color: var(--color-bfriends-darkbluegray);
+  font-family: var(--font-script);
+  color: var(--color-blue-100);
   margin-bottom: 2.5rem;
   font-size: clamp(2rem, 1.5rem + 3vw, 4rem);
   line-height: 1.1;
@@ -59,20 +59,20 @@
 }
 
 .HeroContent-module__c7kSgW__heroHighlight {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
   font-style: italic;
 }
 
 .HeroContent-module__c7kSgW__heroHighlightBorder {
   white-space: nowrap;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
   font-style: italic;
   display: inline-block;
   position: relative;
 }
 
 .HeroContent-module__c7kSgW__heroHighlightUnderline {
-  background-color: var(--color-bfriends-orange-100);
+  background-color: var(--color-cream-100);
   transform-origin: bottom;
   height: 3px;
   position: absolute;
@@ -95,10 +95,12 @@
 }
 
 .HeroContent-module__c7kSgW__scrollButtonText {
-  color: var(--color-bfriends-darkbluegray);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-blue-100);
+  color: var(--color-blue-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
-  border: 1px solid #2e4565;
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: center;
@@ -113,8 +115,8 @@
 .HeroContent-module__c7kSgW__scrollButtonIcon {
   border-style: solid;
   border-width: 1px;
-  border-color: var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-darkbluegray);
+  border-color: var(--color-blue-100);
+  color: var(--color-blue-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;

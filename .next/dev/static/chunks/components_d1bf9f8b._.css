@@ -1,16 +1,16 @@
 /* [project]/components/LandingPage/LandingPage.module.css [app-client] (css) */
 .LandingPage-module__rkQY6G__main {
-  background-color: var(--color-bfriends-beige);
+  background-color: var(--color-beige-100);
   min-height: 100vh;
-  color: var(--color-bfriends-darkbluegray);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  color: var(--color-blue-100);
+  font-family: var(--font-sans);
   position: relative;
   overflow: hidden;
 }
 
 .LandingPage-module__rkQY6G__main::selection {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
 }
 
 .LandingPage-module__rkQY6G__absoluteContainer {
@@ -35,7 +35,7 @@
 }
 
 .LandingPage-module__rkQY6G__container {
-  background-color: var(--color-bfriends-beige);
+  background-color: var(--color-beige-100);
   height: 250vh;
   position: relative;
 }
@@ -265,20 +265,22 @@
 }
 
 .LandingPage-module__rkQY6G__formTitle {
-  font-family: var(--font-belleza);
-  color: #fff;
+  font-family: var(--font-script);
+  color: var(--color-white-100);
   margin-bottom: 1rem;
   font-size: clamp(1.5rem, 1.25rem + 1.5vw, 2.5rem);
 }
 
 .LandingPage-module__rkQY6G__formSubtitle {
-  font-family: var(--font-pontano);
-  color: #ffffffe6;
+  font-family: var(--font-sans);
+  color: var(--color-white-100);
+  opacity: .9;
   margin-bottom: 2rem;
 }
 
 .LandingPage-module__rkQY6G__privacyText {
-  color: #ffffff80;
+  color: var(--color-white-100);
+  opacity: .5;
   margin-top: 1.5rem;
   font-size: clamp(.5rem, .45rem + .4vw, .75rem);
 }
@@ -293,9 +295,9 @@
 }
 
 .LandingPage-module__rkQY6G__footerText {
-  color: var(--color-bfriends-beige);
+  color: var(--color-beige-100);
   font-size: clamp(.5rem, .45rem + .4vw, .75rem);
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   opacity: .8;
 }
 
@@ -322,9 +324,9 @@
 }
 
 .HeroContent-module__c7kSgW__heroSubtitle {
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   letter-spacing: .6em;
-  color: var(--color-bfriends-darkbluegray);
+  color: var(--color-blue-100);
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: clamp(.65rem, .6rem + .5vw, .85rem);
@@ -338,8 +340,8 @@
 }
 
 .HeroContent-module__c7kSgW__heroTitle {
-  font-family: var(--font-belleza);
-  color: var(--color-bfriends-darkbluegray);
+  font-family: var(--font-script);
+  color: var(--color-blue-100);
   margin-bottom: 2.5rem;
   font-size: clamp(2rem, 1.5rem + 3vw, 4rem);
   line-height: 1.1;
@@ -360,20 +362,20 @@
 }
 
 .HeroContent-module__c7kSgW__heroHighlight {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
   font-style: italic;
 }
 
 .HeroContent-module__c7kSgW__heroHighlightBorder {
   white-space: nowrap;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
   font-style: italic;
   display: inline-block;
   position: relative;
 }
 
 .HeroContent-module__c7kSgW__heroHighlightUnderline {
-  background-color: var(--color-bfriends-orange-100);
+  background-color: var(--color-cream-100);
   transform-origin: bottom;
   height: 3px;
   position: absolute;
@@ -396,10 +398,12 @@
 }
 
 .HeroContent-module__c7kSgW__scrollButtonText {
-  color: var(--color-bfriends-darkbluegray);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-blue-100);
+  color: var(--color-blue-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
-  border: 1px solid #2e4565;
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: center;
@@ -414,8 +418,8 @@
 .HeroContent-module__c7kSgW__scrollButtonIcon {
   border-style: solid;
   border-width: 1px;
-  border-color: var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-darkbluegray);
+  border-color: var(--color-blue-100);
+  color: var(--color-blue-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
@@ -443,9 +447,9 @@
 }
 
 .SubscriptionForm-module__i73kDa__inputIcon {
-  color: #f6f4ddb3;
   width: 1.25rem;
   height: 1.25rem;
+  color: var(--color-beige-80);
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -453,11 +457,13 @@
 }
 
 .SubscriptionForm-module__i73kDa__inputField {
-  color: #fff;
-  background-color: #ffffff0d;
-  border: 1px solid #fff3;
-  border-radius: .75rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-40);
   width: 100%;
+  color: var(--color-white-100);
+  background-color: #ffffff0d;
+  border-radius: .75rem;
   padding: 1rem 1rem 1rem 3rem;
   transition-property: all;
   transition-duration: .15s;
@@ -465,11 +471,11 @@
 }
 
 .SubscriptionForm-module__i73kDa__inputField::placeholder {
-  color: #ffffff80;
+  color: var(--color-white-80);
 }
 
 .SubscriptionForm-module__i73kDa__inputField:focus {
-  box-shadow: 0 0 0 2px var(--color-bfriends-orange-100);
+  box-shadow: 0 0 0 2px var(--color-cream-100);
   border-color: #0000;
   outline: none;
 }
@@ -491,10 +497,10 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButtonText {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: flex-start;
@@ -507,12 +513,12 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__submitButtonText {
-  background-color: #e5852ce6;
+  background-color: var(--color-cream-120);
 }
 
 .SubscriptionForm-module__i73kDa__submitButtonIcon {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
@@ -525,7 +531,7 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__submitButtonIcon {
-  background-color: #e5852ce6;
+  background-color: var(--color-cream-120);
 }
 
 .SubscriptionForm-module__i73kDa__successContainer {
@@ -543,7 +549,7 @@
 }
 
 .SubscriptionForm-module__i73kDa__successIconWrapper {
-  background-color: var(--color-bfriends-orange-100);
+  background-color: var(--color-cream-100);
   border-radius: 9999px;
   justify-content: center;
   align-items: center;
@@ -556,24 +562,27 @@
 }
 
 .SubscriptionForm-module__i73kDa__successTitle {
-  color: #fff;
-  font-family: var(--font-belleza);
+  color: var(--color-white-100);
+  font-family: var(--font-script);
   margin-bottom: .5rem;
   font-size: clamp(1.1rem, 1rem + .5vw, 1.4rem);
 }
 
 .SubscriptionForm-module__i73kDa__successText {
-  color: #fffc;
-  font-family: var(--font-pontano);
+  color: var(--color-white-100);
+  opacity: .8;
+  font-family: var(--font-sans);
   font-size: clamp(.8rem, .75rem + .5vw, 1rem);
 }
 
 .SubscriptionForm-module__i73kDa__resetButtonText {
-  color: #fff;
+  background-color: var(--color-white-20);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-40);
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
-  background-color: #ffffff1a;
-  border: 1px solid #fff3;
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: flex-start;
@@ -586,13 +595,15 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__resetButtonText {
-  background-color: #fff3;
+  background-color: var(--color-white-40);
 }
 
 .SubscriptionForm-module__i73kDa__resetButtonIcon {
-  color: #fff;
-  background-color: #ffffff1a;
-  border: 1px solid #fff3;
+  background-color: var(--color-white-20);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-40);
+  color: var(--color-white-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
@@ -605,14 +616,14 @@
 }
 
 .SubscriptionForm-module__i73kDa__submitButton:hover .SubscriptionForm-module__i73kDa__resetButtonIcon {
-  background-color: #fff3;
+  background-color: var(--color-white-40);
 }
 
 /* [project]/components/Footer/Footer.module.css [app-client] (css) */
 .Footer-module__rnk_JG__footer {
-  background-color: var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-beige);
-  font-family: var(--font-pontano);
+  background-color: var(--color-blue-100);
+  color: var(--color-beige-100);
+  font-family: var(--font-sans);
   z-index: 50;
   padding-top: 4rem;
   padding-bottom: 2rem;
@@ -717,7 +728,7 @@
 
 .Footer-module__rnk_JG__address:hover {
   opacity: 1;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 @media (max-width: 768px) {
@@ -727,8 +738,8 @@
 }
 
 .Footer-module__rnk_JG__heading {
-  font-family: var(--font-belleza);
-  color: var(--color-bfriends-beige);
+  font-family: var(--font-script);
+  color: var(--color-beige-100);
   margin-bottom: 1rem;
   font-size: clamp(1.1rem, 1rem + .8vw, 1.4rem);
 }
@@ -756,12 +767,12 @@
 
 .Footer-module__rnk_JG__menuItem:hover {
   opacity: 1;
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 .Footer-module__rnk_JG__bottomBar {
+  border-top: 1px solid var(--color-beige-20);
   opacity: .6;
-  border-top: 1px solid #f6f4dd1a;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
@@ -798,7 +809,7 @@
 }
 
 .Footer-module__rnk_JG__legalLink:hover {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 .Footer-module__rnk_JG__newsletterForm {
@@ -823,18 +834,18 @@
 }
 
 .Footer-module__rnk_JG__newsletterInput {
+  border: 1px solid var(--color-beige-40);
   width: 100%;
-  color: var(--color-bfriends-beige);
-  font-family: var(--font-pontano);
+  color: var(--color-beige-100);
+  font-family: var(--font-sans);
   background-color: #ffffff0d;
-  border: 1px solid #f6f4dd33;
   border-radius: .75rem;
   padding: .75rem 1rem;
   font-size: clamp(.8rem, .75rem + .5vw, 1rem);
 }
 
 .Footer-module__rnk_JG__newsletterInput:focus {
-  border-color: var(--color-bfriends-orange-100);
+  border-color: var(--color-cream-100);
   outline: none;
 }
 
@@ -858,10 +869,10 @@
 }
 
 .Footer-module__rnk_JG__submitButtonText {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
   font-weight: 400;
-  font-family: var(--font-pontano);
+  font-family: var(--font-sans);
   border-radius: .75rem;
   flex: 1;
   justify-content: flex-start;
@@ -875,12 +886,12 @@
 }
 
 .Footer-module__rnk_JG__submitButton:hover .Footer-module__rnk_JG__submitButtonText {
-  background-color: #e5852ce6;
+  background-color: var(--color-cream-120);
 }
 
 .Footer-module__rnk_JG__submitButtonIcon {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
   border-radius: .75rem;
   justify-content: center;
   align-items: center;
@@ -893,14 +904,14 @@
 }
 
 .Footer-module__rnk_JG__submitButton:hover .Footer-module__rnk_JG__submitButtonIcon {
-  background-color: #e5852ce6;
+  background-color: var(--color-cream-120);
 }
 
 .Footer-module__rnk_JG__successMessage {
-  color: var(--color-bfriends-beige);
-  font-family: var(--font-pontano);
+  border: 1px solid var(--color-beige-40);
+  color: var(--color-beige-100);
+  font-family: var(--font-sans);
   background-color: #ffffff0d;
-  border: 1px solid #f6f4dd33;
   border-radius: .75rem;
   align-items: center;
   gap: .75rem;
@@ -910,7 +921,7 @@
 }
 
 .Footer-module__rnk_JG__successIcon {
-  color: var(--color-bfriends-orange-100);
+  color: var(--color-cream-100);
 }
 
 /*# sourceMappingURL=components_d1bf9f8b._.css.map*/

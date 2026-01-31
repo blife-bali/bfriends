@@ -5,6 +5,7 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-blur: initial;
       --tw-brightness: initial;
@@ -25,20 +26,56 @@
 
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: var(--font-hanken-grotesk), ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-green-100: var(--color-green-100);
+    --color-blue-100: var(--color-blue-100);
     --color-white: #fff;
     --spacing: .25rem;
     --font-weight-semibold: 600;
     --aspect-video: 16 / 9;
-    --default-font-family: var(--font-sans);
+    --default-font-family: var(--font-hanken-grotesk), ui-sans-serif, system-ui, sans-serif;
     --default-mono-font-family: var(--font-mono);
-    --font-belleza: var(--font-belleza);
-    --font-pontano: var(--font-pontano-sans);
-    --color-bfriends-beige: #f6f4dd;
-    --color-bfriends-darkbluegray: #2e4365;
-    --color-bfriends-orange-100: #e5852c;
-    --color-bfriends-butter: #f3d58d;
+    --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    --font-script: var(--font-libre-bodoni), Georgia, serif;
+    --color-blue-20: var(--color-blue-20);
+    --color-blue-40: var(--color-blue-40);
+    --color-blue-60: var(--color-blue-60);
+    --color-blue-80: var(--color-blue-80);
+    --color-blue-120: var(--color-blue-120);
+    --color-blue-140: var(--color-blue-140);
+    --color-blue-160: var(--color-blue-160);
+    --color-white-20: var(--color-white-20);
+    --color-white-40: var(--color-white-40);
+    --color-white-60: var(--color-white-60);
+    --color-white-80: var(--color-white-80);
+    --color-white-100: var(--color-white-100);
+    --color-white-120: var(--color-white-120);
+    --color-white-140: var(--color-white-140);
+    --color-white-160: var(--color-white-160);
+    --color-cream-20: var(--color-cream-20);
+    --color-cream-40: var(--color-cream-40);
+    --color-cream-60: var(--color-cream-60);
+    --color-cream-80: var(--color-cream-80);
+    --color-cream-100: var(--color-cream-100);
+    --color-cream-120: var(--color-cream-120);
+    --color-cream-140: var(--color-cream-140);
+    --color-cream-160: var(--color-cream-160);
+    --color-beige-20: var(--color-beige-20);
+    --color-beige-40: var(--color-beige-40);
+    --color-beige-60: var(--color-beige-60);
+    --color-beige-80: var(--color-beige-80);
+    --color-beige-100: var(--color-beige-100);
+    --color-beige-120: var(--color-beige-120);
+    --color-beige-140: var(--color-beige-140);
+    --color-beige-160: var(--color-beige-160);
+    --color-green-20: var(--color-green-20);
+    --color-green-40: var(--color-green-40);
+    --color-green-60: var(--color-green-60);
+    --color-green-80: var(--color-green-80);
+    --color-green-120: var(--color-green-120);
+    --color-green-140: var(--color-green-140);
+    --color-green-160: var(--color-green-160);
   }
 }
 
@@ -389,17 +426,26 @@
     resize: both;
   }
 
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
 
-  .text-bfriends-orange-100 {
-    color: #e5852c;
+  .text-cream-100 {
+    color: var(--color-cream-100);
   }
 
   .text-white {
     color: var(--color-white);
+  }
+
+  .italic {
+    font-style: italic;
   }
 
   .underline {
@@ -458,26 +504,71 @@
 }
 
 :root {
-  --background: #fff;
-  --foreground: #171717;
+  --color-blue: #134053;
+  --color-white: #feffff;
+  --color-cream: #b29a7c;
+  --color-beige: #ecd8bd;
+  --color-green: #1b5551;
+  --color-blue-20: #cfd8dc;
+  --color-blue-40: #a0b2ba;
+  --color-blue-60: #718c98;
+  --color-blue-80: #426675;
+  --color-blue-100: #134053;
+  --color-blue-120: #0f3342;
+  --color-blue-140: #0b2633;
+  --color-blue-160: #071a21;
+  --color-white-20: #feffff;
+  --color-white-40: #feffff;
+  --color-white-60: #feffff;
+  --color-white-80: #feffff;
+  --color-white-100: #feffff;
+  --color-white-120: #cbcccc;
+  --color-white-140: #989999;
+  --color-white-160: #656666;
+  --color-cream-20: #efebe5;
+  --color-cream-40: #e0d7cb;
+  --color-cream-60: #d0c2b0;
+  --color-cream-80: #c1ae96;
+  --color-cream-100: #b29a7c;
+  --color-cream-120: #8e7b63;
+  --color-cream-140: #6a5c4a;
+  --color-cream-160: #473e31;
+  --color-beige-20: #faf7f2;
+  --color-beige-40: #f7efe5;
+  --color-beige-60: #f3e8d7;
+  --color-beige-80: #f0e0ca;
+  --color-beige-100: #ecd8bd;
+  --color-beige-120: #bcac98;
+  --color-beige-140: #8d8171;
+  --color-beige-160: #5e564c;
+  --color-green-20: #d1dddc;
+  --color-green-40: #a0bbbd;
+  --color-green-60: #769997;
+  --color-green-80: #487774;
+  --color-green-100: #1b5551;
+  --color-green-120: #164440;
+  --color-green-140: #103330;
+  --color-green-160: #0b2220;
+  --background: var(--color-white-100);
+  --foreground: var(--color-blue-100);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-blue-160);
+    --foreground: var(--color-white-100);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-pontano-sans), var(--font-belleza), sans-serif;
+  font-family: var(--font-sans);
 }
 
 ::selection {
-  background-color: var(--color-bfriends-orange-100);
-  color: #fff;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
 }
 
 @property --tw-translate-x {
@@ -496,6 +587,12 @@ body {
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 
 @property --tw-font-weight {

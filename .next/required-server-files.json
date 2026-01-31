@@ -52,6 +52,7 @@
         "image/webp"
       ],
       "maximumRedirects": 3,
+      "maximumResponseBody": 50000000,
       "dangerouslyAllowLocalIP": false,
       "dangerouslyAllowSVG": false,
       "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
@@ -99,7 +100,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/Asadomu/Library/Mobile Documents/com~apple~CloudDocs/BLife/BFriends/Webdev/bfriends",
+    "outputFileTracingRoot": "C:\\Users\\Indra\\Documents\\Codes\\BLife\\BFriends\\bfriends",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -146,7 +147,6 @@
       "appNavFailHandling": false,
       "prerenderEarlyExit": true,
       "serverMinification": true,
-      "serverSourceMaps": false,
       "linkNoTouchStart": false,
       "caseSensitiveRoutes": false,
       "dynamicOnHover": false,
@@ -157,7 +157,7 @@
       "proxyPrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 7,
+      "cpus": 15,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptTimeoutInSeconds": 7,
@@ -196,6 +196,7 @@
       "serverComponentsHmrCache": true,
       "staticGenerationMaxConcurrency": 8,
       "staticGenerationMinPagesPerWorker": 25,
+      "transitionIndicator": false,
       "inlineCss": false,
       "useCache": false,
       "globalNotFound": false,
@@ -205,6 +206,9 @@
       "proxyClientMaxBodySize": 10485760,
       "hideLogsAfterAbort": false,
       "mcpServer": true,
+      "turbopackFileSystemCacheForDev": true,
+      "turbopackFileSystemCacheForBuild": false,
+      "turbopackInferModuleSideEffects": false,
       "optimizePackageImports": [
         "lucide-react",
         "date-fns",
@@ -289,28 +293,28 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/Asadomu/Library/Mobile Documents/com~apple~CloudDocs/BLife/BFriends/Webdev/bfriends"
+      "root": "C:\\Users\\Indra\\Documents\\Codes\\BLife\\BFriends\\bfriends"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/Users/Asadomu/Library/Mobile Documents/com~apple~CloudDocs/BLife/BFriends/Webdev/bfriends",
+  "appDir": "C:\\Users\\Indra\\Documents\\Codes\\BLife\\BFriends\\bfriends",
   "relativeAppDir": "",
   "files": [
-    ".next/routes-manifest.json",
-    ".next/server/pages-manifest.json",
-    ".next/build-manifest.json",
-    ".next/prerender-manifest.json",
-    ".next/server/functions-config-manifest.json",
-    ".next/server/middleware-manifest.json",
-    ".next/server/middleware-build-manifest.js",
-    ".next/server/app-paths-manifest.json",
-    ".next/app-path-routes-manifest.json",
-    ".next/server/server-reference-manifest.js",
-    ".next/server/server-reference-manifest.json",
-    ".next/BUILD_ID",
-    ".next/server/next-font-manifest.js",
-    ".next/server/next-font-manifest.json",
-    ".next/required-server-files.json"
+    ".next\\routes-manifest.json",
+    ".next\\server\\pages-manifest.json",
+    ".next\\build-manifest.json",
+    ".next\\prerender-manifest.json",
+    ".next\\server\\functions-config-manifest.json",
+    ".next\\server\\middleware-manifest.json",
+    ".next\\server\\middleware-build-manifest.js",
+    ".next\\server\\app-paths-manifest.json",
+    ".next\\app-path-routes-manifest.json",
+    ".next\\server\\server-reference-manifest.js",
+    ".next\\server\\server-reference-manifest.json",
+    ".next\\BUILD_ID",
+    ".next\\server\\next-font-manifest.js",
+    ".next\\server\\next-font-manifest.json",
+    ".next\\required-server-files.json"
   ],
   "ignore": []
 }

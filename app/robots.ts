@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://bfriends.life/sitemap.xml', // Update domain when deployed
+    sitemap: 'https://bfriends.id/sitemap.xml',
   }
 }
 

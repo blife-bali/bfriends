@@ -1,0 +1,66 @@
+/* [project]/app/home/hero/Hero.module.css [app-client] (css) */
+.Hero-module__hfJxlq__hero {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.Hero-module__hfJxlq__background {
+  background-image: url("/images/yoga-sess-2.jpg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.Hero-module__hfJxlq__overlay {
+  background-color: #0000001a;
+  position: absolute;
+  inset: 0;
+}
+
+.Hero-module__hfJxlq__content {
+  z-index: 1;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1440px;
+  padding: 64px;
+  display: flex;
+  position: relative;
+}
+
+.Hero-module__hfJxlq__title {
+  font-family: var(--font-display);
+  letter-spacing: -.04em;
+  color: var(--color-white-100);
+  max-width: 688px;
+  margin: 0;
+  font-size: clamp(88px, 5vw, 96px);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.Hero-module__hfJxlq__title em {
+  font-family: var(--font-script);
+  font-style: italic;
+}
+
+.Hero-module__hfJxlq__buttonGroup {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.Hero-module__hfJxlq__buttonGroup .Hero-module__hfJxlq__button {
+  --button-border-color: var(--color-cream-100, #f5f0e8);
+}
+
+/*# sourceMappingURL=app_home_hero_Hero_module_12eedb6a.css.map*/

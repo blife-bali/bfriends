@@ -1,6 +1,6 @@
 .buttonWrapper {
   display: inline-flex;
-  align-items: stretch;
+  align-items: center;
   cursor: pointer;
   border: none;
   background: none;
@@ -9,76 +9,150 @@
   transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.buttonWrapper:hover {
-  transform: scale(1.02);
-}
-
 .buttonWrapper:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }
 
-/* Primary Variant */
+/* Primary Variant: hug width, pill, fill (adjustable via --button-primary-fill) */
 .primary {
-min-width: 180px;
-}
-
-.primary .textPart {
-  text-align: left;
-  justify-content: flex-start;
-  background-color: var(--color-bfriends-orange-100);
-  color: white;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-}
-
-.primary:hover .textPart {
-  background-color: rgba(229, 133, 44, 0.9);
-}
-
-.primary .iconPart {
-  background-color: var(--color-bfriends-orange-100);
-  color: white;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
+  --button-primary-fill: var(--color-cream-100);
+  width: fit-content;
+  height: 40px;
+  padding: 8px 20px 8px 24px;
+  border-radius: 999px;
+  background-color: var(--button-primary-fill);
+  border: none;
+  gap: 4px;
 }
 
 .primary:hover .iconPart {
-  background-color: rgba(229, 133, 44, 0.9);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .primary {
+    height: 32px;
+  }
+}
+
+.primary .textPart {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 3vw, 14px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-white-100);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.primary .iconPart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  color: var(--color-white-100);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primary .iconPart svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Border Variant: background 10% opacity, border 50% opacity (color via --button-border-color) */
+.border {
+  --button-border-color: var(--button-primary-fill, var(--color-cream-100));
+  width: fit-content;
+  background-color: color-mix(in srgb, var(--button-border-color) 10%, transparent);
+  height: 40px;
+  padding: 8px 20px 8px 24px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--button-border-color) 50%, transparent);
+  gap: 4px;
+}
+
+.border:hover .iconPart {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .border {
+    height: 32px;
+  }
+}
+
+.border .textPart {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 3vw, 14px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--button-border-color);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  
+}
+
+.border .iconPart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  color: var(--button-border-color);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.border .iconPart svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Secondary Variant */
 .secondary .textPart {
-  border: 1px solid var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-darkbluegray);
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
+  border: 1px solid var(--color-blue-100);
+  color: var(--color-blue-100);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .secondary .iconPart {
-  border: 1px solid var(--color-bfriends-darkbluegray);
-  color: var(--color-bfriends-darkbluegray);
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
+  border: 1px solid var(--color-blue-100);
+  color: var(--color-blue-100);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
-/* Common Text/Icon Styles for Primary/Secondary */
-.textPart {
+/* Common Text/Icon Styles (secondary and others) */
+.primary .textPart,
+.border .textPart {
+  flex: 0 0 auto;
+}
+
+.secondary .textPart {
   flex: 1 1 0%;
+}
+
+.textPart {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centered by default, or flex-start? Sub form was flex-start */
-  padding: 0.5rem 1rem;
-  font-family: var(--font-pontano);
-  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
+  justify-content: center;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 13px + 0.5vw, 16px);
   font-weight: 400;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
@@ -88,7 +162,7 @@ min-width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 16px;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -105,12 +179,12 @@ min-width: 180px;
 .underline {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-pontano);
-  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
-  color: var(--color-bfriends-darkbluegray);
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 13px + 0.5vw, 16px);
+  color: var(--color-blue-100);
   padding-bottom: 2px;
-  border-bottom: 1px solid var(--color-bfriends-darkbluegray);
+  border-bottom: 1px solid var(--color-blue-100);
   transition: opacity 0.2s;
   border-radius: 0; /* Override wrapper defaults if needed */
 }
@@ -124,10 +198,10 @@ min-width: 180px;
 .text {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-inter), sans-serif; /* Navbar uses Inter */
-  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1rem);
-  color: var(--color-bfriends-darkbluegray);
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 13px + 0.5vw, 16px);
+  color: var(--color-blue-100);
   transition: opacity 0.2s;
 }
 

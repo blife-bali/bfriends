@@ -1,35 +1,135 @@
 @import "tailwindcss";
 
+/* ========== Base colors ========== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-blue: #134053;
+  --color-white: #FEFFFF;
+  --color-cream: #B29A7C;
+  --color-beige: #ECD8BD;
+  --color-green: #1B5551;
+
+  /* Below 100: color at X% opacity on white #FEFFFF */
+  /* Blue variants */
+  --color-blue-20: #CFD8DC;
+  --color-blue-40: #A0B2BA;
+  --color-blue-60: #718C98;
+  --color-blue-80: #426675;
+  --color-blue-100: #134053;
+  --color-blue-120: #0F3342;
+  --color-blue-140: #0B2633;
+  --color-blue-160: #071A21;
+
+  /* White variants (120–160: black overlay on white) */
+  --color-white-20: #FEFFFF;
+  --color-white-40: #FEFFFF;
+  --color-white-60: #FEFFFF;
+  --color-white-80: #FEFFFF;
+  --color-white-100: #FEFFFF;
+  --color-white-120: #CBCCCC;
+  --color-white-140: #989999;
+  --color-white-160: #656666;
+
+  /* Cream variants */
+  --color-cream-20: #EFEBE5;
+  --color-cream-40: #E0D7CB;
+  --color-cream-60: #D0C2B0;
+  --color-cream-80: #C1AE96;
+  --color-cream-100: #B29A7C;
+  --color-cream-120: #8E7B63;
+  --color-cream-140: #6A5C4A;
+  --color-cream-160: #473E31;
+
+  /* Beige variants */
+  --color-beige-20: #FAF7F2;
+  --color-beige-40: #F7EFE5;
+  --color-beige-60: #F3E8D7;
+  --color-beige-80: #F0E0CA;
+  --color-beige-100: #ECD8BD;
+  --color-beige-120: #BCAC98;
+  --color-beige-140: #8D8171;
+  --color-beige-160: #5E564C;
+
+  /* Green variants */
+  --color-green-20: #D1DDDC;
+  --color-green-40: #A0BBBD;
+  --color-green-60: #769997;
+  --color-green-80: #487774;
+  --color-green-100: #1B5551;
+  --color-green-120: #164440;
+  --color-green-140: #103330;
+  --color-green-160: #0B2220;
+
+  /* Semantic aliases */
+  --background: var(--color-white-100);
+  --foreground: var(--color-blue-100);
 }
 
 @theme inline {
+  /* Fonts: display = Geist, script = Libre Bodoni, sans = Hanken Grotesk */
+  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-libre-bodoni), Georgia, serif;
+  --font-sans: var(--font-hanken-grotesk), ui-sans-serif, system-ui, sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-belleza: var(--font-belleza);
-  --font-pontano: var(--font-pontano-sans);
-  --color-bfriends-beige: #F6F4DD;
-  --color-bfriends-darkbluegray: #2E4365;
-  --color-bfriends-orange-100: #E5852C;
-  --color-bfriends-butter: #F3D58D;
+
+  /* Expose all color variants for Tailwind */
+  --color-blue-20: var(--color-blue-20);
+  --color-blue-40: var(--color-blue-40);
+  --color-blue-60: var(--color-blue-60);
+  --color-blue-80: var(--color-blue-80);
+  --color-blue-100: var(--color-blue-100);
+  --color-blue-120: var(--color-blue-120);
+  --color-blue-140: var(--color-blue-140);
+  --color-blue-160: var(--color-blue-160);
+  --color-white-20: var(--color-white-20);
+  --color-white-40: var(--color-white-40);
+  --color-white-60: var(--color-white-60);
+  --color-white-80: var(--color-white-80);
+  --color-white-100: var(--color-white-100);
+  --color-white-120: var(--color-white-120);
+  --color-white-140: var(--color-white-140);
+  --color-white-160: var(--color-white-160);
+  --color-cream-20: var(--color-cream-20);
+  --color-cream-40: var(--color-cream-40);
+  --color-cream-60: var(--color-cream-60);
+  --color-cream-80: var(--color-cream-80);
+  --color-cream-100: var(--color-cream-100);
+  --color-cream-120: var(--color-cream-120);
+  --color-cream-140: var(--color-cream-140);
+  --color-cream-160: var(--color-cream-160);
+  --color-beige-20: var(--color-beige-20);
+  --color-beige-40: var(--color-beige-40);
+  --color-beige-60: var(--color-beige-60);
+  --color-beige-80: var(--color-beige-80);
+  --color-beige-100: var(--color-beige-100);
+  --color-beige-120: var(--color-beige-120);
+  --color-beige-140: var(--color-beige-140);
+  --color-beige-160: var(--color-beige-160);
+  --color-green-20: var(--color-green-20);
+  --color-green-40: var(--color-green-40);
+  --color-green-60: var(--color-green-60);
+  --color-green-80: var(--color-green-80);
+  --color-green-100: var(--color-green-100);
+  --color-green-120: var(--color-green-120);
+  --color-green-140: var(--color-green-140);
+  --color-green-160: var(--color-green-160);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-blue-160);
+    --foreground: var(--color-white-100);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-pontano-sans), var(--font-belleza), sans-serif;
+  font-family: var(--font-sans);
 }
 
 ::selection {
-  background-color: var(--color-bfriends-orange-100);
-  color: white;
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
 }
