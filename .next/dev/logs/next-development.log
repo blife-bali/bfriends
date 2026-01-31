@@ -1,35 +1,785 @@
-[00:00:01.585] Server  LOG     ✓ Ready in 1143ms
-[00:00:02.453] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:02.610] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:02.610] Browser WARN    Image with src "/images/icons/logo-bfriends ver.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:10.766] Server  LOG     ✓ Compiled in 125ms
-[00:05:23.610] Server  LOG     ✓ Compiled in 31ms
-[00:05:27.136] Server  LOG     ✓ Compiled in 29ms
-[00:07:12.706] Browser ERROR   ./app/home/hero/Hero.tsx:12:97
-Parsing ecmascript source code failed
-  10 |         <h1 className={styles.title}>Which Friend Do You Need Today?</h1>
-  11 |         <div className={styles.buttonGroup}>
-> 12 |           <Button variant="border" className={styles.button} color="var(--color-white-100)href="#learn-more">
-     |                                                                                                 ^
-  13 |             Learn More
-  14 |           </Button>
-  15 |           <Button variant="border" className={styles.button} color="var(--color-white-100)" href="#reserve">
+[00:00:01.642] Server  LOG     ✓ Ready in 1180ms
+[00:00:06.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:49.827] Server  LOG     ✓ Compiled in 29ms
+[00:00:58.001] Server  LOG     ✓ Compiled in 30ms
+[00:02:42.497] Server  LOG     ✓ Compiled in 68ms
+[00:02:42.887] Server  LOG     ✓ Compiled in 230ms
+[00:02:43.310] Browser ERROR   ./components/Navbar/Navbar.module.css:15:2
+Parsing CSS source code failed
+  13 |   transition: background-color 0.3s ease, color 0.3s ease;
+  14 | }
+> 15 | .
+     |  ^
+  16 |
+  17 | .navbar.default {
+  18 |   background-color: transparent;
 
-Expected '</', got '#'
+Expected identifier in class selector, got WhiteSpace("\r\n\r\n")
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:02:43.310] Browser ERROR   ./components/Navbar/Navbar.module.css:15:2
+Parsing CSS source code failed
+  13 |   transition: background-color 0.3s ease, color 0.3s ease;
+  14 | }
+> 15 | .
+     |  ^
+  16 |
+  17 | .navbar.default {
+  18 |   background-color: transparent;
+
+Expected identifier in class selector, got WhiteSpace("\r\n\r\n")
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:02:43.310] Browser ERROR   ./components/Navbar/Navbar.module.css:15:2
+Parsing CSS source code failed
+  13 |   transition: background-color 0.3s ease, color 0.3s ease;
+  14 | }
+> 15 | .
+     |  ^
+  16 |
+  17 | .navbar.default {
+  18 |   background-color: transparent;
+
+Expected identifier in class selector, got WhiteSpace("\r\n\r\n")
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:02:47.896] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/intro-studio.jpg" "received" null
+[00:02:47.898] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/intro-meditation.jpg" "received" null
+[00:02:48.776] Server  LOG     ✓ Compiled in 26ms
+[00:03:51.865] Server  LOG     ✓ Compiled in 31ms
+[00:03:52.318] Browser ERROR   ./components/Navbar/Navbar.tsx:78:1
+Parsing ecmascript source code failed
+  76 |     </nav>
+  77 |   );
+> 78 | }
+     | ^
+  79 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
 
 Import trace:
   Server Component:
-    ./app/home/hero/Hero.tsx
+    ./components/Navbar/Navbar.tsx
+    ./app/layout.tsx
+[00:04:17.568] Server  LOG     ✓ Compiled in 24ms
+[00:04:23.747] Server  LOG     ✓ Compiled in 33ms
+[00:04:25.437] Server  LOG     ✓ Compiled in 22ms
+[00:04:58.410] Server  LOG     ✓ Compiled in 25ms
+[00:05:21.072] Server  LOG     ✓ Compiled in 23ms
+[00:05:29.850] Server  LOG     ✓ Compiled in 24ms
+[00:05:31.210] Server  LOG     ✓ Compiled in 24ms
+[00:08:36.893] Server  LOG     ✓ Compiled in 42ms
+[00:08:56.610] Server  LOG     ✓ Compiled in 34ms
+[00:09:06.903] Server  LOG     ✓ Compiled in 22ms
+[00:09:08.022] Server  LOG     ✓ Compiled in 25ms
+[00:10:13.294] Server  LOG     ✓ Compiled in 29ms
+[00:10:55.484] Server  LOG     ✓ Compiled in 26ms
+[00:11:11.775] Server  LOG     ✓ Compiled in 23ms
+[00:11:16.772] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:16.817] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/intro-studio.jpg" "received" null
+[00:11:16.830] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/intro-meditation.jpg" "received" null
+[00:12:33.416] Server  LOG     ✓ Compiled in 28ms
+[00:12:39.907] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/intro-studio.jpg" "received" null
+[00:12:39.930] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:39.931] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/intro-meditation.jpg" "received" null
+[00:14:03.045] Server  LOG     ✓ Compiled in 24ms
+[00:14:13.157] Server  LOG     ✓ Compiled in 21ms
+[00:14:31.553] Server  LOG     ✓ Compiled in 34ms
+[00:14:32.966] Server  LOG     ✓ Compiled in 26ms
+[00:14:36.921] Server  LOG     ✓ Compiled in 23ms
+[00:15:05.319] Server  LOG     ✓ Compiled in 24ms
+[00:15:49.056] Server  LOG     ✓ Compiled in 24ms
+[00:15:59.204] Server  LOG     ✓ Compiled in 21ms
+[00:17:12.417] Server  LOG     ✓ Compiled in 43ms
+[00:17:16.126] Server  LOG     ✓ Compiled in 28ms
+[00:17:21.641] Server  LOG     ✓ Compiled in 22ms
+[00:17:24.956] Server  LOG     ✓ Compiled in 23ms
+[00:17:40.096] Server  LOG     ✓ Compiled in 30ms
+[00:17:44.018] Server  LOG     ✓ Compiled in 24ms
+[00:17:52.842] Server  LOG     ✓ Compiled in 37ms
+[00:18:06.370] Server  LOG     ✓ Compiled in 25ms
+[00:18:17.121] Server  LOG     ✓ Compiled in 23ms
+[00:18:18.067] Server  LOG     ✓ Compiled in 26ms
+[00:18:34.664] Server  LOG     ✓ Compiled in 33ms
+[00:18:37.636] Server  LOG     ✓ Compiled in 25ms
+[00:18:45.723] Server  LOG     ✓ Compiled in 30ms
+[00:18:49.401] Server  LOG     ✓ Compiled in 22ms
+[00:19:04.002] Server  LOG     ✓ Compiled in 29ms
+[00:19:04.587] Server  LOG     ✓ Compiled in 26ms
+[00:19:12.299] Server  LOG     ✓ Compiled in 27ms
+[00:19:22.775] Server  LOG     ✓ Compiled in 27ms
+[00:19:23.712] Server  LOG     ✓ Compiled in 27ms
+[00:20:15.980] Server  LOG     ✓ Compiled in 34ms
+[00:20:16.438] Server  LOG     ✓ Compiled in 32ms
+[00:20:38.322] Server  LOG     ✓ Compiled in 21ms
+[00:21:41.431] Server  LOG     ✓ Compiled in 36ms
+[00:21:52.886] Server  LOG     ✓ Compiled in 23ms
+[00:21:59.055] Server  LOG     ✓ Compiled in 39ms
+[00:21:59.323] Browser ERROR   ./components/Navbar/Navbar.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Navbar\Navbar.module.css:89:1: Unclosed block
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:575:22)]
+    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:335:35)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:476:10)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:22:08.980] Server  LOG     ✓ Compiled in 43ms
+[00:22:10.868] Server  LOG     ✓ Compiled in 36ms
+[00:22:17.636] Server  LOG     ✓ Compiled in 34ms
+[00:23:00.807] Server  LOG     ✓ Compiled in 35ms
+[00:23:22.192] Server  LOG     ✓ Compiled in 29ms
+[00:23:25.705] Server  LOG     ✓ Compiled in 29ms
+[00:23:29.105] Server  LOG     ✓ Compiled in 30ms
+[00:23:33.283] Server  LOG     ✓ Compiled in 35ms
+[00:23:37.450] Server  LOG     ✓ Compiled in 35ms
+[00:23:40.767] Server  LOG     ✓ Compiled in 34ms
+[00:23:42.849] Server  LOG     ✓ Compiled in 29ms
+[00:23:45.898] Server  LOG     ✓ Compiled in 45ms
+[00:23:51.257] Server  LOG     ✓ Compiled in 27ms
+[00:23:54.761] Server  LOG     ✓ Compiled in 31ms
+[00:24:03.311] Browser ERROR   ./app/home/intro/Intro.tsx:13:29
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |             <emA <em>journey</em> to become your own friend. BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                             ^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
     ./app/home/page.tsx
     ./app/page.tsx
-[00:07:44.462] Server  LOG     ✓ Compiled in 27ms
-[00:07:51.776] Server  LOG     ✓ Compiled in 30ms
-[00:07:56.481] Server  LOG     ✓ Compiled in 26ms
-[00:07:58.591] Server  LOG     ✓ Compiled in 25ms
-[00:07:59.755] Server  LOG     ✓ Compiled in 44ms
-[00:08:00.706] Browser ERROR   ./components/ui/Button/Button.module.css
+[00:24:03.311] Browser ERROR   ./app/home/intro/Intro.tsx:13:30
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |             <emA <em>journey</em> to become your own friend. BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Unknown regular expression flags.
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:24:07.322] Browser ERROR   ./app/home/intro/Intro.tsx:14:16
+Parsing ecmascript source code failed
+  12 |           <h2 className={styles.heading}>
+  13 |             <em> A <em>journey</em> to become your own friend. BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+> 14 |           </h2>
+     |                ^
+> 15 |           <p className={styles.description}>
+     | ^^^^^^^^^^^
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+  17 |           </p>
+  18 |           <Button
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:24:14.315] Browser ERROR   ./app/home/intro/Intro.tsx:13:40
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |             <em> A <script>journey</em> to become your own friend. BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:24:16.316] Browser ERROR   ./app/home/intro/Intro.tsx:14:16
+Parsing ecmascript source code failed
+  12 |           <h2 className={styles.heading}>
+  13 |             <em> A <script>journey</script> to become your own friend. BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+> 14 |           </h2>
+     |                ^
+> 15 |           <p className={styles.description}>
+     | ^^^^^^^^^^^
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+  17 |           </p>
+  18 |           <Button
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:24:21.316] Browser ERROR   ./app/home/intro/Intro.tsx:13:114
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |             <em> A <script>journey</script> to become your own friend. <emBFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                                                                                                                  ^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Expected '</', got ','
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:25:00.489] Server  LOG     ✓ Compiled in 34ms
+[00:25:01.514] Server  LOG     ✓ Compiled in 30ms
+[00:25:16.785] Server  LOG     ✓ Compiled in 29ms
+[00:25:24.585] Server  LOG     ✓ Compiled in 37ms
+[00:25:30.629] Server  LOG     ✓ Compiled in 34ms
+[00:25:33.381] Server  LOG     ✓ Compiled in 27ms
+[00:25:42.320] Browser ERROR   ./app/home/intro/Intro.tsx:13:71
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |            A <script>journey</script> to become your own friend. </em>BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:25:46.316] Browser ERROR   ./app/home/intro/Intro.tsx:13:34
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |            A <em>journey</script> to become your own friend. </em>BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:25:48.323] Browser ERROR   ./app/home/intro/Intro.tsx:13:63
+Parsing ecmascript source code failed
+  11 |         <div className={styles.textColumn}>
+  12 |           <h2 className={styles.heading}>
+> 13 |            A <em>journey</em> to become your own friend. </em>BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>.
+     |                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |           </h2>
+  15 |           <p className={styles.description}>
+  16 |             Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:25:52.341] Server  LOG     ✓ Compiled in 49ms
+[00:27:20.488] Server  LOG     ✓ Compiled in 35ms
+[00:27:27.849] Server  LOG     ✓ Compiled in 61ms
+[00:27:31.510] Server  LOG     ✓ Compiled in 266ms
+[00:27:45.623] Server  LOG     ✓ Compiled in 60ms
+[00:27:57.476] Server  LOG     ✓ Compiled in 32ms
+[00:27:58.312] Server  LOG     ✓ Compiled in 34ms
+[00:28:33.290] Server  LOG     ✓ Compiled in 32ms
+[00:28:35.854] Server  LOG     ✓ Compiled in 30ms
+[00:28:42.779] Server  LOG     ✓ Compiled in 50ms
+[00:28:43.317] Browser ERROR   ./app/home/intro/Intro.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:75:14: Missed semicolon
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:51:1: Unclosed block
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:575:22)]
+    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:335:35)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:476:10)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.module.css
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:28:50.445] Server  LOG     ✓ Compiled in 27ms
+[00:28:54.102] Server  LOG     ✓ Compiled in 35ms
+[00:28:58.471] Server  LOG     ✓ Compiled in 42ms
+[00:28:59.232] Server  LOG     ✓ Compiled in 27ms
+[00:29:07.484] Server  LOG     ✓ Compiled in 25ms
+[00:29:10.896] Server  LOG     ✓ Compiled in 27ms
+[00:29:58.312] Browser ERROR   ./app/home/intro/Intro.tsx:59:1
+Parsing ecmascript source code failed
+  57 |     </section>
+  58 |   );
+> 59 | }
+     | ^
+  60 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:30:14.886] Server  LOG     ✓ Compiled in 26ms
+[00:30:19.994] Server  LOG     ✓ Compiled in 23ms
+[00:30:25.380] Server  LOG     ✓ Compiled in 23ms
+[00:30:29.536] Server  LOG     ✓ Compiled in 24ms
+[00:30:58.003] Server  LOG     ✓ Compiled in 29ms
+[00:30:58.447] Server  LOG     ✓ Compiled in 24ms
+[00:30:59.409] Server  LOG     ✓ Compiled in 27ms
+[00:31:13.014] Server  LOG     ✓ Compiled in 20ms
+[00:31:43.547] Server  LOG     ✓ Compiled in 27ms
+[00:31:48.964] Server  LOG     ✓ Compiled in 24ms
+[00:31:49.314] Browser ERROR   ./app/home/intro/Intro.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:12:10: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.module.css
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:32:19.223] Server  LOG     ✓ Compiled in 36ms
+[00:32:26.263] Server  LOG     ✓ Compiled in 37ms
+[00:32:40.050] Server  LOG     ✓ Compiled in 44ms
+[00:32:50.997] Server  LOG     ✓ Compiled in 34ms
+[00:33:01.181] Server  LOG     ✓ Compiled in 59ms
+[00:33:31.673] Server  LOG     ✓ Compiled in 34ms
+[00:33:32.805] Server  LOG     ✓ Compiled in 29ms
+[00:33:39.976] Server  LOG     ✓ Compiled in 34ms
+[00:33:46.497] Server  LOG     ✓ Compiled in 34ms
+[00:33:47.617] Server  LOG     ✓ Compiled in 35ms
+[00:34:20.752] Server  LOG     ✓ Compiled in 39ms
+[00:34:24.602] Server  LOG     ✓ Compiled in 31ms
+[00:34:25.960] Server  LOG     ✓ Compiled in 34ms
+[00:35:43.210] Server  LOG     ✓ Compiled in 185ms
+[00:35:43.775] Server  LOG     ✓ Compiled in 45ms
+[00:35:44.608] Server  LOG     ✓ Compiled in 41ms
+[00:35:46.750] Server  LOG     ✓ Compiled in 57ms
+[00:35:49.380] Server  LOG     ✓ Compiled in 36ms
+[00:37:31.738] Server  LOG     ✓ Compiled in 35ms
+[00:37:48.236] Server  LOG     ✓ Compiled in 38ms
+[00:37:50.704] Server  LOG     ✓ Compiled in 32ms
+[00:38:02.579] Server  LOG     ✓ Compiled in 35ms
+[00:38:21.240] Server  LOG     ✓ Compiled in 41ms
+[00:38:24.050] Server  LOG     ✓ Compiled in 31ms
+[00:38:41.707] Server  LOG     ✓ Compiled in 31ms
+[00:39:03.231] Server  LOG     ✓ Compiled in 51ms
+[00:39:04.323] Browser ERROR   ./app/home/intro/Intro.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:19:3: Unknown word padding
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.module.css
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:39:07.593] Server  LOG     ✓ Compiled in 30ms
+[00:40:10.920] Server  LOG     ✓ Compiled in 32ms
+[00:40:24.443] Server  LOG     ✓ Compiled in 28ms
+[00:40:44.052] Server  LOG     ✓ Compiled in 24ms
+[00:40:59.733] Server  LOG     ✓ Compiled in 50ms
+[00:41:00.159] Server  LOG     ✓ Compiled in 26ms
+[00:41:22.701] Server  LOG     ✓ Compiled in 28ms
+[00:41:27.088] Server  LOG     ✓ Compiled in 23ms
+[00:41:43.688] Server  LOG     ✓ Compiled in 35ms
+[00:41:44.641] Server  LOG     ✓ Compiled in 27ms
+[00:43:04.945] Server  LOG     ✓ Compiled in 30ms
+[00:43:22.620] Server  LOG     ✓ Compiled in 27ms
+[00:43:30.735] Server  LOG     ✓ Compiled in 28ms
+[00:43:51.229] Server  LOG     ✓ Compiled in 32ms
+[00:44:28.974] Server  LOG     ✓ Compiled in 29ms
+[00:45:31.412] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:50.318] Browser ERROR   uncaughtError: Error: Image with src "/images/yoga-sess-2.jpg.jpeg" is missing required "width" property.
+[00:46:51.581] Server  ERROR   ⨯ Error: Image with src "/images/yoga-sess-2.jpg.jpeg" is missing required "width" property.
+[00:46:51.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:52.317] Browser ERROR   uncaughtError: Error: Image with src "/images/yoga-sess-2.jpg.jpeg" is missing required "width" property.
+[00:46:59.686] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:47.465] Server  LOG     ✓ Compiled in 48ms
+[00:49:48.237] Server  LOG     ✓ Compiled in 37ms
+[00:49:49.070] Server  LOG     ✓ Compiled in 30ms
+[00:49:50.270] Server  LOG     ✓ Compiled in 35ms
+[00:51:09.211] Server  LOG     ✓ Compiled in 23ms
+[00:51:26.600] Server  LOG     ✓ Compiled in 28ms
+[00:52:31.265] Server  LOG     ✓ Compiled in 28ms
+[00:52:32.321] Browser ERROR   ./components/Navbar/Navbar.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Navbar\Navbar.module.css:30:3: Unknown word border
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:52:38.532] Server  LOG     ✓ Compiled in 43ms
+[00:53:00.786] Server  LOG     ✓ Compiled in 43ms
+[00:53:05.016] Server  LOG     ✓ Compiled in 33ms
+[00:53:09.155] Server  LOG     ✓ Compiled in 36ms
+[00:53:10.770] Server  LOG     ✓ Compiled in 26ms
+[00:53:24.487] Server  LOG     ✓ Compiled in 36ms
+[00:53:27.741] Server  LOG     ✓ Compiled in 40ms
+[00:53:35.759] Server  LOG     ✓ Compiled in 47ms
+[00:54:56.587] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "95" which is not configured in images.qualities [75]. Please update your config to [75, 95].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:54:57.423] Server  LOG     ✓ Compiled in 45ms
+[00:55:00.981] Server  LOG     ✓ Compiled in 39ms
+[00:55:24.592] Server  LOG     ✓ Compiled in 33ms
+[00:56:15.391] Server  LOG     ✓ Compiled in 25ms
+[00:56:17.821] Server  LOG     ✓ Compiled in 25ms
+[00:56:18.926] Server  LOG     ✓ Compiled in 35ms
+[00:56:35.332] Server  LOG     ✓ Compiled in 36ms
+[00:56:35.937] Server  LOG     ✓ Compiled in 32ms
+[00:56:41.135] Server  LOG     ✓ Compiled in 39ms
+[00:57:49.910] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "95" which is not configured in images.qualities [75]. Please update your config to [75, 95].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:57:50.283] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:50.430] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "95" which is not configured in images.qualities [75]. Please update your config to [75, 95].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:58:43.312] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:58:44.144] Server  LOG     ✓ Compiled in 79ms
+[00:58:54.017] Server  LOG     ✓ Compiled in 55ms
+[01:00:23.387] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:00:23.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:24.056] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:00:27.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:28.171] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:00:36.496] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:00:36.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:37.160] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:03:17.435] Server  LOG     ✓ Compiled in 30ms
+[01:04:19.311] Server  LOG     ✓ Compiled in 553ms
+[01:04:20.316] Browser ERROR   ./components/Navbar/Navbar.module.css:37:2
+Parsing CSS source code failed
+  35 |   justify-content: flex-start;
+  36 | }
+> 37 | .
+     |  ^
+  38 |
+  39 | .logoLink {
+  40 |   display: flex;
+
+Expected identifier in class selector, got WhiteSpace("\n\n")
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[01:04:29.320] Browser ERROR   ./components/Navbar/Navbar.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Navbar\Navbar.module.css:47:3: Unknown word backg
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[01:04:32.156] Server  LOG     ✓ Compiled in 27ms
+[01:04:46.702] Server  LOG     ✓ Compiled in 546ms
+[01:04:54.074] Server  LOG     ✓ Compiled in 582ms
+[01:06:10.187] Server  LOG     ✓ Compiled in 32ms
+[01:06:41.371] Server  LOG     ✓ Compiled in 29ms
+[01:06:48.271] Server  LOG     ✓ Compiled in 25ms
+[01:06:59.934] Server  LOG     ✓ Compiled in 28ms
+[01:07:00.315] Browser ERROR   ./components/Navbar/Navbar.module.css:39:21
+Parsing CSS source code failed
+  37 | .default .left {
+  38 |   height: 72px;
+> 39 |   background-color: );
+     |                     ^
+  40 | }
+  41 | .logoLink {
+  42 |   display: flex;
+
+Unexpected token CloseParenthesis
+
+Import traces:
+  Client Component Browser:
+    ./components/Navbar/Navbar.module.css [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Client Component Browser]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Navbar/Navbar.module.css [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Client Component SSR]
+    ./components/Navbar/Navbar.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[01:07:27.213] Server  LOG     ✓ Compiled in 26ms
+[01:07:29.096] Server  LOG     ✓ Compiled in 25ms
+[01:07:40.341] Server  LOG     ✓ Compiled in 26ms
+[01:07:43.563] Server  LOG     ✓ Compiled in 26ms
+[01:07:53.859] Server  LOG     ✓ Compiled in 28ms
+[01:08:01.169] Server  LOG     ✓ Compiled in 22ms
+[01:08:05.180] Server  LOG     ✓ Compiled in 22ms
+[01:08:41.065] Server  LOG     ✓ Compiled in 24ms
+[01:08:41.476] Server  LOG     ✓ Compiled in 26ms
+[01:09:11.066] Server  LOG     ✓ Compiled in 31ms
+[01:09:27.465] Server  LOG     ✓ Compiled in 24ms
+[01:10:32.995] Server  LOG     ✓ Compiled in 25ms
+[01:11:12.879] Server  LOG     ✓ Compiled in 20ms
+[01:12:07.788] Server  LOG     ✓ Compiled in 37ms
+[01:12:09.933] Server  LOG     ✓ Compiled in 31ms
+[01:12:27.310] Browser WARN    Image with src "/images/venue/.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:12:33.310] Browser WARN    Image with src "/images/venue/couplr-1.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:12:36.321] Browser WARN    Image with src "/images/venue/couplr-1.jpgeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:12:39.316] Browser ERROR   ./app/home/intro/Intro.tsx:39:51
+Parsing ecmascript source code failed
+  37 |             <div className={styles.imageTop}>
+  38 |               <Image
+> 39 |                 src="/images/venue/couplr-1.jpg"eg"
+     |                                                   ^
+  40 |                 alt="Meditation pose"
+  41 |                 width={248}
+  42 |                 height={278}
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[01:12:41.313] Browser ERROR   ./app/home/intro/Intro.tsx:39:53
+Parsing ecmascript source code failed
+  37 |             <div className={styles.imageTop}>
+  38 |               <Image
+> 39 |                   src="/images/venue/couplr-1.jpg"eg"
+     |                                                     ^
+  40 |                   alt="Meditation pose"
+  41 |                   width={248}
+  42 |                 height={278}
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[01:12:42.311] Browser ERROR   ./app/home/intro/Intro.tsx:39:51
+Parsing ecmascript source code failed
+  37 |             <div className={styles.imageTop}>
+  38 |               <Image
+> 39 |                   src="/images/venue/couplr-1.jpg""
+     |                                                   ^
+  40 |                   alt="Meditation pose"
+  41 |                   width={248}
+  42 |                 height={278}
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[01:12:46.958] Server  LOG     ✓ Compiled in 22ms
+[01:12:47.322] Browser WARN    Image with src "/images/venue/couplr-1.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:13:01.320] Browser ERROR   ./app/home/intro/Intro.tsx:3:8
+Parsing ecmascript source code failed
+  1 | import { ArrowUpRight } from "lucide-react";
+  2 | import Image from "next/image";
+> 3 | Import Image from ""
+    |        ^^^^^
+  4 | import Button from "@/components/ui/Button/Button";
+  5 | import styles from "./Intro.module.css";
+  6 |
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Server Component:
+    ./app/home/intro/Intro.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[01:13:16.146] Browser WARN    Image with src "/images/venue/couple-1.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:13:38.464] Browser WARN    Image with src "/images/venue/Gym-1.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:13:45.042] Browser WARN    Image with src "/images/venue/Gym-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:13:49.718] Browser WARN    Image with src "/images/venue/Gym-2.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:13:55.016] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[01:14:32.606] Server  LOG     ✓ Compiled in 37ms
+[01:14:35.405] Server  LOG     ✓ Compiled in 84ms
+[01:14:37.656] Server  LOG     ✓ Compiled in 28ms
+[01:14:38.452] Server  LOG     ✓ Compiled in 32ms
+[01:15:16.102] Server  LOG     ✓ Compiled in 35ms
+[01:15:20.003] Server  LOG     ✓ Compiled in 31ms
+[01:15:25.461] Server  LOG     ✓ Compiled in 35ms
+[01:15:28.996] Server  LOG     ✓ Compiled in 51ms
+[01:17:39.798] Server  LOG     ✓ Compiled in 34ms
+[01:18:18.173] Server  LOG     ✓ Compiled in 33ms
+[01:18:18.849] Server  LOG     ✓ Compiled in 28ms
+[01:18:22.296] Server  LOG     ✓ Compiled in 29ms
+[01:18:47.599] Server  LOG     ✓ Compiled in 83ms
+[01:29:23.108] Server  LOG     ✓ Compiled in 34ms
+[01:29:23.317] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[01:29:26.056] Server  LOG     ✓ Compiled in 45ms
+[01:29:28.001] Server  LOG     ✓ Compiled in 40ms
+[01:30:46.550] Server  LOG     ✓ Compiled in 30ms
+[01:30:52.715] Server  LOG     ✓ Compiled in 54ms
+[01:30:53.313] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:23:11: Missed semicolon
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
     [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
@@ -43,66 +793,90 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\component
 
 Import traces:
   Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:02.703] Browser ERROR   ./components/ui/Button/Button.module.css
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:31:12.615] Server  LOG     ✓ Compiled in 41ms
+[01:31:16.448] Server  LOG     ✓ Compiled in 52ms
+[01:31:21.790] Server  LOG     ✓ Compiled in 41ms
+[01:31:22.913] Server  LOG     ✓ Compiled in 31ms
+[01:31:27.419] Server  LOG     ✓ Compiled in 35ms
+[01:31:27.976] Server  LOG     ✓ Compiled in 33ms
+[01:32:12.484] Server  LOG     ✓ Compiled in 36ms
+[01:33:02.595] Server  LOG     ✓ Compiled in 38ms
+[01:33:10.402] Server  LOG     ✓ Compiled in 43ms
+[01:33:11.309] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:75:14: Missed semicolon
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:63:3: Unknown word padding
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
     [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
     [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
     [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
     [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
     [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
     [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
 
 Import traces:
   Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:12.430] Server  LOG     ✓ Compiled in 26ms
-[00:08:15.214] Server  LOG     ✓ Compiled in 28ms
-[00:08:27.256] Server  LOG     ✓ Compiled in 34ms
-[00:08:27.698] Browser ERROR   ./components/ui/Button/Button.module.css
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:33:14.453] Server  LOG     ✓ Compiled in 40ms
+[01:33:39.682] Server  LOG     ✓ Compiled in 35ms
+[01:34:41.187] Server  LOG     ✓ Compiled in 79ms
+[01:34:44.603] Server  LOG     ✓ Compiled in 37ms
+[01:37:14.946] Server  LOG     ✓ Compiled in 49ms
+[01:37:17.014] Server  LOG     ✓ Compiled in 30ms
+[01:37:42.708] Server  LOG     ✓ Compiled in 28ms
+[01:38:19.652] Server  LOG     ✓ Compiled in 27ms
+[01:38:23.893] Server  LOG     ✓ Compiled in 27ms
+[01:39:03.503] Server  LOG     ✓ Compiled in 39ms
+[01:39:04.450] Server  LOG     ✓ Compiled in 36ms
+[01:39:05.363] Server  LOG     ✓ Compiled in 30ms
+[01:39:06.210] Server  LOG     ✓ Compiled in 33ms
+[01:39:08.167] Server  LOG     ✓ Compiled in 38ms
+[01:39:09.780] Server  LOG     ✓ Compiled in 52ms
+[01:39:11.087] Server  LOG     ✓ Compiled in 55ms
+[01:39:31.102] Server  LOG     ✓ Compiled in 102ms
+[01:39:31.195] Server  LOG     ✓ Compiled in 64ms
+[01:40:34.478] Server  LOG     ✓ Compiled in 29ms
+[01:40:40.503] Server  LOG     ✓ Compiled in 26ms
+[01:40:47.673] Server  LOG     ✓ Compiled in 24ms
+[01:41:20.306] Server  LOG     ✓ Compiled in 28ms
+[01:41:21.036] Server  LOG     ✓ Compiled in 39ms
+[01:41:21.315] Server  LOG     ✓ Compiled in 31ms
+[01:41:24.098] Server  LOG     ✓ Compiled in 32ms
+[01:42:31.148] Server  LOG     ✓ Compiled in 48ms
+[01:42:32.746] Server  LOG     ✓ Compiled in 55ms
+[01:44:16.769] Server  LOG     ✓ Compiled in 75ms
+[01:44:16.817] Server  LOG     ✓ Compiled in 27ms
+[01:44:24.906] Server  LOG     ✓ Compiled in 72ms
+[01:44:26.290] Server  LOG     ✓ Compiled in 66ms
+[01:46:34.883] Server  LOG     ✓ Compiled in 45ms
+[01:46:35.312] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:73:3: Unknown word height
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:120:3: Unknown word letter-spacing
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
     [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
@@ -116,28 +890,133 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\component
 
 Import traces:
   Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:30.703] Browser ERROR   ./components/ui/Button/Button.module.css
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:48:14.066] Server  LOG     ✓ Compiled in 50ms
+[01:48:17.330] Server  LOG     ✓ Compiled in 64ms
+[01:48:19.695] Server  LOG     ✓ Compiled in 57ms
+[01:49:29.595] Server  LOG     ✓ Compiled in 64ms
+[01:50:10.083] Server  LOG     ✓ Compiled in 50ms
+[01:50:10.320] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:73:9: Missed semicolon
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:130:3: Unknown word gap
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:50:14.732] Server  LOG     ✓ Compiled in 30ms
+[01:50:21.318] Server  LOG     ✓ Compiled in 41ms
+[01:50:24.443] Server  LOG     ✓ Compiled in 34ms
+[01:50:29.146] Server  LOG     ✓ Compiled in 33ms
+[01:50:32.352] Server  LOG     ✓ Compiled in 39ms
+[01:50:41.145] Server  LOG     ✓ Compiled in 29ms
+[01:50:42.319] Server  LOG     ✓ Compiled in 29ms
+[01:50:49.836] Server  LOG     ✓ Compiled in 37ms
+[01:51:26.338] Server  LOG     ✓ Compiled in 33ms
+[01:51:28.879] Server  LOG     ✓ Compiled in 27ms
+[01:51:29.322] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:218:3: Unknown word font-
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:51:36.678] Server  LOG     ✓ Compiled in 40ms
+[01:51:40.500] Server  LOG     ✓ Compiled in 49ms
+[01:51:45.033] Server  LOG     ✓ Compiled in 36ms
+[01:52:03.622] Server  LOG     ✓ Compiled in 46ms
+[01:52:32.528] Server  LOG     ✓ Compiled in 44ms
+[01:52:40.122] Server  LOG     ✓ Compiled in 61ms
+[01:52:41.986] Server  LOG     ✓ Compiled in 40ms
+[01:52:45.848] Server  LOG     ✓ Compiled in 40ms
+[01:53:05.277] Server  LOG     ✓ Compiled in 52ms
+[01:53:13.371] Server  LOG     ✓ Compiled in 34ms
+[01:53:15.850] Server  LOG     ✓ Compiled in 37ms
+[01:54:30.983] Server  LOG     ✓ Compiled in 37ms
+[01:55:03.720] Server  LOG     ✓ Compiled in 54ms
+[01:55:04.322] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:204:3: Unknown word display
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:55:06.322] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:204:10: Missed semicolon
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
     [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
@@ -151,221 +1030,34 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\component
 
 Import traces:
   Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:33.706] Browser ERROR   ./components/ui/Button/Button.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:72:24: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:35.713] Browser ERROR   ./components/ui/Button/Button.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:72:24: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:37.709] Browser ERROR   ./components/ui/Button/Button.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:72:24: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:08:44.935] Server  LOG     ✓ Compiled in 28ms
-[00:08:51.408] Server  LOG     ✓ Compiled in 40ms
-[00:08:54.784] Server  LOG     ✓ Compiled in 45ms
-[00:08:55.700] Browser ERROR   ./components/ui/Button/Button.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\ui\Button\Button.module.css:72:24: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./components/ui/Button/Button.module.css [Client Component Browser]
-    ./components/ui/Button/Button.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Client Component Browser]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/ui/Button/Button.module.css [Client Component SSR]
-    ./components/ui/Button/Button.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Client Component SSR]
-    ./components/Navbar/Navbar.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  Server Component:
-    ./components/ui/Button/Button.module.css
-    ./components/ui/Button/Button.tsx
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:09:32.429] Server  LOG     ✓ Compiled in 40ms
-[00:12:18.633] Server  LOG     ✓ Compiled in 30ms
-[00:12:19.501] Server  LOG     ✓ Compiled in 34ms
-[00:12:22.755] Server  LOG     ✓ Compiled in 39ms
-[00:12:24.333] Server  LOG     ✓ Compiled in 48ms
-[00:12:25.017] Server  LOG     ✓ Compiled in 30ms
-[00:12:27.440] Server  LOG     ✓ Compiled in 41ms
-[00:12:29.066] Server  LOG     ✓ Compiled in 27ms
-[00:12:36.999] Server  LOG     ✓ Compiled in 23ms
-[00:12:39.674] Server  LOG     ✓ Compiled in 24ms
-[00:12:49.825] Server  LOG     ✓ Compiled in 45ms
-[00:12:51.987] Server  LOG     ✓ Compiled in 31ms
-[00:12:57.648] Server  LOG     ✓ Compiled in 26ms
-[00:12:58.342] Server  LOG     ✓ Compiled in 32ms
-[00:13:11.819] Server  LOG     ✓ Compiled in 23ms
-[00:13:13.267] Server  LOG     ✓ Compiled in 21ms
-[00:13:21.318] Server  LOG     ✓ Compiled in 52ms
-[00:13:22.567] Server  LOG     ✓ Compiled in 26ms
-[00:13:23.981] Server  LOG     ✓ Compiled in 20ms
-[00:13:24.033] Server  LOG     ✓ Compiled in 22ms
-[00:13:24.743] Server  LOG     ✓ Compiled in 28ms
-[00:13:26.768] Server  LOG     ✓ Compiled in 25ms
-[00:13:29.350] Server  LOG     ✓ Compiled in 20ms
-[00:13:29.889] Server  LOG     ✓ Compiled in 21ms
-[00:13:31.830] Server  LOG     ✓ Compiled in 34ms
-[00:13:38.677] Server  LOG     ✓ Compiled in 19ms
-[00:13:53.313] Server  LOG     ✓ Compiled in 22ms
-[00:14:05.648] Server  LOG     ✓ Compiled in 26ms
-[00:14:08.654] Server  LOG     ✓ Compiled in 22ms
-[00:14:09.314] Server  LOG     ✓ Compiled in 21ms
-[00:14:17.125] Server  LOG     ✓ Compiled in 22ms
-[00:14:25.648] Server  LOG     ✓ Compiled in 31ms
-[00:14:28.274] Server  LOG     ✓ Compiled in 27ms
-[00:14:34.407] Server  LOG     ✓ Compiled in 24ms
-[00:14:44.287] Server  LOG     ✓ Compiled in 27ms
-[00:15:04.619] Server  LOG     ✓ Compiled in 25ms
-[00:15:06.958] Server  LOG     ✓ Compiled in 22ms
-[00:15:10.540] Server  LOG     ✓ Compiled in 37ms
-[00:16:44.152] Server  LOG     ✓ Compiled in 93ms
-[00:16:47.102] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:47.252] Browser WARN    Image with src "/images/icons/logo-bfriends ver.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:16:51.666] Server  LOG     ✓ Compiled in 95ms
-[00:16:53.554] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:53.695] Browser WARN    Image with src "/images/icons/logo-bfriends ver.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:16:57.621] Server  LOG     ✓ Compiled in 699ms
-[00:17:36.396] Server  LOG     ✓ Compiled in 22ms
-[00:17:38.701] Server  LOG     ✓ Compiled in 23ms
-[00:17:48.448] Server  LOG     ✓ Compiled in 22ms
-[00:18:09.543] Server  LOG     ✓ Compiled in 91ms
-[00:19:59.683] Server  LOG     ✓ Compiled in 497ms
-[00:20:00.130] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:00.712] Browser WARN    Image with src "/images/icons/logo-bfriends ver.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:23:52.129] Server  LOG     ✓ Compiled in 84ms
-[00:23:58.156] Server  LOG     ✓ Compiled in 69ms
-[00:23:58.493] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:17.480] Server  LOG     ✓ Compiled in 51ms
+    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
+    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:55:38.976] Server  LOG     ✓ Compiled in 43ms
+[01:56:00.006] Server  LOG     ✓ Compiled in 40ms
+[01:56:03.073] Server  LOG     ✓ Compiled in 43ms
+[01:57:26.030] Server  LOG     ✓ Compiled in 39ms
+[01:57:28.643] Server  LOG     ✓ Compiled in 36ms
+[01:58:34.057] Server  LOG     ✓ Compiled in 39ms
+[01:58:45.018] Server  LOG     ✓ Compiled in 37ms
+[01:58:51.528] Server  LOG     ✓ Compiled in 38ms
+[01:59:13.121] Server  LOG     ✓ Compiled in 41ms
+[01:59:15.328] Server  LOG     ✓ Compiled in 32ms
+[01:59:17.341] Server  LOG     ✓ Compiled in 42ms
+[01:59:18.634] Server  LOG     ✓ Compiled in 505ms
+[01:59:22.174] Server  LOG     ✓ Compiled in 33ms
+[01:59:35.823] Server  LOG     ✓ Compiled in 57ms
+[01:59:48.814] Server  LOG     ✓ Compiled in 53ms
+[01:59:53.397] Server  LOG     ✓ Compiled in 34ms
+[02:01:24.340] Server  LOG     ✓ Compiled in 45ms
+[02:01:29.319] Server  LOG     ✓ Compiled in 39ms
+[02:02:10.798] Server  LOG     ✓ Compiled in 47ms

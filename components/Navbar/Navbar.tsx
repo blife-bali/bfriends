@@ -9,32 +9,59 @@ import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About us" },
-  { href: "/program", label: "Program & Facilities" },
-  { href: "/stories", label: "Stories" },
+  { href: "/about", label: "About BFriends" },
+  { href: "/program", label: "Program" },
   { href: "/membership", label: "Membership" },
+  { href: "/stories", label: "Community" },
+  
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      const scrollThreshold = 10;
+      const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+
+      // Update scrolled state for styling
+      setIsScrolled(currentScrollY > scrollThreshold);
+
+      // Always show navbar at the top
+      if (currentScrollY < scrollThreshold) {
+        setIsVisible(true);
+      } else {
+        // Only update visibility if scroll difference is significant (prevents flickering)
+        if (scrollDifference > 5) {
+          // Hide when scrolling down, show when scrolling up
+          if (currentScrollY > lastScrollY) {
+            setIsVisible(false);
+          } else if (currentScrollY < lastScrollY) {
+            setIsVisible(true);
+          }
+        }
+      }
+
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <nav
-      className={`${styles.navbar} ${isScrolled ? styles.scrolled : styles.default}`}
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : styles.default} ${isVisible ? styles.visible : styles.hidden}`}
     >
+      <div className={styles.mainContainer}>
       {/* Left: icon */}
       <div className={styles.left}>
         <Link href="/" className={styles.logoLink} aria-label="BFriends Home">
           <Image
-            src="/images/icons/logo-bfriends hor.png"
+            src="/images/icons/logo-default.svg"
             alt="BFriends"
             width={120}
             height={40}
@@ -71,6 +98,7 @@ export default function Navbar() {
         >
           Book Now
         </Button>
+       </div>  
       </div>
     </nav>
   );

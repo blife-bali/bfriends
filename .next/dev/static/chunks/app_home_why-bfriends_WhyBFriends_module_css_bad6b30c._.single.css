@@ -1,0 +1,311 @@
+/* [project]/app/home/why-bfriends/WhyBFriends.module.css [app-client] (css) */
+.WhyBFriends-module__ZT0-hG__section {
+  text-align: left;
+  background: var(--color-white-100);
+  width: 100%;
+  height: 100vh;
+  color: var(--color-white-100);
+  font-size: 48px;
+  font-family: var(--font-display);
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.WhyBFriends-module__ZT0-hG__imageContainer {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.WhyBFriends-module__ZT0-hG__imageWrapper {
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.WhyBFriends-module__ZT0-hG__image {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.WhyBFriends-module__ZT0-hG__imageVisible {
+  opacity: 1;
+}
+
+.WhyBFriends-module__ZT0-hG__imageFadeIn {
+  z-index: 1;
+  animation: .4s ease-in-out forwards WhyBFriends-module__ZT0-hG__fadeIn;
+}
+
+.WhyBFriends-module__ZT0-hG__imageFadeOut {
+  z-index: 0;
+  animation: .4s ease-in-out forwards WhyBFriends-module__ZT0-hG__fadeOut;
+}
+
+@keyframes WhyBFriends-module__ZT0-hG__fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes WhyBFriends-module__ZT0-hG__fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.WhyBFriends-module__ZT0-hG__imageOverlay {
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1;
+  background-color: #0003;
+  position: absolute;
+  inset: 0;
+}
+
+.WhyBFriends-module__ZT0-hG__contentOverlay {
+  z-index: 2;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1440px;
+  padding: 64px;
+  display: flex;
+  position: relative;
+}
+
+.WhyBFriends-module__ZT0-hG__mainHeading {
+  letter-spacing: -.04em;
+  font-size: clamp(40px, 5vw, 48px);
+  line-height: 100%;
+  position: relative;
+}
+
+.WhyBFriends-module__ZT0-hG__headingText {
+  font-weight: 400;
+  font-family: var(--font-display);
+}
+
+.WhyBFriends-module__ZT0-hG__headingEmphasis {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.WhyBFriends-module__ZT0-hG__subHeading {
+  letter-spacing: -.04em;
+  width: fit-content;
+  font-size: clamp(32px, 4vw, 40px);
+  font-weight: 500;
+  line-height: 150%;
+  position: relative;
+}
+
+.WhyBFriends-module__ZT0-hG__pointDetails {
+  flex-direction: column;
+  gap: 8px;
+  animation: .4s ease-out WhyBFriends-module__ZT0-hG__slideUp;
+  display: flex;
+}
+
+@keyframes WhyBFriends-module__ZT0-hG__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.WhyBFriends-module__ZT0-hG__pointText {
+  font-family: var(--font-display);
+  letter-spacing: -.04em;
+  color: var(--color-white-100);
+  font-size: clamp(32px, 4vw, 40px);
+  font-weight: 500;
+  line-height: 100%;
+  display: inline-block;
+}
+
+.WhyBFriends-module__ZT0-hG__subpoint {
+  font-size: 24px;
+  font-family: var(--font-sans);
+  letter-spacing: -.02em;
+  color: var(--color-white-100);
+  opacity: .9;
+  font-weight: 400;
+  line-height: 100%;
+  display: inline-block;
+}
+
+.WhyBFriends-module__ZT0-hG__pointsSection {
+  background: linear-gradient(-90deg, #b29a7cb3, #b29a7c99 14.9%, #b29a7ccc);
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-start;
+  font-size: 20px;
+  display: flex;
+}
+
+.WhyBFriends-module__ZT0-hG__pointsContainer {
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  max-width: 1440px;
+  padding: 64px;
+  display: flex;
+}
+
+.WhyBFriends-module__ZT0-hG__pointsRow {
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-end;
+  gap: 0;
+  display: flex;
+}
+
+.WhyBFriends-module__ZT0-hG__pointItem {
+  border: none;
+  border-bottom: 1px solid var(--color-white-100);
+  cursor: pointer;
+  background: none;
+  flex-direction: row;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  height: 64px;
+  padding: 16px 0;
+  transition: background-color .3s, transform .2s;
+  display: flex;
+  position: relative;
+}
+
+.WhyBFriends-module__ZT0-hG__pointNumber {
+  font-family: var(--font-script);
+  color: var(--color-white-100);
+  letter-spacing: -.02em;
+  margin-top: 4px;
+  font-size: clamp(16px, 2vw, 20px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 100%;
+  animation: .3s ease-out WhyBFriends-module__ZT0-hG__fadeInScale;
+}
+
+@keyframes WhyBFriends-module__ZT0-hG__fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.WhyBFriends-module__ZT0-hG__pointTitle {
+  letter-spacing: -.04em;
+  text-transform: capitalize;
+  color: var(--color-white-100);
+  font-weight: 400;
+  line-height: 120%;
+  font-family: var(--font-sans);
+  text-align: left;
+  font-size: clamp(16px, 2vw, 20px);
+  transition: font-weight .3s;
+  position: relative;
+}
+
+.WhyBFriends-module__ZT0-hG__pointItemSelected .WhyBFriends-module__ZT0-hG__pointTitle {
+  font-family: var(--font-script);
+  margin-top: 4px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .WhyBFriends-module__ZT0-hG__section {
+    height: auto;
+    min-height: 800px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__imageContainer {
+    flex: 1;
+    padding: 48px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointsSection {
+    padding: 48px 48px 64px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointsRow {
+    flex-direction: column;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointItem {
+    border-bottom: 1px solid var(--color-white-100);
+    border-right: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .WhyBFriends-module__ZT0-hG__imageContainer {
+    padding: 32px 24px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__mainHeading {
+    font-size: clamp(32px, 8vw, 40px);
+  }
+
+  .WhyBFriends-module__ZT0-hG__subHeading {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .WhyBFriends-module__ZT0-hG__subpoint {
+    font-size: 20px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointsSection {
+    padding: 32px 24px 48px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointTitle {
+    font-size: 16px;
+  }
+
+  .WhyBFriends-module__ZT0-hG__pointNumber {
+    min-width: 32px;
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=app_home_why-bfriends_WhyBFriends_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,319 @@
+@reference "../../globals.css";
+
+.section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 48px;
+  background: var(--color-white-100);
+  color: var(--color-white-100);
+  font-family: var(--font-display);
+}
+
+/* Image Container Section */
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.image {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.imageVisible {
+  opacity: 1;
+}
+
+.imageFadeIn {
+  animation: fadeIn 0.4s ease-in-out forwards;
+  z-index: 1;
+}
+
+.imageFadeOut {
+  animation: fadeOut 0.4s ease-in-out forwards;
+  z-index: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1;
+
+}
+
+.contentOverlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  padding: 64px;
+}
+
+.mainHeading {
+  position: relative;
+  letter-spacing: -0.04em;
+  line-height: 100%;
+  font-size: clamp(40px, 5vw, 48px);
+}
+
+.headingText {
+  font-weight: 400;
+  font-family: var(--font-display);
+}
+
+.headingEmphasis {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.subHeading {
+  position: relative;
+  width: fit-content;
+  letter-spacing: -0.04em;
+  line-height: 150%;
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 40px);
+}
+
+.pointDetails {
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.4s ease-out;
+  gap: 8px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pointText {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 40px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 100%;
+  color: var(--color-white-100);
+}
+
+.subpoint {
+  font-size: 24px;
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  color: var(--color-white-100);
+  opacity: 0.9;
+}
+
+/* Points Selection Section */
+.pointsSection {
+  align-self: stretch;
+  background: linear-gradient(
+    -90deg,
+    rgba(178, 154, 124, 0.7),
+    rgba(178, 154, 124, 0.6) 14.9%,
+    rgba(178, 154, 124, 0.8)
+  );
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.pointsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 1440px;
+  padding: 64px;
+  width: 100%;
+  gap: 0;
+}
+
+.pointsRow {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+}
+
+.pointItem {
+  flex: 1;
+  border-bottom: 1px solid var(--color-white-100);
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-white-100);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  gap: 4px;
+}
+
+
+.pointNumber {
+  font-family: var(--font-script);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 100%;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-white-100);
+  letter-spacing: -0.02em;
+  animation: fadeInScale 0.3s ease-out;
+  margin-top: 4px;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pointTitle {
+  position: relative;
+  letter-spacing: -0.04em;
+  line-height: 120%;
+  text-transform: capitalize;
+  font-weight: 400;
+  color: var(--color-white-100);
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 2vw, 20px);
+  text-align: left;
+  transition: font-weight 0.3s ease;
+}
+
+.pointItemSelected .pointTitle {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 4px;
+
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section {
+    height: auto;
+    min-height: 800px;
+  }
+
+  .imageContainer {
+    padding: 48px;
+    flex: 1;
+  }
+
+  .pointsSection {
+    padding: 48px 48px 64px;
+  }
+
+  .pointsRow {
+    flex-direction: column;
+  }
+
+  .pointItem {
+    border-bottom: 1px solid var(--color-white-100);
+    border-right: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    padding: 32px 24px;
+  }
+
+  .mainHeading {
+    font-size: clamp(32px, 8vw, 40px);
+  }
+
+  .subHeading {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .subpoint {
+    font-size: 20px;
+  }
+
+  .pointsSection {
+    padding: 32px 24px 48px;
+  }
+
+  .pointTitle {
+    font-size: 16px;
+  }
+
+  .pointNumber {
+    font-size: 18px;
+    min-width: 32px;
+  }
+}
