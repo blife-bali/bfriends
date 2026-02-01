@@ -92,9 +92,6 @@
   /* Semi-transparent background - must be present for backdrop-filter */
   background-color: rgba(0, 0, 0  , 0.05);
   
-  /* Backdrop Blur */
-  backdrop-filter: blur(80px);
-  -webkit-backdrop-filter: blur(80px);
   
   /* Remove any transforms that might interfere */
   transform: none;

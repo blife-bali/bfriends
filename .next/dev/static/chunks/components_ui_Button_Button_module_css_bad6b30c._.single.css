@@ -77,7 +77,6 @@
 .Button-module__LCT47W__border {
   --button-border-color: var(--button-primary-fill, var(--color-cream-100));
   border: 1px solid color-mix(in srgb, var(--button-border-color) 50%, transparent);
-  -webkit-backdrop-filter: blur(80px);
   will-change: auto;
   background-color: #0000000d;
   border-radius: 999px;

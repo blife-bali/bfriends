@@ -74,7 +74,6 @@
 }
 
 .WhyBFriends-module__ZT0-hG__imageOverlay {
-  -webkit-backdrop-filter: blur(2px);
   z-index: 1;
   background-color: #0003;
   position: absolute;

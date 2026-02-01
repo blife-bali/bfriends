@@ -757,3 +757,39 @@ Import trace:
 [00:58:33.261] Server  LOG     ✓ Compiled in 81ms
 [00:58:34.684] Server  LOG     ✓ Compiled in 56ms
 [00:59:57.951] Server  LOG     ✓ Compiled in 80ms
+[00:05:25.774] Server  LOG     ✓ Compiled in 166ms
+[00:05:58.815] Server  LOG     ✓ Compiled in 145ms
+[00:05:58.924] Browser ERROR   ./app/home/hero/Hero.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\hero\Hero.module.css:68:1: Unclosed block
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:575:22)]
+    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:335:35)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:476:10)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Server Component:
+    ./app/home/hero/Hero.module.css
+    ./app/home/hero/Hero.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:06:09.725] Server  LOG     ✓ Compiled in 63ms
+[00:06:17.881] Server  LOG     ✓ Compiled in 51ms
+[00:06:28.439] Server  LOG     ✓ Compiled in 51ms
+[00:06:38.286] Server  LOG     ✓ Compiled in 45ms
+[00:08:17.393] Server  LOG     ✓ Compiled in 68ms
+[00:08:44.074] Server  LOG     ✓ Compiled in 93ms
+[00:14:52.976] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:14:52.976] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:26:14.738] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:26:14.738] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
