@@ -1,0 +1,141 @@
+@reference "../../globals.css";
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: left bottom;
+  width: 140%;
+  height: auto;
+}
+
+.backgroundOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* Main Content */
+.mainContent {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 1440px;
+  padding: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Points Grid - now positioned relative to background image */
+.pointsGrid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.pointButton {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(254, 254, 254, 0.6);
+  background: transparent;
+  color: var(--color-white-100);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  backdrop-filter: blur(8px);
+}
+
+.pointButton:hover {
+  border-color: var(--color-blue-100);
+  color: var(--color-blue-100);
+}
+
+.pointButtonSelected {
+  background-color: var(--color-blue-100);
+  border-color: var(--color-blue-100);
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+}
+
+/* Card Container */
+.cardContainer {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 600px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 48px 24px;
+    gap: 32px;
+  }
+
+  .cardContainer {
+    flex: 0 0 auto;
+    width: 100%;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .pointButton {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .pointButtonSelected {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+
+  .pointButton {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .pointButtonSelected {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+}

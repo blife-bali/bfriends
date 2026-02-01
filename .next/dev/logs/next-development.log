@@ -1,169 +1,134 @@
-[00:00:02.137] Server  LOG     ✓ Ready in 1497ms
-[00:00:02.841] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:02.801] Server  LOG     ✓ Ready in 2.3s
+[00:00:03.999] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.844] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:04.001] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.307] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.434] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:07.397] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.615] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.434] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:07.615] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:16.481] Server  LOG     ✓ Compiled in 562ms
-[00:00:17.638] Server  LOG     ✓ Compiled in 72ms
-[00:00:23.372] Server  LOG     ✓ Compiled in 90ms
-[00:00:30.054] Server  LOG     ✓ Compiled in 83ms
-[00:00:35.929] Server  LOG     ✓ Compiled in 53ms
-[00:00:39.401] Server  LOG     ✓ Compiled in 55ms
-[00:02:04.780] Server  LOG     ✓ Compiled in 87ms
-[00:02:10.345] Server  LOG     ✓ Compiled in 133ms
-[00:03:12.787] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:03:12.788] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:03:13.125] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:13.506] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:03:13.506] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:04:52.162] Server  LOG     ✓ Compiled in 48ms
-[00:05:46.107] Server  LOG     ✓ Compiled in 62ms
-[00:06:14.699] Server  LOG     ✓ Compiled in 140ms
-[00:06:29.912] Server  LOG     ✓ Compiled in 59ms
-[00:07:14.698] Server  LOG     ✓ Compiled in 61ms
-[00:07:49.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:50.323] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:07:50.323] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:08:19.366] Server  LOG     ✓ Compiled in 70ms
-[00:08:22.932] Server  LOG     ✓ Compiled in 62ms
-[00:08:28.739] Server  LOG     ✓ Compiled in 62ms
-[00:09:18.049] Server  LOG     ✓ Compiled in 58ms
-[00:09:21.689] Server  LOG     ✓ Compiled in 48ms
-[00:09:29.405] Server  LOG     ✓ Compiled in 57ms
-[00:09:30.575] Server  LOG     ✓ Compiled in 68ms
-[00:09:34.489] Server  LOG     ✓ Compiled in 55ms
-[00:09:35.373] Server  LOG     ✓ Compiled in 52ms
-[00:10:08.907] Server  LOG     ✓ Compiled in 1019ms
-[00:12:01.610] Server  LOG     ✓ Compiled in 60ms
-[00:12:17.153] Server  LOG     ✓ Compiled in 77ms
-[00:12:33.091] Server  LOG     ✓ Compiled in 60ms
-[00:12:43.374] Server  LOG     ✓ Compiled in 59ms
-[00:13:03.580] Server  LOG     ✓ Compiled in 54ms
-[00:13:21.161] Server  LOG     ✓ Compiled in 66ms
-[00:13:27.419] Server  LOG     ✓ Compiled in 61ms
-[00:14:24.587] Server  LOG     ✓ Compiled in 43ms
-[00:14:33.278] Server  LOG     ✓ Compiled in 44ms
-[00:14:47.170] Server  LOG     ✓ Compiled in 58ms
-[00:15:06.633] Server  LOG     ✓ Compiled in 67ms
-[00:15:10.685] Server  LOG     ✓ Compiled in 60ms
-[00:15:39.774] Server  LOG     ✓ Compiled in 56ms
-[00:18:03.161] Server  LOG     ✓ Compiled in 120ms
-[00:18:04.183] Browser ERROR   ./app/home/intro/Intro.tsx:57:1
-Parsing ecmascript source code failed
-  55 |     </section>
-  56 |   );
-> 57 | }
-     | ^
-  58 |
+[00:00:29.578] Server  LOG     ✓ Compiled in 93ms
+[00:00:33.876] Server  LOG     ✓ Compiled in 45ms
+[00:03:53.393] Server  LOG     ✓ Compiled in 44ms
+[00:06:07.147] Server  LOG     ✓ Compiled in 95ms
+[00:06:35.085] Server  LOG     ✓ Compiled in 89ms
+[00:06:51.128] Server  LOG     ✓ Compiled in 110ms
+[00:07:06.843] Server  LOG     ✓ Compiled in 55ms
+[00:07:16.396] Server  LOG     ✓ Compiled in 55ms
+[00:07:34.894] Server  LOG     ✓ Compiled in 72ms
+[00:07:48.397] Server  LOG     ✓ Compiled in 49ms
+[00:08:07.261] Server  LOG     ✓ Compiled in 69ms
+[00:08:18.609] Server  LOG     ✓ Compiled in 38ms
+[00:08:52.932] Server  LOG     ✓ Compiled in 45ms
+[00:09:30.622] Server  LOG     ✓ Compiled in 41ms
+[00:10:24.404] Server  LOG     ✓ Compiled in 50ms
+[00:10:48.660] Server  LOG     ✓ Compiled in 29ms
+[00:11:14.560] Server  LOG     ✓ Compiled in 45ms
+[00:14:26.331] Server  LOG     ✓ Compiled in 38ms
+[00:14:50.563] Server  LOG     ✓ Compiled in 146ms
+[00:14:50.643] Server  LOG     ✓ Compiled in 37ms
+[00:16:11.515] Server  LOG     ✓ Compiled in 38ms
+[00:16:15.038] Server  LOG     ✓ Compiled in 31ms
+[00:16:18.265] Server  LOG     ✓ Compiled in 155ms
+[00:16:18.381] Browser ERROR   ./app/home/programs/Card.module.css:93:30
+Parsing CSS source code failed
+  91 |   width: fit-content;
+  92 |   background: transparent;
+> 93 |   /backdrop-filter: blur(8px);
+     |                              ^
+  94 | }
+  95 | @media (max-width: 768px) {
+  96 |   .card {
 
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+Unexpected token Semicolon
 
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:18:57.188] Browser ERROR   ./app/home/intro/Intro.tsx:71:1
-Parsing ecmascript source code failed
-  69 |     </section>
-  70 |   );
-> 71 | }
-     | ^
-  72 |
+Import traces:
+  Client Component Browser:
+    ./app/home/programs/Card.module.css [Client Component Browser]
+    ./app/home/programs/Card.tsx [Client Component Browser]
+    ./app/home/programs/Card.tsx [Server Component]
+    ./app/home/programs/index.ts [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  Client Component SSR:
+    ./app/home/programs/Card.module.css [Client Component SSR]
+    ./app/home/programs/Card.tsx [Client Component SSR]
+    ./app/home/programs/Card.tsx [Server Component]
+    ./app/home/programs/index.ts [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:17:17.847] Server  LOG     ✓ Compiled in 42ms
+[00:17:22.044] Server  LOG     ✓ Compiled in 40ms
+[00:17:25.534] Server  LOG     ✓ Compiled in 41ms
+[00:17:30.782] Server  LOG     ✓ Compiled in 50ms
+[00:17:33.379] Server  LOG     ✓ Compiled in 45ms
+[00:18:40.938] Server  LOG     ✓ Compiled in 35ms
+[00:18:41.003] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
 
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:19:06.938] Server  LOG     ✓ Compiled in 66ms
-[00:19:51.114] Server  LOG     ✓ Compiled in 78ms
-[00:20:00.377] Server  LOG     ✓ Compiled in 66ms
-[00:20:02.199] Server  LOG     ✓ Compiled in 51ms
-[00:20:09.576] Server  LOG     ✓ Compiled in 49ms
-[00:20:11.447] Server  LOG     ✓ Compiled in 53ms
-[00:21:04.753] Server  LOG     ✓ Compiled in 65ms
-[00:21:05.893] Server  LOG     ✓ Compiled in 54ms
-[00:21:08.346] Server  LOG     ✓ Compiled in 53ms
-[00:21:15.587] Server  LOG     ✓ Compiled in 88ms
-[00:21:16.188] Browser ERROR   ./app/home/intro/Intro.module.css
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true ic ic true ic
+[00:18:43.441] Server  LOG     ✓ Compiled in 33ms
+[00:18:43.537] Browser ERROR   uncaughtError: ReferenceError: ArrowRightIcon is not defined
+[00:18:46.781] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:18:47.261] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:47.263] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:47.324] Server  ERROR   ⨯ ReferenceError: ArrowRightIcon is not defined
+[00:18:47.372] Server  LOG     ✓ Compiled in 57ms
+[00:18:47.379] Browser ERROR   uncaughtError: ReferenceError: ArrowRightIcon is not defined
+[00:18:48.019] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:48.469] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:48.469] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:48.469] Browser ERROR   uncaughtError: ReferenceError: ArrowRightIcon is not defined
+[00:18:49.111] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:18:49.121] Server  LOG     ✓ Compiled in 463ms
+[00:18:49.695] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:49.697] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:50.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:50.704] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:18:50.704] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:19:11.089] Server  LOG     ✓ Compiled in 39ms
+[00:19:11.215] Browser ERROR   uncaughtError: ReferenceError: ArrowUpRightIcon is not defined
+[00:19:19.273] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:19.925] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:19:19.927] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:19:19.949] Server  LOG     ✓ Compiled in 44ms
+[00:19:20.754] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:21.005] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:19:21.005] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:21:08.797] Server  LOG     ✓ Compiled in 39ms
+[00:23:22.426] Server  LOG     ✓ Compiled in 34ms
+[00:23:24.100] Server  LOG     ✓ Compiled in 41ms
+[00:23:27.561] Server  LOG     ✓ Compiled in 31ms
+[00:23:32.274] Server  LOG     ✓ Compiled in 34ms
+[00:23:33.631] Server  LOG     ✓ Compiled in 37ms
+[00:23:37.881] Server  LOG     ✓ Compiled in 36ms
+[00:24:44.122] Server  WARN    ⚠ Cross origin request detected from 192.168.18.31 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:24:49.577] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:24:49.577] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:27:06.573] Server  LOG     ✓ Compiled in 39ms
+[00:27:07.237] Server  LOG     ✓ Compiled in 43ms
+[00:27:15.801] Server  LOG     ✓ Compiled in 50ms
+[00:27:18.920] Server  LOG     ✓ Compiled in 61ms
+[00:29:35.175] Server  LOG     ✓ Compiled in 72ms
+[00:29:35.288] Browser ERROR   ./app/home/programs/Section.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:110:3: Unknown word height
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:21:18.537] Server  LOG     ✓ Compiled in 1682ms
-[00:21:20.767] Server  LOG     ✓ Compiled in 59ms
-[00:21:21.193] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:111:3: Unknown word display
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:21:42.669] Server  LOG     ✓ Compiled in 74ms
-[00:21:48.590] Server  LOG     ✓ Compiled in 67ms
-[00:22:15.915] Server  LOG     ✓ Compiled in 64ms
-[00:22:33.309] Server  LOG     ✓ Compiled in 65ms
-[00:22:34.703] Server  LOG     ✓ Compiled in 87ms
-[00:22:39.351] Server  LOG     ✓ Compiled in 57ms
-[00:23:45.214] Server  LOG     ✓ Compiled in 70ms
-[00:23:46.523] Server  LOG     ✓ Compiled in 64ms
-[00:23:53.353] Server  LOG     ✓ Compiled in 59ms
-[00:24:06.266] Server  LOG     ✓ Compiled in 62ms
-[00:24:15.800] Server  LOG     ✓ Compiled in 54ms
-[00:24:19.418] Server  LOG     ✓ Compiled in 53ms
-[00:24:21.119] Server  LOG     ✓ Compiled in 71ms
-[00:24:34.718] Server  LOG     ✓ Compiled in 67ms
-[00:24:38.423] Server  LOG     ✓ Compiled in 51ms
-[00:24:41.398] Server  LOG     ✓ Compiled in 66ms
-[00:25:12.228] Server  LOG     ✓ Compiled in 72ms
-[00:25:16.252] Server  LOG     ✓ Compiled in 59ms
-[00:25:24.114] Server  LOG     ✓ Compiled in 60ms
-[00:25:33.083] Server  LOG     ✓ Compiled in 90ms
-[00:25:34.191] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:110:16: Missed semicolon
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:38:21: Missed semicolon
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
     [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
@@ -175,621 +140,92 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\
     [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
     [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
 
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:25:48.274] Server  LOG     ✓ Compiled in 66ms
-[00:27:19.725] Server  LOG     ✓ Compiled in 55ms
-[00:27:27.897] Server  LOG     ✓ Compiled in 44ms
-[00:27:53.892] Server  LOG     ✓ Compiled in 44ms
-[00:28:01.379] Server  LOG     ✓ Compiled in 45ms
-[00:28:18.886] Server  LOG     ✓ Compiled in 55ms
-[00:28:43.939] Server  LOG     ✓ Compiled in 42ms
-[00:29:02.418] Server  LOG     ✓ Compiled in 52ms
-[00:29:03.181] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:178:5: Unknown word height
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:29:30.322] Server  LOG     ✓ Compiled in 67ms
-[00:29:32.859] Server  LOG     ✓ Compiled in 62ms
-[00:29:58.258] Server  LOG     ✓ Compiled in 62ms
-[00:30:10.519] Server  LOG     ✓ Compiled in 59ms
-[00:30:20.266] Server  LOG     ✓ Compiled in 59ms
-[00:30:21.563] Server  LOG     ✓ Compiled in 82ms
-[00:30:22.196] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:154:1: Unclosed block
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:575:22)]
-    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:335:35)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:476:10)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:22.795] Server  LOG     ✓ Compiled in 670ms
-[00:30:35.413] Server  LOG     ✓ Compiled in 49ms
-[00:30:37.807] Server  LOG     ✓ Compiled in 57ms
-[00:31:01.495] Server  LOG     ✓ Compiled in 63ms
-[00:31:05.514] Server  LOG     ✓ Compiled in 44ms
-[00:31:26.634] Server  LOG     ✓ Compiled in 45ms
-[00:31:35.356] Server  LOG     ✓ Compiled in 46ms
-[00:32:05.167] Server  LOG     ✓ Compiled in 50ms
-[00:32:14.780] Server  LOG     ✓ Compiled in 49ms
-[00:32:16.436] Server  LOG     ✓ Compiled in 53ms
-[00:32:37.463] Server  LOG     ✓ Compiled in 45ms
-[00:32:40.846] Server  LOG     ✓ Compiled in 44ms
-[00:33:26.625] Server  LOG     ✓ Compiled in 51ms
-[00:33:27.191] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:185:18: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:33:36.073] Server  LOG     ✓ Compiled in 67ms
-[00:35:05.202] Server  LOG     ✓ Compiled in 93ms
-[00:36:42.864] Server  LOG     ✓ Compiled in 71ms
-[00:36:47.804] Server  LOG     ✓ Compiled in 66ms
-[00:38:29.151] Server  LOG     ✓ Compiled in 52ms
-[00:38:47.463] Server  LOG     ✓ Compiled in 62ms
-[00:39:27.044] Server  LOG     ✓ Compiled in 68ms
-[00:39:50.124] Server  LOG     ✓ Compiled in 60ms
-[00:39:50.754] Server  LOG     ✓ Compiled in 53ms
-[00:40:02.242] Server  LOG     ✓ Compiled in 66ms
-[00:40:10.422] Server  LOG     ✓ Compiled in 94ms
-[00:40:11.183] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:227:5: Unknown word center
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:40:13.195] Browser ERROR   ./app/home/intro/Intro.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\intro\Intro.module.css:227:5: Unknown word center
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Server Component:
-    ./app/home/intro/Intro.module.css
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:40:28.419] Server  LOG     ✓ Compiled in 73ms
-[00:41:04.219] Server  LOG     ✓ Compiled in 81ms
-[00:42:03.885] Server  LOG     ✓ Compiled in 79ms
-[00:43:35.583] Server  LOG     ✓ Compiled in 77ms
-[00:43:47.087] Server  LOG     ✓ Compiled in 66ms
-[00:44:41.268] Server  LOG     ✓ Compiled in 161ms
-[00:44:42.791] Server  LOG     ✓ Compiled in 124ms
-[00:44:44.585] Server  LOG     ✓ Compiled in 111ms
-[00:44:47.026] Server  LOG     ✓ Compiled in 86ms
-[00:46:23.457] Server  LOG     ✓ Compiled in 104ms
-[00:46:24.184] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:202:10: Unknown word solid
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
 Import traces:
   Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:46:49.183] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:202:10: Unknown word solid
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:47:07.429] Server  LOG     ✓ Compiled in 89ms
-[00:47:12.985] Server  LOG     ✓ Compiled in 77ms
-[00:47:15.104] Server  LOG     ✓ Compiled in 60ms
-[00:47:21.451] Server  LOG     ✓ Compiled in 74ms
-[00:47:26.085] Server  LOG     ✓ Compiled in 58ms
-[00:47:28.347] Server  LOG     ✓ Compiled in 62ms
-[00:47:35.860] Server  LOG     ✓ Compiled in 69ms
-[00:47:39.224] Server  LOG     ✓ Compiled in 60ms
-[00:47:44.657] Server  LOG     ✓ Compiled in 62ms
-[00:48:59.843] Server  LOG     ✓ Compiled in 75ms
-[00:49:10.662] Server  LOG     ✓ Compiled in 57ms
-[00:51:03.305] Server  LOG     ✓ Compiled in 70ms
-[00:51:06.318] Server  LOG     ✓ Compiled in 66ms
-[00:51:40.987] Server  LOG     ✓ Compiled in 69ms
-[00:51:44.237] Server  LOG     ✓ Compiled in 63ms
-[00:52:19.241] Server  LOG     ✓ Compiled in 60ms
-[00:52:40.489] Server  LOG     ✓ Compiled in 81ms
-[00:52:58.183] Server  LOG     ✓ Compiled in 62ms
-[00:54:10.414] Server  LOG     ✓ Compiled in 59ms
-[00:54:15.141] Server  LOG     ✓ Compiled in 55ms
-[00:54:21.729] Server  LOG     ✓ Compiled in 79ms
-[00:54:22.184] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:5: Unknown word font-size
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:33.295] Server  LOG     ✓ Compiled in 48ms
-[00:54:34.195] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:35.196] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:36.193] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:40.188] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:45.191] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:45.191] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:54:49.192] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:55:12.195] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:55:27.183] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\why-bfriends\WhyBFriends.module.css:267:22: Unknown word 20px,
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component Browser]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/why-bfriends/WhyBFriends.module.css [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Client Component SSR]
-    ./app/home/why-bfriends/WhyBFriends.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:55:45.397] Server  LOG     ✓ Compiled in 75ms
-[00:55:55.760] Server  LOG     ✓ Compiled in 87ms
-[00:55:58.253] Server  LOG     ✓ Compiled in 78ms
-[00:56:00.116] Server  LOG     ✓ Compiled in 64ms
-[00:56:25.202] Server  LOG     ✓ Compiled in 58ms
-[00:56:45.224] Server  LOG     ✓ Compiled in 58ms
-[00:56:46.186] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.tsx:60:17
+[00:29:51.458] Server  LOG     ✓ Compiled in 34ms
+[00:31:18.161] Server  LOG     ✓ Compiled in 33ms
+[00:31:20.713] Server  LOG     ✓ Compiled in 34ms
+[00:31:23.952] Server  LOG     ✓ Compiled in 31ms
+[00:31:25.698] Server  LOG     ✓ Compiled in 28ms
+[00:32:17.317] Server  LOG     ✓ Compiled in 25ms
+[00:32:25.047] Server  LOG     ✓ Compiled in 29ms
+[00:32:40.615] Server  LOG     ✓ Compiled in 24ms
+[00:32:53.481] Server  LOG     ✓ Compiled in 26ms
+[00:33:07.220] Server  LOG     ✓ Compiled in 27ms
+[00:33:15.343] Server  LOG     ✓ Compiled in 27ms
+[00:33:16.666] Server  LOG     ✓ Compiled in 29ms
+[00:33:18.876] Server  LOG     ✓ Compiled in 27ms
+[00:33:30.939] Server  LOG     ✓ Compiled in 24ms
+[00:33:36.369] Server  LOG     ✓ Compiled in 32ms
+[00:33:42.037] Server  LOG     ✓ Compiled in 27ms
+[00:33:52.082] Server  LOG     ✓ Compiled in 28ms
+[00:33:54.417] Server  LOG     ✓ Compiled in 26ms
+[00:33:56.046] Server  LOG     ✓ Compiled in 27ms
+[00:33:58.590] Server  LOG     ✓ Compiled in 41ms
+[00:34:02.387] Server  LOG     ✓ Compiled in 30ms
+[00:34:04.375] Server  LOG     ✓ Compiled in 38ms
+[00:34:07.850] Server  LOG     ✓ Compiled in 23ms
+[00:35:05.233] Server  LOG     ✓ Compiled in 31ms
+[00:35:17.183] Server  LOG     ✓ Compiled in 37ms
+[00:36:12.713] Server  LOG     ✓ Compiled in 35ms
+[00:36:12.826] Browser ERROR   ./app/home/programs/Section.tsx:64:16
 Parsing ecmascript source code failed
-  58 |           <div className={styles.mainHeading}>
-  59 |             <span className={styles.headingText}>Why 
-> 60 |           </div>
-     |                 ^
-> 61 |           <div className={styles.subHeading}>
-     | ^^^^^^^^^^^
-  62 |             <div className={styles.pointDetails} key={selectedId}>
-  63 |               <span className={styles.pointText}>{selectedData.point}<br /></span>
-  64 |               <span className={styles.subpoint}>{selectedData.subpoint}</span>
+  62 |     F: { left: 40, top: 90 },
+  63 |     R: { left: 50, top: 80 },
+> 64 |     I: { left: , top: 70 },
+     |                ^
+  65 |     E: { left: 50, top: 60 },
+  66 |     N: { left: 40, top: 50 },
+  67 |     D: { left: 50, top: 40 },
 
-Expected '</', got 'jsx text'
+Expression expected
 
 Import trace:
   Server Component:
-    ./app/home/why-bfriends/WhyBFriends.tsx
+    ./app/home/programs/Section.tsx
     ./app/home/page.tsx
     ./app/page.tsx
-[00:56:49.181] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.tsx:60:17
-Parsing ecmascript source code failed
-  58 |           <div className={styles.mainHeading}>
-  59 |             <span className={styles.headingText}>Why <em> BFirends </em>
-> 60 |           </div>
-     |                 ^
-> 61 |           <div className={styles.subHeading}>
-     | ^^^^^^^^^^^
-  62 |             <div className={styles.pointDetails} key={selectedId}>
-  63 |               <span className={styles.pointText}>{selectedData.point}<br /></span>
-  64 |               <span className={styles.subpoint}>{selectedData.subpoint}</span>
-
-Expected '</', got 'jsx text'
-
-Import trace:
-  Server Component:
-    ./app/home/why-bfriends/WhyBFriends.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:56:52.191] Browser ERROR   ./app/home/why-bfriends/WhyBFriends.tsx:60:17
-Parsing ecmascript source code failed
-  58 |           <div className={styles.mainHeading}>
-  59 |             <span className={styles.headingText}>Why <em> BFirends </em> Exists?
-> 60 |           </div>
-     |                 ^
-> 61 |           <div className={styles.subHeading}>
-     | ^^^^^^^^^^^
-  62 |             <div className={styles.pointDetails} key={selectedId}>
-  63 |               <span className={styles.pointText}>{selectedData.point}<br /></span>
-  64 |               <span className={styles.subpoint}>{selectedData.subpoint}</span>
-
-Expected '</', got 'jsx text'
-
-Import trace:
-  Server Component:
-    ./app/home/why-bfriends/WhyBFriends.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:57:36.900] Server  LOG     ✓ Compiled in 68ms
-[00:57:42.901] Server  LOG     ✓ Compiled in 66ms
-[00:58:17.242] Server  LOG     ✓ Compiled in 64ms
-[00:58:26.363] Server  LOG     ✓ Compiled in 100ms
-[00:58:33.261] Server  LOG     ✓ Compiled in 81ms
-[00:58:34.684] Server  LOG     ✓ Compiled in 56ms
-[00:59:57.951] Server  LOG     ✓ Compiled in 80ms
-[00:05:25.774] Server  LOG     ✓ Compiled in 166ms
-[00:05:58.815] Server  LOG     ✓ Compiled in 145ms
-[00:05:58.924] Browser ERROR   ./app/home/hero/Hero.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\hero\Hero.module.css:68:1: Unclosed block
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:575:22)]
-    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:335:35)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:476:10)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Server Component:
-    ./app/home/hero/Hero.module.css
-    ./app/home/hero/Hero.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:06:09.725] Server  LOG     ✓ Compiled in 63ms
-[00:06:17.881] Server  LOG     ✓ Compiled in 51ms
-[00:06:28.439] Server  LOG     ✓ Compiled in 51ms
-[00:06:38.286] Server  LOG     ✓ Compiled in 45ms
-[00:08:17.393] Server  LOG     ✓ Compiled in 68ms
-[00:08:44.074] Server  LOG     ✓ Compiled in 93ms
-[00:14:52.976] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:14:52.976] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:26:14.738] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:26:14.738] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:36:19.026] Server  LOG     ✓ Compiled in 27ms
+[00:36:23.839] Server  LOG     ✓ Compiled in 28ms
+[00:36:28.240] Server  LOG     ✓ Compiled in 26ms
+[00:36:39.932] Server  LOG     ✓ Compiled in 31ms
+[00:36:42.742] Server  LOG     ✓ Compiled in 29ms
+[00:36:51.440] Server  LOG     ✓ Compiled in 35ms
+[00:36:59.008] Server  LOG     ✓ Compiled in 38ms
+[00:37:07.746] Server  LOG     ✓ Compiled in 28ms
+[00:37:09.978] Server  LOG     ✓ Compiled in 25ms
+[00:37:11.879] Server  LOG     ✓ Compiled in 25ms
+[00:37:16.272] Server  LOG     ✓ Compiled in 34ms
+[00:37:28.057] Server  LOG     ✓ Compiled in 25ms
+[00:37:31.496] Server  LOG     ✓ Compiled in 26ms
+[00:37:32.711] Server  LOG     ✓ Compiled in 31ms
+[00:37:36.283] Server  LOG     ✓ Compiled in 36ms
+[00:37:38.240] Server  LOG     ✓ Compiled in 34ms
+[00:37:48.068] Server  LOG     ✓ Compiled in 26ms
+[00:37:50.425] Server  LOG     ✓ Compiled in 28ms
+[00:37:53.008] Server  LOG     ✓ Compiled in 30ms
+[00:37:56.647] Server  LOG     ✓ Compiled in 23ms
+[00:37:59.574] Server  LOG     ✓ Compiled in 33ms
+[00:38:03.021] Server  LOG     ✓ Compiled in 28ms
+[00:38:13.090] Server  LOG     ✓ Compiled in 34ms
+[00:38:25.557] Server  LOG     ✓ Compiled in 29ms
+[00:38:39.739] Server  LOG     ✓ Compiled in 30ms
+[00:38:43.692] Server  LOG     ✓ Compiled in 34ms
+[00:38:54.616] Server  LOG     ✓ Compiled in 27ms
+[00:38:59.127] Server  LOG     ✓ Compiled in 26ms
+[00:39:05.865] Server  LOG     ✓ Compiled in 26ms
+[00:39:13.581] Server  LOG     ✓ Compiled in 31ms
+[00:39:19.240] Server  LOG     ✓ Compiled in 26ms
+[00:39:20.921] Server  LOG     ✓ Compiled in 28ms

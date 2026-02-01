@@ -1,0 +1,129 @@
+@reference "../../globals.css";
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.cardHidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Background */
+.cardBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cardImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Card Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Heading Container */
+.headingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.indicator {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-white-100);
+  background: transparent;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 110%;
+  color: var(--color-white-100);
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Bottom Container */
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subheading {
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 140%;
+  color: var(--color-white-100);
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardButton {
+  width: fit-content;
+  background: transparent;
+  backdrop-filter: blur(8px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+    min-height: 350px;
+  }
+
+  .cardContent {
+    padding: 24px;
+  }
+
+  .indicator {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
