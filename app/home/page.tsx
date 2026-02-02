@@ -3,6 +3,7 @@ import Intro from "./intro/Intro";
 import WhyBFriends from "./why-bfriends/WhyBFriends";
 import { Section as ProgramsSection } from "./programs";
 import Process from "./process/Process";
+import ProcessCarousel from "./process/Carousel";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Intro />
       <WhyBFriends />
       <ProgramsSection />
+      <ProcessCarousel />
       <Process />
     </>
   );

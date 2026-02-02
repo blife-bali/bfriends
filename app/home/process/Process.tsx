@@ -12,16 +12,7 @@ export default function Process() {
   return (
     <section className={styles.processSection} ref={containerRef}>
       <div className={styles.container}>
-        {/* Top Section: Eyebrow + Title */}
-        <div className={styles.topSection}>
-          <p className={styles.eyebrow}>Our Process</p>
-          <h1 className={styles.heading}>
-              Simple Steps to Start Your <br/><em>Journey</em> to <em>Befriend</em> Yourself
-          </h1>
-        </div>
 
-        {/* Middle: Carousel */}
-        <Carousel containerRef={containerRef} />
 
         {/* Bottom: Conclusion + Button */}
         <div className={styles.bottomSection}>
@@ -38,7 +29,7 @@ export default function Process() {
               color="#134053"
               icon={<ArrowUpRightIcon size={16} />}
             >
-              Book Now
+              Your Journey
             </Button>
           </div>
         </div>

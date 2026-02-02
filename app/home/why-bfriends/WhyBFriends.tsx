@@ -61,7 +61,7 @@ export default function WhyBFriends() {
         </div>
         <div className={styles.contentOverlay}>
           <div className={styles.mainHeading}>
-            <span className={styles.headingText}>Why <em> BFirends </em> Exists? </span>
+            <span className={styles.headingText}>Why <em> BFriends </em> Exists? </span>
           </div>
           <div className={styles.subHeading}>
             <div className={styles.pointDetails} key={selectedId}>

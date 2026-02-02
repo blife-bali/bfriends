@@ -29,7 +29,8 @@ export default function Card({ step, index }: CardProps) {
       <div className={styles.cardContent}>
         <div className={`${styles.cardTitle} ${isEven ? styles.cardTitleTop : styles.cardTitleBottom}`}>
           <h2 className={styles.stepNumber}>{step.number}</h2>
-          <p className={styles.cardDescription}>{step.title}</p>
+          <h2 className={styles.cardHeading}>{step.title}</h2>
+          <p className={styles.cardDescription}>{step.description}</p>
         </div>
       </div>
     </div>
