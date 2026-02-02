@@ -47,6 +47,12 @@
       "namedRegex": "^/favicon\\.ico(?:/)?$"
     },
     {
+      "page": "/home",
+      "regex": "^/home(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/home(?:/)?$"
+    },
+    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},

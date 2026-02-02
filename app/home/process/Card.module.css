@@ -1,0 +1,177 @@
+@reference "../../globals.css";
+
+/* Card Container */
+.card {
+  position: relative;
+  width: 680px;
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Background Image Container */
+.cardBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Dark Overlay */
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(19, 64, 83, 0.3) 0%,
+    rgba(19, 64, 83, 0.5) 100%
+  );
+}
+
+/* Card Content */
+.cardContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  width: 280px;
+  height: 200px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px;
+  box-sizing: border-box;
+  gap: 8px;
+  position: absolute;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+.titleParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.stepNumber {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 100%;
+  color: var(--color-blue-100);
+  margin: 0;
+  width: fit-content;
+}
+
+.cardDescription {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 120%;
+  color: var(--color-cream-140);
+  margin: 0;
+  width: 100%;
+}
+
+/* Position card title based on class */
+.cardTitleTop {
+  top: 24px;
+  right: 24px;
+}
+
+.cardTitleBottom {
+  bottom: 24px;
+  right: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .card {
+    width: 560px;
+    height: 400px;
+  }
+
+  .cardTitle {
+    width: 240px;
+    height: 180px;
+    padding: 20px;
+  }
+
+  .stepNumber {
+    font-size: 48px;
+  }
+
+  .cardDescription {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: 340px;
+  }
+
+  .cardTitle {
+    width: 220px;
+    height: 160px;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .cardTitleTop,
+  .cardTitleBottom {
+    right: 16px;
+  }
+
+  .cardTitleTop {
+    top: 16px;
+  }
+
+  .cardTitleBottom {
+    bottom: 16px;
+  }
+
+  .stepNumber {
+    font-size: 40px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+}

@@ -90,7 +90,7 @@
   justify-content: center;
   
   /* Semi-transparent background - must be present for backdrop-filter */
-  background-color: rgba(0, 0, 0  , 0.05);
+  background-color: rgba(0, 0, 0  , 0.0);
   
   
   /* Remove any transforms that might interfere */

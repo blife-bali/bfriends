@@ -5,13 +5,15 @@ import Image from "next/image";
 import styles from "./Card.module.css";
 import Button from "@/components/ui/Button/Button";
 import { ProgramData } from "@/lib/programs-data";
-import { ArrowUpRightIcon } from "lucide-react";
+import { ArrowUpRightIcon, XIcon } from "lucide-react";
 
 interface CardProps {
   program: ProgramData;
+  onClose?: () => void;
+  isMobile?: boolean;
 }
 
-export default function Card({ program }: CardProps) {
+export default function Card({ program, onClose, isMobile }: CardProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -19,16 +21,24 @@ export default function Card({ program }: CardProps) {
   }, [program]);
 
   return (
-    <div className={`${styles.card} ${isVisible ? styles.cardVisible : styles.cardHidden}`}>
+    <div className={`${styles.card} ${isVisible ? styles.cardVisible : styles.cardHidden} ${isMobile ? styles.cardModal : ''}`}>
+      {isMobile && onClose && (
+        <button className={styles.closeButton} onClick={onClose} aria-label="Close">
+          <XIcon size={24} />
+        </button>
+      )}
+
       {/* Card Background */}
       <div className={styles.cardBackground}>
         <Image
           src={program.image}
           alt={program.name}
-          fill
+          width={480}
+          height={640}
           className={styles.cardImage}
-          priority
-          sizes="50vw"
+          quality={100}
+          priority={program.letter === "F"}
+          unoptimized={true}
         />
         <div className={styles.cardOverlay} />
       </div>

@@ -1,0 +1,138 @@
+@reference "../../globals.css";
+
+.processSection {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white-100);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 128px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  box-sizing: border-box;
+}
+
+/* Top Section */
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: fit-content;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 100%;
+  color: var(--color-cream-140);
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid var(--color-cream-140);
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 120%;
+  color: var(--color-blue-100);
+  margin: 0;
+  text-transform: none;
+  max-width: 600px;
+}
+
+.heading em {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+/* Bottom Section */
+.bottomSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+}
+
+.descriptionWrapper {
+  flex: 1;
+  max-width: 500px;
+}
+
+.description2 {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 150%;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+.buttonWrapper {
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 96px 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 72px 40px;
+    gap: 32px;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .description2 {
+    font-size: 18px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 48px 24px;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: clamp(36px, 8vw, 48px);
+    line-height: 110%;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .description2 {
+    font-size: 16px;
+  }
+}

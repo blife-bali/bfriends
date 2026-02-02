@@ -78,7 +78,7 @@
   --button-border-color: var(--button-primary-fill, var(--color-cream-100));
   border: 1px solid color-mix(in srgb, var(--button-border-color) 50%, transparent);
   will-change: auto;
-  background-color: #0000000d;
+  background-color: #0000;
   border-radius: 999px;
   justify-content: center;
   align-items: center;

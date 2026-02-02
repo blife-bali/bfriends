@@ -3,22 +3,48 @@
 .card {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  min-height: 400px;
+  max-width: 480px;
+  min-height: 640px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.4s ease;
+  pointer-events: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.closeButton {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-white-100);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .cardHidden {
   opacity: 0;
-  transform: translateY(20px);
 }
 
 .cardVisible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Card Background */
@@ -26,11 +52,16 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  will-change: transform;
+  overflow: hidden;
 }
 
 .cardImage {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .cardOverlay {
@@ -55,7 +86,8 @@
 /* Heading Container */
 .headingContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   gap: 12px;
 }
 
@@ -63,7 +95,8 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid var(--color-white-100);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,19 +144,32 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .card {
-    max-width: 100%;
-    min-height: 350px;
+    max-width: 100vw;
+    height: 100vh;
+    border-radius: 0;
   }
 
   .cardContent {
     padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .bottomContainer{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .subheading{
+    text-align: center;
   }
 
   .indicator {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     font-size: 20px;
   }
 }

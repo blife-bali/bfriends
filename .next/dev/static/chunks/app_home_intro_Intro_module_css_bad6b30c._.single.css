@@ -83,7 +83,7 @@
   color: var(--color-cream-140);
   max-width: 500px;
   margin: 0;
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(18px, 1.8vw, 20px);
   line-height: 1.5;
 }
 
@@ -154,7 +154,7 @@
     gap: 24px;
     height: 100%;
     min-height: 0;
-    padding: 48px 24px;
+    padding: 72px 40px;
   }
 
   .Intro-module__wxWrOW__textColumn {
@@ -216,6 +216,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .Intro-module__wxWrOW__container {
+    gap: 24px;
+    height: 100%;
+    min-height: 0;
+    padding: 48px 24px;
   }
 }
 

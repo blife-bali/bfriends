@@ -38,19 +38,24 @@ export default function WhyBFriends() {
             <Image
               src={prevData.image}
               alt={prevData.point}
-              fill
+              width={1536}
+              height={1080}
               className={`${styles.image} ${styles.imageFadeOut}`}
-              sizes="100vw"
+              quality={100}
+              priority
+              unoptimized={true}
             />
           )}
           {/* Current Image - fading in */}
           <Image
             src={selectedData.image}
             alt={selectedData.point}
-            fill
+            width={1536}
+            height={1080}
             className={`${styles.image} ${prevId !== selectedId ? styles.imageFadeIn : styles.imageVisible}`}
+            quality={100}
             priority={selectedId === 1}
-            sizes="100vw"
+            unoptimized={true}
           />
           <div className={styles.imageOverlay} />
         </div>

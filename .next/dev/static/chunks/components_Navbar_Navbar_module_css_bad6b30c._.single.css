@@ -163,6 +163,9 @@
 
 .Navbar-module__dVeNwG__default .Navbar-module__dVeNwG__contactButton {
   color: var(--color-white-100);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid #fefefe99;
 }
 
 .Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__contactButton {

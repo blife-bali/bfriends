@@ -230,7 +230,7 @@
   --button-border-color: var(--button-primary-fill, var(--color-cream-100));
   border: 1px solid color-mix(in srgb, var(--button-border-color) 50%, transparent);
   will-change: auto;
-  background-color: #0000000d;
+  background-color: #0000;
   border-radius: 999px;
   justify-content: center;
   align-items: center;
@@ -526,6 +526,9 @@
 
 .Navbar-module__dVeNwG__default .Navbar-module__dVeNwG__contactButton {
   color: var(--color-white-100);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid #fefefe99;
 }
 
 .Navbar-module__dVeNwG__scrolled .Navbar-module__dVeNwG__contactButton {
