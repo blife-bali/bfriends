@@ -2,7 +2,7 @@
 
 .section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 105vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -18,28 +18,39 @@
   inset: 0;
   z-index: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
 }
 
+.contentWrapper{
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  padding: 0 64px;
+  box-sizing: border-box;
+  
+}
 
 .titleContainer{
   position: relative;
-  max-width: 1440px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 120px 64px 64px 0;
+  justify-content: center;
+  
   gap: 8px;
 }
 
 .sectionEyebrow{
+  width: fit-content;
+  background: rgba(0, 0, 0, 0.2);
   position: relative;
   font-family: var(--font-sans);
   font-size: clamp(10px, 2vw, 12px);
@@ -58,9 +69,10 @@
   position: relative;
   letter-spacing: -0.04em;
   line-height: 120%;
-  font-size: clamp(40px, 5vw, 48px);
+  font-size: clamp(56px, 5vw, 64px);
   font-weight: 400;
   font-family: var(--font-display);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 .headingText em {
@@ -84,7 +96,7 @@
 .backgroundOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 
@@ -145,16 +157,14 @@
 /* Card Container - positioned absolutely like points */
 .cardContainer {
   position: relative;
-  width: 100%;
   max-width: 1440px;
   height: fit-content;
   inset: 0;
   z-index: 2;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-end;
-  padding: 0 64px 64px 64px;
+
   pointer-events: none;
 }
 
@@ -197,9 +207,6 @@
     justify-content: flex-end;
   }
 
-  .headingText{
-    max-width: 240px;
-  }
 
   .backgroundImage{
     object-position: 37% center;
@@ -208,7 +215,7 @@
   .titleContainer{
     justify-content: center;
     align-items: flex-start;
-    padding: 72px 40px;
+    
     gap: 6px;
   }
   
@@ -244,10 +251,7 @@
     justify-content: flex-end;
   }
 
-  .titleContainer{
-    padding: 48px 24px;
-   
-  }
+
 
 
   .headingText{

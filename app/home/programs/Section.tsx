@@ -21,6 +21,7 @@ export default function Section() {
 
     handleResize();
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -28,6 +29,7 @@ export default function Section() {
 
   const handlePointClick = (letter: string) => {
     setSelectedLetter(letter);
+
     if (isMobile || isTab) {
       setIsCardOpen(true);
     }
@@ -35,6 +37,7 @@ export default function Section() {
 
   const handleCloseCard = () => {
     setIsCardOpen(false);
+
     if (isMobile || isTab) {
       setSelectedLetter("");
     }
@@ -42,7 +45,6 @@ export default function Section() {
 
   return (
     <section className={styles.section}>
-
       {/* Background Image with Points */}
       <div className={styles.background}>
         <Image
@@ -57,7 +59,7 @@ export default function Section() {
         />
         <div className={styles.backgroundOverlay} />
 
-        {/* Points Grid - now inside background to scale with image */}
+        {/* Points Grid - positioned to scale with image */}
         <div className={styles.pointsGrid}>
           {programsData.map((program) => (
             <button
@@ -75,21 +77,25 @@ export default function Section() {
             </button>
           ))}
         </div>
-        <div className={styles.titleContainer}>
-          <p className={styles.sectionEyebrow}>
-            Our Programs
-          </p>
-          <p className={styles.headingText}>
-            The <em>Journey</em> at BFriends
-          </p>
-        </div>
 
-        {/* Card Container - positioned like pointsGrid for desktop */}
-        {!isMobile && !isTab && (
-          <div className={styles.cardContainer}>
-            <Card program={selectedProgram} />
+        {/* Content Wrapper - contains title and desktop card */}
+        <div className={styles.contentWrapper}>
+          <div className={styles.titleContainer}>
+            <p className={styles.sectionEyebrow}>
+              Our Programs
+            </p>
+            <p className={styles.headingText}>
+              The <em>Journey</em> <br/> at BFriends
+            </p>
           </div>
-        )}
+
+          {/* Desktop Card Container */}
+          {!isMobile && !isTab && (
+            <div className={styles.cardContainer}>
+              <Card program={selectedProgram} />
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Mobile/Tab Modal Card */}
@@ -98,7 +104,6 @@ export default function Section() {
           <Card program={selectedProgram} onClose={handleCloseCard} isMobile={true} />
         </div>
       )}
-
     </section>
   );
 }
@@ -114,18 +119,20 @@ function getButtonPosition(letter: string, isMobile: boolean = false, isTab: boo
       N: { left: 65, top: 27 },
       D: { left: 40, top: 20 },
     };
+
     return mobilePositions[letter] || { left: 10, top: 15 };
   }
 
   if (isTab) {
     const tabPositions: Record<string, { left: number; top: number }> = {
-      F: { left: 50, top: 90 },
-      R: { left: 52, top: 75 },
-      I: { left: 52, top: 60 },
-      E: { left: 51, top: 44 },
-      N: { left: 48, top: 27 },
-      D: { left: 35, top: 20 },
+      F: { left: 55, top: 90 },
+      R: { left: 57, top: 75 },
+      I: { left: 57, top: 60 },
+      E: { left: 56, top: 44 },
+      N: { left: 53, top: 27 },
+      D: { left: 40, top: 20 },
     };
+
     return tabPositions[letter] || { left: 10, top: 15 };
   }
 
@@ -137,5 +144,6 @@ function getButtonPosition(letter: string, isMobile: boolean = false, isTab: boo
     N: { left: 43, top: 22 },
     D: { left: 35, top: 13 },
   };
+
   return positions[letter] || { left: 10, top: 15 };
 }

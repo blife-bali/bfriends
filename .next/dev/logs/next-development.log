@@ -1,207 +1,72 @@
-[00:00:02.408] Server  LOG     ✓ Ready in 1874ms
-[00:00:13.896] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:04.007] Server  LOG     ✓ Ready in 3s
+[00:00:05.911] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:13.898] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:05.913] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:13.900] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:05.918] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:13.902] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:05.923] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:13.904] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:05.926] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:26.826] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:26.990] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:09.353] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.720] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:26.990] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:09.721] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:26.990] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:09.721] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:26.990] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:09.721] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:26.990] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:09.721] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:27.154] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:31.323] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:31.323] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:31.323] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:22.426] Server  LOG     ✓ Compiled in 258ms
-[00:02:23.388] Browser ERROR   ./app/home/process/Card.tsx:33:11
-Parsing ecmascript source code failed
-  31 |           <h2 className={styles.stepNumber}>{step.number}</h2>
-  32 |           <
-> 33 |           <p className={styles.cardDescription}>{step.title}</p>
-     |           ^
-  34 |         </div>
-  35 |       </div>
-  36 |     </div>
+[00:00:09.990] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:11.081] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:11.081] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:51.214] Server  LOG     ✓ Compiled in 100ms
+[00:01:01.163] Server  LOG     ✓ Compiled in 86ms
+[00:01:28.107] Server  LOG     ✓ Compiled in 78ms
+[00:01:37.631] Server  LOG     ✓ Compiled in 83ms
+[00:01:48.219] Server  LOG     ✓ Compiled in 273ms
+[00:01:49.165] Browser ERROR   ./app/home/programs/Section.module.css:23:2
+Parsing CSS source code failed
+  21 |   -webkit-font-smoothing: antialiased;
+  22 | }
+> 23 | .
+     |  ^
+  24 |
+  25 | .titleContainer {
+  26 |   position: relative;
 
-Expression expected
+Expected identifier in class selector, got WhiteSpace("\n\n")
 
 Import traces:
   Client Component Browser:
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:02:31.524] Server  LOG     ✓ Compiled in 36ms
-[00:02:53.598] Server  LOG     ✓ Compiled in 55ms
-[00:02:58.069] Server  LOG     ✓ Compiled in 438ms
-[00:03:06.212] Server  LOG     ✓ Compiled in 526ms
-[00:03:07.457] Server  LOG     ✓ Compiled in 93ms
-[00:03:12.322] Server  LOG     ✓ Compiled in 97ms
-[00:03:13.380] Browser ERROR   ./app/home/process/Card.module.css
+[00:01:59.484] Browser WARN    Image with src "/images/programs/E.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:02:00.388] Browser WARN    Image with src "/images/programs/I.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:02:01.017] Browser WARN    Image with src "/images/programs/R.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:02:18.443] Server  LOG     ✓ Compiled in 60ms
+[00:02:35.294] Server  LOG     ✓ Compiled in 63ms
+[00:02:40.426] Server  LOG     ✓ Compiled in 68ms
+[00:02:45.078] Server  LOG     ✓ Compiled in 80ms
+[00:02:46.074] Browser ERROR   ./app/home/programs/Section.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:91:19: Unclosed bracket
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unclosedBracket (turbopack:///[project]/node_modules/postcss/lib/parser.js:579:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:425:35)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:03:20.483] Server  LOG     ✓ Compiled in 64ms
-[00:03:27.873] Server  LOG     ✓ Compiled in 61ms
-[00:03:28.375] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:98:3: Unknown word text-st
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:03:33.376] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:98:3: Unknown word font-s
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:03:34.294] Server  LOG     ✓ Compiled in 552ms
-[00:03:35.388] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:98:3: Unknown word font-s
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:03:36.493] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:36.493] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:45.581] Server  LOG     ✓ Compiled in 151ms
-[00:03:48.424] Server  LOG     ✓ Compiled in 49ms
-[00:04:32.905] Server  LOG     ✓ Compiled in 30ms
-[00:04:37.779] Server  LOG     ✓ Compiled in 30ms
-[00:04:54.590] Server  LOG     ✓ Compiled in 57ms
-[00:05:02.724] Server  LOG     ✓ Compiled in 519ms
-[00:05:13.256] Server  LOG     ✓ Compiled in 36ms
-[00:05:13.382] Browser ERROR   ./app/home/process/Carousel.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Carousel.module.css:6:14: Missed semicolon
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:32:11: Missed semicolon
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
     [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
@@ -215,28 +80,39 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\
 
 Import traces:
   Client Component Browser:
-    ./app/home/process/Carousel.module.css [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/home/process/Carousel.module.css [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:05:31.911] Server  LOG     ✓ Compiled in 50ms
-[00:05:47.924] Server  LOG     ✓ Compiled in 66ms
-[00:06:06.886] Server  LOG     ✓ Compiled in 70ms
-[00:06:18.925] Server  LOG     ✓ Compiled in 39ms
-[00:06:22.286] Server  LOG     ✓ Compiled in 57ms
-[00:06:23.380] Browser ERROR   ./app/home/process/Card.module.css
+[00:03:06.624] Server  LOG     ✓ Compiled in 56ms
+[00:03:13.555] Server  LOG     ✓ Compiled in 60ms
+[00:03:28.986] Server  LOG     ✓ Compiled in 60ms
+[00:03:32.897] Server  LOG     ✓ Compiled in 42ms
+[00:03:51.389] Server  LOG     ✓ Compiled in 73ms
+[00:04:05.342] Server  LOG     ✓ Compiled in 71ms
+[00:04:06.007] Server  LOG     ✓ Compiled in 57ms
+[00:04:14.321] Server  LOG     ✓ Compiled in 68ms
+[00:04:29.036] Server  LOG     ✓ Compiled in 82ms
+[00:04:50.185] Server  LOG     ✓ Compiled in 522ms
+[00:04:50.694] Server  LOG     ✓ Compiled in 51ms
+[00:06:35.625] Server  LOG     ✓ Compiled in 51ms
+[00:06:44.343] Server  LOG     ✓ Compiled in 65ms
+[00:06:50.630] Server  LOG     ✓ Compiled in 47ms
+[00:07:38.132] Server  LOG     ✓ Compiled in 58ms
+[00:07:48.481] Browser WARN    Image with src "/images/programs/N.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:08:04.011] Server  LOG     ✓ Compiled in 54ms
+[00:08:04.170] Browser ERROR   ./app/home/programs/Section.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:8:3: Unknown word height
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:42:3: Unknown word position
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
     [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
@@ -250,122 +126,262 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\
 
 Import traces:
   Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:06:25.997] Server  LOG     ✓ Compiled in 260ms
-[00:07:14.928] Server  LOG     ✓ Compiled in 56ms
-[00:07:18.314] Server  LOG     ✓ Compiled in 36ms
-[00:07:20.308] Server  LOG     ✓ Compiled in 30ms
-[00:07:31.289] Server  LOG     ✓ Compiled in 32ms
-[00:07:35.570] Server  LOG     ✓ Compiled in 45ms
-[00:08:02.127] Server  LOG     ✓ Compiled in 36ms
-[00:08:18.849] Server  LOG     ✓ Compiled in 35ms
-[00:08:21.029] Server  LOG     ✓ Compiled in 48ms
-[00:08:40.501] Server  LOG     ✓ Compiled in 26ms
-[00:08:42.404] Server  LOG     ✓ Compiled in 36ms
-[00:08:46.275] Server  LOG     ✓ Compiled in 29ms
-[00:08:56.960] Server  LOG     ✓ Compiled in 35ms
-[00:09:06.783] Server  LOG     ✓ Compiled in 28ms
-[00:09:25.195] Server  LOG     ✓ Compiled in 29ms
-[00:09:32.383] Server  LOG     ✓ Compiled in 37ms
-[00:09:44.951] Server  LOG     ✓ Compiled in 31ms
-[00:10:00.824] Server  LOG     ✓ Compiled in 40ms
-[00:10:10.027] Server  LOG     ✓ Compiled in 30ms
-[00:10:20.078] Server  LOG     ✓ Compiled in 30ms
-[00:10:22.657] Server  LOG     ✓ Compiled in 30ms
-[00:10:35.035] Server  LOG     ✓ Compiled in 39ms
-[00:10:38.423] Server  LOG     ✓ Compiled in 37ms
-[00:10:42.098] Server  LOG     ✓ Compiled in 28ms
-[00:11:00.837] Server  LOG     ✓ Compiled in 30ms
-[00:11:23.507] Server  LOG     ✓ Compiled in 29ms
-[00:12:07.505] Server  LOG     ✓ Compiled in 34ms
-[00:12:11.873] Server  LOG     ✓ Compiled in 32ms
-[00:12:14.709] Server  LOG     ✓ Compiled in 41ms
-[00:12:16.874] Server  LOG     ✓ Compiled in 31ms
-[00:12:26.699] Server  LOG     ✓ Compiled in 31ms
-[00:12:41.908] Server  LOG     ✓ Compiled in 31ms
-[00:12:42.992] Server  LOG     ✓ Compiled in 28ms
-[00:12:47.096] Server  LOG     ✓ Compiled in 32ms
-[00:12:48.177] Server  LOG     ✓ Compiled in 33ms
-[00:13:09.058] Server  LOG     ✓ Compiled in 33ms
-[00:13:15.282] Server  LOG     ✓ Compiled in 55ms
-[00:13:15.389] Browser ERROR   ./app/home/process/Card.module.css:36:3
-Parsing CSS source code failed
-  34 |   bottom: 0;
-  35 |   background: rgba
-> 36 |   );
-     |   ^
-  37 | }
-  38 | .cardContent {
-  39 |   position: absolute;
-
-Unexpected token CloseParenthesis
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:13:16.593] Browser ERROR   ./app/home/process/Card.module.css:36:3
-Parsing CSS source code failed
-  34 |   bottom: 0;
-  35 |   background: rgba(0, 0, 0, 0.08)
-> 36 |   );
-     |   ^
-  37 | }
-  38 | .cardContent {
-  39 |   position: absolute;
-
-Unexpected token CloseParenthesis
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:13:20.378] Browser ERROR   ./app/home/process/Card.module.css
+[00:08:06.165] Browser ERROR   ./app/home/programs/Section.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:44:3: Unknown word )
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:42:11: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:08:10.177] Browser ERROR   ./app/home/programs/Section.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:41:18: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:08:11.524] Browser ERROR   ./app/home/programs/Section.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:41:19: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:08:28.484] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:08:29.266] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:08:30.073] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:09:56.350] Server  LOG     ✓ Compiled in 63ms
+[00:09:59.380] Server  LOG     ✓ Compiled in 55ms
+[00:10:09.472] Server  LOG     ✓ Compiled in 55ms
+[00:10:19.323] Server  LOG     ✓ Compiled in 53ms
+[00:10:21.334] Server  LOG     ✓ Compiled in 48ms
+[00:10:32.656] Server  LOG     ✓ Compiled in 52ms
+[00:10:36.592] Server  LOG     ✓ Compiled in 51ms
+[00:10:47.481] Server  LOG     ✓ Compiled in 51ms
+[00:10:50.694] Server  LOG     ✓ Compiled in 119ms
+[00:10:53.466] Server  LOG     ✓ Compiled in 57ms
+[00:13:00.988] Server  LOG     ✓ Compiled in 106ms
+[00:13:01.164] Browser ERROR   ./app/home/programs/Section.tsx:84:12
+Parsing ecmascript source code failed
+  82 |           
+  83 |             <Card program={selectedProgram} />
+> 84 |           </div>
+     |            ^^^^^
+  85 |         )}
+  86 |       </div>
+  87 |
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./app/home/programs/Section.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:13:04.168] Browser ERROR   ./app/home/programs/Section.tsx:93:12
+Parsing ecmascript source code failed
+  91 |           
+  92 |             <Card program={selectedProgram} />
+> 93 |           </div>
+     |            ^^^^^
+  94 |         )}
+  95 |       </div>
+  96 |
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./app/home/programs/Section.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:13:09.172] Browser ERROR   ./app/home/programs/Section.tsx:84:12
+Parsing ecmascript source code failed
+  82 |           
+  83 |             <Card program={selectedProgram} />
+> 84 |           </div>
+     |            ^^^^^
+  85 |         )}
+  86 |       </div>
+  87 |
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./app/home/programs/Section.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:13:14.566] Server  LOG     ✓ Compiled in 46ms
+[00:13:15.167] Browser ERROR   ./app/home/programs/Section.tsx:84:12
+Parsing ecmascript source code failed
+  82 |           
+  83 |             <Card program={selectedProgram} />
+> 84 |           </div>
+     |            ^^^^^
+  85 |         )}
+  86 |       </div>
+  87 |
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./app/home/programs/Section.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:13:26.289] Server  LOG     ✓ Compiled in 68ms
+[00:13:29.049] Server  LOG     ✓ Compiled in 48ms
+[00:14:03.408] Server  LOG     ✓ Compiled in 55ms
+[00:14:06.164] Server  LOG     ✓ Compiled in 53ms
+[00:14:08.075] Server  LOG     ✓ Compiled in 48ms
+[00:14:09.910] Server  LOG     ✓ Compiled in 58ms
+[00:14:13.646] Server  LOG     ✓ Compiled in 54ms
+[00:14:38.665] Server  LOG     ✓ Compiled in 56ms
+[00:15:05.407] Server  LOG     ✓ Compiled in 56ms
+[00:17:09.166] Server  LOG     ✓ Compiled in 53ms
+[00:17:18.890] Server  LOG     ✓ Compiled in 49ms
+[00:18:02.241] Server  LOG     ✓ Compiled in 57ms
+[00:18:53.794] Server  LOG     ✓ Compiled in 60ms
+[00:19:04.432] Server  LOG     ✓ Compiled in 56ms
+[00:19:05.016] Server  LOG     ✓ Compiled in 60ms
+[00:19:12.488] Server  LOG     ✓ Compiled in 54ms
+[00:19:17.772] Server  LOG     ✓ Compiled in 54ms
+[00:19:43.116] Server  LOG     ✓ Compiled in 53ms
+[00:20:06.094] Server  LOG     ✓ Compiled in 54ms
+[00:20:23.959] Server  LOG     ✓ Compiled in 55ms
+[00:20:26.114] Server  LOG     ✓ Compiled in 54ms
+[00:20:59.504] Server  LOG     ✓ Compiled in 47ms
+[00:21:00.461] Server  LOG     ✓ Compiled in 59ms
+[00:21:13.380] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:21:20.607] Browser WARN    Image with src "http://localhost:3000/images/programs/F.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:53.448] Server  LOG     ✓ Compiled in 45ms
+[00:21:57.208] Server  LOG     ✓ Compiled in 44ms
+[00:22:00.907] Server  LOG     ✓ Compiled in 58ms
+[00:22:01.176] Browser ERROR   ./app/home/programs/Section.tsx:132:18
+Parsing ecmascript source code failed
+  130 |       I: { left: 57, top: 60 },
+  131 |       E: { left: 56, top: 44 },
+> 132 |       N: { left: , top: 27 },
+      |                  ^
+  133 |       D: { left: 35, top: 20 },
+  134 |     };
+  135 |
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./app/home/programs/Section.tsx
+    ./app/home/page.tsx
+    ./app/page.tsx
+[00:22:24.304] Server  LOG     ✓ Compiled in 53ms
+[00:22:57.968] Server  LOG     ✓ Compiled in 54ms
+[00:23:06.317] Server  LOG     ✓ Compiled in 52ms
+[00:23:13.745] Server  LOG     ✓ Compiled in 44ms
+[00:23:44.411] Server  LOG     ✓ Compiled in 68ms
+[00:23:48.987] Server  LOG     ✓ Compiled in 54ms
+[00:24:06.404] Browser WARN    Image with src "http://localhost:3000/images/programs/R.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:24:11.579] Browser WARN    Image with src "http://localhost:3000/images/programs/N.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:24:12.453] Browser WARN    Image with src "http://localhost:3000/images/programs/D.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:24:28.058] Server  LOG     ✓ Compiled in 51ms
+[00:24:33.589] Server  LOG     ✓ Compiled in 51ms
+[00:25:05.542] Server  LOG     ✓ Compiled in 54ms
+[00:25:42.948] Server  LOG     ✓ Compiled in 50ms
+[00:25:51.997] Server  LOG     ✓ Compiled in 43ms
+[00:26:09.678] Server  LOG     ✓ Compiled in 55ms
+[00:26:30.744] Server  LOG     ✓ Compiled in 51ms
+[00:27:10.224] Server  LOG     ✓ Compiled in 54ms
+[00:28:00.245] Server  LOG     ✓ Compiled in 48ms
+[00:28:01.973] Server  LOG     ✓ Compiled in 42ms
+[00:28:08.769] Server  LOG     ✓ Compiled in 61ms
+[00:28:13.717] Server  LOG     ✓ Compiled in 62ms
+[00:28:25.179] Server  LOG     ✓ Compiled in 54ms
+[00:28:36.459] Server  LOG     ✓ Compiled in 67ms
+[00:28:39.103] Server  LOG     ✓ Compiled in 50ms
+[00:28:45.671] Server  LOG     ✓ Compiled in 71ms
+[00:30:42.272] Server  LOG     ✓ Compiled in 46ms
+[00:30:43.444] Server  LOG     ✓ Compiled in 48ms
+[00:30:49.038] Server  LOG     ✓ Compiled in 56ms
+[00:30:49.165] Browser ERROR   ./app/home/programs/Section.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:75:3: Unknown word back
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
     [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
@@ -379,94 +395,87 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\
 
 Import traces:
   Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:13:28.064] Server  LOG     ✓ Compiled in 76ms
-[00:13:30.973] Server  LOG     ✓ Compiled in 40ms
-[00:13:48.495] Server  LOG     ✓ Compiled in 40ms
-[00:13:59.910] Server  LOG     ✓ Compiled in 39ms
-[00:14:04.366] Server  LOG     ✓ Compiled in 45ms
-[00:14:07.458] Server  LOG     ✓ Compiled in 47ms
-[00:14:23.158] Server  LOG     ✓ Compiled in 43ms
-[00:14:25.112] Server  LOG     ✓ Compiled in 40ms
-[00:14:50.048] Server  LOG     ✓ Compiled in 41ms
-[00:15:03.084] Server  LOG     ✓ Compiled in 41ms
-[00:15:20.853] Server  LOG     ✓ Compiled in 37ms
-[00:15:24.593] Server  LOG     ✓ Compiled in 40ms
-[00:15:43.910] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:15:43.912] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:15:43.914] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:15:43.916] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:15:43.918] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:26.172] Server  LOG     ✓ Compiled in 211ms
-[00:17:26.374] Browser ERROR   ./app/home/page.tsx:15:17
-Parsing ecmascript source code failed
-  13 |       <ProgramsSection />
-  14 |       <Carousel
-> 15 |       <Process />
-     |                 ^
-  16 |     </>
-  17 |   );
-  18 | }
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:17:27.309] Server  LOG     ✓ Compiled in 134ms
-[00:17:27.480] Server  ERROR   ⨯ ReferenceError: Carousel is not defined
-[00:17:27.523] Server  ERROR   ⨯ ReferenceError: Carousel is not defined
-[00:17:27.874] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:28.384] Browser ERROR   uncaughtError: ReferenceError: Carousel is not defined
-[00:17:30.949] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:30.951] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:30.952] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:30.954] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:30.954] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:31.385] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:32.391] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:32.391] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:32.391] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:32.391] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:32.391] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:47.160] Server  LOG     ✓ Compiled in 53ms
-[00:17:47.382] Browser ERROR   ./app/home/process/Process.module.css
+[00:30:55.922] Server  LOG     ✓ Compiled in 80ms
+[00:30:56.177] Browser ERROR   ./app/home/programs/Section.module.css
 Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Process.module.css:17:3: Unknown word max-width
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:75:3: Unknown word drop
     [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
     [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:30:59.171] Browser ERROR   ./app/home/programs/Section.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Section.module.css:75:3: Unknown word shadow
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./app/home/programs/Section.module.css [Client Component Browser]
+    ./app/home/programs/Section.tsx [Client Component Browser]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/home/programs/Section.module.css [Client Component SSR]
+    ./app/home/programs/Section.tsx [Client Component SSR]
+    ./app/home/programs/Section.tsx [Server Component]
+    ./app/home/page.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:31:02.133] Server  LOG     ✓ Compiled in 75ms
+[00:31:10.656] Server  LOG     ✓ Compiled in 109ms
+[00:31:24.971] Server  LOG     ✓ Compiled in 70ms
+[00:31:26.241] Server  LOG     ✓ Compiled in 67ms
+[00:31:30.217] Server  LOG     ✓ Compiled in 102ms
+[00:31:37.604] Server  LOG     ✓ Compiled in 98ms
+[00:31:38.175] Browser ERROR   ./app/home/programs/Card.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\programs\Card.module.css:98:24: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
     [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
     [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
     [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
@@ -477,1027 +486,24 @@ CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\
 
 Import traces:
   Client Component Browser:
-    ./app/home/process/Process.module.css [Client Component Browser]
-    ./app/home/process/Process.tsx [Client Component Browser]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Card.module.css [Client Component Browser]
+    ./app/home/programs/Card.tsx [Client Component Browser]
+    ./app/home/programs/Card.tsx [Server Component]
+    ./app/home/programs/index.ts [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/home/process/Process.module.css [Client Component SSR]
-    ./app/home/process/Process.tsx [Client Component SSR]
-    ./app/home/process/Process.tsx [Server Component]
+    ./app/home/programs/Card.module.css [Client Component SSR]
+    ./app/home/programs/Card.tsx [Client Component SSR]
+    ./app/home/programs/Card.tsx [Server Component]
+    ./app/home/programs/index.ts [Server Component]
     ./app/home/page.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:18:08.912] Server  LOG     ✓ Compiled in 39ms
-[00:18:24.175] Server  LOG     ✓ Compiled in 35ms
-[00:18:27.756] Server  LOG     ✓ Compiled in 43ms
-[00:18:32.318] Server  LOG     ✓ Compiled in 29ms
-[00:18:34.357] Server  LOG     ✓ Compiled in 32ms
-[00:19:34.865] Server  LOG     ✓ Compiled in 32ms
-[00:20:03.104] Server  LOG     ✓ Compiled in 39ms
-[00:20:05.733] Server  LOG     ✓ Compiled in 33ms
-[00:20:26.423] Server  LOG     ✓ Compiled in 34ms
-[00:20:29.136] Server  LOG     ✓ Compiled in 42ms
-[00:20:33.751] Server  LOG     ✓ Compiled in 80ms
-[00:21:56.725] Server  LOG     ✓ Compiled in 33ms
-[00:22:20.236] Server  LOG     ✓ Compiled in 38ms
-[00:22:31.069] Server  LOG     ✓ Compiled in 29ms
-[00:22:32.272] Server  LOG     ✓ Compiled in 31ms
-[00:22:43.025] Server  LOG     ✓ Compiled in 31ms
-[00:23:06.441] Server  LOG     ✓ Compiled in 31ms
-[00:23:18.989] Server  LOG     ✓ Compiled in 32ms
-[00:23:32.200] Server  LOG     ✓ Compiled in 29ms
-[00:23:46.977] Server  LOG     ✓ Compiled in 29ms
-[00:23:48.779] Server  LOG     ✓ Compiled in 30ms
-[00:24:19.488] Server  LOG     ✓ Compiled in 36ms
-[00:24:41.331] Server  LOG     ✓ Compiled in 29ms
-[00:24:48.987] Server  LOG     ✓ Compiled in 99ms
-[00:24:51.280] Server  LOG     ✓ Compiled in 28ms
-[00:27:08.449] Server  LOG     ✓ Compiled in 78ms
-[00:27:08.556] Browser ERROR   uncaughtError: ReferenceError: clsx is not defined
-[00:27:27.650] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:27:28.250] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:33:25.998] Server  LOG     ✓ Compiled in 69ms
+[00:34:31.090] Browser WARN    Image with src "/images/venue/Gym-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:28.254] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:34:33.885] Browser WARN    Image with src "/images/venue/Spa-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:28.259] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:28.264] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:28.266] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:28.320] Server  ERROR   ⨯ ReferenceError: clsx is not defined
-[00:27:28.347] Server  LOG     ✓ Compiled in 43ms
-[00:27:28.386] Browser ERROR   uncaughtError: ReferenceError: clsx is not defined
-[00:27:28.833] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:29.380] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:29.380] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:29.380] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:29.380] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:29.380] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:29.380] Browser ERROR   uncaughtError: ReferenceError: clsx is not defined
-[00:27:30.464] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:27:30.858] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:30.860] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:30.863] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:30.868] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:30.870] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:30.917] Server  LOG     ✓ Compiled in 50ms
-[00:27:31.413] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:32.388] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:32.388] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:32.388] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:32.388] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:32.388] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:27:32.388] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:32.388] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:32.388] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:32.388] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:32.388] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:32.388] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:54.285] Server  LOG     ✓ Compiled in 45ms
-[00:27:56.673] Server  LOG     ✓ Compiled in 41ms
-[00:28:05.381] Browser ERROR   ./app/home/page.tsx:15:17
-Parsing ecmascript source code failed
-  13 |       <ProgramsSection />
-  14 |       <
-> 15 |       <Process />
-     |                 ^
-  16 |     </>
-  17 |   );
-  18 | }
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:28:10.382] Browser ERROR   ./app/home/page.tsx:15:17
-Parsing ecmascript source code failed
-  13 |       <ProgramsSection />
-  14 |       <ProcessCarousel
-> 15 |       <Process />
-     |                 ^
-  16 |     </>
-  17 |   );
-  18 | }
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:28:13.962] Server  LOG     ✓ Compiled in 31ms
-[00:28:14.102] Server  ERROR   ⨯ ReferenceError: ProcessCarousel is not defined
-[00:28:14.388] Browser ERROR   uncaughtError: ReferenceError: ProcessCarousel is not defined
-[00:28:17.685] Server  ERROR   ⨯ ReferenceError: ProcessCarousel is not defined
-[00:28:17.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:18.379] Browser ERROR   uncaughtError: ReferenceError: ProcessCarousel is not defined
-[00:28:19.543] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.544] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.545] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.545] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.546] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.547] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.548] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.549] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.550] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.550] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.551] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:19.552] Server  ERROR   ⨯ ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:28:20.378] Browser ERROR   ./app/home/page.tsx:6:1
-Module not found: Can't resolve './process/ProcessCarousel'
-  4 | import { Section as ProgramsSection } from "./programs";
-  5 | import Process from "./process/Process";
-> 6 | import ProcessCarousel from "./process/ProcessCarousel";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 |
-  8 | export default function HomePage() {
-  9 |   return (
-
-Import trace:
-  Server Component:
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:28:23.186] Server  LOG     ✓ Compiled in 231ms
-[00:28:23.599] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:23.603] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:23.607] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:23.609] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:23.612] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:23.946] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:24.378] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:24.378] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:24.378] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:24.378] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:24.378] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:28:24.699] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:28:24.699] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:28:24.699] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:28:24.699] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:28:24.699] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:28:24.699] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:28:29.628] Server  LOG     ✓ Compiled in 62ms
-[00:28:49.919] Server  LOG     ✓ Compiled in 39ms
-[00:29:02.062] Server  LOG     ✓ Compiled in 29ms
-[00:29:23.218] Server  LOG     ✓ Compiled in 32ms
-[00:29:25.821] Server  LOG     ✓ Compiled in 29ms
-[00:29:26.979] Server  LOG     ✓ Compiled in 28ms
-[00:29:31.150] Server  LOG     ✓ Compiled in 30ms
-[00:29:37.856] Server  LOG     ✓ Compiled in 41ms
-[00:29:53.648] Server  LOG     ✓ Compiled in 40ms
-[00:29:54.382] Browser ERROR   ./app/home/process/Carousel.tsx:80:10
-Parsing ecmascript source code failed
-  78 |   return (
-  79 |     <section className={styles.section}></section>
-> 80 |     <div className={styles.carouselWrapper}>
-     |          ^^^^^^^^^
-  81 |       {/* Title Container */}
-  82 |       <div className={styles.titleContainer}>
-  83 |         <p className={styles.eyebrow}>Our Process</p>
-
-Expected ',', got 'ident'
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:29:55.417] Server  LOG     ✓ Compiled in 33ms
-[00:29:56.375] Browser ERROR   ./app/home/process/Carousel.tsx:115:1
-Parsing ecmascript source code failed
-  113 |     </div>
-  114 |   );
-> 115 | }
-      | ^
-  116 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:29:56.375] Browser ERROR   ./app/home/process/Carousel.tsx:115:1
-Parsing ecmascript source code failed
-  113 |     </div>
-  114 |   );
-> 115 | }
-      | ^
-  116 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:00.379] Browser ERROR   ./app/home/process/Carousel.tsx:116:1
-Parsing ecmascript source code failed
-  114 |     </div>
-  115 |   );
-> 116 | }
-      | ^
-  117 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:02.386] Browser ERROR   ./app/home/process/Carousel.tsx:116:1
-Parsing ecmascript source code failed
-  114 |     </div>
-  115 |   );
-> 116 | }
-      | ^
-  117 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:04.387] Browser ERROR   ./app/home/process/Carousel.tsx:116:1
-Parsing ecmascript source code failed
-  114 |     </div>
-  115 |   );
-> 116 | }
-      | ^
-  117 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:05.387] Browser ERROR   ./app/home/process/Carousel.tsx:116:1
-Parsing ecmascript source code failed
-  114 |     </div>
-  115 |   );
-> 116 | }
-      | ^
-  117 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:06.374] Browser ERROR   ./app/home/process/Carousel.tsx:115:1
-Parsing ecmascript source code failed
-  113 |     </div>
-  114 |   );
-> 115 | }
-      | ^
-  116 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./app/home/process/Carousel.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:30:23.298] Server  LOG     ✓ Compiled in 27ms
-[00:30:55.211] Server  LOG     ✓ Compiled in 31ms
-[00:31:02.954] Server  LOG     ✓ Compiled in 39ms
-[00:31:10.724] Server  LOG     ✓ Compiled in 32ms
-[00:31:41.924] Server  LOG     ✓ Compiled in 29ms
-[00:32:10.085] Server  LOG     ✓ Compiled in 36ms
-[00:32:14.470] Server  LOG     ✓ Compiled in 33ms
-[00:32:16.503] Server  LOG     ✓ Compiled in 33ms
-[00:32:50.959] Server  LOG     ✓ Compiled in 31ms
-[00:32:58.573] Server  LOG     ✓ Compiled in 31ms
-[00:33:34.640] Server  LOG     ✓ Compiled in 40ms
-[00:34:05.300] Server  LOG     ✓ Compiled in 38ms
-[00:40:52.816] Server  LOG     ✓ Compiled in 118ms
-[00:41:21.557] Server  LOG     ✓ Compiled in 61ms
-[00:41:29.110] Server  LOG     ✓ Compiled in 74ms
-[00:45:20.962] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:20.966] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:20.969] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:20.974] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:20.976] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:21.773] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:45:22.166] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:22.166] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:22.166] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:22.166] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:22.166] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:45:22.166] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:45:22.166] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:45:22.166] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:45:22.166] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:45:26.833] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:45:28.697] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:20.990] Browser WARN    Image with src "/images/venue/Gym-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:22.304] Browser WARN    Image with src "/images/venue/Spa-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:23.774] Browser WARN    Image with src "/images/venue/Spa-2.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:29.843] Browser WARN    Image with src "/images/programs/R.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:30.519] Browser WARN    Image with src "/images/programs/I.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:31.652] Browser WARN    Image with src "/images/programs/E.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:32.413] Browser WARN    Image with src "/images/programs/N.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:51.289] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:01.197] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:01.451] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:01.451] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:01.451] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:01.452] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:01.452] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:01.824] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:01.825] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:01.825] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:01.825] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:06.210] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:07.513] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:33.465] Server  LOG     ✓ Compiled in 67ms
-[00:53:33.617] Browser ERROR   uncaughtError: NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
-[00:53:42.378] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:53:42.989] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:42.991] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:42.996] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:43.000] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:43.003] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:43.103] Server  LOG     ✓ Compiled in 45ms
-[00:53:43.435] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:53:44.386] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:44.386] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:44.386] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:44.386] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:44.386] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:53:44.386] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:44.386] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:44.386] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:44.386] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:44.386] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:44.386] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:53:50.139] Server  LOG     ✓ Compiled in 47ms
-[00:54:07.946] Browser WARN    Image with src "/images/venue/Gym-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:09.238] Browser WARN    Image with src "/images/venue/Spa-2.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:12.339] Browser WARN    Image with src "/images/venue/Spa-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:14.310] Browser WARN    Image with src "/images/programs/N.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:16.660] Browser WARN    Image with src "/images/programs/E.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:17.282] Browser WARN    Image with src "/images/programs/I.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:17.830] Browser WARN    Image with src "/images/programs/R.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:22.713] Server  LOG     ✓ Compiled in 98ms
-[00:55:01.722] Server  LOG     ✓ Compiled in 51ms
-[00:55:40.701] Server  LOG     ✓ Compiled in 42ms
-[00:55:44.862] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:44.864] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:44.867] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:44.869] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:44.871] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:45.157] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:45.308] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:45.308] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:45.308] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:45.308] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:45.308] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:55:45.606] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:55:45.606] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:55:45.606] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:55:48.296] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:55:49.849] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:55:51.087] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:14.162] Server  LOG     ✓ Compiled in 65ms
-[00:59:14.383] Browser ERROR   uncaughtError: NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
-[00:59:25.277] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:59:25.722] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:25.726] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:25.732] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:25.740] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:25.745] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:25.807] Server  LOG     ✓ Compiled in 46ms
-[00:59:26.258] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:27.379] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:27.379] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:27.379] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:27.379] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:27.379] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:59:27.379] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:27.379] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:27.379] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:27.379] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:27.379] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:27.379] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:59:31.494] Server  LOG     ✓ Compiled in 57ms
-[00:59:48.980] Server  LOG     ✓ Compiled in 74ms
-[01:00:11.298] Server  LOG     ✓ Compiled in 51ms
-[01:00:43.891] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:43.892] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:43.894] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:43.897] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:43.899] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:44.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:00:44.631] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:44.631] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:44.631] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:44.631] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:44.631] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:44.631] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:00:44.631] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:44.631] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:49.207] Server  LOG     ✓ Compiled in 35ms
-[01:00:51.330] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.332] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.334] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.337] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.338] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.658] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:00:51.854] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.855] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.855] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.855] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.855] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:00:51.855] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:00:52.007] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:52.007] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:52.007] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:57.046] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:58.488] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:00:59.630] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:01:22.262] Server  LOG     ✓ Compiled in 32ms
-[01:01:22.389] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.758] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:24.759] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.515] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:25.516] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 6
-[01:01:33.356] Server  LOG     ✓ Compiled in 49ms
-[01:02:14.254] Server  LOG     ✓ Compiled in 29ms
-[01:02:16.485] Server  LOG     ✓ Compiled in 32ms
-[01:05:32.405] Server  LOG     ✓ Compiled in 79ms
-[01:06:02.934] Server  LOG     ✓ Compiled in 56ms
-[01:06:41.690] Server  LOG     ✓ Compiled in 54ms
-[01:07:46.039] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.041] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.044] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.046] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.048] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.505] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:46.838] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.838] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.838] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.838] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.838] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:07:46.838] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:07:46.838] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:07:46.838] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:07:49.010] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:07:49.720] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:07:50.608] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:07:52.067] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:01.522] Server  LOG     ✓ Compiled in 37ms
-[01:08:02.379] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7
-[01:08:03.893] Server  LOG     ✓ Compiled in 29ms
-[01:08:05.388] Server  LOG     ✓ Compiled in 34ms
-[01:08:08.353] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.354] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.356] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.359] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.360] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:08:08.869] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.869] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.869] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.869] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.869] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:08.869] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:08:09.018] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:09.018] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:09.911] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:10.540] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:10.981] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:11.175] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:19.077] Server  LOG     ✓ Compiled in 39ms
-[01:08:27.680] Server  LOG     ✓ Compiled in 39ms
-[01:08:30.540] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:30.542] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:30.544] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:30.547] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:30.548] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:31.032] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:08:31.230] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:31.231] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:31.231] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:31.231] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:31.231] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:08:31.231] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:08:31.369] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:31.370] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:31.370] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:34.026] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:35.388] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:36.773] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:08:56.510] Server  LOG     ✓ Compiled in 42ms
-[01:08:58.552] Server  LOG     ✓ Compiled in 35ms
-[01:09:14.524] Server  LOG     ✓ Compiled in 29ms
-[01:09:18.038] Server  LOG     ✓ Compiled in 30ms
-[01:09:24.905] Server  LOG     ✓ Compiled in 34ms
-[01:09:29.586] Server  LOG     ✓ Compiled in 33ms
-[01:09:45.737] Server  LOG     ✓ Compiled in 36ms
-[01:09:56.015] Server  LOG     ✓ Compiled in 36ms
-[01:10:25.778] Server  LOG     ✓ Compiled in 38ms
-[01:10:30.577] Server  LOG     ✓ Compiled in 32ms
-[01:10:31.833] Server  LOG     ✓ Compiled in 29ms
-[01:10:36.101] Server  LOG     ✓ Compiled in 36ms
-[01:11:43.768] Server  LOG     ✓ Compiled in 38ms
-[01:12:18.948] Server  LOG     ✓ Compiled in 38ms
-[01:13:39.928] Server  LOG     ✓ Compiled in 29ms
-[01:14:01.050] Server  LOG     ✓ Compiled in 34ms
-[01:14:02.658] Server  LOG     ✓ Compiled in 33ms
-[01:14:10.020] Server  LOG     ✓ Compiled in 35ms
-[01:14:14.589] Server  LOG     ✓ Compiled in 28ms
-[01:14:17.447] Server  LOG     ✓ Compiled in 32ms
-[01:14:25.327] Server  LOG     ✓ Compiled in 32ms
-[01:14:45.427] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:14:58.339] Server  LOG     ✓ Compiled in 30ms
-[01:14:59.524] Server  LOG     ✓ Compiled in 32ms
-[01:15:00.129] Server  LOG     ✓ Compiled in 33ms
-[01:15:03.505] Server  LOG     ✓ Compiled in 32ms
-[01:15:08.039] Server  LOG     ✓ Compiled in 32ms
-[01:15:31.138] Server  LOG     ✓ Compiled in 36ms
-[01:16:23.778] Server  LOG     ✓ Compiled in 32ms
-[01:16:42.422] Browser WARN    Image with src "/images/programs/R.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:16:43.381] Browser WARN    Image with src "/images/programs/I.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:16:43.991] Browser WARN    Image with src "/images/programs/E.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:16:44.588] Browser WARN    Image with src "/images/programs/N.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[01:01:32.615] Browser WARN    Image with src "/images/venue/Spa-2.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
