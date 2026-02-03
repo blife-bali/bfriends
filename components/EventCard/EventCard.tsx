@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./EventCard.module.css";
 import { EventItem } from "@/lib/event-data";
-import { ArrowUpRightIcon } from "lucide-react";
+import { ArrowUpRightIcon, CalendarFold, Clock2 } from "lucide-react";
+import Button from "@/components/ui/Button/Button";
 
 interface EventCardProps {
   item: EventItem;
@@ -14,6 +15,12 @@ export default function EventCard({ item }: EventCardProps) {
   const content = (
     <>
       <div className={styles.imageWrap}>
+        <div className={styles.imageTagOverlay}>
+          <div className={styles.tagsRow}>
+            <span className={styles.tag}>Event</span>
+            <span className={styles.tag}>{item.ecosystem}</span>
+          </div>
+        </div>
         <Image
           src={item.image}
           alt={item.title}
@@ -23,20 +30,31 @@ export default function EventCard({ item }: EventCardProps) {
         />
       </div>
       <div className={styles.content}>
-        <div className={styles.tagsRow}>
-          <span className={styles.tag}>Event</span>
-          <span className={styles.tag}>{item.ecosystem}</span>
-        </div>
+      
         <div className={styles.textBlock}>
-          <time className={styles.date}>{item.date}</time>
+          
+          <div className={styles.infoContainer}>
+            <div className={styles.infoItem}>
+              <CalendarFold size={14} className={styles.infoIcon} />
+              <time className={styles.infoText}>{item.date}</time>
+            </div>
+            {item.time && (
+              <div className={styles.infoItem}>
+                <Clock2 size={14} className={styles.infoIcon} />
+                <span className={styles.infoText}>{item.time}</span>
+              </div>
+            )}
+          </div>
           <h3 className={styles.title}>{item.title}</h3>
-          <p className={styles.description}>{item.description}</p>
         </div>
-        <span className={styles.button}>
-          Book now
-          <ArrowUpRightIcon size={20} className={styles.buttonIcon} />
-        </span>
+        <p className={styles.description}>{item.description}</p>
       </div>
+      
+      <div className={styles.buttonWrapper}>
+          <Button variant="border" icon={<ArrowUpRightIcon size={20} />}>
+            Read More
+          </Button>
+        </div>
     </>
   );
 

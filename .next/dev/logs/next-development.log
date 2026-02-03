@@ -1,1785 +1,231 @@
-[00:00:01.919] Server  LOG     ✓ Ready in 1258ms
-[00:00:02.569] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:02.212] Server  LOG     ✓ Ready in 1572ms
+[00:00:02.916] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.571] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:02.917] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.573] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:02.920] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.576] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:02.922] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.577] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:02.923] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.480] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:03.407] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.568] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.480] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:03.568] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.480] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:03.569] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.481] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:03.569] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.481] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:03.569] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.481] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:04.216] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:04.216] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:04.216] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:04.216] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:04.216] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:04.216] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:08.000] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:08.000] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:08.000] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:08.000] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:08.000] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:08.000] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:08.690] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:08.690] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:08.690] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:08.690] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:08.690] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:08.690] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:11.438] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:11.438] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:11.438] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:11.438] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:11.438] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:11.438] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:11.802] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:11.802] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:11.802] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:11.802] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:11.802] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:11.802] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:16.254] Server  LOG     ✓ Compiled in 1042ms
-[00:01:22.419] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:22.423] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:22.428] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:22.433] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:22.435] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:24.407] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:24.407] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:24.407] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:24.407] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:24.407] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:24.407] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:40.860] Server  LOG     ✓ Compiled in 44ms
-[00:02:17.842] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:17.847] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:17.855] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:17.861] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:17.866] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:22.393] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:02:38.394] Server  LOG     ✓ Compiled in 105ms
-[00:02:38.881] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:02:38.881] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:02:38.881] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:02:38.881] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:02:38.881] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:02:45.027] Server  LOG     ✓ Compiled in 70ms
-[00:03:02.094] Server  LOG     ✓ Compiled in 82ms
-[00:03:05.596] Server  LOG     ✓ Compiled in 89ms
-[00:03:40.484] Server  LOG     ✓ Compiled in 187ms
-[00:03:41.394] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:41.394] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:41.394] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:41.394] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:41.394] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:41.394] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:59.275] Server  LOG     ✓ Compiled in 73ms
-[00:04:09.489] Server  LOG     ✓ Compiled in 69ms
-[00:04:21.261] Server  LOG     ✓ Compiled in 78ms
-[00:04:25.918] Server  LOG     ✓ Compiled in 65ms
-[00:04:44.671] Server  LOG     ✓ Compiled in 73ms
-[00:04:52.360] Server  LOG     ✓ Compiled in 64ms
-[00:04:53.450] Server  LOG     ✓ Compiled in 59ms
-[00:05:01.268] Server  LOG     ✓ Compiled in 64ms
-[00:05:02.881] Server  LOG     ✓ Compiled in 110ms
-[00:05:08.471] Server  LOG     ✓ Compiled in 71ms
-[00:05:36.074] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:36.076] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:36.078] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:36.080] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:36.082] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.155] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.155] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.155] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.155] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.155] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.155] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:37.423] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:37.423] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:37.423] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:37.423] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:37.423] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:37.423] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:37.423] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:05:37.423] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:05:37.423] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:05:37.423] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:05:37.423] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:05:37.423] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:01.769] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:01.769] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:01.769] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:01.769] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:01.769] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:01.930] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:02.470] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:02.470] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:02.470] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:02.470] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:02.470] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:02.470] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:02.470] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:02.470] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:02.470] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:02.470] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:02.470] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:02.470] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:06:31.593] Browser WARN    Image with src "/images/venue/Gym-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:32.222] Browser WARN    Image with src "/images/venue/Spa-1.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:06:33.386] Browser WARN    Image with src "/images/venue/Spa-2.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:09:13.547] Server  LOG     ✓ Compiled in 60ms
-[00:09:47.280] Server  LOG     ✓ Compiled in 56ms
-[00:10:00.743] Server  LOG     ✓ Compiled in 48ms
-[00:10:03.183] Server  LOG     ✓ Compiled in 46ms
-[00:10:38.306] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:38.309] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:38.312] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:38.316] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:38.318] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:40.413] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:40.646] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:40.646] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:40.646] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:40.646] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:40.646] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:41.007] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:41.007] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:41.007] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:41.007] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:41.007] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:41.007] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:45.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:45.953] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:45.954] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:45.954] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:45.954] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:45.954] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:10:45.954] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:00:03.852] Browser WARN    Image with src "/images/programs/F.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:10:45.954] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:45.954] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:45.954] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:46.442] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:49.268] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:49.845] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:53.690] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:00:03.852] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:03.852] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:03.852] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:03.852] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:03.852] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:05.228] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:09.742] Server  LOG     ✓ Compiled in 592ms
+[00:01:10.696] Server  LOG     ✓ Compiled in 56ms
+[00:01:18.207] Server  LOG     ✓ Compiled in 40ms
+[00:01:27.432] Server  LOG     ✓ Compiled in 70ms
+[00:01:28.226] Server  LOG     ✓ Compiled in 82ms
+[00:01:29.544] Server  LOG     ✓ Compiled in 122ms
+[00:01:40.447] Server  LOG     ✓ Compiled in 83ms
+[00:01:41.194] Server  LOG     ✓ Compiled in 80ms
+[00:01:47.036] Server  LOG     ✓ Compiled in 46ms
+[00:01:51.131] Server  LOG     ✓ Compiled in 56ms
+[00:02:18.168] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:02.748] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.169] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:02.748] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.171] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:02.748] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.174] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:02.748] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.175] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:02.748] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.690] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:18.875] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:02.748] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.875] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:03.115] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:03.115] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:03.115] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:03.115] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:03.115] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:03.115] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:03.115] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:03.115] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:03.115] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:03.115] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:03.115] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:03.115] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:43.852] Server  WARN    ⚠ Cross origin request detected from 192.168.110.167 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:11:43.953] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.875] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:43.953] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.875] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:43.953] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:18.875] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:43.953] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:02:19.153] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:19.153] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:19.153] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:19.153] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:19.904] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:20.215] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:56.051] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:43.953] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:03:10.800] Server  LOG     ✓ Compiled in 82ms
+[00:03:41.105] Server  LOG     ✓ Compiled in 44ms
+[00:03:45.184] Server  LOG     ✓ Compiled in 42ms
+[00:04:00.257] Server  LOG     ✓ Compiled in 42ms
+[00:04:10.131] Server  LOG     ✓ Compiled in 39ms
+[00:04:16.451] Server  LOG     ✓ Compiled in 44ms
+[00:04:24.539] Server  LOG     ✓ Compiled in 54ms
+[00:04:26.084] Server  LOG     ✓ Compiled in 75ms
+[00:04:30.311] Server  LOG     ✓ Compiled in 43ms
+[00:04:31.077] Server  LOG     ✓ Compiled in 38ms
+[00:04:34.334] Server  LOG     ✓ Compiled in 51ms
+[00:04:38.965] Server  LOG     ✓ Compiled in 42ms
+[00:04:44.269] Server  LOG     ✓ Compiled in 56ms
+[00:04:52.766] Server  LOG     ✓ Compiled in 57ms
+[00:05:02.582] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:43.953] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:05:02.583] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:11:45.569] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:45.569] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:11:46.224] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:46.743] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:46.937] Browser WARN    Image with src "/images/programs/I.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:47.059] Browser WARN    Image with src "/images/programs/N.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:11:47.202] Browser WARN    Image with src "/images/programs/R.webp" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:15:23.727] Server  LOG     ✓ Compiled in 65ms
-[00:15:33.000] Server  LOG     ✓ Compiled in 75ms
-[00:15:36.486] Server  LOG     ✓ Compiled in 422ms
-[00:15:46.968] Server  LOG     ✓ Compiled in 68ms
-[00:17:41.106] Server  LOG     ✓ Compiled in 74ms
-[00:17:53.987] Server  LOG     ✓ Compiled in 68ms
-[00:19:11.103] Server  LOG     ✓ Compiled in 49ms
-[00:19:11.327] Server  LOG     ✓ Compiled in 32ms
-[00:20:02.977] Server  LOG     ✓ Compiled in 43ms
-[00:20:38.610] Server  LOG     ✓ Compiled in 64ms
-[00:21:00.683] Server  LOG     ✓ Compiled in 74ms
-[00:21:08.085] Server  LOG     ✓ Compiled in 50ms
-[00:21:44.170] Server  LOG     ✓ Compiled in 40ms
-[00:21:51.422] Server  LOG     ✓ Compiled in 37ms
-[00:22:09.561] Server  LOG     ✓ Compiled in 86ms
-[00:22:10.401] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:40:21: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:22:12.611] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:40:21: Missed semicolon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:25:00.763] Server  LOG     ✓ Compiled in 49ms
-[00:25:05.091] Server  LOG     ✓ Compiled in 50ms
-[00:25:11.672] Server  LOG     ✓ Compiled in 55ms
-[00:25:12.402] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:228:5: Unknown word width
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:26:10.927] Server  LOG     ✓ Compiled in 56ms
-[00:26:12.853] Server  LOG     ✓ Compiled in 41ms
-[00:26:13.392] Browser ERROR   ./app/home/process/Card.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\Card.module.css:231:11: Unclosed string
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at unclosed (turbopack:///[project]/node_modules/postcss/lib/tokenize.js:45:17)]
-    [at Object.nextToken (turbopack:///[project]/node_modules/postcss/lib/tokenize.js:157:15)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:421:30)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/Card.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/Card.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:26:33.742] Server  LOG     ✓ Compiled in 49ms
-[00:30:04.421] Server  LOG     ✓ Compiled in 75ms
-[00:30:15.139] Server  LOG     ✓ Compiled in 252ms
-[00:30:51.020] Server  LOG     ✓ Compiled in 40ms
-[00:31:10.566] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:05:02.583] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:10.567] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:05:02.583] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:10.569] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:05:02.583] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:10.572] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:05:02.583] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:10.574] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:05:02.802] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:02.802] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:02.802] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:02.802] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:35.996] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:47.622] Server  LOG     ✓ Compiled in 61ms
+[00:05:48.199] Server  LOG     ✓ Compiled in 58ms
+[00:05:55.066] Server  LOG     ✓ Compiled in 42ms
+[00:06:17.089] Server  LOG     ✓ Compiled in 44ms
+[00:06:49.834] Server  LOG     ✓ Compiled in 99ms
+[00:07:28.706] Server  LOG     ✓ Compiled in 90ms
+[00:07:28.970] Server  LOG     ✓ Compiled in 72ms
+[00:10:29.528] Server  LOG     ✓ Compiled in 69ms
+[00:10:45.910] Server  LOG     ✓ Compiled in 47ms
+[00:11:02.041] Server  LOG     ✓ Compiled in 68ms
+[00:11:06.123] Server  LOG     ✓ Compiled in 39ms
+[00:11:11.168] Server  LOG     ✓ Compiled in 45ms
+[00:11:12.483] Server  LOG     ✓ Compiled in 46ms
+[00:11:24.217] Server  LOG     ✓ Compiled in 80ms
+[00:11:32.971] Server  LOG     ✓ Compiled in 44ms
+[00:11:36.361] Server  LOG     ✓ Compiled in 38ms
+[00:11:50.211] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:12:04.102] Server  LOG     ✓ Compiled in 46ms
+[00:12:12.486] Server  LOG     ✓ Compiled in 48ms
+[00:12:15.680] Server  LOG     ✓ Compiled in 30ms
+[00:12:19.963] Server  LOG     ✓ Compiled in 39ms
+[00:12:27.747] Server  LOG     ✓ Compiled in 50ms
+[00:12:30.356] Server  LOG     ✓ Compiled in 30ms
+[00:12:32.781] Server  LOG     ✓ Compiled in 42ms
+[00:12:34.331] Server  LOG     ✓ Compiled in 32ms
+[00:13:10.729] Server  LOG     ✓ Compiled in 32ms
+[00:13:15.409] Server  LOG     ✓ Compiled in 44ms
+[00:13:28.292] Server  LOG     ✓ Compiled in 38ms
+[00:13:29.266] Server  LOG     ✓ Compiled in 33ms
+[00:13:37.193] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:10.970] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:31:11.238] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:37.194] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:11.238] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:37.196] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:11.238] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:37.199] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:11.238] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:37.200] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:11.238] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:37.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:38.223] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:11.238] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:38.223] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:31:11.527] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:11.527] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:11.527] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:11.527] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:11.527] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:11.527] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:33:01.933] Server  LOG     ✓ Compiled in 56ms
-[00:33:04.638] Server  LOG     ✓ Compiled in 47ms
-[00:33:07.127] Server  LOG     ✓ Compiled in 50ms
-[00:33:24.090] Server  LOG     ✓ Compiled in 63ms
-[00:33:26.599] Server  LOG     ✓ Compiled in 56ms
-[00:34:41.436] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:38.223] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:41.436] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:38.223] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:41.436] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:38.223] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:41.436] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:38.452] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:38.452] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:38.452] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:47.675] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:41.436] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:13:47.675] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:47.675] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:47.675] Browser WARN    Image with src "http://localhost:3000/images/programs/D-mobile.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:05.698] Server  LOG     ✓ Compiled in 46ms
+[00:14:14.472] Server  LOG     ✓ Compiled in 43ms
+[00:14:18.787] Server  LOG     ✓ Compiled in 31ms
+[00:14:27.890] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:16:03.644] Server  LOG     ✓ Compiled in 80ms
+[00:16:13.180] Server  LOG     ✓ Compiled in 72ms
+[00:16:20.632] Server  LOG     ✓ Compiled in 85ms
+[00:16:55.487] Server  LOG     ✓ Compiled in 56ms
+[00:17:00.590] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:41.436] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:00.591] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:41.821] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:41.821] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:41.821] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:41.821] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:41.821] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:41.821] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:52.567] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:00.593] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:52.567] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:00.595] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:52.567] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:00.597] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:52.567] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:01.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:01.349] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:52.567] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:01.349] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:52.567] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:01.349] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:34:52.567] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:35:19.456] Server  LOG     ✓ Compiled in 40ms
-[00:35:26.062] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:01.349] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:35:26.062] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+[00:17:01.349] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:35:26.062] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:35:26.062] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:35:26.062] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:35:26.062] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:35:26.323] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:35:26.323] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:35:26.323] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:35:26.323] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:35:26.323] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:35:26.323] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:36:20.273] Server  LOG     ✓ Compiled in 60ms
-[00:36:22.023] Server  LOG     ✓ Compiled in 52ms
-[00:36:22.592] Server  LOG     ✓ Compiled in 84ms
-[00:36:25.953] Server  LOG     ✓ Compiled in 66ms
-[00:37:14.708] Server  LOG     ✓ Compiled in 58ms
-[00:37:17.106] Server  LOG     ✓ Compiled in 55ms
-[00:37:17.450] Server  LOG     ✓ Compiled in 90ms
-[00:37:20.308] Server  LOG     ✓ Compiled in 80ms
-[00:38:37.622] Server  LOG     ✓ Compiled in 39ms
-[00:38:39.850] Server  LOG     ✓ Compiled in 45ms
-[00:39:54.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:55.327] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:39:55.327] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:39:55.327] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:39:55.327] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:39:55.327] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:39:55.769] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:39:55.769] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:39:56.446] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:39:59.112] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:00.155] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.154] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:03.445] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.446] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.446] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.446] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.446] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.446] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:03.795] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:03.795] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:03.795] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:03.795] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:25.156] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:25.455] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:25.455] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:25.455] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:25.455] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:25.455] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:25.455] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:25.761] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:25.761] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:25.761] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:25.761] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:26.448] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:17:01.626] Browser WARN    Image with src "/images/programs/F.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:40:38.751] Server  LOG     ✓ Compiled in 37ms
-[00:40:49.988] Server  LOG     ✓ Compiled in 41ms
-[00:40:51.400] Server  LOG     ✓ Compiled in 32ms
-[00:40:54.791] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:55.088] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:55.088] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:55.088] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:55.088] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:55.088] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:40:55.483] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:55.483] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:55.483] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:55.483] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:40:58.076] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:41:06.053] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:41:10.731] Server  LOG     ✓ Compiled in 36ms
-[00:41:34.466] Server  LOG     ✓ Compiled in 43ms
-[00:42:39.364] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:39.609] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:39.609] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:39.610] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:39.610] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:39.610] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:39.610] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:39.890] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:39.890] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:39.890] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:39.890] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:39.890] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:51.614] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:55.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:55.429] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:55.429] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:55.429] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:55.429] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:55.429] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:42:55.782] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:55.782] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:55.782] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:55.782] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:55.782] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:42:56.217] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:43:17.377] Server  LOG     ✓ Compiled in 44ms
-[00:43:43.698] Server  LOG     ✓ Compiled in 57ms
-[00:43:56.041] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:44:05.270] Server  LOG     ✓ Compiled in 56ms
-[00:44:07.570] Server  LOG     ✓ Compiled in 39ms
-[00:44:10.047] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
+[00:17:01.626] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:01.626] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:01.626] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:01.626] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:01.626] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:03.044] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:31:08.208] Server  LOG     ✓ Compiled in 40ms
+[00:31:08.501] Browser ERROR   ./app/home/intro/Intro.tsx:36:13
+Parsing ecmascript source code failed
+  34 |             variant="primary"
+  35 |             color=
+> 36 |             className={styles.button}
+     |             ^^^^^^^^^
+  37 |             color="var(--color-green-100)"
+  38 |             icon={<ArrowUpRight size={16} />}
+  39 |           >
 
-
+Expected '</', got 'ident'
 
 Import trace:
   Server Component:
-    ./app/home/process/Process.tsx
+    ./app/home/intro/Intro.tsx
     ./app/home/page.tsx
     ./app/page.tsx
+[00:31:12.559] Browser ERROR   ./app/home/intro/Intro.tsx:36:13
+Parsing ecmascript source code failed
+  34 |             variant="primary"
+  35 |             color=
+> 36 |             className={styles.button}
+     |             ^^^^^^^^^
+  37 |             color="var(--color-green-100)"
+  38 |             icon={<ArrowUpRight size={16} />}
+  39 |           >
 
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.049] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
+Expected '</', got 'ident'
 
 Import trace:
   Server Component:
-    ./app/home/process/Process.tsx
+    ./app/home/intro/Intro.tsx
     ./app/home/page.tsx
     ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.050] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.051] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.059] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.060] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.061] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.062] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.064] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.064] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.065] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.067] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.068] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.069] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.070] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.071] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.073] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.074] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.075] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.076] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.077] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.078] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.079] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.080] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.082] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.083] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.084] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.085] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.086] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.087] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.087] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.088] Server  ERROR   ⨯ ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:44:10.099] Server  LOG     ✓ Compiled in 52ms
-[00:44:10.402] Browser ERROR   ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:44:15.401] Browser ERROR   ./app/home/process/Process.tsx:4:1
-Module not found: Can't resolve './Process.module.css'
-  2 |
-  3 | import { useRef } from "react";
-> 4 | import styles from "./Process.module.css";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import { ArrowUpRightIcon } from "lucide-react";
-  6 | import Button from "@/components/ui/Button/Button";
-  7 | import Carousel from "./Carousel";
-
-Import trace:
-  Server Component:
-    ./app/home/process/Process.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[00:45:44.910] Server  LOG     ✓ Compiled in 41ms
-[00:45:47.930] Server  LOG     ✓ Compiled in 37ms
-[00:45:54.069] Server  LOG     ✓ Compiled in 38ms
-[00:45:59.414] Server  LOG     ✓ Compiled in 42ms
-[00:46:03.809] Server  LOG     ✓ Compiled in 38ms
-[00:46:07.238] Server  LOG     ✓ Compiled in 38ms
-[00:46:10.284] Server  LOG     ✓ Compiled in 53ms
-[00:46:14.173] Server  LOG     ✓ Compiled in 33ms
-[00:46:18.022] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:46:18.333] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:18.333] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:18.333] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:18.333] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:18.333] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:18.333] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:46:18.526] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:18.527] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:18.527] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:18.527] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:18.527] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:20.199] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:46:41.916] Server  LOG     ✓ Compiled in 39ms
-[00:46:56.531] Server  LOG     ✓ Compiled in 37ms
-[00:47:05.001] Server  LOG     ✓ Compiled in 41ms
-[00:47:10.849] Server  LOG     ✓ Compiled in 41ms
-[00:47:26.183] Server  LOG     ✓ Compiled in 36ms
-[00:47:33.876] Server  LOG     ✓ Compiled in 38ms
-[00:47:35.158] Server  LOG     ✓ Compiled in 45ms
-[00:47:40.383] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:47:40.782] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:40.782] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:40.782] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:40.782] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:40.782] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:40.782] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:41.157] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:41.157] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:41.157] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:41.157] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:41.157] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:48.610] Server  LOG     ✓ Compiled in 41ms
-[00:47:56.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:47:56.511] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:56.511] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:56.511] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:56.511] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:56.511] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:56.511] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:47:56.867] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:56.868] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:56.868] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:47:56.868] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:48:01.429] Server  LOG     ✓ Compiled in 37ms
-[00:48:10.003] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:48:10.756] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:48:33.338] Server  LOG     ✓ Compiled in 37ms
-[00:48:36.276] Server  LOG     ✓ Compiled in 53ms
-[00:48:39.118] Server  LOG     ✓ Compiled in 74ms
-[00:49:24.498] Server  LOG     ✓ Compiled in 37ms
-[00:49:53.413] Server  LOG     ✓ Compiled in 41ms
-[00:50:01.203] Server  LOG     ✓ Compiled in 36ms
-[00:50:07.359] Server  LOG     ✓ Compiled in 42ms
-[00:50:08.687] Server  LOG     ✓ Compiled in 33ms
-[00:50:10.523] Server  LOG     ✓ Compiled in 36ms
-[00:50:13.639] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:13.932] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:13.932] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:13.932] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:13.932] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:13.932] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:13.932] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:14.295] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:14.295] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:14.295] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:14.295] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:27.027] Server  LOG     ✓ Compiled in 38ms
-[00:50:34.162] Server  LOG     ✓ Compiled in 56ms
-[00:50:41.092] Server  LOG     ✓ Compiled in 54ms
-[00:50:54.714] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:50:55.159] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:55.159] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:55.159] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:55.159] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:55.159] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:50:55.159] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:50:55.159] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:55.159] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:55.159] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:56.183] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:57.094] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:50:57.752] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:51:48.118] Server  LOG     ✓ Compiled in 41ms
-[00:51:54.297] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:52:00.620] Server  LOG     ✓ Compiled in 37ms
-[00:52:04.026] Server  LOG     ✓ Compiled in 45ms
-[00:52:06.023] Server  LOG     ✓ Compiled in 40ms
-[00:52:08.447] Server  LOG     ✓ Compiled in 39ms
-[00:52:09.288] Server  LOG     ✓ Compiled in 33ms
-[00:52:17.578] Server  LOG     ✓ Compiled in 34ms
-[00:52:18.226] Server  LOG     ✓ Compiled in 32ms
-[00:52:49.241] Server  LOG     ✓ Compiled in 36ms
-[00:52:50.271] Server  LOG     ✓ Compiled in 41ms
-[00:52:54.368] Server  LOG     ✓ Compiled in 34ms
-[00:53:08.126] Server  LOG     ✓ Compiled in 113ms
-[00:53:08.393] Browser ERROR   ./app/home/process/CardMobile.module.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\app\home\process\CardMobile.module.css:62:3: Unknown word border
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-
-Import traces:
-  Client Component Browser:
-    ./app/home/process/CardMobile.module.css [Client Component Browser]
-    ./app/home/process/Card.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Client Component Browser]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./app/home/process/CardMobile.module.css [Client Component SSR]
-    ./app/home/process/Card.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Client Component SSR]
-    ./app/home/process/Carousel.tsx [Server Component]
-    ./app/home/page.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:53:11.227] Server  LOG     ✓ Compiled in 41ms
-[00:53:17.334] Server  LOG     ✓ Compiled in 40ms
-[00:53:26.926] Server  LOG     ✓ Compiled in 42ms
-[00:53:33.155] Server  LOG     ✓ Compiled in 34ms
-[00:53:38.856] Server  LOG     ✓ Compiled in 30ms
-[00:53:43.822] Server  LOG     ✓ Compiled in 31ms
-[00:53:54.958] Server  LOG     ✓ Compiled in 30ms
-[00:54:02.128] Server  LOG     ✓ Compiled in 33ms
-[00:54:11.964] Server  LOG     ✓ Compiled in 30ms
-[00:54:24.524] Server  LOG     ✓ Compiled in 29ms
-[00:54:30.485] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:54:30.799] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:30.799] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:30.799] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:30.799] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:30.799] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:54:31.080] Browser WARN    Image with src "/images/programs/D.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:54:31.080] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:54:31.080] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:54:31.080] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:54:31.644] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:54:34.043] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:54:34.335] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:58:54.995] Server  LOG     ✓ Compiled in 1569ms
-[01:01:37.177] Server  LOG     ✓ Compiled in 221ms
-[01:01:39.999] Server  LOG     ✓ Compiled in 244ms
-[01:01:40.203] Server  LOG     ✓ Compiled in 148ms
-[01:10:27.415] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:27.418] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:27.422] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:27.426] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:27.428] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:10:28.850] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:11:43.073] Server  LOG     ✓ Compiled in 151ms
-[01:11:43.404] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:11:43.404] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:11:43.404] Browser WARN    Image with src "/images/programs/I.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:11:50.102] Server  LOG     ✓ Compiled in 51ms
-[01:11:50.540] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.300] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.301] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.302] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.303] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.304] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.305] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.306] Server  ERROR   ⨯ ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[01:11:51.335] Server  LOG     ✓ Compiled in 816ms
-[01:11:51.380] Server  LOG     ✓ Compiled in 44ms
-[01:11:52.404] Browser ERROR   ./app/home/news-and-events/index.ts:2:1
-Module not found: Can't resolve './Card'
-  1 | export { default as Section } from "./Section";
-> 2 | export { default as Card } from "./Card";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |
-
-Import trace:
-  Server Component:
-    ./app/home/news-and-events/index.ts
-    ./app/home/page.tsx
-    ./app/page.tsx
-
-https://nextjs.org/docs/messages/module-not-found
-[01:28:26.937] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:26.939] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:26.941] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:26.944] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:26.945] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:27.364] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:28:27.600] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:27.600] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:27.600] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:27.600] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:27.600] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[01:28:27.789] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:28:27.789] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:28:27.789] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:28:27.789] Browser WARN    Image with src "/images/programs/D.webp" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:28:27.789] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:28:27.789] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:28:27.789] Browser WARN    Image with src "/images/programs/I.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:28:28.301] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:28:28.827] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:31:15.232] Server  LOG     ✓ Compiled in 75ms

@@ -3,23 +3,27 @@
 .card {
   width: 100%;
   position: relative;
-  border-bottom: 1px solid rgba(19, 64, 83, 0.4);
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: flex-start;
   padding: 24px 0;
   gap: 20px;
   text-align: left;
+  height: 288px;
+}
+
+.card:not(:last-child) {
+  border-bottom: 1px solid rgba(19, 64, 83, 0.4);
 }
 
 .link {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
   width: 100%;
+  height: 100%;
   text-decoration: none;
   color: inherit;
 }
@@ -32,6 +36,7 @@
   aspect-ratio: 4 / 3;
   flex-shrink: 0;
   background: var(--color-beige-20);
+  position: relative;
 }
 
 .image {
@@ -40,14 +45,30 @@
   object-fit: cover;
 }
 
+.imageTagOverlay {
+  display: flex;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+ 
+  z-index: 10;
+}
+
 .content {
+  height: 100%;
   flex: 1;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
+  max-width: 640px;
+  gap: 24px;
+}
+
+.buttonWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 .tagsRow {
@@ -58,15 +79,17 @@
 
 .tag {
   border-radius: 999px;
-  border: 1px solid var(--color-blue-100);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 6px 16px;
   font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 500;
   letter-spacing: 0.24em;
   line-height: 120%;
   text-transform: uppercase;
-  color: var(--color-blue-100);
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 .textBlock {
@@ -76,13 +99,30 @@
   gap: 12px;
 }
 
-.date {
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  color: var(--color-blue-100);
+}
+
+.infoText {
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 100%;
-  text-transform: uppercase;
   color: var(--color-blue-100);
 }
 
@@ -90,7 +130,7 @@
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.04em;
   line-height: 120%;
   color: var(--color-blue-100);
   margin: 0;
@@ -100,58 +140,34 @@
   font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   line-height: 150%;
   color: var(--color-blue-100);
   margin: 0;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-}
-
-.button {
-  height: 40px;
-  backdrop-filter: blur(12px);
-  border-radius: 999px;
-  background-color: rgba(254, 254, 254, 0.05);
-  border: 1px solid rgba(19, 64, 83, 0.4);
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 20px 8px 24px;
-  gap: 4px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-blue-100);
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.button:hover {
-  background-color: rgba(19, 64, 83, 0.08);
-  border-color: var(--color-blue-100);
-}
-
-.buttonIcon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
   .card {
     flex-direction: column;
     align-items: stretch;
+    height: auto;
   }
 
   .link {
     flex-direction: column;
     align-items: stretch;
+    gap: 24px;
+  }
+
+  .content {
+    max-width: none;
+    gap: 12px;
+    height: fit-content;
   }
 
   .imageWrap {
@@ -160,23 +176,46 @@
     max-height: 240px;
     aspect-ratio: 16 / 10;
   }
+
+  .buttonWrapper {
+    align-items: flex-end;
+    margin-top: auto;
+  }
 }
 
 @media (max-width: 768px) {
   .card {
-    padding: 20px 0;
-    gap: 16px;
+    padding: 16px 0;
   }
 
-  .content {
-    gap: 16px;
+
+  .imageWrap {
+    border-radius: 8px;
+  }
+
+  .infoContainer {
+    gap: 12px;
+  }
+
+  .infoItem {
+    gap: 4px;
+  }
+
+  .infoIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .infoText {
+    font-size: 11px;
   }
 
   .title {
     font-size: 18px;
+    line-height: 130%;
   }
 
   .description {
-    font-size: 15px;
+    display: none;
   }
 }
