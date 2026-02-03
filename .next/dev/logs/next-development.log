@@ -1,231 +1,2855 @@
-[00:00:02.212] Server  LOG     ✓ Ready in 1572ms
-[00:00:02.916] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.917] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.920] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.922] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:02.923] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.407] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.568] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.568] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.569] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.569] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.569] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:03.852] Browser WARN    Image with src "/images/programs/F.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:03.852] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:03.852] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:03.852] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:03.852] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:03.852] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:05.228] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:09.742] Server  LOG     ✓ Compiled in 592ms
-[00:01:10.696] Server  LOG     ✓ Compiled in 56ms
-[00:01:18.207] Server  LOG     ✓ Compiled in 40ms
-[00:01:27.432] Server  LOG     ✓ Compiled in 70ms
-[00:01:28.226] Server  LOG     ✓ Compiled in 82ms
-[00:01:29.544] Server  LOG     ✓ Compiled in 122ms
-[00:01:40.447] Server  LOG     ✓ Compiled in 83ms
-[00:01:41.194] Server  LOG     ✓ Compiled in 80ms
-[00:01:47.036] Server  LOG     ✓ Compiled in 46ms
-[00:01:51.131] Server  LOG     ✓ Compiled in 56ms
-[00:02:18.168] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.169] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.171] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.174] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.175] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.690] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:18.875] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.875] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.875] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.875] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:18.875] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:02:19.153] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:19.153] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:19.153] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:19.153] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:19.904] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:20.215] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:56.051] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:03:10.800] Server  LOG     ✓ Compiled in 82ms
-[00:03:41.105] Server  LOG     ✓ Compiled in 44ms
-[00:03:45.184] Server  LOG     ✓ Compiled in 42ms
-[00:04:00.257] Server  LOG     ✓ Compiled in 42ms
-[00:04:10.131] Server  LOG     ✓ Compiled in 39ms
-[00:04:16.451] Server  LOG     ✓ Compiled in 44ms
-[00:04:24.539] Server  LOG     ✓ Compiled in 54ms
-[00:04:26.084] Server  LOG     ✓ Compiled in 75ms
-[00:04:30.311] Server  LOG     ✓ Compiled in 43ms
-[00:04:31.077] Server  LOG     ✓ Compiled in 38ms
-[00:04:34.334] Server  LOG     ✓ Compiled in 51ms
-[00:04:38.965] Server  LOG     ✓ Compiled in 42ms
-[00:04:44.269] Server  LOG     ✓ Compiled in 56ms
-[00:04:52.766] Server  LOG     ✓ Compiled in 57ms
-[00:05:02.582] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:02.583] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:02.583] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:02.583] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:02.583] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:02.583] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:05:02.802] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:02.802] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:02.802] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:02.802] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:35.996] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:47.622] Server  LOG     ✓ Compiled in 61ms
-[00:05:48.199] Server  LOG     ✓ Compiled in 58ms
-[00:05:55.066] Server  LOG     ✓ Compiled in 42ms
-[00:06:17.089] Server  LOG     ✓ Compiled in 44ms
-[00:06:49.834] Server  LOG     ✓ Compiled in 99ms
-[00:07:28.706] Server  LOG     ✓ Compiled in 90ms
-[00:07:28.970] Server  LOG     ✓ Compiled in 72ms
-[00:10:29.528] Server  LOG     ✓ Compiled in 69ms
-[00:10:45.910] Server  LOG     ✓ Compiled in 47ms
-[00:11:02.041] Server  LOG     ✓ Compiled in 68ms
-[00:11:06.123] Server  LOG     ✓ Compiled in 39ms
-[00:11:11.168] Server  LOG     ✓ Compiled in 45ms
-[00:11:12.483] Server  LOG     ✓ Compiled in 46ms
-[00:11:24.217] Server  LOG     ✓ Compiled in 80ms
-[00:11:32.971] Server  LOG     ✓ Compiled in 44ms
-[00:11:36.361] Server  LOG     ✓ Compiled in 38ms
-[00:11:50.211] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:12:04.102] Server  LOG     ✓ Compiled in 46ms
-[00:12:12.486] Server  LOG     ✓ Compiled in 48ms
-[00:12:15.680] Server  LOG     ✓ Compiled in 30ms
-[00:12:19.963] Server  LOG     ✓ Compiled in 39ms
-[00:12:27.747] Server  LOG     ✓ Compiled in 50ms
-[00:12:30.356] Server  LOG     ✓ Compiled in 30ms
-[00:12:32.781] Server  LOG     ✓ Compiled in 42ms
-[00:12:34.331] Server  LOG     ✓ Compiled in 32ms
-[00:13:10.729] Server  LOG     ✓ Compiled in 32ms
-[00:13:15.409] Server  LOG     ✓ Compiled in 44ms
-[00:13:28.292] Server  LOG     ✓ Compiled in 38ms
-[00:13:29.266] Server  LOG     ✓ Compiled in 33ms
-[00:13:37.193] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:37.194] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:37.196] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:37.199] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:37.200] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:37.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:38.223] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:38.223] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:38.223] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:38.223] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:38.223] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:38.452] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:38.452] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:38.452] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:47.675] Browser WARN    Image with src "/images/programs/D-mobile.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:13:47.675] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:47.675] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:47.675] Browser WARN    Image with src "http://localhost:3000/images/programs/D-mobile.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:14:05.698] Server  LOG     ✓ Compiled in 46ms
-[00:14:14.472] Server  LOG     ✓ Compiled in 43ms
-[00:14:18.787] Server  LOG     ✓ Compiled in 31ms
-[00:14:27.890] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:16:03.644] Server  LOG     ✓ Compiled in 80ms
-[00:16:13.180] Server  LOG     ✓ Compiled in 72ms
-[00:16:20.632] Server  LOG     ✓ Compiled in 85ms
-[00:16:55.487] Server  LOG     ✓ Compiled in 56ms
-[00:17:00.590] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:00.591] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:00.593] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:00.595] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:00.597] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:01.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:01.349] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:01.349] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:01.349] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:01.349] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:01.349] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:17:01.626] Browser WARN    Image with src "/images/programs/F.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:17:01.626] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:17:01.626] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:17:01.626] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:17:01.626] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:17:01.626] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:17:03.044] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:08.208] Server  LOG     ✓ Compiled in 40ms
-[00:31:08.501] Browser ERROR   ./app/home/intro/Intro.tsx:36:13
-Parsing ecmascript source code failed
-  34 |             variant="primary"
-  35 |             color=
-> 36 |             className={styles.button}
-     |             ^^^^^^^^^
-  37 |             color="var(--color-green-100)"
-  38 |             icon={<ArrowUpRight size={16} />}
-  39 |           >
+[00:00:01.375] Server  LOG     ✓ Ready in 1021ms
+[00:00:06.868] Server  ERROR   ⨯ ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "*" is not pure. Pure selectors must contain at least one local class or id.
 
-Expected '</', got 'ident'
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "[hidden]:where(:not([hidden="until-found"]))" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "a" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "abbr:where([title])" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "audio" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "b" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "button" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "canvas" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "code" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "embed" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h1" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h2" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h3" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h4" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h5" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h6" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "hr" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "iframe" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "img" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "input" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "input:where([type="button"], [type="reset"], [type="submit"])" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "kbd" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "menu" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "object" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "ol" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "optgroup" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "pre" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "progress" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "samp" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "select" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "small" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "strong" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "sub" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "summary" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "sup" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "svg" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "table" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "textarea" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "ul" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+
+./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "video" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+[00:00:07.983] Browser ERROR   uncaughtError: Error: ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "*" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "*" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "[hidden]:where(:not([hidden="until-found"]))" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "a" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "abbr:where([title])" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "audio" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "b" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "button" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "canvas" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "code" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "embed" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h1" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h2" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h3" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h4" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h5" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h6" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "hr" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "iframe" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "img" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "input" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "input:where([type="button"], [type="reset"], [type="submit"])" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "kbd" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "menu" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "object" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "ol" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "optgroup" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "pre" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "progress" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "samp" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "select" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "small" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "strong" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "sub" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "summary" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "sup" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "svg" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "table" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "textarea" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "ul" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.187] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "video" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "*" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "[hidden]:where(:not([hidden="until-found"]))" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "a" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "abbr:where([title])" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "audio" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "b" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "button" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "canvas" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "code" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "embed" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h1" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h2" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h3" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h4" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h5" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "h6" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "hr" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "iframe" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "img" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "input" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "input:where([type="button"], [type="reset"], [type="submit"])" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "kbd" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "menu" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "object" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "ol" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "optgroup" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "pre" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "progress" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "samp" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "select" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "small" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "strong" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "sub" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "summary" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "sup" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "svg" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "table" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "textarea" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "ul" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:00:08.683] Browser ERROR   ./components/Footer/Subscribe.module.css
+Transforming CSS failed
+Selector "video" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:01:02.772] Server  LOG     ✓ Compiled in 59ms
+[00:01:03.661] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:03.664] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:03.669] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:03.674] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:03.678] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:04.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:05.156] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:05.157] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:05.157] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:05.157] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:05.157] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:07.117] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:07.117] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:07.117] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:07.117] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:07.117] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:07.117] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:07.117] Browser WARN    Image with src "/images/programs/F.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:07.117] Browser WARN    Image with src "/images/programs/R.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:07.118] Browser WARN    Image with src "/images/programs/E.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:07.118] Browser WARN    Image with src "/images/programs/I.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:07.118] Browser WARN    Image with src "/images/programs/N.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:07.118] Browser WARN    Image with src "/images/programs/D.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:53.068] Server  LOG     ✓ Compiled in 56ms
+[00:01:55.290] Server  LOG     ✓ Compiled in 40ms
+[00:01:57.877] Server  LOG     ✓ Compiled in 45ms
+[00:01:59.355] Server  LOG     ✓ Compiled in 72ms
+[00:02:00.113] Browser ERROR   ./components/Footer/Subscribe.module.css:3:110
+Parsing CSS source code failed
+  1 | /* Subscription Section */
+  2 | .subscriptionSection {
+> 3 |   background: linear-gradient(90deg, var(--color-blue-100) 100%, var(--color-blue-80) 50%, var(--color-blue-6 0) 0%);
+    |                                                                                                              ^
+  4 |   padding: 96px 0;
+  5 |   height: 112vh;
+  6 | }
+
+Unexpected token Number { has_sign: false, value: 0.0, int_value: Some(0) }
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:03:26.293] Server  LOG     ✓ Compiled in 59ms
+[00:03:35.993] Server  LOG     ✓ Compiled in 59ms
+[00:04:28.717] Server  LOG     ✓ Compiled in 34ms
+[00:06:11.992] Server  LOG     ✓ Compiled in 51ms
+[00:07:19.127] Server  LOG     ✓ Compiled in 57ms
+[00:07:20.842] Server  LOG     ✓ Compiled in 63ms
+[00:07:47.547] Server  LOG     ✓ Compiled in 37ms
+[00:07:48.030] Server  LOG     ✓ Compiled in 33ms
+[00:07:52.003] Server  LOG     ✓ Compiled in 49ms
+[00:08:02.191] Server  LOG     ✓ Compiled in 47ms
+[00:08:11.507] Server  LOG     ✓ Compiled in 65ms
+[00:08:27.136] Server  LOG     ✓ Compiled in 40ms
+[00:08:33.744] Server  LOG     ✓ Compiled in 30ms
+[00:08:34.103] Browser ERROR   ./components/Footer/Subscribe.module.css:3:25
+Parsing CSS source code failed
+  1 | /* Subscription Section */
+  2 | .subscriptionSection {
+> 3 |   background-color: var(-color);
+    |                         ^
+  4 |   background: linear-gradient(135deg, rgba(18, 65, 83, 0.7) 0%, rgba(18, 65, 83, 0.9) 50%, rgba(18, 65, 83, 1) 100%) !important;
+  5 |   padding: 96px 0;
+  6 |   height: 112vh;
+
+Unexpected token Ident("-color")
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:09:11.608] Server  LOG     ✓ Compiled in 32ms
+[00:09:14.659] Server  LOG     ✓ Compiled in 31ms
+[00:09:18.166] Server  LOG     ✓ Compiled in 76ms
+[00:09:22.132] Server  LOG     ✓ Compiled in 42ms
+[00:09:24.825] Server  LOG     ✓ Compiled in 33ms
+[00:09:27.656] Server  LOG     ✓ Compiled in 32ms
+[00:09:29.179] Server  LOG     ✓ Compiled in 33ms
+[00:09:33.818] Server  LOG     ✓ Compiled in 43ms
+[00:09:34.819] Server  LOG     ✓ Compiled in 34ms
+[00:10:00.846] Server  LOG     ✓ Compiled in 35ms
+[00:10:01.109] Browser ERROR   ./components/Footer/Footer.tsx:112:41
+Parsing ecmascript source code failed
+  110 |     <section className={subscribeStyles.subscriptionSection}>
+  111 |       <div classnam
+> 112 |       {/* Marquee Section - Two Lines */}
+      |                                         ^
+  113 |       <div className={subscribeStyles.marqueeContainer}>
+  114 |         <div className={`${subscribeStyles.marqueeContent} ${subscribeStyles.top}`}>
+  115 |           {[...programsData, ...programsData].map((program, index) => (
+
+Expected '</', got '}'
 
 Import trace:
   Server Component:
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:31:12.559] Browser ERROR   ./app/home/intro/Intro.tsx:36:13
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:10:02.360] Server  LOG     ✓ Compiled in 35ms
+[00:10:03.109] Browser ERROR   ./components/Footer/Footer.tsx:196:1
 Parsing ecmascript source code failed
-  34 |             variant="primary"
-  35 |             color=
-> 36 |             className={styles.button}
-     |             ^^^^^^^^^
-  37 |             color="var(--color-green-100)"
-  38 |             icon={<ArrowUpRight size={16} />}
-  39 |           >
+  194 |     </section>
+  195 |   );
+> 196 | }
+      | ^
+  197 |
+  198 | // Footer Section Component
+  199 | function FooterSection() {
 
-Expected '</', got 'ident'
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
 
 Import trace:
   Server Component:
-    ./app/home/intro/Intro.tsx
-    ./app/home/page.tsx
-    ./app/page.tsx
-[00:31:15.232] Server  LOG     ✓ Compiled in 75ms
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:10:11.065] Server  LOG     ✓ Compiled in 55ms
+[00:10:12.105] Browser ERROR   ./components/Footer/Footer.tsx:195:5
+Parsing ecmascript source code failed
+  193 |       </div>
+  194 |       <
+> 195 |     </section>
+      |     ^
+  196 |   );
+  197 | }
+  198 |
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:10:12.105] Browser ERROR   ./components/Footer/Footer.tsx:195:6
+Parsing ecmascript source code failed
+  193 |       </div>
+  194 |       <
+> 195 |     </section>
+      |      ^^^^^^^^^
+  196 |   );
+  197 | }
+  198 |
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:10:41.836] Server  LOG     ✓ Compiled in 44ms
+[00:10:42.113] Browser ERROR   ./components/Footer/Footer.tsx:112:41
+Parsing ecmascript source code failed
+  110 |     <section className={subscribeStyles.subscriptionSection}>
+  111 |       <div classnam
+> 112 |       {/* Marquee Section - Two Lines */}
+      |                                         ^
+  113 |       <div className={subscribeStyles.marqueeContainer}>
+  114 |         <div className={`${subscribeStyles.marqueeContent} ${subscribeStyles.top}`}>
+  115 |           {[...programsData, ...programsData].map((program, index) => (
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:10:44.117] Browser ERROR   ./components/Footer/Footer.tsx:112:41
+Parsing ecmascript source code failed
+  110 |     <section className={subscribeStyles.subscriptionSection}>
+  111 |       <div
+> 112 |       {/* Marquee Section - Two Lines */}
+      |                                         ^
+  113 |       <div className={subscribeStyles.marqueeContainer}>
+  114 |         <div className={`${subscribeStyles.marqueeContent} ${subscribeStyles.top}`}>
+  115 |           {[...programsData, ...programsData].map((program, index) => (
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:10:53.607] Server  LOG     ✓ Compiled in 34ms
+[00:13:25.628] Server  LOG     ✓ Compiled in 53ms
+[00:13:35.633] Server  LOG     ✓ Compiled in 87ms
+[00:14:21.808] Server  LOG     ✓ Compiled in 31ms
+[00:14:27.226] Server  LOG     ✓ Compiled in 28ms
+[00:14:38.796] Server  LOG     ✓ Compiled in 28ms
+[00:14:46.982] Server  LOG     ✓ Compiled in 39ms
+[00:14:50.951] Server  LOG     ✓ Compiled in 34ms
+[00:15:03.445] Server  LOG     ✓ Compiled in 45ms
+[00:15:03.549] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:4:30: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:15:18.834] Server  LOG     ✓ Compiled in 34ms
+[00:15:32.025] Server  LOG     ✓ Compiled in 33ms
+[00:15:39.850] Server  LOG     ✓ Compiled in 46ms
+[00:15:50.910] Server  LOG     ✓ Compiled in 34ms
+[00:15:53.939] Server  LOG     ✓ Compiled in 34ms
+[00:15:54.608] Server  LOG     ✓ Compiled in 29ms
+[00:15:58.748] Server  LOG     ✓ Compiled in 44ms
+[00:16:34.083] Server  LOG     ✓ Compiled in 32ms
+[00:16:44.541] Server  LOG     ✓ Compiled in 31ms
+[00:16:52.175] Server  LOG     ✓ Compiled in 48ms
+[00:16:57.654] Server  LOG     ✓ Compiled in 34ms
+[00:17:02.828] Server  LOG     ✓ Compiled in 44ms
+[00:17:08.195] Server  LOG     ✓ Compiled in 34ms
+[00:17:14.537] Server  LOG     ✓ Compiled in 34ms
+[00:17:19.351] Server  LOG     ✓ Compiled in 35ms
+[00:17:37.849] Server  LOG     ✓ Compiled in 46ms
+[00:18:03.031] Server  LOG     ✓ Compiled in 33ms
+[00:18:04.279] Server  LOG     ✓ Compiled in 33ms
+[00:18:15.835] Server  LOG     ✓ Compiled in 45ms
+[00:18:23.864] Server  LOG     ✓ Compiled in 35ms
+[00:18:26.198] Server  LOG     ✓ Compiled in 48ms
+[00:18:30.996] Server  LOG     ✓ Compiled in 33ms
+[00:18:37.188] Server  LOG     ✓ Compiled in 33ms
+[00:19:11.057] Server  LOG     ✓ Compiled in 31ms
+[00:19:15.708] Server  LOG     ✓ Compiled in 54ms
+[00:19:21.508] Server  LOG     ✓ Compiled in 33ms
+[00:19:24.878] Server  LOG     ✓ Compiled in 40ms
+[00:19:33.782] Server  LOG     ✓ Compiled in 32ms
+[00:19:35.887] Server  LOG     ✓ Compiled in 50ms
+[00:19:54.266] Server  LOG     ✓ Compiled in 65ms
+[00:19:55.112] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:128:3: Unknown word font-
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:19:57.111] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:128:3: Unknown word font-style
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:20:02.496] Server  LOG     ✓ Compiled in 39ms
+[00:20:06.624] Server  LOG     ✓ Compiled in 37ms
+[00:20:21.669] Server  LOG     ✓ Compiled in 39ms
+[00:20:24.138] Server  LOG     ✓ Compiled in 33ms
+[00:20:26.659] Server  LOG     ✓ Compiled in 36ms
+[00:20:27.110] Browser ERROR   ./components/Footer/Footer.tsx:157:16
+Parsing ecmascript source code failed
+  155 |             <br />
+  156 |             with becoming a friend to yourself.
+> 157 |           </h2>
+      |                ^
+> 158 |           <p className={subscribeStyles.subheading}>
+      | ^^^^^^^^^^^
+  159 |             Reconnecting with yourself is essential for a healthier, balanced life. BFriends is your dependable companion on this transformative journey, providing support and guidance as you explore your inner self and foster a sense of peace.
+  160 |           </p>
+  161 |           {!isSubmitted ? (
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:20:44.298] Server  LOG     ✓ Compiled in 60ms
+[00:20:45.115] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:124:3: Unknown word font
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:20:55.019] Server  LOG     ✓ Compiled in 45ms
+[00:21:02.574] Server  LOG     ✓ Compiled in 34ms
+[00:21:09.377] Server  LOG     ✓ Compiled in 35ms
+[00:21:11.295] Server  LOG     ✓ Compiled in 38ms
+[00:21:12.966] Server  LOG     ✓ Compiled in 43ms
+[00:21:15.975] Server  LOG     ✓ Compiled in 34ms
+[00:21:17.345] Server  LOG     ✓ Compiled in 37ms
+[00:21:19.946] Server  LOG     ✓ Compiled in 32ms
+[00:21:21.668] Server  LOG     ✓ Compiled in 38ms
+[00:21:31.817] Server  LOG     ✓ Compiled in 56ms
+[00:21:37.107] Server  LOG     ✓ Compiled in 51ms
+[00:22:07.182] Server  LOG     ✓ Compiled in 40ms
+[00:22:23.998] Server  LOG     ✓ Compiled in 53ms
+[00:22:30.286] Server  LOG     ✓ Compiled in 33ms
+[00:22:36.023] Server  LOG     ✓ Compiled in 29ms
+[00:22:38.182] Server  LOG     ✓ Compiled in 33ms
+[00:22:46.905] Server  LOG     ✓ Compiled in 32ms
+[00:22:48.190] Server  LOG     ✓ Compiled in 34ms
+[00:22:51.116] Server  LOG     ✓ Compiled in 33ms
+[00:22:53.977] Server  LOG     ✓ Compiled in 49ms
+[00:23:09.337] Server  LOG     ✓ Compiled in 37ms
+[00:23:10.115] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:140:3: Unknown word letter-spacing
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:23:11.356] Server  LOG     ✓ Compiled in 39ms
+[00:23:27.951] Server  LOG     ✓ Compiled in 34ms
+[00:23:34.113] Server  LOG     ✓ Compiled in 35ms
+[00:24:22.541] Server  LOG     ✓ Compiled in 34ms
+[00:24:24.424] Server  LOG     ✓ Compiled in 32ms
+[00:24:32.919] Server  LOG     ✓ Compiled in 36ms
+[00:25:06.966] Server  LOG     ✓ Compiled in 40ms
+[00:25:29.328] Server  LOG     ✓ Compiled in 36ms
+[00:25:36.919] Server  LOG     ✓ Compiled in 34ms
+[00:25:49.975] Server  LOG     ✓ Compiled in 32ms
+[00:26:01.382] Server  LOG     ✓ Compiled in 34ms
+[00:26:08.748] Server  LOG     ✓ Compiled in 40ms
+[00:26:17.177] Server  LOG     ✓ Compiled in 44ms
+[00:26:18.492] Server  LOG     ✓ Compiled in 32ms
+[00:26:22.576] Server  LOG     ✓ Compiled in 36ms
+[00:26:32.351] Server  LOG     ✓ Compiled in 34ms
+[00:26:41.667] Server  LOG     ✓ Compiled in 37ms
+[00:26:43.705] Server  LOG     ✓ Compiled in 41ms
+[00:26:48.261] Server  LOG     ✓ Compiled in 52ms
+[00:26:49.107] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:165:9: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:26:52.114] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:164:25: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:26:53.071] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:164:25: Missed semicolon
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.checkMissedSemicolon (turbopack:///[project]/node_modules/postcss/lib/parser.js:138:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:296:12)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:27:05.544] Server  LOG     ✓ Compiled in 37ms
+[00:27:16.805] Server  LOG     ✓ Compiled in 35ms
+[00:27:24.953] Server  LOG     ✓ Compiled in 33ms
+[00:27:29.971] Server  LOG     ✓ Compiled in 34ms
+[00:27:32.356] Server  LOG     ✓ Compiled in 43ms
+[00:27:33.950] Server  LOG     ✓ Compiled in 32ms
+[00:27:43.113] Server  LOG     ✓ Compiled in 32ms
+[00:27:51.233] Server  LOG     ✓ Compiled in 69ms
+[00:27:52.107] Browser ERROR   ./components/Footer/Subscribe.module.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\Indra\Documents\Codes\BLife\BFriends\bfriends\components\Footer\Subscribe.module.css:167:3: Unknown word border-radius
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.decl (turbopack:///[project]/node_modules/postcss/lib/parser.js:236:16)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:401:18)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+
+Import traces:
+  Client Component Browser:
+    ./components/Footer/Subscribe.module.css [Client Component Browser]
+    ./components/Footer/Footer.tsx [Client Component Browser]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/Footer/Subscribe.module.css [Client Component SSR]
+    ./components/Footer/Footer.tsx [Client Component SSR]
+    ./components/Footer/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+[00:28:03.500] Server  LOG     ✓ Compiled in 35ms
+[00:28:20.430] Server  LOG     ✓ Compiled in 33ms
+[00:28:23.584] Server  LOG     ✓ Compiled in 41ms
+[00:28:30.255] Server  LOG     ✓ Compiled in 32ms
+[00:28:57.419] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:57.420] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:57.422] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:57.425] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:57.426] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:58.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:58.358] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:58.358] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:58.358] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:58.358] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:58.358] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:28:58.792] Browser WARN    Image with src "/images/programs/N.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:28:58.792] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:28:58.792] Browser WARN    Image with src "/images/programs/F.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:28:58.792] Browser WARN    Image with src "/images/programs/R.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:28:58.792] Browser WARN    Image with src "/images/programs/I.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:28:58.792] Browser WARN    Image with src "/images/programs/E.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:28:58.792] Browser WARN    Image with src "/images/programs/N.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:28:58.792] Browser WARN    Image with src "/images/programs/D.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:28:58.792] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:28:58.792] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:28:58.792] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:29:37.218] Server  LOG     ✓ Compiled in 37ms
+[00:29:39.830] Server  LOG     ✓ Compiled in 44ms
+[00:29:45.185] Server  LOG     ✓ Compiled in 33ms
+[00:30:23.327] Server  LOG     ✓ Compiled in 37ms
+[00:30:24.360] Server  LOG     ✓ Compiled in 37ms
+[00:30:32.670] Server  LOG     ✓ Compiled in 43ms
+[00:30:33.103] Browser ERROR   ./components/Footer/Footer.tsx:175:15
+Parsing ecmascript source code failed
+  173 |               </div>
+  174 |               <div
+> 175 |               <Button 
+      |               ^
+  176 |                 type="submit" 
+  177 |                 variant="border" 
+  178 |                 disabled={isSubmitting} 
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:30:36.520] Server  LOG     ✓ Compiled in 33ms
+[00:30:37.114] Browser ERROR   ./components/Footer/Footer.tsx:185:20
+Parsing ecmascript source code failed
+  183 |                 {isSubmitting ? "Subscribing..." : "Subscribe"}
+  184 |               </Button>
+> 185 |             </form>
+      |                    ^
+> 186 |           ) : (
+      | ^^^^^^^^^^^^^^^
+> 187 |             <div className={subscribeStyles.successMessage}>
+      | ^^^^^^^^^^^^^
+  188 |               <Check className={subscribeStyles.successIcon} size={20} />
+  189 |               <span>Email successfully sent!</span>
+  190 |             </div>
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:31:00.483] Server  LOG     ✓ Compiled in 36ms
+[00:31:03.399] Server  LOG     ✓ Compiled in 47ms
+[00:31:16.359] Server  LOG     ✓ Compiled in 33ms
+[00:31:52.909] Server  LOG     ✓ Compiled in 34ms
+[00:31:54.947] Server  LOG     ✓ Compiled in 47ms
+[00:32:00.013] Server  LOG     ✓ Compiled in 38ms
+[00:32:10.535] Server  LOG     ✓ Compiled in 40ms
+[00:32:58.530] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:32:59.923] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:33:34.824] Browser WARN    Image with src "/images/programs/R.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:33:35.442] Browser WARN    Image with src "/images/programs/I.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:33:36.143] Browser WARN    Image with src "/images/programs/E.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:33:36.689] Browser WARN    Image with src "/images/programs/N.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:33:54.907] Server  LOG     ✓ Compiled in 100ms
+[00:46:44.979] Server  LOG     ✓ Compiled in 6.2s
+[00:46:45.118] Browser ERROR   ./components/Footer/Footer.tsx:4:1
+Export WhatsApp doesn't exist in target module
+  2 |
+  3 | import Link from "next/link";
+> 4 | import { Instagram, WhatsApp, Mail, Facebook, Linkedin } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Image from "next/image";
+  6 | import styles from "./Footer.module.css";
+  7 | import locationStyles from "./Location.module.css";
+
+The export WhatsApp was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-client] (ecmascript).
+Did you mean to import Wheat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:46:45.118] Browser ERROR   ./components/Footer/Footer.tsx:4:1
+Export WhatsApp doesn't exist in target module
+  2 |
+  3 | import Link from "next/link";
+> 4 | import { Instagram, WhatsApp, Mail, Facebook, Linkedin } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Image from "next/image";
+  6 | import styles from "./Footer.module.css";
+  7 | import locationStyles from "./Location.module.css";
+
+The export WhatsApp was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-ssr] (ecmascript).
+Did you mean to import Wheat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:46:50.603] Server  LOG     ✓ Compiled in 2.6s
+[00:46:51.114] Browser ERROR   ./components/Footer/Footer.tsx:5:1
+Export WhatsApp doesn't exist in target module
+  3 | import { useState } from "react";
+  4 | import Link from "next/link";
+> 5 | import { Instagram, WhatsApp, Mail, Facebook, Linkedin, ArrowUpRight, Check } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import Image from "next/image";
+  7 | import styles from "./Footer.module.css";
+  8 | import locationStyles from "./Location.module.css";
+
+The export WhatsApp was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-client] (ecmascript).
+Did you mean to import Wheat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:46:51.114] Browser ERROR   ./components/Footer/Footer.tsx:5:1
+Export WhatsApp doesn't exist in target module
+  3 | import { useState } from "react";
+  4 | import Link from "next/link";
+> 5 | import { Instagram, WhatsApp, Mail, Facebook, Linkedin, ArrowUpRight, Check } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import Image from "next/image";
+  7 | import styles from "./Footer.module.css";
+  8 | import locationStyles from "./Location.module.css";
+
+The export WhatsApp was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-ssr] (ecmascript).
+Did you mean to import Wheat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:47:26.106] Browser ERROR   ./components/Footer/Footer.tsx:5:1
+Export WhatsApp doesn't exist in target module
+  3 | import { useState } from "react";
+  4 | import Link from "next/link";
+> 5 | import { Instagram, WhatsApp, Mail, Facebook, Linkedin, ArrowUpRight, Check } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import Image from "next/image";
+  7 | import styles from "./Footer.module.css";
+  8 | import locationStyles from "./Location.module.css";
+
+The export WhatsApp was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-client] (ecmascript).
+Did you mean to import Wheat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:47:26.106] Browser ERROR   ./components/Footer/Footer.tsx:5:1
+Export WhatsApp doesn't exist in target module
+  3 | import { useState } from "react";
+  4 | import Link from "next/link";
+> 5 | import { Instagram, WhatsApp, Mail, Facebook, Linkedin, ArrowUpRight, Check } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import Image from "next/image";
+  7 | import styles from "./Footer.module.css";
+  8 | import locationStyles from "./Location.module.css";
+
+The export WhatsApp was not found in module [project]/node_modules/lucide-react/dist/esm/lucide-react.js [app-ssr] (ecmascript).
+Did you mean to import Wheat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/Footer/Footer.tsx
+    ./app/layout.tsx
+[00:47:28.427] Server  LOG     ✓ Compiled in 141ms
+[00:47:29.099] Server  WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:29.101] Server  WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:29.108] Server  WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:29.115] Server  WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:29.121] Server  WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:29.891] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:30.128] Browser WARN    Image with src "/images/venue/Gym-2.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:30.128] Browser WARN    Image with src "/images/yoga-sess-2.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:30.128] Browser WARN    Image with src "/images/main-sess-1.jpg.jpeg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:30.128] Browser WARN    Image with src "/images/programs/D.webp" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:30.128] Browser WARN    Image with src "/images/programs/F.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:47:30.597] Browser WARN    Image with src "/images/programs/D.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:47:30.597] Browser WARN    Image with src "/images/programs/E.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:47:30.597] Browser WARN    Image with src "/images/programs/F.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:47:30.597] Browser WARN    Image with src "/images/programs/I.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:47:30.597] Browser WARN    Image with src "/images/programs/N.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:47:30.597] Browser WARN    Image with src "/images/programs/R.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:47:30.597] Browser WARN    Image with src "/images/programs/F.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:30.597] Browser WARN    Image with src "/images/programs/R.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:30.597] Browser WARN    Image with src "/images/programs/I.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:30.597] Browser WARN    Image with src "/images/programs/E.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:30.597] Browser WARN    Image with src "/images/programs/N.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:30.597] Browser WARN    Image with src "/images/programs/D.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:30.597] Browser WARN    Image with src "/images/programs/N.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

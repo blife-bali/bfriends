@@ -1,0 +1,21 @@
+@reference "../../app/globals.css";
+
+/* Location Section */
+.locationSection {
+  width: 100%;
+  height: 800px;
+  background-color: var(--color-blue-100);
+  position: relative;
+}
+
+.mapWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
