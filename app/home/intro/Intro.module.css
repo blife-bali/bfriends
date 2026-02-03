@@ -31,7 +31,6 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 848px;
   flex-shrink: 0;
 }
 
@@ -97,16 +96,15 @@
   align-self: stretch;
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
+  gap: 24px;
   flex-shrink: 0;
   min-height: 0;
 }
 
 .imageWrapper {
-  position: absolute;
-  bottom: 128px;
-  right: 64px;
+  position: relative;
   height: 432px;
   display: flex;
   align-items: flex-end;

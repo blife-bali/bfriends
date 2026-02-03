@@ -1,23 +1,33 @@
 @reference "../../globals.css";
 
-.section{
+/* Section: full height on desktop, auto on mobile */
+.section {
   background-color: var(--color-white-100);
   width: 100%;
   height: 100vh;
-  min-height: auto;
+  min-height: 600px;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  /* Ensure the section can be properly pinned by GSAP */
   will-change: transform;
 }
 
-/* Carousel Wrapper */
+/* Desktop: block containing title + carousel, pushed to bottom of section */
+.desktopBlock {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 0;
+}
+
 .carouselWrapper {
   position: relative;
-  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,7 +36,40 @@
   padding-bottom: 48px;
 }
 
-/* Title Container */
+/* Mobile wrapper: hidden on desktop */
+.carouselWrapperMobile {
+  display: none;
+}
+
+/* ----- Tablet/Mobile (max-width: 1024px) ----- */
+@media (max-width: 1024px) {
+  .section {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+    will-change: auto;
+  }
+
+  .desktopBlock {
+    display: none !important;
+  }
+
+  .carouselWrapperMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 72px 40px;
+    gap: 32px;
+  }
+
+  .carouselWrapperMobile .titleContainer {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+/* ----- Title ----- */
 .titleContainer {
   display: flex;
   flex-direction: column;
@@ -35,6 +78,7 @@
   width: 100%;
   max-width: 1440px;
   padding: 0 64px;
+  flex-shrink: 0;
 }
 
 .eyebrow {
@@ -43,10 +87,10 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   line-height: 100%;
-  color: var(--color-cream-140);
+  color: var(--color-cream-100);
   text-transform: uppercase;
   padding: 8px 16px;
-  border: 1px solid var(--color-cream-140);
+  border: 1px solid var(--color-cream-60);
   border-radius: 999px;
   width: fit-content;
 }
@@ -61,6 +105,7 @@
   margin: 0;
   text-transform: none;
   max-width: 600px;
+  text-align: center;
 }
 
 .heading em {
@@ -69,11 +114,11 @@
   font-weight: 400;
 }
 
-/* Embla Carousel */
+/* ----- Embla viewport: must clip so horizontal scroll is visible ----- */
 .embla {
   width: 100%;
   height: 560px;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
@@ -82,7 +127,7 @@
 
 .emblaContainer {
   display: flex;
-  height:100%;
+  height: 100%;
   width: 100%;
   max-width: 800px;
   padding: 0 64px;
@@ -97,7 +142,7 @@
   min-width: 0;
 }
 
-/* Progress Bar */
+/* Progress bar (desktop only) */
 .progressBar {
   position: absolute;
   bottom: 0;
@@ -117,39 +162,49 @@
   border-radius: 12px;
 }
 
-/* Responsive Design */
+/* ----- Mobile cards container ----- */
+.mobileCardsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  gap: 24px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mobileSlide {
+  width: 100%;
+  flex: 0 0 auto;
+  min-height: 560px;
+  height: 560px;
+}
+
+/* ----- Responsive: desktop carousel tweaks at smaller widths (when still desktop) ----- */
 @media (max-width: 1024px) {
-  .carouselWrapper {
-    gap: 24px;
-  }
-
-  .emblaSlide {
-    width: 560px;
-  }
-
-  .processCard {
-    width: 560px;
-    height: 400px;
-  }
-
-  .cardTitle {
-    width: 240px;
-    height: 180px;
-    padding: 20px;
-  }
-
-  .title2 {
-    font-size: 48px;
-  }
-
-  .description {
-    font-size: 14px;
+  .heading {
+    font-size: clamp(32px, 2vw, 40px);
   }
 }
 
 @media (max-width: 768px) {
-  .carouselWrapper {
-    gap: 16px;
+  .carouselWrapperMobile {
+    padding: 48px 24px;
+    gap: 24px;
+  }
+
+  .carouselWrapperMobile .titleContainer {
+    padding: 0;
+  }
+
+  .mobileCardsContainer {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .mobileSlide {
+    min-height: 560px;
+    height: 560px;
   }
 
   .eyebrow {
@@ -157,31 +212,7 @@
     padding: 6px 12px;
   }
 
-  .emblaSlide {
-    width: 100%;
-  }
-
-  .processCard {
-    width: 100%;
-    height: 340px;
-  }
-
-  .cardTitle {
-    width: 220px;
-    height: 160px;
-    padding: 16px;
-    border-radius: 10px;
-  }
-
-  .title2 {
-    font-size: 40px;
-  }
-
-  .description {
-    font-size: 13px;
-  }
-
-  .emblaContainer {
-    padding: 24px 0;
+  .heading {
+    font-size: clamp(28px, 2vw, 36px);
   }
 }

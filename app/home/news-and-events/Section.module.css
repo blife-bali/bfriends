@@ -1,0 +1,95 @@
+@reference "../../globals.css";
+
+.section {
+  width: 100%;
+  background-color: var(--color-blue-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 128px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 64px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(19, 64, 83, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 100%;
+  color: var(--color-cream-140);
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid var(--color-cream-140);
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 120%;
+  color: var(--color-green-100);
+  margin: 0;
+  text-align: center;
+}
+
+.heading em {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .container {
+    padding: 0 40px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+}

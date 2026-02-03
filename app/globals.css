@@ -10,6 +10,7 @@
 
   /* Below 100: color at X% opacity on white #FEFFFF */
   /* Blue variants */
+  --color-blue-5: #F2F5F6;
   --color-blue-20: #CFD8DC;
   --color-blue-40: #A0B2BA;
   --color-blue-60: #718C98;
@@ -74,6 +75,7 @@
   --color-foreground: var(--foreground);
 
   /* Expose all color variants for Tailwind */
+  --color-blue-5: var(--color-blue-5);
   --color-blue-20: var(--color-blue-20);
   --color-blue-40: var(--color-blue-40);
   --color-blue-60: var(--color-blue-60);

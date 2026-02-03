@@ -1,0 +1,54 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./EventCard.module.css";
+import { EventItem } from "@/lib/event-data";
+import { ArrowUpRightIcon } from "lucide-react";
+
+interface EventCardProps {
+  item: EventItem;
+}
+
+export default function EventCard({ item }: EventCardProps) {
+  const content = (
+    <>
+      <div className={styles.imageWrap}>
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className={styles.image}
+          sizes="(max-width: 768px) 100vw, 320px"
+        />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.tagsRow}>
+          <span className={styles.tag}>Event</span>
+          <span className={styles.tag}>{item.ecosystem}</span>
+        </div>
+        <div className={styles.textBlock}>
+          <time className={styles.date}>{item.date}</time>
+          <h3 className={styles.title}>{item.title}</h3>
+          <p className={styles.description}>{item.description}</p>
+        </div>
+        <span className={styles.button}>
+          Book now
+          <ArrowUpRightIcon size={20} className={styles.buttonIcon} />
+        </span>
+      </div>
+    </>
+  );
+
+  return (
+    <article className={styles.card}>
+      {item.href ? (
+        <Link href={item.href} className={styles.link}>
+          {content}
+        </Link>
+      ) : (
+        <div className={styles.link}>{content}</div>
+      )}
+    </article>
+  );
+}

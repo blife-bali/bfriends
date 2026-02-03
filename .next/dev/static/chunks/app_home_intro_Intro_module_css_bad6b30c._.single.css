@@ -29,7 +29,6 @@
   flex-direction: column;
   flex-shrink: 0;
   gap: 32px;
-  max-width: 848px;
   display: flex;
 }
 
@@ -95,7 +94,8 @@
   flex: 1 0;
   justify-content: space-between;
   align-self: stretch;
-  align-items: flex-start;
+  align-items: flex-end;
+  gap: 24px;
   min-height: 0;
   display: flex;
 }
@@ -106,9 +106,7 @@
   gap: 24px;
   height: 432px;
   display: flex;
-  position: absolute;
-  bottom: 128px;
-  right: 64px;
+  position: relative;
 }
 
 .Intro-module__wxWrOW__imageTop {

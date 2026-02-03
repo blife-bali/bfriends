@@ -1,37 +1,49 @@
 import Image from "next/image";
 import styles from "./Card.module.css";
+import mobileStyles from "./CardMobile.module.css";
 import { ProcessStep } from "@/lib/process-data";
 
 interface CardProps {
   step: ProcessStep;
   index: number;
+  variant?: "default" | "mobileCard";
 }
 
-export default function Card({ step, index }: CardProps) {
+export default function Card({ step, index, variant = "default" }: CardProps) {
   const isEven = index % 2 === 0;
+  const rootClass = variant === "mobileCard" ? mobileStyles.mobileCard : styles.card;
 
   return (
-    <div className={styles.card}>
-      {/* Background Image */}
+    <div className={rootClass}>
+      {/* Background Image – shared structure */}
       <div className={styles.cardBackground}>
         <Image
           src={step.image}
           alt={step.title}
           fill
           className={styles.backgroundImage}
-          priority={index === 1} // Prioritize the center card
+          priority={index === 1}
         />
-        {/* Dark Overlay to make text readable */}
         <div className={styles.cardOverlay} />
       </div>
 
       {/* Content */}
       <div className={styles.cardContent}>
-        <div className={`${styles.cardTitle} ${isEven ? styles.cardTitleTop : styles.cardTitleBottom}`}>
-          <h2 className={styles.stepNumber}>{step.number}</h2>
-          <h2 className={styles.cardHeading}>{step.title}</h2>
-          <p className={styles.cardDescription}>{step.description}</p>
-        </div>
+        {variant === "mobileCard" ? (
+          <div
+            className={`${mobileStyles.titleBox} ${isEven ? mobileStyles.titleCream : mobileStyles.titleGreen}`}
+          >
+            <h2 className={mobileStyles.stepNumber}>{step.number}</h2>
+            <h2 className={mobileStyles.heading}>{step.title}</h2>
+            <p className={mobileStyles.description}>{step.description}</p>
+          </div>
+        ) : (
+          <div className={`${styles.cardTitle} ${isEven ? styles.cardTitleTop : styles.cardTitleBottom}`}>
+            <h2 className={styles.stepNumber}>{step.number}</h2>
+            <h2 className={styles.cardHeading}>{step.title}</h2>
+            <p className={styles.cardDescription}>{step.description}</p>
+          </div>
+        )}
       </div>
     </div>
   );
