@@ -200,3 +200,189 @@
 .successIcon {
   color: var(--color-blue-80);
 }
+
+/* Responsive - Tablet (1024px) */
+@media (max-width: 1024px) {
+  .subscriptionSection {
+    padding: 96px 0;
+  }
+
+  .subscribeWrapper {
+    padding: 0 32px;
+  }
+
+  .marqueeContainer {
+    margin-bottom: 48px;
+  }
+
+  .newsletterContainer {
+    padding: 48px 20px;
+    height: 500px;
+  }
+
+  .heading {
+    font-size: clamp(24px, 3vw, 28px);
+  }
+
+  .subheading {
+    font-size: clamp(14px, 3vw, 15px);
+    margin-bottom: 28px;
+  }
+
+  .newsletterForm {
+    max-width: 420px;
+  }
+}
+
+/* Responsive - Mobile (768px) */
+@media (max-width: 768px) {
+  .subscriptionSection {
+    padding: 64px 0;
+  }
+
+  .subscribeWrapper {
+    padding: 0 24px;
+  }
+
+  .marqueeContainer {
+    margin-bottom: 32px;
+    gap: 16px;
+  }
+
+  .marqueeItem {
+    height: 80px;
+    gap: 16px;
+  }
+
+  .marqueeImageContainer {
+    width: 120px;
+    height: 80px;
+  }
+
+  .marqueeTextContainer {
+    height: 80px;
+    padding: 0 32px;
+  }
+
+  .marqueePoint {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+
+  .marqueeContent.top,
+  .marqueeContent.bottom {
+    animation-duration: 20s;
+  }
+
+  .newsletterContainer {
+    padding: 40px 20px;
+    height: auto;
+    min-height: 450px;
+    border-radius: 8px;
+  }
+
+  .newsletterContent {
+    max-width: 100%;
+  }
+
+  .heading {
+    font-size: clamp(20px, 5vw, 24px);
+    margin-bottom: 20px;
+  }
+
+  .subheading {
+    font-size: clamp(13px, 4vw, 14px);
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .newsletterInput {
+    height: 44px;
+    padding: 0 20px;
+  }
+
+  .buttonWrap {
+    width: 100%;
+  }
+
+  .buttonWrap button {
+    width: 100%;
+  }
+
+  .successMessage {
+    padding: 16px;
+    font-size: clamp(14px, 4vw, 16px);
+  }
+}
+
+/* Responsive - Small Mobile (480px) */
+@media (max-width: 480px) {
+  .subscriptionSection {
+    padding: 48px 0;
+  }
+
+  .subscribeWrapper {
+    padding: 0 16px;
+  }
+
+  .marqueeContainer {
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+
+  .marqueeItem {
+    height: 72px;
+    gap: 12px;
+  }
+
+  .marqueeImageContainer {
+    width: 100px;
+    height: 72px;
+  }
+
+  .marqueeTextContainer {
+    height: 72px;
+    padding: 0 24px;
+  }
+
+  .marqueePoint {
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .marqueeContent.top,
+  .marqueeContent.bottom {
+    animation-duration: 15s;
+  }
+
+  .newsletterContainer {
+    padding: 32px 16px;
+    min-height: 380px;
+  }
+
+  .heading {
+    font-size: clamp(18px, 6vw, 22px);
+    margin-bottom: 16px;
+  }
+
+  .subheading {
+    font-size: clamp(12px, 4vw, 13px);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .newsletterInput {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .successMessage {
+    padding: 14px;
+    font-size: 14px;
+    gap: 10px;
+  }
+}

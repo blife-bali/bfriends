@@ -197,70 +197,126 @@ function SubscriptionSection() {
   );
 }
 
+import { MessageCircle, Mail, Instagram as InstagramIcon } from "lucide-react";
+
 // Footer Section Component
 function FooterSection() {
   return (
     <section className={styles.footerSection}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          {/* Logo & Ecosystem */}
-          <div className={styles.column}>
-            <img 
-              src="/images/icons/logo-bfriends-hor.png" 
-              alt="bfriends" 
-              className={styles.logo}
-            />
-            <div className={styles.divider}></div>
-            <h3 className={styles.heading}>BLife Ecosystem</h3>
-            <nav className={styles.menuList}>
-              <a href="https://bwork.id" target="_blank" rel="noopener noreferrer" className={styles.menuItem}>BWork</a>
-              <a href="https://bnesta.id" target="_blank" rel="noopener noreferrer" className={styles.menuItem}>BNesta</a>
-              <a href="https://blive.id" target="_blank" rel="noopener noreferrer" className={styles.menuItem}>BLive</a>
-            </nav>
+      {/* Menu Grid */}
+      <div className={styles.footerMenuGrid}>
+        {/* Column 1: Location + Contact */}
+        <div className={styles.footerColumn}>
+          <div className={styles.footerLocation}>
+            <h4 className={styles.footerTitle}>Location</h4>
+            <address className={styles.footerAddress}>
+              Jl. Teuku Umar Barat No.989x,<br />
+              Kerobokan Kelod, Kec. Kuta Utara,<br />
+              Kabupaten Badung, Bali 80117
+            </address>
           </div>
-
-          {/* Contact & Social */}
-          <div className={styles.column}>
-            <h3 className={styles.heading}>Contact Us</h3>
-            <nav className={styles.menuList}>
-              <a href="mailto:hello@bfriends.id" className={styles.menuItem}>
-                hello@bfriends.id
+          <div className={styles.footerContact}>
+            <h4 className={styles.footerTitle}>Contact Us</h4>
+            <nav className={styles.menuWrapper}>
+              <a 
+                href="https://instagram.com/blive.bali" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.footerContactItem}
+              >
+                <InstagramIcon size={16} />
+                <span>Instagram: blive.bali</span>
               </a>
-            </nav>
-            <div className={styles.socialIcons}>
-              <a href="https://instagram.com/bfriends.id" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
-                <Instagram size={20} />
+              <a 
+                href="https://wa.me/6281234567890" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.footerContactItem}
+              >
+                <MessageCircle size={16} />
+                <span>WhatsApp: +62 812 3456 7890</span>
               </a>
-              <a href="https://facebook.com/bfriends.id" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
-                <Facebook size={20} />
+              <a 
+                href="mailto:hello@bfriends.id" 
+                className={styles.footerContactItem}
+              >
+                <Mail size={16} />
+                <span>Email: hello@bfriends.id</span>
               </a>
-              <a href="https://linkedin.com/company/bfriends" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-            </div>
-          </div>
-
-          {/* Address */}
-          <div className={styles.column}>
-            <h3 className={styles.heading}>Visit Us</h3>
-            <nav className={styles.menuList}>
-              <p className={styles.menuItem}>
-                Jl. Teuku Umar Barat No.989x,
-                Kerobokan Kelod, Kec. Kuta Utara,
-                Kabupaten Badung, Bali 80117
-              </p>
             </nav>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className={styles.bottomBar}>
-          <p>&copy; {new Date().getFullYear()} BFriends. All rights reserved.</p>
-          <nav className={styles.legalLinks}>
-            <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
-            <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
-            <Link href="/cookies" className={styles.legalLink}>Cookie Policy</Link>
-          </nav>
+        {/* Column 2: About + Ecosystem */}
+        <div className={styles.footerColumn}>
+          <div className={styles.footerLinksGroup}>
+            <h4 className={styles.footerTitle}>About BFriends</h4>
+            <nav>
+              <Link href="/about/philosophy" className={styles.footerLink}>Our Philosophy</Link>
+              <Link href="/about/journey" className={styles.footerLink}>Customer Journey</Link>
+            </nav>
+          </div>
+          <div className={styles.footerLinksGroup}>
+            <h4 className={styles.footerTitle}>BLife Ecosystem</h4>
+            <nav>
+              <a href="https://bwork.id" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>BWork</a>
+              <a href="https://bnesta.id" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>BNesta</a>
+              <a href="https://blive.id" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>BLive</a>
+            </nav>
+          </div>
+        </div>
+
+        {/* Column 3: Programs */}
+        <div className={styles.footerColumn}>
+          <div className={styles.footerPrograms}>
+            <h4 className={styles.footerTitle}>Programs</h4>
+            <nav>
+              <Link href="/programs/flow" className={styles.footerLink}>Flow</Link>
+              <Link href="/programs/restore" className={styles.footerLink}>Restore</Link>
+              <Link href="/programs/integrate" className={styles.footerLink}>Integrate</Link>
+              <Link href="/programs/enhance" className={styles.footerLink}>Enhance</Link>
+              <Link href="/programs/nurture" className={styles.footerLink}>Nurture</Link>
+              <Link href="/programs/dare" className={styles.footerLink}>Dare</Link>
+            </nav>
+          </div>
+        </div>
+
+        {/* Column 4: Membership + Community */}
+        <div className={styles.footerColumn}>
+          <div className={styles.footerCommunity}>
+            <h4 className={styles.footerTitle}>Membership</h4>
+            <nav>
+              <Link href="/membership/passport" className={styles.footerLink}>BFriends Passport</Link>
+              <Link href="/membership/charm" className={styles.footerLink}>Charm</Link>
+            </nav>
+          </div>
+          <div className={styles.footerCommunity}>
+            <h4 className={styles.footerTitle}>Community</h4>
+            <nav>
+              <Link href="/community/events" className={styles.footerLink}>Event & Workshop</Link>
+              <Link href="/community/news" className={styles.footerLink}>BLife Ecosystem News</Link>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      {/* Closing Section */}
+      <div className={styles.footerClosing}>
+        <div className={styles.logoContainer}>
+        <div className={styles.footerLogo}>
+          <img 
+            src="/images/icons/logo-bfriends-hor.png" 
+            alt="BFriends" 
+            className={styles.logoImage}
+          />
+        </div>
+        <div className={styles.logoBorder}></div>
+        <div className={styles.footerTagline}>
+          Which <em>Friend</em> Do <br/> You Need Today?
+        </div>
+        </div>
+        <div className={styles.footerCopyright}>
+          © 2025 BFriends. All Rights Reserved.
         </div>
       </div>
     </section>

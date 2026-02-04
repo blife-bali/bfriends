@@ -47,7 +47,7 @@ export default function NewsCard({ item }: NewsCardProps) {
         <p className={styles.description}>{item.description}</p>
       </div>
       <div className={styles.buttonWrapper}>
-        <Button variant="border" icon={<ArrowUpRightIcon size={20} />}>
+        <Button variant="primary" icon={<ArrowUpRightIcon size={20} />}>
           Read more
         </Button>
       </div>

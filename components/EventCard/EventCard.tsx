@@ -51,7 +51,7 @@ export default function EventCard({ item }: EventCardProps) {
       </div>
       
       <div className={styles.buttonWrapper}>
-          <Button variant="border" icon={<ArrowUpRightIcon size={20} />}>
+          <Button variant="primary" icon={<ArrowUpRightIcon size={20} />}>
             Read More
           </Button>
         </div>

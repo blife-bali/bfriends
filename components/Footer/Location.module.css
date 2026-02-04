@@ -19,3 +19,24 @@
   height: 100%;
   display: block;
 }
+
+/* Responsive - Tablet (1024px) */
+@media (max-width: 1024px) {
+  .locationSection {
+    height: 600px;
+  }
+}
+
+/* Responsive - Mobile (768px) */
+@media (max-width: 768px) {
+  .locationSection {
+    height: 450px;
+  }
+}
+
+/* Responsive - Small Mobile (480px) */
+@media (max-width: 480px) {
+  .locationSection {
+    height: 350px;
+  }
+}
