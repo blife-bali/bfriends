@@ -12,18 +12,8 @@
   justify-content: center;
   align-items: center;
   min-height: 72px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
-}
-
-/* Visible state - navbar appears */
-.navbar.visible {
-  transform: translateY(0);
-}
-
-/* Hidden state - navbar slides up */
-.navbar.hidden {
-  transform: translateY(-100%);
 }
 
 .mainContainer{

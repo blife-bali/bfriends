@@ -18,40 +18,20 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const scrollThreshold = 10;
-      const scrollDifference = Math.abs(currentScrollY - lastScrollY);
 
-      // Update scrolled state for styling
+      // Update scrolled state for styling (keeps hero and scrolled states)
       setIsScrolled(currentScrollY > scrollThreshold);
-
-      // Always show navbar at the top
-      if (currentScrollY < scrollThreshold) {
-        setIsVisible(true);
-      } else {
-        // Only update visibility if scroll difference is significant (prevents flickering)
-        if (scrollDifference > 5) {
-          // Hide when scrolling down, show when scrolling up
-          if (currentScrollY > lastScrollY) {
-            setIsVisible(false);
-          } else if (currentScrollY < lastScrollY) {
-            setIsVisible(true);
-          }
-        }
-      }
-
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -71,7 +51,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`${styles.navbar} ${shouldUseScrolledMode ? styles.scrolled : styles.default} ${isVisible ? styles.visible : styles.hidden}`}
+        className={`${styles.navbar} ${shouldUseScrolledMode ? styles.scrolled : styles.default}`}
       >
         <div className={styles.mainContainer}>
         {/* Left: icon */}
