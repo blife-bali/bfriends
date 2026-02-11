@@ -1,93 +1,134 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+import Button from "@/components/ui/Button/Button";
+import WhyCard from "./WhyCard";
 import styles from "./WhyBFriends.module.css";
 import { whyBFriendsData } from "@/lib/whybfriends-data";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function WhyBFriends() {
-  const [selectedId, setSelectedId] = useState(1);
-  const [prevId, setPrevId] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  const selectedData = whyBFriendsData.find((item) => item.id === selectedId) || whyBFriendsData[0];
-  const prevData = whyBFriendsData.find((item) => item.id === prevId) || whyBFriendsData[0];
+gsap.registerPlugin(ScrollTrigger);
+
+const DESKTOP_BREAKPOINT = 1025;
+
+function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    if (selectedId !== prevId) {
-      setIsTransitioning(true);
-      const timer = setTimeout(() => {
-        setPrevId(selectedId);
-        setIsTransitioning(false);
-      }, 400); // Match animation duration
-      return () => clearTimeout(timer);
-    }
-  }, [selectedId, prevId]);
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [query]);
 
-  const formatId = (id: number): string => {
-    return `${id.toString().padStart(2, "0")}.`;
-  };
+  return matches;
+}
+
+export default function WhyBFriends() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const cardsContainerRef = useRef<HTMLDivElement | null>(null);
+  const isDesktop = useMediaQuery(`(min-width: ${DESKTOP_BREAKPOINT}px)`);
+
+  // Split data into two columns (3 cards each)
+  const leftColumnCards = whyBFriendsData.slice(0, 3);
+  const rightColumnCards = whyBFriendsData.slice(3, 6);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    const section = sectionRef.current;
+    const cardsContainer = cardsContainerRef.current;
+
+    if (!section || !cardsContainer) return;
+
+    const scrollHeight = cardsContainer.scrollHeight;
+    const viewportHeight = section.offsetHeight;
+    const verticalDistance = scrollHeight - viewportHeight;
+
+    if (verticalDistance <= 0) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: `+=${verticalDistance}`,
+        pin: true,
+        scrub: 1,
+        anticipatePin: 1,
+      },
+    });
+
+    tl.to(cardsContainer, {
+      y: -verticalDistance,
+      ease: "none",
+    });
+
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === section) trigger.kill();
+      });
+      gsap.set(cardsContainer, { y: 0 });
+    };
+  }, [isDesktop]);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+    const handleResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isDesktop]);
 
   return (
-    <section className={styles.section}>
-      {/* Image Container Section */}
-      <div className={styles.imageContainer}>
-        <div className={styles.imageWrapper}>
-          {/* Previous Image - fading out */}
-          {prevId !== selectedId && (
-            <Image
-              src={prevData.image}
-              alt={prevData.point}
-              width={1536}
-              height={1080}
-              className={`${styles.image} ${styles.imageFadeOut}`}
-              quality={100}
-              priority
-              unoptimized={true}
-            />
-          )}
-          {/* Current Image - fading in */}
-          <Image
-            src={selectedData.image}
-            alt={selectedData.point}
-            width={1536}
-            height={1080}
-            className={`${styles.image} ${prevId !== selectedId ? styles.imageFadeIn : styles.imageVisible}`}
-            quality={100}
-            priority={selectedId === 1}
-            unoptimized={true}
-          />
-          <div className={styles.imageOverlay} />
+    <section className={styles.section} ref={sectionRef}>
+      <div className={styles.mainContainer}>
+        {/* Left Container - Static */}
+        <div className={styles.leftContainer}>
+          <h2 className={styles.title}>Why <em>BFriends</em>?</h2>
+          <p className={styles.subheading}>
+            Discover meaningful connections with people who truly get you. 
+            BFriends brings together like-minded individuals for authentic relationships.
+          </p>
+          <Button
+            href="/about"
+            variant="border"
+            className={styles.button}
+            color="var(--color-blue-100)"
+            icon={<ArrowUpRight size={16} />}
+          >
+            Learn More
+          </Button>
         </div>
-        <div className={styles.contentOverlay}>
-          <div className={styles.mainHeading}>
-            <span className={styles.headingText}>Why <em> BFriends </em> Exists? </span>
-          </div>
-          <div className={styles.subHeading}>
-            <div className={styles.pointDetails} key={selectedId}>
-              <span className={styles.pointText}>{selectedData.point}<br /></span>
-              <span className={styles.subpoint}>{selectedData.subpoint}</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Points Selection Section */}
-      <div className={styles.pointsSection}>
-        <div className={styles.pointsContainer}>
-          <div className={styles.pointsGrid}>
-            {whyBFriendsData.map((item) => (
-              <button
-                key={item.id}
-                className={`${styles.pointItem} ${selectedId === item.id ? styles.pointItemSelected : ""}`}
-                onClick={() => setSelectedId(item.id)}
-              >
-                {selectedId === item.id && (
-                  <span className={styles.pointNumber}>{formatId(item.id)}</span>
-                )}
-                <div className={styles.pointTitle}>{item.point}</div>
-              </button>
-            ))}
+        {/* Cards Container - Scrollable */}
+        <div className={styles.cardsWrapper}>
+          <div className={styles.cardsContainer} ref={cardsContainerRef}>
+            {/* Left Grid */}
+            <div className={styles.cardsGrid}>
+              {leftColumnCards.map((card) => (
+                <WhyCard
+                  key={card.id}
+                  image={card.image}
+                  title={card.point}
+                  subheading={card.subpoint}
+                />
+              ))}
+            </div>
+
+            {/* Right Grid */}
+            <div className={`${styles.cardsGrid} ${styles.cardsGridRight}`}>
+              {rightColumnCards.map((card) => (
+                <WhyCard
+                  key={card.id}
+                  image={card.image}
+                  title={card.point}
+                  subheading={card.subpoint}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

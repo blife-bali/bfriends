@@ -2,48 +2,47 @@
 
 .intro {
   width: 100%;
-  height: 110vh;
+  min-height: 110vh;
   background-color: var(--color-white-100);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
 }
 
 .container {
-  max-width: 1440px;
   width: 100%;
-  height: 100%;
   position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 128px 64px;
   box-sizing: border-box;
-  gap: 32px;
+  gap: 128px;
 }
 
 /* Text Content */
 .textColumn {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  flex-shrink: 0;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+  padding: 0 64px;
 }
 
 .headingContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0px;
 }
 
 .heading {
   font-family: var(--font-display);
   font-size: clamp(40px, 3vw, 48px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--color-blue-100);
@@ -52,7 +51,7 @@
 
 .heading em {
   font-family: var(--font-script);
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
 }
 
@@ -75,8 +74,10 @@
 .descriptionContainer {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  gap: 32px;
 }
+
 .description {
   font-family: var(--font-sans);
   font-size: clamp(18px, 1.8vw, 20px);
@@ -84,88 +85,54 @@
   letter-spacing: -0.04em;
   color: var(--color-cream-140);
   margin: 0;
-  max-width: 500px;
+  max-width: 1024px;
+  text-align: center;
 }
 
 .button {
-  align-self: flex-start;
+  align-self: center;
 }
 
-/* Image Container */
-.imageColumn {
-  align-self: stretch;
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  flex-shrink: 0;
-  min-height: 0;
-}
-
-.imageWrapper {
-  position: relative;
-  height: 432px;
-  display: flex;
-  align-items: flex-end;
-  gap: 24px;
-  flex-shrink: 0;
-}
-
-.imageTop {
-  height: 280px;
-  width: 240px;
-  position: relative;
-  flex-shrink: 0;
-  overflow: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  border-radius: 8px;
-}
-
-.imageBottom {
-  align-self: stretch;
-  width: 360px;
-  position: relative;
-  flex-shrink: 0;
-  overflow: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  border-radius: 8px;
-}
-
-.image {
+/* Video Container */
+.videoWrapper {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  display: block;
-  image-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  padding: 0 64px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
+.video {
+  width: 100%;
+  max-width: 1440px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.videoBefore {
+  opacity: 0.1;
+  transform: scale(1.1  );
+}
+
+.videoVisible {
+  opacity: 1;
+  transform: scale(1);
+}
 
 @media (max-width: 1024px) {
   .intro {
-    height: 100svh;
+    min-height: 100svh;
   }
 
   .container {
-    gap: 24px;
+    gap: 48px;
     padding: 72px 40px;
-    height: 100%;
-    min-height: 0;
   }
 
   .textColumn {
     gap: 24px;
-    flex-shrink: 0;
   }
 
   .heading {
@@ -178,67 +145,21 @@
 
   .description {
     font-size: clamp(16px, 1.8vw, 18px);
+    max-width: 500px;
   }
 
-  .descriptionContainer {
-    flex-shrink: 0;
-    margin-bottom: 24px;
-  }
-
-  .imageColumn {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: 100%;
-    flex: 1;
-    min-height: 0;
-    display: flex;
-  }
-
-  .imageWrapper {
-    position: relative;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    bottom: 0;
-    right: 0;
-    flex: 1;
-    min-height: 0;
-    display: flex;
-  }
-
-  .imageTop {
-    display: none;
-  }
-
-  .imageBottom {
-    width: 100%;
-    height: 100%;
-    flex: 1;
-    min-height: 0;
-  }
-
-  .image {
-    width: 180%;
-    height: 180%;
-    object-fit: cover;
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    
+  .videoWrapper {
+    padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    gap: 24px;
+    gap: 32px;
     padding: 48px 24px;
-    height: 100%;
-    min-height: 0;
   }
 
-  
-  
-  
+  .videoWrapper {
+    padding: 0 24px;
+  }
 }

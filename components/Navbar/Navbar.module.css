@@ -76,7 +76,6 @@
 .default .left{
   height: 72px;
   width: fit-content;
-  background-color:var(--color-cream-100);
  
 }
 
@@ -120,8 +119,8 @@
 .menuLink {
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   text-decoration: none;
   color: var(--color-white-100);
   transition: opacity 0.2s;
@@ -130,7 +129,7 @@
 
 .menuLink:hover {
   opacity: 0.8;
-  font-weight: 400;
+  font-weight: 500;
 }  
 
 .scrolled .menuLink {
