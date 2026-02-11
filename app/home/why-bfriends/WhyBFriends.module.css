@@ -3,9 +3,12 @@
 .section {
   width: 100%;
   background-color: var(--color-white-100);
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+
+  
 }
 
 .mainContainer {
@@ -13,27 +16,30 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 64px;
-  padding: 128px 64px;
+  gap: 48px;
+  padding: 64px;
   box-sizing: border-box;
   align-items: flex-start;
-  height: 100%;
 }
 
-/* Left Container - Static */
+/* Left Container - Sticky */
 .leftContainer {
   width: 400px;
   display: flex;
   flex-direction: column;
+  just: center;
   gap: 24px;
   flex-shrink: 0;
-  position: relative;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  padding: 128px 0;
 }
 
 .title {
   font-family: var(--font-display);
   font-size: clamp(40px, 3vw, 48px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--color-blue-100);
@@ -53,19 +59,15 @@
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
   margin: 0;
-  max-width: 350px;
 }
 
 .button {
   align-self: flex-start;
 }
 
-/* Cards Wrapper - Fixed viewport height */
+/* Cards Wrapper */
 .cardsWrapper {
   flex: 1;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
 }
 
 /* Cards Container - Scrollable */
@@ -74,17 +76,17 @@
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   height: fit-content;
-  padding-bottom: 128px;
+  padding: 128px 0;
 }
 
 .cardsGrid {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 96px;
 }
 
 .cardsGridRight {
-  margin-top: 96px;
+  margin-top: 128px;
 }
 
 /* Responsive Design */
@@ -104,20 +106,19 @@
 
 @media (max-width: 1024px) {
   .section {
-    height: auto;
     min-height: 100vh;
   }
 
   .mainContainer {
     flex-direction: column;
     padding: 72px 40px;
-    height: auto;
   }
 
   .leftContainer {
     width: 100%;
     text-align: center;
     align-items: center;
+    position: static;
   }
 
   .subheading {
