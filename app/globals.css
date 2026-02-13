@@ -139,6 +139,10 @@ body {
   max-width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
 ::selection {
   background-color: var(--color-cream-100);
   color: var(--color-white-100);

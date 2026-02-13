@@ -73,6 +73,7 @@
   font-weight: 400;
   font-family: var(--font-display);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
 }
 
 .headingText em {

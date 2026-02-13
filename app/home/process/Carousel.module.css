@@ -103,7 +103,7 @@
   line-height: 120%;
   color: var(--color-green-100);
   margin: 0;
-  text-transform: none;
+  text-transform: uppercase;
   max-width: 600px;
   text-align: center;
 }

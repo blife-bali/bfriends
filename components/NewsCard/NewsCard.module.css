@@ -134,6 +134,7 @@
   line-height: 120%;
   color: var(--color-blue-100);
   margin: 0;
+  text-transform: uppercase;
 }
 
 .description {

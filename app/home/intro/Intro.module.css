@@ -47,6 +47,7 @@
   letter-spacing: -0.04em;
   color: var(--color-blue-100);
   margin: 0;
+  text-transform: uppercase;
 }
 
 .heading em {
@@ -63,6 +64,7 @@
   letter-spacing: -0.04em;
   color: var(--color-blue-100);
   margin: 0;
+  text-transform: uppercase;
 }
 
 .heading2 em {

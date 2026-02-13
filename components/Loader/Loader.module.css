@@ -1,0 +1,61 @@
+@reference "../../app/globals.css";
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--color-white-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease-out;
+}
+
+.overlay.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Base logo at 0.7 opacity (unfilled state) */
+.logoBase {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  filter: brightness(0);
+}
+
+/* Filled part: same logo at 1 opacity, revealed left to right */
+.logoFillWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: logoFillLeftToRight 1.2s ease-out forwards;
+}
+
+.logoFill {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter: brightness(0);
+}
+
+@keyframes logoFillLeftToRight {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

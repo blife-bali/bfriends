@@ -44,6 +44,7 @@
   letter-spacing: -0.04em;
   color: var(--color-blue-100);
   margin: 0;
+  text-transform: uppercase;
 }
 
 .title em {

@@ -13,8 +13,8 @@ export default function HomePage() {
       <Intro />
       <WhyBFriends />
       <ProgramsSection />
-      <ProcessCarousel />
-      <Process />
+      {/* <ProcessCarousel />
+      <Process /> */}
       <NewsAndEventsSection />
     </>
   );

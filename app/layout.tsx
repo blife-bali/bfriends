@@ -3,6 +3,8 @@ import { GeistSans } from "geist/font/sans";
 import { Libre_Bodoni, Hanken_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import PageEntryClient from "@/components/PageEntry/PageEntryClient";
+import { SoundProvider } from "@/contexts/SoundContext";
 import "./globals.css";
 
 const libreBodoni = Libre_Bodoni({
@@ -88,9 +90,11 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${libreBodoni.variable} ${hankenGrotesk.variable}`}
     >
       <body className="antialiased">
-        <Navbar />
-        {children}
-        <Footer />
+        <SoundProvider>
+          <Navbar />
+          <PageEntryClient>{children}</PageEntryClient>
+          <Footer />
+        </SoundProvider>
       </body>
     </html>
   );

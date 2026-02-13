@@ -13,27 +13,27 @@
 .background {
   position: absolute;
   inset: 0;
-  background-image: url("/images/main-sess-1.jpg.jpeg");
+  background-image: url("/images/hero-test.png");
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 40%, transparent 100%);
 }
 
 .content {
   position: relative;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   width: 100%;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
   padding: 64px;
   box-sizing: border-box;
@@ -43,14 +43,15 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(88px, 5vw, 96px);
-  letter-spacing: -0.04em;
+  font-size: clamp(64px, 5vw, 72px);
+  letter-spacing: 0.04em;
   font-weight: 300;
   color: var(--color-white-100);
   line-height: 1;
   margin: 0;
-  max-width: 688px;
-  text-align: center;
+  max-width: 800px;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .title em {

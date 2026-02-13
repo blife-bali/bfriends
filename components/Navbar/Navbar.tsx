@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button/Button";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
@@ -17,6 +18,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -70,11 +72,18 @@ export default function Navbar() {
 
         {/* Middle: menus */}
         <div className={styles.menuContainer}>
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link key={href} href={href} className={styles.menuLink}>
-              {label}
-            </Link>
-          ))}
+          {NAV_LINKS.map(({ href, label }) => {
+            const isSelected = pathname === href || (href !== "/" && pathname.startsWith(href));
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`${styles.menuLink} ${isSelected ? styles.menuLinkSelected : ""}`}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Right: Contact Us (border, no arrow) + Book Now (primary cream with arrow) */}
