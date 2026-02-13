@@ -27,7 +27,7 @@
 
 .content {
   position: relative;
-  /* max-width: 1440px; */
+  max-width: 1568px;
   width: 100%;
   z-index: 1;
   display: flex;
@@ -44,18 +44,18 @@
 .title {
   font-family: var(--font-display);
   font-size: clamp(64px, 5vw, 72px);
-  letter-spacing: 0.04em;
+  letter-spacing: -0.02em;
   font-weight: 300;
   color: var(--color-white-100);
   line-height: 1;
   margin: 0;
-  max-width: 800px;
+  max-width: 720px;
   text-align: left;
-  text-transform: uppercase;
 }
 
 .title em {
   font-family: var(--font-script);
+  /* font-size: clamp(60px, 5vw, 66px); */
   font-style: italic;
 }
 

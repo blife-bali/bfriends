@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Libre_Bodoni, Hanken_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import PageEntryClient from "@/components/PageEntry/PageEntryClient";
+import Floater from "@/components/Floater/Floater";
 import { SoundProvider } from "@/contexts/SoundContext";
 import "./globals.css";
 
@@ -93,7 +93,7 @@ export default function RootLayout({
         <SoundProvider>
           <Navbar />
           <PageEntryClient>{children}</PageEntryClient>
-          <Footer />
+          <Floater />
         </SoundProvider>
       </body>
     </html>

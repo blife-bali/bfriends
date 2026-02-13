@@ -5,47 +5,47 @@ import Image from "next/image";
 import styles from "./Loader.module.css";
 
 const LOGO_FILL_DURATION_MS = 1200;
-const FADE_OUT_DELAY_MS = 300;
-const FADE_OUT_DURATION_MS = 400;
 
 interface LoaderProps {
-  onComplete: () => void;
+  onComplete?: () => void;
+  /** When true, overlay fades out (e.g. parent switched to startup, same Loader instance) */
+  fadeOut?: boolean;
 }
 
-export default function Loader({ onComplete }: LoaderProps) {
+export default function Loader({ onComplete, fadeOut = false }: LoaderProps) {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    const fadeOutStart = LOGO_FILL_DURATION_MS + FADE_OUT_DELAY_MS;
-    const completeAt = fadeOutStart + FADE_OUT_DURATION_MS;
+    if (fadeOut) {
+      /* Parent set phase to startup: trigger fade so we reveal Startup underneath */
+      const raf = requestAnimationFrame(() => setIsFadingOut(true));
+      return () => cancelAnimationFrame(raf);
+    }
 
-    const startFadeOut = setTimeout(() => {
+    const completeAt = LOGO_FILL_DURATION_MS;
+    const t = setTimeout(() => {
+      onComplete?.();
       setIsFadingOut(true);
-    }, fadeOutStart);
-
-    const handleComplete = setTimeout(() => {
-      onComplete();
     }, completeAt);
-
-    return () => {
-      clearTimeout(startFadeOut);
-      clearTimeout(handleComplete);
-    };
-  }, [onComplete]);
+    return () => clearTimeout(t);
+  }, [onComplete, fadeOut]);
 
   return (
     <div
-      className={`${styles.overlay} ${isFadingOut ? styles.fadeOut : ""}`}
+      className={`${styles.overlay} ${isFadingOut ? styles.fadeOut : ""} ${fadeOut ? styles.logoComplete : ""}`}
       style={{
         position: "fixed",
-        inset: 0,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: "100%",
+        height: "100%",
         zIndex: 9999,
         backgroundColor: "#FEFFFF",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        opacity: isFadingOut ? 0 : 1,
-        transition: "opacity 0.4s ease-out",
       }}
       aria-hidden="true"
     >

@@ -89,7 +89,7 @@
 /* NOTE: We use !important in some cases to override Tailwind utility classes specifically for intermediate breakpoints 
    where we want to deviate from the 1680px (desktop) design without changing the base classes. */
 
-@media (max-width: 1440px) {
+@media (max-width: 1568px) {
   .imgTop {
     width: 448px !important; /* Scale down from 32rem */
   }

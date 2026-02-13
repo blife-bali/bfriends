@@ -1,28 +1,22 @@
+@reference "../../app/globals.css";
+
 /* Subscription Section */
 .subscriptionSection {
-  background-color: var(--color-white);
-  background: linear-gradient(315deg, #134053 0%, #2B5465 50%, #426675 100%);
+  background-color: var(--color-white-100);
   padding: 128px 0;
- 
+  border-bottom: 1px solid var(--color-cream-40);
 }
 
 /* Subscription Wrapper */
 .subscribeWrapper {
-  max-width: 1440px;
+  max-width: 1568px;
   padding: 0 64px;
   margin: 0 auto;
 }
 
-/* Marquee Container */
+/* Marquee Container - hidden */
 .marqueeContainer {
-  width: 100%;
-  height: fit-content;
-  overflow: hidden;
-  gap: 24px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 64px;
+  display: none;
 }
 
 .marqueeContent {
@@ -102,17 +96,18 @@
 
 /* Newsletter Container */
 .newsletterContainer {
-  background: linear-gradient(-45deg, #426675 0%, #2B5465 50%, #134053 100%);
+  background: none;
   padding: 64px 24px;
   height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
+  border: 1px solid var(--color-cream-40);
 }
 
 .newsletterContent {
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
 }
 
@@ -121,27 +116,25 @@
   font-size: clamp(28px, 4vw, 32px);
   font-weight: 400;
   line-height: 1.2;
-  color: var(--color-white-100);
+  color: var(--color-blue-100);
   margin-bottom: 24px;
-  text-transform: uppercase;
 }
 
 .heading em {
   font-family: var(--font-script);
   font-style: italic;
   font-weight: 400;
-  color: var(--color-white-100);
+  color: var(--color-blue-100);
 }
 
 .subheading {
   font-family: var(--font-sans);
-  font-size: clamp(14px, 4vw, 16px);
-  line-height: 1.5;
-  font-weight: 300;
-  letter-spacing: -0.04em;
-  color: var(--color-white-100);
+  font-size: clamp(18px, 1.5vw, 20px);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
   margin-bottom: 32px;
-  max-width: 560px;
 }
 
 .newsletterForm {
@@ -161,26 +154,39 @@
   width: 100%;
   height: 40px;
   padding: 0 24px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
+  background-color: var(--color-white-100);
+  border: 1px solid var(--color-blue-40);
   border-radius: 999px;
   font-weight: 300;
-  color: var(--color-white-100);
+  color: var(--color-blue-100);
   font-family: var(--font-display);
   font-size: clamp(12px, 4vw, 14px);
   transition: border-color 0.2s ease;
 }
 
-.newsletterInput:focus {
-  outline: none;
-  border-color: var(--color-white-100);
+.newsletterInput::placeholder {
+  color: var(--color-blue-60);
 }
 
-.buttonWrap{
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
+.newsletterInput:focus {
+  outline: none;
+  border-color: var(--color-blue-80);
+}
+
+.buttonWrap {
   border-radius: 999px;
+}
+
+.buttonWrap button {
+  background-color: var(--color-blue-100);
+  color: var(--color-white-100);
+  border: 1px solid var(--color-blue-100);
+}
+
+.buttonWrap button:hover {
+  background-color: var(--color-blue-120);
+  border-color: var(--color-blue-120);
+  color: var(--color-white-100);
 }
 
 .successMessage {

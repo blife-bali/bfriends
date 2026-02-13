@@ -29,7 +29,7 @@
 .contentWrapper{
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1568px;
   display: flex;
   flex-direction: row;
   align-items: space-between;
@@ -61,7 +61,6 @@
   letter-spacing: 0.12em;
   line-height: 100%;
   color: var(--color-white-100);
-  text-transform: uppercase;
   text-align: center;
 }
 
@@ -73,7 +72,6 @@
   font-weight: 400;
   font-family: var(--font-display);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
 }
 
 .headingText em {
@@ -106,7 +104,7 @@
   position: relative;
   z-index: 2;
   width: fit-content;
-  max-width: 1440px;
+  max-width: 1568px;
   padding: 64px;
   display: flex;
   flex-direction: row;
@@ -158,7 +156,7 @@
 /* Card Container - positioned absolutely like points */
 .cardContainer {
   position: relative;
-  max-width: 1440px;
+  max-width: 1568px;
   height: fit-content;
   inset: 0;
   z-index: 2;

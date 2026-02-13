@@ -1,0 +1,43 @@
+@reference "../../app/globals.css";
+
+.floater {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  z-index: 9997;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background-color: var(--color-white-100);
+  color: var(--color-cream-100);
+  border: 1px solid var(--color-cream-100);
+  
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--color-cream-100);
+  color: var(--color-white-100);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button svg {
+  width: 22px;
+  height: 22px;
+}

@@ -16,20 +16,12 @@ export default function WhyBFriends() {
       <div className={styles.mainContainer}>
         {/* Left Container - Sticky */}
         <div className={styles.leftContainer}>
-          <h2 className={styles.title}>Why <em>BFriends</em> Exists?</h2>
+          <h2 className={styles.title}>Why <em>BFriends</em>?</h2>
           <p className={styles.subheading}>
             Discover meaningful connections with people who truly get you. 
             BFriends brings together like-minded individuals for authentic relationships.
           </p>
-          <Button
-            href="/about"
-            variant="border"
-            className={styles.button}
-            color="var(--color-blue-100)"
-            icon={<ArrowUpRight size={16} />}
-          >
-            Learn More
-          </Button>
+          
         </div>
 
         {/* Cards Container */}

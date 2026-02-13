@@ -17,7 +17,7 @@
 }
 
 .mainContainer{
-  /* max-width: 1440px; */
+  max-width: 1568px;
   padding: 0 40px;
   width: 100%;
   display: grid;
@@ -126,7 +126,6 @@
   color: var(--color-white-100);
   transition: opacity 0.2s;
   white-space: nowrap;
-  text-transform: uppercase;
   opacity: 0.7;
 }
 

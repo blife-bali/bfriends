@@ -67,6 +67,29 @@ export default function Intro() {
             Your browser does not support the video tag.
           </video>
         </div>
+
+        {/* Conclusion Section */}
+        <div className={styles.conclusionContainer}>
+          <div className={styles.leftConclusion}>
+            <h2 className={styles.conclusionTitle}>
+              A <em>journey</em> to become your own friend.{" "}
+            </h2>
+          </div>
+          <div className={styles.rightConclusion}>
+            <p className={styles.conclusionText}>
+              BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+            </p>
+            <Button
+            href="/about"
+            variant="underline"
+            className={styles.button}
+            color="var(--color-blue-100)"
+            icon={<ArrowUpRight size={16} />}
+          >
+            Learn More
+          </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -76,7 +76,7 @@
   align-items: center;
   gap: 16px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1568px;
   padding: 0 64px;
   flex-shrink: 0;
 }
@@ -88,7 +88,6 @@
   letter-spacing: 0.12em;
   line-height: 100%;
   color: var(--color-cream-100);
-  text-transform: uppercase;
   padding: 8px 16px;
   border: 1px solid var(--color-cream-60);
   border-radius: 999px;
@@ -103,7 +102,6 @@
   line-height: 120%;
   color: var(--color-green-100);
   margin: 0;
-  text-transform: uppercase;
   max-width: 600px;
   text-align: center;
 }
