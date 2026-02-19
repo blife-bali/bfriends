@@ -33,8 +33,8 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
       className
     );
 
-    // Render logic for Primary, Secondary, Border (text + icon structure)
-    if (variant === 'primary' || variant === 'secondary' || variant === 'border') {
+    // Render logic for Primary, Secondary, Border, Underline (text + icon structure for arrow animation)
+    if (variant === 'primary' || variant === 'secondary' || variant === 'border' || variant === 'underline') {
       const content = (
         <>
           <span className={styles.textPart}>
@@ -69,7 +69,7 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
       );
     }
 
-    // Render logic for Underline and Text (Simple structure)
+    // Render logic for Text only (Simple structure)
     const simpleContent = (
       <>
         {children}

@@ -1,52 +1,82 @@
+export interface ProcessSubpoint {
+  title: string;
+  description: string;
+}
+
 export interface ProcessStep {
   id: number;
   number: string;
   title: string;
   description: string;
+  /** Optional sub-points (e.g. for Measure step) */
+  subpoints?: ProcessSubpoint[];
   image: string;
 }
+
+export const processSectionTitle = "The BFriends System";
+export const processSectionIntro =
+  "An expert-driven, data-led system integrated into a routine and validated by results.";
 
 export const processData: ProcessStep[] = [
   {
     id: 1,
     number: "01",
-    title: "Precision Measurement",
-    description: "Let's get a clear picture of where you are. We use advanced tools to understand your unique starting point, ensuring your journey begins with accuracy and a solid foundation for growth.",
+    title: "Measure",
+    description: "We start with data—not assumptions.",
+    subpoints: [
+      {
+        title: "Movement Reading",
+        description: "Identify movement patterns, alignment, and functional efficiency.",
+      },
+      {
+        title: "Body Composition Scan",
+        description: "Establish a clear baseline of your current condition.",
+      },
+      {
+        title: "Skin Imaging",
+        description: "Assess skin condition in depth—beyond what the eye can see.",
+      },
+    ],
     image: "/images/programs/D.webp",
   },
   {
     id: 2,
     number: "02",
-    title: "Expert Interpretation",
-    description: "Data is just the beginning; insight is what moves you forward. Our professionals break down your results into actionable knowledge, helping you understand your body's needs with total clarity.",
+    title: "Assess",
+    description:
+      "Data doesn't stay as numbers. Our expert team translates it into clear priorities and direction—so you know what matters most, and why.",
     image: "/images/programs/E.jpg",
   },
   {
     id: 3,
     number: "03",
-    title: "Personalized Program Design",
-    description: "No generic templates here—this is all about you. We craft a vibrant, custom roadmap that aligns with your specific goals and lifestyle, making your path to wellness feel natural and exciting.",
+    title: "Design",
+    description:
+      "Based on the assessment, we design what you need most. Your FRIEND Flow is customized across structure, intensity, and frequency—aligned to your goals and current state.",
     image: "/images/programs/F.jpg",
   },
   {
     id: 4,
     number: "04",
-    title: "Elite Coaching Experience",
-    description: "World-class guidance every step of the way. Our elite coaches provide high-energy support and technical expertise to help you perform at your best and stay motivated.",
+    title: "Coach",
+    description:
+      "A plan only works when execution is precise. We coach standards and method—so the plan becomes outcomes, and wellness becomes a routine you can sustain.",
     image: "/images/programs/I.png",
   },
   {
     id: 5,
     number: "05",
-    title: "Journey Partner Support",
-    description: "You're never walking this path alone. Our community and support staff act as your dedicated partners, offering warm encouragement and social connection needed to keep your energy high.",
+    title: "Track",
+    description:
+      "We record, review, and check every stage of the journey. So progress isn't left to feeling—it's guided by patterns, consistency, and measurable change.",
     image: "/images/programs/N.webp",
   },
   {
     id: 6,
     number: "06",
-    title: "Progress Tracking",
-    description: "Celebrate every win as you go. We continuously monitor your evolution, adjusting your plan in real-time to ensure you are always moving toward a more active, connected, and lively version of yourself.",
+    title: "Refine",
+    description:
+      "We update your routine based on condition and response. Safer. More efficient. More precise—so you move closer to your goal with every cycle.",
     image: "/images/programs/R.webp",
   },
 ];

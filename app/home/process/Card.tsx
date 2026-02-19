@@ -36,12 +36,32 @@ export default function Card({ step, index, variant = "default" }: CardProps) {
             <h2 className={mobileStyles.stepNumber}>{step.number}</h2>
             <h2 className={mobileStyles.heading}>{step.title}</h2>
             <p className={mobileStyles.description}>{step.description}</p>
+            {step.subpoints && step.subpoints.length > 0 && (
+              <ul className={mobileStyles.subpoints}>
+                {step.subpoints.map((sp, i) => (
+                  <li key={i} className={mobileStyles.subpoint}>
+                    <span className={mobileStyles.subpointTitle}>{sp.title}</span>
+                    <span className={mobileStyles.subpointDesc}>{sp.description}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ) : (
           <div className={`${styles.cardTitle} ${isEven ? styles.cardTitleTop : styles.cardTitleBottom}`}>
             <h2 className={styles.stepNumber}>{step.number}</h2>
             <h2 className={styles.cardHeading}>{step.title}</h2>
             <p className={styles.cardDescription}>{step.description}</p>
+            {step.subpoints && step.subpoints.length > 0 && (
+              <ul className={styles.subpoints}>
+                {step.subpoints.map((sp, i) => (
+                  <li key={i} className={styles.subpoint}>
+                    <span className={styles.subpointTitle}>{sp.title}</span>
+                    <span className={styles.subpointDesc}>{sp.description}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </div>

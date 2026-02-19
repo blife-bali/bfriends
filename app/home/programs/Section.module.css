@@ -53,15 +53,16 @@
   background: rgba(0, 0, 0, 0.2);
   position: relative;
   font-family: var(--font-sans);
-  font-size: clamp(10px, 2vw, 12px);
-  padding: 8px 12px;
+  font-size: clamp(14px, 2vw, 16px);
+  padding: 8px 12px 10px 12px;
   border: 1px solid rgba(254, 254, 254, 0.8);
-  border-radius: 999px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   line-height: 100%;
   color: var(--color-white-100);
   text-align: center;
+  text-transform: uppercase;
+  text-wrap: nowrap;
 }
 
 .headingText{
@@ -121,7 +122,6 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   border: 1px solid rgba(254, 254, 254, 0.4);
   background: transparent;
   color: var(--color-white-100);

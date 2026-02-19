@@ -86,7 +86,7 @@ export default function Intro() {
             color="var(--color-blue-100)"
             icon={<ArrowUpRight size={16} />}
           >
-            Learn More
+            About Us
           </Button>
           </div>
         </div>
