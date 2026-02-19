@@ -139,7 +139,7 @@ export default function Navbar() {
               className={styles.mobileContactButton}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact Us
+              CONTACT US
             </Button>
             <Button
               href="/book"

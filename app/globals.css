@@ -1,4 +1,44 @@
+@import url("https://use.typekit.net/kbz3vui.css");
 @import "tailwindcss";
+
+/* ========== Local font: Sweet Sans Pro (public/fonts/sweet0sans) ========== */
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* The Seasons (display) from Typekit above: italic, light (300), regular (400), bold (700). Use text-transform: capitalize for capitalize. */
 
 /* ========== Base colors ========== */
 :root {
@@ -66,10 +106,14 @@
 }
 
 @theme inline {
-  /* Fonts: display = Geist, script = Libre Bodoni, sans = Hanken Grotesk */
-  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Fonts: display = The Seasons (Typekit), script = Libre Bodoni, sans = Sweet Sans Pro (local) */
+  --font-display: "the-seasons", ui-sans-serif, system-ui, sans-serif;
+  /* Display font style/weight helpers (use with font-family: var(--font-display)) */
+  --font-display-weight-light: 300;
+  --font-display-weight-regular: 400;
+  --font-display-weight-bold: 700;
   --font-script: var(--font-libre-bodoni), Georgia, serif;
-  --font-sans: var(--font-hanken-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Sweet Sans Pro", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -128,6 +172,8 @@
 html {
   /*overflow-x: hidden;*/
   width: 100%;
+  /* Default document font is sans; Libre Bodoni class on html only provides --font-libre-bodoni for --font-script */
+  font-family: var(--font-sans) !important;
 }
 
 body {
@@ -139,6 +185,12 @@ body {
   max-width: 100%;
 }
 
+/* Display font (The Seasons) variants – use with font-family: var(--font-display) or these classes */
+.font-display { font-family: var(--font-display); }
+.font-display.font-display--italic { font-style: italic; }
+.font-display.font-display--light { font-weight: var(--font-display-weight-light); }
+.font-display.font-display--bold { font-weight: var(--font-display-weight-bold); }
+.font-display.font-display--capitalize { text-transform: capitalize; }
 
 ::selection {
   background-color: var(--color-cream-100);

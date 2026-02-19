@@ -10,7 +10,7 @@ export const whyBFriendsData: WhyBFriendsData[] = [
     id: 1,
     point: "Advanced Scans",
     subpoint: "Personalized FRIEND Flow",
-    image: "/images/main-sess-1.jpg.jpeg",
+    image: "/images/why/1.png",
   },
   {
     id: 2,

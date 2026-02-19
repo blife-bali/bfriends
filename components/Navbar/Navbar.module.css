@@ -118,15 +118,16 @@
 }
 
 .menuLink {
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  /* letter-spacing: -0.05em; */
   text-decoration: none;
+  text-transform: uppercase;
   color: var(--color-white-100);
   transition: opacity 0.2s;
   white-space: nowrap;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .menuLink:hover {

@@ -14,17 +14,17 @@
 .mainContainer {
   max-width: 1568px;
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 48px;
   padding: 64px;
-  box-sizing: border-box;
-  align-items: flex-start;
+  /* box-sizing: border-box;
+  align-items: flex-start; */
 }
 
 /* Left Container - Sticky */
 .leftContainer {
-  width: 400px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   just: center;
@@ -39,7 +39,7 @@
 .title {
   font-family: var(--font-display);
   font-size: clamp(40px, 3vw, 48px);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.04em;
   color: var(--color-blue-100);
@@ -47,14 +47,13 @@
 }
 
 .title em {
-  font-family: var(--font-script);
-  font-style: italic;
+  font-style: normal;
 }
 
 .subheading {
   font-family: var(--font-sans);
   font-size: clamp(18px, 1.5vw, 20px);
-  font-weight: 400;
+  /* font-weight: 400; */
   line-height: 1.6;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
@@ -74,7 +73,7 @@
 .cardsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 120px;
   height: fit-content;
   padding: 128px 0;
 }
@@ -82,7 +81,7 @@
 .cardsGrid {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 120px;
 }
 
 .cardsGridRight {

@@ -40,14 +40,14 @@ export default function Intro() {
           <div className={styles.headingContainer}>
             <p className={styles.combinedParagraph}>
               <span className={styles.heading}>
-                A <em>journey</em> to become your own friend.{" "}
+                A journey to become your own friend.{" "}
               </span>
               
             </p>
           </div>
           <div className={styles.descriptionContainer}>
             <p className={styles.description}>
-            BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+            BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, yourself. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
             </p>
             
           </div>
@@ -72,12 +72,12 @@ export default function Intro() {
         <div className={styles.conclusionContainer}>
           <div className={styles.leftConclusion}>
             <h2 className={styles.conclusionTitle}>
-              A <em>journey</em> to become your own friend.{" "}
+              A journey to become your own friend.{" "}
             </h2>
           </div>
           <div className={styles.rightConclusion}>
             <p className={styles.conclusionText}>
-              BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, <em>yourself</em>. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
+              BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, yourself. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
             </p>
             <Button
             href="/about"

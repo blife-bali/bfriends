@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { Libre_Bodoni, Hanken_Grotesk } from "next/font/google";
+import { Libre_Bodoni } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import PageEntryClient from "@/components/PageEntry/PageEntryClient";
 import Floater from "@/components/Floater/Floater";
@@ -12,12 +11,6 @@ const libreBodoni = Libre_Bodoni({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-libre-bodoni",
-});
-
-const hankenGrotesk = Hanken_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-hanken-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -87,8 +80,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${libreBodoni.variable} ${hankenGrotesk.variable}`}
+      className={libreBodoni.variable}
     >
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/kbz3vui.css" />
+      </head>
       <body className="antialiased">
         <SoundProvider>
           <Navbar />

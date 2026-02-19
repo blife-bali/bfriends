@@ -45,7 +45,7 @@
   font-family: var(--font-display);
   font-size: clamp(64px, 5vw, 72px);
   letter-spacing: -0.02em;
-  font-weight: 300;
+  font-weight: 600;
   color: var(--color-white-100);
   line-height: 1;
   margin: 0;
@@ -54,9 +54,7 @@
 }
 
 .title em {
-  font-family: var(--font-script);
-  /* font-size: clamp(60px, 5vw, 66px); */
-  font-style: italic;
+  font-style: normal;
 }
 
 .buttonGroup {

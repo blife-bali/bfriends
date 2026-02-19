@@ -37,17 +37,15 @@
   text-align: center;
 }
 
-.title em{
-  font-family: var(--font-script);
-  font-style: italic;
-  font-weight: 400;
+.title em {
+  font-style: normal;
 }
 
 .choices {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  width: 100%;
+  width: 400px;
 }
 
 /* Button-style choices: pill, icon + text, like Button component */
@@ -124,6 +122,7 @@
 
   .choices {
     flex-direction: column;
+    max-width: 240px;
   }
 
   .choice {

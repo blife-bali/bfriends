@@ -107,9 +107,7 @@
 }
 
 .heading em {
-  font-family: var(--font-script);
-  font-style: italic;
-  font-weight: 400;
+  font-style: normal;
 }
 
 /* ----- Embla viewport: must clip so horizontal scroll is visible ----- */

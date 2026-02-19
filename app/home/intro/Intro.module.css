@@ -20,6 +20,7 @@
   padding: 128px 64px;
   box-sizing: border-box;
   gap: 96px;
+  max-width: 1568px;
 }
 
 /* Text Content */
@@ -51,10 +52,7 @@
 }
 
 .heading em {
-  font-family: var(--font-script);
-  /* font-size: clamp(40px, 3vw, 44px); */
-  font-weight: 300;
-  font-style: italic;
+  font-style: normal;
 }
 
 .heading2 {
@@ -68,9 +66,7 @@
 }
 
 .heading2 em {
-  font-family: var(--font-script);
-  font-weight: 400;
-  font-style: italic;
+  font-style: normal;
 }
 
 .descriptionContainer {
@@ -82,7 +78,7 @@
 
 .description {
   font-family: var(--font-sans);
-  font-size: clamp(18px, 1.8vw, 20px);
+  font-size: clamp(16px, 1.8vw, 18px);
   line-height: 1.5;
   letter-spacing: -0.04em;
   color: var(--color-cream-140);
@@ -98,7 +94,7 @@
 /* Video Container */
 .videoWrapper {
   width: 100%;
-  padding: 0 64px;
+  /* padding: 0 64px; */
   box-sizing: border-box;
   display: flex;
   justify-content: center;

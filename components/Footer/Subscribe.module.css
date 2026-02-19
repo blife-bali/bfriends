@@ -121,10 +121,7 @@
 }
 
 .heading em {
-  font-family: var(--font-script);
-  font-style: italic;
-  font-weight: 400;
-  color: var(--color-blue-100);
+  font-style: normal;
 }
 
 .subheading {
