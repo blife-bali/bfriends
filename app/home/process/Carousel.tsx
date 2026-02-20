@@ -52,7 +52,7 @@ export default function Carousel() {
         <div className={styles.carouselWrapper}>
           <button
             type="button"
-            className={styles.arrowButton}
+            className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
             aria-label="Previous step"
             onClick={() => emblaApi?.scrollPrev()}
             disabled={!canScrollPrev}
@@ -76,7 +76,7 @@ export default function Carousel() {
           </div>
           <button
             type="button"
-            className={styles.arrowButton}
+            className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
             aria-label="Next step"
             onClick={() => emblaApi?.scrollNext()}
             disabled={!canScrollNext}

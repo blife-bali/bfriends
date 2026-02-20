@@ -93,8 +93,25 @@
   border: 1px solid var(--color-green-100);
   background: var(--color-white-100);
   color: var(--color-green-100);
-  cursor: pointer;
   transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+
+/* Left nav: cursor points left (west) */
+.arrowButtonLeft {
+  cursor: w-resize;
+}
+
+.arrowButtonLeft:disabled {
+  cursor: not-allowed;
+}
+
+/* Right nav: cursor points right (east) */
+.arrowButtonRight {
+  cursor: e-resize;
+}
+
+.arrowButtonRight:disabled {
+  cursor: not-allowed;
 }
 
 .arrowButton:hover:not(:disabled) {
