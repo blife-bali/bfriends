@@ -24,6 +24,7 @@
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;
   text-decoration: none;
+  border-radius: 999px;
 }
 
 .button:hover {

@@ -26,7 +26,7 @@ export default function Floater() {
 
   return (
     <div className={styles.floater} aria-label="Quick actions">
-      <Link
+      {/* <Link
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export default function Floater() {
         aria-label="Contact us on WhatsApp"
       >
         <Phone size={22} strokeWidth={1.5} />
-      </Link>
+      </Link> */}
       <Link
         href="/faq"
         className={styles.button}

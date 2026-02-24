@@ -1,0 +1,220 @@
+@reference "../../globals.css";
+
+/* Page */
+.page {
+  width: 100%;
+  background-color: var(--color-white-100);
+  
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  /* max-width: 1568px; */
+  padding: 128px 0 0 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 64px; */
+}
+
+/* ----- Page header (main title) ----- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: -72px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: var(--color-blue-100);
+  margin: 0;
+  max-width: 800px;
+}
+
+/* ----- Journey blocks: copy of system SECTION layout (no carousel, no cards) ----- */
+.journeyBlocks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* gap: 80px; */
+  
+}
+
+.journeyBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 128px 64px 96px;
+}
+
+.journeyBlockEven {
+  background-color: var(--color-blue-5);
+  padding: 128px 64px 96px;
+}
+
+/* Image block – same as system section */
+.blockImageWrapper {
+  width: 100%;
+  
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.blockImageInner {
+  width: 100%;
+  max-width: 1568px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.blockImageInnerBefore {
+  opacity: 0.1;
+  transform: scale(1.1);
+}
+
+.blockImageInnerVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.blockSectionImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Conclusion container – same as system section */
+.blockConclusionContainer {
+  
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1568px;
+  align-items: start;
+}
+
+.blockLeftConclusion {
+  display: flex;
+  flex-direction: column;
+}
+
+.blockConclusionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+  text-align: left;
+  margin: 0;
+}
+
+.blockRightConclusion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.blockConclusionText {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 1.8vw, 20px);
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  color: var(--color-cream-140);
+  margin: 0;
+  text-align: left;
+}
+
+.subpointsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subpointItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.subpointTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.4vw, 16px);
+  font-weight: 600;
+  color: var(--color-blue-100);
+}
+
+.subpointDesc {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.2vw, 15px);
+  font-weight: 400;
+  color: var(--color-cream-140);
+  line-height: 1.4;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 1024px) {
+  .page {
+    padding: 80px 40px 72px;
+  }
+
+  .container {
+    gap: 48px;
+  }
+
+  .journeyBlocks {
+    gap: 64px;
+  }
+
+  .journeyBlock {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 48px 24px 56px;
+  }
+
+  .container {
+    gap: 32px;
+  }
+
+  .heading,
+  .blockHeading {
+    font-size: clamp(28px, 2vw, 36px);
+  }
+
+  .journeyBlocks {
+    gap: 48px;
+  }
+
+  .journeyBlock {
+    gap: 32px;
+  }
+
+  .blockConclusionContainer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

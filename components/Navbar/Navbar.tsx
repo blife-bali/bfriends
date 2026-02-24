@@ -1,145 +1,222 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button/Button";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { navColumns } from "@/lib/nav-config";
 import styles from "./Navbar.module.css";
 
-const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About BFriends" },
-  { href: "/program", label: "Program" },
-  { href: "/membership", label: "Membership" },
-  { href: "/stories", label: "Community" },
-  
-];
+export type ActiveMenuId = "about" | "programs" | "membership" | "community" | null;
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<ActiveMenuId>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isInteractionEnabled, setIsInteractionEnabled] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+  const mobileSidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollThreshold = 10;
+    const timer = setTimeout(() => setIsInteractionEnabled(true), 2000);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
-      // Update scrolled state for styling (keeps hero and scrolled states)
-      setIsScrolled(currentScrollY > scrollThreshold);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (!navRef.current?.contains(target) && !mobileSidebarRef.current?.contains(target)) {
+        setActiveMenu(null);
+        setIsMobileMenuOpen(false);
+      }
     };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMobileMenuOpen]);
+  const toggleMenu = (menu: ActiveMenuId) => {
+    if (!isInteractionEnabled) return;
+    setActiveMenu(activeMenu === menu ? null : menu);
+  };
 
-  // Force scrolled mode when mobile menu is open
-  const shouldUseScrolledMode = isScrolled || isMobileMenuOpen;
+  const closeMenu = () => {
+    setActiveMenu(null);
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (isMobileMenuOpen) setActiveMenu(null);
+  };
+
+  const isProgramPage = pathname.startsWith("/programs/");
+  const isAboutPage = pathname.startsWith("/about/");
+  const isMembershipPage = pathname.startsWith("/membership/");
+  const isCommunityPage = pathname.startsWith("/community/");
+
+  const solidBg = isScrolled || activeMenu !== null || isMobileMenuOpen;
 
   return (
     <>
-      <nav
-        className={`${styles.navbar} ${shouldUseScrolledMode ? styles.scrolled : styles.default}`}
-      >
-        <div className={styles.mainContainer}>
-        {/* Left: icon */}
-        <div className={styles.left}>
-          <Link href="/" className={styles.logoLink} aria-label="BFriends Home">
-            <Image
-              src="/images/icons/logo-default.svg"
-              alt="BFriends"
-              width={120}
-              height={40}
-              className={styles.logo}
-              priority
-            />
-          </Link>
-        </div>
-
-        {/* Middle: menus */}
-        <div className={styles.menuContainer}>
-          {NAV_LINKS.map(({ href, label }) => {
-            const isSelected = pathname === href || (href !== "/" && pathname.startsWith(href));
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={`${styles.menuLink} ${isSelected ? styles.menuLinkSelected : ""}`}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </div>
-
-        {/* Right: Contact Us (border, no arrow) + Book Now (primary cream with arrow) */}
-        <div className={styles.right}>
-          <Button
-            href="/contact"
-            variant="border"
-            className={styles.contactButton}
-          >
-            Contact Us
-          </Button>
-          <Button
-            href="/book"
-            variant="primary"
-            className={styles.bookButton}
-            fillColor="var(--color-cream-100)"
-            icon={<ArrowUpRight size={16} />}
-          >
-            Book Now
-          </Button>
-         </div>
-
-         {/* Mobile: Menu Icon */}
-         <button 
-           className={styles.mobileMenuButton} 
-           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-         >
-           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-         </button>
-        </div>
-      </nav>
-
-      {/* Mobile Overlay Menu - Outside nav to avoid clipping */}
       {isMobileMenuOpen && (
-        <div className={styles.mobileDropdown}>
-          <div className={styles.mobileMenuLinks}>
-            {NAV_LINKS.map(({ href, label }) => (
-              <Link 
-                key={href} 
-                href={href} 
-                className={styles.mobileMenuLink}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {label}
+        <div
+          className={styles.mobileOverlay}
+          onClick={toggleMobileMenu}
+          aria-hidden="true"
+        />
+      )}
+
+      <div ref={navRef} className={styles.navWrapper}>
+        <div
+          className={`${styles.navShell} ${solidBg ? styles.navShellSolid : ""} ${activeMenu !== null && !isMobileMenuOpen ? styles.navShellExpanded : ""}`}
+        >
+          <div className={styles.mainContainer}>
+            <div className={styles.left}>
+              <Link href="/" className={styles.logoLink} aria-label="BFriends Home" onClick={closeMenu}>
+                <Image
+                  src="/images/icons/logo-default.svg"
+                  alt="BFriends"
+                  width={120}
+                  height={40}
+                  className={styles.logo}
+                  priority
+                />
               </Link>
-            ))}
+            </div>
+
+            <nav className={styles.menuGrid}>
+              <div className={styles.navItemWrapper}>
+                <Link
+                  href="/"
+                  className={`${styles.menuTop} ${pathname === "/" ? styles.menuTopSelected : ""}`}
+                  onClick={closeMenu}
+                >
+                  Home
+                </Link>
+              </div>
+
+              {navColumns.map((col) => (
+                <div
+                  key={col.id}
+                  className={`${styles.navItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
+                >
+                  <button
+                    type="button"
+                    className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
+                    onClick={() => toggleMenu(col.id)}
+                  >
+                    {col.title}
+                  </button>
+                  <div className={styles.submenuDropdown}>
+                    {col.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={styles.menuItem}
+                        onClick={closeMenu}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </nav>
+
+            <div className={styles.right}>
+              <Button href="/contact" variant="border" className={styles.contactButton}>
+                Contact Us
+              </Button>
+              <Button
+                href="/book"
+                variant="primary"
+                className={styles.bookButton}
+                fillColor="var(--color-cream-100)"
+                icon={<ArrowUpRight size={16} />}
+              >
+                Book Now
+              </Button>
+            </div>
+
+            <button
+              type="button"
+              className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ""}`}
+              onClick={toggleMobileMenu}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              <span className={styles.mobileMenuIconWrapper}>
+                <Menu size={24} className={styles.mobileMenuIcon} aria-hidden />
+                <X size={24} className={styles.mobileMenuIconClose} aria-hidden />
+              </span>
+            </button>
           </div>
+
+          {activeMenu !== null && !isMobileMenuOpen && <div className={styles.submenuDivider} />}
+        </div>
+      </div>
+
+      <div
+        ref={mobileSidebarRef}
+        className={`${styles.mobileSidebar} ${isMobileMenuOpen ? styles.mobileSidebarOpen : ""}`}
+      >
+        <div className={styles.mobileSidebarContent}>
+          <nav className={styles.mobileMenuGrid}>
+            <div className={styles.mobileNavItemWrapper}>
+              <Link href="/" className={styles.menuTop} onClick={closeMenu}>
+                Home
+              </Link>
+            </div>
+            {navColumns.map((col) => (
+              <div
+                key={col.id}
+                className={`${styles.mobileNavItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
+              >
+                <button
+                  type="button"
+                  className={styles.menuTop}
+                  onClick={() => toggleMenu(activeMenu === col.id ? null : col.id)}
+                >
+                  {col.title}
+                </button>
+                <div className={styles.mobileSubmenuDropdown}>
+                  {col.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={styles.menuItem}
+                      onClick={closeMenu}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </nav>
           <div className={styles.mobileMenuButtons}>
             <Button
               href="/contact"
               variant="border"
               className={styles.mobileContactButton}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMenu}
             >
-              CONTACT US
+              Contact Us
             </Button>
             <Button
               href="/book"
@@ -147,13 +224,13 @@ export default function Navbar() {
               className={styles.mobileBookButton}
               fillColor="var(--color-cream-100)"
               icon={<ArrowUpRight size={16} />}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMenu}
             >
               Book Now
             </Button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
