@@ -27,7 +27,6 @@
   align-items: center;
   text-align: center;
   padding: 0 24px;
-  margin-bottom: -72px;
 }
 
 .heading {
@@ -55,13 +54,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+}
+
+.journeyBlockWrapper {
+  width: 100%;
+  max-width: 1568px;
+  display: flex;
+  flex-direction: column;
   gap: 64px;
-  padding: 128px 64px 96px;
+  padding: 64px ;
 }
 
 .journeyBlockEven {
   background-color: var(--color-blue-5);
-  padding: 128px 64px 96px;
+  
 }
 
 /* Image block – same as system section */
@@ -174,10 +181,6 @@
 
 /* ----- Responsive ----- */
 @media (max-width: 1024px) {
-  .page {
-    padding: 80px 40px 72px;
-  }
-
   .container {
     gap: 48px;
   }
@@ -192,10 +195,6 @@
 }
 
 @media (max-width: 768px) {
-  .page {
-    padding: 48px 24px 56px;
-  }
-
   .container {
     gap: 32px;
   }

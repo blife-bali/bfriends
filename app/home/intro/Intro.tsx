@@ -42,15 +42,14 @@ export default function Intro() {
               <span className={styles.heading}>
                 A journey to become your own friend.{" "}
               </span>
-              
             </p>
           </div>
-          <div className={styles.descriptionContainer}>
+          {/* <div className={styles.descriptionContainer}>
             <p className={styles.description}>
             BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, yourself. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.
             </p>
             
-          </div>
+          </div> */}
         </div>
 
         {/* Video Container */}
@@ -72,7 +71,7 @@ export default function Intro() {
         <div className={styles.conclusionContainer}>
           <div className={styles.leftConclusion}>
             <h2 className={styles.conclusionTitle}>
-              A journey to become your own friend.{" "}
+              About BFriends.{" "}
             </h2>
           </div>
           <div className={styles.rightConclusion}>

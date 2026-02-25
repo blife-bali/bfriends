@@ -80,7 +80,7 @@ export default function SystemSection() {
         {/* Conclusion container (same structure as Intro) */}
         <div className={styles.conclusionContainer}>
           <div className={styles.leftConclusion}>
-            <h2 className={styles.conclusionTitle}>The BFriends System</h2>
+            <h2 className={styles.conclusionTitle}>Customer Journey</h2>
           </div>
           <div className={styles.rightConclusion}>
             <p className={styles.conclusionText}>
@@ -98,7 +98,7 @@ export default function SystemSection() {
           </div>
         </div>
 
-        {/* Desktop: Embla carousel of system cards */}
+        {/* Desktop: Embla carousel of system cards
         <div className={styles.carouselWrapper}>
           <button
             type="button"
@@ -136,7 +136,7 @@ export default function SystemSection() {
         </div>
 
         {/* Mobile: vertical stack of system cards */}
-        <div className={styles.carouselWrapperMobile}>
+        {/* <div className={styles.carouselWrapperMobile}>
           <div className={styles.mobileCardsContainer}>
             {processData.map((step) => (
               <div key={step.id} className={styles.mobileSlide}>
@@ -144,7 +144,7 @@ export default function SystemSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

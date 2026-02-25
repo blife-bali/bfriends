@@ -1,0 +1,288 @@
+/* ========== Global section wrapper (match header) ========== */
+.sectionWrap {
+  width: 100%;
+  max-width: 1568px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 64px;
+  padding-right: 64px;
+  box-sizing: border-box;
+}
+
+/* Force light theme on this page regardless of system preference */
+.root {
+  --background: var(--color-white-100);
+  --foreground: var(--color-blue-100);
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* ---------- 1. Intro Quote ---------- */
+.quoteSection {
+  padding-top: 8rem;   /* py-32 */
+  padding-bottom: 8rem;
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--foreground);
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.03em;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- 2. Philosophy (50/50 split) ---------- */
+.philosophySection {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: start;
+  min-height: 100vh;
+}
+
+.philosophySticky {
+  position: sticky;
+  top: 25vh;
+  padding-right: 4rem;
+}
+
+.philosophyHeading {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-cream-100);
+  margin: 0 0 1.5rem;
+}
+
+.philosophyText {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--color-blue-80);
+  margin: 0;
+}
+
+.philosophyImageCol {
+  position: relative;
+}
+
+.philosophyImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;  /* portrait */
+  background: var(--color-blue-5);
+}
+
+.philosophyImg {
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .philosophyGrid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .philosophySticky {
+    position: static;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .philosophyImageWrap {
+    max-height: 70vh;
+    aspect-ratio: 4/5;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionWrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* ---------- 3. Process (vertical timeline) ---------- */
+.processSection {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineRow {
+  border-bottom: 1px solid var(--color-cream-20);
+  transition: opacity 0.25s ease;
+}
+
+.timelineRow:last-child {
+  border-bottom: none;
+}
+
+.timelineContent {
+  padding: 2rem 0;
+  max-width: 640px;
+}
+
+.timelineNumber {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-cream-100);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.timelineTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 0.5rem;
+}
+
+.timelineDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+/* ---------- 4. Programs (uniform 2-col grid) ---------- */
+.programsSection {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.programCard {
+  display: flex;
+  min-height: 220px;
+}
+
+.programCardInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  border: 1px solid var(--color-cream-20);
+  background: var(--background);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.programCard:hover .programCardInner {
+  border-color: var(--color-cream-40);
+}
+
+.programIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-cream-100);
+}
+
+.programIconSvg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.programTitle {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 0.5rem;
+}
+
+.programDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-cream-140);
+  margin: 0;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .programsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .programCard {
+    min-height: 200px;
+  }
+}
+
+/* ---------- 5. Gallery (film strip marquee) ---------- */
+.gallerySection {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  overflow: hidden;
+}
+
+.galleryMarqueeWrap {
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marqueeItem {
+  flex-shrink: 0;
+  width: 280px;
+  height: 320px;
+  margin-right: 1rem;
+  position: relative;
+  background: var(--color-blue-5);
+}
+
+.marqueeImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

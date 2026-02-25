@@ -1,18 +1,19 @@
 import { processData } from "@/lib/process-data";
+import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyBlockImage from "./JourneyBlockImage";
 import styles from "./CustomerJourney.module.css";
+
+const PAGE_HEADER = {
+  title: "Customer Journey",
+  subtitle: "Your journey to lasting balance starts here.",
+  image: "/images/hero-test.png",
+};
 
 export default function CustomerJourneyPage() {
   return (
     <main className={styles.page}>
+      <PageHeader title={PAGE_HEADER.title} subtitle={PAGE_HEADER.subtitle} image={PAGE_HEADER.image} />
       <div className={styles.container}>
-        <header className={styles.header}>
-          <h1 className={styles.heading}>
-            It&apos;s Not What You Do.
-            <br />
-            It&apos;s The State You Return To.
-          </h1>
-        </header>
 
         <div className={styles.journeyBlocks}>
           {processData.map((step, index) => (
@@ -20,11 +21,12 @@ export default function CustomerJourneyPage() {
               key={step.id}
               className={`${styles.journeyBlock} ${index % 2 === 1 ? styles.journeyBlockEven : ""}`}
             >
-              {/* Image block – same as system section (with scroll-in animation) */}
-              <JourneyBlockImage src={step.image} alt={step.title} />
+              <div className={styles.journeyBlockWrapper}>
+                {/* Image block – same as system section (with scroll-in animation) */}
+                <JourneyBlockImage src={step.image} alt={step.title} />
 
-              {/* Conclusion container – same as system section */}
-              <div className={styles.blockConclusionContainer}>
+                {/* Conclusion container – same as system section */}
+                <div className={styles.blockConclusionContainer}>
                 <div className={styles.blockLeftConclusion}>
                   <h3 className={styles.blockConclusionTitle}>{step.title}</h3>
                 </div>
@@ -41,6 +43,7 @@ export default function CustomerJourneyPage() {
                     </ul>
                   )}
                 </div>
+              </div>
               </div>
             </section>
           ))}

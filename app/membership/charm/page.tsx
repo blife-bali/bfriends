@@ -1,12 +1,41 @@
+import PageHeader from "@/components/PageHeader/PageHeader";
+import { Check } from "lucide-react";
+import styles from "./Charm.module.css";
+
+const PAGE_HEADER = {
+  title: "The Charm",
+  subtitle: "Curated access designed for your specific lifestyle rhythm.",
+  image: "/images/hero-test.png",
+};
+
+const FEATURES = [
+  "Credit-based class bookings",
+  "Flexible usage for Café & Recovery",
+  "Member rates for Beauty & Therapy",
+  "Community event invites",
+];
+
 export default function CharmPage() {
   return (
-    <main style={{ padding: "8rem 2rem 4rem", maxWidth: "720px", margin: "0 auto" }}>
-      <h1 className="font-display font-display--bold" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--color-blue-100)", marginBottom: "1rem" }}>
-        Charm
-      </h1>
-      <p style={{ fontFamily: "var(--font-sans)", color: "var(--color-blue-80)", lineHeight: 1.7 }}>
-        Content coming soon.
-      </p>
-    </main>
+    <>
+      <PageHeader
+        title={PAGE_HEADER.title}
+        subtitle={PAGE_HEADER.subtitle}
+        image={PAGE_HEADER.image}
+      />
+      <main className={styles.page}>
+        <div className={styles.container}>
+          <p className={styles.subtext}>{PAGE_HEADER.subtitle}</p>
+          <ul className={styles.featureList} role="list">
+            {FEATURES.map((feature) => (
+              <li key={feature} className={styles.featureItem}>
+                <Check className={styles.check} aria-hidden />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </main>
+    </>
   );
 }
