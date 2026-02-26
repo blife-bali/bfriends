@@ -3,11 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./EventCard.module.css";
-import { EventItem } from "@/lib/event-data";
-import { ArrowUpRightIcon, CalendarFold, Clock2 } from "lucide-react";
-import Button from "@/components/ui/Button/Button";
+import type { EventItem } from "@/lib/event-data";
 
-interface EventCardProps {
+export interface EventCardProps {
   item: EventItem;
 }
 
@@ -15,46 +13,20 @@ export default function EventCard({ item }: EventCardProps) {
   const content = (
     <>
       <div className={styles.imageWrap}>
-        <div className={styles.imageTagOverlay}>
-          <div className={styles.tagsRow}>
-            <span className={styles.tag}>Event</span>
-            <span className={styles.tag}>{item.ecosystem}</span>
-          </div>
-        </div>
         <Image
           src={item.image}
           alt={item.title}
           fill
           className={styles.image}
-          sizes="(max-width: 768px) 100vw, 320px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
       <div className={styles.content}>
-      
-        <div className={styles.textBlock}>
-          
-          <div className={styles.infoContainer}>
-            <div className={styles.infoItem}>
-              <CalendarFold size={14} className={styles.infoIcon} />
-              <time className={styles.infoText}>{item.date}</time>
-            </div>
-            {item.time && (
-              <div className={styles.infoItem}>
-                <Clock2 size={14} className={styles.infoIcon} />
-                <span className={styles.infoText}>{item.time}</span>
-              </div>
-            )}
-          </div>
-          <h3 className={styles.title}>{item.title}</h3>
-        </div>
+        <span className={styles.categoryTag}>{item.ecosystem} Events</span>
+        <h3 className={styles.title}>{item.title}</h3>
         <p className={styles.description}>{item.description}</p>
+        <time className={styles.date}>{item.date}</time>
       </div>
-      
-      <div className={styles.buttonWrapper}>
-          <Button variant="primary" icon={<ArrowUpRightIcon size={20} />}>
-            Read More
-          </Button>
-        </div>
     </>
   );
 

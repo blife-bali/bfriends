@@ -57,7 +57,6 @@
 .stepNumber {
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 50%;
   background-color: var(--color-blue-5);
   border: 1px solid var(--color-cream-40);
   font-family: var(--font-display);
@@ -120,7 +119,6 @@
 .programCard {
   background: var(--color-white-100);
   border: 1px solid var(--color-cream-20);
-  border-radius: 8px;
   padding: 1.5rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./Card.module.css";
 import Button from "@/components/ui/Button/Button";
 import { ProgramData } from "@/lib/programs-data";
-import { ArrowUpRightIcon, XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 
 interface CardProps {
   program: ProgramData;
@@ -55,11 +55,10 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
         <div className={styles.bottomContainer}>
           <p className={styles.subheading}>{program.subheading}</p>
           <Button
-            href="#"
-            variant="border"
+            href={`/programs/${program.name.toLowerCase()}`}
             className={styles.cardButton}
             color="var(--color-white-100)"
-            icon={<ArrowUpRightIcon className={styles.icon} />}
+            showIcon
           >
             {program.buttonLabel}
           </Button>

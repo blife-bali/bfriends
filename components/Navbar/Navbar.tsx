@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "@/components/ui/Button/Button";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navColumns } from "@/lib/nav-config";
 import styles from "./Navbar.module.css";
@@ -69,7 +68,11 @@ export default function Navbar() {
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
 
-  const solidBg = isScrolled || activeMenu !== null || isMobileMenuOpen;
+  const isNewsOrEventsPage =
+    pathname === "/community/event-workshop" || pathname === "/community/blife-ecosystem-news";
+
+  const solidBg =
+    isNewsOrEventsPage || isScrolled || activeMenu !== null || isMobileMenuOpen;
 
   return (
     <>
@@ -139,18 +142,14 @@ export default function Navbar() {
             </nav>
 
             <div className={styles.right}>
-              <Button href="/contact" variant="border" className={styles.contactButton}>
-                Contact Us
-              </Button>
-              <Button
+              <Link
                 href="/book"
-                variant="primary"
-                className={styles.bookButton}
-                fillColor="var(--color-cream-100)"
-                icon={<ArrowUpRight size={16} />}
+                className={styles.bookNowLink}
+                aria-label="Book now"
               >
-                Book Now
-              </Button>
+                <span className={styles.bookNowText}>Book Now</span>
+                <ArrowUpRight size={20} className={styles.bookNowIcon} aria-hidden />
+              </Link>
             </div>
 
             <button
@@ -210,24 +209,15 @@ export default function Navbar() {
             ))}
           </nav>
           <div className={styles.mobileMenuButtons}>
-            <Button
-              href="/contact"
-              variant="border"
-              className={styles.mobileContactButton}
-              onClick={closeMenu}
-            >
-              Contact Us
-            </Button>
-            <Button
+            <Link
               href="/book"
-              variant="primary"
-              className={styles.mobileBookButton}
-              fillColor="var(--color-cream-100)"
-              icon={<ArrowUpRight size={16} />}
+              className={styles.mobileBookNowLink}
               onClick={closeMenu}
+              aria-label="Book now"
             >
-              Book Now
-            </Button>
+              <span className={styles.bookNowText}>Book Now</span>
+              <ArrowUpRight size={14} className={styles.bookNowIcon} aria-hidden />
+            </Link>
           </div>
         </div>
       </div>

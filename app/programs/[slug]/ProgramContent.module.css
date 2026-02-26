@@ -1,5 +1,15 @@
-/* ========== Global section wrapper (match header) ========== */
-.sectionWrap {
+@reference "../../globals.css";
+
+/* ========== Root & container ========== */
+.root {
+  --background: var(--color-white-100);
+  --foreground: var(--color-blue-100);
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+.container {
   width: 100%;
   max-width: 1568px;
   margin-left: auto;
@@ -9,280 +19,520 @@
   box-sizing: border-box;
 }
 
-/* Force light theme on this page regardless of system preference */
-.root {
-  --background: var(--color-white-100);
-  --foreground: var(--color-blue-100);
-  background: var(--background);
-  color: var(--foreground);
-  overflow-x: hidden;
+/* ---------- Section B: Philosophy (50/50, portrait image, mask reveal) ---------- */
+.philosophy {
+  padding: 96px 0;
 }
 
-/* ---------- 1. Intro Quote ---------- */
-.quoteSection {
-  padding-top: 8rem;   /* py-32 */
-  padding-bottom: 8rem;
-}
-
-.quote {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 400;
-  line-height: 1.25;
-  color: var(--foreground);
-  margin: 0;
-  text-align: center;
-  letter-spacing: -0.03em;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ---------- 2. Philosophy (50/50 split) ---------- */
-.philosophySection {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-}
-
-.philosophyGrid {
+.philosophyLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: start;
-  min-height: 100vh;
-}
-
-.philosophySticky {
-  position: sticky;
-  top: 25vh;
-  padding-right: 4rem;
-}
-
-.philosophyHeading {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-cream-100);
-  margin: 0 0 1.5rem;
-}
-
-.philosophyText {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
-  line-height: 1.7;
-  color: var(--color-blue-80);
-  margin: 0;
-}
-
-.philosophyImageCol {
-  position: relative;
+  gap: 48px;
+  align-items: center;
 }
 
 .philosophyImageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4;  /* portrait */
-  background: var(--color-blue-5);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
 }
 
-.philosophyImg {
+.philosophyImageInner {
+  position: absolute;
+  inset: 0;
+}
+
+.philosophyImage {
+  object-fit: cover;
+}
+
+.philosophyTextCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  padding-bottom: 24px;
+}
+
+.philosophyMaskWrap {
+  overflow: hidden;
+}
+
+.philosophyParagraph {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .philosophy {
+    padding: 72px 0;
+  }
+
+  .philosophyLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .philosophyImageWrap {
+    order: -1;
+    max-height: 70vh;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 768px) {
+  .philosophy {
+    padding: 48px 0;
+  }
+
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .philosophyParagraph {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ---------- Section C: Pillars (60/40 grid + texture image) ---------- */
+.pillars {
+  padding: 96px 0;
+  background-color: var(--color-blue-5);
+}
+
+.pillarsSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  min-height: 480px;
+}
+
+.pillarsGridCol {
+  display: contents;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.pillarCard {
+  position: relative;
+  padding: 48px 32px 56px;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+}
+
+.pillarCard:nth-child(3n) {
+  border-right: none;
+}
+
+.pillarBorderT {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-blue-100);
+  opacity: 0.25;
+  transform-origin: left center;
+}
+
+.pillarBorderR {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-blue-100);
+  opacity: 0.25;
+  transform-origin: center top;
+}
+
+.pillarIndexLarge {
+  position: absolute;
+  bottom: 12px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: clamp(64px, 8vw, 120px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-blue-100);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.pillarContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillarTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.2vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-blue-100);
+  margin: 0;
+}
+
+.pillarDesc {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 15px);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+.pillarsImageCol {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+.pillarsImage {
   object-fit: cover;
 }
 
 @media (max-width: 1024px) {
-  .philosophyGrid {
+  .pillars {
+    padding: 72px 0;
+  }
+
+  .pillarsSplit {
     grid-template-columns: 1fr;
     min-height: auto;
   }
 
-  .philosophySticky {
-    position: static;
-    padding-right: 0;
-    margin-bottom: 2rem;
+  .pillarsGridCol {
+    display: block;
   }
 
-  .philosophyImageWrap {
-    max-height: 70vh;
-    aspect-ratio: 4/5;
+  .pillarsImageCol {
+    order: 1;
+    min-height: 280px;
+    margin-top: 32px;
   }
-}
 
-@media (max-width: 768px) {
-  .sectionWrap {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-/* ---------- 3. Process (vertical timeline) ---------- */
-.processSection {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-}
-
-.timelineRow {
-  border-bottom: 1px solid var(--color-cream-20);
-  transition: opacity 0.25s ease;
-}
-
-.timelineRow:last-child {
-  border-bottom: none;
-}
-
-.timelineContent {
-  padding: 2rem 0;
-  max-width: 640px;
-}
-
-.timelineNumber {
-  font-family: var(--font-display);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--color-cream-100);
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.timelineTitle {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--foreground);
-  margin: 0 0 0.5rem;
-}
-
-.timelineDesc {
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--color-cream-140);
-  margin: 0;
-}
-
-/* ---------- 4. Programs (uniform 2-col grid) ---------- */
-.programsSection {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-}
-
-.programsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-.programCard {
-  display: flex;
-  min-height: 220px;
-}
-
-.programCardInner {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 1.75rem;
-  border: 1px solid var(--color-cream-20);
-  background: var(--background);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.programCard:hover .programCardInner {
-  border-color: var(--color-cream-40);
-}
-
-.programIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-cream-100);
-}
-
-.programIconSvg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.programTitle {
-  font-family: var(--font-display);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--foreground);
-  margin: 0 0 0.5rem;
-}
-
-.programDesc {
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--color-cream-140);
-  margin: 0;
-  flex: 1;
-}
-
-@media (max-width: 768px) {
-  .programsGrid {
+  .pillarsGrid {
     grid-template-columns: 1fr;
   }
 
-  .programCard {
-    min-height: 200px;
+  .pillarCard {
+    border-right: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+  }
+
+  .pillarCard:nth-child(3n) {
+    border-right: none;
+  }
+
+  .pillarCard:last-child {
+    border-bottom: none;
+  }
+
+  .pillarBorderR {
+    display: none;
   }
 }
 
-/* ---------- 5. Gallery (film strip marquee) ---------- */
-.gallerySection {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-  overflow: hidden;
+@media (max-width: 768px) {
+  .pillars {
+    padding: 48px 0;
+  }
+
+  .pillarCard {
+    padding: 32px 24px 40px;
+  }
+
+  .pillarIndexLarge {
+    font-size: 48px;
+  }
 }
 
-.galleryMarqueeWrap {
-  width: 100%;
-  overflow: hidden;
-  user-select: none;
+/* ---------- Section D: Sessions (3-col visual cards) ---------- */
+.sessions {
+  padding: 96px 0;
 }
 
-.marqueeTrack {
+.sessionsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.sessionCard {
   display: flex;
-  width: max-content;
-  animation: marquee 50s linear infinite;
+  flex-direction: column;
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
+  background: var(--color-white-100);
+  overflow: hidden;
 }
 
-.marqueeTrack:hover {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.marqueeItem {
-  flex-shrink: 0;
-  width: 280px;
-  height: 320px;
-  margin-right: 1rem;
+.sessionCardImageWrap {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.sessionCardImage {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.sessionCard:hover .sessionCardImage {
+  transform: scale(1.05);
+}
+
+.sessionCardContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sessionCardTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.2vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-blue-100);
+  margin: 0;
+}
+
+.sessionCardDesc {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 15px);
+  line-height: 1.55;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .sessions {
+    padding: 48px 0;
+  }
+
+  .sessionsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ---------- CTA (same styling as Passport / Charm) ---------- */
+.cta {
+  padding: 96px 0 120px;
+  text-align: center;
+}
+
+.ctaHeading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-blue-100);
+  margin: 0 0 32px 0;
+}
+
+/* ---------- Section E: Program nav footer (previous + next) ---------- */
+.programNavFooterSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.programNavFooterEyebrowWrap {
+  width: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
+  padding: 0 64px 16px;
+  box-sizing: border-box;
+}
+
+.programNavFooter {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 280px;
+}
+
+.programNavLink {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  text-decoration: none;
+  color: var(--color-white-100);
+  overflow: hidden;
+}
+
+.programNavLink:hover .programNavBg {
+  filter: blur(3px);
+}
+
+.programNavLink:hover .programNavIcon {
+  transform: translateX(-4px);
+}
+
+.programNavLink:last-child:hover .programNavIcon {
+  transform: translateX(4px);
+}
+
+.programNavBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  transition: filter 0.4s ease;
+}
+
+.programNavOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 26, 33, 0.85) 0%,
+    rgba(7, 26, 33, 0.75) 100%
+  );
+}
+
+.programNavContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 40px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.programNavLink:first-child .programNavContent {
+  align-items: flex-start;
+}
+
+.programNavLink:last-child .programNavContent {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.programNavLabel {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 1vw, 12px);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-white-100);
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.programNavText {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.programNavIcon {
+  display: inline-flex;
+  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.programNavPlaceholder {
+  min-height: 280px;
   background: var(--color-blue-5);
 }
 
-.marqueeImg {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+@media (max-width: 768px) {
+  .cta {
+    padding: 64px 0 80px;
+  }
+
+  .programNavFooterEyebrowWrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .programNavFooter {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .programNavLink {
+    min-height: 220px;
+  }
+
+  .programNavContent {
+    padding: 40px 24px;
+  }
+
+  .programNavLink:last-child .programNavContent {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .programNavPlaceholder {
+    min-height: 0;
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 48px 0 64px;
+  }
+
+  .programNavFooterEyebrowWrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .programNavContent {
+    padding: 32px 16px;
+  }
 }

@@ -29,7 +29,7 @@
 }
 
 .navShellExpanded {
-  padding-bottom: 64px;
+  padding-bottom: 72px;
 }
 
 .mainContainer {
@@ -164,7 +164,7 @@
   flex-wrap: nowrap;
   align-items: center;
   gap: 32px;
-  padding-top: 24px;
+  padding-top: 36px;
   width: max-content;
   opacity: 0;
   visibility: hidden;
@@ -217,7 +217,7 @@
 }
 
 .contactButton {
-  --button-border-color: var(--color-white-100);
+  --button-text-color: var(--color-white-100);
 }
 
 .navShell:not(.navShellSolid) .contactButton {
@@ -227,12 +227,61 @@
 }
 
 .navShellSolid .contactButton {
-  --button-border-color: var(--color-blue-100);
+  --button-text-color: var(--color-blue-100);
   color: var(--color-blue-100);
 }
 
-.bookButton {
-  --button-primary-fill: var(--color-cream-100);
+/* Book Now: link-like with arrow. Negative = white, default (solid) = cream */
+.bookNowLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 0 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-white-100);
+  text-decoration: none;
+  transition: color 0.2s, opacity 0.2s;
+  opacity: 0.9;
+  position: relative;
+}
+
+.navShellSolid .bookNowLink {
+  color: var(--color-cream-100);
+}
+
+.bookNowLink:hover {
+  opacity: 1;
+}
+
+.bookNowLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.4s ease;
+}
+
+.bookNowLink:hover::after {
+  width: 100%;
+}
+
+.bookNowLink:hover .bookNowIcon {
+  transform: translate(2px, -2px);
+}
+
+.bookNowText {
+  white-space: nowrap;
+}
+
+.bookNowIcon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
 /* Mobile menu toggle */
@@ -389,13 +438,50 @@
 
 .mobileContactButton {
   flex: 1;
-  --button-border-color: var(--color-blue-100);
+  --button-text-color: var(--color-blue-100);
   color: var(--color-blue-100);
 }
 
-.mobileBookButton {
-  flex: 1;
-  --button-primary-fill: var(--color-cream-100);
+.mobileBookNowLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-cream-100);
+  text-decoration: none;
+  transition: opacity 0.2s;
+  position: relative;
+}
+
+.mobileBookNowLink:hover {
+  opacity: 0.85;
+}
+
+.mobileBookNowLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  height: 1px;
+  width: 0;
+  background: var(--color-cream-100);
+  transition: width 0.4s ease;
+}
+
+.mobileBookNowLink:hover::after {
+  width: 100%;
+}
+
+.mobileBookNowLink .bookNowIcon {
+  transition: transform 0.2s ease;
+}
+
+.mobileBookNowLink:hover .bookNowIcon {
+  transform: translate(2px, -2px);
 }
 
 /* ========== Responsive ========== */
@@ -441,11 +527,16 @@
 }
 
 @media (max-width: 480px) {
+  .mainContainer {
+    padding: 0 12px;
+    min-height: 72px;
+  }
+
   .mobileSidebar {
     top: 72px;
   }
 
-  .mainContainer {
-    min-height: 72px;
+  .mobileSidebarContent {
+    padding: 20px 16px;
   }
 }

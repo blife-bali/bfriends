@@ -1,19 +1,21 @@
 import PageHeader from "@/components/PageHeader/PageHeader";
+import EventsContent from "./EventsContent";
 
 const PAGE_HEADER = {
+  breadcrumb: "Community / Event & Workshop",
   title: "Event & Workshop",
-  subtitle: "Join experiences that inspire.",
-  image: "/images/hero-test.png",
 };
 
 export default function EventWorkshopPage() {
   return (
     <>
-      <PageHeader title={PAGE_HEADER.title} subtitle={PAGE_HEADER.subtitle} image={PAGE_HEADER.image} />
-      <main style={{ padding: "8rem 2rem 4rem", maxWidth: "720px", margin: "0 auto" }}>
-        <p style={{ fontFamily: "var(--font-sans)", color: "var(--color-blue-80)", lineHeight: 1.7 }}>
-          Content coming soon.
-        </p>
+      <PageHeader
+        breadcrumb={PAGE_HEADER.breadcrumb}
+        title={PAGE_HEADER.title}
+        variant="noImage"
+      />
+      <main>
+        <EventsContent />
       </main>
     </>
   );

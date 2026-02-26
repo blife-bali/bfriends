@@ -73,11 +73,10 @@ export default function SubscriptionForm() {
             </div>
             <Button
               type="submit"
-              variant="primary"
               fullWidth
               disabled={isSubmitting}
+              showIcon
               style={{ opacity: isSubmitting ? 0.7 : 1 }}
-              icon={<ArrowUpRight className="w-5 h-5" />}
             >
               {isSubmitting ? "Joining..." : "Join Waiting List"}
             </Button>
@@ -102,9 +101,8 @@ export default function SubscriptionForm() {
             
             <Button
               onClick={handleReset}
-              variant="primary"
               fullWidth
-              icon={<ArrowUpRight className="w-5 h-5" />}
+              showIcon
             >
               Add another email
             </Button>

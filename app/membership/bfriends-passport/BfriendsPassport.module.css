@@ -1,49 +1,222 @@
+@reference "../../globals.css";
+
 .page {
+  width: 100%;
   background-color: var(--color-white-100);
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 560px;
+  max-width: 1568px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
+  padding: 0 64px;
+  box-sizing: border-box;
 }
 
-.subtext {
+.eyebrow {
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  color: var(--color-blue-80);
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  margin: 0 0 16px 0;
+}
+
+/* ---------- Philosophy (sticky split) ---------- */
+.philosophy {
+  padding: 96px 0;
+  background-color: var(--color-blue-5);
+}
+
+.philosophyLayout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.philosophySticky {
+  position: sticky;
+  top: 128px;
+}
+
+.philosophyHeading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+  margin: 0;
+}
+
+.philosophyText {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.3vw, 20px);
   line-height: 1.65;
-  margin: 0 0 2rem;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+/* ---------- Access Grid ---------- */
+.access {
+  padding: 96px 0;
+}
+
+.accessHeading {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+  margin: 0 0 48px 0;
+}
+
+.accessGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.accessCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 32px;
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
+  background: var(--color-white-100);
+}
+
+.accessCardIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-100);
+}
+
+.accessCardTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-blue-100);
+  margin: 0;
+}
+
+.accessCardDesc {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 15px);
+  line-height: 1.55;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  padding: 96px 0 120px;
   text-align: center;
 }
 
-.featureList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.featureItem {
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
+.ctaHeading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--color-blue-100);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  margin: 0 0 32px 0;
 }
 
-.check {
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--color-cream-100);
-}
-
-@media (max-width: 640px) {
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
   .container {
-    padding: 2rem 1rem 3rem;
+    padding: 0 48px;
+  }
+
+  .philosophyLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .philosophySticky {
+    position: static;
+  }
+
+  .philosophyHeading {
+    font-size: clamp(24px, 4vw, 30px);
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .philosophy {
+    padding: 64px 0;
+  }
+
+  .philosophyHeading {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+
+  .philosophyText {
+    font-size: clamp(15px, 1.3vw, 17px);
+  }
+
+  .access {
+    padding: 64px 0;
+  }
+
+  .accessHeading {
+    font-size: clamp(20px, 4vw, 26px);
+  }
+
+  .accessGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .accessCard {
+    padding: 28px 24px;
+  }
+
+  .cta {
+    padding: 64px 0 80px;
+  }
+
+  .ctaHeading {
+    font-size: clamp(26px, 5vw, 34px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .philosophy {
+    padding: 48px 0;
+  }
+
+  .access {
+    padding: 48px 0;
+  }
+
+  .accessCard {
+    padding: 24px 20px;
+  }
+
+  .cta {
+    padding: 48px 0 64px;
+  }
+
+  .ctaHeading {
+    font-size: clamp(22px, 5vw, 28px);
   }
 }

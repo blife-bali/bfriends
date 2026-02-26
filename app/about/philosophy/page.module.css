@@ -1,0 +1,9 @@
+@reference "../../globals.css";
+
+/* Avoid overflow on this wrapper: it breaks position:sticky in descendants (e.g. WhyBFriends).
+   Horizontal scroll is already contained by body in globals.css. */
+.page {
+  width: 100%;
+  background-color: var(--color-white-100);
+  box-sizing: border-box;
+}

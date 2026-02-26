@@ -81,7 +81,7 @@ export default function Section() {
         {/* Content Wrapper - contains title and desktop card */}
         <div className={styles.contentWrapper}>
           <div className={styles.titleContainer}>
-            <p className={styles.sectionEyebrow}>
+            <p className={styles.eyebrow}>
               Our Programs
             </p>
             <p className={styles.headingText}>

@@ -22,19 +22,19 @@ export const processData: ProcessStep[] = [
     id: 1,
     number: "01",
     title: "Measure",
-    description: "We start with data—not assumptions.",
+    description: "We start with a precise 'Reading'—gathering the data needed to understand your body's baseline.",
     subpoints: [
       {
         title: "Movement Reading",
-        description: "Identify movement patterns, alignment, and functional efficiency.",
+        description: "An objective analysis of your structural alignment and functional efficiency.",
       },
       {
         title: "Body Composition Scan",
-        description: "Establish a clear baseline of your current condition.",
+        description: "A detailed breakdown of your physical makeup to set a measurable starting point.",
       },
       {
         title: "Skin Imaging",
-        description: "Assess skin condition in depth—beyond what the eye can see.",
+        description: "Deep-layer assessment to reveal your skin's vitality beyond the surface level.",
       },
     ],
     image: "/images/programs/D.webp",
@@ -44,7 +44,7 @@ export const processData: ProcessStep[] = [
     number: "02",
     title: "Assess",
     description:
-      "Data doesn't stay as numbers. Our expert team translates it into clear priorities and direction—so you know what matters most, and why.",
+      "Our Journey Partners translate your data into a clear narrative, identifying the specific rhythms and priorities your body needs to return to its peak state.",
     image: "/images/programs/E.jpg",
   },
   {
@@ -52,7 +52,7 @@ export const processData: ProcessStep[] = [
     number: "03",
     title: "Design",
     description:
-      "Based on the assessment, we design what you need most. Your FRIEND Flow is customized across structure, intensity, and frequency—aligned to your goals and current state.",
+      "We curate your unique FRIEND Flow. Your program is layered across structure, recovery, and intensity, custom-fit to your goals and current condition.",
     image: "/images/programs/F.jpg",
   },
   {
@@ -60,7 +60,7 @@ export const processData: ProcessStep[] = [
     number: "04",
     title: "Coach",
     description:
-      "A plan only works when execution is precise. We coach standards and method—so the plan becomes outcomes, and wellness becomes a routine you can sustain.",
+      "Transformation requires precision. We guide you through the BFriends method, ensuring every movement and therapy is executed with high-standard intention.",
     image: "/images/programs/I.png",
   },
   {
@@ -68,7 +68,7 @@ export const processData: ProcessStep[] = [
     number: "05",
     title: "Track",
     description:
-      "We record, review, and check every stage of the journey. So progress isn't left to feeling—it's guided by patterns, consistency, and measurable change.",
+      "Progress is never left to chance. We continuously record and review your response to the flow, ensuring consistency becomes a measurable habit.",
     image: "/images/programs/N.webp",
   },
   {
@@ -76,7 +76,7 @@ export const processData: ProcessStep[] = [
     number: "06",
     title: "Refine",
     description:
-      "We update your routine based on condition and response. Safer. More efficient. More precise—so you move closer to your goal with every cycle.",
+      "As your body evolves, so does your plan. We recalibrate your routine to ensure your journey remains safe, efficient, and aligned with your growing capability.",
     image: "/images/programs/R.webp",
   },
 ];

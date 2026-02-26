@@ -26,7 +26,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.contentWrapper{
+.contentWrapper {
   position: relative;
   width: 100%;
   max-width: 1568px;
@@ -36,7 +36,6 @@
   justify-content: space-between;
   padding: 0 64px;
   box-sizing: border-box;
-  
 }
 
 .titleContainer{
@@ -48,22 +47,16 @@
   gap: 8px;
 }
 
-.sectionEyebrow{
-  width: fit-content;
-  background: rgba(0, 0, 0, 0.2);
-  position: relative;
+.eyebrow {
   font-family: var(--font-sans);
-  font-size: clamp(14px, 2vw, 16px);
-  padding: 8px 12px 10px 12px;
-  border: 1px solid rgba(254, 254, 254, 0.8);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 100%;
-  color: var(--color-white-100);
-  text-align: center;
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-wrap: nowrap;
-  border-radius: 999px;
+  color: var(--color-white-100);
+  margin: 0;
+  width: fit-content;
+  opacity: 0.95;
 }
 
 .headingText{
@@ -124,7 +117,6 @@
   width: 60px;
   height: 60px;
   border: 1px solid rgba(254, 254, 254, 0.4);
-  border-radius: 999px;
   background: transparent;
   color: var(--color-white-100);
   font-family: var(--font-display);
@@ -191,33 +183,43 @@
 }
 
 
-/* Responsive Design */
+/* Tablet: 768px - 1024px */
 @media (max-width: 1200px) {
-
-  .section{
+  .section {
     height: 100vh;
+    min-height: 100vh;
   }
+
+  .contentWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 48px 48px;
+    gap: 24px;
+  }
+
   .mainContent {
-    padding: 72px 40px;
+    padding: 72px 48px;
     gap: 32px;
   }
 
-  .background{
+  .background {
     justify-content: flex-end;
   }
 
-
-  .backgroundImage{
+  .backgroundImage {
     object-position: 37% center;
   }
 
-  .titleContainer{
+  .titleContainer {
     justify-content: center;
     align-items: flex-start;
-    
     gap: 6px;
   }
-  
+
+  .headingText {
+    font-size: clamp(44px, 5vw, 56px);
+  }
 
   .cardContainer {
     padding: 0;
@@ -233,15 +235,24 @@
   }
 
   .pointButtonSelected {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
   }
 }
 
+/* Mobile: < 768px */
 @media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 24px 32px;
+    gap: 16px;
+  }
+
   .mainContent {
-    
+    padding: 48px 24px;
     gap: 24px;
   }
 
@@ -250,24 +261,32 @@
     justify-content: flex-end;
   }
 
-
-
-
-  .headingText{
-    font-size: clamp(40px, 8vw, 44px);
+  .headingText {
+    font-size: clamp(32px, 8vw, 40px);
     text-align: left;
-    max-width: 240px;
+    max-width: 280px;
   }
 
   .pointButton {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     font-size: 18px;
   }
 
   .pointButtonSelected {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentWrapper {
+    padding: 0 16px 24px;
+  }
+
+  .headingText {
+    font-size: clamp(28px, 8vw, 36px);
+    max-width: 100%;
   }
 }

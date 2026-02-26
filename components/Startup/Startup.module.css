@@ -61,7 +61,6 @@
   transition: opacity 0.2s, transform 0.15s;
   border: none;
   font: inherit;
-  border-radius: 999px;
 }
 
 .choice:hover {
@@ -116,17 +115,38 @@
 }
 
 
+/* Mobile: < 768px */
 @media (max-width: 768px) {
+  .overlay {
+    padding: 20px;
+  }
+
   .title {
-    font-size: 32px;
+    font-size: clamp(28px, 6vw, 34px);
   }
 
   .choices {
     flex-direction: column;
-    max-width: 240px;
+    max-width: 280px;
+    width: 100%;
   }
 
   .choice {
     width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: clamp(24px, 6vw, 28px);
+  }
+
+  .choices {
+    max-width: 100%;
   }
 }

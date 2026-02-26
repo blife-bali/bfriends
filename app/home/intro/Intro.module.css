@@ -11,6 +11,16 @@
   overflow-x: hidden;
 }
 
+.introTextOnly {
+  min-height: auto;
+  padding: 96px 0;
+}
+
+.introTextOnly .container {
+  padding: 0 64px;
+  gap: 32px;
+}
+
 .container {
   width: 100%;
   position: relative;
@@ -41,6 +51,17 @@
   
 }
 
+.maskWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.maskInner {
+  display: inline-block;
+  will-change: transform;
+}
+
 .heading {
   font-family: var(--font-display);
   font-size: clamp(40px, 3vw, 48px);
@@ -49,6 +70,14 @@
   letter-spacing: -0.02em;
   color: var(--color-blue-100);
   margin: 0;
+}
+
+.description .maskWrap {
+  display: block;
+}
+
+.description .maskInner {
+  display: block;
 }
 
 .heading em {
@@ -173,9 +202,13 @@
     min-height: 100svh;
   }
 
+  .introTextOnly .container {
+    padding: 0 40px;
+  }
+
   .container {
     gap: 48px;
-    padding: 72px 40px;
+    padding: 72px 48px;
   }
 
   .textColumn {
@@ -198,6 +231,29 @@
   .videoWrapper {
     padding: 0 40px;
   }
+
+  /* Tablet: stack conclusion for readability */
+  .conclusionContainer {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .conclusionTitle {
+    text-align: center;
+  }
+
+  .rightConclusion {
+    align-items: center;
+  }
+
+  .rightConclusion .button {
+    align-self: center;
+  }
+
+  .conclusionText {
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -206,7 +262,45 @@
     padding: 48px 24px;
   }
 
+  .textColumn {
+    padding: 0 0;
+  }
+
   .videoWrapper {
     padding: 0 24px;
+  }
+
+  .introTextOnly {
+    padding: 48px 0;
+  }
+
+  .introTextOnly .container {
+    padding: 0 24px;
+  }
+
+  /* Mobile: stacked conclusion, full width, touch-friendly */
+  .conclusionContainer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .conclusionTitle {
+    font-size: clamp(28px, 6vw, 36px);
+    text-align: center;
+  }
+
+  .rightConclusion {
+    align-items: center;
+    gap: 24px;
+  }
+
+  .rightConclusion .button {
+    align-self: center;
+    min-height: 48px;
+  }
+
+  .conclusionText {
+    text-align: center;
+    font-size: clamp(16px, 1.8vw, 18px);
   }
 }

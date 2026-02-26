@@ -16,6 +16,7 @@ export default function WhyBFriends() {
       <div className={styles.mainContainer}>
         {/* Left Container - Sticky */}
         <div className={styles.leftContainer}>
+          <p className={styles.eyebrow}>Why BFriends</p>
           <h2 className={styles.title}>Why <em>BFriends</em>?</h2>
           <p className={styles.subheading}>
             Discover meaningful connections with people who truly get you. 

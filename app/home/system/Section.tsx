@@ -57,8 +57,8 @@ export default function SystemSection() {
       <div className={styles.container}>
         {/* Title container: eyebrow, title, intro */}
         <div className={styles.titleContainer}>
-          {/* <p className={styles.eyebrow}>The System</p> */}
-          <h2 className={styles.heading}>It's Not What You Do. <br/> It's The State You Return To.</h2>
+          <p className={styles.eyebrow}>The System</p>
+          <h2 className={styles.heading}>Your journey to lasting balance starts here.</h2>
           
         </div>
 
@@ -84,14 +84,13 @@ export default function SystemSection() {
           </div>
           <div className={styles.rightConclusion}>
             <p className={styles.conclusionText}>
-              An expert-driven, data-led system integrated into a routine and validated by results.
+            From data-driven readings to personalized coaching, we move beyond assumptions to design a path that returns you to your natural vitality.
             </p>
             <Button
               href="/about"
-              variant="underline"
               className={styles.conclusionButton}
               color="var(--color-blue-100)"
-              icon={<ArrowUpRight size={16} />}
+              showIcon
             >
               Learn More
             </Button>

@@ -24,10 +24,9 @@ export default function Process() {
           <div className={styles.buttonWrapper}>
             <Button
               href="#contact"
-              variant="border"
               className={styles.bookNowButton}
               color="#134053"
-              icon={<ArrowUpRightIcon size={16} />}
+              showIcon
             >
               Your Journey
             </Button>

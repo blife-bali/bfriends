@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Check, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Check, Instagram, Facebook, Linkedin } from "lucide-react";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import locationStyles from "./Location.module.css";
@@ -172,13 +172,12 @@ function SubscriptionSection() {
                 />
               </div>
               <div className={subscribeStyles.buttonWrap}>
-              <Button 
-                type="submit" 
-                variant="border" 
-                disabled={isSubmitting} 
+<Button
+                type="submit"
+                disabled={isSubmitting}
                 color="var(--color-white-100)"
+                showIcon
                 style={{ opacity: isSubmitting ? 0.7 : 1 }}
-                icon={<ArrowUpRight size={16} />}
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>

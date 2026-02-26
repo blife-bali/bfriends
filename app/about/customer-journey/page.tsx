@@ -1,18 +1,23 @@
 import { processData } from "@/lib/process-data";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyBlockImage from "./JourneyBlockImage";
+import { Section as ProgramsSection } from "@/app/home/programs";
 import styles from "./CustomerJourney.module.css";
 
 const PAGE_HEADER = {
+  breadcrumb: "About / Customer Journey",
   title: "Customer Journey",
-  subtitle: "Your journey to lasting balance starts here.",
   image: "/images/hero-test.png",
 };
 
 export default function CustomerJourneyPage() {
   return (
     <main className={styles.page}>
-      <PageHeader title={PAGE_HEADER.title} subtitle={PAGE_HEADER.subtitle} image={PAGE_HEADER.image} />
+      <PageHeader
+        breadcrumb={PAGE_HEADER.breadcrumb}
+        title={PAGE_HEADER.title}
+        image={PAGE_HEADER.image}
+      />
       <div className={styles.container}>
 
         <div className={styles.journeyBlocks}>
@@ -22,6 +27,7 @@ export default function CustomerJourneyPage() {
               className={`${styles.journeyBlock} ${index % 2 === 1 ? styles.journeyBlockEven : ""}`}
             >
               <div className={styles.journeyBlockWrapper}>
+                <p className={styles.eyebrow}>Step {step.number}</p>
                 {/* Image block – same as system section (with scroll-in animation) */}
                 <JourneyBlockImage src={step.image} alt={step.title} />
 
@@ -49,6 +55,8 @@ export default function CustomerJourneyPage() {
           ))}
         </div>
       </div>
+
+      <ProgramsSection />
     </main>
   );
 }

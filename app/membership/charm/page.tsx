@@ -1,40 +1,23 @@
 import PageHeader from "@/components/PageHeader/PageHeader";
-import { Check } from "lucide-react";
+import CharmContent from "./CharmContent";
 import styles from "./Charm.module.css";
 
 const PAGE_HEADER = {
-  title: "The Charm",
-  subtitle: "Curated access designed for your specific lifestyle rhythm.",
+  breadcrumb: "Membership / The Charm",
+  title: "Charm Credits",
   image: "/images/hero-test.png",
 };
-
-const FEATURES = [
-  "Credit-based class bookings",
-  "Flexible usage for Café & Recovery",
-  "Member rates for Beauty & Therapy",
-  "Community event invites",
-];
 
 export default function CharmPage() {
   return (
     <>
       <PageHeader
+        breadcrumb={PAGE_HEADER.breadcrumb}
         title={PAGE_HEADER.title}
-        subtitle={PAGE_HEADER.subtitle}
         image={PAGE_HEADER.image}
       />
       <main className={styles.page}>
-        <div className={styles.container}>
-          <p className={styles.subtext}>{PAGE_HEADER.subtitle}</p>
-          <ul className={styles.featureList} role="list">
-            {FEATURES.map((feature) => (
-              <li key={feature} className={styles.featureItem}>
-                <Check className={styles.check} aria-hidden />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <CharmContent />
       </main>
     </>
   );

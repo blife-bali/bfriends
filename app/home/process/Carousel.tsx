@@ -46,6 +46,7 @@ export default function Carousel() {
       {/* Desktop: title + carousel */}
       <div className={styles.desktopBlock}>
         <div className={styles.titleContainer}>
+          <p className={styles.eyebrow}>Our Process</p>
           <h1 className={styles.heading}>{processSectionTitle}</h1>
           <p className={styles.intro}>{processSectionIntro}</p>
         </div>
@@ -89,6 +90,7 @@ export default function Carousel() {
       {/* Tablet/Mobile: title + vertical stack */}
       <div className={styles.carouselWrapperMobile}>
         <div className={styles.titleContainer}>
+          <p className={styles.eyebrow}>Our Process</p>
           <h1 className={styles.heading}>{processSectionTitle}</h1>
           <p className={styles.intro}>{processSectionIntro}</p>
         </div>

@@ -62,8 +62,18 @@
   max-width: 1568px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  padding: 64px ;
+  gap: 96px;
+  padding: 120px 64px ;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  margin: 0 0 8px 0;
 }
 
 .journeyBlockEven {
@@ -180,9 +190,38 @@
 }
 
 /* ----- Responsive ----- */
+/* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
   .container {
+    padding: 72px 48px 0;
     gap: 48px;
+  }
+
+  .heading {
+    font-size: clamp(32px, 4vw, 40px);
+  }
+
+  .journeyBlockWrapper {
+    padding: 80px 48px;
+    gap: 64px;
+  }
+
+  .blockConclusionContainer {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .blockConclusionTitle {
+    text-align: center;
+  }
+
+  .blockRightConclusion {
+    align-items: center;
+  }
+
+  .blockConclusionText {
+    text-align: center;
   }
 
   .journeyBlocks {
@@ -194,14 +233,40 @@
   }
 }
 
+/* Mobile: < 768px */
 @media (max-width: 768px) {
   .container {
+    padding: 48px 24px 0;
     gap: 32px;
+  }
+
+  .header {
+    padding: 0 16px;
   }
 
   .heading,
   .blockHeading {
-    font-size: clamp(28px, 2vw, 36px);
+    font-size: clamp(26px, 5vw, 34px);
+  }
+
+  .journeyBlockWrapper {
+    padding: 48px 24px;
+    gap: 48px;
+  }
+
+  .blockConclusionContainer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .blockConclusionTitle {
+    font-size: clamp(26px, 5vw, 32px);
+    text-align: center;
+  }
+
+  .blockConclusionText {
+    font-size: clamp(16px, 1.8vw, 18px);
+    text-align: center;
   }
 
   .journeyBlocks {
@@ -211,9 +276,20 @@
   .journeyBlock {
     gap: 32px;
   }
+}
 
-  .blockConclusionContainer {
-    grid-template-columns: 1fr;
-    gap: 24px;
+@media (max-width: 480px) {
+  .container {
+    padding: 32px 16px 0;
+  }
+
+  .journeyBlockWrapper {
+    padding: 32px 16px;
+    gap: 40px;
+  }
+
+  .heading,
+  .blockHeading {
+    font-size: clamp(22px, 5vw, 28px);
   }
 }

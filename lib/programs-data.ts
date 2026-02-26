@@ -10,6 +10,20 @@ export interface ProgramItem {
   icon: string;
 }
 
+/** Theoretical framework (e.g. Find, Fit, Flow). */
+export interface ProgramPillar {
+  title: string;
+  description: string;
+}
+
+/** Actual class or treatment (e.g. Functional Training). */
+export interface ProgramSession {
+  title: string;
+  description: string;
+  /** Path to session image for visual cards. */
+  image?: string;
+}
+
 export interface ProgramData {
   letter: string;
   name: string;
@@ -23,6 +37,15 @@ export interface ProgramData {
   steps?: ProgramStep[];
   philosophy?: string;
   programItems?: ProgramItem[];
+  /** Swiss editorial: breadcrumb, pillars (framework), sessions (curriculum), prev/next program slug */
+  breadcrumb?: string;
+  pillars?: ProgramPillar[];
+  sessions?: ProgramSession[];
+  previousProgram?: string;
+  nextProgram?: string;
+  /** Dedicated section images (immersive visuals) */
+  philosophyImage?: string;
+  pillarsImage?: string;
   /** Images for sticky philosophy section (vertical scroll) */
   philosophyImages?: string[];
   /** Images for Bento grid placeholders and gallery marquee */
@@ -81,18 +104,34 @@ export const programsData: ProgramData[] = [
         icon: "Trophy",
       },
     ],
+    philosophyImage: "/images/programs/F.jpg",
+    pillarsImage: "/images/programs/F.jpg",
     philosophyImages: [
-      "/images/programs/flow-philosophy-1.jpg",
-      "/images/programs/flow-philosophy-2.jpg",
-      "/images/programs/flow-philosophy-3.jpg",
+      "/images/programs/F.jpg",
+      "/images/programs/F.jpg",
+      "/images/programs/F.jpg",
     ],
     galleryImages: [
-      "/images/programs/flow-gallery-1.jpg",
-      "/images/programs/flow-gallery-2.jpg",
-      "/images/programs/flow-gallery-3.jpg",
-      "/images/programs/flow-gallery-4.jpg",
-      "/images/programs/flow-gallery-5.jpg",
+      "/images/programs/F.jpg",
+      "/images/programs/F.jpg",
+      "/images/programs/F.jpg",
+      "/images/programs/F.jpg",
+      "/images/programs/F.jpg",
     ],
+    pillars: [
+      { title: "Find", description: "Using Fittrix & InBody, we pinpoint exactly what your body needs—clearly and precisely." },
+      { title: "Fit", description: "Your Journey Partner designs your routine with accuracy—movement patterns, intensity, and frequency." },
+      { title: "Flow", description: "We remove tension and restore natural rhythm, so movement feels focused and effortless." },
+    ],
+    sessions: [
+      { title: "Functional Training", description: "Realign your spine and pelvis, boost joint mobility, and strengthen your core.", image: "/images/programs/F.jpg" },
+      { title: "Ignite", description: "Structured heart-rate and breath work to enhance metabolic efficiency.", image: "/images/programs/F.jpg" },
+      { title: "Sculpt", description: "Enhance hip and leg balance while toning your body for a defined look.", image: "/images/programs/F.jpg" },
+      { title: "Sport Performance", description: "Analyze sport-specific movements to improve power, balance, and responsiveness.", image: "/images/programs/F.jpg" },
+    ],
+    breadcrumb: "Programs / Flow",
+    previousProgram: "dare",
+    nextProgram: "restore",
   },
   {
     letter: "R",
@@ -145,18 +184,34 @@ export const programsData: ProgramData[] = [
         icon: "Flower2",
       },
     ],
+    philosophyImage: "/images/programs/R.webp",
+    pillarsImage: "/images/programs/R.webp",
     philosophyImages: [
-      "/images/programs/restore-philosophy-1.jpg",
-      "/images/programs/restore-philosophy-2.jpg",
-      "/images/programs/restore-philosophy-3.jpg",
+      "/images/programs/R.webp",
+      "/images/programs/R.webp",
+      "/images/programs/R.webp",
     ],
     galleryImages: [
-      "/images/programs/restore-gallery-1.jpg",
-      "/images/programs/restore-gallery-2.jpg",
-      "/images/programs/restore-gallery-3.jpg",
-      "/images/programs/restore-gallery-4.jpg",
-      "/images/programs/restore-gallery-5.jpg",
+      "/images/programs/R.webp",
+      "/images/programs/R.webp",
+      "/images/programs/R.webp",
+      "/images/programs/R.webp",
+      "/images/programs/R.webp",
     ],
+    pillars: [
+      { title: "Recovery", description: "Choices that support post-workout restoration." },
+      { title: "Nourishment", description: "A refined balance of taste and nutrition." },
+      { title: "Connection", description: "A lounge experience you can truly settle into." },
+    ],
+    sessions: [
+      { title: "Signature Smoothies", description: "Purpose-designed wellness blends aligned with your Flow.", image: "/images/programs/R.webp" },
+      { title: "Clean Nutrition", description: "Comforting, satisfying meals—crafted for higher nutritional density.", image: "/images/programs/R.webp" },
+      { title: "Specialty Coffee", description: "High-quality coffee, served in a space that turns rest into a routine.", image: "/images/programs/R.webp" },
+      { title: "Korean Cheong x Jamu", description: "Tradition, reinterpreted—crafted into a modern wellness tea ritual.", image: "/images/programs/R.webp" },
+    ],
+    breadcrumb: "Programs / Restore",
+    previousProgram: "flow",
+    nextProgram: "integrate",
   },
   {
     letter: "I",
@@ -209,18 +264,34 @@ export const programsData: ProgramData[] = [
         icon: "Stethoscope",
       },
     ],
+    philosophyImage: "/images/programs/I.png",
+    pillarsImage: "/images/programs/I.png",
     philosophyImages: [
-      "/images/programs/integrate-philosophy-1.jpg",
-      "/images/programs/integrate-philosophy-2.jpg",
-      "/images/programs/integrate-philosophy-3.jpg",
+      "/images/programs/I.png",
+      "/images/programs/I.png",
+      "/images/programs/I.png",
     ],
     galleryImages: [
-      "/images/programs/integrate-gallery-1.jpg",
-      "/images/programs/integrate-gallery-2.jpg",
-      "/images/programs/integrate-gallery-3.jpg",
-      "/images/programs/integrate-gallery-4.jpg",
-      "/images/programs/integrate-gallery-5.jpg",
+      "/images/programs/I.png",
+      "/images/programs/I.png",
+      "/images/programs/I.png",
+      "/images/programs/I.png",
+      "/images/programs/I.png",
     ],
+    pillars: [
+      { title: "Assess", description: "We analyze movement restrictions to identify root causes, not just symptoms." },
+      { title: "Release", description: "Using manual techniques to unlock tension and restore range of motion." },
+      { title: "Realign", description: "Guiding your body back to optimal alignment for long-term resilience." },
+    ],
+    sessions: [
+      { title: "Manual Physiotherapy", description: "Hands-on manipulation to relieve acute pain and improve joint mobility.", image: "/images/programs/I.png" },
+      { title: "Postural Correction", description: "Targeted adjustments to fix imbalances caused by daily habits.", image: "/images/programs/I.png" },
+      { title: "Sports Recovery", description: "Deep tissue work designed to flush metabolic waste and accelerate repair.", image: "/images/programs/I.png" },
+      { title: "Injury Rehabilitation", description: "Clinical protocols to safely guide you from injury back to full-strength.", image: "/images/programs/I.png" },
+    ],
+    breadcrumb: "Programs / Integrate",
+    previousProgram: "restore",
+    nextProgram: "enhance",
   },
   {
     letter: "E",
@@ -273,18 +344,34 @@ export const programsData: ProgramData[] = [
         icon: "Waves",
       },
     ],
+    philosophyImage: "/images/programs/E.jpg",
+    pillarsImage: "/images/programs/E.jpg",
     philosophyImages: [
-      "/images/programs/enhance-philosophy-1.jpg",
-      "/images/programs/enhance-philosophy-2.jpg",
-      "/images/programs/enhance-philosophy-3.jpg",
+      "/images/programs/E.jpg",
+      "/images/programs/E.jpg",
+      "/images/programs/E.jpg",
     ],
     galleryImages: [
-      "/images/programs/enhance-gallery-1.jpg",
-      "/images/programs/enhance-gallery-2.jpg",
-      "/images/programs/enhance-gallery-3.jpg",
-      "/images/programs/enhance-gallery-4.jpg",
-      "/images/programs/enhance-gallery-5.jpg",
+      "/images/programs/E.jpg",
+      "/images/programs/E.jpg",
+      "/images/programs/E.jpg",
+      "/images/programs/E.jpg",
+      "/images/programs/E.jpg",
     ],
+    pillars: [
+      { title: "Analyze", description: "K-Standard diagnostics to understand your unique dermal profile." },
+      { title: "Revitalize", description: "Premium actives and technology to refine texture and tone." },
+      { title: "Protect", description: "Strengthening the skin barrier to lock in results." },
+    ],
+    sessions: [
+      { title: "K-Glow Facial", description: "The signature multi-step treatment for deep hydration and glass-skin finish.", image: "/images/programs/E.jpg" },
+      { title: "Skin Boosters", description: "Nutrient-rich micro-infusions designed to plump and hydrate.", image: "/images/programs/E.jpg" },
+      { title: "Face Contouring", description: "Non-surgical lifting techniques to define the jawline.", image: "/images/programs/E.jpg" },
+      { title: "Advanced Laser", description: "Precision light therapy to target pigmentation and resurface texture.", image: "/images/programs/E.jpg" },
+    ],
+    breadcrumb: "Programs / Enhance",
+    previousProgram: "integrate",
+    nextProgram: "nurture",
   },
   {
     letter: "N",
@@ -337,18 +424,34 @@ export const programsData: ProgramData[] = [
         icon: "Users",
       },
     ],
+    philosophyImage: "/images/programs/N.webp",
+    pillarsImage: "/images/programs/N.webp",
     philosophyImages: [
-      "/images/programs/nurture-philosophy-1.jpg",
-      "/images/programs/nurture-philosophy-2.jpg",
-      "/images/programs/nurture-philosophy-3.jpg",
+      "/images/programs/N.webp",
+      "/images/programs/N.webp",
+      "/images/programs/N.webp",
     ],
     galleryImages: [
-      "/images/programs/nurture-gallery-1.jpg",
-      "/images/programs/nurture-gallery-2.jpg",
-      "/images/programs/nurture-gallery-3.jpg",
-      "/images/programs/nurture-gallery-4.jpg",
-      "/images/programs/nurture-gallery-5.jpg",
+      "/images/programs/N.webp",
+      "/images/programs/N.webp",
+      "/images/programs/N.webp",
+      "/images/programs/N.webp",
+      "/images/programs/N.webp",
     ],
+    pillars: [
+      { title: "Ground", description: "Practices that center your nervous system and reduce cortisol." },
+      { title: "Breathe", description: "Guided breathwork to expand capacity and mental clarity." },
+      { title: "Connect", description: "Community-based wellness that fosters emotional resilience." },
+    ],
+    sessions: [
+      { title: "Sound Healing", description: "Vibrational therapy to restore cellular harmony.", image: "/images/programs/N.webp" },
+      { title: "Guided Meditation", description: "Structured mental conditioning for focus and calm.", image: "/images/programs/N.webp" },
+      { title: "Somatic Release", description: "Body-based techniques to release stored emotional tension.", image: "/images/programs/N.webp" },
+      { title: "Wellness Workshops", description: "Interactive sessions on sleep, nutrition, and stress management.", image: "/images/programs/N.webp" },
+    ],
+    breadcrumb: "Programs / Nurture",
+    previousProgram: "enhance",
+    nextProgram: "dare",
   },
   {
     letter: "D",
@@ -401,17 +504,33 @@ export const programsData: ProgramData[] = [
         icon: "Target",
       },
     ],
+    philosophyImage: "/images/programs/D.webp",
+    pillarsImage: "/images/programs/D.webp",
     philosophyImages: [
-      "/images/programs/dare-philosophy-1.jpg",
-      "/images/programs/dare-philosophy-2.jpg",
-      "/images/programs/dare-philosophy-3.jpg",
+      "/images/programs/D.webp",
+      "/images/programs/D.webp",
+      "/images/programs/D.webp",
     ],
     galleryImages: [
-      "/images/programs/dare-gallery-1.jpg",
-      "/images/programs/dare-gallery-2.jpg",
-      "/images/programs/dare-gallery-3.jpg",
-      "/images/programs/dare-gallery-4.jpg",
-      "/images/programs/dare-gallery-5.jpg",
+      "/images/programs/D.webp",
+      "/images/programs/D.webp",
+      "/images/programs/D.webp",
+      "/images/programs/D.webp",
+      "/images/programs/D.webp",
     ],
+    pillars: [
+      { title: "Challenge", description: "Testing your new baseline against real-world demands." },
+      { title: "Community", description: "Competing and collaborating with a tribe that pushes you forward." },
+      { title: "Breakthrough", description: "Shattering perceived limits to set a new personal standard." },
+    ],
+    sessions: [
+      { title: "Outdoor Expeditions", description: "Nature-based endurance challenges.", image: "/images/programs/D.webp" },
+      { title: "BFriends Games", description: "Community-wide competitive fitness events.", image: "/images/programs/D.webp" },
+      { title: "Endurance Challenges", description: "Long-format stamina tests for advanced members.", image: "/images/programs/D.webp" },
+      { title: "Skill Masterclasses", description: "Intensive workshops on advanced movement techniques.", image: "/images/programs/D.webp" },
+    ],
+    breadcrumb: "Programs / Dare",
+    previousProgram: "nurture",
+    nextProgram: "flow",
   },
 ];

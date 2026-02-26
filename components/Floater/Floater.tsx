@@ -3,15 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Phone,
+  Mail,
   CircleHelp,
   Volume2,
   VolumeX,
 } from "lucide-react";
 import { useSound } from "@/contexts/SoundContext";
 import styles from "./Floater.module.css";
-
-const WHATSAPP_URL = "https://wa.me/6281234567890";
 
 export default function Floater() {
   const { soundEnabled, setSoundEnabled, playAmbience } = useSound();
@@ -26,15 +24,13 @@ export default function Floater() {
 
   return (
     <div className={styles.floater} aria-label="Quick actions">
-      {/* <Link
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href="/contact"
         className={styles.button}
-        aria-label="Contact us on WhatsApp"
+        aria-label="Contact us"
       >
-        <Phone size={22} strokeWidth={1.5} />
-      </Link> */}
+        <Mail size={22} strokeWidth={1.5} />
+      </Link>
       <Link
         href="/faq"
         className={styles.button}

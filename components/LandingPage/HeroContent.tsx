@@ -98,15 +98,14 @@ export default function HeroContent({ onButtonAnimationStart }: { onButtonAnimat
 
       <Button
         ref={buttonRef}
-        variant="secondary"
         onClick={() => {
           window.scrollTo({ top: window.innerHeight * 1.5, behavior: "smooth" });
         }}
         className={styles.scrollButton}
         style={{ opacity: 0 }}
-        icon={<ChevronDown className="w-5 h-5" />}
+        showIcon={false}
       >
-        Discover More
+        Discover More <ChevronDown className="w-5 h-5" />
       </Button>
     </div>
   );

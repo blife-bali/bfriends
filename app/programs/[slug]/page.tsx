@@ -18,12 +18,13 @@ export default async function ProgramPage({
   if (!program) notFound();
 
   const headerImage = program.image ?? "/images/hero-test.png";
+  const breadcrumb = program.breadcrumb ?? `Programs / ${program.name}`;
 
   return (
     <>
       <PageHeader
+        breadcrumb={breadcrumb}
         title={program.name}
-        subtitle={program.title}
         image={headerImage}
       />
       <main>
