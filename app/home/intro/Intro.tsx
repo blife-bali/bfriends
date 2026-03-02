@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Intro.module.css";
@@ -10,38 +10,36 @@ const DEFAULT_HEADLINE = "A journey to become your own friend.";
 const DEFAULT_BODY =
   "BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, yourself. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.";
 
+const INTRO_IMAGE = "/images/intros.png";
+
 export interface IntroProps {
   headline?: string;
   body?: string;
   showCta?: boolean;
-  showVideo?: boolean;
+  showImage?: boolean;
 }
 
 export default function Intro({
   headline = DEFAULT_HEADLINE,
   body,
   showCta = true,
-  showVideo = true,
+  showImage = true,
 }: IntroProps) {
-  const [isInView, setIsInView] = useState(false);
-  const videoWrapperRef = useRef<HTMLDivElement>(null);
+  const [isImageInView, setIsImageInView] = useState(false);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const textInView = useInView(textRef, { once: true, amount: 0.2 });
 
   useEffect(() => {
-    if (!showVideo) return;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsInView(true);
-        else setIsInView(false);
-      },
+      ([entry]) => setIsImageInView(entry.isIntersecting),
       { threshold: 0.25, rootMargin: "0px" }
     );
-    if (videoWrapperRef.current) observer.observe(videoWrapperRef.current);
+    if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
     return () => observer.disconnect();
-  }, [showVideo]);
+  }, []);
 
-  const textOnly = !showVideo && !showCta;
+  const textOnly = !showImage && !showCta;
   return (
     <section className={`${styles.intro} ${textOnly ? styles.introTextOnly : ""}`}>
       <div className={styles.container}>
@@ -80,19 +78,19 @@ export default function Intro({
           )}
         </div>
 
-        {showVideo && (
-          <div className={styles.videoWrapper} ref={videoWrapperRef}>
-            <video
-              className={`${styles.video} ${isInView ? styles.videoVisible : styles.videoBefore}`}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
+        {showImage && (
+          <div className={styles.imageWrapper} ref={imageWrapperRef}>
+            <div
+              className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
             >
-              <source src="/videos/hero/Venue-4.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <Image
+                src={INTRO_IMAGE}
+                alt="BFriends"
+                fill
+                className={styles.sectionImage}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
+              />
+            </div>
           </div>
         )}
 

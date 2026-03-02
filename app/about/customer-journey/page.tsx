@@ -1,13 +1,12 @@
 import { processData } from "@/lib/process-data";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyBlockImage from "./JourneyBlockImage";
-import { Section as ProgramsSection } from "@/app/home/programs";
 import styles from "./CustomerJourney.module.css";
 
 const PAGE_HEADER = {
   breadcrumb: "About / Customer Journey",
   title: "Customer Journey",
-  image: "/images/hero-test.png",
+  image: "/images/system.png",
 };
 
 export default function CustomerJourneyPage() {
@@ -55,8 +54,6 @@ export default function CustomerJourneyPage() {
           ))}
         </div>
       </div>
-
-      <ProgramsSection />
     </main>
   );
 }

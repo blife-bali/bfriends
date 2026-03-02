@@ -196,7 +196,7 @@ function SubscriptionSection() {
   );
 }
 
-import { MessageCircle, Mail, Instagram as InstagramIcon } from "lucide-react";
+import { Mail, Instagram as InstagramIcon } from "lucide-react";
 
 // Footer Section Component
 function FooterSection() {
@@ -218,22 +218,13 @@ function FooterSection() {
             <h4 className={styles.footerTitle}>Contact Us</h4>
             <nav className={styles.menuWrapper}>
               <a 
-                href="https://instagram.com/blive.bali" 
+                href="https://instagram.com/bfriends.bali/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className={styles.footerContactItem}
               >
                 <InstagramIcon size={16} />
-                <span>Instagram: blive.bali</span>
-              </a>
-              <a 
-                href="https://wa.me/6281234567890" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.footerContactItem}
-              >
-                <MessageCircle size={16} />
-                <span>WhatsApp: +62 812 3456 7890</span>
+                <span>Instagram: bfriends.bali</span>
               </a>
               <a 
                 href="mailto:hello@bfriends.id" 

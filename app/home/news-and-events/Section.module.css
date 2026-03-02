@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: 128px 0;
+  overflow: hidden;
 }
 
 .container {
@@ -62,7 +63,7 @@
 
 .embla {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .footerRow {
@@ -114,7 +115,7 @@
 .embla {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .emblaContainer {

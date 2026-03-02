@@ -32,7 +32,9 @@ export default function JourneyBlockImage({ src, alt }: JourneyBlockImageProps) 
           alt={alt}
           fill
           className={styles.blockSectionImage}
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1000px"
+          quality={100}
+          unoptimized
         />
       </div>
     </div>

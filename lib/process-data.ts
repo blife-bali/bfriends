@@ -37,7 +37,7 @@ export const processData: ProcessStep[] = [
         description: "Deep-layer assessment to reveal your skin's vitality beyond the surface level.",
       },
     ],
-    image: "/images/programs/D.webp",
+    image: "/images/journey/1.png",
   },
   {
     id: 2,
@@ -45,7 +45,7 @@ export const processData: ProcessStep[] = [
     title: "Assess",
     description:
       "Our Journey Partners translate your data into a clear narrative, identifying the specific rhythms and priorities your body needs to return to its peak state.",
-    image: "/images/programs/E.jpg",
+    image: "/images/journey/2.png",
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ export const processData: ProcessStep[] = [
     title: "Design",
     description:
       "We curate your unique FRIEND Flow. Your program is layered across structure, recovery, and intensity, custom-fit to your goals and current condition.",
-    image: "/images/programs/F.jpg",
+    image: "/images/journey/3.jpg",
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ export const processData: ProcessStep[] = [
     title: "Coach",
     description:
       "Transformation requires precision. We guide you through the BFriends method, ensuring every movement and therapy is executed with high-standard intention.",
-    image: "/images/programs/I.png",
+    image: "/images/journey/4.jpg",
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ export const processData: ProcessStep[] = [
     title: "Track",
     description:
       "Progress is never left to chance. We continuously record and review your response to the flow, ensuring consistency becomes a measurable habit.",
-    image: "/images/programs/N.webp",
+    image: "/images/journey/5.png",
   },
   {
     id: 6,
@@ -77,6 +77,6 @@ export const processData: ProcessStep[] = [
     title: "Refine",
     description:
       "As your body evolves, so does your plan. We recalibrate your routine to ensure your journey remains safe, efficient, and aligned with your growing capability.",
-    image: "/images/programs/R.webp",
+    image: "/images/journey/6.png",
   },
 ];

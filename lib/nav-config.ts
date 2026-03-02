@@ -10,6 +10,7 @@ export const aboutNavItems = [
 export const programsNavItems = programsData.map((p) => ({
   label: p.name,
   href: `/programs/${p.name.toLowerCase()}`,
+  image: p.image,
 }));
 
 /** Membership links. */
@@ -26,7 +27,7 @@ export const communityNavItems = [
 
 export type NavColumnId = "about" | "programs" | "membership" | "community";
 
-export const navColumns: { id: NavColumnId; title: string; items: readonly { label: string; href: string }[] }[] = [
+export const navColumns: { id: NavColumnId; title: string; items: readonly { label: string; href: string; image?: string }[] }[] = [
   { id: "about", title: "About BFriends", items: aboutNavItems },
   { id: "programs", title: "Programs", items: programsNavItems },
   { id: "membership", title: "Membership", items: membershipNavItems },

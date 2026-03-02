@@ -30,6 +30,7 @@
 
 .image {
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .textCol {

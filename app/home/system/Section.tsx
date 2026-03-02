@@ -10,7 +10,7 @@ import { processData } from "@/lib/process-data";
 import SystemCard from "./Card";
 import styles from "./Section.module.css";
 
-const SYSTEM_IMAGE = "/images/programs/D.webp";
+const SYSTEM_IMAGE = "/images/system.png";
 
 export default function SystemSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({

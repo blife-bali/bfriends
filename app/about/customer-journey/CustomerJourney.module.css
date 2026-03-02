@@ -96,22 +96,21 @@
   aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
 }
 
 .blockImageInnerBefore {
   opacity: 0.1;
-  transform: scale(1.1);
 }
 
 .blockImageInnerVisible {
   opacity: 1;
-  transform: scale(1);
 }
 
 .blockSectionImage {
   object-fit: cover;
   object-position: center;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Conclusion container – same as system section */

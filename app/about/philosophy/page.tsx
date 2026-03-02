@@ -6,7 +6,6 @@ import BLifeEcosystem from "./blife-ecosystem/BLifeEcosystem";
 import styles from "./page.module.css";
 import Intro from "@/app/home/intro/Intro";
 import WhyBFriends from "@/app/home/why-bfriends/WhyBFriends";
-import { Section as ProgramsSection } from "@/app/home/programs";
 
 const PAGE_HEADER = {
   title: "The Philosophy of Return",
@@ -30,7 +29,6 @@ export default function PhilosophyPage() {
       <CoreBeliefs />
       <IntegratedSelf />
       <BLifeEcosystem />
-      <ProgramsSection />
     </main>
   );
 }

@@ -86,87 +86,104 @@ export default function Navbar() {
 
       <div ref={navRef} className={styles.navWrapper}>
         <div
-          className={`${styles.navShell} ${solidBg ? styles.navShellSolid : ""} ${activeMenu !== null && !isMobileMenuOpen ? styles.navShellExpanded : ""}`}
+          className={`${styles.navShell} ${solidBg ? styles.navShellSolid : ""}`}
         >
-          <div className={styles.mainContainer}>
-            <div className={styles.left}>
-              <Link href="/" className={styles.logoLink} aria-label="BFriends Home" onClick={closeMenu}>
-                <Image
-                  src="/images/icons/logo-default.svg"
-                  alt="BFriends"
-                  width={120}
-                  height={40}
-                  className={styles.logo}
-                  priority
-                />
-              </Link>
-            </div>
-
-            <nav className={styles.menuGrid}>
-              <div className={styles.navItemWrapper}>
-                <Link
-                  href="/"
-                  className={`${styles.menuTop} ${pathname === "/" ? styles.menuTopSelected : ""}`}
-                  onClick={closeMenu}
-                >
-                  Home
+          <div className={styles.navbarContainer}>
+            <div className={styles.mainContainer}>
+              <div className={styles.left}>
+                <Link href="/" className={styles.logoLink} aria-label="BFriends Home" onClick={closeMenu}>
+                  <Image
+                    src="/images/icons/logo-default.svg"
+                    alt="BFriends"
+                    width={120}
+                    height={40}
+                    className={styles.logo}
+                    priority
+                  />
                 </Link>
               </div>
 
-              {navColumns.map((col) => (
-                <div
-                  key={col.id}
-                  className={`${styles.navItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
-                >
-                  <button
-                    type="button"
-                    className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
-                    onClick={() => toggleMenu(col.id)}
+              <nav className={styles.menuGrid}>
+                <div className={styles.navItemWrapper}>
+                  <Link
+                    href="/"
+                    className={`${styles.menuTop} ${pathname === "/" ? styles.menuTopSelected : ""}`}
+                    onClick={closeMenu}
                   >
-                    {col.title}
-                  </button>
-                  <div className={styles.submenuDropdown}>
-                    {col.items.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className={styles.menuItem}
-                        onClick={closeMenu}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
+                    Home
+                  </Link>
                 </div>
-              ))}
-            </nav>
 
-            <div className={styles.right}>
-              <Link
-                href="/book"
-                className={styles.bookNowLink}
-                aria-label="Book now"
+                {navColumns.map((col) => (
+                  <div
+                    key={col.id}
+                    className={`${styles.navItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
+                  >
+                    <button
+                      type="button"
+                      className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
+                      onClick={() => toggleMenu(col.id)}
+                    >
+                      {col.title}
+                    </button>
+                  </div>
+                ))}
+              </nav>
+
+              <div className={styles.right}>
+                <Link
+                  href="/book"
+                  className={styles.bookNowLink}
+                  aria-label="Book now"
+                >
+                  <span className={styles.bookNowText}>Book Now</span>
+                  <ArrowUpRight size={20} className={styles.bookNowIcon} aria-hidden />
+                </Link>
+              </div>
+
+              <button
+                type="button"
+                className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ""}`}
+                onClick={toggleMobileMenu}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
               >
-                <span className={styles.bookNowText}>Book Now</span>
-                <ArrowUpRight size={20} className={styles.bookNowIcon} aria-hidden />
-              </Link>
+                <span className={styles.mobileMenuIconWrapper}>
+                  <Menu size={24} className={styles.mobileMenuIcon} aria-hidden />
+                  <X size={24} className={styles.mobileMenuIconClose} aria-hidden />
+                </span>
+              </button>
             </div>
-
-            <button
-              type="button"
-              className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ""}`}
-              onClick={toggleMobileMenu}
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMobileMenuOpen}
-            >
-              <span className={styles.mobileMenuIconWrapper}>
-                <Menu size={24} className={styles.mobileMenuIcon} aria-hidden />
-                <X size={24} className={styles.mobileMenuIconClose} aria-hidden />
-              </span>
-            </button>
           </div>
 
-          {activeMenu !== null && !isMobileMenuOpen && <div className={styles.submenuDivider} />}
+          {activeMenu !== null && !isMobileMenuOpen && (
+            <div className={styles.dropdown}>
+              {(navColumns.find((c) => c.id === activeMenu))?.items.map((item) => (
+                <div key={item.href} className={styles.linkContainer}>
+                  {activeMenu === "programs" && (
+                    <div className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}>
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt=""
+                          width={120}
+                          height={80}
+                          className={styles.linkImageImg}
+                        />
+                      ) : null}
+                    </div>
+                  )}
+                  <Link
+                    href={item.href}
+                    className={styles.link}
+                    onClick={closeMenu}
+                  >
+                    {item.label}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

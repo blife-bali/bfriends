@@ -57,9 +57,11 @@
   margin: 0;
   width: fit-content;
   opacity: 0.95;
+  z-index: 2;
 }
 
 .headingText{
+  z-index: 2;
   position: relative;
   letter-spacing: -0.04em;
   line-height: 120%;
@@ -88,7 +90,7 @@
 .backgroundOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
