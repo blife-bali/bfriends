@@ -36,8 +36,8 @@ export default function NewsContent() {
       const q = search.trim().toLowerCase();
       list = list.filter(
         (n) =>
-          n.title.toLowerCase().includes(q) ||
-          n.description.toLowerCase().includes(q) ||
+          n.name.toLowerCase().includes(q) ||
+          n.text.toLowerCase().includes(q) ||
           n.author.toLowerCase().includes(q)
       );
     }

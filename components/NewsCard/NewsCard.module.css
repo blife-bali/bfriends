@@ -89,6 +89,14 @@
   text-transform: uppercase;
   color: var(--color-cream-140);
   margin: 0;
+}
+
+.author {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-cream-140);
+  margin: 0;
   margin-top: auto;
   padding-top: 8px;
 }

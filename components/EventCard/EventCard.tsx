@@ -10,12 +10,14 @@ export interface EventCardProps {
 }
 
 export default function EventCard({ item }: EventCardProps) {
+  const href = `/community/event/${item.slug}`;
+
   const content = (
     <>
       <div className={styles.imageWrap}>
         <Image
           src={item.image}
-          alt={item.title}
+          alt={item.name}
           fill
           className={styles.image}
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -23,22 +25,18 @@ export default function EventCard({ item }: EventCardProps) {
       </div>
       <div className={styles.content}>
         <span className={styles.categoryTag}>{item.ecosystem} Events</span>
-        <h3 className={styles.title}>{item.title}</h3>
-        <p className={styles.description}>{item.description}</p>
-        <time className={styles.date}>{item.date}</time>
+        <h3 className={styles.title}>{item.name}</h3>
+        <p className={styles.description}>{item.text}</p>
+        <time className={styles.date}>{item.date} · {item.time}</time>
       </div>
     </>
   );
 
   return (
     <article className={styles.card}>
-      {item.href ? (
-        <Link href={item.href} className={styles.link}>
-          {content}
-        </Link>
-      ) : (
-        <div className={styles.link}>{content}</div>
-      )}
+      <Link href={href} className={styles.link}>
+        {content}
+      </Link>
     </article>
   );
 }

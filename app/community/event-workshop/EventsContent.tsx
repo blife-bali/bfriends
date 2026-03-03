@@ -36,8 +36,7 @@ export default function EventsContent() {
       const q = search.trim().toLowerCase();
       list = list.filter(
         (e) =>
-          e.title.toLowerCase().includes(q) ||
-          e.description.toLowerCase().includes(q)
+          e.name.toLowerCase().includes(q) || e.text.toLowerCase().includes(q)
       );
     }
     if (ecosystem !== "all") {

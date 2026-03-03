@@ -70,9 +70,16 @@ export default function Navbar() {
 
   const isNewsOrEventsPage =
     pathname === "/community/event-workshop" || pathname === "/community/blife-ecosystem-news";
+  const isEventSlug = pathname.startsWith("/community/event/");
+  const isNewsSlug = pathname.startsWith("/community/news/");
 
   const solidBg =
-    isNewsOrEventsPage || isScrolled || activeMenu !== null || isMobileMenuOpen;
+    isNewsOrEventsPage ||
+    isEventSlug ||
+    isNewsSlug ||
+    isScrolled ||
+    activeMenu !== null ||
+    isMobileMenuOpen;
 
   return (
     <>
@@ -114,7 +121,9 @@ export default function Navbar() {
                   </Link>
                 </div>
 
-                {navColumns.map((col) => (
+                {navColumns
+                  .filter((col) => col.id !== "membership")
+                  .map((col) => (
                   <div
                     key={col.id}
                     className={`${styles.navItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
@@ -160,25 +169,25 @@ export default function Navbar() {
             <div className={styles.dropdown}>
               {(navColumns.find((c) => c.id === activeMenu))?.items.map((item) => (
                 <div key={item.href} className={styles.linkContainer}>
-                  {activeMenu === "programs" && (
-                    <div className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}>
-                      {item.image ? (
-                        <Image
-                          src={item.image}
-                          alt=""
-                          width={120}
-                          height={80}
-                          className={styles.linkImageImg}
-                        />
-                      ) : null}
-                    </div>
-                  )}
                   <Link
                     href={item.href}
                     className={styles.link}
                     onClick={closeMenu}
                   >
-                    {item.label}
+                    {activeMenu === "programs" && (
+                      <span className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}>
+                        {item.image ? (
+                          <Image
+                            src={item.image}
+                            alt=""
+                            width={120}
+                            height={80}
+                            className={styles.linkImageImg}
+                          />
+                        ) : null}
+                      </span>
+                    )}
+                    <span className={styles.linkLabel}>{item.label}</span>
                   </Link>
                 </div>
               ))}
@@ -198,7 +207,9 @@ export default function Navbar() {
                 Home
               </Link>
             </div>
-            {navColumns.map((col) => (
+            {navColumns
+              .filter((col) => col.id !== "membership")
+              .map((col) => (
               <div
                 key={col.id}
                 className={`${styles.mobileNavItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
