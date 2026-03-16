@@ -20,8 +20,8 @@ interface FriendPoint {
 
 const friendPoints: FriendPoint[] = [
   {
-    id: "flow",
-    title: "Flow",
+    id: "fitness",
+    title: "Fitness",
     description: "Experience the art of mindful movement",
     imageUrl: "/images/flow-point.jpg",
   },
@@ -261,7 +261,7 @@ function FooterSection() {
           <div className={styles.footerPrograms}>
             <h4 className={styles.footerTitle}>Programs</h4>
             <nav>
-              <Link href="/programs/flow" className={styles.footerLink}>Flow</Link>
+              <Link href="/programs/fitness" className={styles.footerLink}>Fitness</Link>
               <Link href="/programs/restore" className={styles.footerLink}>Restore</Link>
               <Link href="/programs/integrate" className={styles.footerLink}>Integrate</Link>
               <Link href="/programs/enhance" className={styles.footerLink}>Enhance</Link>

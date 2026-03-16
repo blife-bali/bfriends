@@ -55,12 +55,12 @@ export interface ProgramData {
 export const programsData: ProgramData[] = [
   {
     letter: "F",
-    name: "Flow",
-    eyebrow: "F · Flow",
+    name: "Fitness",
+    eyebrow: "F · Fitness",
     title: "Intentional movement and body awareness",
     subheading: "Basement | Functional training and guided strength",
-    image: "/images/programs/F.jpg",
-    buttonLabel: "Discover Flow",
+    image: "/images/Fitness/DDK09594.webp",
+    buttonLabel: "Discover Fitness",
     quote:
       "The moment you read your body with precision, your workout becomes truly yours.",
     steps: [
@@ -76,12 +76,12 @@ export const programsData: ProgramData[] = [
       },
       {
         id: "03",
-        title: "Flow",
-        desc: "We remove tension and restore natural rhythm, so movement feels focused and effortless.",
+        title: "Fitness",
+        desc: "We remove tension and restore natural rhythm, so movement feels focused, strong, and effortless.",
       },
     ],
     philosophy:
-      "Training isn't about pushing harder—it's about moving more precisely. Exercise shouldn't be something you endure, but something you flow into.",
+      "Training isn't about pushing harder—it's about moving more precisely. Exercise shouldn't be something you endure, but something you move into with confidence.",
     programItems: [
       {
         title: "Functional Training",
@@ -104,32 +104,32 @@ export const programsData: ProgramData[] = [
         icon: "Trophy",
       },
     ],
-    philosophyImage: "/images/programs/F.jpg",
-    pillarsImage: "/images/programs/F.jpg",
+    philosophyImage: "/images/Fitness/DDK09605.webp",
+    pillarsImage: "/images/Fitness/DDK09685.webp",
     philosophyImages: [
-      "/images/programs/F.jpg",
-      "/images/programs/F.jpg",
-      "/images/programs/F.jpg",
+      "/images/Fitness/DDK09605.webp",
+      "/images/Fitness/DDK09685.webp",
+      "/images/Fitness/DDK09740.webp",
     ],
     galleryImages: [
-      "/images/programs/F.jpg",
-      "/images/programs/F.jpg",
-      "/images/programs/F.jpg",
-      "/images/programs/F.jpg",
-      "/images/programs/F.jpg",
+      "/images/Fitness/DDK09791.webp",
+      "/images/Fitness/DDK09821.webp",
+      "/images/Fitness/DDK09881.webp",
+      "/images/Fitness/DDK09605.webp",
+      "/images/Fitness/DDK09685.webp",
     ],
     pillars: [
       { title: "Find", description: "Using Fittrix & InBody, we pinpoint exactly what your body needs—clearly and precisely." },
       { title: "Fit", description: "Your Journey Partner designs your routine with accuracy—movement patterns, intensity, and frequency." },
-      { title: "Flow", description: "We remove tension and restore natural rhythm, so movement feels focused and effortless." },
+      { title: "Fitness", description: "We remove tension and restore natural rhythm, so movement feels focused, strong, and effortless." },
     ],
     sessions: [
-      { title: "Functional Training", description: "Realign your spine and pelvis, boost joint mobility, and strengthen your core.", image: "/images/programs/F.jpg" },
-      { title: "Ignite", description: "Structured heart-rate and breath work to enhance metabolic efficiency.", image: "/images/programs/F.jpg" },
-      { title: "Sculpt", description: "Enhance hip and leg balance while toning your body for a defined look.", image: "/images/programs/F.jpg" },
-      { title: "Sport Performance", description: "Analyze sport-specific movements to improve power, balance, and responsiveness.", image: "/images/programs/F.jpg" },
+      { title: "Functional Training", description: "Realign your spine and pelvis, boost joint mobility, and strengthen your core.", image: "/images/Fitness/DDK09594.webp" },
+      { title: "Ignite", description: "Structured heart-rate and breath work to enhance metabolic efficiency.", image: "/images/Fitness/DDK09740.webp" },
+      { title: "Sculpt", description: "Enhance hip and leg balance while toning your body for a defined look.", image: "/images/Fitness/DDK09791.webp" },
+      { title: "Sport Performance", description: "Analyze sport-specific movements to improve power, balance, and responsiveness.", image: "/images/Fitness/DDK09821.webp" },
     ],
-    breadcrumb: "Programs / Flow",
+    breadcrumb: "Programs / Fitness",
     previousProgram: "dare",
     nextProgram: "restore",
   },
@@ -139,7 +139,7 @@ export const programsData: ProgramData[] = [
     eyebrow: "R · Restore",
     title: "Rest and recovery through nourishment",
     subheading: "1st Floor | BCafé, a place to pause and recharge",
-    image: "/images/programs/R.webp",
+    image: "/images/Restore/DDK09897.webp",
     buttonLabel: "Discover Restore",
     quote:
       "Recovery isn't about stopping—it's the moment your body and energy reconnect.",
@@ -184,19 +184,19 @@ export const programsData: ProgramData[] = [
         icon: "Flower2",
       },
     ],
-    philosophyImage: "/images/programs/R.webp",
-    pillarsImage: "/images/programs/R.webp",
+    philosophyImage: "/images/Restore/DDK00016.webp",
+    pillarsImage: "/images/Restore/DDK00062.webp",
     philosophyImages: [
-      "/images/programs/R.webp",
-      "/images/programs/R.webp",
-      "/images/programs/R.webp",
+      "/images/Restore/DDK00016.webp",
+      "/images/Restore/DDK00062.webp",
+      "/images/Restore/DDK09897.webp",
     ],
     galleryImages: [
-      "/images/programs/R.webp",
-      "/images/programs/R.webp",
-      "/images/programs/R.webp",
-      "/images/programs/R.webp",
-      "/images/programs/R.webp",
+      "/images/Restore/DDK09929.webp",
+      "/images/Restore/DDK09935.webp",
+      "/images/Restore/DDK09994.webp",
+      "/images/Restore/DDK00016.webp",
+      "/images/Restore/DDK09897.webp",
     ],
     pillars: [
       { title: "Recovery", description: "Choices that support post-workout restoration." },
@@ -204,13 +204,33 @@ export const programsData: ProgramData[] = [
       { title: "Connection", description: "A lounge experience you can truly settle into." },
     ],
     sessions: [
-      { title: "Signature Smoothies", description: "Purpose-designed wellness blends aligned with your Flow.", image: "/images/programs/R.webp" },
-      { title: "Clean Nutrition", description: "Comforting, satisfying meals—crafted for higher nutritional density.", image: "/images/programs/R.webp" },
-      { title: "Specialty Coffee", description: "High-quality coffee, served in a space that turns rest into a routine.", image: "/images/programs/R.webp" },
-      { title: "Korean Cheong x Jamu", description: "Tradition, reinterpreted—crafted into a modern wellness tea ritual.", image: "/images/programs/R.webp" },
+      {
+        title: "Signature Kimbap",
+        description:
+          "Hand-rolled Korean kimbap crafted for post-workout nourishment—balanced, savory, and light enough to keep you moving.",
+        image: "/images/Restore/DDK09897.webp",
+      },
+      {
+        title: "Healthy Breakfast",
+        description:
+          "Warm, comforting breakfast plates built on whole ingredients to gently refuel the body at the start of your day.",
+        image: "/images/Restore/DDK09929.webp",
+      },
+      {
+        title: "Dessert Menu",
+        description:
+          "Thoughtfully portioned desserts that satisfy the craving while staying aligned with your broader wellness goals.",
+        image: "/images/Restore/DDK09935.webp",
+      },
+      {
+        title: "Korean Cheong x Jamu",
+        description:
+          "Heritage-inspired concentrates and tonics, marrying Korean Cheong and Indonesian Jamu for restorative daily sips.",
+        image: "/images/Restore/DDK09994.webp",
+      },
     ],
     breadcrumb: "Programs / Restore",
-    previousProgram: "flow",
+    previousProgram: "fitness",
     nextProgram: "integrate",
   },
   {
@@ -481,7 +501,7 @@ export const programsData: ProgramData[] = [
       },
     ],
     philosophy:
-      "The 'Dare Beyond' is where wellness leads to growth. We take the strength you've built in the Flow and put it to the test through curated challenges and competitive events.",
+      "The 'Dare Beyond' is where wellness leads to growth. We take the strength you've built in the Fitness program and put it to the test through curated challenges and competitive events.",
     programItems: [
       {
         title: "Outdoor Expeditions",
@@ -531,6 +551,6 @@ export const programsData: ProgramData[] = [
     ],
     breadcrumb: "Programs / Dare",
     previousProgram: "nurture",
-    nextProgram: "flow",
+    nextProgram: "fitness",
   },
 ];

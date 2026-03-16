@@ -8,13 +8,13 @@ import Button from "@/components/ui/Button/Button";
 import styles from "./BfriendsPassport.module.css";
 
 const PHILOSOPHY_COPY =
-  "Wellness doesn't happen in isolation. It happens in the flow between work, rest, and movement. The Passport is your seamless entry into the BLife, removing the friction between your ambition and your health.";
+  "Wellness doesn't happen in isolation. It happens in the fitness rhythm between work, rest, and movement. The Passport is your seamless entry into the BLife, removing the friction between your ambition and your health.";
 
 const passportBenefits = [
   {
     id: "bfriends",
     title: "BFriends",
-    description: "Unlimited Classes (Flow, Nurture, Dare).",
+    description: "Unlimited Classes (Fitness, Nurture, Dare).",
     icon: Key,
   },
   {

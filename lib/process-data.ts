@@ -52,7 +52,7 @@ export const processData: ProcessStep[] = [
     number: "03",
     title: "Design",
     description:
-      "We curate your unique FRIEND Flow. Your program is layered across structure, recovery, and intensity, custom-fit to your goals and current condition.",
+      "We curate your unique FRIEND Fitness flow. Your program is layered across structure, recovery, and intensity, custom-fit to your goals and current condition.",
     image: "/images/journey/3.jpg",
   },
   {
@@ -68,7 +68,7 @@ export const processData: ProcessStep[] = [
     number: "05",
     title: "Track",
     description:
-      "Progress is never left to chance. We continuously record and review your response to the flow, ensuring consistency becomes a measurable habit.",
+      "Progress is never left to chance. We continuously record and review your response to the fitness flow, ensuring consistency becomes a measurable habit.",
     image: "/images/journey/5.png",
   },
   {
