@@ -10,7 +10,8 @@ const DEFAULT_HEADLINE = "A journey to become your own friend.";
 const DEFAULT_BODY =
   "BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, yourself. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.";
 
-const INTRO_IMAGE = "/images/intros.png";
+// Authentic photo assets aligned to the section meaning (movement + restoration)
+const INTRO_IMAGE = "/images/Restore/DDK00016.webp";
 
 export interface IntroProps {
   headline?: string;

@@ -10,7 +10,7 @@ import WhyBFriends from "@/app/home/why-bfriends/WhyBFriends";
 const PAGE_HEADER = {
   title: "The Philosophy of Return",
   breadcrumb: "About / Philosophy",
-  image: "/images/hero-test.png",
+  image: "/images/Restore/DDK09929.webp",
 };
 
 export default function PhilosophyPage() {

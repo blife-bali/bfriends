@@ -21,7 +21,7 @@ export const newsData: NewsItem[] = [
     ecosystem: "BFriends",
     timestamp: "Mar 8, 2025",
     author: "BFriends Team",
-    image: "/images/programs/I.png",
+    image: "/images/Integrate/DDK09585.jpg",
     text: `Discover our latest therapeutic offerings designed to support balance and recovery.
 
 Our new integrated treatments combine traditional healing practices with modern therapeutic techniques. Each session is tailored to your needs, drawing from modalities that include bodywork, breathwork, and mindful movement.
@@ -36,7 +36,7 @@ Whether you're recovering from injury, managing stress, or simply seeking deeper
     ecosystem: "BFriends",
     timestamp: "Feb 20, 2025",
     author: "Sarah Wellness",
-    image: "/images/programs/N.webp",
+    image: "/images/Nurture/DDK09005.jpg",
     text: `We are excited to announce our spring retreat schedule featuring new locations and enhanced programs.
 
 Early registration discounts are available until the end of the month. This year we're offering weekend retreats focused on mindfulness, nature immersion, and community connection.
@@ -51,7 +51,7 @@ Spaces fill quickly—reserve your spot and give yourself something to look forw
     ecosystem: "BFriends",
     timestamp: "Mar 22, 2025",
     author: "BLife Editorial",
-    image: "/images/programs/I.png",
+    image: "/images/Nurture/DDK09001.jpg",
     text: `BLife and BNesta are partnering to offer members shared access to workspace and wellness spaces.
 
 One membership, two ecosystems. If you're a BNesta member, you can now use BFriends facilities at a preferred rate—and BFriends members get the same at BNesta. Work in the morning, unwind with yoga or a treatment in the afternoon, all without switching networks.
@@ -66,7 +66,7 @@ Details and eligibility are available on our membership page.`,
     ecosystem: "BFriends",
     timestamp: "Mar 15, 2025",
     author: "BFriends Team",
-    image: "/images/programs/N.webp",
+    image: "/images/Restore/DDK00062.webp",
     text: `Private sound-insulated pods for meditation and breathwork are now available.
 
 Book a slot and experience deep focus in the heart of the space. Each pod is equipped with comfortable seating, optional guided audio, and climate control so you can create the conditions that work best for you.
@@ -81,7 +81,7 @@ Ideal for a midday reset or a dedicated practice session. Reserve via the app or
     ecosystem: "BFriends",
     timestamp: "Mar 1, 2025",
     author: "Community Desk",
-    image: "/images/programs/I.png",
+    image: "/images/Fitness/DDK09791.webp",
     text: `In our latest member story, we hear how a consistent yoga practice helped one member manage stress and find more energy for family and work.
 
 What started as a once-a-week class became a non-negotiable part of the week. The benefits extended beyond the mat: better sleep, clearer focus, and a calmer approach to daily challenges.
@@ -96,7 +96,7 @@ We're grateful to share these stories and to see our community thrive. If you ha
     ecosystem: "BFriends",
     timestamp: "Feb 28, 2025",
     author: "BFriends Team",
-    image: "/images/programs/N.webp",
+    image: "/images/Integrate/DDK09396.jpg",
     text: `Charm credits can now be used across BWork locations for meeting rooms and day passes.
 
 One ecosystem, more flexibility. Use the credits you earn through BFriends activities to book workspace when you need to focus or collaborate. It's our way of supporting the full arc of your day—wellness and work, under one roof.

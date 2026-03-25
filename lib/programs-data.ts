@@ -239,7 +239,7 @@ export const programsData: ProgramData[] = [
     eyebrow: "I · Integrate",
     title: "Therapeutic body care rooted in professional practice",
     subheading: "2nd Floor | Treatments designed to support balance and recovery",
-    image: "/images/programs/I.png",
+    image: "/images/Integrate/DDK09585.jpg",
     buttonLabel: "Discover Integrate",
     quote:
       "True strength isn't just building muscle; it's maintaining the structure that supports it.",
@@ -265,38 +265,38 @@ export const programsData: ProgramData[] = [
     programItems: [
       {
         title: "Manual Physiotherapy",
-        desc: "Hands-on manipulation to relieve acute pain and improve joint mobility.",
+        desc: "On the treatment table, your therapist uses precise hands-on techniques to ease pain, free stiff joints, and restore comfortable movement.",
         icon: "HandMetal",
       },
       {
         title: "Postural Correction",
-        desc: "Targeted adjustments to fix imbalances caused by daily habits.",
+        desc: "Assessment and guided correction for the habits that pull you out of line—shoulders, spine, and pelvis brought back into sustainable alignment.",
         icon: "AlignVerticalSpaceAround",
       },
       {
         title: "Sports Recovery",
-        desc: "Deep tissue work designed to flush metabolic waste and accelerate repair.",
+        desc: "Flush-and-release work for tired muscles and heavy legs—rhythmic pressure and targeted areas so you recover faster between sessions.",
         icon: "HeartPulse",
       },
       {
         title: "Injury Rehabilitation",
-        desc: "Clinical protocols to safely guide you from injury back to full-strength.",
+        desc: "Clear, staged rehab in a calm clinical space—graded movement and load so you rebuild strength safely after strain or injury.",
         icon: "Stethoscope",
       },
     ],
-    philosophyImage: "/images/programs/I.png",
-    pillarsImage: "/images/programs/I.png",
+    philosophyImage: "/images/Integrate/DDK00216.jpg",
+    pillarsImage: "/images/Integrate/DDK09193.jpg",
     philosophyImages: [
-      "/images/programs/I.png",
-      "/images/programs/I.png",
-      "/images/programs/I.png",
+      "/images/Integrate/DDK09222.jpg",
+      "/images/Integrate/DDK09278.jpg",
+      "/images/Integrate/DDK09396.jpg",
     ],
     galleryImages: [
-      "/images/programs/I.png",
-      "/images/programs/I.png",
-      "/images/programs/I.png",
-      "/images/programs/I.png",
-      "/images/programs/I.png",
+      "/images/Integrate/DDK09558.jpg",
+      "/images/Integrate/DDK09585.jpg",
+      "/images/Integrate/DDK00216.jpg",
+      "/images/Integrate/DDK09193.jpg",
+      "/images/Integrate/DDK09222.jpg",
     ],
     pillars: [
       { title: "Assess", description: "We analyze movement restrictions to identify root causes, not just symptoms." },
@@ -304,10 +304,30 @@ export const programsData: ProgramData[] = [
       { title: "Realign", description: "Guiding your body back to optimal alignment for long-term resilience." },
     ],
     sessions: [
-      { title: "Manual Physiotherapy", description: "Hands-on manipulation to relieve acute pain and improve joint mobility.", image: "/images/programs/I.png" },
-      { title: "Postural Correction", description: "Targeted adjustments to fix imbalances caused by daily habits.", image: "/images/programs/I.png" },
-      { title: "Sports Recovery", description: "Deep tissue work designed to flush metabolic waste and accelerate repair.", image: "/images/programs/I.png" },
-      { title: "Injury Rehabilitation", description: "Clinical protocols to safely guide you from injury back to full-strength.", image: "/images/programs/I.png" },
+      {
+        title: "Manual Physiotherapy",
+        description:
+          "On the treatment table, your therapist uses precise hands-on techniques to ease pain, free stiff joints, and restore comfortable movement.",
+        image: "/images/Integrate/DDK09278.jpg",
+      },
+      {
+        title: "Postural Correction",
+        description:
+          "Assessment and guided correction for the habits that pull you out of line—shoulders, spine, and pelvis brought back into sustainable alignment.",
+        image: "/images/Integrate/DDK09396.jpg",
+      },
+      {
+        title: "Sports Recovery",
+        description:
+          "Flush-and-release work for tired muscles and heavy legs—rhythmic pressure and targeted areas so you recover faster between sessions.",
+        image: "/images/Integrate/DDK09558.jpg",
+      },
+      {
+        title: "Injury Rehabilitation",
+        description:
+          "Clear, staged rehab in a calm clinical space—graded movement and load so you rebuild strength safely after strain or injury.",
+        image: "/images/Integrate/DDK09585.jpg",
+      },
     ],
     breadcrumb: "Programs / Integrate",
     previousProgram: "restore",
@@ -319,7 +339,7 @@ export const programsData: ProgramData[] = [
     eyebrow: "E · Enhance",
     title: "Science led K-Beauty spa care",
     subheading: "3rd Floor | Supporting skin health with clarity and trust",
-    image: "/images/programs/E.jpg",
+    image: "/images/Enhance/DDK00621.jpg",
     buttonLabel: "Discover Enhance",
     quote:
       "Confidence begins when your outer radiance mirrors your inner vitality.",
@@ -345,38 +365,38 @@ export const programsData: ProgramData[] = [
     programItems: [
       {
         title: "K-Glow Facial",
-        desc: "The signature multi-step treatment for deep hydration and glass-skin finish.",
+        desc: "Lie back in a bright, clinical-calm room while your specialist runs a multi-step K-protocol—device-assisted work at the skin's surface for dewy, even radiance.",
         icon: "Sparkles",
       },
       {
         title: "Skin Boosters",
-        desc: "Nutrient-rich micro-infusions designed to plump and hydrate.",
+        desc: "Micro-fine nutrient delivery where your skin needs volume and bounce—targeted plumping and hydration without masking what's underneath.",
         icon: "Droplets",
       },
       {
         title: "Face Contouring",
-        desc: "Non-surgical lifting techniques to define the jawline.",
+        desc: "Non-surgical lifting and sculpting focused along the jaw and mid-face—definition that reads natural in daylight, not under filters.",
         icon: "ScanFace",
       },
       {
         title: "Advanced Laser",
-        desc: "Precision light therapy to target pigmentation and resurface texture.",
+        desc: "Clinic-grade light and energy tools, calibrated on professional consoles—pigment, texture, and clarity addressed with measurable parameters.",
         icon: "Waves",
       },
     ],
-    philosophyImage: "/images/programs/E.jpg",
-    pillarsImage: "/images/programs/E.jpg",
+    philosophyImage: "/images/Enhance/DDK00316.jpg",
+    pillarsImage: "/images/Enhance/DDK00561.jpg",
     philosophyImages: [
-      "/images/programs/E.jpg",
-      "/images/programs/E.jpg",
-      "/images/programs/E.jpg",
+      "/images/Enhance/DDK00330.jpg",
+      "/images/Enhance/DDK00433.jpg",
+      "/images/Enhance/DDK00601.jpg",
     ],
     galleryImages: [
-      "/images/programs/E.jpg",
-      "/images/programs/E.jpg",
-      "/images/programs/E.jpg",
-      "/images/programs/E.jpg",
-      "/images/programs/E.jpg",
+      "/images/Enhance/DDK00621.jpg",
+      "/images/Enhance/DDK00316.jpg",
+      "/images/Enhance/DDK00561.jpg",
+      "/images/Enhance/DDK00330.jpg",
+      "/images/Enhance/DDK00433.jpg",
     ],
     pillars: [
       { title: "Analyze", description: "K-Standard diagnostics to understand your unique dermal profile." },
@@ -384,10 +404,30 @@ export const programsData: ProgramData[] = [
       { title: "Protect", description: "Strengthening the skin barrier to lock in results." },
     ],
     sessions: [
-      { title: "K-Glow Facial", description: "The signature multi-step treatment for deep hydration and glass-skin finish.", image: "/images/programs/E.jpg" },
-      { title: "Skin Boosters", description: "Nutrient-rich micro-infusions designed to plump and hydrate.", image: "/images/programs/E.jpg" },
-      { title: "Face Contouring", description: "Non-surgical lifting techniques to define the jawline.", image: "/images/programs/E.jpg" },
-      { title: "Advanced Laser", description: "Precision light therapy to target pigmentation and resurface texture.", image: "/images/programs/E.jpg" },
+      {
+        title: "K-Glow Facial",
+        description:
+          "Lie back in a bright, clinical-calm room while your specialist runs a multi-step K-protocol—device-assisted work at the skin's surface for dewy, even radiance.",
+        image: "/images/Enhance/DDK00316.jpg",
+      },
+      {
+        title: "Skin Boosters",
+        description:
+          "Micro-fine nutrient delivery where your skin needs volume and bounce—targeted plumping and hydration without masking what's underneath.",
+        image: "/images/Enhance/DDK00330.jpg",
+      },
+      {
+        title: "Face Contouring",
+        description:
+          "Non-surgical lifting and sculpting focused along the jaw and mid-face—definition that reads natural in daylight, not under filters.",
+        image: "/images/Enhance/DDK00433.jpg",
+      },
+      {
+        title: "Advanced Laser",
+        description:
+          "Clinic-grade light and energy tools, calibrated on professional consoles—pigment, texture, and clarity addressed with measurable parameters.",
+        image: "/images/Enhance/DDK00316.jpg",
+      },
     ],
     breadcrumb: "Programs / Enhance",
     previousProgram: "integrate",
@@ -399,7 +439,7 @@ export const programsData: ProgramData[] = [
     eyebrow: "N · Nurture",
     title: "Yoga and barre for breath, alignment, and inner balance",
     subheading: "4th Floor | A space to slow down and turn inward",
-    image: "/images/programs/N.webp",
+    image: "/images/Nurture/DDK09005.jpg",
     buttonLabel: "Discover Nurture",
     quote:
       "Wellness is a dialogue between your mind and your body. We teach you how to listen.",
@@ -444,19 +484,19 @@ export const programsData: ProgramData[] = [
         icon: "Users",
       },
     ],
-    philosophyImage: "/images/programs/N.webp",
-    pillarsImage: "/images/programs/N.webp",
+    philosophyImage: "/images/Nurture/DDK09001.jpg",
+    pillarsImage: "/images/Nurture/DDK09064.jpg",
     philosophyImages: [
-      "/images/programs/N.webp",
-      "/images/programs/N.webp",
-      "/images/programs/N.webp",
+      "/images/Nurture/DDK09001.jpg",
+      "/images/Nurture/DDK09064.jpg",
+      "/images/Nurture/DDK09078.jpg",
     ],
     galleryImages: [
-      "/images/programs/N.webp",
-      "/images/programs/N.webp",
-      "/images/programs/N.webp",
-      "/images/programs/N.webp",
-      "/images/programs/N.webp",
+      "/images/Nurture/DDK09121.jpg",
+      "/images/Nurture/DDK09139.jpg",
+      "/images/Nurture/DDK09152.jpg",
+      "/images/Nurture/DDK09005.jpg",
+      "/images/Nurture/DDK09078.jpg",
     ],
     pillars: [
       { title: "Ground", description: "Practices that center your nervous system and reduce cortisol." },
@@ -464,10 +504,10 @@ export const programsData: ProgramData[] = [
       { title: "Connect", description: "Community-based wellness that fosters emotional resilience." },
     ],
     sessions: [
-      { title: "Sound Healing", description: "Vibrational therapy to restore cellular harmony.", image: "/images/programs/N.webp" },
-      { title: "Guided Meditation", description: "Structured mental conditioning for focus and calm.", image: "/images/programs/N.webp" },
-      { title: "Somatic Release", description: "Body-based techniques to release stored emotional tension.", image: "/images/programs/N.webp" },
-      { title: "Wellness Workshops", description: "Interactive sessions on sleep, nutrition, and stress management.", image: "/images/programs/N.webp" },
+      { title: "Sound Healing", description: "Vibrational therapy to restore cellular harmony.", image: "/images/Nurture/DDK09001.jpg" },
+      { title: "Guided Meditation", description: "Structured mental conditioning for focus and calm.", image: "/images/Nurture/DDK09064.jpg" },
+      { title: "Somatic Release", description: "Body-based techniques to release stored emotional tension.", image: "/images/Nurture/DDK09078.jpg" },
+      { title: "Wellness Workshops", description: "Interactive sessions on sleep, nutrition, and stress management.", image: "/images/Nurture/DDK09121.jpg" },
     ],
     breadcrumb: "Programs / Nurture",
     previousProgram: "enhance",

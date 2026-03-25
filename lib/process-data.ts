@@ -37,7 +37,7 @@ export const processData: ProcessStep[] = [
         description: "Deep-layer assessment to reveal your skin's vitality beyond the surface level.",
       },
     ],
-    image: "/images/journey/1.png",
+    image: "/images/Fitness/DDK09594.webp",
   },
   {
     id: 2,
@@ -45,7 +45,7 @@ export const processData: ProcessStep[] = [
     title: "Assess",
     description:
       "Our Journey Partners translate your data into a clear narrative, identifying the specific rhythms and priorities your body needs to return to its peak state.",
-    image: "/images/journey/2.png",
+    image: "/images/Integrate/DDK09193.jpg",
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ export const processData: ProcessStep[] = [
     title: "Design",
     description:
       "We curate your unique FRIEND Fitness flow. Your program is layered across structure, recovery, and intensity, custom-fit to your goals and current condition.",
-    image: "/images/journey/3.jpg",
+    image: "/images/Enhance/DDK00330.jpg",
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ export const processData: ProcessStep[] = [
     title: "Coach",
     description:
       "Transformation requires precision. We guide you through the BFriends method, ensuring every movement and therapy is executed with high-standard intention.",
-    image: "/images/journey/4.jpg",
+    image: "/images/Restore/DDK00016.webp",
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ export const processData: ProcessStep[] = [
     title: "Track",
     description:
       "Progress is never left to chance. We continuously record and review your response to the fitness flow, ensuring consistency becomes a measurable habit.",
-    image: "/images/journey/5.png",
+    image: "/images/Integrate/DDK09558.jpg",
   },
   {
     id: 6,
@@ -77,6 +77,6 @@ export const processData: ProcessStep[] = [
     title: "Refine",
     description:
       "As your body evolves, so does your plan. We recalibrate your routine to ensure your journey remains safe, efficient, and aligned with your growing capability.",
-    image: "/images/journey/6.png",
+    image: "/images/Enhance/DDK00601.jpg",
   },
 ];

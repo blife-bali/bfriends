@@ -9,7 +9,8 @@ const KICKER = "The Connection";
 const HEADLINE = "Internal Health, External Radiance.";
 const BODY =
   "True beauty is a signal of health. By combining 'The Friend Flow' workouts with clinical skin imaging and restorative nutrition, we bridge the gap between how you perform and how you look.";
-const IMAGE_SRC = "/images/about/integ.png";
+// Photo asset aligned with the integrated self message (internal health + external radiance)
+const IMAGE_SRC = "/images/Integrate/DDK00216.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },

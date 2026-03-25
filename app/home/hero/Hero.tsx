@@ -26,7 +26,22 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.background} style={{ filter: `blur(${blurAmount}px)` }} aria-hidden />
+      <video
+        className={styles.background}
+        style={{ filter: `blur(${blurAmount}px)` }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onEnded={(e) => {
+          // Safety net: some browsers may not re-loop reliably when style updates occur.
+          e.currentTarget.play().catch(() => undefined);
+        }}
+        aria-hidden
+      >
+        <source src="/videos/N - Yoga.mp4" type="video/mp4" />
+      </video>
       <div className={styles.overlay} aria-hidden />
       <div className={styles.content}>
         <h1 className={styles.title}>Which <em>Friend</em> Do You Need Today?</h1>

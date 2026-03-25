@@ -6,7 +6,7 @@ import styles from "./CustomerJourney.module.css";
 const PAGE_HEADER = {
   breadcrumb: "About / Customer Journey",
   title: "Customer Journey",
-  image: "/images/system.png",
+  image: "/images/Integrate/DDK09585.jpg",
 };
 
 export default function CustomerJourneyPage() {
