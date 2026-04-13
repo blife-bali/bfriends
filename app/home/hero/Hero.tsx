@@ -7,6 +7,8 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   const [blurAmount, setBlurAmount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const HERO_VIDEO_DURATION_SECONDS = 36;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,9 +26,25 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      if (video.currentTime >= HERO_VIDEO_DURATION_SECONDS) {
+        video.currentTime = 0;
+        video.play().catch(() => undefined);
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
+
   return (
     <section className={styles.hero}>
       <video
+        ref={videoRef}
         className={styles.background}
         style={{ filter: `blur(${blurAmount}px)` }}
         autoPlay

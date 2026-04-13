@@ -59,7 +59,9 @@ export default function LandingPage() {
 function ScrollContent({ progress }: { progress: MotionValue<number> }) {
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [screenSize, setScreenSize] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
+  const HERO_VIDEO_TARGET_DURATION_SECONDS = 36;
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -151,6 +153,14 @@ function ScrollContent({ progress }: { progress: MotionValue<number> }) {
     window.scrollTo({ top: window.innerHeight * 1.2, behavior: 'smooth' });
   };
 
+  const handleHeroVideoMetadata = () => {
+    const video = heroVideoRef.current;
+    if (!video || !Number.isFinite(video.duration) || video.duration <= 0) return;
+
+    // Normalize playback so each loop lasts exactly 36 seconds.
+    video.playbackRate = video.duration / HERO_VIDEO_TARGET_DURATION_SECONDS;
+  };
+
   return (
     <div className={styles.contentWrapper}>
       
@@ -212,11 +222,13 @@ function ScrollContent({ progress }: { progress: MotionValue<number> }) {
         }}
       >
         <motion.video
+            ref={heroVideoRef}
             src="/videos/hero/Venue-4.mp4"
             autoPlay
             loop
             muted
             playsInline
+            onLoadedMetadata={handleHeroVideoMetadata}
             className={styles.heroVideo}
             style={{ filter: imageBrightness }}
         />
