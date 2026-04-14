@@ -6,12 +6,12 @@ import { motion, useInView } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Intro.module.css";
 
-const DEFAULT_HEADLINE = "A journey to become your own friend.";
+const DEFAULT_HEADLINE = "Feeling tired, out of balance, or stuck in a routine?";
 const DEFAULT_BODY =
-  "BFriends is a wellness hub in Kerobokan, Bali. A place created to reconnect with the oldest companion in your life, yourself. Here, wellness is not about pushing limits or chasing outcomes. It is about understanding, accepting, and caring for your body and mind through intentional movement, mindful rest, and restoration.";
+  "Your body doesn’t always need more effort; sometimes it needs the right kind of care. At the center of Kerobokan, Bali, BFriends will help you start where you are and guide you toward what you need.";
 
 // Authentic photo assets aligned to the section meaning (movement + restoration)
-const INTRO_IMAGE = "/images/Fitness/DDK09685.webp";
+const INTRO_IMAGE = "/images/intro.jpg";
 
 export interface IntroProps {
   headline?: string;
@@ -22,7 +22,7 @@ export interface IntroProps {
 
 export default function Intro({
   headline = DEFAULT_HEADLINE,
-  body,
+  body = DEFAULT_BODY,
   showCta = true,
   showImage = true,
 }: IntroProps) {

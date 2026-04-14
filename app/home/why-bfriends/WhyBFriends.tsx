@@ -7,20 +7,23 @@ import styles from "./WhyBFriends.module.css";
 import { whyBFriendsData } from "@/lib/whybfriends-data";
 
 export default function WhyBFriends() {
-  // Split data into two columns (3 cards each)
-  const leftColumnCards = whyBFriendsData.slice(0, 3);
-  const rightColumnCards = whyBFriendsData.slice(3, 6);
+  // Explicit card placement by data id
+  const leftColumnIds = [1, 3, 5];
+  const rightColumnIds = [4, 5];
+  const leftColumnCards = whyBFriendsData.filter((card) => leftColumnIds.includes(card.id));
+  const rightColumnCards = whyBFriendsData.filter((card) => rightColumnIds.includes(card.id));
 
   return (
     <section className={styles.section}>
       <div className={styles.mainContainer}>
         {/* Left Container - Sticky */}
         <div className={styles.leftContainer}>
-          <p className={styles.eyebrow}>Why BFriends</p>
+          <p className={styles.eyebrow}>Core Philosophy</p>
           <h2 className={styles.title}>Why <em>BFriends</em>?</h2>
           <p className={styles.subheading}>
-            Discover meaningful connections with people who truly get you. 
-            BFriends brings together like-minded individuals for authentic relationships.
+            Real progress doesn’t come from pressure. It comes from understanding what you need and
+            responding with care. Like a good friend, we support you through every phase of your
+            journey.
           </p>
           
         </div>

@@ -58,8 +58,8 @@ export default function SystemSection() {
       <div className={styles.container}>
         {/* Title container: eyebrow, title, intro */}
         <div className={styles.titleContainer}>
-          <p className={styles.eyebrow}>The System</p>
-          <h2 className={styles.heading}>Your journey to lasting balance starts here.</h2>
+          <p className={styles.eyebrow}>Customer Journey</p>
+          <h2 className={styles.heading}>A clear path to move, recover, and improve.</h2>
           
         </div>
 
@@ -85,15 +85,23 @@ export default function SystemSection() {
           </div>
           <div className={styles.rightConclusion}>
             <p className={styles.conclusionText}>
-            From data-driven readings to personalized coaching, we move beyond assumptions to design a path that returns you to your natural vitality.
+              Your journey at BFriends is designed step by step - starting from your baseline, tracking your
+              progress, and adjusting as your body heals.
+            </p>
+            <p className={styles.conclusionText}>
+              Each phase builds on the last, creating a structured yet flexible path that responds to your
+              needs over time.
+            </p>
+            <p className={styles.conclusionText}>
+              You don’t have to do everything at once. You simply begin where you are—and grow from there.
             </p>
             <Button
-              href="/about"
+              href="/about/customer-journey"
               className={styles.conclusionButton}
               color="var(--color-blue-100)"
               showIcon
             >
-              Learn More
+              View Customer Journey
             </Button>
           </div>
         </div>

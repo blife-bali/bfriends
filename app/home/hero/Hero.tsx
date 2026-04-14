@@ -62,7 +62,7 @@ export default function Hero() {
       </video>
       <div className={styles.overlay} aria-hidden />
       <div className={styles.content}>
-        <h1 className={styles.title}>Which <em>Friend</em> Do You Need Today?</h1>
+        <h1 className={styles.title}>Find What Your Body Needs Today</h1>
         <div className={styles.buttonGroup}>
           <Button
             className={styles.button}

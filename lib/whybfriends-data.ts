@@ -8,37 +8,37 @@ export interface WhyBFriendsData {
 export const whyBFriendsData: WhyBFriendsData[] = [
   {
     id: 1,
-    point: "Precision-led 1:1 FRIEND Fitness Design",
+    point: "Precision-Led, Personal Fitness Design",
     subpoint:
-      "We read and interpret your current state—then design a precision-led routine tailored to you.",
-    image: "/images/Fitness/DDK09594.webp",
+      "We start by understanding your body, then design a routine tailored to how you move, recover, and grow.",
+    image: "/images/why-bfriends/1.jpg",
   },
   {
     id: 2,
-    point: "K-Standard Expert Team & Unwavering Protocols",
+    point: "One Standard, One System of Care",
     subpoint:
-      "Trainers, therapists, and K-Beauty specialists move under one standard—one language, one shared playbook. Consistency is protected through structured training, unwavering protocols, and clear quality benchmarks.",
-    image: "/images/Enhance/DDK00316.jpg",
+      "Our trainers, therapists, and K-Beauty specialists work under a shared standard. Ensuring consistency, clarity, and quality in every experience.",
+    image: "/images/why-bfriends/2.jpg",
   },
   {
     id: 3,
-    point: "A Dedicated Journey Partner, End-to-End Management",
+    point: "Your Dedicated Journey Partner",
     subpoint:
-      "From booking and in-center fitness flow to routine design and progress check-ins, your Journey Partner takes ownership—guiding you start to finish.",
-    image: "/images/Nurture/DDK09064.jpg",
+      "From your first visit to ongoing progress, one dedicated partner guides your experience and supports you every step of the way.",
+    image: "/images/why-bfriends/3.jpg",
   },
   {
     id: 4,
-    point: "Visible Progress: Baseline → Milestone → Refine",
+    point: "You Can See and Track",
     subpoint:
-      "Updated by response, proven by records—so progress isn't left to feeling.",
-    image: "/images/Integrate/DDK00216.jpg",
+      "From baseline to milestones, your journey is recorded and refined—so progress is clear, not just felt.",
+    image: "/images/why-bfriends/4.jpg",
   },
   {
     id: 5,
-    point: "All-in-One, One Continuous Fitness Flow—Ending in Dare Beyond",
+    point: "One Space, One Continuous Flow",
     subpoint:
-      "Fitness, recovery, therapy, beauty, and challenge come together in one space, where wellness leads to growth.",
-    image: "/images/Integrate/DDK09558.jpg",
+      "Fitness, recovery, therapy, and beauty come together in one place—supporting a complete and connected wellness journey.",
+    image: "/images/why-bfriends/5.jpg",
   },
 ];

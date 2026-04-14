@@ -59,10 +59,10 @@
 
 .journeyBlockWrapper {
   width: 100%;
-  max-width: 1568px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 96px;
+  gap: 48px;
   padding: 120px 64px ;
 }
 
@@ -175,14 +175,14 @@
 
 .subpointTitle {
   font-family: var(--font-sans);
-  font-size: clamp(15px, 1.4vw, 16px);
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 600;
   color: var(--color-blue-100);
 }
 
 .subpointDesc {
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.2vw, 15px);
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 400;
   color: var(--color-cream-140);
   line-height: 1.4;

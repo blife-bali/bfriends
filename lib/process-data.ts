@@ -22,19 +22,23 @@ export const processData: ProcessStep[] = [
     id: 1,
     number: "01",
     title: "Measure",
-    description: "We start with a precise 'Reading'—gathering the data needed to understand your body's baseline.",
+    description:
+      "Our 'Reading' process gathers the essentials to start the healing journey for ever lasting wellness.",
     subpoints: [
       {
         title: "Movement Reading",
-        description: "An objective analysis of your structural alignment and functional efficiency.",
+        description:
+          "A way to analyze your alignment to restore the balance and functional efficiency.",
       },
       {
         title: "Body Composition Scan",
-        description: "A detailed breakdown of your physical makeup to set a measurable starting point.",
+        description:
+          "A detailed breakdown of your physical makeup to guide your personal recovery journey.",
       },
       {
         title: "Skin Imaging",
-        description: "Deep-layer assessment to reveal your skin's vitality beyond the surface level.",
+        description:
+          "Deep-layer assessment to heal your vitality and freshness beyond the surface.",
       },
     ],
     image: "/images/Fitness/DDK09594.webp",
@@ -44,7 +48,7 @@ export const processData: ProcessStep[] = [
     number: "02",
     title: "Assess",
     description:
-      "Our Journey Partners translate your data into a clear narrative, identifying the specific rhythms and priorities your body needs to return to its peak state.",
+      "Our Journey Partners will translate your measurement into clear steps, identifying the balance way and priorities your health needs to return to its wellness.",
     image: "/images/Integrate/DDK09193.jpg",
   },
   {
@@ -52,15 +56,15 @@ export const processData: ProcessStep[] = [
     number: "03",
     title: "Design",
     description:
-      "We curate your unique FRIEND Fitness flow. Your program is layered across structure, recovery, and intensity, custom-fit to your goals and current condition.",
+      "We illustrate your unique healing FRIEND Fitness flow. Your steps is layered into structure, recovery, and intensity, specific only to your wellness and current condition.",
     image: "/images/Enhance/DDK00330.jpg",
   },
   {
     id: 4,
     number: "04",
-    title: "Coach",
+    title: "Teacher/Coach/Guides",
     description:
-      "Transformation requires precision. We guide you through the BFriends method, ensuring every movement and therapy is executed with high-standard intention.",
+      "Recovery requires detailed steps. We guide you through the BFriends steps, ensuring every healing and balance steps is prepared with high-standard intention.",
     image: "/images/Restore/DDK00016.webp",
   },
   {
@@ -68,7 +72,7 @@ export const processData: ProcessStep[] = [
     number: "05",
     title: "Track",
     description:
-      "Progress is never left to chance. We continuously record and review your response to the fitness flow, ensuring consistency becomes a measurable habit.",
+      "Progress has never left to chance. We continuously keep, hold, and review your healing response to the fitness flow, ensuring balance and wellness becomes a daily habit.",
     image: "/images/Integrate/DDK09558.jpg",
   },
   {
@@ -76,7 +80,7 @@ export const processData: ProcessStep[] = [
     number: "06",
     title: "Refine",
     description:
-      "As your body evolves, so does your plan. We recalibrate your routine to ensure your journey remains safe, efficient, and aligned with your growing capability.",
+      "As your body improves, your plans too. We adjust your routine to ensure your journey remains a safe, enjoyable and achievable one, in line with your continually developing capability.",
     image: "/images/Enhance/DDK00601.jpg",
   },
 ];
