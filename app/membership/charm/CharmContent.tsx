@@ -18,6 +18,10 @@ const DEFAULT_USAGE = [
   { service: "Full Body Recovery Package", credits: 4 },
 ];
 
+const CONCEPT_HEADING = "Precision Has Its Rewards.";
+const CONCEPT_COPY =
+  "For those who know exactly what they need. Charm is our exclusive currency for premium services—from Clinical Facials at Nulook to Private Physio at BFriends. Purchase in bulk, secure your priority, and enjoy privileged rates.";
+
 export default function CharmContent({ tiers = DEFAULT_TIERS, usageItems = DEFAULT_USAGE }: { tiers?: any[]; usageItems?: any[] }) {
   return (
     <>
