@@ -6,7 +6,7 @@ import styles from "./Section.module.css";
 import { programsData } from "@/lib/programs-data";
 import { Card } from "./index";
 
-export default function Section() {
+export default function Section({ programs = programsData }: { programs?: any[] }) {
   const [selectedLetter, setSelectedLetter] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isTab, setIsTab] = useState(false);
@@ -25,7 +25,7 @@ export default function Section() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const selectedProgram = programsData.find((p) => p.letter === selectedLetter) || programsData[0];
+  const selectedProgram = programs.find((p) => p.letter === selectedLetter) || programs[0];
 
   const handlePointClick = (letter: string) => {
     setSelectedLetter(letter);
@@ -61,7 +61,7 @@ export default function Section() {
 
         {/* Points Grid - positioned to scale with image */}
         <div className={styles.pointsGrid}>
-          {programsData.map((program) => (
+          {programs.map((program) => (
             <button
               key={program.letter}
               className={`${styles.pointButton} ${

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Libre_Bodoni } from "next/font/google";
-import Navbar from "@/components/Navbar/Navbar";
+import MainLayout from "@/components/MainLayout/MainLayout";
 import PageEntryClient from "@/components/PageEntry/PageEntryClient";
-import Floater from "@/components/Floater/Floater";
 import { SoundProvider } from "@/contexts/SoundContext";
 import "./globals.css";
 
@@ -13,11 +12,15 @@ const libreBodoni = Libre_Bodoni({
   variable: "--font-libre-bodoni",
 });
 
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "BFriends";
+const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || "A wellness journey that begins with becoming a friend to yourself. Join bfriends in Kerobokan, Bali. Gym, Spa, and Community. Opening 2026.";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bfriends.id";
+const ogImage = process.env.NEXT_PUBLIC_DEFAULT_OG_IMAGE || "/images/icons/logo-bfriends hor.png";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bfriends.id"),
-  title: "BFriends | Kerobokan Wellness Center | Opening 2026",
-  description:
-    "A wellness journey that begins with becoming a friend to yourself. Join bfriends in Kerobokan, Bali. Gym, Spa, and Community. Opening 2026.",
+  metadataBase: new URL(siteUrl),
+  title: `${siteName} | Kerobokan Wellness Center | Opening 2026`,
+  description: siteDescription,
   keywords: [
     "wellness",
     "gym",
@@ -30,19 +33,18 @@ export const metadata: Metadata = {
     "fitness",
     "community",
   ],
-  authors: [{ name: "BFriends" }],
+  authors: [{ name: siteName }],
   openGraph: {
-    title: "BFriends | Kerobokan Wellness Center",
-    description:
-      "A wellness journey that begins with becoming a friend to yourself. Opening soon in 2026.",
-    url: "https://bfriends.id",
-    siteName: "BFriends",
+    title: `${siteName} | Kerobokan Wellness Center`,
+    description: siteDescription,
+    url: siteUrl,
+    siteName,
     images: [
       {
-        url: "/images/icons/logo-bfriends hor.png",
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: "BFriends Logo",
+        alt: `${siteName} Logo`,
       },
     ],
     locale: "en_US",
@@ -50,10 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BFriends - Kerobokan Wellness Center",
-    description:
-      "A wellness journey that begins with becoming a friend to yourself. Opening soon in 2026.",
-    images: ["/images/icons/logo-bfriends hor.png"],
+    title: `${siteName} - Kerobokan Wellness Center`,
+    description: siteDescription,
+    images: [ogImage],
   },
   icons: {
     icon: "/images/icons/B-logo.png",
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://bfriends.id",
+    canonical: siteUrl,
   },
 };
 
@@ -87,9 +88,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <SoundProvider>
-          <Navbar />
-          <PageEntryClient>{children}</PageEntryClient>
-          <Floater />
+          <MainLayout>
+            <PageEntryClient>{children}</PageEntryClient>
+          </MainLayout>
         </SoundProvider>
       </body>
     </html>

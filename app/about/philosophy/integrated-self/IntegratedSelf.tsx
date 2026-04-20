@@ -5,19 +5,25 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./IntegratedSelf.module.css";
 
-const KICKER = "The Connection";
-const HEADLINE = "Internal Health, External Radiance.";
-const BODY =
+const DEFAULT_HEADLINE = "Internal Health, External Radiance.";
+const DEFAULT_BODY =
   "True beauty is a signal of health. By combining 'The Friend Flow' workouts with clinical skin imaging and restorative nutrition, we bridge the gap between how you perform and how you look.";
-// Photo asset aligned with the integrated self message (internal health + external radiance)
-const IMAGE_SRC = "/images/connection.jpg";
+const DEFAULT_IMAGE = "/images/connection.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
-export default function IntegratedSelf() {
+export default function IntegratedSelf({
+  headline = DEFAULT_HEADLINE,
+  body = DEFAULT_BODY,
+  image = DEFAULT_IMAGE,
+}: {
+  headline?: string;
+  body?: string;
+  image?: string;
+}) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.15 });
 
@@ -35,7 +41,7 @@ export default function IntegratedSelf() {
             }}
           >
             <Image
-              src={IMAGE_SRC}
+              src={image || DEFAULT_IMAGE}
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 1000px"
@@ -52,7 +58,7 @@ export default function IntegratedSelf() {
               variants={fadeUp}
               transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 0.61, 0.36, 1] }}
             >
-              {KICKER}
+              The Connection
             </motion.p>
             <motion.h2
               className={styles.heading}
@@ -61,7 +67,7 @@ export default function IntegratedSelf() {
               variants={fadeUp}
               transition={{ duration: 0.5, delay: 0.18, ease: [0.22, 0.61, 0.36, 1] }}
             >
-              {HEADLINE}
+              {headline}
             </motion.h2>
             <motion.p
               className={styles.body}
@@ -70,7 +76,7 @@ export default function IntegratedSelf() {
               variants={fadeUp}
               transition={{ duration: 0.5, delay: 0.26, ease: [0.22, 0.61, 0.36, 1] }}
             >
-              {BODY}
+              {body}
             </motion.p>
           </div>
         </div>

@@ -2,38 +2,13 @@
 
 import styles from "./Charm.module.css";
 
-const CONCEPT_HEADING = "Precision Has Its Rewards.";
-const CONCEPT_COPY =
-  "For those who know exactly what they need. Charm is our exclusive currency for premium services—from Clinical Facials at Nulook to Private Physio at BFriends. Purchase in bulk, secure your priority, and enjoy privileged rates.";
-
-const charmTiers = [
-  {
-    id: "spark",
-    name: "Spark",
-    tagline: "The Introduction.",
-    credits: 3,
-    bonus: "Perfect for a weekend reset.",
-    popular: false,
-  },
-  {
-    id: "glow",
-    name: "Glow",
-    tagline: "The Ritual.",
-    credits: 10,
-    bonus: "Save 15% vs Drop-in. For consistent maintenance.",
-    popular: true,
-  },
-  {
-    id: "radiance",
-    name: "Radiance",
-    tagline: "The Transformation.",
-    credits: 25,
-    bonus: "Save 20% vs Drop-in. For a complete overhaul.",
-    popular: false,
-  },
+const DEFAULT_TIERS = [
+  { id: "spark", name: "Spark", tagline: "The Introduction.", credits: 3, bonus: "Perfect for a weekend reset.", is_popular: false },
+  { id: "glow", name: "Glow", tagline: "The Ritual.", credits: 10, bonus: "Save 15% vs Drop-in. For consistent maintenance.", is_popular: true },
+  { id: "radiance", name: "Radiance", tagline: "The Transformation.", credits: 25, bonus: "Save 20% vs Drop-in. For a complete overhaul.", is_popular: false },
 ];
 
-const usageMenu = [
+const DEFAULT_USAGE = [
   { service: "Skin Imaging", credits: 1 },
   { service: "Group Class (Flow, Nurture)", credits: 1 },
   { service: "K-Glow Facial", credits: 2 },
@@ -43,7 +18,7 @@ const usageMenu = [
   { service: "Full Body Recovery Package", credits: 4 },
 ];
 
-export default function CharmContent() {
+export default function CharmContent({ tiers = DEFAULT_TIERS, usageItems = DEFAULT_USAGE }: { tiers?: any[]; usageItems?: any[] }) {
   return (
     <>
       <section className={styles.concept} aria-label="The Concept">
@@ -59,10 +34,10 @@ export default function CharmContent() {
           <p className={styles.eyebrow}>Credit Tiers</p>
           <h2 className={styles.tiersHeading}>The Tiers</h2>
           <div className={styles.tiersGrid}>
-            {charmTiers.map((tier) => (
+            {tiers.map((tier) => (
               <article
-                key={tier.id}
-                className={`${styles.tierCard} ${tier.popular ? styles.tierCardPopular : ""}`}
+                key={tier.id ?? tier.name}
+                className={`${styles.tierCard} ${(tier.is_popular || tier.popular) ? styles.tierCardPopular : ""}`}
               >
                 <h3 className={styles.tierName}>{tier.name}</h3>
                 <p className={styles.tierTagline}>{tier.tagline}</p>
@@ -82,7 +57,7 @@ export default function CharmContent() {
           <p className={styles.eyebrow}>Usage</p>
           <h2 className={styles.usageHeading}>What can I use credits for?</h2>
           <ul className={styles.usageList} role="list">
-            {usageMenu.map((item) => (
+            {usageItems.map((item) => (
               <li key={item.service} className={styles.usageItem}>
                 <span className={styles.usageService}>{item.service}</span>
                 <span className={styles.usageCredits}>

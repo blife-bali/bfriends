@@ -1,13 +1,38 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { eventData, getEventBySlug } from "@/lib/event-data";
+import type { Metadata } from "next";
+import { eventData } from "@/lib/event-data";
+import { getEventBySlug, getEvents } from "@/lib/cms";
 import EventCard from "@/components/EventCard/EventCard";
 import ShareBlock from "@/components/ShareBlock/ShareBlock";
 import styles from "./Article.module.css";
 
-export function generateStaticParams() {
-  return eventData.map((e) => ({ slug: e.slug }));
+export async function generateStaticParams() {
+  const events = await getEvents();
+  return events.map((e: any) => ({ slug: e.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const event = await getEventBySlug(slug);
+  if (!event) return {};
+
+  const title = event.seo_title || `${event.name} | BFriends`;
+  const description =
+    event.seo_description ||
+    event.text?.replace(/\n/g, " ").slice(0, 160) ||
+    `Join ${event.name} at BFriends.`;
+
+  return {
+    title,
+    description,
+    openGraph: { title, description, images: event.image ? [{ url: event.image }] : [] },
+  };
 }
 
 export default async function EventSlugPage({
@@ -16,15 +41,16 @@ export default async function EventSlugPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const event = getEventBySlug(slug);
+  const event = await getEventBySlug(slug);
   if (!event) notFound();
 
   const paragraphs = event.text
     .split(/\n\n+/)
-    .map((p) => p.trim())
+    .map((p: string) => p.trim())
     .filter(Boolean);
 
-  const others = eventData.filter((e) => e.id !== event.id).slice(0, 3);
+  const allEvents = await getEvents();
+  const others = allEvents.filter((e: any) => String(e.id) !== String(event.id)).slice(0, 3);
   const path = `/community/event/${event.slug}`;
 
   return (
@@ -57,7 +83,7 @@ export default async function EventSlugPage({
             </p>
           </aside>
           <div className={styles.body}>
-            {paragraphs.map((p, i) => (
+            {paragraphs.map((p: string, i: number) => (
               <p key={i} className={styles.paragraph}>
                 {p}
               </p>

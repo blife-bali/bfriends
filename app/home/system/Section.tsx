@@ -10,10 +10,9 @@ import { processData } from "@/lib/process-data";
 import SystemCard from "./Card";
 import styles from "./Section.module.css";
 
-// Photo asset for the BFriends system / journey section
 const SYSTEM_IMAGE = "/images/Integrate/DDK09558.jpg";
 
-export default function SystemSection() {
+export default function SystemSection({ steps = processData }: { steps?: any[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     startIndex: 0,
     align: "center",

@@ -5,7 +5,10 @@ import { useState, useEffect, useRef } from "react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+const DEFAULT_TITLE = "Find What Your Body Needs Today";
+const DEFAULT_VIDEO = "/videos/BFriends2.mp4";
+
+export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }: { title?: string; videoUrl?: string }) {
   const [blurAmount, setBlurAmount] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -13,10 +16,7 @@ export default function Hero() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const heroHeight = window.innerHeight;
-      const maxBlur = 10; // Maximum blur in pixels
-
-      // Calculate blur based on scroll distance from hero
-      // Blur increases as you scroll further down from hero
+      const maxBlur = 10;
       const calculatedBlur = Math.min(maxBlur, (scrollY / heroHeight) * maxBlur);
       setBlurAmount(calculatedBlur);
     };
@@ -37,16 +37,15 @@ export default function Hero() {
         playsInline
         preload="auto"
         onEnded={(e) => {
-          // Safety net: some browsers may not re-loop reliably when style updates occur.
           e.currentTarget.play().catch(() => undefined);
         }}
         aria-hidden
       >
-        <source src="/videos/BFriends2.mp4" type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
       </video>
       <div className={styles.overlay} aria-hidden />
       <div className={styles.content}>
-        <h1 className={styles.title}>Find What Your Body Needs Today</h1>
+        <h1 className={styles.title}>{title}</h1>
         <div className={styles.buttonGroup}>
           <Button
             className={styles.button}

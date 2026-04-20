@@ -1,0 +1,169 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import AdminLayout from '@/components/admin/AdminLayout';
+import FormField from '@/components/admin/FormField';
+import Toast from '@/components/admin/Toast';
+
+interface Setting { id: number; setting_key: string; setting_value: string; }
+
+export default function SettingsPage() {
+  const [settings, setSettings] = useState<Setting[]>([]);
+  const [newKey, setNewKey] = useState('');
+  const [newValue, setNewValue] = useState('');
+  const [gaId, setGaId] = useState('');
+  const [passwords, setPasswords] = useState({ current: '', new: '', confirm: '' });
+  const [username, setUsername] = useState('');
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    loadSettings();
+  }, [router]);
+
+  const loadSettings = async () => {
+    const res = await fetch('/api/admin/settings');
+    if (res.ok) {
+      const data = await res.json();
+      setSettings(data);
+      const ga = data.find((s: Setting) => s.setting_key === 'google_analytics_id');
+      if (ga) setGaId(ga.setting_value);
+    }
+  };
+
+  const handleAddSetting = async () => {
+    if (!newKey) return;
+    await fetch('/api/admin/settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ setting_key: newKey, setting_value: newValue }),
+    });
+    setNewKey(''); setNewValue('');
+    setToast({ message: 'Setting saved!', type: 'success' });
+    loadSettings();
+  };
+
+  const updateSetting = async (key: string, value: string) => {
+    await fetch('/api/admin/settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ setting_key: key, setting_value: value }),
+    });
+    setToast({ message: 'Setting updated!', type: 'success' });
+  };
+
+  return (
+    <AdminLayout title="Settings" username={username}>
+      <div className="admin-card">
+        <div className="admin-card-header">
+          <h2>Google Analytics</h2>
+        </div>
+        <div style={{ maxWidth: 500 }}>
+          <FormField label="Measurement ID" name="ga_id" value={gaId}
+            onChange={(v: string) => setGaId(v)} placeholder="e.g. G-XXXXXXXXXX" />
+          <button onClick={async () => {
+            await fetch('/api/admin/settings', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ setting_key: 'google_analytics_id', setting_value: gaId }),
+            });
+            setToast({ message: 'Google Analytics ID saved!', type: 'success' });
+            loadSettings();
+          }} className="admin-btn admin-btn-primary">Save GA ID</button>
+        </div>
+      </div>
+
+      <div className="admin-card">
+        <div className="admin-card-header">
+          <h2>Site Settings</h2>
+        </div>
+
+        <div style={{ marginBottom: 24 }}>
+          <div className="admin-form-row" style={{ marginBottom: 12 }}>
+            <FormField label="Key" name="newKey" value={newKey} onChange={setNewKey} placeholder="e.g. site_name" />
+            <FormField label="Value" name="newValue" value={newValue} onChange={setNewValue} placeholder="e.g. BFriends" />
+          </div>
+          <button onClick={handleAddSetting} className="admin-btn admin-btn-primary">+ Tambah Setting</button>
+        </div>
+
+        <div className="admin-table-wrapper">
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {settings.map((s) => (
+                <tr key={s.id}>
+                  <td><strong>{s.setting_key}</strong></td>
+                  <td>
+                    <input
+                      style={{ width: '100%', padding: '6px 10px', border: '1px solid var(--admin-border)', borderRadius: 4, fontSize: 14 }}
+                      value={s.setting_value || ''}
+                      onChange={(e) => {
+                        const updated = settings.map(x => x.id === s.id ? { ...x, setting_value: e.target.value } : x);
+                        setSettings(updated);
+                      }}
+                    />
+                  </td>
+                  <td>
+                    <button onClick={() => updateSetting(s.setting_key, s.setting_value)} className="admin-btn admin-btn-secondary admin-btn-sm">Save</button>
+                  </td>
+                </tr>
+              ))}
+              {settings.length === 0 && (
+                <tr><td colSpan={3} style={{ textAlign: 'center', padding: 24 }}>No settings yet</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="admin-card">
+        <div className="admin-card-header">
+          <h2>Change Password</h2>
+        </div>
+        <div style={{ maxWidth: 400 }}>
+          <FormField label="Current Password" name="current" value={passwords.current}
+            onChange={(v: string) => setPasswords({ ...passwords, current: v })} />
+          <FormField label="New Password" name="new" value={passwords.new}
+            onChange={(v: string) => setPasswords({ ...passwords, new: v })} />
+          <FormField label="Confirm New Password" name="confirm" value={passwords.confirm}
+            onChange={(v: string) => setPasswords({ ...passwords, confirm: v })} />
+          <button onClick={async () => {
+            if (passwords.new !== passwords.confirm) {
+              setToast({ message: 'Password tidak cocok', type: 'error' });
+              return;
+            }
+            if (passwords.new.length < 6) {
+              setToast({ message: 'Password minimal 6 karakter', type: 'error' });
+              return;
+            }
+            const res = await fetch('/api/admin/settings', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ setting_key: '_change_password', setting_value: passwords.new, current_password: passwords.current }),
+            });
+            const data = await res.json();
+            if (data.success) {
+              setToast({ message: 'Password changed!', type: 'success' });
+              setPasswords({ current: '', new: '', confirm: '' });
+            } else {
+              setToast({ message: data.error || 'Gagal mengubah password', type: 'error' });
+            }
+          }} className="admin-btn admin-btn-primary">Change Password</button>
+        </div>
+      </div>
+
+      {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
+    </AdminLayout>
+  );
+}

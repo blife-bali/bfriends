@@ -7,7 +7,7 @@ import { Key, Briefcase, Users, Gift, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./BfriendsPassport.module.css";
 
-const PHILOSOPHY_COPY =
+const DEFAULT_PHILOSOPHY_COPY =
   "Wellness doesn't happen in isolation. It happens in the fitness rhythm between work, rest, and movement. The Passport is your seamless entry into the BLife, removing the friction between your ambition and your health.";
 
 const passportBenefits = [
@@ -39,7 +39,7 @@ const passportBenefits = [
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
-export default function PassportContent() {
+export default function PassportContent({ philosophyCopy = DEFAULT_PHILOSOPHY_COPY }: { philosophyCopy?: string }) {
   const accessRef = useRef<HTMLElement>(null);
   const accessInView = useInView(accessRef, { once: true, amount: 0.15 });
 
@@ -52,7 +52,7 @@ export default function PassportContent() {
             <div className={styles.philosophySticky}>
               <h2 className={styles.philosophyHeading}>Why Passport?</h2>
             </div>
-            <p className={styles.philosophyText}>{PHILOSOPHY_COPY}</p>
+            <p className={styles.philosophyText}>{philosophyCopy}</p>
           </div>
         </div>
       </section>

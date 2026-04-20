@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import EventCard from "@/components/EventCard/EventCard";
-import { eventData, type EventItem } from "@/lib/event-data";
+import { eventData } from "@/lib/event-data";
 import styles from "./EventsJournal.module.css";
 
 const SORT_OPTIONS = [
@@ -10,28 +10,28 @@ const SORT_OPTIONS = [
   { value: "oldest", label: "Oldest first" },
 ] as const;
 
-function sortEvents(items: EventItem[], order: "newest" | "oldest"): EventItem[] {
+function sortEvents(items: any[], order: "newest" | "oldest"): any[] {
   const copy = [...items];
   if (order === "newest") {
-    copy.sort((a, b) => b.index - a.index);
+    copy.sort((a, b) => (b.sort_order ?? b.index ?? 0) - (a.sort_order ?? a.index ?? 0));
   } else {
-    copy.sort((a, b) => a.index - b.index);
+    copy.sort((a, b) => (a.sort_order ?? a.index ?? 0) - (b.sort_order ?? b.index ?? 0));
   }
   return copy;
 }
 
-export default function EventsContent() {
+export default function EventsContent({ initialEvents = eventData }: { initialEvents?: any[] }) {
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
 
   const ecosystems = useMemo(() => {
-    const set = new Set(eventData.map((e) => e.ecosystem));
+    const set = new Set(initialEvents.map((e) => e.ecosystem));
     return Array.from(set).sort();
-  }, []);
+  }, [initialEvents]);
 
   const filtered = useMemo(() => {
-    let list = eventData;
+    let list = initialEvents;
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       list = list.filter(

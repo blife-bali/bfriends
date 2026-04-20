@@ -4,14 +4,14 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./Manifesto.module.css";
 
-const HEADLINE = "We Don't Build a New You. We Return You to Your Best Self.";
-const BODY =
+const DEFAULT_HEADLINE = "We Don't Build a New You. We Return You to Your Best Self.";
+const DEFAULT_BODY =
   "The industry sells transformation as a departure. We see it as a return. BFriends is built on the belief that your best self isn't something to invent—it's something to recover.";
 
-export default function Manifesto() {
+export default function Manifesto({ headline = DEFAULT_HEADLINE, body = DEFAULT_BODY }: { headline?: string; body?: string }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
-  const words = HEADLINE.split(" ");
+  const words = headline.split(" ");
 
   return (
     <section ref={ref} className={styles.section} aria-label="The manifesto">
@@ -46,7 +46,7 @@ export default function Manifesto() {
               ease: [0.22, 0.61, 0.36, 1],
             }}
           >
-            {BODY}
+            {body}
           </motion.p>
         </div>
       </div>

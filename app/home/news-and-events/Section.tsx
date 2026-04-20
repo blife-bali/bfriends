@@ -5,22 +5,16 @@ import useEmblaCarousel from "embla-carousel-react";
 import styles from "./Section.module.css";
 import { eventData } from "@/lib/event-data";
 import { newsData } from "@/lib/news-data";
-import type { EventItem } from "@/lib/event-data";
-import type { NewsItem } from "@/lib/news-data";
 import EventCard from "@/components/EventCard/EventCard";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import Button from "@/components/ui/Button/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type CarouselItem =
-  | { type: "event"; data: EventItem }
-  | { type: "news"; data: NewsItem };
+  | { type: "event"; data: any }
+  | { type: "news"; data: any };
 
-/** Interleave events and news (selang-seling): event, news, event, news, ... */
-function interleaveEventsAndNews(
-  events: EventItem[],
-  news: NewsItem[]
-): CarouselItem[] {
+function interleaveEventsAndNews(events: any[], news: any[]): CarouselItem[] {
   const out: CarouselItem[] = [];
   const max = Math.max(events.length, news.length);
   for (let i = 0; i < max; i++) {
@@ -30,10 +24,10 @@ function interleaveEventsAndNews(
   return out;
 }
 
-export default function Section() {
+export default function Section({ events = eventData, news = newsData }: { events?: any[]; news?: any[] }) {
   const items = useMemo(
-    () => interleaveEventsAndNews(eventData, newsData),
-    []
+    () => interleaveEventsAndNews(events, news),
+    [events, news]
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel({

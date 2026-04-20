@@ -1,17 +1,13 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import WhyCard from "./WhyCard";
 import styles from "./WhyBFriends.module.css";
 import { whyBFriendsData } from "@/lib/whybfriends-data";
 
-export default function WhyBFriends() {
-  // Explicit card placement by data id
-  const leftColumnIds = [1, 3, 5];
-  const rightColumnIds = [4, 5];
-  const leftColumnCards = whyBFriendsData.filter((card) => leftColumnIds.includes(card.id));
-  const rightColumnCards = whyBFriendsData.filter((card) => rightColumnIds.includes(card.id));
+export default function WhyBFriends({ cards = whyBFriendsData }: { cards?: any[] }) {
+  const leftColumnCards = cards.filter((_, i) => [0, 2, 4].includes(i));
+  const rightColumnCards = cards.filter((_, i) => [3, 4].includes(i));
 
   return (
     <section className={styles.section}>

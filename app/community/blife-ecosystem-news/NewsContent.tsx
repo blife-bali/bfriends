@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import NewsCard from "@/components/NewsCard/NewsCard";
-import { newsData, type NewsItem } from "@/lib/news-data";
+import { newsData } from "@/lib/news-data";
 import styles from "./NewsJournal.module.css";
 
 const SORT_OPTIONS = [
@@ -10,28 +10,28 @@ const SORT_OPTIONS = [
   { value: "oldest", label: "Oldest first" },
 ] as const;
 
-function sortNews(items: NewsItem[], order: "newest" | "oldest"): NewsItem[] {
+function sortNews(items: any[], order: "newest" | "oldest"): any[] {
   const copy = [...items];
   if (order === "newest") {
-    copy.sort((a, b) => b.index - a.index);
+    copy.sort((a, b) => (b.sort_order ?? b.index ?? 0) - (a.sort_order ?? a.index ?? 0));
   } else {
-    copy.sort((a, b) => a.index - b.index);
+    copy.sort((a, b) => (a.sort_order ?? a.index ?? 0) - (b.sort_order ?? b.index ?? 0));
   }
   return copy;
 }
 
-export default function NewsContent() {
+export default function NewsContent({ initialNews = newsData }: { initialNews?: any[] }) {
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
 
   const ecosystems = useMemo(() => {
-    const set = new Set(newsData.map((n) => n.ecosystem));
+    const set = new Set(initialNews.map((n) => n.ecosystem));
     return Array.from(set).sort();
-  }, []);
+  }, [initialNews]);
 
   const filtered = useMemo(() => {
-    let list = newsData;
+    let list = initialNews;
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       list = list.filter(
