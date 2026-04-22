@@ -2,11 +2,43 @@ import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
-export async function GET() {
+async function ensureProcessPageKeyColumn() {
   try {
-    const [rows] = await pool.execute(
-      'SELECT * FROM bfriends_process_steps ORDER BY sort_order'
+    await pool.execute(
+      "ALTER TABLE bfriends_process_steps ADD COLUMN page_key VARCHAR(50) NOT NULL DEFAULT 'customer-journey' AFTER id"
     );
+  } catch (error: any) {
+    if (error?.code !== 'ER_DUP_FIELDNAME') throw error;
+  }
+}
+
+export async function GET(req: NextRequest) {
+  try {
+    await ensureProcessPageKeyColumn();
+    const page = req.nextUrl.searchParams.get('page');
+    const pageKey = page === 'home' || page === 'customer-journey' ? page : null;
+    let [rows] = pageKey
+      ? await pool.execute('SELECT * FROM bfriends_process_steps WHERE page_key = ? ORDER BY sort_order', [pageKey])
+      : await pool.execute('SELECT * FROM bfriends_process_steps ORDER BY sort_order');
+    if (pageKey === 'home' && (rows as any[]).length === 0) {
+      await pool.execute(
+        'INSERT INTO bfriends_process_steps (page_key, number, title, description, image, sort_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        [
+          'home',
+          'home',
+          'A clear path to move, recover, and improve.',
+          [
+            'Your journey at BFriends is designed step by step - starting from your baseline, tracking your progress, and adjusting as your body heals.',
+            'Each phase builds on the last, creating a structured yet flexible path that responds to your needs over time.',
+            'You don’t have to do everything at once. You simply begin where you are—and grow from there.',
+          ].join('\n\n'),
+          '/images/Integrate/DDK09558.jpg',
+          0,
+          1,
+        ]
+      );
+      [rows] = await pool.execute('SELECT * FROM bfriends_process_steps WHERE page_key = ? ORDER BY sort_order', ['home']);
+    }
 
     const steps = rows as any[];
     const stepsWithSubpoints = await Promise.all(
@@ -30,17 +62,18 @@ export async function POST(req: NextRequest) {
   try {
     const authError = await requireAuth();
     if (authError) return authError;
+    await ensureProcessPageKeyColumn();
 
     const body = await req.json();
-    const { title, description, icon, sort_order, is_active, subpoints } = body;
+    const { number, title, description, image, sort_order, is_active, subpoints, page_key } = body;
 
     if (!title) {
       return NextResponse.json({ error: 'title is required' }, { status: 400 });
     }
 
     const [result] = await pool.execute(
-      'INSERT INTO bfriends_process_steps (title, description, icon, sort_order, is_active) VALUES (?, ?, ?, ?, ?)',
-      [title, description || null, icon || null, sort_order || 0, is_active !== undefined ? is_active : 1]
+      'INSERT INTO bfriends_process_steps (page_key, number, title, description, image, sort_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [page_key || 'customer-journey', number || null, title, description || null, image || null, sort_order || 0, is_active !== undefined ? is_active : 1]
     );
 
     const insertResult = result as any;
@@ -50,8 +83,8 @@ export async function POST(req: NextRequest) {
       for (let i = 0; i < subpoints.length; i++) {
         const sp = subpoints[i];
         await pool.execute(
-          'INSERT INTO bfriends_process_subpoints (step_id, text, sort_order) VALUES (?, ?, ?)',
-          [stepId, sp.text || sp, sp.sort_order !== undefined ? sp.sort_order : i]
+          'INSERT INTO bfriends_process_subpoints (step_id, title, description, sort_order) VALUES (?, ?, ?, ?)',
+          [stepId, sp.title || null, sp.description || null, sp.sort_order !== undefined ? sp.sort_order : i]
         );
       }
     }

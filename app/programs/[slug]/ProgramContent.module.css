@@ -123,21 +123,9 @@
   background-color: var(--color-blue-5);
 }
 
-.pillarsSplit {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: stretch;
-  min-height: 480px;
-}
-
-.pillarsGridCol {
-  display: contents;
-}
-
 .pillarsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
 }
 
@@ -149,6 +137,10 @@
 }
 
 .pillarCard:nth-child(3n) {
+  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+}
+
+.pillarCard:nth-child(2n) {
   border-right: none;
 }
 
@@ -220,6 +212,17 @@
   min-height: 100%;
 }
 
+.pillarsImageTile {
+  position: relative;
+  min-height: 320px;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+}
+
+.pillarsImageTile:nth-child(2n) {
+  border-right: none;
+}
+
 .pillarsImage {
   object-fit: cover;
 }
@@ -227,21 +230,6 @@
 @media (max-width: 1024px) {
   .pillars {
     padding: 72px 0;
-  }
-
-  .pillarsSplit {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .pillarsGridCol {
-    display: block;
-  }
-
-  .pillarsImageCol {
-    order: 1;
-    min-height: 280px;
-    margin-top: 32px;
   }
 
   .pillarsGrid {
@@ -253,7 +241,7 @@
     border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
   }
 
-  .pillarCard:nth-child(3n) {
+  .pillarCard:nth-child(2n) {
     border-right: none;
   }
 
@@ -263,6 +251,12 @@
 
   .pillarBorderR {
     display: none;
+  }
+
+  .pillarsImageTile {
+    border-right: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+    min-height: 280px;
   }
 }
 

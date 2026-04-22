@@ -63,7 +63,7 @@ export default function EventsPage() {
       loadItems();
     } else {
       const err = await res.json();
-      setToast({ message: err.error || 'Gagal menyimpan', type: 'error' });
+      setToast({ message: err.error || 'Failed to save', type: 'error' });
     }
   };
 
@@ -80,7 +80,7 @@ export default function EventsPage() {
       <div className="admin-card">
         <div className="admin-card-header">
           <h2>Events & Workshops</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Tambah Event</button>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Event</button>
         </div>
         <DataTable
           columns={[
@@ -101,11 +101,11 @@ export default function EventsPage() {
       {editing && (
         <div className="admin-modal-overlay" onClick={() => setEditing(null)}>
           <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
-            <h3>{editing.id ? 'Edit Event' : 'Tambah Event'}</h3>
+            <h3>{editing.id ? 'Edit Event' : 'Add Event'}</h3>
             <FormField label="Name" name="name" value={editing.name}
               onChange={(v: string) => setEditing({ ...editing, name: v, slug: generateSlug(v) })} required />
             <FormField label="Slug" name="slug" value={editing.slug}
-              onChange={(v: string) => setEditing({ ...editing, slug: v })} placeholder="Auto-generated dari name" />
+              onChange={(v: string) => setEditing({ ...editing, slug: v })} placeholder="Auto-generated from name" />
             <div className="admin-form-row">
               <FormField label="Ecosystem" name="ecosystem" type="select" value={editing.ecosystem}
                 onChange={(v: string) => setEditing({ ...editing, ecosystem: v })}
@@ -132,14 +132,14 @@ export default function EventsPage() {
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
             <div className="admin-modal-actions">
-              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Batal</button>
-              <button onClick={handleSave} className="admin-btn admin-btn-primary">Simpan</button>
+              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Cancel</button>
+              <button onClick={handleSave} className="admin-btn admin-btn-primary">Save</button>
             </div>
           </div>
         </div>
       )}
 
-      {deleteTarget && <ConfirmDialog message={`Hapus event "${deleteTarget.name}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
+      {deleteTarget && <ConfirmDialog message={`Delete event "${deleteTarget.name}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </AdminLayout>
   );

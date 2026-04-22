@@ -5,7 +5,7 @@ import { requireAuth } from '@/lib/auth';
 export async function GET() {
   try {
     const [rows] = await pool.execute(
-      'SELECT * FROM bfriends_hero_sections ORDER BY sort_order'
+      "SELECT * FROM bfriends_hero_sections WHERE page = 'home' ORDER BY sort_order"
     );
     return NextResponse.json(rows);
   } catch (error) {
@@ -20,15 +20,15 @@ export async function POST(req: NextRequest) {
     if (authError) return authError;
 
     const body = await req.json();
-    const { page, title, subtitle, video_url, image_url, sort_order, is_active } = body;
+    const { title, subtitle, video_url, sort_order, is_active } = body;
 
-    if (!page || !title) {
-      return NextResponse.json({ error: 'page and title are required' }, { status: 400 });
+    if (!title) {
+      return NextResponse.json({ error: 'title is required' }, { status: 400 });
     }
 
     const [result] = await pool.execute(
       'INSERT INTO bfriends_hero_sections (page, title, subtitle, video_url, image_url, sort_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      [page, title, subtitle || null, video_url || null, image_url || null, sort_order || 0, is_active !== undefined ? is_active : 1]
+      ['home', title, subtitle || null, video_url || null, null, sort_order || 0, is_active !== undefined ? is_active : 1]
     );
 
     const insertResult = result as any;

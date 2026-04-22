@@ -20,7 +20,7 @@ const DEFAULT_HEADER = {
 
 export default async function CustomerJourneyPage() {
   const [processSteps, pageHeader] = await Promise.all([
-    getProcessSteps(),
+    getProcessSteps("customer-journey"),
     getPageHeader("customer-journey"),
   ]);
 

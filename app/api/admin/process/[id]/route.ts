@@ -2,11 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
+async function ensureProcessPageKeyColumn() {
+  try {
+    await pool.execute(
+      "ALTER TABLE bfriends_process_steps ADD COLUMN page_key VARCHAR(50) NOT NULL DEFAULT 'customer-journey' AFTER id"
+    );
+  } catch (error: any) {
+    if (error?.code !== 'ER_DUP_FIELDNAME') throw error;
+  }
+}
+
 export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    await ensureProcessPageKeyColumn();
     const { id } = await params;
     const [rows] = await pool.execute(
       'SELECT * FROM bfriends_process_steps WHERE id = ?',
@@ -37,10 +48,11 @@ export async function PUT(
   try {
     const authError = await requireAuth();
     if (authError) return authError;
+    await ensureProcessPageKeyColumn();
 
     const { id } = await params;
     const body = await req.json();
-    const { title, description, icon, sort_order, is_active, subpoints } = body;
+    const { page_key, number, title, description, image, sort_order, is_active, subpoints } = body;
 
     const [existing] = await pool.execute(
       'SELECT id FROM bfriends_process_steps WHERE id = ?',
@@ -51,8 +63,8 @@ export async function PUT(
     }
 
     await pool.execute(
-      'UPDATE bfriends_process_steps SET title = ?, description = ?, icon = ?, sort_order = ?, is_active = ? WHERE id = ?',
-      [title, description || null, icon || null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
+      'UPDATE bfriends_process_steps SET page_key = ?, number = ?, title = ?, description = ?, image = ?, sort_order = ?, is_active = ? WHERE id = ?',
+      [page_key || 'customer-journey', number || null, title, description || null, image || null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
     );
 
     // Replace subpoints: delete old ones, insert new ones
@@ -63,8 +75,8 @@ export async function PUT(
         for (let i = 0; i < subpoints.length; i++) {
           const sp = subpoints[i];
           await pool.execute(
-            'INSERT INTO bfriends_process_subpoints (step_id, text, sort_order) VALUES (?, ?, ?)',
-            [id, sp.text || sp, sp.sort_order !== undefined ? sp.sort_order : i]
+            'INSERT INTO bfriends_process_subpoints (step_id, title, description, sort_order) VALUES (?, ?, ?, ?)',
+            [id, sp.title || null, sp.description || null, sp.sort_order !== undefined ? sp.sort_order : i]
           );
         }
       }

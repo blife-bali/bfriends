@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Hero from "./hero/Hero";
 import Intro from "./intro/Intro";
 import WhyBFriends from "./why-bfriends/WhyBFriends";
-import { Section as ProgramsSection } from "./programs";
+import { Section as ServicesSection } from "./services";
 import { Section as SystemSection } from "./system";
 import { Section as NewsAndEventsSection } from "./news-and-events";
 import {
@@ -15,6 +15,8 @@ import {
   getEvents,
   getNews,
 } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("home");
@@ -29,7 +31,7 @@ export default async function HomePage() {
     getHeroByPage("home"),
     getIntroByPage("home"),
     getWhyCards(),
-    getProcessSteps(),
+    getProcessSteps("home"),
     getPrograms(),
     getEvents(),
     getNews(),
@@ -44,10 +46,11 @@ export default async function HomePage() {
       <Intro
         headline={intro?.headline}
         body={intro?.body}
+        imageUrl={intro?.image_url}
       />
       <WhyBFriends cards={whyCards} />
       <SystemSection steps={processSteps} />
-      <ProgramsSection programs={programs} />
+      <ServicesSection programs={programs} />
       <NewsAndEventsSection events={events} news={news} />
     </>
   );

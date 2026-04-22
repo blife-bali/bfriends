@@ -32,8 +32,8 @@ const DEFAULT_HEADER = {
 export default async function PhilosophyPage() {
   const [pageHeader, intro, whyCards, manifesto, integratedSelf] = await Promise.all([
     getPageHeader("philosophy"),
-    getIntroByPage("about"),
-    getWhyCards(),
+    getIntroByPage("home"),
+    getWhyCards(true),
     getPhilosophySectionByKey("manifesto"),
     getPhilosophySectionByKey("integrated_self"),
   ]);
@@ -54,6 +54,7 @@ export default async function PhilosophyPage() {
       <Intro
         headline={intro?.headline}
         body={intro?.body}
+        imageUrl={intro?.image_url}
         showCta={false}
       />
       <WhyBFriends cards={whyCards} />

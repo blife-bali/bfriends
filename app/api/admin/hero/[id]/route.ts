@@ -35,7 +35,7 @@ export async function PUT(
 
     const { id } = await params;
     const body = await req.json();
-    const { page, title, subtitle, video_url, image_url, sort_order, is_active } = body;
+    const { title, subtitle, video_url, sort_order, is_active } = body;
 
     const [existing] = await pool.execute(
       'SELECT id FROM bfriends_hero_sections WHERE id = ?',
@@ -47,7 +47,7 @@ export async function PUT(
 
     await pool.execute(
       'UPDATE bfriends_hero_sections SET page = ?, title = ?, subtitle = ?, video_url = ?, image_url = ?, sort_order = ?, is_active = ? WHERE id = ?',
-      [page, title, subtitle || null, video_url || null, image_url || null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
+      ['home', title, subtitle || null, video_url || null, null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
     );
 
     const [updated] = await pool.execute(

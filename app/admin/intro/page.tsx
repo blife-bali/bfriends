@@ -44,16 +44,18 @@ export default function IntroPage() {
   };
 
   const handleSave = async () => {
+    if (!editing) return;
     const isEdit = !!editing?.id;
     const url = isEdit ? `/api/admin/intro/${editing!.id}` : '/api/admin/intro';
     const method = isEdit ? 'PUT' : 'POST';
-    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editing) });
+    const payload = { ...editing, page: 'home' };
+    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     if (res.ok) {
       setToast({ message: isEdit ? 'Intro updated!' : 'Intro created!', type: 'success' });
       setEditing(null);
       loadItems();
     } else {
-      setToast({ message: 'Gagal menyimpan', type: 'error' });
+      setToast({ message: 'Failed to save', type: 'error' });
     }
   };
 
@@ -70,11 +72,10 @@ export default function IntroPage() {
       <div className="admin-card">
         <div className="admin-card-header">
           <h2>Intro Sections</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Tambah Intro</button>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Intro</button>
         </div>
         <DataTable
           columns={[
-            { key: 'page', label: 'Page' },
             { key: 'headline', label: 'Headline' },
             { key: 'sort_order', label: 'Order' },
             { key: 'is_active', label: 'Status', render: (v: number) => (
@@ -90,11 +91,8 @@ export default function IntroPage() {
       {editing && (
         <div className="admin-modal-overlay" onClick={() => setEditing(null)}>
           <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
-            <h3>{editing.id ? 'Edit Intro' : 'Tambah Intro'}</h3>
+            <h3>{editing.id ? 'Edit Intro' : 'Add Intro'}</h3>
             <div className="admin-form-row">
-              <FormField label="Page" name="page" type="select" value={editing.page}
-                onChange={(v: string) => setEditing({ ...editing, page: v })}
-                options={[{ value: 'home', label: 'Home' }, { value: 'about', label: 'About' }]} />
               <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
                 onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             </div>
@@ -106,19 +104,22 @@ export default function IntroPage() {
               <label>Image</label>
               <ImageUploader value={editing.image_url} onChange={(url: string) => setEditing({ ...editing, image_url: url })} />
             </div>
+            <div className="admin-form-group">
+              <small style={{ color: '#6b7280' }}>Intro ini digunakan untuk Home dan About / Philosophy.</small>
+            </div>
             <FormField label="Show CTA" name="show_cta" type="checkbox" value={!!editing.show_cta}
               onChange={(v: boolean) => setEditing({ ...editing, show_cta: v ? 1 : 0 })} />
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
             <div className="admin-modal-actions">
-              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Batal</button>
-              <button onClick={handleSave} className="admin-btn admin-btn-primary">Simpan</button>
+              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Cancel</button>
+              <button onClick={handleSave} className="admin-btn admin-btn-primary">Save</button>
             </div>
           </div>
         </div>
       )}
 
-      {deleteTarget && <ConfirmDialog message={`Hapus intro "${deleteTarget.headline}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
+      {deleteTarget && <ConfirmDialog message={`Delete intro "${deleteTarget.headline}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </AdminLayout>
   );

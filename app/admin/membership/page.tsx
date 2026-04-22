@@ -48,7 +48,7 @@ export default function MembershipPage() {
     const method = isEdit ? 'PUT' : 'POST';
     const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editing) });
     if (res.ok) { setToast({ message: 'Saved!', type: 'success' }); setEditing(null); loadData(); }
-    else setToast({ message: 'Gagal', type: 'error' });
+    else setToast({ message: 'Failed', type: 'error' });
   };
 
   const handleDelete = async () => {
@@ -71,7 +71,7 @@ export default function MembershipPage() {
           <>
             <div className="admin-card-header">
               <h2>Membership Content</h2>
-              <button onClick={() => setEditing({ section_key: '', headline: '', body: '', image: '', seo_title: '', seo_description: '', is_active: 1 })} className="admin-btn admin-btn-primary">+ Tambah</button>
+              <button onClick={() => setEditing({ section_key: '', headline: '', body: '', image: '', seo_title: '', seo_description: '', is_active: 1 })} className="admin-btn admin-btn-primary">+ Add</button>
             </div>
             <DataTable
               columns={[
@@ -92,7 +92,7 @@ export default function MembershipPage() {
           <>
             <div className="admin-card-header">
               <h2>Charm Tiers</h2>
-              <button onClick={() => setEditing({ name: '', tagline: '', credits: 0, bonus: '', is_popular: 0, sort_order: 0, is_active: 1 })} className="admin-btn admin-btn-primary">+ Tambah</button>
+              <button onClick={() => setEditing({ name: '', tagline: '', credits: 0, bonus: '', is_popular: 0, sort_order: 0, is_active: 1 })} className="admin-btn admin-btn-primary">+ Add</button>
             </div>
             <DataTable
               columns={[
@@ -112,7 +112,7 @@ export default function MembershipPage() {
           <>
             <div className="admin-card-header">
               <h2>Charm Usage Menu</h2>
-              <button onClick={() => setEditing({ service: '', credits: 0, sort_order: 0, is_active: 1 })} className="admin-btn admin-btn-primary">+ Tambah</button>
+              <button onClick={() => setEditing({ service: '', credits: 0, sort_order: 0, is_active: 1 })} className="admin-btn admin-btn-primary">+ Add</button>
             </div>
             <DataTable
               columns={[
@@ -131,7 +131,7 @@ export default function MembershipPage() {
       {editing && (
         <div className="admin-modal-overlay" onClick={() => setEditing(null)}>
           <div className="admin-modal" style={{ width: 500 }} onClick={(e) => e.stopPropagation()}>
-            <h3>{editing.id ? 'Edit' : 'Tambah'}</h3>
+            <h3>{editing.id ? 'Edit' : 'Add'}</h3>
             {tab === 'content' && (
               <>
                 <FormField label="Section Key" name="section_key" value={editing.section_key || ''} onChange={(v: string) => setEditing({ ...editing, section_key: v })} />
@@ -160,14 +160,14 @@ export default function MembershipPage() {
               </>
             )}
             <div className="admin-modal-actions">
-              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Batal</button>
-              <button onClick={handleSave} className="admin-btn admin-btn-primary">Simpan</button>
+              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Cancel</button>
+              <button onClick={handleSave} className="admin-btn admin-btn-primary">Save</button>
             </div>
           </div>
         </div>
       )}
 
-      {deleteTarget && <ConfirmDialog message="Hapus item ini?" onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
+      {deleteTarget && <ConfirmDialog message="Delete this item?" onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </AdminLayout>
   );

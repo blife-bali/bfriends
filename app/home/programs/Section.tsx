@@ -7,7 +7,7 @@ import { programsData } from "@/lib/programs-data";
 import { Card } from "./index";
 
 export default function Section({ programs = programsData }: { programs?: any[] }) {
-  const [selectedLetter, setSelectedLetter] = useState("");
+  const [selectedProgramKey, setSelectedProgramKey] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isTab, setIsTab] = useState(false);
   const [isCardOpen, setIsCardOpen] = useState(false);
@@ -25,10 +25,12 @@ export default function Section({ programs = programsData }: { programs?: any[] 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const selectedProgram = programs.find((p) => p.letter === selectedLetter) || programs[0];
+  const getProgramKey = (program: any) => program.slug || program.name?.toLowerCase() || "";
+  const getProgramIndicator = (program: any) => program.name?.charAt(0) || "";
+  const selectedProgram = programs.find((p) => getProgramKey(p) === selectedProgramKey) || programs[0];
 
-  const handlePointClick = (letter: string) => {
-    setSelectedLetter(letter);
+  const handlePointClick = (programKey: string) => {
+    setSelectedProgramKey(programKey);
 
     if (isMobile || isTab) {
       setIsCardOpen(true);
@@ -39,7 +41,7 @@ export default function Section({ programs = programsData }: { programs?: any[] 
     setIsCardOpen(false);
 
     if (isMobile || isTab) {
-      setSelectedLetter("");
+      setSelectedProgramKey("");
     }
   };
 
@@ -63,17 +65,17 @@ export default function Section({ programs = programsData }: { programs?: any[] 
         <div className={styles.pointsGrid}>
           {programs.map((program) => (
             <button
-              key={program.letter}
+              key={getProgramKey(program)}
               className={`${styles.pointButton} ${
-                selectedLetter === program.letter ? styles.pointButtonSelected : ""
+                selectedProgramKey === getProgramKey(program) ? styles.pointButtonSelected : ""
               }`}
               style={{
-                left: `${getButtonPosition(program.letter, isMobile, isTab).left}%`,
-                top: `${getButtonPosition(program.letter, isMobile, isTab).top}%`,
+                left: `${getButtonPosition(getProgramIndicator(program), isMobile, isTab).left}%`,
+                top: `${getButtonPosition(getProgramIndicator(program), isMobile, isTab).top}%`,
               }}
-              onClick={() => handlePointClick(program.letter)}
+              onClick={() => handlePointClick(getProgramKey(program))}
             >
-              {program.letter}
+              {getProgramIndicator(program)}
             </button>
           ))}
         </div>

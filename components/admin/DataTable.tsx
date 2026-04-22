@@ -17,7 +17,7 @@ export default function DataTable({ columns, data, onEdit, onDelete }: DataTable
   if (data.length === 0) {
     return (
       <div className="admin-empty">
-        <p>Tidak ada data</p>
+        <p>No data available</p>
       </div>
     );
   }
@@ -30,7 +30,7 @@ export default function DataTable({ columns, data, onEdit, onDelete }: DataTable
             {columns.map((col) => (
               <th key={col.key}>{col.label}</th>
             ))}
-            {(onEdit || onDelete) && <th>Aksi</th>}
+            {(onEdit || onDelete) && <th>Actions</th>}
           </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@ export default function DataTable({ columns, data, onEdit, onDelete }: DataTable
                     )}
                     {onDelete && (
                       <button onClick={() => onDelete(row)} className="admin-btn admin-btn-danger admin-btn-sm">
-                        Hapus
+                        Delete
                       </button>
                     )}
                   </div>

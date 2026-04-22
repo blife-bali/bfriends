@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import type { ProgramData } from "@/lib/programs-data";
-import { programsData } from "@/lib/programs-data";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { ArrowRight, ArrowUpRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
@@ -15,9 +14,10 @@ const EASE = [0.25, 0.1, 0.25, 1] as const;
 
 interface ProgramContentProps {
   program: ProgramData;
+  programs: ProgramData[];
 }
 
-export default function ProgramContent({ program }: ProgramContentProps) {
+export default function ProgramContent({ program, programs }: ProgramContentProps) {
   return (
     <div className={styles.root}>
       {program.philosophy && (
@@ -40,6 +40,7 @@ export default function ProgramContent({ program }: ProgramContentProps) {
         <ProgramNavFooter
           previousSlug={program.previousProgram}
           nextSlug={program.nextProgram}
+          programs={programs}
         />
       )}
     </div>
@@ -112,73 +113,81 @@ function PillarsSection({
   pillars,
   pillarsImage,
 }: {
-  pillars: { title: string; description: string }[];
+  pillars: { step_id?: string; title: string; description: string }[];
   pillarsImage: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.15 });
+  const sortedPillars = [...pillars].sort((a, b) => {
+    const aNum = Number.parseInt(a.step_id || '', 10);
+    const bNum = Number.parseInt(b.step_id || '', 10);
+    const aHas = Number.isFinite(aNum);
+    const bHas = Number.isFinite(bNum);
+    if (aHas && bHas) return aNum - bNum;
+    if (aHas) return -1;
+    if (bHas) return 1;
+    return 0;
+  });
 
   return (
     <section ref={ref} className={styles.pillars} aria-label="The Framework">
       <div className={styles.container}>
         <p className={styles.eyebrow}>02 / The Framework</p>
-        <div className={styles.pillarsSplit}>
-          <div className={styles.pillarsGridCol}>
-            {pillars.map((pillar, i) => (
-              <motion.article
-                key={pillar.title}
-                className={styles.pillarCard}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={{ hidden: {}, visible: {} }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <motion.div
-                  className={styles.pillarBorderT}
-                  initial={{ scaleX: 0 }}
-                  animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: EASE }}
-                />
-                <motion.div
-                  className={styles.pillarBorderR}
-                  initial={{ scaleY: 0 }}
-                  animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
-                  transition={{ duration: 0.6, delay: 0.15 + i * 0.08, ease: EASE }}
-                />
-                <span className={styles.pillarIndexLarge} aria-hidden>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className={styles.pillarContent}>
-                  <motion.h4
-                    className={styles.pillarTitle}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.35 + i * 0.08,
-                      ease: EASE,
-                    }}
-                  >
-                    {pillar.title}
-                  </motion.h4>
-                  <motion.p
-                    className={styles.pillarDesc}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.4 + i * 0.08,
-                      ease: EASE,
-                    }}
-                  >
-                    {pillar.description}
-                  </motion.p>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+        <div className={styles.pillarsGrid}>
+          {sortedPillars.map((pillar, i) => (
+            <motion.article
+              key={`${pillar.title}-${i}`}
+              className={styles.pillarCard}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={{ hidden: {}, visible: {} }}
+              transition={{ delay: i * 0.08 }}
+            >
+              <motion.div
+                className={styles.pillarBorderT}
+                initial={{ scaleX: 0 }}
+                animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: EASE }}
+              />
+              <motion.div
+                className={styles.pillarBorderR}
+                initial={{ scaleY: 0 }}
+                animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 + i * 0.08, ease: EASE }}
+              />
+              <span className={styles.pillarIndexLarge} aria-hidden>
+                {String(Number.parseInt(pillar.step_id || '', 10) || i + 1).padStart(2, "0")}
+              </span>
+              <div className={styles.pillarContent}>
+                <motion.h4
+                  className={styles.pillarTitle}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.35 + i * 0.08,
+                    ease: EASE,
+                  }}
+                >
+                  {pillar.title}
+                </motion.h4>
+                <motion.p
+                  className={styles.pillarDesc}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.4 + i * 0.08,
+                    ease: EASE,
+                  }}
+                >
+                  {pillar.description}
+                </motion.p>
+              </div>
+            </motion.article>
+          ))}
           <motion.div
-            className={styles.pillarsImageCol}
+            className={styles.pillarsImageTile}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
@@ -187,7 +196,7 @@ function PillarsSection({
               src={pillarsImage}
               alt=""
               fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className={styles.pillarsImage}
             />
           </motion.div>
@@ -270,15 +279,17 @@ function ProgramCta({ program }: { program: ProgramData }) {
 function ProgramNavFooter({
   previousSlug,
   nextSlug,
+  programs,
 }: {
   previousSlug?: string;
   nextSlug?: string;
+  programs: ProgramData[];
 }) {
   const previousProgram = previousSlug
-    ? programsData.find((p) => p.name.toLowerCase() === previousSlug)
+    ? programs.find((p) => p.slug === previousSlug)
     : null;
   const nextProgram = nextSlug
-    ? programsData.find((p) => p.name.toLowerCase() === nextSlug)
+    ? programs.find((p) => p.slug === nextSlug)
     : null;
 
   if (!previousProgram && !nextProgram) return null;

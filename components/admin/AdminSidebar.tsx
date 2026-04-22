@@ -9,7 +9,8 @@ const menuItems = [
   { href: '/admin/hero', label: 'Hero', icon: 'image' },
   { href: '/admin/intro', label: 'Intro', icon: 'type' },
   { href: '/admin/why-bfriends', label: 'Why BFriends', icon: 'heart' },
-  { href: '/admin/process', label: 'Process Steps', icon: 'layers' },
+  { href: '/admin/philosophy', label: 'Philosophy', icon: 'book-open', disabled: true },
+  { href: '/admin/process', label: 'Customer Journey', icon: 'layers' },
   { href: '/admin/programs', label: 'Programs', icon: 'zap' },
   { href: '/admin/events', label: 'Events', icon: 'calendar' },
   { href: '/admin/news', label: 'News', icon: 'file-text' },
@@ -54,6 +55,14 @@ export default function AdminSidebar({ isOpen, onClose }: { isOpen?: boolean; on
         {menuItems.map((item, i) => {
           if ('section' in item) {
             return <div key={i} className="admin-sidebar-section">{item.section}</div>;
+          }
+          if (item.disabled) {
+            return (
+              <span key={i} className="admin-sidebar-disabled">
+                {icons[item.icon!]}
+                {item.label}
+              </span>
+            );
           }
           const href = item.href!;
           const isActive = pathname === href || (href !== '/admin/dashboard' && pathname.startsWith(href));

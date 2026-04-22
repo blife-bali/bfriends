@@ -6,8 +6,8 @@ import styles from "./WhyBFriends.module.css";
 import { whyBFriendsData } from "@/lib/whybfriends-data";
 
 export default function WhyBFriends({ cards = whyBFriendsData }: { cards?: any[] }) {
-  const leftColumnCards = cards.filter((_, i) => [0, 2, 4].includes(i));
-  const rightColumnCards = cards.filter((_, i) => [3, 4].includes(i));
+  const leftColumnCards = cards.filter((_, i) => i % 2 === 0);
+  const rightColumnCards = cards.filter((_, i) => i % 2 === 1);
 
   return (
     <section className={styles.section}>

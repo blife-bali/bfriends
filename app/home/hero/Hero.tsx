@@ -29,6 +29,7 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
     <section className={styles.hero}>
       <video
         ref={videoRef}
+        src={videoUrl}
         className={styles.background}
         style={{ filter: `blur(${blurAmount}px)` }}
         autoPlay
@@ -40,9 +41,7 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
           e.currentTarget.play().catch(() => undefined);
         }}
         aria-hidden
-      >
-        <source src={videoUrl} type="video/mp4" />
-      </video>
+      />
       <div className={styles.overlay} aria-hidden />
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>

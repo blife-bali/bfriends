@@ -8,22 +8,20 @@ import ImageUploader from '@/components/admin/ImageUploader';
 import Toast from '@/components/admin/Toast';
 
 interface ProgramStep { id?: number; step_id: string; title: string; description: string; sort_order: number; }
-interface ProgramPillar { id?: number; title: string; description: string; sort_order: number; }
 interface ProgramSession { id?: number; title: string; description: string; image: string; icon: string; sort_order: number; }
 
 interface Program {
   id?: number;
-  letter: string; name: string; slug: string; eyebrow: string; title: string;
+  name: string; slug: string; eyebrow: string; title: string;
   subheading: string; image: string; button_label: string; quote: string;
   philosophy: string; breadcrumb: string; philosophy_image: string;
   pillars_image: string; previous_program: string; next_program: string;
   seo_title: string; seo_description: string;
   sort_order: number; is_active: number;
-  steps: ProgramStep[]; pillars: ProgramPillar[]; sessions: ProgramSession[];
+  steps: ProgramStep[]; sessions: ProgramSession[];
 }
 
 const emptyStep: ProgramStep = { step_id: '', title: '', description: '', sort_order: 0 };
-const emptyPillar: ProgramPillar = { title: '', description: '', sort_order: 0 };
 const emptySession: ProgramSession = { title: '', description: '', image: '', icon: '', sort_order: 0 };
 
 export default function ProgramDetailPage() {
@@ -32,11 +30,11 @@ export default function ProgramDetailPage() {
   const isNew = params.id === 'new';
   const [tab, setTab] = useState('general');
   const [program, setProgram] = useState<Program>({
-    letter: '', name: '', slug: '', eyebrow: '', title: '', subheading: '',
+    name: '', slug: '', eyebrow: '', title: '', subheading: '',
     image: '', button_label: '', quote: '', philosophy: '', breadcrumb: '',
     philosophy_image: '', pillars_image: '', previous_program: '', next_program: '',
     seo_title: '', seo_description: '',
-    sort_order: 0, is_active: 1, steps: [], pillars: [], sessions: [],
+    sort_order: 0, is_active: 1, steps: [], sessions: [],
   });
   const [username, setUsername] = useState('');
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
@@ -53,27 +51,26 @@ export default function ProgramDetailPage() {
     const res = await fetch(`/api/admin/programs/${params.id}`);
     if (res.ok) {
       const data = await res.json();
-      setProgram({ ...data, steps: data.steps || [], pillars: data.pillars || [], sessions: data.sessions || [] });
+      setProgram({ ...data, steps: data.steps || [], sessions: data.sessions || [] });
     }
   };
 
   const handleSave = async () => {
     const url = isNew ? '/api/admin/programs' : `/api/admin/programs/${params.id}`;
     const method = isNew ? 'POST' : 'PUT';
-    const { steps, pillars, sessions, ...data } = program;
-    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(program) });
     if (res.ok) {
       const saved = await res.json();
       setToast({ message: 'Program saved!', type: 'success' });
       if (isNew && saved.id) router.push(`/admin/programs/${saved.id}`);
     } else {
-      setToast({ message: 'Gagal menyimpan', type: 'error' });
+      setToast({ message: 'Failed to save', type: 'error' });
     }
   };
 
   const handleDelete = async () => {
     if (!program.id || isNew) return;
-    if (!confirm('Hapus program ini?')) return;
+    if (!confirm('Delete this program?')) return;
     await fetch(`/api/admin/programs/${program.id}`, { method: 'DELETE' });
     router.push('/admin/programs');
   };
@@ -87,13 +84,6 @@ export default function ProgramDetailPage() {
     const s = [...program.steps]; s[idx] = { ...s[idx], [field]: value }; setProgram({ ...program, steps: s });
   };
 
-  // Pillars
-  const addPillar = () => setProgram({ ...program, pillars: [...program.pillars, { ...emptyPillar }] });
-  const removePillar = (idx: number) => { const p = [...program.pillars]; p.splice(idx, 1); setProgram({ ...program, pillars: p }); };
-  const updatePillar = (idx: number, field: string, value: any) => {
-    const p = [...program.pillars]; p[idx] = { ...p[idx], [field]: value }; setProgram({ ...program, pillars: p });
-  };
-
   // Sessions
   const addSession = () => setProgram({ ...program, sessions: [...program.sessions, { ...emptySession }] });
   const removeSession = (idx: number) => { const s = [...program.sessions]; s.splice(idx, 1); setProgram({ ...program, sessions: s }); };
@@ -105,8 +95,7 @@ export default function ProgramDetailPage() {
     { key: 'general', label: 'General' },
     { key: 'seo', label: 'SEO' },
     { key: 'philosophy', label: 'Philosophy' },
-    { key: 'steps', label: 'Steps' },
-    { key: 'pillars', label: 'Pillars' },
+    { key: 'steps', label: 'Pillars' },
     { key: 'sessions', label: 'Sessions' },
   ];
 
@@ -122,7 +111,6 @@ export default function ProgramDetailPage() {
         {tab === 'general' && (
           <div>
             <div className="admin-form-row">
-              <FormField label="Letter" name="letter" value={program.letter} onChange={(v: string) => update('letter', v)} placeholder="F" />
               <FormField label="Name" name="name" value={program.name} onChange={(v: string) => update('name', v)} required />
             </div>
             <div className="admin-form-row">
@@ -157,10 +145,6 @@ export default function ProgramDetailPage() {
               <label>Philosophy Image</label>
               <ImageUploader value={program.philosophy_image || ''} onChange={(url: string) => update('philosophy_image', url)} />
             </div>
-            <div className="admin-form-group">
-              <label>Pillars Image</label>
-              <ImageUploader value={program.pillars_image || ''} onChange={(url: string) => update('pillars_image', url)} />
-            </div>
             <div className="admin-form-row">
               <FormField label="Previous Program" name="previous_program" value={program.previous_program || ''} onChange={(v: string) => update('previous_program', v)} />
               <FormField label="Next Program" name="next_program" value={program.next_program || ''} onChange={(v: string) => update('next_program', v)} />
@@ -170,9 +154,13 @@ export default function ProgramDetailPage() {
 
         {tab === 'steps' && (
           <div>
+            <div className="admin-form-group" style={{ marginBottom: 16 }}>
+              <label>Pillars Image</label>
+              <ImageUploader value={program.pillars_image || ''} onChange={(url: string) => update('pillars_image', url)} />
+            </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-              <strong style={{ color: 'var(--admin-dark-blue)' }}>Program Steps</strong>
-              <button onClick={addStep} className="admin-btn admin-btn-secondary admin-btn-sm">+ Step</button>
+              <strong style={{ color: 'var(--admin-dark-blue)' }}>Program Pillars</strong>
+              <button onClick={addStep} className="admin-btn admin-btn-secondary admin-btn-sm">+ Pillar</button>
             </div>
             {program.steps.map((step, idx) => (
               <div key={idx} style={{ background: 'var(--admin-cream-2)', padding: 16, borderRadius: 8, marginBottom: 10 }}>
@@ -185,26 +173,6 @@ export default function ProgramDetailPage() {
                 </div>
                 <textarea style={{ width: '100%', padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4, minHeight: 60, fontFamily: 'var(--font-sans)', fontSize: 14 }}
                   placeholder="Description" value={step.description} onChange={(e) => updateStep(idx, 'description', e.target.value)} />
-              </div>
-            ))}
-          </div>
-        )}
-
-        {tab === 'pillars' && (
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-              <strong style={{ color: 'var(--admin-dark-blue)' }}>Program Pillars</strong>
-              <button onClick={addPillar} className="admin-btn admin-btn-secondary admin-btn-sm">+ Pillar</button>
-            </div>
-            {program.pillars.map((pillar, idx) => (
-              <div key={idx} style={{ background: 'var(--admin-cream-2)', padding: 16, borderRadius: 8, marginBottom: 10 }}>
-                <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
-                  <input style={{ flex: 2, padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4 }}
-                    placeholder="Title" value={pillar.title} onChange={(e) => updatePillar(idx, 'title', e.target.value)} />
-                  <button onClick={() => removePillar(idx)} className="admin-btn admin-btn-danger admin-btn-sm">X</button>
-                </div>
-                <textarea style={{ width: '100%', padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4, minHeight: 60, fontFamily: 'var(--font-sans)', fontSize: 14 }}
-                  placeholder="Description" value={pillar.description} onChange={(e) => updatePillar(idx, 'description', e.target.value)} />
               </div>
             ))}
           </div>
@@ -236,9 +204,9 @@ export default function ProgramDetailPage() {
         )}
 
         <div style={{ marginTop: 24, display: 'flex', gap: 10 }}>
-          <button onClick={handleSave} className="admin-btn admin-btn-primary">Simpan Program</button>
-          {!isNew && <button onClick={handleDelete} className="admin-btn admin-btn-danger">Hapus Program</button>}
-          <button onClick={() => router.push('/admin/programs')} className="admin-btn admin-btn-outline">Kembali</button>
+          <button onClick={handleSave} className="admin-btn admin-btn-primary">Save Program</button>
+          {!isNew && <button onClick={handleDelete} className="admin-btn admin-btn-danger">Delete Program</button>}
+          <button onClick={() => router.push('/admin/programs')} className="admin-btn admin-btn-outline">Back</button>
         </div>
       </div>
 
