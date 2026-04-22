@@ -16,9 +16,10 @@ interface WhyCard {
   image: string;
   sort_order: number;
   is_active: number;
+  hidden_in_home: number;
 }
 
-const empty: WhyCard = { point: '', subpoint: '', image: '', sort_order: 0, is_active: 1 };
+const empty: WhyCard = { point: '', subpoint: '', image: '', sort_order: 0, is_active: 1, hidden_in_home: 0 };
 
 export default function WhyBFriendsPage() {
   const [items, setItems] = useState<WhyCard[]>([]);
@@ -51,7 +52,7 @@ export default function WhyBFriendsPage() {
       setEditing(null);
       loadItems();
     } else {
-      setToast({ message: 'Gagal menyimpan', type: 'error' });
+      setToast({ message: 'Failed to save', type: 'error' });
     }
   };
 
@@ -68,13 +69,16 @@ export default function WhyBFriendsPage() {
       <div className="admin-card">
         <div className="admin-card-header">
           <h2>Why BFriends Cards</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Tambah Card</button>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Card</button>
         </div>
         <DataTable
           columns={[
             { key: 'image', label: 'Image', render: (v: string) => v ? <img src={v} alt="" /> : '-' },
             { key: 'point', label: 'Point' },
             { key: 'sort_order', label: 'Order' },
+            { key: 'hidden_in_home', label: 'Home', render: (v: number) => (
+              <span className={`admin-badge ${v ? 'admin-badge-inactive' : 'admin-badge-active'}`}>{v ? 'Hidden' : 'Shown'}</span>
+            )},
             { key: 'is_active', label: 'Status', render: (v: number) => (
               <span className={`admin-badge ${v ? 'admin-badge-active' : 'admin-badge-inactive'}`}>{v ? 'Active' : 'Inactive'}</span>
             )},
@@ -88,7 +92,7 @@ export default function WhyBFriendsPage() {
       {editing && (
         <div className="admin-modal-overlay" onClick={() => setEditing(null)}>
           <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
-            <h3>{editing.id ? 'Edit Card' : 'Tambah Card'}</h3>
+            <h3>{editing.id ? 'Edit Card' : 'Add Card'}</h3>
             <FormField label="Point" name="point" value={editing.point}
               onChange={(v: string) => setEditing({ ...editing, point: v })} required />
             <FormField label="Subpoint" name="subpoint" type="textarea" value={editing.subpoint}
@@ -99,17 +103,19 @@ export default function WhyBFriendsPage() {
             </div>
             <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
               onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
+            <FormField label="Hidden in home?" name="hidden_in_home" type="checkbox" value={!!editing.hidden_in_home}
+              onChange={(v: boolean) => setEditing({ ...editing, hidden_in_home: v ? 1 : 0 })} />
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
             <div className="admin-modal-actions">
-              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Batal</button>
-              <button onClick={handleSave} className="admin-btn admin-btn-primary">Simpan</button>
+              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Cancel</button>
+              <button onClick={handleSave} className="admin-btn admin-btn-primary">Save</button>
             </div>
           </div>
         </div>
       )}
 
-      {deleteTarget && <ConfirmDialog message={`Hapus card "${deleteTarget.point}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
+      {deleteTarget && <ConfirmDialog message={`Delete card "${deleteTarget.point}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </AdminLayout>
   );

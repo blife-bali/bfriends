@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Check,
@@ -24,6 +24,12 @@ interface FriendPoint {
   title: string;
   description: string;
   imageUrl: string;
+}
+
+interface ProgramLink {
+  name: string;
+  slug: string;
+  image?: string | null;
 }
 
 const friendPoints: FriendPoint[] = [
@@ -80,7 +86,7 @@ function LocationSection() {
 }
 
 // Subscription Section Component
-function SubscriptionSection() {
+function SubscriptionSection({ programs }: { programs: ProgramLink[] }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -119,11 +125,11 @@ function SubscriptionSection() {
       {/* Marquee Section - Two Lines */}
       <div className={subscribeStyles.marqueeContainer}>
         <div className={`${subscribeStyles.marqueeContent} ${subscribeStyles.top}`}>
-          {[...programsData, ...programsData].map((program, index) => (
+          {[...programs, ...programs].map((program, index) => (
             <div key={`${program.name}-${index}`} className={subscribeStyles.marqueeItem}>
               <div className={subscribeStyles.marqueeImageContainer}>
                 <Image 
-                  src={program.image} 
+                  src={program.image || "/images/programs/D.webp"} 
                   alt={program.name}
                   width={160}
                   height={96}
@@ -136,11 +142,11 @@ function SubscriptionSection() {
           ))}
         </div>
         <div className={`${subscribeStyles.marqueeContent} ${subscribeStyles.bottom}`}>
-          {[...programsData, ...programsData].map((program, index) => (
+          {[...programs, ...programs].map((program, index) => (
             <div key={`${program.name}-${index}`} className={subscribeStyles.marqueeItem}>
               <div className={subscribeStyles.marqueeImageContainer}>
                 <Image 
-                  src={program.image} 
+                  src={program.image || "/images/programs/D.webp"} 
                   alt={program.name}
                   width={160}
                   height={96}
@@ -205,7 +211,7 @@ function SubscriptionSection() {
 }
 
 // Footer Section Component
-function FooterSection() {
+function FooterSection({ programs }: { programs: ProgramLink[] }) {
   return (
     <section className={styles.footerSection}>
       {/* Menu Grid */}
@@ -274,12 +280,11 @@ function FooterSection() {
           <div className={styles.footerPrograms}>
             <h4 className={styles.footerTitle}>Programs</h4>
             <nav>
-              <Link href="/programs/fitness" className={styles.footerLink}>Fitness</Link>
-              <Link href="/programs/restore" className={styles.footerLink}>Restore</Link>
-              <Link href="/programs/integrate" className={styles.footerLink}>Integrate</Link>
-              <Link href="/programs/enhance" className={styles.footerLink}>Enhance</Link>
-              <Link href="/programs/nurture" className={styles.footerLink}>Nurture</Link>
-              <Link href="/programs/dare" className={styles.footerLink}>Dare</Link>
+              {programs.map((program) => (
+                <Link key={program.slug} href={`/programs/${program.slug}`} className={styles.footerLink}>
+                  {program.name}
+                </Link>
+              ))}
             </nav>
           </div>
         </div>
@@ -328,11 +333,40 @@ function FooterSection() {
 
 // Main Footer Component
 export default function Footer() {
+  const [programs, setPrograms] = useState<ProgramLink[]>(
+    programsData.map((program) => ({
+      name: program.name,
+      slug: program.slug,
+      image: program.image,
+    }))
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    const loadPrograms = async () => {
+      try {
+        const res = await fetch('/api/programs');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) return;
+        if (!cancelled) {
+          setPrograms(data);
+        }
+      } catch {
+        // Keep static fallback data.
+      }
+    };
+    loadPrograms();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <footer>
       <LocationSection />
-      <SubscriptionSection />
-      <FooterSection />
+      <SubscriptionSection programs={programs} />
+      <FooterSection programs={programs} />
     </footer>
   );
 }

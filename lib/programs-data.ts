@@ -25,8 +25,8 @@ export interface ProgramSession {
 }
 
 export interface ProgramData {
-  letter: string;
   name: string;
+  slug: string;
   eyebrow: string;
   title: string;
   subheading: string;
@@ -54,8 +54,8 @@ export interface ProgramData {
 
 export const programsData: ProgramData[] = [
   {
-    letter: "F",
     name: "Fitness",
+    slug: "fitness",
     eyebrow: "F · Fitness",
     title: "Intentional movement and body awareness",
     subheading: "Basement | Functional training and guided strength",
@@ -134,8 +134,8 @@ export const programsData: ProgramData[] = [
     nextProgram: "restore",
   },
   {
-    letter: "R",
     name: "Restore",
+    slug: "restore",
     eyebrow: "R · Restore",
     title: "Rest and recovery through nourishment",
     subheading: "1st Floor | BCafé, a place to pause and recharge",
@@ -234,8 +234,8 @@ export const programsData: ProgramData[] = [
     nextProgram: "integrate",
   },
   {
-    letter: "I",
     name: "Integrate",
+    slug: "integrate",
     eyebrow: "I · Integrate",
     title: "Therapeutic body care rooted in professional practice",
     subheading: "2nd Floor | Treatments designed to support balance and recovery",
@@ -334,8 +334,8 @@ export const programsData: ProgramData[] = [
     nextProgram: "enhance",
   },
   {
-    letter: "E",
     name: "Enhance",
+    slug: "enhance",
     eyebrow: "E · Enhance",
     title: "Science led K-Beauty spa care",
     subheading: "3rd Floor | Supporting skin health with clarity and trust",
@@ -434,8 +434,8 @@ export const programsData: ProgramData[] = [
     nextProgram: "nurture",
   },
   {
-    letter: "N",
     name: "Nurture",
+    slug: "nurture",
     eyebrow: "N · Nurture",
     title: "Yoga and barre for breath, alignment, and inner balance",
     subheading: "4th Floor | A space to slow down and turn inward",
@@ -514,8 +514,8 @@ export const programsData: ProgramData[] = [
     nextProgram: "dare",
   },
   {
-    letter: "D",
     name: "Dare",
+    slug: "dare",
     eyebrow: "D · Dare",
     title: "Climbing that invites focus, courage, and gentle challenge",
     subheading: "Wallclimbing | Growth through mindful movement",

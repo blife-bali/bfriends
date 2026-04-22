@@ -73,13 +73,18 @@ CREATE TABLE IF NOT EXISTS bfriends_why_cards (
   image VARCHAR(500) NOT NULL,
   sort_order INT DEFAULT 0,
   is_active TINYINT(1) DEFAULT 1,
+  hidden_in_home TINYINT(1) DEFAULT 0,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+ALTER TABLE bfriends_why_cards
+ADD COLUMN IF NOT EXISTS hidden_in_home TINYINT(1) DEFAULT 0 AFTER is_active;
+
 -- 5. Process steps
 CREATE TABLE IF NOT EXISTS bfriends_process_steps (
   id INT AUTO_INCREMENT PRIMARY KEY,
+  page_key VARCHAR(50) NOT NULL DEFAULT 'customer-journey',
   number VARCHAR(10) NOT NULL,
   title VARCHAR(200) NOT NULL,
   description TEXT NOT NULL,
@@ -89,6 +94,9 @@ CREATE TABLE IF NOT EXISTS bfriends_process_steps (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE bfriends_process_steps
+ADD COLUMN IF NOT EXISTS page_key VARCHAR(50) NOT NULL DEFAULT 'customer-journey' AFTER id;
 
 -- 6. Process subpoints
 CREATE TABLE IF NOT EXISTS bfriends_process_subpoints (
@@ -103,7 +111,6 @@ CREATE TABLE IF NOT EXISTS bfriends_process_subpoints (
 -- 7. Programs
 CREATE TABLE IF NOT EXISTS bfriends_programs (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  letter CHAR(1) NOT NULL,
   name VARCHAR(100) NOT NULL,
   slug VARCHAR(100) NOT NULL UNIQUE,
   eyebrow VARCHAR(200),

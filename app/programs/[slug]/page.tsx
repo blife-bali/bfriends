@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { programsData } from "@/lib/programs-data";
-import { getProgramBySlug, getProgramSlugs } from "@/lib/cms";
+import { getProgramBySlug, getProgramSlugs, getPrograms } from "@/lib/cms";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import ProgramContent from "./ProgramContent";
 
@@ -39,7 +38,7 @@ export default async function ProgramPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const program = await getProgramBySlug(slug);
+  const [program, programs] = await Promise.all([getProgramBySlug(slug), getPrograms()]);
   if (!program) notFound();
 
   const headerImage = program.image ?? "/images/hero-test.png";
@@ -53,7 +52,7 @@ export default async function ProgramPage({
         image={headerImage}
       />
       <main>
-        <ProgramContent program={program} />
+        <ProgramContent program={program} programs={programs} />
       </main>
     </>
   );

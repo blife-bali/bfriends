@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { navColumns } from "@/lib/nav-config";
+import { navColumns, programsNavItems } from "@/lib/nav-config";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import styles from "./Navbar.module.css";
 
@@ -17,6 +17,7 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<ActiveMenuId>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isInteractionEnabled, setIsInteractionEnabled] = useState(false);
+  const [programItems, setProgramItems] = useState<{ label: string; href: string; image?: string }[]>([...programsNavItems]);
   const navRef = useRef<HTMLDivElement>(null);
   const mobileSidebarRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +25,32 @@ export default function Navbar() {
     const timer = setTimeout(() => setIsInteractionEnabled(true), 2000);
     return () => clearTimeout(timer);
   }, [pathname]);
+
+  useEffect(() => {
+    let cancelled = false;
+    const loadPrograms = async () => {
+      try {
+        const res = await fetch('/api/programs');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!Array.isArray(data)) return;
+        const items = data.map((p: { name: string; slug: string; image?: string | null }) => ({
+          label: p.name,
+          href: `/programs/${p.slug}`,
+          image: p.image || undefined,
+        }));
+        if (!cancelled && items.length > 0) {
+          setProgramItems(items);
+        }
+      } catch {
+        // Keep static fallback from nav-config.
+      }
+    };
+    loadPrograms();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -170,7 +197,7 @@ export default function Navbar() {
 
           {activeMenu !== null && !isMobileMenuOpen && (
             <div className={styles.dropdown}>
-              {(navColumns.find((c) => c.id === activeMenu))?.items.map((item) => (
+              {(activeMenu === "programs" ? programItems : (navColumns.find((c) => c.id === activeMenu)?.items || [])).map((item) => (
                 <div key={item.href} className={styles.linkContainer}>
                   <Link
                     href={item.href}
@@ -226,7 +253,7 @@ export default function Navbar() {
                   {col.title}
                 </button>
                 <div className={styles.mobileSubmenuDropdown}>
-                  {col.items.map((item) => (
+                  {(col.id === "programs" ? programItems : col.items).map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}

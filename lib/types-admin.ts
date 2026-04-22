@@ -27,6 +27,7 @@ export interface WhyCard {
   image: string;
   sort_order: number;
   is_active: number;
+  hidden_in_home?: number;
 }
 
 export interface ProcessStep {
@@ -50,7 +51,6 @@ export interface ProcessSubpoint {
 
 export interface Program {
   id: number;
-  letter: string;
   name: string;
   slug: string;
   eyebrow: string | null;

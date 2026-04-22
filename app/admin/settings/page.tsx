@@ -88,7 +88,7 @@ export default function SettingsPage() {
             <FormField label="Key" name="newKey" value={newKey} onChange={setNewKey} placeholder="e.g. site_name" />
             <FormField label="Value" name="newValue" value={newValue} onChange={setNewValue} placeholder="e.g. BFriends" />
           </div>
-          <button onClick={handleAddSetting} className="admin-btn admin-btn-primary">+ Tambah Setting</button>
+          <button onClick={handleAddSetting} className="admin-btn admin-btn-primary">+ Add Setting</button>
         </div>
 
         <div className="admin-table-wrapper">
@@ -97,7 +97,7 @@ export default function SettingsPage() {
               <tr>
                 <th>Key</th>
                 <th>Value</th>
-                <th>Aksi</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -140,11 +140,11 @@ export default function SettingsPage() {
             onChange={(v: string) => setPasswords({ ...passwords, confirm: v })} />
           <button onClick={async () => {
             if (passwords.new !== passwords.confirm) {
-              setToast({ message: 'Password tidak cocok', type: 'error' });
+              setToast({ message: 'Passwords do not match', type: 'error' });
               return;
             }
             if (passwords.new.length < 6) {
-              setToast({ message: 'Password minimal 6 karakter', type: 'error' });
+              setToast({ message: 'Password must be at least 6 characters', type: 'error' });
               return;
             }
             const res = await fetch('/api/admin/settings', {
@@ -157,7 +157,7 @@ export default function SettingsPage() {
               setToast({ message: 'Password changed!', type: 'success' });
               setPasswords({ current: '', new: '', confirm: '' });
             } else {
-              setToast({ message: data.error || 'Gagal mengubah password', type: 'error' });
+              setToast({ message: data.error || 'Failed to change password', type: 'error' });
             }
           }} className="admin-btn admin-btn-primary">Change Password</button>
         </div>

@@ -8,7 +8,6 @@ import DataTable from '@/components/admin/DataTable';
 
 interface Program {
   id: number;
-  letter: string;
   name: string;
   slug: string;
   eyebrow: string;
@@ -41,11 +40,10 @@ export default function ProgramsPage() {
       <div className="admin-card">
         <div className="admin-card-header">
           <h2>F.R.I.E.N.D Programs</h2>
-          <Link href="/admin/programs/new" className="admin-btn admin-btn-primary">+ Tambah Program</Link>
+          <Link href="/admin/programs/new" className="admin-btn admin-btn-primary">+ Add Program</Link>
         </div>
         <DataTable
           columns={[
-            { key: 'letter', label: 'Letter' },
             { key: 'name', label: 'Name' },
             { key: 'slug', label: 'Slug' },
             { key: 'sort_order', label: 'Order' },

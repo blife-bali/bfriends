@@ -125,9 +125,9 @@ export async function POST(req: Request) {
       for (let i = 0; i < programsData.length; i++) {
         const p = programsData[i];
         const [res] = await pool.execute(
-          `INSERT INTO bfriends_programs (letter, name, slug, eyebrow, title, subheading, image, button_label, quote, philosophy, breadcrumb, philosophy_image, pillars_image, previous_program, next_program, sort_order)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [p.letter, p.name, p.name.toLowerCase(), p.eyebrow, p.title, p.subheading, p.image, p.buttonLabel, p.quote || null, p.philosophy || null, p.breadcrumb || null, p.philosophyImage || null, p.pillarsImage || null, p.previousProgram || null, p.nextProgram || null, i]
+          `INSERT INTO bfriends_programs (name, slug, eyebrow, title, subheading, image, button_label, quote, philosophy, breadcrumb, philosophy_image, pillars_image, previous_program, next_program, sort_order)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [p.name, p.slug, p.eyebrow, p.title, p.subheading, p.image, p.buttonLabel, p.quote || null, p.philosophy || null, p.breadcrumb || null, p.philosophyImage || null, p.pillarsImage || null, p.previousProgram || null, p.nextProgram || null, i]
         );
         const progId = (res as any).insertId;
 

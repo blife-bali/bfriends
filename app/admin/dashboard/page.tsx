@@ -68,12 +68,12 @@ export default function DashboardPage() {
           <h2>Quick Actions</h2>
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-          <button onClick={() => router.push('/admin/events')} className="admin-btn admin-btn-primary">+ Tambah Event</button>
-          <button onClick={() => router.push('/admin/news')} className="admin-btn admin-btn-secondary">+ Tambah News</button>
+          <button onClick={() => router.push('/admin/events')} className="admin-btn admin-btn-primary">+ Add Event</button>
+          <button onClick={() => router.push('/admin/news')} className="admin-btn admin-btn-secondary">+ Add News</button>
           <button onClick={async () => {
-            if (confirm('Seed data dari file statis ke database?')) {
+            if (confirm('Seed data from static files to the database?')) {
               await fetch('/api/admin/seed', { method: 'POST' });
-              alert('Data berhasil di-seed!');
+              alert('Data seeded successfully!');
             }
           }} className="admin-btn admin-btn-outline">Seed Data</button>
         </div>

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
-import ImageUploader from '@/components/admin/ImageUploader';
+import VideoUploader from '@/components/admin/VideoUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
 
@@ -44,10 +44,12 @@ export default function HeroPage() {
   };
 
   const handleSave = async () => {
+    if (!editing) return;
     const isEdit = !!editing?.id;
     const url = isEdit ? `/api/admin/hero/${editing!.id}` : '/api/admin/hero';
     const method = isEdit ? 'PUT' : 'POST';
-    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editing) });
+    const payload = { ...editing, page: 'home', image_url: null };
+    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     if (res.ok) {
       setToast({ message: isEdit ? 'Hero updated!' : 'Hero created!', type: 'success' });
       setEditing(null);
@@ -74,7 +76,6 @@ export default function HeroPage() {
         </div>
         <DataTable
           columns={[
-            { key: 'page', label: 'Page' },
             { key: 'title', label: 'Title' },
             { key: 'sort_order', label: 'Order' },
             { key: 'is_active', label: 'Status', render: (v: number) => (
@@ -94,9 +95,6 @@ export default function HeroPage() {
           <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
             <h3>{editing.id ? 'Edit Hero' : 'Tambah Hero'}</h3>
             <div className="admin-form-row">
-              <FormField label="Page" name="page" type="select" value={editing.page}
-                onChange={(v: string) => setEditing({ ...editing, page: v })}
-                options={[{ value: 'home', label: 'Home' }, { value: 'about', label: 'About' }, { value: 'community', label: 'Community' }]} />
               <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
                 onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             </div>
@@ -104,11 +102,12 @@ export default function HeroPage() {
               onChange={(v: string) => setEditing({ ...editing, title: v })} required />
             <FormField label="Subtitle" name="subtitle" type="textarea" value={editing.subtitle}
               onChange={(v: string) => setEditing({ ...editing, subtitle: v })} />
-            <FormField label="Video URL" name="video_url" value={editing.video_url}
-              onChange={(v: string) => setEditing({ ...editing, video_url: v })} placeholder="URL video untuk hero background" />
             <div className="admin-form-group">
-              <label>Image</label>
-              <ImageUploader value={editing.image_url} onChange={(url: string) => setEditing({ ...editing, image_url: url })} />
+              <label>Video URL</label>
+              <VideoUploader value={editing.video_url} onChange={(url: string) => setEditing({ ...editing, video_url: url })} />
+            </div>
+            <div className="admin-form-group">
+              <small style={{ color: '#6b7280' }}>Hero hanya digunakan untuk halaman Home.</small>
             </div>
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />

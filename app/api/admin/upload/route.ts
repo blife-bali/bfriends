@@ -3,9 +3,18 @@ import { writeFile } from 'fs/promises';
 import path from 'path';
 import { requireAuth } from '@/lib/auth';
 
-const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const ALLOWED_TYPES = [
+  'image/jpeg',
+  'image/jpg',
+  'image/png',
+  'image/gif',
+  'image/webp',
+  'video/mp4',
+  'video/webm',
+  'video/ogg',
+];
+const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.mp4', '.webm', '.ogv', '.ogg'];
+const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
 
 export async function POST(req: NextRequest) {
   try {
@@ -21,14 +30,14 @@ export async function POST(req: NextRequest) {
 
     if (!ALLOWED_TYPES.includes(file.type)) {
       return NextResponse.json(
-        { error: 'Invalid file type. Only jpg, jpeg, png, gif, and webp images are allowed.' },
+        { error: 'Invalid file type. Only image and mp4/webm/ogg video files are allowed.' },
         { status: 400 }
       );
     }
 
     if (file.size > MAX_FILE_SIZE) {
       return NextResponse.json(
-        { error: 'File size exceeds the 5MB limit.' },
+        { error: 'File size exceeds the 50MB limit.' },
         { status: 400 }
       );
     }

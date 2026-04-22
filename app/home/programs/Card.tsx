@@ -37,7 +37,7 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
           height={640}
           className={styles.cardImage}
           quality={100}
-          priority={program.letter === "F"}
+          priority={program.slug === "fitness"}
           unoptimized={true}
         />
         <div className={styles.cardOverlay} />
@@ -47,7 +47,7 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
       <div className={styles.cardContent}>
         {/* Heading Container */}
         <div className={styles.headingContainer}>
-          <div className={styles.indicator}>{program.letter}</div>
+          <div className={styles.indicator}>{program.name.charAt(0)}</div>
           <h2 className={styles.title}>{program.name}</h2>
         </div>
 
@@ -55,7 +55,7 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
         <div className={styles.bottomContainer}>
           <p className={styles.subheading}>{program.subheading}</p>
           <Button
-            href={`/programs/${program.name.toLowerCase()}`}
+            href={`/programs/${program.slug}`}
             className={styles.cardButton}
             color="var(--color-white-100)"
             showIcon

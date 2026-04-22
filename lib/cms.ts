@@ -30,22 +30,42 @@ export async function getIntroSections() {
   );
 }
 
-export async function getWhyCards() {
-  const dbRows = await tryDb<any>(
-    'SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order',
-    []
-  );
+export async function getWhyCards(includeHiddenInHome = false) {
+  let dbRows: any[] = [];
+  try {
+    const query = includeHiddenInHome
+      ? 'SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order'
+      : 'SELECT * FROM bfriends_why_cards WHERE is_active = 1 AND COALESCE(hidden_in_home, 0) = 0 ORDER BY sort_order';
+    const [rows] = await pool.execute(query);
+    dbRows = rows as any[];
+  } catch {
+    // Fallback for DBs that do not have hidden_in_home yet.
+    dbRows = await tryDb<any>(
+      'SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order',
+      []
+    );
+  }
   if (dbRows.length > 0) return dbRows;
   return whyBFriendsData;
 }
 
-export async function getProcessSteps() {
+export async function getProcessSteps(pageKey: 'home' | 'customer-journey' = 'customer-journey') {
   try {
-    const [rows] = await pool.execute(
-      'SELECT * FROM bfriends_process_steps WHERE is_active = 1 ORDER BY sort_order'
-    );
+    let rows: any;
+    try {
+      [rows] = await pool.execute(
+        'SELECT * FROM bfriends_process_steps WHERE is_active = 1 AND page_key = ? ORDER BY sort_order',
+        [pageKey]
+      );
+    } catch {
+      // Backward compatibility before page_key migration.
+      if (pageKey === 'home') return [];
+      [rows] = await pool.execute(
+        'SELECT * FROM bfriends_process_steps WHERE is_active = 1 ORDER BY sort_order'
+      );
+    }
     const steps = rows as any[];
-    if (steps.length === 0) return processData;
+    if (steps.length === 0) return pageKey === 'customer-journey' ? processData : [];
 
     for (const step of steps) {
       const [subs] = await pool.execute(
@@ -70,16 +90,17 @@ export async function getPrograms() {
 
     for (const prog of programs) {
       const [steps] = await pool.execute(
-        'SELECT step_id as id, title, description as desc FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order',
+        'SELECT id, step_id, title, description, sort_order FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order',
         [prog.id]
       );
-      prog.steps = steps;
-
-      const [pillars] = await pool.execute(
-        'SELECT title, description FROM bfriends_program_pillars WHERE program_id = ? ORDER BY sort_order',
-        [prog.id]
-      );
-      prog.pillars = pillars;
+      const normalizedSteps = (steps as any[]).map((s) => ({
+        id: s.step_id || String(s.id),
+        title: s.title,
+        description: s.description,
+      }));
+      prog.steps = normalizedSteps;
+      // Keep compatibility with ProgramContent expecting pillars; source it from steps.
+      prog.pillars = normalizedSteps.map((s) => ({ step_id: s.id, title: s.title, description: s.description }));
 
       const [sessions] = await pool.execute(
         'SELECT title, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order',
@@ -100,21 +121,21 @@ export async function getProgramBySlug(slug: string) {
       [slug]
     );
     const programs = rows as any[];
-    if (programs.length === 0) return programsData.find(p => p.name.toLowerCase() === slug) || null;
+    if (programs.length === 0) return programsData.find(p => p.slug === slug) || null;
 
     const prog = programs[0];
 
     const [steps] = await pool.execute(
-      'SELECT step_id as id, title, description as desc FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order',
+      'SELECT id, step_id, title, description, sort_order FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order',
       [prog.id]
     );
-    prog.steps = steps;
-
-    const [pillars] = await pool.execute(
-      'SELECT title, description FROM bfriends_program_pillars WHERE program_id = ? ORDER BY sort_order',
-      [prog.id]
-    );
-    prog.pillars = pillars;
+    const normalizedSteps = (steps as any[]).map((s) => ({
+      id: s.step_id || String(s.id),
+      title: s.title,
+      description: s.description,
+    }));
+    prog.steps = normalizedSteps;
+    prog.pillars = normalizedSteps.map((s) => ({ step_id: s.id, title: s.title, description: s.description }));
 
     const [sessions] = await pool.execute(
       'SELECT title, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order',
@@ -132,7 +153,7 @@ export async function getProgramBySlug(slug: string) {
 
     return prog;
   } catch {
-    return programsData.find(p => p.name.toLowerCase() === slug) || null;
+    return programsData.find(p => p.slug === slug) || null;
   }
 }
 
@@ -142,9 +163,9 @@ export async function getProgramSlugs(): Promise<string[]> {
       'SELECT slug FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order'
     );
     const slugs = (rows as any[]).map(r => r.slug);
-    return slugs.length > 0 ? slugs : programsData.map(p => p.name.toLowerCase());
+    return slugs.length > 0 ? slugs : programsData.map(p => p.slug);
   } catch {
-    return programsData.map(p => p.name.toLowerCase());
+    return programsData.map(p => p.slug);
   }
 }
 

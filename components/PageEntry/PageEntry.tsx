@@ -11,6 +11,7 @@ const STARTUP_SEEN_KEY = "bfriends-startup-seen";
 
 export default function PageEntry({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const isAdmin = pathname?.startsWith("/admin") ?? false;
   const { setSoundEnabled, playAmbience } = useSound();
   const [mounted, setMounted] = useState(false);
   const [phase, setPhase] = useState<"loader" | "startup" | "ready">("loader");
@@ -72,11 +73,11 @@ export default function PageEntry({ children }: { children: React.ReactNode }) {
     );
   }
 
-  /* Ready: show page content then footer so hero loads first */
+  /* Ready: show page content then footer so hero loads first (admin CMS has its own chrome) */
   return (
     <>
       {children}
-      <Footer />
+      {!isAdmin && <Footer />}
     </>
   );
 }

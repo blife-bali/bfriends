@@ -16,6 +16,7 @@ const INTRO_IMAGE = "/images/intro.jpg";
 export interface IntroProps {
   headline?: string;
   body?: string;
+  imageUrl?: string;
   showCta?: boolean;
   showImage?: boolean;
 }
@@ -23,6 +24,7 @@ export interface IntroProps {
 export default function Intro({
   headline = DEFAULT_HEADLINE,
   body = DEFAULT_BODY,
+  imageUrl = INTRO_IMAGE,
   showCta = true,
   showImage = true,
 }: IntroProps) {
@@ -65,14 +67,14 @@ export default function Intro({
             <div className={styles.descriptionContainer}>
               <p className={styles.description}>
                 <span className={styles.maskWrap}>
-                  <motion.span
+                  {/* <motion.span
                     className={styles.maskInner}
                     initial={{ y: "100%" }}
                     animate={textInView ? { y: "0%" } : { y: "100%" }}
                     transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 0.61, 0.36, 1] }}
                   >
                     {body}
-                  </motion.span>
+                  </motion.span> */}
                 </span>
               </p>
             </div>
@@ -85,7 +87,7 @@ export default function Intro({
               className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
             >
               <Image
-                src={INTRO_IMAGE}
+                src={imageUrl}
                 alt="BFriends"
                 fill
                 className={styles.sectionImage}
@@ -100,7 +102,7 @@ export default function Intro({
             <h2 className={styles.conclusionTitle}>About BFriends.</h2>
           </div>
           <div className={styles.rightConclusion}>
-            <p className={styles.conclusionText}>{DEFAULT_BODY}</p>
+            <p className={styles.conclusionText}>{body}</p>
             {showCta && (
               <Button
                 href="/about"

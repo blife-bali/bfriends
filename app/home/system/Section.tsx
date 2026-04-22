@@ -11,6 +11,14 @@ import SystemCard from "./Card";
 import styles from "./Section.module.css";
 
 const SYSTEM_IMAGE = "/images/Integrate/DDK09558.jpg";
+const DEFAULT_HEADING = "A clear path to move, recover, and improve.";
+const DEFAULT_BODY = `Your journey at BFriends is designed step by step - starting from your baseline, tracking your
+progress, and adjusting as your body heals.
+
+Each phase builds on the last, creating a structured yet flexible path that responds to your
+needs over time.
+
+You don’t have to do everything at once. You simply begin where you are—and grow from there.`;
 
 export default function SystemSection({ steps = processData }: { steps?: any[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -52,13 +60,21 @@ export default function SystemSection({ steps = processData }: { steps?: any[] }
     return () => observer.disconnect();
   }, []);
 
+  const homeSection = steps?.[0];
+  const heading = homeSection?.title || DEFAULT_HEADING;
+  const imageUrl = homeSection?.image || SYSTEM_IMAGE;
+  const paragraphs = (homeSection?.description || DEFAULT_BODY)
+    .split('\n\n')
+    .map((s: string) => s.trim())
+    .filter(Boolean);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         {/* Title container: eyebrow, title, intro */}
         <div className={styles.titleContainer}>
           <p className={styles.eyebrow}>Customer Journey</p>
-          <h2 className={styles.heading}>A clear path to move, recover, and improve.</h2>
+          <h2 className={styles.heading}>{heading}</h2>
           
         </div>
 
@@ -68,7 +84,7 @@ export default function SystemSection({ steps = processData }: { steps?: any[] }
             className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
           >
             <Image
-              src={SYSTEM_IMAGE}
+              src={imageUrl}
               alt="BFriends system"
               fill
               className={styles.sectionImage}
@@ -83,17 +99,9 @@ export default function SystemSection({ steps = processData }: { steps?: any[] }
             <h2 className={styles.conclusionTitle}>Customer Journey</h2>
           </div>
           <div className={styles.rightConclusion}>
-            <p className={styles.conclusionText}>
-              Your journey at BFriends is designed step by step - starting from your baseline, tracking your
-              progress, and adjusting as your body heals.
-            </p>
-            <p className={styles.conclusionText}>
-              Each phase builds on the last, creating a structured yet flexible path that responds to your
-              needs over time.
-            </p>
-            <p className={styles.conclusionText}>
-              You don’t have to do everything at once. You simply begin where you are—and grow from there.
-            </p>
+            {paragraphs.map((paragraph: string, idx: number) => (
+              <p key={idx} className={styles.conclusionText}>{paragraph}</p>
+            ))}
             <Button
               href="/about/customer-journey"
               className={styles.conclusionButton}
