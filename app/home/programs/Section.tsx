@@ -3,10 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Section.module.css";
-import { programsData } from "@/lib/programs-data";
 import { Card } from "./index";
 
-export default function Section({ programs = programsData }: { programs?: any[] }) {
+export default function Section({ programs = [] }: { programs?: any[] }) {
   const [selectedProgramKey, setSelectedProgramKey] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isTab, setIsTab] = useState(false);

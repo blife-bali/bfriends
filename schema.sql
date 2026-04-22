@@ -257,3 +257,39 @@ CREATE TABLE IF NOT EXISTS bfriends_charm_usage (
   sort_order INT DEFAULT 0,
   is_active TINYINT(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 19. Core beliefs (philosophy page)
+CREATE TABLE IF NOT EXISTS bfriends_core_beliefs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  body TEXT NOT NULL,
+  sort_order INT DEFAULT 0,
+  is_active TINYINT(1) DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO bfriends_core_beliefs (title, body, sort_order, is_active) VALUES
+  ('Intentionality', 'Movement without purpose is labor. Every rep is calculated.', 1, 1),
+  ('Sustainability', 'Rhythm over burnout. A loop, not a crash.', 2, 1),
+  ('Integration', 'Skin reflects gut; muscle supports mind. The whole system.', 3, 1);
+
+-- 20. BLife ecosystem items (philosophy page)
+CREATE TABLE IF NOT EXISTS bfriends_ecosystem_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  description TEXT NOT NULL,
+  url VARCHAR(500),
+  sort_order INT DEFAULT 0,
+  is_active TINYINT(1) DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO bfriends_ecosystem_items (name, description, url, sort_order, is_active) VALUES
+  ('BNesta', 'Sanctuary. Private villas designed for quiet living and the restoration of personal rhythm.', 'https://bnesta.id', 1, 1),
+  ('BLive', 'Connection. Long-stay environments where daily routine meets shared community.', 'https://blive.id', 2, 1),
+  ('BWork', 'Focus. Calm, curated atmospheres crafted for creativity and deep work.', 'https://bwork.id', 3, 1),
+  ('BFriends', 'Vitality. The heartbeat of movement, recovery, and daily wellness.', 'https://bfriends.id', 4, 1),
+  ('Alam Kulkul', 'Heritage. A retreat rooted in the wisdom of Balinese nature and culture.', 'https://alamkulkul.com', 5, 1),
+  ('Nulook', 'Precision. Aesthetic science approached with medical responsibility and care.', 'https://nulook.co.id', 6, 1);

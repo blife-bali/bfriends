@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import EventCard from "@/components/EventCard/EventCard";
-import { eventData } from "@/lib/event-data";
 import styles from "./EventsJournal.module.css";
 
 const SORT_OPTIONS = [
@@ -20,7 +19,7 @@ function sortEvents(items: any[], order: "newest" | "oldest"): any[] {
   return copy;
 }
 
-export default function EventsContent({ initialEvents = eventData }: { initialEvents?: any[] }) {
+export default function EventsContent({ initialEvents = [] }: { initialEvents?: any[] }) {
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");

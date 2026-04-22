@@ -13,7 +13,11 @@ import {
   getIntroByPage,
   getWhyCards,
   getPhilosophySectionByKey,
+  getCoreBeliefs,
+  getEcosystemItems,
 } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("philosophy");
@@ -30,12 +34,14 @@ const DEFAULT_HEADER = {
 };
 
 export default async function PhilosophyPage() {
-  const [pageHeader, intro, whyCards, manifesto, integratedSelf] = await Promise.all([
+  const [pageHeader, intro, whyCards, manifesto, integratedSelf, coreBeliefs, ecosystemItems] = await Promise.all([
     getPageHeader("philosophy"),
     getIntroByPage("home"),
     getWhyCards(true),
     getPhilosophySectionByKey("manifesto"),
     getPhilosophySectionByKey("integrated_self"),
+    getCoreBeliefs(),
+    getEcosystemItems(),
   ]);
 
   const header = {
@@ -62,13 +68,13 @@ export default async function PhilosophyPage() {
         headline={manifesto?.headline}
         body={manifesto?.body}
       />
-      <CoreBeliefs />
+      <CoreBeliefs beliefs={coreBeliefs} />
       <IntegratedSelf
         headline={integratedSelf?.headline}
         body={integratedSelf?.body}
         image={integratedSelf?.image}
       />
-      <BLifeEcosystem />
+      <BLifeEcosystem items={ecosystemItems} />
     </main>
   );
 }

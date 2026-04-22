@@ -10,6 +10,8 @@ const menuItems = [
   { href: '/admin/intro', label: 'Intro', icon: 'type' },
   { href: '/admin/why-bfriends', label: 'Why BFriends', icon: 'heart' },
   { href: '/admin/philosophy', label: 'Philosophy', icon: 'book-open', disabled: true },
+  { href: '/admin/core-beliefs', label: 'Core Beliefs', icon: 'heart' },
+  { href: '/admin/ecosystem', label: 'BLife Ecosystem', icon: 'layers' },
   { href: '/admin/process', label: 'Customer Journey', icon: 'layers' },
   { href: '/admin/programs', label: 'Programs', icon: 'zap' },
   { href: '/admin/events', label: 'Events', icon: 'calendar' },

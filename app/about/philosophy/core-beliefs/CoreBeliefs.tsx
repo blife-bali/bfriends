@@ -4,28 +4,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./CoreBeliefs.module.css";
 
-const BELIEFS = [
-  {
-    id: 1,
-    index: "01",
-    title: "Intentionality",
-    body: "Movement without purpose is labor. Every rep is calculated.",
-  },
-  {
-    id: 2,
-    index: "02",
-    title: "Sustainability",
-    body: "Rhythm over burnout. A loop, not a crash.",
-  },
-  {
-    id: 3,
-    index: "03",
-    title: "Integration",
-    body: "Skin reflects gut; muscle supports mind. The whole system.",
-  },
-];
+interface Belief {
+  id: number | string;
+  title: string;
+  body: string;
+}
 
-export default function CoreBeliefs() {
+export default function CoreBeliefs({ beliefs = [] }: { beliefs?: Belief[] }) {
+  const items = beliefs;
+  if (items.length === 0) return null;
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.15 });
 
@@ -34,7 +21,7 @@ export default function CoreBeliefs() {
       <div className={styles.container}>
         <p className={styles.eyebrow}>Core Beliefs</p>
         <div className={styles.grid}>
-          {BELIEFS.map((item, i) => (
+          {items.map((item, i) => (
             <motion.article
               key={item.id}
               className={styles.card}
@@ -53,7 +40,7 @@ export default function CoreBeliefs() {
                 animate={inView ? { opacity: 0.06 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                {item.index}
+                {String(i + 1).padStart(2, "0")}
               </motion.span>
               <motion.div
                 className={styles.borderTop}

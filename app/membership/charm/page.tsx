@@ -4,6 +4,8 @@ import CharmContent from "./CharmContent";
 import styles from "./Charm.module.css";
 import { getPageSeo, getCharmTiers, getCharmUsage, getPageHeader } from "@/lib/cms";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("charm");
   return {

@@ -1,17 +1,11 @@
-import { programsData } from "./programs-data";
-
 /** About BFriends links. */
 export const aboutNavItems = [
   { label: "Our Philosophy", href: "/about/philosophy" },
   { label: "Customer Journey", href: "/about/customer-journey" },
 ] as const;
 
-/** Programs: dynamic route /programs/[slug]. */
-export const programsNavItems = programsData.map((p) => ({
-  label: p.name,
-  href: `/programs/${p.name.toLowerCase()}`,
-  image: p.image,
-}));
+/** Programs: filled at runtime from /api/programs. */
+export const programsNavItems: { label: string; href: string; image?: string }[] = [];
 
 /** Membership links. */
 export const membershipNavItems = [

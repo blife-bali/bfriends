@@ -35,7 +35,19 @@ export async function PUT(
 
     const { id } = await params;
     const body = await req.json();
-    const { slug, title, excerpt, content, image, category, sort_order, is_active } = body;
+    const {
+      slug,
+      name,
+      ecosystem,
+      timestamp,
+      author,
+      text,
+      image,
+      seo_title,
+      seo_description,
+      sort_order,
+      is_active,
+    } = body;
 
     const [existing] = await pool.execute(
       'SELECT id FROM bfriends_news WHERE id = ?',
@@ -46,8 +58,21 @@ export async function PUT(
     }
 
     await pool.execute(
-      'UPDATE bfriends_news SET slug = ?, title = ?, excerpt = ?, content = ?, image = ?, category = ?, sort_order = ?, is_active = ? WHERE id = ?',
-      [slug, title, excerpt || null, content || null, image || null, category || null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
+      'UPDATE bfriends_news SET slug = ?, name = ?, ecosystem = ?, timestamp = ?, author = ?, text = ?, image = ?, seo_title = ?, seo_description = ?, sort_order = ?, is_active = ? WHERE id = ?',
+      [
+        slug ?? null,
+        name ?? null,
+        ecosystem ?? 'BFriends',
+        timestamp ?? null,
+        author ?? null,
+        text ?? null,
+        image ?? null,
+        seo_title ?? null,
+        seo_description ?? null,
+        sort_order ?? 0,
+        is_active ?? 1,
+        id,
+      ]
     );
 
     const [updated] = await pool.execute(

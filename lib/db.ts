@@ -15,7 +15,7 @@ function createPool(): Pool {
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'bfriends_cms',
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: 60,
     maxIdle: 2,
     idleTimeout: 60_000,
     queueLimit: 0,

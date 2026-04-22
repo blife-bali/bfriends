@@ -4,6 +4,8 @@ import PassportContent from "@/app/membership/bfriends-passport/PassportContent"
 import styles from "./BfriendsPassport.module.css";
 import { getPageSeo, getMembershipContent, getPageHeader } from "@/lib/cms";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("bfriends-passport");
   return {

@@ -6,7 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
-import { processData } from "@/lib/process-data";
 import SystemCard from "./Card";
 import styles from "./Section.module.css";
 
@@ -20,7 +19,7 @@ needs over time.
 
 You don’t have to do everything at once. You simply begin where you are—and grow from there.`;
 
-export default function SystemSection({ steps = processData }: { steps?: any[] }) {
+export default function SystemSection({ steps = [] }: { steps?: any[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     startIndex: 0,
     align: "center",

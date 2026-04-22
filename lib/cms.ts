@@ -1,52 +1,34 @@
 import pool from '@/lib/db';
-import { programsData } from './programs-data';
-import { eventData } from './event-data';
-import { newsData } from './news-data';
-import { processData } from './process-data';
-import { whyBFriendsData } from './whybfriends-data';
 
-// Helper: try DB, fallback to static data
-async function tryDb<T>(query: string, fallback: T[]): Promise<T[]> {
+// Helper: run query, return [] on error
+async function tryDb<T>(query: string): Promise<T[]> {
   try {
     const [rows] = await pool.execute(query);
-    const results = rows as T[];
-    return results.length > 0 ? results : fallback;
+    return rows as T[];
   } catch {
-    return fallback;
+    return [];
   }
 }
 
 export async function getHeroSections() {
-  return tryDb<any>(
-    'SELECT * FROM bfriends_hero_sections WHERE is_active = 1 ORDER BY sort_order',
-    [{ id: 1, page: 'home', title: 'Welcome to BFriends', subtitle: 'Your wellness journey starts here', video_url: '/videos/bfriends-hero.mp4', image_url: '/images/hero/hero-bg.jpg', sort_order: 0 }]
-  );
+  return tryDb<any>('SELECT * FROM bfriends_hero_sections WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getIntroSections() {
-  return tryDb<any>(
-    'SELECT * FROM bfriends_intro_sections WHERE is_active = 1 ORDER BY sort_order',
-    [{ id: 1, page: 'home', headline: 'Where Wellness Becomes a Way of Life', body: 'BFriends is a precision-driven wellness ecosystem.', image_url: null, show_cta: 1, sort_order: 0 }]
-  );
+  return tryDb<any>('SELECT * FROM bfriends_intro_sections WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getWhyCards(includeHiddenInHome = false) {
-  let dbRows: any[] = [];
   try {
     const query = includeHiddenInHome
       ? 'SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order'
       : 'SELECT * FROM bfriends_why_cards WHERE is_active = 1 AND COALESCE(hidden_in_home, 0) = 0 ORDER BY sort_order';
     const [rows] = await pool.execute(query);
-    dbRows = rows as any[];
+    return rows as any[];
   } catch {
     // Fallback for DBs that do not have hidden_in_home yet.
-    dbRows = await tryDb<any>(
-      'SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order',
-      []
-    );
+    return tryDb<any>('SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order');
   }
-  if (dbRows.length > 0) return dbRows;
-  return whyBFriendsData;
 }
 
 export async function getProcessSteps(pageKey: 'home' | 'customer-journey' = 'customer-journey') {
@@ -65,7 +47,6 @@ export async function getProcessSteps(pageKey: 'home' | 'customer-journey' = 'cu
       );
     }
     const steps = rows as any[];
-    if (steps.length === 0) return pageKey === 'customer-journey' ? processData : [];
 
     for (const step of steps) {
       const [subs] = await pool.execute(
@@ -76,7 +57,7 @@ export async function getProcessSteps(pageKey: 'home' | 'customer-journey' = 'cu
     }
     return steps;
   } catch {
-    return processData;
+    return [];
   }
 }
 
@@ -86,7 +67,6 @@ export async function getPrograms() {
       'SELECT * FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order'
     );
     const programs = rows as any[];
-    if (programs.length === 0) return programsData;
 
     for (const prog of programs) {
       const [steps] = await pool.execute(
@@ -110,7 +90,7 @@ export async function getPrograms() {
     }
     return programs;
   } catch {
-    return programsData;
+    return [];
   }
 }
 
@@ -121,7 +101,7 @@ export async function getProgramBySlug(slug: string) {
       [slug]
     );
     const programs = rows as any[];
-    if (programs.length === 0) return programsData.find(p => p.slug === slug) || null;
+    if (programs.length === 0) return null;
 
     const prog = programs[0];
 
@@ -153,7 +133,7 @@ export async function getProgramBySlug(slug: string) {
 
     return prog;
   } catch {
-    return programsData.find(p => p.slug === slug) || null;
+    return null;
   }
 }
 
@@ -162,20 +142,17 @@ export async function getProgramSlugs(): Promise<string[]> {
     const [rows] = await pool.execute(
       'SELECT slug FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order'
     );
-    const slugs = (rows as any[]).map(r => r.slug);
-    return slugs.length > 0 ? slugs : programsData.map(p => p.slug);
+    return (rows as any[]).map(r => r.slug);
   } catch {
-    return programsData.map(p => p.slug);
+    return [];
   }
 }
 
 export async function getEvents() {
   const rows = await tryDb<any>(
-    'SELECT * FROM bfriends_events WHERE is_active = 1 ORDER BY sort_order',
-    []
+    'SELECT * FROM bfriends_events WHERE is_active = 1 ORDER BY sort_order'
   );
-  const data = rows.length > 0 ? rows : eventData;
-  return (data as any[]).map((e) => ({
+  return rows.map((e) => ({
     ...e,
     date: e.date ?? e.event_date,
     time: e.time ?? e.event_time,
@@ -195,17 +172,16 @@ export async function getEventBySlug(slug: string) {
       item.time = item.event_time;
       return item;
     }
-    return eventData.find(e => e.slug === slug) || null;
+    return null;
   } catch {
-    return eventData.find(e => e.slug === slug) || null;
+    return null;
   }
 }
 
 export async function getNews() {
   return tryDb<any>(
-    'SELECT * FROM bfriends_news WHERE is_active = 1 ORDER BY sort_order',
-    []
-  ).then(r => r.length > 0 ? r : newsData);
+    'SELECT * FROM bfriends_news WHERE is_active = 1 ORDER BY sort_order'
+  );
 }
 
 export async function getNewsBySlug(slug: string) {
@@ -215,25 +191,18 @@ export async function getNewsBySlug(slug: string) {
       [slug]
     );
     const items = rows as any[];
-    if (items.length > 0) return items[0];
-    return newsData.find(n => n.slug === slug) || null;
+    return items.length > 0 ? items[0] : null;
   } catch {
-    return newsData.find(n => n.slug === slug) || null;
+    return null;
   }
 }
 
 export async function getPageHeaders() {
-  return tryDb<any>(
-    'SELECT * FROM bfriends_page_headers',
-    []
-  );
+  return tryDb<any>('SELECT * FROM bfriends_page_headers');
 }
 
 export async function getPhilosophySections() {
-  return tryDb<any>(
-    'SELECT * FROM bfriends_philosophy_sections WHERE is_active = 1 ORDER BY sort_order',
-    []
-  );
+  return tryDb<any>('SELECT * FROM bfriends_philosophy_sections WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getPageSeo(pageKey: string): Promise<{ seo_title: string; seo_description: string }> {
@@ -294,15 +263,23 @@ export async function getPageHeader(pageKey: string) {
 }
 
 export async function getMembershipContent() {
-  return tryDb<any>('SELECT * FROM bfriends_membership_content WHERE is_active = 1', []);
+  return tryDb<any>('SELECT * FROM bfriends_membership_content WHERE is_active = 1');
 }
 
 export async function getCharmTiers() {
-  return tryDb<any>('SELECT * FROM bfriends_charm_tiers WHERE is_active = 1 ORDER BY sort_order', []);
+  return tryDb<any>('SELECT * FROM bfriends_charm_tiers WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getCharmUsage() {
-  return tryDb<any>('SELECT * FROM bfriends_charm_usage WHERE is_active = 1 ORDER BY sort_order', []);
+  return tryDb<any>('SELECT * FROM bfriends_charm_usage WHERE is_active = 1 ORDER BY sort_order');
+}
+
+export async function getCoreBeliefs() {
+  return tryDb<any>('SELECT * FROM bfriends_core_beliefs WHERE is_active = 1 ORDER BY sort_order');
+}
+
+export async function getEcosystemItems() {
+  return tryDb<any>('SELECT * FROM bfriends_ecosystem_items WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getSiteSettings() {

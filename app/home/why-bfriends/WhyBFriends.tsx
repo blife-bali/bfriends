@@ -3,9 +3,8 @@
 import Button from "@/components/ui/Button/Button";
 import WhyCard from "./WhyCard";
 import styles from "./WhyBFriends.module.css";
-import { whyBFriendsData } from "@/lib/whybfriends-data";
 
-export default function WhyBFriends({ cards = whyBFriendsData }: { cards?: any[] }) {
+export default function WhyBFriends({ cards = [] }: { cards?: any[] }) {
   const leftColumnCards = cards.filter((_, i) => i % 2 === 0);
   const rightColumnCards = cards.filter((_, i) => i % 2 === 1);
 

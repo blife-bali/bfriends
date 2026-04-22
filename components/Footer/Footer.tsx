@@ -14,7 +14,6 @@ import Image from "next/image";
 import styles from "./Footer.module.css";
 import locationStyles from "./Location.module.css";
 import subscribeStyles from "./Subscribe.module.css";
-import { programsData } from "@/lib/programs-data";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site-contact";
 
 import Button from "@/components/ui/Button/Button";
@@ -333,13 +332,7 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
 
 // Main Footer Component
 export default function Footer() {
-  const [programs, setPrograms] = useState<ProgramLink[]>(
-    programsData.map((program) => ({
-      name: program.name,
-      slug: program.slug,
-      image: program.image,
-    }))
-  );
+  const [programs, setPrograms] = useState<ProgramLink[]>([]);
 
   useEffect(() => {
     let cancelled = false;

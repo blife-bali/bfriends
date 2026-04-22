@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getNewsBySlug, getNews } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import ShareBlock from "@/components/ShareBlock/ShareBlock";
 import styles from "./Article.module.css";

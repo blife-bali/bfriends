@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import NewsCard from "@/components/NewsCard/NewsCard";
-import { newsData } from "@/lib/news-data";
 import styles from "./NewsJournal.module.css";
 
 const SORT_OPTIONS = [
@@ -20,7 +19,7 @@ function sortNews(items: any[], order: "newest" | "oldest"): any[] {
   return copy;
 }
 
-export default function NewsContent({ initialNews = newsData }: { initialNews?: any[] }) {
+export default function NewsContent({ initialNews = [] }: { initialNews?: any[] }) {
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");

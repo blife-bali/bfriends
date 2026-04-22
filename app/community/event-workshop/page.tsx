@@ -3,6 +3,8 @@ import PageHeader from "@/components/PageHeader/PageHeader";
 import EventsContent from "./EventsContent";
 import { getPageSeo, getEvents, getPageHeader } from "@/lib/cms";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("event-workshop");
   return {

@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProgramBySlug, getProgramSlugs, getPrograms } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import ProgramContent from "./ProgramContent";
 

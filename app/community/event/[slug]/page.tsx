@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { eventData } from "@/lib/event-data";
 import { getEventBySlug, getEvents } from "@/lib/cms";
+
+export const dynamic = "force-dynamic";
 import EventCard from "@/components/EventCard/EventCard";
 import ShareBlock from "@/components/ShareBlock/ShareBlock";
 import styles from "./Article.module.css";

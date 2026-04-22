@@ -4,6 +4,8 @@ import JourneyBlockImage from "./JourneyBlockImage";
 import styles from "./CustomerJourney.module.css";
 import { getPageSeo, getProcessSteps, getPageHeader } from "@/lib/cms";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("customer-journey");
   return {

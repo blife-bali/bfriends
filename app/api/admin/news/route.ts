@@ -20,15 +20,39 @@ export async function POST(req: NextRequest) {
     if (authError) return authError;
 
     const body = await req.json();
-    const { slug, title, excerpt, content, image, category, sort_order, is_active } = body;
+    const {
+      slug,
+      name,
+      ecosystem,
+      timestamp,
+      author,
+      text,
+      image,
+      seo_title,
+      seo_description,
+      sort_order,
+      is_active,
+    } = body;
 
-    if (!slug || !title) {
-      return NextResponse.json({ error: 'slug and title are required' }, { status: 400 });
+    if (!slug || !name) {
+      return NextResponse.json({ error: 'slug and name are required' }, { status: 400 });
     }
 
     const [result] = await pool.execute(
-      'INSERT INTO bfriends_news (slug, title, excerpt, content, image, category, sort_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-      [slug, title, excerpt || null, content || null, image || null, category || null, sort_order || 0, is_active !== undefined ? is_active : 1]
+      'INSERT INTO bfriends_news (slug, name, ecosystem, timestamp, author, text, image, seo_title, seo_description, sort_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [
+        slug,
+        name,
+        ecosystem ?? 'BFriends',
+        timestamp ?? null,
+        author ?? null,
+        text ?? null,
+        image ?? null,
+        seo_title ?? null,
+        seo_description ?? null,
+        sort_order ?? 0,
+        is_active ?? 1,
+      ]
     );
 
     const insertResult = result as any;

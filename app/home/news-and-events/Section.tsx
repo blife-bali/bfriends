@@ -3,8 +3,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import styles from "./Section.module.css";
-import { eventData } from "@/lib/event-data";
-import { newsData } from "@/lib/news-data";
 import EventCard from "@/components/EventCard/EventCard";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import Button from "@/components/ui/Button/Button";
@@ -24,7 +22,7 @@ function interleaveEventsAndNews(events: any[], news: any[]): CarouselItem[] {
   return out;
 }
 
-export default function Section({ events = eventData, news = newsData }: { events?: any[]; news?: any[] }) {
+export default function Section({ events = [], news = [] }: { events?: any[]; news?: any[] }) {
   const items = useMemo(
     () => interleaveEventsAndNews(events, news),
     [events, news]

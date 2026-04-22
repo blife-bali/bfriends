@@ -3,6 +3,8 @@ import PageHeader from "@/components/PageHeader/PageHeader";
 import NewsContent from "./NewsContent";
 import { getPageSeo, getNews, getPageHeader } from "@/lib/cms";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("blife-ecosystem-news");
   return {
