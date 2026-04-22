@@ -1,0 +1,352 @@
+@reference "../../globals.css";
+
+.section {
+  width: 100%;
+  height: 100svh;
+  background-color: var(--color-blue-5);
+  color: var(--color-blue-100);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionMobile {
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  /* max-width: 1568px; */
+  margin: 0 auto;
+  /* padding: 96px 64px 96px; */
+  box-sizing: border-box;
+}
+
+.innerMobile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.imageCaption {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(20px, 4vw, 48px);
+  pointer-events: none;
+}
+
+.eyebrowOverlay {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(254, 254, 254, 0.92);
+  margin: 0 0 12px;
+  text-shadow: 0 1px 16px rgba(7, 26, 33, 0.4);
+}
+
+.heading {
+  margin: 0;
+  max-width: 20ch;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.5vw, 56px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--color-white-100);
+  text-shadow: 0 1px 24px rgba(7, 26, 33, 0.35);
+}
+
+.headingMobile {
+  font-size: clamp(26px, 7vw, 36px);
+  max-width: 18ch;
+}
+
+.heading em {
+  font-style: normal;
+}
+
+.imageBottomScrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 85% 75% at 50% 50%,
+    rgba(7, 26, 33, 0.55) 0%,
+    rgba(7, 26, 33, 0.28) 55%,
+    rgba(7, 26, 33, 0.12) 100%
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+.imagePanel {
+  position: relative;
+  min-height: 420px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--color-blue-20);
+}
+
+.imagePanelFill {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  border-radius: 0;
+  min-height: unset;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Stacked heroes: all layers load once; only opacity/z-index changes on swap (no src churn). */
+.imageStack {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  isolation: isolate;
+}
+
+.imageStackLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  will-change: opacity;
+  transition: opacity 0.45s cubic-bezier(0.33, 0.86, 0.32, 1);
+}
+
+.imageStackLayerVisible {
+  opacity: 1;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageStackLayer {
+    transition: none;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuRow {
+  width: 100%;
+  text-align: left;
+  padding: 20px 0;
+  border: none;
+  border-bottom: 1px solid rgba(19, 64, 83, 0.12);
+  background: transparent;
+  color: var(--color-blue-100);
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.menuRow:first-child {
+  border-top: 1px solid rgba(19, 64, 83, 0.12);
+}
+
+.menuRow:hover,
+.menuRow:focus-visible {
+  background-color: rgba(19, 64, 83, 0.04);
+}
+
+.menuRow:focus-visible {
+  outline: 2px solid var(--color-blue-100);
+  outline-offset: 2px;
+}
+
+.rowTop {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.letter {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  min-width: 1.5ch;
+  color: var(--color-blue-100);
+  opacity: 0.9;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+}
+
+.subheading {
+  margin: 0;
+  padding-left: calc(1.5ch + 16px);
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 1.45;
+  color: var(--color-cream-140);
+  font-weight: 400;
+}
+
+.mobileFooter {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20px 20px 28px;
+  box-sizing: border-box;
+  background: var(--color-blue-5);
+  border-top: 1px solid rgba(19, 64, 83, 0.1);
+}
+
+.mobileBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding-bottom: 18px;
+}
+
+.mobileCtaColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding-top: 18px;
+  border-top: 1px solid rgba(19, 64, 83, 0.08);
+}
+
+.mobileCtaButton {
+  align-self: center;
+  min-height: 48px;
+  padding: 10px 8px 8px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.arrowBtn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(19, 64, 83, 0.18);
+  border-radius: 10px;
+  background: var(--color-white-100);
+  color: var(--color-blue-100);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.arrowBtn:hover,
+.arrowBtn:focus-visible {
+  background: var(--color-blue-5);
+  border-color: rgba(19, 64, 83, 0.35);
+}
+
+.arrowBtn:focus-visible {
+  outline: 2px solid var(--color-blue-100);
+  outline-offset: 2px;
+}
+
+.mobileName {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 4.8vw, 24px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--color-blue-100);
+  text-align: center;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(100%, 300px);
+  line-height: 1.2;
+}
+
+.mobileSub {
+  margin: 0;
+  font-size: clamp(13px, 3.4vw, 14px);
+  line-height: 1.5;
+  color: var(--color-cream-140);
+  text-align: center;
+  max-width: 22rem;
+  padding: 0 12px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    /* padding: 72px 48px 80px; */
+  }
+
+  .grid {
+    gap: 32px;
+    min-height: min(65vh, 600px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileFooter {
+    padding: 16px 16px 24px;
+  }
+
+  .mobileBar {
+    gap: 12px;
+    padding-bottom: 16px;
+   
+  }
+
+  .mobileCtaColumn {
+    padding-top: 16px;
+    gap: 12px;
+  }
+
+  .mobileSub {
+    padding: 0 8px;
+  }
+}

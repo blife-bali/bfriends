@@ -1,7 +1,7 @@
 import Hero from "./hero/Hero";
 import Intro from "./intro/Intro";
 import WhyBFriends from "./why-bfriends/WhyBFriends";
-import { Section as ProgramsSection } from "./programs";
+import { Section as ServicesSection } from "./services";
 import ProcessCarousel from "./process/Carousel";
 import Process from "./process/Process";
 import { Section as SystemSection } from "./system";
@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* <ProcessCarousel />
       <Process /> */}
       <SystemSection />
-      <ProgramsSection />
+      <ServicesSection />
       <NewsAndEventsSection />
     </>
   );
