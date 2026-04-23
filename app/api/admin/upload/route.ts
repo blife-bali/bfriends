@@ -3,18 +3,20 @@ import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import path from 'path';
 import { requireAuth } from '@/lib/auth';
 
-const ALLOWED_TYPES = [
-  'image/jpeg',
-  'image/jpg',
-  'image/png',
-  'image/gif',
-  'image/webp',
-  'video/mp4',
-  'video/webm',
-  'video/ogg',
-];
+const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+const ALLOWED_VIDEO_TYPES = ['video/mp4', 'video/webm', 'video/ogg'];
+const ALLOWED_TYPES = [...ALLOWED_IMAGE_TYPES, ...ALLOWED_VIDEO_TYPES];
 const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.mp4', '.webm', '.ogv', '.ogg'];
-const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+
+function parseLimitMb(value: string | undefined, fallback: number): number {
+  const n = Number(value);
+  return Number.isFinite(n) && n > 0 ? n : fallback;
+}
+
+const MAX_IMAGE_UPLOAD_MB = parseLimitMb(process.env.NEXT_PUBLIC_MAX_IMAGE_UPLOAD_MB, 5);
+const MAX_VIDEO_UPLOAD_MB = parseLimitMb(process.env.NEXT_PUBLIC_MAX_VIDEO_UPLOAD_MB, 50);
+const MAX_IMAGE_SIZE = MAX_IMAGE_UPLOAD_MB * 1024 * 1024;
+const MAX_VIDEO_SIZE = MAX_VIDEO_UPLOAD_MB * 1024 * 1024;
 
 const s3 = new S3Client({
   region: process.env.R2_DEFAULT_REGION || 'auto',
@@ -44,9 +46,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (file.size > MAX_FILE_SIZE) {
+    const isImage = ALLOWED_IMAGE_TYPES.includes(file.type);
+    const limit = isImage ? MAX_IMAGE_SIZE : MAX_VIDEO_SIZE;
+    const limitMb = isImage ? MAX_IMAGE_UPLOAD_MB : MAX_VIDEO_UPLOAD_MB;
+    if (file.size > limit) {
       return NextResponse.json(
-        { error: 'File size exceeds the 50MB limit.' },
+        { error: `File size exceeds the ${limitMb}MB limit for ${isImage ? 'images' : 'videos'}.` },
         { status: 400 }
       );
     }
