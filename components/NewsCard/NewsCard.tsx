@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./NewsCard.module.css";
 import type { NewsItem } from "@/lib/news-data";
+import { trackEvent } from "@/lib/gtag";
 
 export interface NewsCardProps {
   item: NewsItem;
@@ -35,7 +36,11 @@ export default function NewsCard({ item }: NewsCardProps) {
 
   return (
     <article className={styles.card}>
-      <Link href={href} className={styles.link}>
+      <Link
+        href={href}
+        className={styles.link}
+        onClick={() => trackEvent('card_click', { card_type: 'news', slug: item.slug })}
+      >
         {content}
       </Link>
     </article>

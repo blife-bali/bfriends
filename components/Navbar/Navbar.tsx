@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navColumns, programsNavItems } from "@/lib/nav-config";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
+import { trackEvent } from "@/lib/gtag";
 import styles from "./Navbar.module.css";
 
 export type ActiveMenuId = "about" | "programs" | "membership" | "community" | null;
@@ -126,7 +127,15 @@ export default function Navbar() {
           <div className={styles.navbarContainer}>
             <div className={styles.mainContainer}>
               <div className={styles.left}>
-                <Link href="/" className={styles.logoLink} aria-label="BFriends Home" onClick={closeMenu}>
+                <Link
+                  href="/"
+                  className={styles.logoLink}
+                  aria-label="BFriends Home"
+                  onClick={() => {
+                    trackEvent('nav_click', { label: 'logo', location: 'navbar' });
+                    closeMenu();
+                  }}
+                >
                   <Image
                     src="/images/icons/logo-default.svg"
                     alt="BFriends"
@@ -143,7 +152,10 @@ export default function Navbar() {
                   <Link
                     href="/"
                     className={`${styles.menuTop} ${pathname === "/" ? styles.menuTopSelected : ""}`}
-                    onClick={closeMenu}
+                    onClick={() => {
+                      trackEvent('nav_click', { label: 'Home', location: 'navbar' });
+                      closeMenu();
+                    }}
                   >
                     Home
                   </Link>
@@ -159,7 +171,10 @@ export default function Navbar() {
                     <button
                       type="button"
                       className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
-                      onClick={() => toggleMenu(col.id)}
+                      onClick={() => {
+                        trackEvent('nav_click', { label: col.title, location: 'navbar' });
+                        toggleMenu(col.id);
+                      }}
                     >
                       {col.title}
                     </button>
@@ -174,6 +189,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className={styles.bookNowLink}
                   aria-label="Book now"
+                  onClick={() => trackEvent('cta_click', { label: 'book_now', location: 'navbar' })}
                 >
                   <span className={styles.bookNowText}>Book Now</span>
                   <ArrowUpRight size={20} className={styles.bookNowIcon} aria-hidden />
@@ -183,7 +199,13 @@ export default function Navbar() {
               <button
                 type="button"
                 className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.mobileMenuButtonOpen : ""}`}
-                onClick={toggleMobileMenu}
+                onClick={() => {
+                  trackEvent('nav_click', {
+                    label: isMobileMenuOpen ? 'mobile_menu_close' : 'mobile_menu_open',
+                    location: 'mobile_sidebar',
+                  });
+                  toggleMobileMenu();
+                }}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
               >
@@ -202,7 +224,16 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     className={styles.link}
-                    onClick={closeMenu}
+                    onClick={() => {
+                      trackEvent('nav_click', {
+                        label: item.label,
+                        location:
+                          activeMenu === 'about' ? 'dropdown_about'
+                          : activeMenu === 'programs' ? 'dropdown_programs'
+                          : 'dropdown_community',
+                      });
+                      closeMenu();
+                    }}
                   >
                     {activeMenu === "programs" && (
                       <span className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}>
@@ -234,7 +265,14 @@ export default function Navbar() {
         <div className={styles.mobileSidebarContent}>
           <nav className={styles.mobileMenuGrid}>
             <div className={styles.mobileNavItemWrapper}>
-              <Link href="/" className={styles.menuTop} onClick={closeMenu}>
+              <Link
+                href="/"
+                className={styles.menuTop}
+                onClick={() => {
+                  trackEvent('nav_click', { label: 'Home', location: 'mobile_sidebar' });
+                  closeMenu();
+                }}
+              >
                 Home
               </Link>
             </div>
@@ -248,7 +286,10 @@ export default function Navbar() {
                 <button
                   type="button"
                   className={styles.menuTop}
-                  onClick={() => toggleMenu(activeMenu === col.id ? null : col.id)}
+                  onClick={() => {
+                    trackEvent('nav_click', { label: col.title, location: 'mobile_sidebar' });
+                    toggleMenu(activeMenu === col.id ? null : col.id);
+                  }}
                 >
                   {col.title}
                 </button>
@@ -258,7 +299,10 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       className={styles.menuItem}
-                      onClick={closeMenu}
+                      onClick={() => {
+                        trackEvent('nav_click', { label: item.label, location: 'mobile_sidebar' });
+                        closeMenu();
+                      }}
                     >
                       {item.label}
                     </Link>
@@ -273,7 +317,10 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.mobileBookNowLink}
-              onClick={closeMenu}
+              onClick={() => {
+                trackEvent('cta_click', { label: 'book_now', location: 'mobile_sidebar' });
+                closeMenu();
+              }}
               aria-label="Book now"
             >
               <span className={styles.bookNowText}>Book Now</span>

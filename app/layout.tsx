@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Libre_Bodoni } from "next/font/google";
 import MainLayout from "@/components/MainLayout/MainLayout";
 import PageEntryClient from "@/components/PageEntry/PageEntryClient";
+import AnalyticsProvider from "@/components/Analytics/AnalyticsProvider";
 import { SoundProvider } from "@/contexts/SoundContext";
+import { getGoogleAnalyticsId } from "@/lib/gtag-server";
 import "./globals.css";
 
 const libreBodoni = Libre_Bodoni({
@@ -73,11 +75,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = await getGoogleAnalyticsId();
+
   return (
     <html
       lang="en"
@@ -87,6 +91,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/kbz3vui.css" />
       </head>
       <body className="antialiased">
+        <AnalyticsProvider measurementId={gaId} />
         <SoundProvider>
           <MainLayout>
             <PageEntryClient>{children}</PageEntryClient>

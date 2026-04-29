@@ -7,6 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import SystemCard from "./Card";
+import { trackEvent } from "@/lib/gtag";
 import styles from "./Section.module.css";
 
 const SYSTEM_IMAGE = "/images/Integrate/DDK09558.jpg";
@@ -106,6 +107,7 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
               className={styles.conclusionButton}
               color="var(--color-blue-100)"
               showIcon
+              onClick={() => trackEvent('cta_click', { label: 'view_customer_journey', location: 'home_system' })}
             >
               View Customer Journey
             </Button>

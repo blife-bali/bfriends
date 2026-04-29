@@ -6,6 +6,7 @@ import styles from "./Card.module.css";
 import Button from "@/components/ui/Button/Button";
 import { ProgramData } from "@/lib/programs-data";
 import { XIcon } from "lucide-react";
+import { trackEvent } from "@/lib/gtag";
 
 interface CardProps {
   program: ProgramData;
@@ -23,7 +24,14 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
   return (
     <div className={`${styles.card} ${isVisible ? styles.cardVisible : styles.cardHidden} ${isMobile ? styles.cardModal : ''}`}>
       {isMobile && onClose && (
-        <button className={styles.closeButton} onClick={onClose} aria-label="Close">
+        <button
+          className={styles.closeButton}
+          onClick={() => {
+            trackEvent('ui_close', { target: 'program_card' });
+            onClose();
+          }}
+          aria-label="Close"
+        >
           <XIcon size={24} />
         </button>
       )}
@@ -59,6 +67,7 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
             className={styles.cardButton}
             color="var(--color-white-100)"
             showIcon
+            onClick={() => trackEvent('card_click', { card_type: 'program', slug: program.slug })}
           >
             {program.buttonLabel}
           </Button>

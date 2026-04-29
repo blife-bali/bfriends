@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import styles from "./Startup.module.css";
+import { trackEvent } from "@/lib/gtag";
 
 const FADE_OUT_DURATION_MS = 1000;
 
@@ -15,6 +16,7 @@ export default function Startup({ onComplete }: StartupProps) {
 
   const handleChoice = (withSound: boolean) => {
     if (isExiting) return;
+    trackEvent('startup_choice', { choice: withSound ? 'ambience' : 'silence' });
     setIsExiting(true);
     setTimeout(() => {
       onComplete(withSound);

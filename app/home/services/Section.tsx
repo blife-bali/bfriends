@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import { programsData, type ProgramData } from "@/lib/programs-data";
+import { trackEvent } from "@/lib/gtag";
 import styles from "./Section.module.css";
 
 const DEFAULT_DESKTOP_IMAGE = "/images/programs/D.webp";
@@ -152,7 +153,10 @@ function ServicesDesktop({ programs }: { programs: ServicesProgram[] }) {
                 className={styles.menuRow}
                 onPointerEnter={() => showProgram(program)}
                 onFocus={() => showProgram(program)}
-                onClick={() => showProgram(program)}
+                onClick={() => {
+                  trackEvent('services_interact', { action: 'menu_click', program: program.slug });
+                  showProgram(program);
+                }}
               >
                 <div className={styles.rowTop}>
                   <span className={styles.name}>{program.name}</span>
@@ -223,8 +227,14 @@ export default function Section({
   const mobileProgram = programs[mobileIndex] ?? programs[0]!;
   const n = programs.length;
 
-  const goPrev = () => setMobileIndex((i) => (i - 1 + n) % n);
-  const goNext = () => setMobileIndex((i) => (i + 1) % n);
+  const goPrev = () => {
+    trackEvent('services_interact', { action: 'mobile_arrow' });
+    setMobileIndex((i) => (i - 1 + n) % n);
+  };
+  const goNext = () => {
+    trackEvent('services_interact', { action: 'mobile_arrow' });
+    setMobileIndex((i) => (i + 1) % n);
+  };
 
   if (n === 0) {
     return null;
@@ -274,6 +284,7 @@ export default function Section({
                   color="var(--color-blue-100)"
                   showIcon
                   className={styles.mobileCtaButton}
+                  onClick={() => trackEvent('services_interact', { action: 'mobile_cta', program: mobileProgram.slug })}
                 >
                   {mobileProgram.buttonLabel}
                 </Button>

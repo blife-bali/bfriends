@@ -7,6 +7,7 @@ import EventCard from "@/components/EventCard/EventCard";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import Button from "@/components/ui/Button/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { trackEvent } from "@/lib/gtag";
 
 type CarouselItem =
   | { type: "event"; data: any }
@@ -89,7 +90,10 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
               type="button"
               className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
               aria-label="Previous"
-              onClick={() => emblaApi?.scrollPrev()}
+              onClick={() => {
+                trackEvent('carousel_nav', { carousel: 'news_events', direction: 'prev' });
+                emblaApi?.scrollPrev();
+              }}
               disabled={!canScrollPrev}
             >
               <ChevronLeft size={24} strokeWidth={1.5} />
@@ -98,7 +102,10 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
               type="button"
               className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
               aria-label="Next"
-              onClick={() => emblaApi?.scrollNext()}
+              onClick={() => {
+                trackEvent('carousel_nav', { carousel: 'news_events', direction: 'next' });
+                emblaApi?.scrollNext();
+              }}
               disabled={!canScrollNext}
             >
               <ChevronRight size={24} strokeWidth={1.5} />
@@ -109,6 +116,7 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
               color="var(--color-green-100)"
               showIcon
               href="/community/event-workshop"
+              onClick={() => trackEvent('cta_click', { label: 'more_events', location: 'home_news_events' })}
             >
               More events
             </Button>
@@ -116,6 +124,7 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
               color="var(--color-green-100)"
               showIcon
               href="/community/blife-ecosystem-news"
+              onClick={() => trackEvent('cta_click', { label: 'more_news', location: 'home_news_events' })}
             >
               More news
             </Button>

@@ -3,6 +3,15 @@
 import { useState, useCallback } from "react";
 import { Link2 } from "lucide-react";
 import styles from "./ShareBlock.module.css";
+import { trackEvent } from "@/lib/gtag";
+
+function deriveShareContext(path: string): { content_type: string; item_id: string } {
+  const eventMatch = path.match(/\/community\/event\/([^/?#]+)/);
+  if (eventMatch) return { content_type: 'event', item_id: eventMatch[1] };
+  const newsMatch = path.match(/\/community\/news\/([^/?#]+)/);
+  if (newsMatch) return { content_type: 'news', item_id: newsMatch[1] };
+  return { content_type: 'page', item_id: path };
+}
 
 export interface ShareBlockProps {
   path: string;
@@ -34,6 +43,8 @@ export default function ShareBlock({ path, title = "", className = "" }: ShareBl
     try {
       await navigator.clipboard.writeText(fullUrl);
       setCopied("link");
+      const ctx = deriveShareContext(path);
+      trackEvent('share', { method: 'copy_link', ...ctx });
       setTimeout(() => setCopied(null), 2000);
     } catch {
       // ignore
@@ -54,6 +65,7 @@ export default function ShareBlock({ path, title = "", className = "" }: ShareBl
           rel="noopener noreferrer"
           className={styles.shareButton}
           aria-label="Share on WhatsApp"
+          onClick={() => trackEvent('share', { method: 'whatsapp', ...deriveShareContext(path) })}
         >
           <WhatsAppIcon />
           <span>WhatsApp</span>
@@ -64,6 +76,7 @@ export default function ShareBlock({ path, title = "", className = "" }: ShareBl
           rel="noopener noreferrer"
           className={styles.shareButton}
           aria-label="Share on X (Twitter)"
+          onClick={() => trackEvent('share', { method: 'twitter', ...deriveShareContext(path) })}
         >
           <XIcon />
           <span>Twitter</span>
