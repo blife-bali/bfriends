@@ -27,6 +27,45 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
     [events, news]
   );
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const checkScroll = useCallback(() => {
+    if (containerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+      setCanScrollPrev(scrollLeft > 0);
+      setCanScrollNext(Math.ceil(scrollLeft + clientWidth) < scrollWidth - 2);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkScroll();
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", checkScroll);
+      window.addEventListener("resize", checkScroll);
+      return () => {
+        container.removeEventListener("scroll", checkScroll);
+        window.removeEventListener("resize", checkScroll);
+      };
+    }
+  }, [checkScroll]);
+
+  const scrollPrev = useCallback(() => {
+    if (containerRef.current) {
+      const scrollAmount = containerRef.current.clientWidth / 2;
+      containerRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  }, []);
+
+  const scrollNext = useCallback(() => {
+    if (containerRef.current) {
+      const scrollAmount = containerRef.current.clientWidth / 2;
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -40,11 +79,15 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
         </div>
 
         <div className={styles.rightColumn}>
-          <div className={styles.gridContainer}>
+          <div className={styles.gridContainer} ref={containerRef}>
             {items.slice(0, 6).map((item, index) => (
               <div 
                 key={`${item.type}-${item.data.id}-${index}`} 
-                className={`${styles.gridItem} ${index >= 4 ? styles.hideOnMobile : ''}`}
+                className={[
+                  styles.gridItem,
+                  index >= 4 ? styles.hideOnTab : "",
+                  index >= 3 ? styles.hideOnMobile : ""
+                ].filter(Boolean).join(" ")}
               >
                 {item.type === "event" ? (
                   <EventCard item={item.data} landscape hideDescription />
@@ -72,6 +115,26 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
             >
               More news
             </Button>
+          </div>
+          <div className={styles.navContainer}>
+            <button 
+              type="button"
+              className={styles.navButton} 
+              onClick={scrollPrev} 
+              disabled={!canScrollPrev}
+              aria-label="Previous"
+            >
+              <ChevronLeft size={24} strokeWidth={1.5} />
+            </button>
+            <button 
+              type="button"
+              className={styles.navButton} 
+              onClick={scrollNext} 
+              disabled={!canScrollNext}
+              aria-label="Next"
+            >
+              <ChevronRight size={24} strokeWidth={1.5} />
+            </button>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "storageb.awancode.com" },
-      ...(r2Host ? [{ protocol: "https", hostname: r2Host }] : []),
+      ...(r2Host ? [{ protocol: "https" as const, hostname: r2Host }] : []),
     ],
   },
 };
