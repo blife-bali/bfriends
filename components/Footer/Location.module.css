@@ -3,7 +3,7 @@
 /* Location Section */
 .locationSection {
   width: 100%;
-  height: 800px;
+  height: 500px;
   background-color: var(--color-blue-100);
   position: relative;
 }

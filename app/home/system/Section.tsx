@@ -71,11 +71,11 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
     <section className={styles.section}>
       <div className={styles.container}>
         {/* Title container: eyebrow, title, intro */}
-        <div className={styles.titleContainer}>
+        {/* <div className={styles.titleContainer}>
           <p className={styles.eyebrow}>Customer Journey</p>
           <h2 className={styles.heading}>{heading}</h2>
           
-        </div>
+        </div> */}
 
         {/* Image block (mirrors intro video wrapper – image instead of video) */}
         <div className={styles.imageWrapper} ref={imageWrapperRef}>

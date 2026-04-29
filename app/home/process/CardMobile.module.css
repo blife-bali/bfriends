@@ -4,8 +4,8 @@
 .mobileCard {
   position: relative;
   width: 100%;
-  height: 560px;
-  min-height: 560px;
+  height: 100%;
+  min-height: 400px;
   overflow: hidden;
   flex-shrink: 0;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -17,16 +17,16 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* Title box: bottom center, full width; relative to card, inset by padding */
+/* Title box: bottom, full width with inset padding */
 .titleBox {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
   width: auto;
   height: auto;
   min-height: 0;
-  padding: 24px;
+  padding: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -34,7 +34,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 12px;
   max-width: 480px;
 }
 
@@ -49,15 +49,15 @@
 /* Typography – mobile sizes */
 .stepNumber {
   font-family: var(--font-script);
-  font-size: clamp(18px, 4vw, 20px);
+  font-size: clamp(16px, 4vw, 18px);
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 100%;
   color: var(--color-white-100);
   margin: 0;
   font-style: italic;
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   text-align: center;
   display: flex;
@@ -65,11 +65,12 @@
   justify-content: center;
   padding-top: 4px;
   padding-right: 2px;
+  flex-shrink: 0;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(20px, 3vw, 24px);
+  font-size: clamp(18px, 4vw, 22px);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 120%;
@@ -80,10 +81,10 @@
 
 .description {
   font-family: var(--font-sans);
-  font-size: clamp(13px, 2.5vw, 14px);
+  font-size: clamp(13px, 3.5vw, 14px);
   font-weight: 300;
   letter-spacing: -0.02em;
-  line-height: 120%;
+  line-height: 140%;
   color: var(--color-white-100);
   margin: 0;
   width: 100%;
@@ -91,7 +92,7 @@
 
 .subpoints {
   list-style: none;
-  margin: 8px 0 0;
+  margin: 4px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -119,17 +120,50 @@
   line-height: 1.3;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .titleBox {
     max-width: 100%;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 16px;
+    gap: 10px;
   }
 
   .mobileCard {
-    height: 560px;
-    min-height: 560px;
+    min-height: 380px;
+  }
+
+  .heading {
+    font-size: clamp(16px, 4.5vw, 20px);
   }
 
   .description {
+    font-size: 13px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .titleBox {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 14px;
+  }
+
+  .mobileCard {
+    min-height: 340px;
+  }
+
+  .stepNumber {
+    height: 32px;
+    width: 32px;
     font-size: 14px;
+  }
+
+  .heading {
+    font-size: clamp(15px, 4.5vw, 18px);
   }
 }

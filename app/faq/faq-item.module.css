@@ -1,0 +1,106 @@
+@reference "../globals.css";
+
+.item {
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 16%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 16%, transparent);
+  background: var(--color-white-100);
+}
+
+.summary {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  cursor: pointer;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.question {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.9vw, 28px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 24%, transparent);
+  border-radius: 999px;
+  color: var(--color-green-100);
+  font-family: var(--font-sans);
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.item[open] .icon {
+  transform: rotate(45deg);
+}
+
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.answerInner {
+  overflow: hidden;
+  padding-bottom: 0;
+  transition: padding-bottom 0.28s ease;
+}
+
+.item[open] .answerWrap {
+  grid-template-rows: 1fr;
+}
+
+.item[open] .answerInner {
+  padding-bottom: 22px;
+}
+
+.answer {
+  margin: 0;
+  max-width: 860px;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--color-cream-140);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.item[open] .answer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .summary {
+    padding: 16px 0;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .item[open] .answerInner {
+    padding-bottom: 16px;
+  }
+}

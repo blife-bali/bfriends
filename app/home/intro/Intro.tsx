@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Intro.module.css";
 
@@ -30,8 +29,6 @@ export default function Intro({
 }: IntroProps) {
   const [isImageInView, setIsImageInView] = useState(false);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const textInView = useInView(textRef, { once: true, amount: 0.2 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,23 +43,7 @@ export default function Intro({
   return (
     <section className={`${styles.intro} ${textOnly ? styles.introTextOnly : ""}`}>
       <div className={styles.container}>
-        <div ref={textRef} className={styles.textColumn}>
-          <div className={styles.headingContainer}>
-            <p className={styles.combinedParagraph}>
-              <span className={styles.heading}>
-                <span className={styles.maskWrap}>
-                  <motion.span
-                    className={styles.maskInner}
-                    initial={{ y: "100%" }}
-                    animate={textInView ? { y: "0%" } : { y: "100%" }}
-                    transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
-                  >
-                    {headline}
-                  </motion.span>
-                </span>
-              </span>
-            </p>
-          </div>
+        <div className={styles.textColumn}>
           {body != null && body !== "" && (
             <div className={styles.descriptionContainer}>
               <p className={styles.description}>
@@ -99,7 +80,7 @@ export default function Intro({
 
         <div className={styles.conclusionContainer}>
           <div className={styles.leftConclusion}>
-            <h2 className={styles.conclusionTitle}>About BFriends.</h2>
+            <h2 className={styles.conclusionTitle}>{headline}</h2>
           </div>
           <div className={styles.rightConclusion}>
             <p className={styles.conclusionText}>{body}</p>

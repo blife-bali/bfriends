@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Section.module.css";
 import EventCard from "@/components/EventCard/EventCard";
 import NewsCard from "@/components/NewsCard/NewsCard";
@@ -28,82 +27,36 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
     [events, news]
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    containScroll: "trimSnaps",
-    dragFree: false,
-    breakpoints: { "(min-width: 768px)": { loop: false } },
-  });
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-
-  const updateScroll = useCallback(() => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    updateScroll();
-    emblaApi.on("scroll", updateScroll);
-    emblaApi.on("reInit", updateScroll);
-    return () => {
-      emblaApi.off("scroll", updateScroll);
-      emblaApi.off("reInit", updateScroll);
-    };
-  }, [emblaApi, updateScroll]);
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>News & Events</p>
-          <h2 className={styles.heading}>
-            News & Events <em>Across BLife Ecosystem</em>
-          </h2>
-        </div>
-
-        <div className={styles.carouselWrapper}>
-          <div className={styles.embla} ref={emblaRef}>
-            <div className={styles.emblaContainer}>
-              {items.map((item) => (
-                <div
-                  key={`${item.type}-${item.data.id}`}
-                  className={styles.emblaSlide}
-                >
-                  {item.type === "event" ? (
-                    <EventCard item={item.data} />
-                  ) : (
-                    <NewsCard item={item.data} />
-                  )}
-                </div>
-              ))}
-            </div>
+        <div className={styles.leftColumn}>
+          <div className={styles.header}>
+            <p className={styles.eyebrow}>News & Events</p>
+            <h2 className={styles.heading}>
+              News & Events <em>Across BLife Ecosystem</em>
+            </h2>
           </div>
         </div>
 
-        <div className={styles.footerRow}>
-          <div className={styles.arrowContainer}>
-            <button
-              type="button"
-              className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
-              aria-label="Previous"
-              onClick={() => emblaApi?.scrollPrev()}
-              disabled={!canScrollPrev}
-            >
-              <ChevronLeft size={24} strokeWidth={1.5} />
-            </button>
-            <button
-              type="button"
-              className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
-              aria-label="Next"
-              onClick={() => emblaApi?.scrollNext()}
-              disabled={!canScrollNext}
-            >
-              <ChevronRight size={24} strokeWidth={1.5} />
-            </button>
+        <div className={styles.rightColumn}>
+          <div className={styles.gridContainer}>
+            {items.slice(0, 6).map((item, index) => (
+              <div 
+                key={`${item.type}-${item.data.id}-${index}`} 
+                className={`${styles.gridItem} ${index >= 4 ? styles.hideOnMobile : ''}`}
+              >
+                {item.type === "event" ? (
+                  <EventCard item={item.data} landscape hideDescription />
+                ) : (
+                  <NewsCard item={item.data} landscape hideDescription />
+                )}
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className={styles.bottomBar}>
           <div className={styles.buttonContainer}>
             <Button
               color="var(--color-green-100)"

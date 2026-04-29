@@ -4,6 +4,7 @@ import Intro from "./intro/Intro";
 import WhyBFriends from "./why-bfriends/WhyBFriends";
 import { Section as ServicesSection } from "./services";
 import { Section as SystemSection } from "./system";
+import { Section as FaqSection } from "./faq";
 import { Section as NewsAndEventsSection } from "./news-and-events";
 import {
   getPageSeo,
@@ -51,6 +52,7 @@ export default async function HomePage() {
       <WhyBFriends cards={whyCards} />
       <SystemSection steps={processSteps} />
       <ServicesSection programs={programs} />
+      <FaqSection />
       <NewsAndEventsSection events={events} news={news} />
     </>
   );

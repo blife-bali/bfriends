@@ -49,6 +49,7 @@
     min-height: auto;
     overflow: visible;
     will-change: auto;
+    padding-top: 0;
   }
 
   .desktopBlock {
@@ -60,13 +61,15 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 80px 40px 72px;
+    padding: 72px 48px;
     gap: 32px;
   }
 
   .carouselWrapperMobile .titleContainer {
     padding: 0;
     max-width: 100%;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
@@ -180,7 +183,6 @@
   height: 100%;
   width: 100%;
   max-width: 800px;
-  padding: 0 64px;
   gap: 32px;
   padding: 32px 0;
   margin-bottom: 3px;
@@ -224,21 +226,33 @@
 .mobileSlide {
   width: 100%;
   flex: 0 0 auto;
-  min-height: 560px;
-  height: 560px;
+  min-height: 480px;
+  height: auto;
 }
 
 /* ----- Responsive: desktop carousel tweaks at smaller widths (when still desktop) ----- */
 @media (max-width: 1024px) {
   .heading {
-    font-size: clamp(32px, 2vw, 40px);
+    font-size: clamp(32px, 4vw, 40px);
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .intro {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .mobileSlide {
+    min-height: 440px;
+    height: auto;
   }
 }
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
   .carouselWrapperMobile {
-    padding: 48px 24px;
+    padding: 56px 24px;
     gap: 24px;
   }
 
@@ -252,31 +266,35 @@
   }
 
   .mobileSlide {
-    min-height: 480px;
+    min-height: 400px;
     height: auto;
   }
 
   .eyebrow {
     font-size: 11px;
-    padding: 6px 12px;
   }
 
   .heading {
-    font-size: clamp(26px, 5vw, 34px);
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .intro {
+    font-size: 14px;
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   .carouselWrapperMobile {
-    padding: 32px 16px;
+    padding: 48px 20px;
     gap: 20px;
   }
 
   .heading {
-    font-size: clamp(22px, 5vw, 28px);
+    font-size: clamp(22px, 7vw, 28px);
   }
 
   .mobileSlide {
-    min-height: 420px;
+    min-height: 360px;
   }
 }

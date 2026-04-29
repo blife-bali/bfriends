@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Button from "@/components/ui/Button/Button";
 import { programsData, type ProgramData } from "@/lib/programs-data";
+import Card from "./card/Card";
 import styles from "./Section.module.css";
 
 const DEFAULT_DESKTOP_IMAGE = "/images/programs/D.webp";
@@ -29,260 +29,126 @@ function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram
   }));
 }
 
-function useWarmHeroImageCache(srcs: readonly string[]) {
-  useEffect(() => {
-    for (const src of srcs) {
-      const img = new window.Image();
-      img.decoding = "async";
-      img.src = src;
-    }
-  }, [srcs]);
-}
-
-function ImageTitleBlock({ mobile }: { mobile: boolean }) {
-  return (
-    <div className={styles.imageCaption}>
-      <p className={styles.eyebrowOverlay}>Our Programs</p>
-      <h2
-        className={`${styles.heading} ${mobile ? styles.headingMobile : ""}`}
-      >
-        {mobile ? (
-          <>
-            The <em>Journey</em> at BFriends
-          </>
-        ) : (
-          <>
-            The <em>Journey</em> <br /> at BFriends
-          </>
-        )}
-      </h2>
-    </div>
-  );
-}
-
-function StackedHeroImages({
-  heroSrcs,
-  activeSrc,
-  activeAlt,
-  prioritySrc,
-}: {
-  heroSrcs: readonly string[];
-  activeSrc: string;
-  activeAlt: string;
-  prioritySrc: string;
-}) {
-  return (
-    <div className={styles.imageStack} aria-live="polite">
-      {heroSrcs.map((src) => {
-        const visible = src === activeSrc;
-        return (
-          <img
-            key={src}
-            src={src}
-            alt={visible ? activeAlt : ""}
-            aria-hidden={!visible}
-            className={`${styles.imageStackLayer} ${visible ? styles.imageStackLayerVisible : ""}`}
-            loading="eager"
-            decoding="async"
-            fetchPriority={src === prioritySrc ? "high" : "low"}
-            draggable={false}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
-function ServicesDesktop({ programs }: { programs: ServicesProgram[] }) {
-  const heroSrcs = useMemo(
-    () => [...new Set([DEFAULT_DESKTOP_IMAGE, ...programs.map((p) => p.image)])],
-    [programs]
-  );
-
-  const [preview, setPreview] = useState({
-    src: DEFAULT_DESKTOP_IMAGE,
-    alt: "BFriends programs",
-  });
-
-  const showProgram = useCallback((program: ServicesProgram | null) => {
-    if (!program) {
-      setPreview({
-        src: DEFAULT_DESKTOP_IMAGE,
-        alt: "BFriends programs",
-      });
-    } else {
-      setPreview({ src: program.image, alt: program.name });
-    }
-  }, []);
-
-  const onNavPointerLeave = useCallback(() => {
-    if (typeof window === "undefined") return;
-    if (window.matchMedia("(pointer: fine)").matches) {
-      showProgram(null);
-    }
-  }, [showProgram]);
-
-  return (
-    <div className={styles.grid}>
-      <div className={styles.imagePanel}>
-        <StackedHeroImages
-          heroSrcs={heroSrcs}
-          activeSrc={preview.src}
-          activeAlt={preview.alt}
-          prioritySrc={DEFAULT_DESKTOP_IMAGE}
-        />
-        <div className={styles.imageBottomScrim} aria-hidden />
-        <ImageTitleBlock mobile={false} />
-      </div>
-      <nav
-        className={styles.menu}
-        aria-label="Program menu"
-        onPointerLeave={onNavPointerLeave}
-        onBlur={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
-            showProgram(null);
-          }
-        }}
-      >
-        <ul className={styles.menuList}>
-          {programs.map((program) => (
-            <li key={program.slug}>
-              <button
-                type="button"
-                className={styles.menuRow}
-                onPointerEnter={() => showProgram(program)}
-                onFocus={() => showProgram(program)}
-                onClick={() => showProgram(program)}
-              >
-                <div className={styles.rowTop}>
-                  <span className={styles.name}>{program.name}</span>
-                </div>
-                <p className={styles.subheading}>{program.subheading}</p>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-  );
-}
-
-function MobileHeroStack({
-  programs,
-  activeIndex,
-}: {
-  programs: ServicesProgram[];
-  activeIndex: number;
-}) {
-  return (
-    <div className={styles.imageStack} aria-live="polite">
-      {programs.map((p, i) => {
-        const visible = i === activeIndex;
-        return (
-          <img
-            key={p.slug}
-            src={p.image}
-            alt={visible ? p.name : ""}
-            aria-hidden={!visible}
-            className={`${styles.imageStackLayer} ${visible ? styles.imageStackLayerVisible : ""}`}
-            loading="eager"
-            decoding="async"
-            fetchPriority={i === 0 ? "high" : "low"}
-            draggable={false}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
 export default function Section({
   programs: programsProp,
 }: {
   programs?: ProgramSource[];
 }) {
   const programs = useMemo(() => normalizePrograms(programsProp), [programsProp]);
+  const n = programs.length;
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const heroWarmSrcs = useMemo(
-    () => [...new Set([DEFAULT_DESKTOP_IMAGE, ...programs.map((p) => p.image)])],
-    [programs]
-  );
-
-  const [isMobile, setIsMobile] = useState(false);
-  const [mobileIndex, setMobileIndex] = useState(0);
-
-  useWarmHeroImageCache(heroWarmSrcs);
-
-  useEffect(() => {
-    const sync = () => setIsMobile(window.innerWidth < 768);
-    sync();
-    window.addEventListener("resize", sync);
-    return () => window.removeEventListener("resize", sync);
+  const updateArrows = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const maxScrollLeft = el.scrollWidth - el.clientWidth;
+    setCanScrollPrev(el.scrollLeft > 1);
+    setCanScrollNext(el.scrollLeft < maxScrollLeft - 1);
   }, []);
 
-  const mobileProgram = programs[mobileIndex] ?? programs[0]!;
-  const n = programs.length;
+  useEffect(() => {
+    updateArrows();
+    const el = carouselRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    return () => {
+      el.removeEventListener("scroll", updateArrows);
+      window.removeEventListener("resize", updateArrows);
+    };
+  }, [programs.length, updateArrows]);
 
-  const goPrev = () => setMobileIndex((i) => (i - 1 + n) % n);
-  const goNext = () => setMobileIndex((i) => (i + 1) % n);
+  const scrollByAmount = (dir: 1 | -1) => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const items = Array.from(el.querySelectorAll<HTMLElement>(`.${styles.carouselItem}`));
+    if (!items.length) return;
+
+    const scrollLeft = el.scrollLeft;
+    const currentIndex = items.reduce((closestIdx, item, idx) => {
+      const currentDistance = Math.abs(items[closestIdx].offsetLeft - scrollLeft);
+      const nextDistance = Math.abs(item.offsetLeft - scrollLeft);
+      return nextDistance < currentDistance ? idx : closestIdx;
+    }, 0);
+
+    const nextIndex = Math.min(Math.max(currentIndex + dir, 0), items.length - 1);
+    el.scrollTo({ left: items[nextIndex].offsetLeft, behavior: "smooth" });
+  };
 
   if (n === 0) {
     return null;
   }
 
   return (
-    <section
-      className={`${styles.section} ${isMobile ? styles.sectionMobile : ""}`}
-      aria-label="Our programs"
-    >
-      <div className={`${styles.inner} ${isMobile ? styles.innerMobile : ""}`}>
-        {isMobile ? (
-          <>
-            <div
-              className={`${styles.imagePanel} ${styles.imagePanelFill}`}
+    <section className={styles.section} aria-label="Our programs">
+      <div className={styles.mainContainer}>
+        <div className={styles.titleRow}>
+          <div className={styles.titleContainer}>
+            <p className={styles.eyebrow}>Our Programs</p>
+            <h2 className={styles.title}>
+              The <em>Journey</em> at BFriends
+            </h2>
+          </div>
+          <div className={`${styles.arrowContainer} ${styles.desktopArrows}`}>
+            <button
+              type="button"
+              className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
+              aria-label="Previous"
+              onClick={() => scrollByAmount(-1)}
+              disabled={!canScrollPrev}
             >
-              <MobileHeroStack programs={programs} activeIndex={mobileIndex} />
-              <div className={styles.imageBottomScrim} aria-hidden />
-              <ImageTitleBlock mobile />
-            </div>
-            <div className={styles.mobileFooter}>
-              <div className={styles.mobileBar}>
-                <button
-                  type="button"
-                  className={styles.arrowBtn}
-                  onClick={goPrev}
-                  aria-label="Previous program"
-                >
-                  <ChevronLeft size={24} strokeWidth={1.5} />
-                </button>
-                <p className={styles.mobileName}>
-                  {mobileProgram.name}
-                </p>
-                <button
-                  type="button"
-                  className={styles.arrowBtn}
-                  onClick={goNext}
-                  aria-label="Next program"
-                >
-                  <ChevronRight size={24} strokeWidth={1.5} />
-                </button>
+              <ChevronLeft size={24} strokeWidth={1.5} />
+            </button>
+            <button
+              type="button"
+              className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
+              aria-label="Next"
+              onClick={() => scrollByAmount(1)}
+              disabled={!canScrollNext}
+            >
+              <ChevronRight size={24} strokeWidth={1.5} />
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.carousel} ref={carouselRef}>
+          <div className={styles.carouselTrack}>
+            {programs.map((program) => (
+              <div key={program.slug} className={styles.carouselItem}>
+                <Card
+                  image={program.image || DEFAULT_DESKTOP_IMAGE}
+                  title={program.name}
+                  subheading={program.subheading}
+                  buttonLabel={program.buttonLabel}
+                  slug={program.slug}
+                />
               </div>
-              <div className={styles.mobileCtaColumn}>
-                <p className={styles.mobileSub}>{mobileProgram.subheading}</p>
-                <Button
-                  href={`/programs/${mobileProgram.slug}`}
-                  color="var(--color-blue-100)"
-                  showIcon
-                  className={styles.mobileCtaButton}
-                >
-                  {mobileProgram.buttonLabel}
-                </Button>
-              </div>
-            </div>
-          </>
-        ) : (
-          <ServicesDesktop programs={programs} />
-        )}
+            ))}
+          </div>
+        </div>
+
+        <div className={`${styles.arrowContainer} ${styles.mobileArrows}`}>
+          <button
+            type="button"
+            className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
+            aria-label="Previous"
+            onClick={() => scrollByAmount(-1)}
+            disabled={!canScrollPrev}
+          >
+            <ChevronLeft size={24} strokeWidth={1.5} />
+          </button>
+          <button
+            type="button"
+            className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
+            aria-label="Next"
+            onClick={() => scrollByAmount(1)}
+            disabled={!canScrollNext}
+          >
+            <ChevronRight size={24} strokeWidth={1.5} />
+          </button>
+        </div>
       </div>
     </section>
   );

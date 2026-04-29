@@ -12,9 +12,10 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   images: {
-    remotePatterns: r2Host
-      ? [{ protocol: "https", hostname: r2Host }]
-      : [],
+    remotePatterns: [
+      { protocol: "https", hostname: "storageb.awancode.com" },
+      ...(r2Host ? [{ protocol: "https", hostname: r2Host }] : []),
+    ],
   },
 };
 

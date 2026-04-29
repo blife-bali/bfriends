@@ -2,7 +2,7 @@
 
 .intro {
   width: 100%;
-  min-height: 110vh;
+  min-height: 100vh;
   background-color: var(--color-white-100);
   display: flex;
   flex-direction: column;
@@ -38,9 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 28px; */
   text-align: center;
-  /* padding: 0 64px; */
 }
 
 .headingContainer {
@@ -170,13 +168,13 @@
 .conclusionTitle{
   font-family: var(--font-display);
   font-size: clamp(36px, 3vw, 40px);
-  /* max-width: 320px; */
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--color-blue-100);
   text-align: left;
   margin: 0;
+  max-width: 16ch;
 }
 
 .rightConclusion{
@@ -202,9 +200,10 @@
 }
 
 
+/* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
   .intro {
-    min-height: 100svh;
+    min-height: auto;
   }
 
   .introTextOnly .container {
@@ -212,8 +211,8 @@
   }
 
   .container {
-    gap: 48px;
-    padding: 72px 48px;
+    gap: 56px;
+    padding: 80px 48px;
   }
 
   .textColumn {
@@ -221,58 +220,69 @@
   }
 
   .heading {
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(28px, 5vw, 36px);
   }
 
   .heading2 {
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(28px, 5vw, 36px);
   }
 
   .description {
-    font-size: clamp(16px, 1.8vw, 18px);
-    max-width: 500px;
+    font-size: clamp(16px, 2.5vw, 18px);
+    max-width: 100%;
   }
 
   .imageWrapper {
-    padding: 0 40px;
+    padding: 0;
+  }
+
+  .imageInner {
+    aspect-ratio: 16 / 10;
   }
 
   /* Tablet: stack conclusion for readability */
   .conclusionContainer {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
     align-items: stretch;
   }
 
   .conclusionTitle {
-    text-align: center;
+    text-align: left;
+    max-width: 100%;
+    font-size: clamp(30px, 4vw, 38px);
   }
 
   .rightConclusion {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .rightConclusion .button {
-    align-self: center;
+    align-self: flex-start;
   }
 
   .conclusionText {
-    text-align: center;
+    text-align: left;
   }
 }
 
+/* Mobile: < 768px */
 @media (max-width: 768px) {
   .container {
-    gap: 32px;
-    padding: 48px 24px;
+    gap: 40px;
+    padding: 56px 24px;
   }
 
   .textColumn {
-    padding: 0 0;
+    padding: 0;
   }
 
   .imageWrapper {
-    padding: 0 24px;
+    padding: 0;
+  }
+
+  .imageInner {
+    aspect-ratio: 4 / 3;
   }
 
   .introTextOnly {
@@ -286,26 +296,43 @@
   /* Mobile: stacked conclusion, full width, touch-friendly */
   .conclusionContainer {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .conclusionTitle {
-    font-size: clamp(28px, 6vw, 36px);
-    text-align: center;
+    font-size: clamp(26px, 7vw, 34px);
+    text-align: left;
+    max-width: 100%;
   }
 
   .rightConclusion {
-    align-items: center;
-    gap: 24px;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .rightConclusion .button {
-    align-self: center;
+    align-self: flex-start;
     min-height: 48px;
   }
 
   .conclusionText {
-    text-align: center;
-    font-size: clamp(16px, 1.8vw, 18px);
+    text-align: left;
+    font-size: clamp(15px, 4vw, 17px);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .container {
+    gap: 32px;
+    padding: 48px 20px;
+  }
+
+  .conclusionTitle {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .conclusionText {
+    font-size: 15px;
   }
 }

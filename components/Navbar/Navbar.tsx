@@ -100,8 +100,10 @@ export default function Navbar() {
     pathname === "/community/event-workshop" || pathname === "/community/blife-ecosystem-news";
   const isEventSlug = pathname.startsWith("/community/event/");
   const isNewsSlug = pathname.startsWith("/community/news/");
+  const isFaqPage = pathname === "/faq";
 
   const solidBg =
+    isFaqPage ||
     isNewsOrEventsPage ||
     isEventSlug ||
     isNewsSlug ||

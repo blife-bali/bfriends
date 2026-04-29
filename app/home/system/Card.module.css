@@ -104,6 +104,7 @@
   line-height: 1.4;
 }
 
+/* Tablet: stack columns vertically */
 @media (max-width: 1024px) {
   .card {
     grid-template-columns: 1fr;
@@ -111,21 +112,48 @@
   }
 
   .imageColumn {
-    min-height: 280px;
+    min-height: 240px;
+    aspect-ratio: 16 / 9;
   }
 
   .detailsColumn {
     padding: 24px 28px;
   }
+
+  .cardHeading {
+    font-size: clamp(20px, 3vw, 24px);
+  }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .imageColumn {
-    min-height: 220px;
+    min-height: 200px;
+    aspect-ratio: 16 / 10;
   }
 
   .detailsColumn {
     padding: 20px 24px;
     gap: 12px;
+  }
+
+  .cardHeading {
+    font-size: clamp(18px, 5vw, 22px);
+  }
+
+  .cardDescription {
+    font-size: 14px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .imageColumn {
+    min-height: 180px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .detailsColumn {
+    padding: 16px 20px;
   }
 }

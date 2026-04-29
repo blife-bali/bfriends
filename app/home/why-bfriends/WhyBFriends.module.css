@@ -7,33 +7,79 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;  
-
-  
 }
 
 .mainContainer {
   max-width: 1568px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 48px;
-  padding: 64px;
-  /* box-sizing: border-box;
-  align-items: flex-start; */
-}
-
-/* Left Container - Sticky */
-.leftContainer {
-  max-width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 72px;
+  padding: 128px 64px;
+}
+
+/* Top */
+.titleRow {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: 24px;
+}
+
+.titleContainer {
+  flex: 1;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.arrowContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   flex-shrink: 0;
-  position: sticky;
-  top: 0;
-  max-height: 100vh;
-  padding: 128px 0;
+}
+
+.desktopArrows {
+  display: flex;
+}
+
+.mobileArrows {
+  display: none;
+}
+
+.arrowButton {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-green-100);
+  background: var(--color-white-100);
+  color: var(--color-green-100);
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+
+.arrowButton:hover:not(:disabled) {
+  background: var(--color-green-100);
+  color: var(--color-white-100);
+}
+
+.arrowButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.arrowButtonLeft {
+  cursor: pointer;
+}
+
+.arrowButtonRight {
+  cursor: pointer;
 }
 
 .eyebrow {
@@ -63,75 +109,95 @@
 .subheading {
   font-family: var(--font-sans);
   font-size: clamp(18px, 1.5vw, 20px);
-  /* font-weight: 400; */
   line-height: 1.6;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
   margin: 0;
+  max-width: 50ch;
 }
 
 .button {
   align-self: flex-start;
 }
 
-/* Cards Wrapper */
-.cardsWrapper {
-  flex: 1;
+/* Bottom: horizontal card carousel */
+.carousel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
-/* Cards Container - Scrollable */
-.cardsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 120px;
-  height: fit-content;
-  padding: 128px 0;
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
-.cardsGrid {
+.carouselTrack {
   display: flex;
-  flex-direction: column;
-  gap: 120px;
+  gap: 72px;
+  align-items: stretch;
+  width: 100%;
+  padding-bottom: 4px;
 }
 
-.cardsGridRight {
-  margin-top: 240px;
+.carouselItem {
+  flex: 0 0 calc((100% - (2 * 72px)) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
 }
 
-/* Tablet: 768px - 1024px */
+/* Tablet large: 1024px - 1200px */
 @media (max-width: 1200px) {
   .mainContainer {
     padding: 96px 48px;
-  }
-
-  .leftContainer {
-    max-width: 320px;
+    gap: 56px;
   }
 
   .subheading {
-    max-width: 280px;
+    max-width: 100%;
+  }
+
+  .carouselTrack {
+    gap: 32px;
+  }
+
+  .carouselItem {
+    flex-basis: calc((100% - (2 * 32px)) / 3);
   }
 }
 
+/* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
-  .section {
-    min-height: 100vh;
-  }
-
   .mainContainer {
-    grid-template-columns: 1fr;
     padding: 72px 48px;
-    gap: 48px;
+    gap: 40px;
   }
 
-  .leftContainer {
+  .titleContainer {
     max-width: 100%;
     width: 100%;
-    text-align: center;
-    align-items: center;
-    position: static;
-    padding: 0;
-    max-height: none;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .desktopArrows {
+    display: none;
+  }
+
+  .mobileArrows {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
   }
 
   .subheading {
@@ -139,63 +205,63 @@
   }
 
   .button {
-    align-self: center;
+    align-self: flex-start;
   }
 
-  .cardsWrapper {
-    height: auto;
-    overflow: visible;
+  .carouselTrack {
+    gap: 24px;
   }
 
-  .cardsContainer {
-    grid-template-columns: 1fr;
-    padding: 48px 0 0;
-    gap: 64px;
-  }
-
-  .cardsGrid,
-  .cardsGridRight {
-    margin-top: 0;
-    gap: 64px;
+  .carouselItem {
+    flex-basis: calc((100% - 24px) / 2);
   }
 }
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
   .mainContainer {
-    padding: 48px 24px;
-    gap: 40px;
+    padding: 56px 24px;
+    gap: 32px;
   }
 
-  .leftContainer {
-    gap: 16px;
+  .titleContainer {
+    gap: 12px;
+  }
+
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .title {
-    font-size: clamp(28px, 6vw, 36px);
+    font-size: clamp(28px, 7vw, 36px);
   }
 
   .subheading {
-    font-size: clamp(16px, 1.5vw, 18px);
+    font-size: clamp(15px, 4vw, 17px);
   }
 
-  .cardsContainer {
-    padding: 0;
-    gap: 40px;
+  .carouselTrack {
+    gap: 16px;
   }
 
-  .cardsGrid,
-  .cardsGridRight {
-    gap: 40px;
+  .carouselItem {
+    flex-basis: 85%;
+    min-width: 260px;
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   .mainContainer {
-    padding: 32px 16px;
+    padding: 48px 20px;
   }
 
   .title {
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .carouselItem {
+    flex-basis: 90%;
   }
 }
