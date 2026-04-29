@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, ArrowUpRight, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./SubscriptionForm.module.css";
+import { trackEvent } from "@/lib/gtag";
 
 import Button from "@/components/ui/Button/Button";
 
@@ -30,13 +31,14 @@ export default function SubscriptionForm() {
           mode: "no-cors", // Required for Google Forms
           body: formData,
         });
-        
+
         // We assume success because 'no-cors' gives an opaque response
-      setIsSubmitted(true);
-      setEmail("");
+        setIsSubmitted(true);
+        setEmail("");
+        trackEvent('form_submit', { form_name: 'newsletter', success: true });
       } catch (error) {
         console.error("Error submitting form:", error);
-        // Optionally handle error state here
+        trackEvent('form_submit', { form_name: 'newsletter', success: false });
       } finally {
         setIsSubmitting(false);
       }

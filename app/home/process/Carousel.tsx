@@ -10,6 +10,7 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "./Card";
+import { trackEvent } from "@/lib/gtag";
 
 export default function Carousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -55,7 +56,10 @@ export default function Carousel() {
             type="button"
             className={`${styles.arrowButton} ${styles.arrowButtonLeft}`}
             aria-label="Previous step"
-            onClick={() => emblaApi?.scrollPrev()}
+            onClick={() => {
+              trackEvent('carousel_nav', { carousel: 'process', direction: 'prev' });
+              emblaApi?.scrollPrev();
+            }}
             disabled={!canScrollPrev}
           >
             <ChevronLeft size={28} strokeWidth={1.5} />
@@ -79,7 +83,10 @@ export default function Carousel() {
             type="button"
             className={`${styles.arrowButton} ${styles.arrowButtonRight}`}
             aria-label="Next step"
-            onClick={() => emblaApi?.scrollNext()}
+            onClick={() => {
+              trackEvent('carousel_nav', { carousel: 'process', direction: 'next' });
+              emblaApi?.scrollNext();
+            }}
             disabled={!canScrollNext}
           >
             <ChevronRight size={28} strokeWidth={1.5} />

@@ -15,6 +15,7 @@ import styles from "./Footer.module.css";
 import locationStyles from "./Location.module.css";
 import subscribeStyles from "./Subscribe.module.css";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site-contact";
+import { trackEvent } from "@/lib/gtag";
 
 import Button from "@/components/ui/Button/Button";
 
@@ -108,11 +109,13 @@ function SubscriptionSection({ programs }: { programs: ProgramLink[] }) {
           mode: "no-cors",
           body: formData,
         });
-        
+
         setIsSubmitted(true);
         setEmail("");
+        trackEvent('form_submit', { form_name: 'newsletter_footer', success: true });
       } catch (error) {
         console.error("Error submitting form:", error);
+        trackEvent('form_submit', { form_name: 'newsletter_footer', success: false });
       } finally {
         setIsSubmitting(false);
       }
@@ -228,11 +231,12 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
           <div className={styles.footerContact}>
             <h4 className={styles.footerTitle}>Contact Us</h4>
             <nav className={styles.menuWrapper}>
-              <a 
-                href="https://instagram.com/bfriends.bali/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://instagram.com/bfriends.bali/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.footerContactItem}
+                onClick={() => trackEvent('footer_click', { label: 'instagram', category: 'social' })}
               >
                 <Instagram size={16} />
                 <span>Instagram: bfriends.bali</span>
@@ -240,13 +244,15 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
               <a
                 href={CONTACT_PHONE_HREF}
                 className={styles.footerContactItem}
+                onClick={() => trackEvent('footer_click', { label: 'phone', category: 'contact' })}
               >
                 <Phone size={16} />
                 <span>Phone: {CONTACT_PHONE_DISPLAY}</span>
               </a>
-              <a 
-                href="mailto:hello@bfriends.id" 
+              <a
+                href="mailto:hello@bfriends.id"
                 className={styles.footerContactItem}
+                onClick={() => trackEvent('footer_click', { label: 'email', category: 'contact' })}
               >
                 <Mail size={16} />
                 <span>Email: hello@bfriends.id</span>
@@ -260,16 +266,52 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
           <div className={styles.footerLinksGroup}>
             <h4 className={styles.footerTitle}>About BFriends</h4>
             <nav>
-              <Link href="/about/philosophy" className={styles.footerLink}>Our Philosophy</Link>
-              <Link href="/about/journey" className={styles.footerLink}>Customer Journey</Link>
+              <Link
+                href="/about/philosophy"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'philosophy', category: 'page' })}
+              >
+                Our Philosophy
+              </Link>
+              <Link
+                href="/about/journey"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'customer_journey', category: 'page' })}
+              >
+                Customer Journey
+              </Link>
             </nav>
           </div>
           <div className={styles.footerLinksGroup}>
             <h4 className={styles.footerTitle}>BLife Ecosystem</h4>
             <nav>
-              <a href="https://bwork.id" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>BWork</a>
-              <a href="https://bnesta.id" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>BNesta</a>
-              <a href="https://blive.id" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>BLive</a>
+              <a
+                href="https://bwork.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'bwork', category: 'ecosystem' })}
+              >
+                BWork
+              </a>
+              <a
+                href="https://bnesta.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'bnesta', category: 'ecosystem' })}
+              >
+                BNesta
+              </a>
+              <a
+                href="https://blive.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'blive', category: 'ecosystem' })}
+              >
+                BLive
+              </a>
             </nav>
           </div>
         </div>
@@ -280,7 +322,12 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
             <h4 className={styles.footerTitle}>Programs</h4>
             <nav>
               {programs.map((program) => (
-                <Link key={program.slug} href={`/programs/${program.slug}`} className={styles.footerLink}>
+                <Link
+                  key={program.slug}
+                  href={`/programs/${program.slug}`}
+                  className={styles.footerLink}
+                  onClick={() => trackEvent('footer_click', { label: program.name, category: 'program' })}
+                >
                   {program.name}
                 </Link>
               ))}
@@ -293,15 +340,39 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
           <div className={styles.footerCommunity}>
             <h4 className={styles.footerTitle}>Membership</h4>
             <nav>
-              <Link href="/membership/passport" className={styles.footerLink}>BFriends Passport</Link>
-              <Link href="/membership/charm" className={styles.footerLink}>Charm</Link>
+              <Link
+                href="/membership/passport"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'bfriends_passport', category: 'membership' })}
+              >
+                BFriends Passport
+              </Link>
+              <Link
+                href="/membership/charm"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'charm', category: 'membership' })}
+              >
+                Charm
+              </Link>
             </nav>
           </div>
           <div className={styles.footerCommunity}>
             <h4 className={styles.footerTitle}>Community</h4>
             <nav>
-              <Link href="/community/events" className={styles.footerLink}>Event & Workshop</Link>
-              <Link href="/community/news" className={styles.footerLink}>BLife Ecosystem News</Link>
+              <Link
+                href="/community/events"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'event_workshop', category: 'community' })}
+              >
+                Event & Workshop
+              </Link>
+              <Link
+                href="/community/news"
+                className={styles.footerLink}
+                onClick={() => trackEvent('footer_click', { label: 'ecosystem_news', category: 'community' })}
+              >
+                BLife Ecosystem News
+              </Link>
             </nav>
           </div>
         </div>

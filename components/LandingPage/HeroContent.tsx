@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button/Button";
 import { ChevronDown } from "lucide-react";
 import anime from "animejs";
 import styles from "./HeroContent.module.css";
+import { trackEvent } from "@/lib/gtag";
 
 const SplitText = ({ text }: { text: string }) => {
   const parts = text.split(/(\s+)/);
@@ -99,6 +100,7 @@ export default function HeroContent({ onButtonAnimationStart }: { onButtonAnimat
       <Button
         ref={buttonRef}
         onClick={() => {
+          trackEvent('cta_click', { label: 'discover_more', location: 'hero' });
           window.scrollTo({ top: window.innerHeight * 1.5, behavior: "smooth" });
         }}
         className={styles.scrollButton}

@@ -16,7 +16,7 @@ export default function GoogleAnalytics({ measurementId }: { measurementId: stri
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${measurementId}');
+          gtag('config', '${measurementId}', { send_page_view: false });
         `}
       </Script>
     </>

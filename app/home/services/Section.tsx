@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { programsData, type ProgramData } from "@/lib/programs-data";
 import Card from "./card/Card";
+import { trackEvent } from "@/lib/gtag";
 import styles from "./Section.module.css";
 
 const DEFAULT_DESKTOP_IMAGE = "/images/programs/D.webp";
@@ -28,6 +29,7 @@ function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram
     slug: (p.slug ?? p.name).toLowerCase(),
   }));
 }
+
 
 export default function Section({
   programs: programsProp,
@@ -61,6 +63,7 @@ export default function Section({
   }, [programs.length, updateArrows]);
 
   const scrollByAmount = (dir: 1 | -1) => {
+    trackEvent('services_interact', { action: 'carousel_arrow', direction: dir === 1 ? 'next' : 'prev' });
     const el = carouselRef.current;
     if (!el) return;
     const items = Array.from(el.querySelectorAll<HTMLElement>(`.${styles.carouselItem}`));

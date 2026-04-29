@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Section.module.css";
 import { Card } from "./index";
+import { trackEvent } from "@/lib/gtag";
 
 export default function Section({ programs = [] }: { programs?: any[] }) {
   const [selectedProgramKey, setSelectedProgramKey] = useState("");
@@ -29,6 +30,7 @@ export default function Section({ programs = [] }: { programs?: any[] }) {
   const selectedProgram = programs.find((p) => getProgramKey(p) === selectedProgramKey) || programs[0];
 
   const handlePointClick = (programKey: string) => {
+    trackEvent('program_point_click', { program: programKey, point_id: programKey });
     setSelectedProgramKey(programKey);
 
     if (isMobile || isTab) {

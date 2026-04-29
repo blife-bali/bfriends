@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./EventCard.module.css";
 import type { EventItem } from "@/lib/event-data";
+import { trackEvent } from "@/lib/gtag";
 
 export interface EventCardProps {
   item: EventItem;
@@ -40,7 +41,11 @@ export default function EventCard({
 
   return (
     <article className={`${styles.card} ${landscape ? styles.landscape : ""}`}>
-      <Link href={href} className={styles.link}>
+      <Link
+        href={href}
+        className={styles.link}
+        onClick={() => trackEvent('card_click', { card_type: 'event', slug: item.slug })}
+      >
         {content}
       </Link>
     </article>
