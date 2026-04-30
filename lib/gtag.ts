@@ -43,7 +43,8 @@ export type GAEventParams = {
   startup_choice: { choice: 'ambience' | 'silence' };
   program_point_click: { program: string; point_id: string };
   services_interact: {
-    action: 'menu_click' | 'mobile_arrow' | 'mobile_cta';
+    action: 'menu_click' | 'mobile_arrow' | 'mobile_cta' | 'carousel_arrow';
+    direction?: 'prev' | 'next';
     program?: string;
   };
   ui_close: { target: string };
