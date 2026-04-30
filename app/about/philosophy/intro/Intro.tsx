@@ -1,0 +1,85 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import Button from "@/components/ui/Button/Button";
+import styles from "./Intro.module.css";
+
+const DEFAULT_HEADLINE = "Feeling tired, out of balance, or stuck in a routine?";
+const DEFAULT_BODY =
+  "Your body doesn’t always need more effort; sometimes it needs the right kind of care. At the center of Kerobokan, Bali, BFriends will help you start where you are and guide you toward what you need.";
+
+const INTRO_IMAGE = "/images/intro.jpg";
+
+export interface IntroProps {
+  headline?: string;
+  body?: string;
+  imageUrl?: string;
+  showCta?: boolean;
+  showImage?: boolean;
+}
+
+export default function Intro({
+  headline = DEFAULT_HEADLINE,
+  body = DEFAULT_BODY,
+  imageUrl = INTRO_IMAGE,
+  showCta = true,
+  showImage = true,
+}: IntroProps) {
+  const [isImageInView, setIsImageInView] = useState(false);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsImageInView(entry.isIntersecting),
+      { threshold: 0.25, rootMargin: "0px" }
+    );
+    if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const textOnly = !showImage && !showCta;
+  return (
+    <section className={`${styles.intro} ${textOnly ? styles.introTextOnly : ""}`}>
+      <div className={styles.container}>
+        
+
+        {/* Title container moved above image for philosophy page */}
+        <div className={styles.conclusionContainer}>
+          <div className={styles.leftConclusion}>
+            <h2 className={styles.conclusionTitle}>About BFriends</h2>
+          </div>
+          <div className={styles.rightConclusion}>
+            <p className={styles.conclusionText}>{body}</p>
+            {showCta && (
+              <Button
+                href="/about"
+                className={styles.button}
+                color="var(--color-blue-100)"
+                showIcon
+              >
+                About Us
+              </Button>
+            )}
+          </div>
+        </div>
+
+        {showImage && (
+          <div className={styles.imageWrapper} ref={imageWrapperRef}>
+            <div
+              className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
+            >
+              <Image
+                src={imageUrl}
+                alt="BFriends"
+                fill
+                className={styles.sectionImage}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
+              />
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

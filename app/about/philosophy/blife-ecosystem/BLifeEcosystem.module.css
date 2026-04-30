@@ -15,6 +15,11 @@
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
   margin-bottom: 48px;
 }
 
@@ -25,7 +30,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-cream-140);
-  margin: 0 0 12px 0;
+  margin: 0 0 0;
 }
 
 .headerTitle {
@@ -35,58 +40,81 @@
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--color-blue-100);
+  margin: 0 0 8px 0;
+}
+
+.headerSub {
   margin: 0;
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-}
-
-.item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  padding: 48px 24px;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-  transition: background-color 0.2s ease, padding-left 0.2s ease;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-.item:hover {
-  background-color: color-mix(in srgb, var(--color-blue-100) 3%, transparent);
-}
-
-.item:hover .itemDesc {
-  padding-left: 4px;
-}
-
-.itemLabel {
+  max-width: 88ch;
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.1vw, 16px);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--color-blue-100);
-  margin: 0;
-  flex-shrink: 0;
-}
-
-.itemDesc {
-  font-family: var(--font-display);
-  font-size: clamp(18px, 1.4vw, 22px);
-  font-weight: 400;
-  line-height: 1.4;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.6;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
-  margin: 0;
-  max-width: 56ch;
-  transition: padding-left 0.2s ease;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.arrowButton {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-green-100);
+  background: var(--color-white-100);
+  color: var(--color-green-100);
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+
+.arrowButton:hover:not(:disabled) {
+  background: var(--color-green-100);
+  color: var(--color-white-100);
+}
+
+.arrowButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.carousel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselTrack {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.cardLink {
+  display: block;
+  flex: 0 0 calc((100% - (2 * 32px)) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+
+.carouselItem {
+  flex: 0 0 calc((100% - (2 * 32px)) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
 }
 
 /* Tablet: 768px - 1024px */
@@ -100,6 +128,7 @@
   }
 
   .header {
+    gap: 12px;
     margin-bottom: 36px;
   }
 
@@ -107,8 +136,22 @@
     font-size: clamp(22px, 2vw, 28px);
   }
 
-  .item {
-    padding: 36px 16px;
+  .headerSub {
+    max-width: 100%;
+    font-size: clamp(15px, 1.8vw, 17px);
+  }
+
+  .controls {
+    margin-bottom: 20px;
+  }
+
+  .carouselTrack {
+    gap: 24px;
+  }
+
+  .cardLink,
+  .carouselItem {
+    flex-basis: calc((100% - 24px) / 2);
   }
 }
 
@@ -123,6 +166,7 @@
   }
 
   .header {
+    gap: 10px;
     margin-bottom: 28px;
   }
 
@@ -130,23 +174,24 @@
     font-size: clamp(20px, 4vw, 24px);
   }
 
-  .item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 28px 0;
+  .headerSub {
+    font-size: clamp(14px, 3.7vw, 16px);
+    line-height: 1.55;
   }
 
-  .item:hover .itemDesc {
-    padding-left: 0;
+  .controls {
+    justify-content: center;
+    margin-bottom: 16px;
   }
 
-  .itemDesc {
-    font-size: clamp(16px, 4vw, 18px);
+  .carouselTrack {
+    gap: 16px;
   }
 
-  .itemLabel {
-    font-size: clamp(13px, 1.1vw, 14px);
+  .cardLink,
+  .carouselItem {
+    flex-basis: 85%;
+    min-width: 260px;
   }
 }
 
@@ -159,7 +204,8 @@
     padding: 0 16px;
   }
 
-  .item {
-    padding: 24px 0;
+  .cardLink,
+  .carouselItem {
+    flex-basis: 90%;
   }
 }

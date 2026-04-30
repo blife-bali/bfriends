@@ -11,6 +11,20 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  async redirects() {
+    return [
+      {
+        source: "/about/philosophy",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/about/customer-journey",
+        destination: "/about/journey",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "storageb.awancode.com" },

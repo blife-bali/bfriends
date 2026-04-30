@@ -49,7 +49,7 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
           <Button
             className={styles.button}
             color="var(--color-white-100)"
-            href="/about/philosophy"
+            href="/about"
             showIcon
           >
             Learn More

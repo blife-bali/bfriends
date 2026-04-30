@@ -9,26 +9,28 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("customer-journey");
   return {
-    title: seo.seo_title || "Customer Journey | BFriends",
-    description: seo.seo_description || "An expert-driven, data-led 6-step wellness system — Measure, Assess, Design, Guide, Track, Refine — integrated into your routine at BFriends.",
+    title: seo.seo_title || "BFriends Journey | BFriends",
+    description:
+      seo.seo_description ||
+      "An expert-driven, data-led 6-step wellness system - Measure, Assess, Design, Guide, Track, Refine - integrated into your routine at BFriends.",
   };
 }
 
 const DEFAULT_HEADER = {
-  breadcrumb: "About / Customer Journey",
-  title: "Customer Journey",
+  breadcrumb: "About / BFriends Journey",
+  title: "BFriends Journey",
   image: "/images/Integrate/DDK09585.jpg",
 };
 
-export default async function CustomerJourneyPage() {
+export default async function JourneyPage() {
   const [processSteps, pageHeader] = await Promise.all([
     getProcessSteps("customer-journey"),
     getPageHeader("customer-journey"),
   ]);
 
   const header = {
-    breadcrumb: pageHeader?.breadcrumb || DEFAULT_HEADER.breadcrumb,
-    title: pageHeader?.title || DEFAULT_HEADER.title,
+    breadcrumb: DEFAULT_HEADER.breadcrumb,
+    title: DEFAULT_HEADER.title,
     image: pageHeader?.image || DEFAULT_HEADER.image,
   };
 

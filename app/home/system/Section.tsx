@@ -96,20 +96,20 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
         {/* Conclusion container (same structure as Intro) */}
         <div className={styles.conclusionContainer}>
           <div className={styles.leftConclusion}>
-            <h2 className={styles.conclusionTitle}>Customer Journey</h2>
+            <h2 className={styles.conclusionTitle}>BFriends Journey</h2>
           </div>
           <div className={styles.rightConclusion}>
             {paragraphs.map((paragraph: string, idx: number) => (
               <p key={idx} className={styles.conclusionText}>{paragraph}</p>
             ))}
             <Button
-              href="/about/customer-journey"
+              href="/about/journey"
               className={styles.conclusionButton}
               color="var(--color-blue-100)"
               showIcon
               onClick={() => trackEvent('cta_click', { label: 'view_customer_journey', location: 'home_system' })}
             >
-              View Customer Journey
+              View BFriends Journey
             </Button>
           </div>
         </div>

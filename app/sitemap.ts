@@ -6,8 +6,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://bfriends.id'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 },
-    { url: `${SITE_URL}/about/philosophy`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${SITE_URL}/about/customer-journey`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/about/journey`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/community/event-workshop`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/community/blife-ecosystem-news`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/membership/bfriends-passport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },

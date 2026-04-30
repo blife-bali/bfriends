@@ -267,18 +267,18 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
             <h4 className={styles.footerTitle}>About BFriends</h4>
             <nav>
               <Link
-                href="/about/philosophy"
+                href="/about"
                 className={styles.footerLink}
-                onClick={() => trackEvent('footer_click', { label: 'philosophy', category: 'page' })}
+                onClick={() => trackEvent('footer_click', { label: 'about_bfriends', category: 'page' })}
               >
-                Our Philosophy
+                About BFriends
               </Link>
               <Link
                 href="/about/journey"
                 className={styles.footerLink}
                 onClick={() => trackEvent('footer_click', { label: 'customer_journey', category: 'page' })}
               >
-                Customer Journey
+                BFriends Journey
               </Link>
             </nav>
           </div>

@@ -1,7 +1,7 @@
 /** About BFriends links. */
 export const aboutNavItems = [
-  { label: "Our Philosophy", href: "/about/philosophy" },
-  { label: "Customer Journey", href: "/about/customer-journey" },
+  { label: "About BFriends", href: "/about" },
+  { label: "BFriends Journey", href: "/about/journey" },
 ] as const;
 
 /** Programs: filled at runtime from /api/programs. */
