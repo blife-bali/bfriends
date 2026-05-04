@@ -25,5 +25,5 @@ export const navColumns: { id: NavColumnId; title: string; items: readonly { lab
   { id: "about", title: "About BFriends", items: aboutNavItems },
   { id: "programs", title: "Programs", items: programsNavItems },
   { id: "membership", title: "Membership", items: membershipNavItems },
-  { id: "community", title: "Community", items: communityNavItems },
+  { id: "community", title: "Journal", items: communityNavItems },
 ];

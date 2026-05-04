@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader/PageHeader";
+import JournalPageHeader from "@/components/JournalPageHeader/JournalPageHeader";
 import NewsContent from "./NewsContent";
 import { getPageSeo, getNews, getPageHeader } from "@/lib/cms";
+import { pickLatestJournalItem } from "@/lib/journal";
 
 export const dynamic = "force-dynamic";
 
@@ -13,24 +14,17 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const DEFAULT_HEADER = {
-  breadcrumb: "Community / BLife Ecosystem News",
-  title: "BLife Ecosystem News",
-};
-
 export default async function BLifeEcosystemNewsPage() {
   const [news, pageHeader] = await Promise.all([
     getNews(),
     getPageHeader("blife-ecosystem-news"),
   ]);
 
+  const featured = pickLatestJournalItem(news);
+
   return (
     <>
-      <PageHeader
-        breadcrumb={pageHeader?.breadcrumb || DEFAULT_HEADER.breadcrumb}
-        title={pageHeader?.title || DEFAULT_HEADER.title}
-        variant="noImage"
-      />
+      <JournalPageHeader kind="news" featured={featured} headerImage={pageHeader?.image} />
       <main>
         <NewsContent initialNews={news} />
       </main>

@@ -160,7 +160,7 @@
   margin: 0 auto;
   padding: 3rem 4rem 5rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -178,6 +178,47 @@
   margin: 0;
 }
 
+.pagination {
+  max-width: 1568px;
+  margin: 0 auto;
+  padding: 0 4rem 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  box-sizing: border-box;
+}
+
+.paginationBtn {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-blue-80);
+  background: var(--color-white-100);
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.paginationBtn:hover:not(:disabled) {
+  border-color: var(--color-blue-60);
+}
+
+.paginationBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.paginationStatus {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-cream-140);
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -186,6 +227,10 @@
 
   .filtersContainer {
     padding: 0 2.5rem;
+  }
+
+  .pagination {
+    padding: 0 2.5rem 3rem;
   }
 }
 
@@ -220,6 +265,11 @@
   .noResults {
     padding: 3rem 1.5rem;
   }
+
+  .pagination {
+    padding: 0 1.5rem 2.5rem;
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -238,5 +288,9 @@
 
   .noResults {
     padding: 2rem 1rem;
+  }
+
+  .pagination {
+    padding: 0 1rem 2rem;
   }
 }

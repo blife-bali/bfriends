@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import EventCard from "@/components/EventCard/EventCard";
 import styles from "./EventsJournal.module.css";
+
+const PAGE_SIZE = 16;
 
 const SORT_OPTIONS = [
   { value: "newest", label: "Newest first" },
@@ -23,6 +25,7 @@ export default function EventsContent({ initialEvents = [] }: { initialEvents?: 
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
+  const [page, setPage] = useState(1);
 
   const ecosystems = useMemo(() => {
     const set = new Set(initialEvents.map((e) => e.ecosystem));
@@ -42,7 +45,16 @@ export default function EventsContent({ initialEvents = [] }: { initialEvents?: 
       list = list.filter((e) => e.ecosystem === ecosystem);
     }
     return sortEvents(list, sort);
+  }, [search, ecosystem, sort, initialEvents]);
+
+  useEffect(() => {
+    setPage(1);
   }, [search, ecosystem, sort]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const pagedItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const showPagination = filtered.length > PAGE_SIZE;
 
   return (
     <section className={styles.section}>
@@ -134,11 +146,36 @@ export default function EventsContent({ initialEvents = [] }: { initialEvents?: 
           <p className={styles.noResultsText}>No events match your filters.</p>
         </div>
       ) : (
-        <div className={styles.grid}>
-          {filtered.map((item) => (
-            <EventCard key={item.id} item={item} />
-          ))}
-        </div>
+        <>
+          <div className={styles.grid}>
+            {pagedItems.map((item) => (
+              <EventCard key={item.id} item={item} />
+            ))}
+          </div>
+          {showPagination ? (
+            <nav className={styles.pagination} aria-label="Events pagination">
+              <button
+                type="button"
+                className={styles.paginationBtn}
+                disabled={currentPage <= 1}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+              >
+                Previous
+              </button>
+              <span className={styles.paginationStatus}>
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                type="button"
+                className={styles.paginationBtn}
+                disabled={currentPage >= totalPages}
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              >
+                Next
+              </button>
+            </nav>
+          ) : null}
+        </>
       )}
     </section>
   );

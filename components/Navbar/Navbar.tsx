@@ -97,15 +97,12 @@ export default function Navbar() {
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
 
-  const isNewsOrEventsPage =
-    pathname === "/community/event-workshop" || pathname === "/community/blife-ecosystem-news";
   const isEventSlug = pathname.startsWith("/community/event/");
   const isNewsSlug = pathname.startsWith("/community/news/");
   const isFaqPage = pathname === "/faq";
 
   const solidBg =
     isFaqPage ||
-    isNewsOrEventsPage ||
     isEventSlug ||
     isNewsSlug ||
     isScrolled ||

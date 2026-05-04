@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import styles from "./NewsJournal.module.css";
+
+const PAGE_SIZE = 16;
 
 const SORT_OPTIONS = [
   { value: "newest", label: "Newest first" },
@@ -23,6 +25,7 @@ export default function NewsContent({ initialNews = [] }: { initialNews?: any[] 
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
+  const [page, setPage] = useState(1);
 
   const ecosystems = useMemo(() => {
     const set = new Set(initialNews.map((n) => n.ecosystem));
@@ -37,14 +40,23 @@ export default function NewsContent({ initialNews = [] }: { initialNews?: any[] 
         (n) =>
           n.name.toLowerCase().includes(q) ||
           n.text.toLowerCase().includes(q) ||
-          n.author.toLowerCase().includes(q)
+          (n.author ?? "").toLowerCase().includes(q)
       );
     }
     if (ecosystem !== "all") {
       list = list.filter((n) => n.ecosystem === ecosystem);
     }
     return sortNews(list, sort);
+  }, [search, ecosystem, sort, initialNews]);
+
+  useEffect(() => {
+    setPage(1);
   }, [search, ecosystem, sort]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const pagedItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const showPagination = filtered.length > PAGE_SIZE;
 
   return (
     <section className={styles.section}>
@@ -136,11 +148,36 @@ export default function NewsContent({ initialNews = [] }: { initialNews?: any[] 
           <p className={styles.noResultsText}>No news match your filters.</p>
         </div>
       ) : (
-        <div className={styles.grid}>
-          {filtered.map((item) => (
-            <NewsCard key={item.id} item={item} />
-          ))}
-        </div>
+        <>
+          <div className={styles.grid}>
+            {pagedItems.map((item) => (
+              <NewsCard key={item.id} item={item} />
+            ))}
+          </div>
+          {showPagination ? (
+            <nav className={styles.pagination} aria-label="Journal pagination">
+              <button
+                type="button"
+                className={styles.paginationBtn}
+                disabled={currentPage <= 1}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+              >
+                Previous
+              </button>
+              <span className={styles.paginationStatus}>
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                type="button"
+                className={styles.paginationBtn}
+                disabled={currentPage >= totalPages}
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              >
+                Next
+              </button>
+            </nav>
+          ) : null}
+        </>
       )}
     </section>
   );
