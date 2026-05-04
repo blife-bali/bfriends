@@ -7,6 +7,8 @@ import Manifesto from "./philosophy/manifesto/Manifesto";
 import CoreBeliefs from "./philosophy/core-beliefs/CoreBeliefs";
 import IntegratedSelf from "./philosophy/integrated-self/IntegratedSelf";
 import BLifeEcosystem from "./philosophy/blife-ecosystem/BLifeEcosystem";
+import SiteLocation from "@/components/SiteLocation/SiteLocation";
+import SiteNewsletterCta from "@/components/SiteNewsletterCta/SiteNewsletterCta";
 import styles from "./philosophy/page.module.css";
 import {
   getPageSeo,
@@ -54,22 +56,23 @@ export default async function AboutPage() {
   };
 
   return (
-    <main className={styles.page}>
-      <PageHeader
-        title={header.title}
-        breadcrumb={header.breadcrumb}
-        image={header.image}
-      />
-      <Intro
-        headline={intro?.headline}
-        body={intro?.body}
-        imageUrl={intro?.image_url}
-        showCta={false}
-      />
-      
-      <WhyBFriends cards={whyCards} />
-      <Journey />
-      {/* <Manifesto
+    <>
+      <main className={styles.page}>
+        <PageHeader
+          title={header.title}
+          breadcrumb={header.breadcrumb}
+          image={header.image}
+        />
+        <Intro
+          headline={intro?.headline}
+          body={intro?.body}
+          imageUrl={intro?.image_url}
+          showCta={false}
+        />
+
+        <WhyBFriends cards={whyCards} />
+        <Journey />
+        {/* <Manifesto
         headline={manifesto?.headline}
         body={manifesto?.body}
       />
@@ -79,7 +82,10 @@ export default async function AboutPage() {
         body={integratedSelf?.body}
         image={integratedSelf?.image}
       /> */}
-      <BLifeEcosystem items={ecosystemItems} />
-    </main>
+        <BLifeEcosystem items={ecosystemItems} />
+      </main>
+      <SiteLocation />
+      <SiteNewsletterCta />
+    </>
   );
 }

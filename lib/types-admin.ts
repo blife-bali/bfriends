@@ -49,6 +49,14 @@ export interface ProcessSubpoint {
   sort_order: number;
 }
 
+/** Nested session category for admin PUT/GET (matches `replaceProgramChildren` payload). */
+export interface ProgramSessionTypeGroup {
+  id?: number | null;
+  title: string;
+  sort_order: number;
+  sessions: ProgramSession[];
+}
+
 export interface Program {
   id: number;
   name: string;
@@ -63,6 +71,8 @@ export interface Program {
   breadcrumb: string | null;
   philosophy_image: string | null;
   pillars_image: string | null;
+  pillars_title: string | null;
+  pillars_paragraph: string | null;
   previous_program: string | null;
   next_program: string | null;
   seo_title?: string | null;
@@ -72,6 +82,7 @@ export interface Program {
   steps?: ProgramStep[];
   pillars?: ProgramPillar[];
   sessions?: ProgramSession[];
+  session_types?: ProgramSessionTypeGroup[];
 }
 
 export interface ProgramStep {
@@ -99,6 +110,7 @@ export interface ProgramSession {
   image: string | null;
   icon: string | null;
   sort_order: number;
+  session_type_id?: number | null;
 }
 
 export interface Event {

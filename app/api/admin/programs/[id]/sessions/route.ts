@@ -33,12 +33,12 @@ export async function POST(
   try {
     const { id } = await params;
     const body = await req.json();
-    const { title, description, image, icon, sort_order } = body;
+    const { title, description, image, icon, sort_order, session_type_id } = body;
 
     const [result] = await pool.execute(
-      `INSERT INTO bfriends_program_sessions (program_id, title, description, image, icon, sort_order)
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [id, title, description, image, icon, sort_order ?? 0]
+      `INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [id, session_type_id ?? null, title, description, image, icon, sort_order ?? 0]
     );
 
     const insertResult = result as any;

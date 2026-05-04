@@ -44,15 +44,10 @@ export default async function ProgramPage({
   if (!program) notFound();
 
   const headerImage = program.image ?? "/images/hero-test.png";
-  const breadcrumb = program.breadcrumb ?? `Programs / ${program.name}`;
 
   return (
     <>
-      <PageHeader
-        breadcrumb={breadcrumb}
-        title={program.name}
-        image={headerImage}
-      />
+      <PageHeader variant="programs" title={program.name} image={headerImage} />
       <main>
         <ProgramContent program={program} programs={programs} />
       </main>

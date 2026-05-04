@@ -16,6 +16,8 @@ import {
   getEvents,
   getNews,
 } from "@/lib/cms";
+import SiteLocation from "@/components/SiteLocation/SiteLocation";
+import SiteNewsletterCta from "@/components/SiteNewsletterCta/SiteNewsletterCta";
 
 export const dynamic = "force-dynamic";
 
@@ -54,6 +56,8 @@ export default async function HomePage() {
       <ServicesSection programs={programs} />
       <FaqSection />
       <NewsAndEventsSection events={events} news={news} />
+      <SiteLocation />
+      <SiteNewsletterCta />
     </>
   );
 }

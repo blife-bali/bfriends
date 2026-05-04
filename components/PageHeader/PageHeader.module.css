@@ -54,6 +54,30 @@
   text-align: center;
 }
 
+/* Programs hero: eyebrow + headline + CTA */
+.contentPrograms {
+  gap: 24px;
+}
+
+.programsEyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1.5vw, 14px);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--color-white-100);
+  opacity: 0.9;
+  margin: 0;
+}
+
+.contentNoImage .programsEyebrow {
+  color: var(--color-cream-140);
+  opacity: 1;
+}
+
+.programsBookButton {
+  margin-top: 4px;
+}
+
 .breadcrumb {
   font-family: var(--font-sans);
   font-size: clamp(12px, 1.5vw, 14px);

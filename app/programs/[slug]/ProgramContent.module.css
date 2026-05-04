@@ -19,39 +19,45 @@
   box-sizing: border-box;
 }
 
-/* ---------- Section B: Philosophy (50/50, portrait image, mask reveal) ---------- */
+/* ---------- Section B: Philosophy (matches journey intro) ---------- */
 .philosophy {
-  padding: 96px 0;
-}
-
-.philosophyLayout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.philosophyImageWrap {
-  position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 128px;
+  margin: 0 auto;
 }
 
-.philosophyImageInner {
-  position: absolute;
-  inset: 0;
-}
-
-.philosophyImage {
-  object-fit: cover;
-}
-
-.philosophyTextCol {
+.philosophyInner {
+  width: 100%;
+  max-width: 960px;
+  box-sizing: border-box;
+  padding: 0 64px 80px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 24px;
+  text-align: center;
+}
+
+.philosophyTitle {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 3.5vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: var(--color-blue-100);
+  margin: 0 0 24px;
+}
+
+.philosophyBody {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 1.6vw, 32px);
+  line-height: 1.55;
+  letter-spacing: -0.03em;
+  color: var(--color-cream-140);
+  margin: 0;
+  max-width: 52ch;
 }
 
 .eyebrow {
@@ -64,213 +70,207 @@
   padding-bottom: 24px;
 }
 
-.philosophyMaskWrap {
-  overflow: hidden;
-}
-
-.philosophyParagraph {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.2vw, 32px);
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  color: var(--color-blue-100);
-  margin: 0;
-}
-
 @media (max-width: 1024px) {
   .philosophy {
-    padding: 72px 0;
+    padding-top: 72px;
   }
 
-  .philosophyLayout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .philosophyImageWrap {
-    order: -1;
-    max-height: 70vh;
+  .philosophyInner {
+    padding: 0 48px 64px;
   }
 }
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
   .philosophy {
-    padding: 48px 0;
+    padding-top: 48px;
+  }
+
+  .philosophyInner {
+    padding: 0 24px 48px;
   }
 
   .container {
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  .philosophyParagraph {
-    font-size: clamp(18px, 4vw, 24px);
-  }
 }
 
 @media (max-width: 480px) {
+  .philosophyInner {
+    padding: 0 16px 40px;
+  }
+
   .container {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
 
-/* ---------- Section C: Pillars (60/40 grid + texture image) ---------- */
-.pillars {
-  padding: 96px 0;
-  background-color: var(--color-blue-5);
+/* ---------- Section C: Framework (matches home intro: image + two-column title / body) ---------- */
+.framework {
+  width: 100%;
+  background-color: var(--color-white-100);
+  overflow-x: hidden;
 }
 
-.pillarsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-}
-
-.pillarCard {
+.frameworkContainer {
+  width: 100%;
+  max-width: 1568px;
+  margin: 0 auto;
   position: relative;
-  padding: 120px 64px;
-  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-}
-
-.pillarCard:nth-child(3n) {
-  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-}
-
-.pillarCard:nth-child(2n) {
-  border-right: none;
-}
-
-.pillarBorderT {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: var(--color-blue-100);
-  opacity: 0.25;
-  transform-origin: left center;
-}
-
-.pillarBorderR {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: var(--color-blue-100);
-  opacity: 0.25;
-  transform-origin: center top;
-}
-
-.pillarIndexLarge {
-  position: absolute;
-  bottom: 12px;
-  right: 24px;
-  font-family: var(--font-display);
-  font-size: clamp(64px, 8vw, 120px);
-  font-weight: 400;
-  line-height: 1;
-  color: var(--color-blue-100);
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-.pillarContent {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  padding: 96px 64px;
+  box-sizing: border-box;
+  gap: 64px;
 }
 
-.pillarTitle {
-  font-family: var(--font-sans);
-  font-size: clamp(14px, 1.2vw, 15px);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.framework .eyebrow {
+  align-self: flex-start;
+  padding-bottom: 0;
+}
+
+.frameworkImageWrap {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.frameworkImageInner {
+  width: 100%;
+  max-width: 1568px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.frameworkImageInnerBefore {
+  opacity: 0.1;
+  transform: scale(1.1);
+}
+
+.frameworkImageInnerVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.frameworkSectionImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.frameworkConclusion {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1568px;
+  align-items: start;
+}
+
+.frameworkLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.frameworkConclusionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--color-blue-100);
+  text-align: left;
   margin: 0;
+  max-width: 16ch;
 }
 
-.pillarDesc {
+.frameworkRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.frameworkConclusionText {
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.1vw, 15px);
-  line-height: 1.6;
-  letter-spacing: -0.01em;
+  font-size: clamp(18px, 1.8vw, 20px);
+  line-height: 1.5;
+  letter-spacing: -0.04em;
   color: var(--color-cream-140);
   margin: 0;
-}
-
-.pillarsImageCol {
-  position: relative;
-  width: 100%;
-  min-height: 100%;
-}
-
-.pillarsImageTile {
-  position: relative;
-  min-height: 320px;
-  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-}
-
-.pillarsImageTile:nth-child(2n) {
-  border-right: none;
-}
-
-.pillarsImage {
-  object-fit: cover;
+  text-align: left;
+  white-space: pre-line;
 }
 
 @media (max-width: 1024px) {
-  .pillars {
-    padding: 72px 0;
+  .frameworkContainer {
+    padding: 72px 48px;
+    gap: 48px;
   }
 
-  .pillarsGrid {
+  .frameworkImageInner {
+    aspect-ratio: 16 / 10;
+  }
+
+  .frameworkConclusion {
     grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
   }
 
-  .pillarCard {
-    border-right: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
+  .frameworkConclusionTitle {
+    text-align: left;
+    max-width: 100%;
+    font-size: clamp(30px, 4vw, 38px);
   }
 
-  .pillarCard:nth-child(2n) {
-    border-right: none;
-  }
-
-  .pillarCard:last-child {
-    border-bottom: none;
-  }
-
-  .pillarBorderR {
-    display: none;
-  }
-
-  .pillarsImageTile {
-    border-right: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-    min-height: 280px;
+  .frameworkConclusionText {
+    text-align: left;
   }
 }
 
 @media (max-width: 768px) {
-  .pillars {
-    padding: 48px 0;
+  .frameworkContainer {
+    padding: 48px 24px;
+    gap: 40px;
   }
 
-  .pillarCard {
-    padding: 32px 24px 40px;
+  .frameworkImageInner {
+    aspect-ratio: 4 / 3;
   }
 
-  .pillarIndexLarge {
-    font-size: 48px;
+  .frameworkConclusion {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .frameworkConclusionTitle {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .frameworkConclusionText {
+    font-size: clamp(15px, 4vw, 17px);
+  }
+}
+
+@media (max-width: 480px) {
+  .frameworkContainer {
+    padding: 48px 20px;
+    gap: 32px;
+  }
+
+  .frameworkConclusionTitle {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .frameworkConclusionText {
+    font-size: 15px;
   }
 }
 
@@ -279,13 +279,37 @@
   padding: 96px 0;
 }
 
+.sessionGroup {
+  margin-top: 40px;
+}
+
+.sessionGroup:first-of-type {
+  margin-top: 0;
+}
+
+.sessionGroupTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  margin: 0 0 20px;
+}
+
 .sessionsGrid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .sessionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .sessionCard {
@@ -342,6 +366,10 @@
     padding: 48px 0;
   }
 
+  .sessionGroup {
+    margin-top: 32px;
+  }
+
   .sessionsGrid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -352,6 +380,8 @@
 .cta {
   padding: 96px 0 120px;
   text-align: center;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
 }
 
 .ctaHeading {

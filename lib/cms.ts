@@ -1,4 +1,5 @@
 import pool from '@/lib/db';
+import { buildSessionGroupsPublic } from '@/lib/admin-program-children';
 
 // Helper: run query, return [] on error
 async function tryDb<T>(query: string): Promise<T[]> {
@@ -69,24 +70,13 @@ export async function getPrograms() {
     const programs = rows as any[];
 
     for (const prog of programs) {
-      const [steps] = await pool.execute(
-        'SELECT id, step_id, title, description, sort_order FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order',
-        [prog.id]
-      );
-      const normalizedSteps = (steps as any[]).map((s) => ({
-        id: s.step_id || String(s.id),
-        title: s.title,
-        description: s.description,
-      }));
-      prog.steps = normalizedSteps;
-      // Keep compatibility with ProgramContent expecting pillars; source it from steps.
-      prog.pillars = normalizedSteps.map((s) => ({ step_id: s.id, title: s.title, description: s.description }));
-
-      const [sessions] = await pool.execute(
-        'SELECT title, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order',
-        [prog.id]
-      );
-      prog.sessions = sessions;
+      prog.buttonLabel = prog.button_label;
+      prog.philosophyImage = prog.philosophy_image;
+      prog.pillarsImage = prog.pillars_image;
+      prog.pillarsTitle = prog.pillars_title ?? null;
+      prog.pillarsParagraph = prog.pillars_paragraph ?? null;
+      prog.previousProgram = prog.previous_program;
+      prog.nextProgram = prog.next_program;
     }
     return programs;
   } catch {
@@ -105,29 +95,41 @@ export async function getProgramBySlug(slug: string) {
 
     const prog = programs[0];
 
-    const [steps] = await pool.execute(
-      'SELECT id, step_id, title, description, sort_order FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order',
-      [prog.id]
-    );
-    const normalizedSteps = (steps as any[]).map((s) => ({
-      id: s.step_id || String(s.id),
-      title: s.title,
-      description: s.description,
-    }));
-    prog.steps = normalizedSteps;
-    prog.pillars = normalizedSteps.map((s) => ({ step_id: s.id, title: s.title, description: s.description }));
+    let sessions: any[] = [];
+    let sessionGroups: ReturnType<typeof buildSessionGroupsPublic> = [];
+    try {
+      const [typeRows] = await pool.execute(
+        'SELECT * FROM bfriends_program_session_types WHERE program_id = ? ORDER BY sort_order, id',
+        [prog.id]
+      );
+      const [sessionRows] = await pool.execute(
+        'SELECT title, description, image, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+        [prog.id]
+      );
+      sessions = sessionRows as any[];
+      sessionGroups = buildSessionGroupsPublic(typeRows as any[], sessionRows as any[]);
+    } catch {
+      const [sessionRows] = await pool.execute(
+        'SELECT title, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+        [prog.id]
+      );
+      sessions = sessionRows as any[];
+      sessionGroups =
+        sessions.length > 0
+          ? [{ typeTitle: 'Signature Sessions', sessions }]
+          : [];
+    }
 
-    const [sessions] = await pool.execute(
-      'SELECT title, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order',
-      [prog.id]
-    );
     prog.sessions = sessions;
+    prog.sessionGroups = sessionGroups;
 
     // Map DB fields to match the static data interface
     prog.buttonLabel = prog.button_label;
     prog.programItems = sessions; // map sessions as programItems for compatibility
     prog.philosophyImage = prog.philosophy_image;
     prog.pillarsImage = prog.pillars_image;
+    prog.pillarsTitle = prog.pillars_title ?? null;
+    prog.pillarsParagraph = prog.pillars_paragraph ?? null;
     prog.previousProgram = prog.previous_program;
     prog.nextProgram = prog.next_program;
 

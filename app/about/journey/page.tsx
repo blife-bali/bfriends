@@ -42,6 +42,17 @@ export default async function JourneyPage() {
         image={header.image}
       />
       <div className={styles.container}>
+        <section className={styles.intro} aria-labelledby="journey-intro-title">
+          <h2 id="journey-intro-title" className={styles.introTitle}>
+            The BFriends Journey
+          </h2>
+          <p className={styles.introSub}>
+            The BFriends Journey is a unique experience that combines the best of both worlds: the
+            physical and the digital. It&apos;s a journey that starts with a physical product and
+            continues in the digital world, where you can interact with your BFriend in a whole new
+            way.
+          </p>
+        </section>
         <div className={styles.journeyBlocks}>
           {processSteps.map((step: any, index: number) => (
             <section

@@ -60,6 +60,38 @@ INSERT INTO bfriends_programs (name, slug, eyebrow, title, subheading, image, bu
 ('Nurture', 'nurture', 'N · Nurture', 'Yoga and barre for breath, alignment, and inner balance', '4th Floor | A space to slow down and turn inward', '/images/Nurture/DDK09005.jpg', 'Discover Nurture', 'Wellness is a dialogue between your mind and your body. We teach you how to listen.', 'In a high-pace world, Nurture is your pause button. It is the practice of intentional softness—giving your mind the same level of care and training as your muscles.', 'Programs / Nurture', '/images/Nurture/DDK09001.jpg', '/images/Nurture/DDK09064.jpg', 'enhance', 'dare', 'Nurture Yoga & Wellness | BFriends Bali', 'Yoga, sound healing, guided meditation, somatic release, and wellness workshops for breath, alignment, and inner balance at BFriends Kerobokan.', 4),
 ('Dare', 'dare', 'D · Dare', 'Climbing that invites focus, courage, and gentle challenge', 'Wallclimbing | Growth through mindful movement', '/images/programs/D.webp', 'Discover Dare', 'Growth only happens at the edge of your comfort zone. It''s time to step over.', 'The ''Dare Beyond'' is where wellness leads to growth. We take the strength you''ve built in the Fitness program and put it to the test through curated challenges and competitive events.', 'Programs / Dare', '/images/programs/D.webp', '/images/programs/D.webp', 'nurture', 'fitness', 'Dare Wall Climbing | BFriends Bali', 'Wall climbing, outdoor expeditions, BFriends Games, and endurance challenges — growth through mindful movement at BFriends Kerobokan.', 5);
 
+-- Framework copy (pillars_title / pillars_paragraph); run after ALTER adds columns
+UPDATE bfriends_programs SET pillars_title = 'Find · Fit · Fitness', pillars_paragraph = 'Find — Using Fittrix & InBody, we pinpoint exactly what your body needs—clearly and precisely.
+
+Fit — Your Journey Partner designs your routine with accuracy—movement patterns, intensity, and frequency.
+
+Fitness — We remove tension and restore natural rhythm, so movement feels focused, strong, and effortless.' WHERE slug = 'fitness';
+UPDATE bfriends_programs SET pillars_title = 'Recovery · Nourishment · Connection', pillars_paragraph = 'Recovery — Choices that support post-workout restoration.
+
+Nourishment — A refined balance of taste and nutrition.
+
+Connection — A lounge experience you can truly settle into.' WHERE slug = 'restore';
+UPDATE bfriends_programs SET pillars_title = 'Assess · Release · Realign', pillars_paragraph = 'Assess — We analyze movement restrictions to identify root causes, not just symptoms.
+
+Release — Using manual techniques to unlock tension and restore range of motion.
+
+Realign — Guiding your body back to optimal alignment for long-term resilience.' WHERE slug = 'integrate';
+UPDATE bfriends_programs SET pillars_title = 'Analyze · Revitalize · Protect', pillars_paragraph = 'Analyze — K-Standard diagnostics to understand your unique dermal profile.
+
+Revitalize — Premium actives and technology to refine texture and tone.
+
+Protect — Strengthening the skin barrier to lock in results.' WHERE slug = 'enhance';
+UPDATE bfriends_programs SET pillars_title = 'Ground · Breathe · Connect', pillars_paragraph = 'Ground — Practices that center your nervous system and reduce cortisol.
+
+Breathe — Guided breathwork to expand capacity and mental clarity.
+
+Connect — Community-based wellness that fosters emotional resilience.' WHERE slug = 'nurture';
+UPDATE bfriends_programs SET pillars_title = 'Challenge · Community · Breakthrough', pillars_paragraph = 'Challenge — Testing your new baseline against real-world demands.
+
+Community — Competing and collaborating with a tribe that pushes you forward.
+
+Breakthrough — Shattering perceived limits to set a new personal standard.' WHERE slug = 'dare';
+
 -- Program Steps
 -- Fitness (program_id=1)
 INSERT INTO bfriends_program_steps (program_id, step_id, title, description, sort_order) VALUES
@@ -134,48 +166,56 @@ INSERT INTO bfriends_program_pillars (program_id, title, description, sort_order
 (6, 'Community', 'Competing and collaborating with a tribe that pushes you forward.', 1),
 (6, 'Breakthrough', 'Shattering perceived limits to set a new personal standard.', 2);
 
--- Program Sessions
+-- Program session types + sessions (session_type_id links each session to its type row)
 -- Fitness (program_id=1)
-INSERT INTO bfriends_program_sessions (program_id, title, description, image, sort_order) VALUES
-(1, 'Functional Training', 'Realign your spine and pelvis, boost joint mobility, and strengthen your core.', '/images/Fitness/DDK09594.webp', 0),
-(1, 'Ignite', 'Structured heart-rate and breath work to enhance metabolic efficiency.', '/images/Fitness/DDK09740.webp', 1),
-(1, 'Sculpt', 'Enhance hip and leg balance while toning your body for a defined look.', '/images/Fitness/DDK09791.webp', 2),
-(1, 'Sport Performance', 'Analyze sport-specific movements to improve power, balance, and responsiveness.', '/images/Fitness/DDK09821.webp', 3);
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (1, 'Signature Sessions', 0);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(1, LAST_INSERT_ID(), 'Functional Training', 'Realign your spine and pelvis, boost joint mobility, and strengthen your core.', '/images/Fitness/DDK09594.webp', NULL, 0),
+(1, LAST_INSERT_ID(), 'Ignite', 'Structured heart-rate and breath work to enhance metabolic efficiency.', '/images/Fitness/DDK09740.webp', NULL, 1),
+(1, LAST_INSERT_ID(), 'Sculpt', 'Enhance hip and leg balance while toning your body for a defined look.', '/images/Fitness/DDK09791.webp', NULL, 2),
+(1, LAST_INSERT_ID(), 'Sport Performance', 'Analyze sport-specific movements to improve power, balance, and responsiveness.', '/images/Fitness/DDK09821.webp', NULL, 3);
 
 -- Restore (program_id=2)
-INSERT INTO bfriends_program_sessions (program_id, title, description, image, sort_order) VALUES
-(2, 'Signature Kimbap', 'Hand-rolled Korean kimbap crafted for post-workout nourishment—balanced, savory, and light enough to keep you moving.', '/images/Restore/DDK09897.webp', 0),
-(2, 'Healthy Breakfast', 'Warm, comforting breakfast plates built on whole ingredients to gently refuel the body at the start of your day.', '/images/Restore/DDK09929.webp', 1),
-(2, 'Dessert Menu', 'Thoughtfully portioned desserts that satisfy the craving while staying aligned with your broader wellness goals.', '/images/Restore/DDK09935.webp', 2),
-(2, 'Korean Cheong x Jamu', 'Heritage-inspired concentrates and tonics, marrying Korean Cheong and Indonesian Jamu for restorative daily sips.', '/images/Restore/DDK09994.webp', 3);
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (2, 'Signature Sessions', 0);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(2, LAST_INSERT_ID(), 'Signature Kimbap', 'Hand-rolled Korean kimbap crafted for post-workout nourishment—balanced, savory, and light enough to keep you moving.', '/images/Restore/DDK09897.webp', NULL, 0),
+(2, LAST_INSERT_ID(), 'Healthy Breakfast', 'Warm, comforting breakfast plates built on whole ingredients to gently refuel the body at the start of your day.', '/images/Restore/DDK09929.webp', NULL, 1),
+(2, LAST_INSERT_ID(), 'Dessert Menu', 'Thoughtfully portioned desserts that satisfy the craving while staying aligned with your broader wellness goals.', '/images/Restore/DDK09935.webp', NULL, 2),
+(2, LAST_INSERT_ID(), 'Korean Cheong x Jamu', 'Heritage-inspired concentrates and tonics, marrying Korean Cheong and Indonesian Jamu for restorative daily sips.', '/images/Restore/DDK09994.webp', NULL, 3);
 
 -- Integrate (program_id=3)
-INSERT INTO bfriends_program_sessions (program_id, title, description, image, sort_order) VALUES
-(3, 'Manual Physiotherapy', 'On the treatment table, your therapist uses precise hands-on techniques to ease pain, free stiff joints, and restore comfortable movement.', '/images/Integrate/DDK09278.jpg', 0),
-(3, 'Postural Correction', 'Assessment and guided correction for the habits that pull you out of line—shoulders, spine, and pelvis brought back into sustainable alignment.', '/images/Integrate/DDK09396.jpg', 1),
-(3, 'Sports Recovery', 'Flush-and-release work for tired muscles and heavy legs—rhythmic pressure and targeted areas so you recover faster between sessions.', '/images/Integrate/DDK09558.jpg', 2),
-(3, 'Injury Rehabilitation', 'Clear, staged rehab in a calm clinical space—graded movement and load so you rebuild strength safely after strain or injury.', '/images/Integrate/DDK09585.jpg', 3);
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (3, 'Signature Sessions', 0);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(3, LAST_INSERT_ID(), 'Manual Physiotherapy', 'On the treatment table, your therapist uses precise hands-on techniques to ease pain, free stiff joints, and restore comfortable movement.', '/images/Integrate/DDK09278.jpg', NULL, 0),
+(3, LAST_INSERT_ID(), 'Postural Correction', 'Assessment and guided correction for the habits that pull you out of line—shoulders, spine, and pelvis brought back into sustainable alignment.', '/images/Integrate/DDK09396.jpg', NULL, 1),
+(3, LAST_INSERT_ID(), 'Sports Recovery', 'Flush-and-release work for tired muscles and heavy legs—rhythmic pressure and targeted areas so you recover faster between sessions.', '/images/Integrate/DDK09558.jpg', NULL, 2),
+(3, LAST_INSERT_ID(), 'Injury Rehabilitation', 'Clear, staged rehab in a calm clinical space—graded movement and load so you rebuild strength safely after strain or injury.', '/images/Integrate/DDK09585.jpg', NULL, 3);
 
--- Enhance (program_id=4)
-INSERT INTO bfriends_program_sessions (program_id, title, description, image, sort_order) VALUES
-(4, 'K-Glow Facial', 'Lie back in a bright, clinical-calm room while your specialist runs a multi-step K-protocol—device-assisted work at the skin''s surface for dewy, even radiance.', '/images/Enhance/DDK00316.jpg', 0),
-(4, 'Skin Boosters', 'Micro-fine nutrient delivery where your skin needs volume and bounce—targeted plumping and hydration without masking what''s underneath.', '/images/Enhance/DDK00330.jpg', 1),
-(4, 'Face Contouring', 'Non-surgical lifting and sculpting focused along the jaw and mid-face—definition that reads natural in daylight, not under filters.', '/images/Enhance/DDK00433.jpg', 2),
-(4, 'Advanced Laser', 'Clinic-grade light and energy tools, calibrated on professional consoles—pigment, texture, and clarity addressed with measurable parameters.', '/images/Enhance/DDK00316.jpg', 3);
+-- Enhance (program_id=4) — two session types
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (4, 'Facial treatments', 0);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(4, LAST_INSERT_ID(), 'K-Glow Facial', 'Lie back in a bright, clinical-calm room while your specialist runs a multi-step K-protocol—device-assisted work at the skin''s surface for dewy, even radiance.', '/images/Enhance/DDK00316.jpg', NULL, 0),
+(4, LAST_INSERT_ID(), 'Skin Boosters', 'Micro-fine nutrient delivery where your skin needs volume and bounce—targeted plumping and hydration without masking what''s underneath.', '/images/Enhance/DDK00330.jpg', NULL, 1);
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (4, 'Scalp & hair rituals', 1);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(4, LAST_INSERT_ID(), 'Face Contouring', 'Non-surgical lifting and sculpting focused along the jaw and mid-face—definition that reads natural in daylight, not under filters.', '/images/Enhance/DDK00433.jpg', NULL, 0),
+(4, LAST_INSERT_ID(), 'Advanced Laser', 'Clinic-grade light and energy tools, calibrated on professional consoles—pigment, texture, and clarity addressed with measurable parameters.', '/images/Enhance/DDK00316.jpg', NULL, 1);
 
 -- Nurture (program_id=5)
-INSERT INTO bfriends_program_sessions (program_id, title, description, image, sort_order) VALUES
-(5, 'Sound Healing', 'Vibrational therapy to restore cellular harmony.', '/images/Nurture/DDK09001.jpg', 0),
-(5, 'Guided Meditation', 'Structured mental conditioning for focus and calm.', '/images/Nurture/DDK09064.jpg', 1),
-(5, 'Somatic Release', 'Body-based techniques to release stored emotional tension.', '/images/Nurture/DDK09078.jpg', 2),
-(5, 'Wellness Workshops', 'Interactive sessions on sleep, nutrition, and stress management.', '/images/Nurture/DDK09121.jpg', 3);
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (5, 'Signature Sessions', 0);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(5, LAST_INSERT_ID(), 'Sound Healing', 'Vibrational therapy to restore cellular harmony.', '/images/Nurture/DDK09001.jpg', NULL, 0),
+(5, LAST_INSERT_ID(), 'Guided Meditation', 'Structured mental conditioning for focus and calm.', '/images/Nurture/DDK09064.jpg', NULL, 1),
+(5, LAST_INSERT_ID(), 'Somatic Release', 'Body-based techniques to release stored emotional tension.', '/images/Nurture/DDK09078.jpg', NULL, 2),
+(5, LAST_INSERT_ID(), 'Wellness Workshops', 'Interactive sessions on sleep, nutrition, and stress management.', '/images/Nurture/DDK09121.jpg', NULL, 3);
 
 -- Dare (program_id=6)
-INSERT INTO bfriends_program_sessions (program_id, title, description, image, sort_order) VALUES
-(6, 'Outdoor Expeditions', 'Nature-based endurance challenges.', '/images/programs/D.webp', 0),
-(6, 'BFriends Games', 'Community-wide competitive fitness events.', '/images/programs/D.webp', 1),
-(6, 'Endurance Challenges', 'Long-format stamina tests for advanced members.', '/images/programs/D.webp', 2),
-(6, 'Skill Masterclasses', 'Intensive workshops on advanced movement techniques.', '/images/programs/D.webp', 3);
+INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (6, 'Signature Sessions', 0);
+INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order) VALUES
+(6, LAST_INSERT_ID(), 'Outdoor Expeditions', 'Nature-based endurance challenges.', '/images/programs/D.webp', NULL, 0),
+(6, LAST_INSERT_ID(), 'BFriends Games', 'Community-wide competitive fitness events.', '/images/programs/D.webp', NULL, 1),
+(6, LAST_INSERT_ID(), 'Endurance Challenges', 'Long-format stamina tests for advanced members.', '/images/programs/D.webp', NULL, 2),
+(6, LAST_INSERT_ID(), 'Skill Masterclasses', 'Intensive workshops on advanced movement techniques.', '/images/programs/D.webp', NULL, 3);
 
 -- ============================================================
 -- 7. Events

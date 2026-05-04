@@ -1,54 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
-
-async function insertProgramChildren(
-  connection: any,
-  programId: number,
-  steps: any[] = [],
-  sessions: any[] = []
-) {
-  const resolveStepSortOrder = (step: any, fallbackIndex: number) => {
-    const numberFromStepId = Number.parseInt(String(step?.step_id ?? ''), 10);
-    if (Number.isFinite(numberFromStepId)) return numberFromStepId - 1;
-    return step?.sort_order ?? fallbackIndex;
-  };
-
-  if (Array.isArray(steps)) {
-    for (let i = 0; i < steps.length; i++) {
-      const step = steps[i];
-      await connection.execute(
-        `INSERT INTO bfriends_program_steps (program_id, step_id, title, description, sort_order)
-         VALUES (?, ?, ?, ?, ?)`,
-        [
-          programId,
-          step.step_id || String(i + 1).padStart(2, '0'),
-          step.title || '',
-          step.description || '',
-          resolveStepSortOrder(step, i),
-        ]
-      );
-    }
-  }
-
-  if (Array.isArray(sessions)) {
-    for (let i = 0; i < sessions.length; i++) {
-      const session = sessions[i];
-      await connection.execute(
-        `INSERT INTO bfriends_program_sessions (program_id, title, description, image, icon, sort_order)
-         VALUES (?, ?, ?, ?, ?, ?)`,
-        [
-          programId,
-          session.title || '',
-          session.description || '',
-          session.image || null,
-          session.icon || null,
-          session.sort_order ?? i,
-        ]
-      );
-    }
-  }
-}
+import { replaceProgramChildren } from '@/lib/admin-program-children';
 
 export async function GET() {
   const authError = await requireAuth();
@@ -84,6 +37,8 @@ export async function POST(req: NextRequest) {
       breadcrumb,
       philosophy_image,
       pillars_image,
+      pillars_title,
+      pillars_paragraph,
       previous_program,
       next_program,
       seo_title,
@@ -92,6 +47,7 @@ export async function POST(req: NextRequest) {
       is_active,
       steps,
       sessions,
+      session_types,
     } = body;
 
     const connection = await pool.getConnection();
@@ -102,11 +58,13 @@ export async function POST(req: NextRequest) {
         `INSERT INTO bfriends_programs (
           name, slug, eyebrow, title, subheading, image, button_label,
           quote, philosophy, breadcrumb, philosophy_image, pillars_image,
+          pillars_title, pillars_paragraph,
           previous_program, next_program, seo_title, seo_description, sort_order, is_active
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           name, slug, eyebrow, title, subheading, image, button_label,
           quote, philosophy, breadcrumb, philosophy_image, pillars_image,
+          pillars_title || null, pillars_paragraph || null,
           previous_program, next_program, seo_title || null, seo_description || null, sort_order ?? 0, is_active ?? 1,
         ]
       );
@@ -114,7 +72,7 @@ export async function POST(req: NextRequest) {
       const insertResult = result as any;
       const programId = insertResult.insertId as number;
 
-      await insertProgramChildren(connection, programId, steps, sessions);
+      await replaceProgramChildren(connection, String(programId), steps, session_types, sessions);
       await connection.commit();
 
       return NextResponse.json({ id: programId, message: 'Program created successfully' }, { status: 201 });

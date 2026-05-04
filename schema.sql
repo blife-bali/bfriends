@@ -25,6 +25,22 @@ ALTER TABLE bfriends_page_headers ADD COLUMN seo_description TEXT DEFAULT NULL A
 ALTER TABLE bfriends_programs ADD COLUMN seo_title VARCHAR(300) DEFAULT NULL AFTER next_program;
 ALTER TABLE bfriends_programs ADD COLUMN seo_description TEXT DEFAULT NULL AFTER seo_title;
 
+ALTER TABLE bfriends_programs ADD COLUMN pillars_title VARCHAR(500) NULL AFTER pillars_image;
+ALTER TABLE bfriends_programs ADD COLUMN pillars_paragraph TEXT NULL AFTER pillars_title;
+
+-- Program session types (groupings, e.g. Facial vs Scalp)
+CREATE TABLE IF NOT EXISTS bfriends_program_session_types (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  program_id INT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  sort_order INT DEFAULT 0,
+  FOREIGN KEY (program_id) REFERENCES bfriends_programs(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE bfriends_program_sessions ADD COLUMN session_type_id INT NULL AFTER program_id;
+ALTER TABLE bfriends_program_sessions ADD CONSTRAINT fk_program_session_type
+  FOREIGN KEY (session_type_id) REFERENCES bfriends_program_session_types(id) ON DELETE SET NULL;
+
 ALTER TABLE bfriends_events ADD COLUMN seo_title VARCHAR(300) DEFAULT NULL AFTER image;
 ALTER TABLE bfriends_events ADD COLUMN seo_description TEXT DEFAULT NULL AFTER seo_title;
 

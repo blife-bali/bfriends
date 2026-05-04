@@ -16,12 +16,28 @@ export interface ProgramPillar {
   description: string;
 }
 
+/** Single framework headline + body for program page (matches DB pillars_title / pillars_paragraph). */
+export function frameworkFromPillars(pillars: ProgramPillar[]): {
+  pillarsTitle: string;
+  pillarsParagraph: string;
+} {
+  const pillarsTitle = pillars.map((p) => p.title).join(" · ");
+  const pillarsParagraph = pillars.map((p) => `${p.title} — ${p.description}`).join("\n\n");
+  return { pillarsTitle, pillarsParagraph };
+}
+
 /** Actual class or treatment (e.g. Functional Training). */
 export interface ProgramSession {
   title: string;
   description: string;
   /** Path to session image for visual cards. */
   image?: string;
+}
+
+/** Grouped sessions under one heading (e.g. Facial treatments vs Scalp rituals). */
+export interface ProgramSessionGroup {
+  typeTitle: string;
+  sessions: ProgramSession[];
 }
 
 export interface ProgramData {
@@ -37,10 +53,15 @@ export interface ProgramData {
   steps?: ProgramStep[];
   philosophy?: string;
   programItems?: ProgramItem[];
-  /** Swiss editorial: breadcrumb, pillars (framework), sessions (curriculum), prev/next program slug */
+  /** Swiss editorial: breadcrumb, framework copy, sessions (curriculum), prev/next program slug */
   breadcrumb?: string;
+  /** @deprecated Legacy list; framework copy uses pillarsTitle + pillarsParagraph */
   pillars?: ProgramPillar[];
+  pillarsTitle?: string;
+  pillarsParagraph?: string;
   sessions?: ProgramSession[];
+  /** When set, seed/CMS use grouped session types; otherwise flat `sessions` is wrapped as one group. */
+  sessionGroups?: ProgramSessionGroup[];
   previousProgram?: string;
   nextProgram?: string;
   /** Dedicated section images (immersive visuals) */
@@ -123,6 +144,11 @@ export const programsData: ProgramData[] = [
       { title: "Fit", description: "Your Journey Partner designs your routine with accuracy—movement patterns, intensity, and frequency." },
       { title: "Fitness", description: "We remove tension and restore natural rhythm, so movement feels focused, strong, and effortless." },
     ],
+    ...frameworkFromPillars([
+      { title: "Find", description: "Using Fittrix & InBody, we pinpoint exactly what your body needs—clearly and precisely." },
+      { title: "Fit", description: "Your Journey Partner designs your routine with accuracy—movement patterns, intensity, and frequency." },
+      { title: "Fitness", description: "We remove tension and restore natural rhythm, so movement feels focused, strong, and effortless." },
+    ]),
     sessions: [
       { title: "Functional Training", description: "Realign your spine and pelvis, boost joint mobility, and strengthen your core.", image: "/images/Fitness/DDK09594.webp" },
       { title: "Ignite", description: "Structured heart-rate and breath work to enhance metabolic efficiency.", image: "/images/Fitness/DDK09740.webp" },
@@ -203,6 +229,11 @@ export const programsData: ProgramData[] = [
       { title: "Nourishment", description: "A refined balance of taste and nutrition." },
       { title: "Connection", description: "A lounge experience you can truly settle into." },
     ],
+    ...frameworkFromPillars([
+      { title: "Recovery", description: "Choices that support post-workout restoration." },
+      { title: "Nourishment", description: "A refined balance of taste and nutrition." },
+      { title: "Connection", description: "A lounge experience you can truly settle into." },
+    ]),
     sessions: [
       {
         title: "Signature Kimbap",
@@ -303,6 +334,11 @@ export const programsData: ProgramData[] = [
       { title: "Release", description: "Using manual techniques to unlock tension and restore range of motion." },
       { title: "Realign", description: "Guiding your body back to optimal alignment for long-term resilience." },
     ],
+    ...frameworkFromPillars([
+      { title: "Assess", description: "We analyze movement restrictions to identify root causes, not just symptoms." },
+      { title: "Release", description: "Using manual techniques to unlock tension and restore range of motion." },
+      { title: "Realign", description: "Guiding your body back to optimal alignment for long-term resilience." },
+    ]),
     sessions: [
       {
         title: "Manual Physiotherapy",
@@ -403,6 +439,11 @@ export const programsData: ProgramData[] = [
       { title: "Revitalize", description: "Premium actives and technology to refine texture and tone." },
       { title: "Protect", description: "Strengthening the skin barrier to lock in results." },
     ],
+    ...frameworkFromPillars([
+      { title: "Analyze", description: "K-Standard diagnostics to understand your unique dermal profile." },
+      { title: "Revitalize", description: "Premium actives and technology to refine texture and tone." },
+      { title: "Protect", description: "Strengthening the skin barrier to lock in results." },
+    ]),
     sessions: [
       {
         title: "K-Glow Facial",
@@ -427,6 +468,42 @@ export const programsData: ProgramData[] = [
         description:
           "Clinic-grade light and energy tools, calibrated on professional consoles—pigment, texture, and clarity addressed with measurable parameters.",
         image: "/images/Enhance/DDK00316.jpg",
+      },
+    ],
+    sessionGroups: [
+      {
+        typeTitle: "Facial treatments",
+        sessions: [
+          {
+            title: "K-Glow Facial",
+            description:
+              "Lie back in a bright, clinical-calm room while your specialist runs a multi-step K-protocol—device-assisted work at the skin's surface for dewy, even radiance.",
+            image: "/images/Enhance/DDK00316.jpg",
+          },
+          {
+            title: "Skin Boosters",
+            description:
+              "Micro-fine nutrient delivery where your skin needs volume and bounce—targeted plumping and hydration without masking what's underneath.",
+            image: "/images/Enhance/DDK00330.jpg",
+          },
+        ],
+      },
+      {
+        typeTitle: "Scalp & hair rituals",
+        sessions: [
+          {
+            title: "Face Contouring",
+            description:
+              "Non-surgical lifting and sculpting focused along the jaw and mid-face—definition that reads natural in daylight, not under filters.",
+            image: "/images/Enhance/DDK00433.jpg",
+          },
+          {
+            title: "Advanced Laser",
+            description:
+              "Clinic-grade light and energy tools, calibrated on professional consoles—pigment, texture, and clarity addressed with measurable parameters.",
+            image: "/images/Enhance/DDK00316.jpg",
+          },
+        ],
       },
     ],
     breadcrumb: "Programs / Enhance",
@@ -503,6 +580,11 @@ export const programsData: ProgramData[] = [
       { title: "Breathe", description: "Guided breathwork to expand capacity and mental clarity." },
       { title: "Connect", description: "Community-based wellness that fosters emotional resilience." },
     ],
+    ...frameworkFromPillars([
+      { title: "Ground", description: "Practices that center your nervous system and reduce cortisol." },
+      { title: "Breathe", description: "Guided breathwork to expand capacity and mental clarity." },
+      { title: "Connect", description: "Community-based wellness that fosters emotional resilience." },
+    ]),
     sessions: [
       { title: "Sound Healing", description: "Vibrational therapy to restore cellular harmony.", image: "/images/Nurture/DDK09001.jpg" },
       { title: "Guided Meditation", description: "Structured mental conditioning for focus and calm.", image: "/images/Nurture/DDK09064.jpg" },
@@ -583,6 +665,11 @@ export const programsData: ProgramData[] = [
       { title: "Community", description: "Competing and collaborating with a tribe that pushes you forward." },
       { title: "Breakthrough", description: "Shattering perceived limits to set a new personal standard." },
     ],
+    ...frameworkFromPillars([
+      { title: "Challenge", description: "Testing your new baseline against real-world demands." },
+      { title: "Community", description: "Competing and collaborating with a tribe that pushes you forward." },
+      { title: "Breakthrough", description: "Shattering perceived limits to set a new personal standard." },
+    ]),
     sessions: [
       { title: "Outdoor Expeditions", description: "Nature-based endurance challenges.", image: "/images/programs/D.webp" },
       { title: "BFriends Games", description: "Community-wide competitive fitness events.", image: "/images/programs/D.webp" },

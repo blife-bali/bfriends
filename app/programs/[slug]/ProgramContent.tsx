@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import type { ProgramData } from "@/lib/programs-data";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { programsData, type ProgramData, type ProgramSessionGroup } from "@/lib/programs-data";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { ArrowRight, ArrowUpRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
@@ -12,29 +12,57 @@ import styles from "./ProgramContent.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
+const FRAMEWORK_IMAGE_FALLBACK = "/images/hero-test.png";
+
+/** Shown until CMS copy is wired; replaced when `pillars_title` / `pillars_paragraph` or static mock exist. */
+const FRAMEWORK_FALLBACK_TITLE = "The Framework";
+const FRAMEWORK_FALLBACK_PARAGRAPH =
+  "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
+
+function getSessionGroups(program: ProgramData & { sessionGroups?: ProgramSessionGroup[] }): ProgramSessionGroup[] {
+  const fromDb = program.sessionGroups;
+  if (Array.isArray(fromDb) && fromDb.length > 0) {
+    return fromDb;
+  }
+  if (program.sessions && program.sessions.length > 0) {
+    return [{ typeTitle: "Signature Sessions", sessions: program.sessions }];
+  }
+  return [];
+}
+
 interface ProgramContentProps {
   program: ProgramData;
   programs: ProgramData[];
 }
 
 export default function ProgramContent({ program, programs }: ProgramContentProps) {
+  const slug = (program.slug ?? "").toLowerCase();
+  const staticProgram = programsData.find((p) => p.slug.toLowerCase() === slug);
+  const dbTitle = typeof program.pillarsTitle === "string" ? program.pillarsTitle.trim() : "";
+  const dbParagraph =
+    typeof program.pillarsParagraph === "string" ? program.pillarsParagraph.trim() : "";
+  const fwTitle =
+    dbTitle || staticProgram?.pillarsTitle?.trim() || FRAMEWORK_FALLBACK_TITLE;
+  const fwParagraph =
+    dbParagraph || staticProgram?.pillarsParagraph?.trim() || FRAMEWORK_FALLBACK_PARAGRAPH;
+  const fwImage =
+    program.pillarsImage ||
+    program.image ||
+    staticProgram?.pillarsImage ||
+    staticProgram?.image ||
+    FRAMEWORK_IMAGE_FALLBACK;
+
   return (
     <div className={styles.root}>
-      {program.philosophy && (
-        <PhilosophySection
-          philosophy={program.philosophy}
-          philosophyImage={program.philosophyImage ?? program.image}
-        />
-      )}
-      {program.pillars && program.pillars.length > 0 && (
-        <PillarsSection
-          pillars={program.pillars}
-          pillarsImage={program.pillarsImage ?? program.image}
-        />
-      )}
-      {program.sessions && program.sessions.length > 0 && (
-        <SessionsSection sessions={program.sessions} fallbackImage={program.image} />
-      )}
+      {program.philosophy && <PhilosophySection philosophy={program.philosophy} />}
+      <FrameworkSection title={fwTitle} paragraph={fwParagraph} imageUrl={fwImage} />
+      {(() => {
+        const sessionGroups = getSessionGroups(program);
+        const total = sessionGroups.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
+        return total > 0 ? (
+          <SessionsSection sessionGroups={sessionGroups} fallbackImage={program.image} />
+        ) : null;
+      })()}
       <ProgramCta program={program} />
       {(program.previousProgram || program.nextProgram) && (
         <ProgramNavFooter
@@ -47,208 +75,145 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
   );
 }
 
-function PhilosophySection({
-  philosophy,
-  philosophyImage,
-}: {
-  philosophy: string;
-  philosophyImage: string;
-}) {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 0.4], ["2%", "-8%"]);
-
+function PhilosophySection({ philosophy }: { philosophy: string }) {
   return (
-    <section ref={ref} className={styles.philosophy} aria-label="The Philosophy">
-      <div className={styles.container}>
-        <div className={styles.philosophyLayout}>
-          <motion.div
-            className={styles.philosophyImageWrap}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, ease: EASE }}
-          >
-            <motion.div className={styles.philosophyImageInner} style={{ y: imageY }}>
-              <Image
-                src={philosophyImage}
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className={styles.philosophyImage}
-              />
-            </motion.div>
-          </motion.div>
-          <div className={styles.philosophyTextCol}>
-            <motion.p
-              className={styles.eyebrow}
-              initial={{ opacity: 0, y: 12 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: EASE }}
-            >
-              01 / The Philosophy
-            </motion.p>
-            <div className={styles.philosophyMaskWrap}>
-              <motion.p
-                className={styles.philosophyParagraph}
-                initial={{ y: "100%" }}
-                animate={inView ? { y: "0%" } : { y: "100%" }}
-                transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-              >
-                {philosophy}
-              </motion.p>
-            </div>
-          </div>
-        </div>
+    <section
+      className={styles.philosophy}
+      aria-labelledby="program-philosophy-title"
+    >
+      <div className={styles.philosophyInner}>
+        <h2 id="program-philosophy-title" className={styles.philosophyTitle}>
+          The Philosophy
+        </h2>
+        <p className={styles.philosophyBody}>{philosophy}</p>
       </div>
     </section>
   );
 }
 
-function PillarsSection({
-  pillars,
-  pillarsImage,
+/** Framework block — same structure as home intro (image + two-column title / body). */
+function FrameworkSection({
+  title,
+  paragraph,
+  imageUrl,
 }: {
-  pillars: { step_id?: string; title: string; description: string }[];
-  pillarsImage: string;
+  title: string;
+  paragraph: string;
+  imageUrl: string;
 }) {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.15 });
-  const sortedPillars = [...pillars].sort((a, b) => {
-    const aNum = Number.parseInt(a.step_id || '', 10);
-    const bNum = Number.parseInt(b.step_id || '', 10);
-    const aHas = Number.isFinite(aNum);
-    const bHas = Number.isFinite(bNum);
-    if (aHas && bHas) return aNum - bNum;
-    if (aHas) return -1;
-    if (bHas) return 1;
-    return 0;
-  });
+  const inView = useInView(ref, { once: true, amount: 0.12 });
+  const [isImageInView, setIsImageInView] = useState(false);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsImageInView(entry.isIntersecting),
+      { threshold: 0.25, rootMargin: "0px" }
+    );
+    if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section ref={ref} className={styles.pillars} aria-label="The Framework">
-      <div className={styles.container}>
+    <section ref={ref} className={styles.framework} aria-labelledby="program-framework-title">
+      <div className={styles.frameworkContainer}>
         <p className={styles.eyebrow}>02 / The Framework</p>
-        <div className={styles.pillarsGrid}>
-          {sortedPillars.map((pillar, i) => (
-            <motion.article
-              key={`${pillar.title}-${i}`}
-              className={styles.pillarCard}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={{ hidden: {}, visible: {} }}
-              transition={{ delay: i * 0.08 }}
-            >
-              <motion.div
-                className={styles.pillarBorderT}
-                initial={{ scaleX: 0 }}
-                animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: EASE }}
-              />
-              <motion.div
-                className={styles.pillarBorderR}
-                initial={{ scaleY: 0 }}
-                animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 + i * 0.08, ease: EASE }}
-              />
-              <span className={styles.pillarIndexLarge} aria-hidden>
-                {String(Number.parseInt(pillar.step_id || '', 10) || i + 1).padStart(2, "0")}
-              </span>
-              <div className={styles.pillarContent}>
-                <motion.h4
-                  className={styles.pillarTitle}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.35 + i * 0.08,
-                    ease: EASE,
-                  }}
-                >
-                  {pillar.title}
-                </motion.h4>
-                <motion.p
-                  className={styles.pillarDesc}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.4 + i * 0.08,
-                    ease: EASE,
-                  }}
-                >
-                  {pillar.description}
-                </motion.p>
-              </div>
-            </motion.article>
-          ))}
-          <motion.div
-            className={styles.pillarsImageTile}
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+
+        <div className={styles.frameworkImageWrap} ref={imageWrapperRef}>
+          <div
+            className={`${styles.frameworkImageInner} ${isImageInView ? styles.frameworkImageInnerVisible : styles.frameworkImageInnerBefore}`}
           >
             <Image
-              src={pillarsImage}
+              src={imageUrl}
               alt=""
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className={styles.pillarsImage}
+              className={styles.frameworkSectionImage}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
             />
-          </motion.div>
+          </div>
         </div>
+
+        <motion.div
+          className={styles.frameworkConclusion}
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.55, ease: EASE }}
+        >
+          <div className={styles.frameworkLeft}>
+            <h2 id="program-framework-title" className={styles.frameworkConclusionTitle}>
+              {title}
+            </h2>
+          </div>
+          <div className={styles.frameworkRight}>
+            <p className={styles.frameworkConclusionText}>{paragraph}</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function SessionsSection({
-  sessions,
+  sessionGroups,
   fallbackImage,
 }: {
-  sessions: { title: string; description: string; image?: string }[];
+  sessionGroups: ProgramSessionGroup[];
   fallbackImage: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
+  let cardIndex = 0;
 
   return (
     <section ref={ref} className={styles.sessions} aria-label="Signature Sessions">
       <div className={styles.container}>
         <p className={styles.eyebrow}>Signature Sessions</p>
-        <ul className={styles.sessionsGrid}>
-          {sessions.map((session, i) => (
-            <motion.li
-              key={session.title}
-              className={styles.sessionCard}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: EASE,
-              }}
-            >
-              <div className={styles.sessionCardImageWrap}>
-                <Image
-                  src={session.image ?? fallbackImage}
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className={styles.sessionCardImage}
-                />
-              </div>
-              <div className={styles.sessionCardContent}>
-                <h4 className={styles.sessionCardTitle}>{session.title}</h4>
-                <p className={styles.sessionCardDesc}>{session.description}</p>
-              </div>
-            </motion.li>
-          ))}
-        </ul>
+        {sessionGroups.map((group, gi) => {
+          const sessions = group.sessions || [];
+          const showGroupHeading =
+            sessionGroups.length > 1 ||
+            (group.typeTitle && group.typeTitle !== "Signature Sessions");
+          return (
+            <div key={`${group.typeTitle}-${gi}`} className={styles.sessionGroup}>
+              {showGroupHeading && (
+                <h3 className={styles.sessionGroupTitle}>{group.typeTitle}</h3>
+              )}
+              <ul className={styles.sessionsGrid}>
+                {sessions.map((session, si) => {
+                  const i = cardIndex++;
+                  return (
+                    <motion.li
+                      key={`${gi}-${si}-${session.title}`}
+                      className={styles.sessionCard}
+                      initial={{ opacity: 0, y: 24 }}
+                      animate={inView ? { opacity: 1, y: 0 } : {}}
+                      transition={{
+                        duration: 0.5,
+                        delay: i * 0.06,
+                        ease: EASE,
+                      }}
+                    >
+                      <div className={styles.sessionCardImageWrap}>
+                        <Image
+                          src={session.image ?? fallbackImage}
+                          alt=""
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className={styles.sessionCardImage}
+                        />
+                      </div>
+                      <div className={styles.sessionCardContent}>
+                        <h4 className={styles.sessionCardTitle}>{session.title}</h4>
+                        <p className={styles.sessionCardDesc}>{session.description}</p>
+                      </div>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

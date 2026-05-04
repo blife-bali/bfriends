@@ -1,57 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
-
-async function replaceProgramChildren(
-  connection: any,
-  programId: string,
-  steps: any[] = [],
-  sessions: any[] = []
-) {
-  const resolveStepSortOrder = (step: any, fallbackIndex: number) => {
-    const numberFromStepId = Number.parseInt(String(step?.step_id ?? ''), 10);
-    if (Number.isFinite(numberFromStepId)) return numberFromStepId - 1;
-    return step?.sort_order ?? fallbackIndex;
-  };
-
-  await connection.execute('DELETE FROM bfriends_program_steps WHERE program_id = ?', [programId]);
-  await connection.execute('DELETE FROM bfriends_program_sessions WHERE program_id = ?', [programId]);
-
-  if (Array.isArray(steps)) {
-    for (let i = 0; i < steps.length; i++) {
-      const step = steps[i];
-      await connection.execute(
-        `INSERT INTO bfriends_program_steps (program_id, step_id, title, description, sort_order)
-         VALUES (?, ?, ?, ?, ?)`,
-        [
-          programId,
-          step.step_id || String(i + 1).padStart(2, '0'),
-          step.title || '',
-          step.description || '',
-          resolveStepSortOrder(step, i),
-        ]
-      );
-    }
-  }
-
-  if (Array.isArray(sessions)) {
-    for (let i = 0; i < sessions.length; i++) {
-      const session = sessions[i];
-      await connection.execute(
-        `INSERT INTO bfriends_program_sessions (program_id, title, description, image, icon, sort_order)
-         VALUES (?, ?, ?, ?, ?, ?)`,
-        [
-          programId,
-          session.title || '',
-          session.description || '',
-          session.image || null,
-          session.icon || null,
-          session.sort_order ?? i,
-        ]
-      );
-    }
-  }
-}
+import { replaceProgramChildren, buildSessionTypesForAdmin } from '@/lib/admin-program-children';
 
 export async function GET(
   req: NextRequest,
@@ -82,16 +32,22 @@ export async function GET(
       [id]
     );
 
-    const [sessions] = await pool.execute(
-      'SELECT * FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order',
+    const [sessionTypes] = await pool.execute(
+      'SELECT * FROM bfriends_program_session_types WHERE program_id = ? ORDER BY sort_order',
       [id]
     );
+    const [sessions] = await pool.execute(
+      'SELECT * FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+      [id]
+    );
+    const session_types = buildSessionTypesForAdmin(sessionTypes as any[], sessions as any[]);
 
     return NextResponse.json({
       ...programs[0],
       steps,
       pillars,
       sessions,
+      session_types,
     });
   } catch (error) {
     console.error('Error fetching program:', error);
@@ -122,6 +78,8 @@ export async function PUT(
       breadcrumb,
       philosophy_image,
       pillars_image,
+      pillars_title,
+      pillars_paragraph,
       previous_program,
       next_program,
       seo_title,
@@ -129,7 +87,8 @@ export async function PUT(
       sort_order,
       is_active,
       steps,
-      sessions,
+      sessions: sessionsBody,
+      session_types: sessionTypesBody,
     } = body;
 
     const connection = await pool.getConnection();
@@ -140,12 +99,14 @@ export async function PUT(
         `UPDATE bfriends_programs SET
           name = ?, slug = ?, eyebrow = ?, title = ?, subheading = ?,
           image = ?, button_label = ?, quote = ?, philosophy = ?, breadcrumb = ?,
-          philosophy_image = ?, pillars_image = ?, previous_program = ?,
+          philosophy_image = ?, pillars_image = ?, pillars_title = ?, pillars_paragraph = ?,
+          previous_program = ?,
           next_program = ?, seo_title = ?, seo_description = ?, sort_order = ?, is_active = ?
         WHERE id = ?`,
         [
           name, slug, eyebrow, title, subheading, image, button_label,
           quote, philosophy, breadcrumb, philosophy_image, pillars_image,
+          pillars_title || null, pillars_paragraph || null,
           previous_program, next_program, seo_title || null, seo_description || null, sort_order ?? 0, is_active ?? 1, id,
         ]
       );
@@ -156,17 +117,26 @@ export async function PUT(
         return NextResponse.json({ error: 'Program not found' }, { status: 404 });
       }
 
-      await replaceProgramChildren(connection, id, steps, sessions);
+      await replaceProgramChildren(connection, id, steps, sessionTypesBody, sessionsBody);
       await connection.commit();
 
       const [programRows] = await pool.execute('SELECT * FROM bfriends_programs WHERE id = ?', [id]);
       const [stepRows] = await pool.execute('SELECT * FROM bfriends_program_steps WHERE program_id = ? ORDER BY sort_order', [id]);
-      const [sessionRows] = await pool.execute('SELECT * FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order', [id]);
+      const [typeRows] = await pool.execute(
+        'SELECT * FROM bfriends_program_session_types WHERE program_id = ? ORDER BY sort_order',
+        [id]
+      );
+      const [sessionRows] = await pool.execute(
+        'SELECT * FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+        [id]
+      );
+      const session_types = buildSessionTypesForAdmin(typeRows as any[], sessionRows as any[]);
 
       return NextResponse.json({
         ...(programRows as any[])[0],
         steps: stepRows,
         sessions: sessionRows,
+        session_types,
       });
     } catch (error) {
       await connection.rollback();
@@ -193,6 +163,7 @@ export async function DELETE(
     await pool.execute('DELETE FROM bfriends_program_steps WHERE program_id = ?', [id]);
     await pool.execute('DELETE FROM bfriends_program_pillars WHERE program_id = ?', [id]);
     await pool.execute('DELETE FROM bfriends_program_sessions WHERE program_id = ?', [id]);
+    await pool.execute('DELETE FROM bfriends_program_session_types WHERE program_id = ?', [id]);
 
     const [result] = await pool.execute(
       'DELETE FROM bfriends_programs WHERE id = ?',

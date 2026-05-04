@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
+import { replaceProgramChildren } from '@/lib/admin-program-children';
 import { programsData } from '@/lib/programs-data';
 import { eventData } from '@/lib/event-data';
 import { newsData } from '@/lib/news-data';
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
 
     if (reset) {
       const tables = [
-        'bfriends_program_sessions', 'bfriends_program_pillars', 'bfriends_program_steps',
+        'bfriends_program_sessions', 'bfriends_program_session_types', 'bfriends_program_pillars', 'bfriends_program_steps',
         'bfriends_process_subpoints', 'bfriends_charm_usage', 'bfriends_charm_tiers',
         'bfriends_membership_content', 'bfriends_philosophy_sections', 'bfriends_page_headers',
         'bfriends_site_settings', 'bfriends_news', 'bfriends_events',
@@ -125,22 +126,29 @@ export async function POST(req: Request) {
       for (let i = 0; i < programsData.length; i++) {
         const p = programsData[i];
         const [res] = await pool.execute(
-          `INSERT INTO bfriends_programs (name, slug, eyebrow, title, subheading, image, button_label, quote, philosophy, breadcrumb, philosophy_image, pillars_image, previous_program, next_program, sort_order)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [p.name, p.slug, p.eyebrow, p.title, p.subheading, p.image, p.buttonLabel, p.quote || null, p.philosophy || null, p.breadcrumb || null, p.philosophyImage || null, p.pillarsImage || null, p.previousProgram || null, p.nextProgram || null, i]
+          `INSERT INTO bfriends_programs (name, slug, eyebrow, title, subheading, image, button_label, quote, philosophy, breadcrumb, philosophy_image, pillars_image, pillars_title, pillars_paragraph, previous_program, next_program, sort_order)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [
+            p.name,
+            p.slug,
+            p.eyebrow,
+            p.title,
+            p.subheading,
+            p.image,
+            p.buttonLabel,
+            p.quote || null,
+            p.philosophy || null,
+            p.breadcrumb || null,
+            p.philosophyImage || null,
+            p.pillarsImage || null,
+            p.pillarsTitle ?? null,
+            p.pillarsParagraph ?? null,
+            p.previousProgram || null,
+            p.nextProgram || null,
+            i,
+          ]
         );
         const progId = (res as any).insertId;
-
-        // Steps
-        if (p.steps) {
-          for (let j = 0; j < p.steps.length; j++) {
-            const s = p.steps[j];
-            await pool.execute(
-              'INSERT INTO bfriends_program_steps (program_id, step_id, title, description, sort_order) VALUES (?, ?, ?, ?, ?)',
-              [progId, s.id, s.title, s.desc, j]
-            );
-          }
-        }
 
         // Pillars
         if (p.pillars) {
@@ -153,15 +161,41 @@ export async function POST(req: Request) {
           }
         }
 
-        // Sessions
-        if (p.sessions) {
-          for (let j = 0; j < p.sessions.length; j++) {
-            const s = p.sessions[j];
-            await pool.execute(
-              'INSERT INTO bfriends_program_sessions (program_id, title, description, image, icon, sort_order) VALUES (?, ?, ?, ?, ?, ?)',
-              [progId, s.title, s.description, s.image || null, null, j]
-            );
-          }
+        const stepsPayload = (p.steps || []).map((s, j) => ({
+          step_id: s.id,
+          title: s.title,
+          description: s.desc,
+          sort_order: j,
+        }));
+        const session_types =
+          p.sessionGroups?.map((g, gi) => ({
+            title: g.typeTitle,
+            sort_order: gi,
+            sessions: (g.sessions || []).map((s, j) => ({
+              title: s.title,
+              description: s.description,
+              image: s.image ?? null,
+              icon: null,
+              sort_order: j,
+            })),
+          })) ?? undefined;
+
+        const conn = await pool.getConnection();
+        try {
+          await conn.beginTransaction();
+          await replaceProgramChildren(
+          conn,
+          String(progId),
+          stepsPayload,
+          session_types,
+          p.sessionGroups ? undefined : p.sessions
+        );
+          await conn.commit();
+        } catch (e) {
+          await conn.rollback();
+          throw e;
+        } finally {
+          conn.release();
         }
       }
       results.push(`${programsData.length} programs seeded`);
