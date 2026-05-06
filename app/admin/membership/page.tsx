@@ -11,12 +11,14 @@ import Toast from '@/components/admin/Toast';
 interface MembershipContent { id?: number; section_key: string; headline: string; body: string; image: string; seo_title: string; seo_description: string; is_active: number; }
 interface CharmTier { id?: number; name: string; tagline: string; credits: number; bonus: string; is_popular: number; sort_order: number; is_active: number; }
 interface CharmUsage { id?: number; service: string; credits: number; sort_order: number; is_active: number; }
+interface PassportBenefit { id?: number; title: string; description: string; icon_name: string; sort_order: number; is_active: number; }
 
 export default function MembershipPage() {
-  const [tab, setTab] = useState<'content' | 'tiers' | 'usage'>('content');
+  const [tab, setTab] = useState<'content' | 'tiers' | 'usage' | 'passport-benefits'>('content');
   const [content, setContent] = useState<MembershipContent[]>([]);
   const [tiers, setTiers] = useState<CharmTier[]>([]);
   const [usage, setUsage] = useState<CharmUsage[]>([]);
+  const [benefits, setBenefits] = useState<PassportBenefit[]>([]);
   const [editing, setEditing] = useState<any>(null);
   const [deleteTarget, setDeleteTarget] = useState<any>(null);
   const [username, setUsername] = useState('');
@@ -32,16 +34,17 @@ export default function MembershipPage() {
   }, [router]);
 
   const loadData = async () => {
-    const [c, t, u] = await Promise.all([
+    const [c, t, u, b] = await Promise.all([
       fetch('/api/admin/membership').then(r => r.ok ? r.json() : []),
       fetch('/api/admin/charm-tiers').then(r => r.ok ? r.json() : []),
       fetch('/api/admin/charm-usage').then(r => r.ok ? r.json() : []),
+      fetch('/api/admin/passport-benefits').then(r => r.ok ? r.json() : []),
     ]);
-    setContent(c); setTiers(t); setUsage(u);
+    setContent(c); setTiers(t); setUsage(u); setBenefits(b);
   };
 
   const handleSave = async () => {
-    const apiMap: Record<string, string> = { content: 'membership', tiers: 'charm-tiers', usage: 'charm-usage' };
+    const apiMap: Record<string, string> = { content: 'membership', tiers: 'charm-tiers', usage: 'charm-usage', 'passport-benefits': 'passport-benefits' };
     const api = apiMap[tab];
     const isEdit = !!editing.id;
     const url = isEdit ? `/api/admin/${api}/${editing.id}` : `/api/admin/${api}`;
@@ -53,7 +56,7 @@ export default function MembershipPage() {
 
   const handleDelete = async () => {
     if (!deleteTarget) return;
-    const apiMap: Record<string, string> = { content: 'membership', tiers: 'charm-tiers', usage: 'charm-usage' };
+    const apiMap: Record<string, string> = { content: 'membership', tiers: 'charm-tiers', usage: 'charm-usage', 'passport-benefits': 'passport-benefits' };
     await fetch(`/api/admin/${apiMap[tab]}/${deleteTarget.id}`, { method: 'DELETE' });
     setToast({ message: 'Deleted!', type: 'success' }); setDeleteTarget(null); loadData();
   };
@@ -65,6 +68,7 @@ export default function MembershipPage() {
           <button className={`admin-tab ${tab === 'content' ? 'active' : ''}`} onClick={() => setTab('content')}>Content</button>
           <button className={`admin-tab ${tab === 'tiers' ? 'active' : ''}`} onClick={() => setTab('tiers')}>Charm Tiers</button>
           <button className={`admin-tab ${tab === 'usage' ? 'active' : ''}`} onClick={() => setTab('usage')}>Charm Usage</button>
+          <button className={`admin-tab ${tab === 'passport-benefits' ? 'active' : ''}`} onClick={() => setTab('passport-benefits')}>Passport Benefits</button>
         </div>
 
         {tab === 'content' && (
@@ -126,6 +130,26 @@ export default function MembershipPage() {
             />
           </>
         )}
+
+        {tab === 'passport-benefits' && (
+          <>
+            <div className="admin-card-header">
+              <h2>Passport Benefits (Access Grid)</h2>
+              <button onClick={() => setEditing({ title: '', description: '', icon_name: 'Key', sort_order: 0, is_active: 1 })} className="admin-btn admin-btn-primary">+ Add</button>
+            </div>
+            <DataTable
+              columns={[
+                { key: 'title', label: 'Title' },
+                { key: 'description', label: 'Description', render: (v: string) => v?.length > 60 ? v.slice(0, 60) + '…' : v },
+                { key: 'icon_name', label: 'Icon' },
+                { key: 'sort_order', label: 'Order' },
+              ]}
+              data={benefits}
+              onEdit={(row) => setEditing({ ...row })}
+              onDelete={(row) => setDeleteTarget(row)}
+            />
+          </>
+        )}
       </div>
 
       {editing && (
@@ -157,6 +181,25 @@ export default function MembershipPage() {
                 <FormField label="Service" name="service" value={editing.service || ''} onChange={(v: string) => setEditing({ ...editing, service: v })} required />
                 <FormField label="Credits" name="credits" type="number" value={editing.credits || 0} onChange={(v: number) => setEditing({ ...editing, credits: v })} />
                 <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order || 0} onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
+              </>
+            )}
+            {tab === 'passport-benefits' && (
+              <>
+                <FormField label="Title" name="title" value={editing.title || ''} onChange={(v: string) => setEditing({ ...editing, title: v })} required />
+                <FormField label="Description" name="description" type="textarea" value={editing.description || ''} onChange={(v: string) => setEditing({ ...editing, description: v })} required />
+                <FormField label="Icon" name="icon_name" value={editing.icon_name || 'Key'} onChange={(v: string) => setEditing({ ...editing, icon_name: v })}
+                  options={[
+                    { value: 'Key', label: 'Key' },
+                    { value: 'Briefcase', label: 'Briefcase' },
+                    { value: 'Users', label: 'Users' },
+                    { value: 'Gift', label: 'Gift' },
+                    { value: 'Heart', label: 'Heart' },
+                    { value: 'Star', label: 'Star' },
+                    { value: 'Shield', label: 'Shield' },
+                    { value: 'Sparkles', label: 'Sparkles' },
+                  ]} />
+                <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order || 0} onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
+                <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active} onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
               </>
             )}
             <div className="admin-modal-actions">

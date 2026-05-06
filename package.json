@@ -32,8 +32,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "crypto-browserify": "^3.12.1",
     "eslint": "^9",
     "eslint-config-next": "16.0.5",
+    "path-browser": "^2.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

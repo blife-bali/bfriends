@@ -148,6 +148,7 @@ export interface PageHeader {
   page_key: string;
   title: string;
   breadcrumb: string | null;
+  description?: string | null;
   image: string | null;
   seo_title?: string | null;
   seo_description?: string | null;
@@ -197,6 +198,32 @@ export interface CharmUsage {
   id: number;
   service: string;
   credits: number;
+  sort_order: number;
+  is_active: number;
+}
+
+export interface Faq {
+  id: number;
+  question: string;
+  answer: string;
+  sort_order: number;
+  is_active: number;
+}
+
+export interface PassportBenefit {
+  id: number;
+  title: string;
+  description: string;
+  icon_name: string;
+  sort_order: number;
+  is_active: number;
+}
+
+export interface JourneySection {
+  id: number;
+  headline: string;
+  body: string;
+  image: string | null;
   sort_order: number;
   is_active: number;
 }

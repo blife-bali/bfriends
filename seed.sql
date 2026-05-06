@@ -267,3 +267,35 @@ INSERT INTO bfriends_site_settings (setting_key, setting_value) VALUES
 ('contact_phone', '+62 811-2874-2021'),
 ('contact_whatsapp', 'https://wa.me/6281128742021'),
 ('contact_email', 'hello@bfriends.id');
+
+-- ============================================================
+-- 12. FAQs
+-- ============================================================
+INSERT INTO bfriends_faqs (question, answer, sort_order, is_active) VALUES
+('What is BFriends?', 'BFriends is a precision-driven wellness ecosystem in Bali that combines training, recovery, therapy, beauty, and community under one integrated experience.', 0, 1),
+('Where is BFriends located?', 'BFriends is located in Kerobokan, Bali. Exact maps, access details, and opening hours are shared through the contact and location channels on our site.', 1, 1),
+('Do I need a membership to join programs?', 'You can join selected programs without a full membership, while members receive broader access, preferred slots, and ecosystem pricing across services.', 2, 1),
+('How do I book events and workshops?', 'You can explore upcoming sessions from the Community pages and register directly on each event detail page. If a session is full, you can join the waiting list.', 3, 1),
+('Can beginners join BFriends programs?', 'Yes. Our team supports every level, from beginners to advanced participants. We help match you with the right track based on your goals and current condition.', 4, 1),
+('How can I stay updated on new announcements?', 'Follow the News & Events section for the latest updates across the BLife ecosystem, including launches, collaborations, workshops, and community stories.', 5, 1);
+
+-- ============================================================
+-- 13. Passport Benefits
+-- ============================================================
+INSERT INTO bfriends_passport_benefits (title, description, icon_name, sort_order, is_active) VALUES
+('BFriends', 'Unlimited Classes (Fitness, Nurture, Dare).', 'Key', 0, 1),
+('BWork', 'Hot Desk Access & Meeting Room Credits.', 'Briefcase', 1, 1),
+('Community', 'Exclusive Invites to ''The Table'' & Workshops.', 'Users', 2, 1),
+('Perks', '10% Off Nulook Treatments & BNesta Stays.', 'Gift', 3, 1);
+
+-- ============================================================
+-- 14. Charm Concept (membership content)
+-- ============================================================
+INSERT INTO bfriends_membership_content (section_key, headline, body, is_active) VALUES
+('charm_concept', 'Precision Has Its Rewards.', 'For those who know exactly what they need. Charm is our exclusive currency for premium services—from Clinical Facials at Nulook to Private Physio at BFriends. Purchase in bulk, secure your priority, and enjoy privileged rates.', 1);
+
+-- ============================================================
+-- 15. Page header descriptions for journal pages
+-- ============================================================
+UPDATE bfriends_page_headers SET description = 'Workshop, gatherings, wellness sessions, and shared experiences within the BFriends community' WHERE page_key = 'event-workshop';
+UPDATE bfriends_page_headers SET description = 'A collection of stories, rituals, movement, and meaningful experiences from the BFriends Community' WHERE page_key = 'blife-ecosystem-news';

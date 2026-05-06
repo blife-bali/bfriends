@@ -24,7 +24,7 @@ export default async function EventWorkshopPage() {
 
   return (
     <>
-      <JournalPageHeader kind="events" featured={featured} headerImage={pageHeader?.image} />
+      <JournalPageHeader kind="events" featured={featured} headerImage={pageHeader?.image} overrideTitle={pageHeader?.title} overrideDescription={(pageHeader as any)?.description} />
       <main>
         <EventsContent initialEvents={events} />
       </main>

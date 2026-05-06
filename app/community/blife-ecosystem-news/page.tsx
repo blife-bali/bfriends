@@ -24,7 +24,7 @@ export default async function BLifeEcosystemNewsPage() {
 
   return (
     <>
-      <JournalPageHeader kind="news" featured={featured} headerImage={pageHeader?.image} />
+      <JournalPageHeader kind="news" featured={featured} headerImage={pageHeader?.image} overrideTitle={pageHeader?.title} overrideDescription={(pageHeader as any)?.description} />
       <main>
         <NewsContent initialNews={news} />
       </main>

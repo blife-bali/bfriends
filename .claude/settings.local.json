@@ -3,7 +3,21 @@
     "allow": [
       "Bash(npx next *)",
       "Bash(node *)",
-      "Bash(mysql -u root -e \"SELECT 1\")"
+      "Bash(mysql -u root -e \"SELECT 1\")",
+      "Bash(mkdir -p \"c:\\\\project\\\\bfriends\\\\app\\\\api\\\\admin\\\\faqs\\\\[id]\")",
+      "Bash(mkdir -p \"c:\\\\project\\\\bfriends\\\\app\\\\api\\\\admin\\\\passport-benefits\\\\[id]\")",
+      "Bash(npm run *)",
+      "Bash(Select-Object -First 50)",
+      "Bash(Out-String -Width 200)",
+      "Bash(npm install *)",
+      "Bash(Select-Object -First 80)",
+      "Bash(Out-String -Width 300)",
+      "Bash(mysql -h 103.150.101.31 -P 3306 -u bnesta_all -p'Bnesta2020@' bnesta_all -e \"SELECT COUNT\\(*\\) as cnt FROM bfriends_faqs\")",
+      "Bash(npx tsx *)",
+      "Bash(mkdir -p \"c:/project/bfriends/app/api/admin/journey-section\" && mkdir -p \"c:/project/bfriends/app/api/admin/journey-section/[id]\" && mkdir -p \"c:/project/bfriends/app/admin/journey-section\")"
+    ],
+    "additionalDirectories": [
+      "c:\\project\\bfriends\\app\\api\\admin\\journey-section"
     ]
   }
 }

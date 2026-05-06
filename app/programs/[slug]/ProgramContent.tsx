@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { programsData, type ProgramData, type ProgramSessionGroup } from "@/lib/programs-data";
+import { type ProgramData, type ProgramSessionGroup } from "@/lib/programs-data";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { ArrowRight, ArrowUpRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
@@ -13,8 +13,6 @@ import styles from "./ProgramContent.module.css";
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
 const FRAMEWORK_IMAGE_FALLBACK = "/images/hero-test.png";
-
-/** Shown until CMS copy is wired; replaced when `pillars_title` / `pillars_paragraph` or static mock exist. */
 const FRAMEWORK_FALLBACK_TITLE = "The Framework";
 const FRAMEWORK_FALLBACK_PARAGRAPH =
   "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
@@ -36,21 +34,12 @@ interface ProgramContentProps {
 }
 
 export default function ProgramContent({ program, programs }: ProgramContentProps) {
-  const slug = (program.slug ?? "").toLowerCase();
-  const staticProgram = programsData.find((p) => p.slug.toLowerCase() === slug);
-  const dbTitle = typeof program.pillarsTitle === "string" ? program.pillarsTitle.trim() : "";
-  const dbParagraph =
-    typeof program.pillarsParagraph === "string" ? program.pillarsParagraph.trim() : "";
   const fwTitle =
-    dbTitle || staticProgram?.pillarsTitle?.trim() || FRAMEWORK_FALLBACK_TITLE;
+    (typeof program.pillarsTitle === "string" ? program.pillarsTitle.trim() : "") || FRAMEWORK_FALLBACK_TITLE;
   const fwParagraph =
-    dbParagraph || staticProgram?.pillarsParagraph?.trim() || FRAMEWORK_FALLBACK_PARAGRAPH;
+    (typeof program.pillarsParagraph === "string" ? program.pillarsParagraph.trim() : "") || FRAMEWORK_FALLBACK_PARAGRAPH;
   const fwImage =
-    program.pillarsImage ||
-    program.image ||
-    staticProgram?.pillarsImage ||
-    staticProgram?.image ||
-    FRAMEWORK_IMAGE_FALLBACK;
+    program.pillarsImage || program.image || FRAMEWORK_IMAGE_FALLBACK;
 
   return (
     <div className={styles.root}>

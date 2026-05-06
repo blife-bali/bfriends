@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import PassportContent from "@/app/membership/bfriends-passport/PassportContent";
 import styles from "./BfriendsPassport.module.css";
-import { getPageSeo, getMembershipContent, getPageHeader } from "@/lib/cms";
+import { getPageSeo, getMembershipContent, getPageHeader, getPassportBenefits } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -21,9 +21,10 @@ const DEFAULT_HEADER = {
 };
 
 export default async function BFriendsPassportPage() {
-  const [membershipContent, pageHeader] = await Promise.all([
+  const [membershipContent, pageHeader, benefits] = await Promise.all([
     getMembershipContent(),
     getPageHeader("bfriends-passport"),
+    getPassportBenefits(),
   ]);
 
   const passportWhy = (membershipContent as any[]).find((r) => r.section_key === "passport_why");
@@ -38,6 +39,7 @@ export default async function BFriendsPassportPage() {
       <main className={styles.page}>
         <PassportContent
           philosophyCopy={passportWhy?.body}
+          benefits={benefits}
         />
       </main>
     </>

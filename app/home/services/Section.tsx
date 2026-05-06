@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { programsData, type ProgramData } from "@/lib/programs-data";
+import { type ProgramData } from "@/lib/programs-data";
 import Card from "./card/Card";
 import { trackEvent } from "@/lib/gtag";
 import styles from "./Section.module.css";
@@ -20,8 +20,8 @@ type ServicesProgram = {
 };
 
 function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram[] {
-  const list = source && source.length > 0 ? source : (programsData as ProgramSource[]);
-  return list.map((p) => ({
+  if (!source || source.length === 0) return [];
+  return source.map((p) => ({
     name: p.name,
     subheading: p.subheading ?? "",
     image: p.image || DEFAULT_DESKTOP_IMAGE,

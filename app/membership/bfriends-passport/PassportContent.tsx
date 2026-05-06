@@ -3,43 +3,31 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Key, Briefcase, Users, Gift, ArrowUpRight } from "lucide-react";
+import { Key, Briefcase, Users, Gift, Heart, Star, Shield, Sparkles, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./BfriendsPassport.module.css";
+
+const ICON_MAP: Record<string, any> = { Key, Briefcase, Users, Gift, Heart, Star, Shield, Sparkles };
 
 const DEFAULT_PHILOSOPHY_COPY =
   "Wellness doesn't happen in isolation. It happens in the fitness rhythm between work, rest, and movement. The Passport is your seamless entry into the BLife, removing the friction between your ambition and your health.";
 
-const passportBenefits = [
-  {
-    id: "bfriends",
-    title: "BFriends",
-    description: "Unlimited Classes (Fitness, Nurture, Dare).",
-    icon: Key,
-  },
-  {
-    id: "bwork",
-    title: "BWork",
-    description: "Hot Desk Access & Meeting Room Credits.",
-    icon: Briefcase,
-  },
-  {
-    id: "community",
-    title: "Community",
-    description: "Exclusive Invites to 'The Table' & Workshops.",
-    icon: Users,
-  },
-  {
-    id: "perks",
-    title: "Perks",
-    description: "10% Off Nulook Treatments & BNesta Stays.",
-    icon: Gift,
-  },
-];
-
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
-export default function PassportContent({ philosophyCopy = DEFAULT_PHILOSOPHY_COPY }: { philosophyCopy?: string }) {
+type BenefitItem = {
+  id?: number | string;
+  title: string;
+  description: string;
+  icon_name?: string;
+};
+
+export default function PassportContent({
+  philosophyCopy = DEFAULT_PHILOSOPHY_COPY,
+  benefits = [],
+}: {
+  philosophyCopy?: string;
+  benefits?: BenefitItem[];
+}) {
   const accessRef = useRef<HTMLElement>(null);
   const accessInView = useInView(accessRef, { once: true, amount: 0.15 });
 
@@ -62,11 +50,11 @@ export default function PassportContent({ philosophyCopy = DEFAULT_PHILOSOPHY_CO
           <p className={styles.eyebrow}>The Access Grid</p>
           <h2 className={styles.accessHeading}>The Access Grid</h2>
           <ul className={styles.accessGrid} role="list">
-            {passportBenefits.map((benefit, i) => {
-              const Icon = benefit.icon;
+            {benefits.map((benefit, i) => {
+              const Icon = ICON_MAP[benefit.icon_name || "Key"] || Key;
               return (
                 <motion.li
-                  key={benefit.id}
+                  key={benefit.id ?? benefit.title}
                   className={styles.accessCard}
                   initial={{ opacity: 0, y: 24 }}
                   animate={accessInView ? { opacity: 1, y: 0 } : {}}

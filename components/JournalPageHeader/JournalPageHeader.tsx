@@ -36,6 +36,10 @@ export type JournalPageHeaderProps = {
   /** When there is no featured image, often from CMS page header. */
   headerImage?: string | null;
   fallbackImage?: string;
+  /** Override title from CMS page header. */
+  overrideTitle?: string | null;
+  /** Override description from CMS page header. */
+  overrideDescription?: string | null;
 };
 
 export default function JournalPageHeader({
@@ -43,9 +47,13 @@ export default function JournalPageHeader({
   featured,
   headerImage,
   fallbackImage = "/images/hero-test.webp",
+  overrideTitle,
+  overrideDescription,
 }: JournalPageHeaderProps) {
   const bgImage = featured?.image?.trim() || headerImage?.trim() || fallbackImage;
-  const { title, description } = HERO_COPY[kind];
+  const fallback = HERO_COPY[kind];
+  const title = overrideTitle?.trim() || fallback.title;
+  const description = overrideDescription?.trim() || fallback.description;
 
   return (
     <section className={styles.hero}>

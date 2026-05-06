@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import CharmContent from "./CharmContent";
 import styles from "./Charm.module.css";
-import { getPageSeo, getCharmTiers, getCharmUsage, getPageHeader } from "@/lib/cms";
+import { getPageSeo, getCharmTiers, getCharmUsage, getPageHeader, getMembershipContent } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -21,11 +21,14 @@ const DEFAULT_HEADER = {
 };
 
 export default async function CharmPage() {
-  const [tiers, usageItems, pageHeader] = await Promise.all([
+  const [tiers, usageItems, pageHeader, membershipContent] = await Promise.all([
     getCharmTiers(),
     getCharmUsage(),
     getPageHeader("charm"),
+    getMembershipContent(),
   ]);
+
+  const charmConcept = (membershipContent as any[]).find((r) => r.section_key === "charm_concept");
 
   return (
     <>
@@ -38,6 +41,8 @@ export default async function CharmPage() {
         <CharmContent
           tiers={tiers.length > 0 ? tiers : undefined}
           usageItems={usageItems.length > 0 ? usageItems : undefined}
+          conceptHeading={charmConcept?.headline || undefined}
+          conceptCopy={charmConcept?.body || undefined}
         />
       </main>
     </>

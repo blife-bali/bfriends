@@ -19,6 +19,7 @@ import {
   getCoreBeliefs,
   getEcosystemItems,
 } from "@/lib/cms";
+import { getJourneySection } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -39,10 +40,11 @@ const DEFAULT_HEADER = {
 };
 
 export default async function AboutPage() {
-  const [pageHeader, intro, whyCards, manifesto, integratedSelf, coreBeliefs, ecosystemItems] = await Promise.all([
+  const [pageHeader, intro, whyCards, journeySection, manifesto, integratedSelf, coreBeliefs, ecosystemItems] = await Promise.all([
     getPageHeader("philosophy"),
     getIntroByPage("home"),
     getWhyCards(true),
+    getJourneySection(),
     getPhilosophySectionByKey("manifesto"),
     getPhilosophySectionByKey("integrated_self"),
     getCoreBeliefs(),
@@ -71,17 +73,21 @@ export default async function AboutPage() {
         />
 
         <WhyBFriends cards={whyCards} />
-        <Journey />
-        {/* <Manifesto
-        headline={manifesto?.headline}
-        body={manifesto?.body}
-      />
-      <CoreBeliefs beliefs={coreBeliefs} />
-      <IntegratedSelf
-        headline={integratedSelf?.headline}
-        body={integratedSelf?.body}
-        image={integratedSelf?.image}
-      /> */}
+        <Journey
+          headline={journeySection?.headline}
+          body={journeySection?.body}
+          imageUrl={journeySection?.image}
+        />
+        <Manifesto
+          headline={manifesto?.headline}
+          body={manifesto?.body}
+        />
+        <CoreBeliefs beliefs={coreBeliefs} />
+        <IntegratedSelf
+          headline={integratedSelf?.headline}
+          body={integratedSelf?.body}
+          image={integratedSelf?.image}
+        />
         <BLifeEcosystem items={ecosystemItems} />
       </main>
       <SiteLocation />

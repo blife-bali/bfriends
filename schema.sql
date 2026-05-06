@@ -300,7 +300,7 @@ CREATE TABLE IF NOT EXISTS bfriends_ecosystem_items (
   is_active TINYINT(1) DEFAULT 1,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 INSERT INTO bfriends_ecosystem_items (name, description, url, sort_order, is_active) VALUES
   ('BNesta', 'Sanctuary. Private villas designed for quiet living and the restoration of personal rhythm.', 'https://bnesta.id', 1, 1),
@@ -309,3 +309,41 @@ INSERT INTO bfriends_ecosystem_items (name, description, url, sort_order, is_act
   ('BFriends', 'Vitality. The heartbeat of movement, recovery, and daily wellness.', 'https://bfriends.id', 4, 1),
   ('Alam Kulkul', 'Heritage. A retreat rooted in the wisdom of Balinese nature and culture.', 'https://alamkulkul.com', 5, 1),
   ('Nulook', 'Precision. Aesthetic science approached with medical responsibility and care.', 'https://nulook.co.id', 6, 1);
+
+-- 21. FAQs
+CREATE TABLE IF NOT EXISTS bfriends_faqs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  question VARCHAR(500) NOT NULL,
+  answer TEXT NOT NULL,
+  sort_order INT DEFAULT 0,
+  is_active TINYINT(1) DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- 22. Passport Benefits
+CREATE TABLE IF NOT EXISTS bfriends_passport_benefits (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  description TEXT NOT NULL,
+  icon_name VARCHAR(50) NOT NULL DEFAULT 'Key',
+  sort_order INT DEFAULT 0,
+  is_active TINYINT(1) DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Add description column to page_headers for journal page titles
+ALTER TABLE bfriends_page_headers ADD COLUMN description TEXT DEFAULT NULL AFTER breadcrumb;
+
+-- 23. Journey section (about page)
+CREATE TABLE IF NOT EXISTS bfriends_journey_sections (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  headline VARCHAR(500) NOT NULL,
+  body TEXT NOT NULL,
+  image VARCHAR(500),
+  sort_order INT DEFAULT 0,
+  is_active TINYINT(1) DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;

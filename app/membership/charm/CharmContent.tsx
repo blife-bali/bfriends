@@ -18,18 +18,28 @@ const DEFAULT_USAGE = [
   { service: "Full Body Recovery Package", credits: 4 },
 ];
 
-const CONCEPT_HEADING = "Precision Has Its Rewards.";
-const CONCEPT_COPY =
+const DEFAULT_CONCEPT_HEADING = "Precision Has Its Rewards.";
+const DEFAULT_CONCEPT_COPY =
   "For those who know exactly what they need. Charm is our exclusive currency for premium services—from Clinical Facials at Nulook to Private Physio at BFriends. Purchase in bulk, secure your priority, and enjoy privileged rates.";
 
-export default function CharmContent({ tiers = DEFAULT_TIERS, usageItems = DEFAULT_USAGE }: { tiers?: any[]; usageItems?: any[] }) {
+export default function CharmContent({
+  tiers = DEFAULT_TIERS,
+  usageItems = DEFAULT_USAGE,
+  conceptHeading = DEFAULT_CONCEPT_HEADING,
+  conceptCopy = DEFAULT_CONCEPT_COPY,
+}: {
+  tiers?: any[];
+  usageItems?: any[];
+  conceptHeading?: string;
+  conceptCopy?: string;
+}) {
   return (
     <>
       <section className={styles.concept} aria-label="The Concept">
         <div className={styles.container}>
           <p className={styles.eyebrow}>The Concept</p>
-          <h2 className={styles.conceptHeading}>{CONCEPT_HEADING}</h2>
-          <p className={styles.conceptCopy}>{CONCEPT_COPY}</p>
+          <h2 className={styles.conceptHeading}>{conceptHeading}</h2>
+          <p className={styles.conceptCopy}>{conceptCopy}</p>
         </div>
       </section>
 

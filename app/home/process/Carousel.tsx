@@ -2,17 +2,31 @@
 
 import { useCallback, useEffect, useState } from "react";
 import styles from "./Carousel.module.css";
-import {
-  processData,
-  processSectionTitle,
-  processSectionIntro,
-} from "@/lib/process-data";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "./Card";
 import { trackEvent } from "@/lib/gtag";
 
-export default function Carousel() {
+const DEFAULT_TITLE = "The BFriends System";
+const DEFAULT_INTRO = "An expert-driven, data-led system integrated into a routine and validated by results.";
+
+type ProcessStep = {
+  id: number;
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+};
+
+export default function Carousel({
+  steps = [],
+  sectionTitle = DEFAULT_TITLE,
+  sectionIntro = DEFAULT_INTRO,
+}: {
+  steps?: ProcessStep[];
+  sectionTitle?: string;
+  sectionIntro?: string;
+}) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     startIndex: 0,
     align: "center",
@@ -42,14 +56,16 @@ export default function Carousel() {
     };
   }, [emblaApi, updateScrollProgress]);
 
+  if (steps.length === 0) return null;
+
   return (
     <section className={styles.section}>
       {/* Desktop: title + carousel */}
       <div className={styles.desktopBlock}>
         <div className={styles.titleContainer}>
           <p className={styles.eyebrow}>Our Process</p>
-          <h1 className={styles.heading}>{processSectionTitle}</h1>
-          <p className={styles.intro}>{processSectionIntro}</p>
+          <h1 className={styles.heading}>{sectionTitle}</h1>
+          <p className={styles.intro}>{sectionIntro}</p>
         </div>
         <div className={styles.carouselWrapper}>
           <button
@@ -66,7 +82,7 @@ export default function Carousel() {
           </button>
           <div className={styles.embla} ref={emblaRef}>
             <div className={styles.emblaContainer}>
-              {processData.map((step, index) => (
+              {steps.map((step, index) => (
                 <div key={step.id} className={styles.emblaSlide}>
                   <Card step={step} index={index} />
                 </div>
@@ -98,11 +114,11 @@ export default function Carousel() {
       <div className={styles.carouselWrapperMobile}>
         <div className={styles.titleContainer}>
           <p className={styles.eyebrow}>Our Process</p>
-          <h1 className={styles.heading}>{processSectionTitle}</h1>
-          <p className={styles.intro}>{processSectionIntro}</p>
+          <h1 className={styles.heading}>{sectionTitle}</h1>
+          <p className={styles.intro}>{sectionIntro}</p>
         </div>
         <div className={styles.mobileCardsContainer}>
-          {processData.map((step, index) => (
+          {steps.map((step, index) => (
             <div key={step.id} className={styles.mobileSlide}>
               <Card step={step} index={index} variant="mobileCard" />
             </div>

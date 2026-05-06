@@ -299,3 +299,23 @@ export async function getSiteSettings() {
     };
   }
 }
+
+export async function getFaqs() {
+  return tryDb<any>('SELECT * FROM bfriends_faqs WHERE is_active = 1 ORDER BY sort_order');
+}
+
+export async function getPassportBenefits() {
+  return tryDb<any>('SELECT * FROM bfriends_passport_benefits WHERE is_active = 1 ORDER BY sort_order');
+}
+
+export async function getJourneySection() {
+  try {
+    const [rows] = await pool.execute(
+      'SELECT * FROM bfriends_journey_sections WHERE is_active = 1 ORDER BY sort_order LIMIT 1'
+    );
+    const items = rows as any[];
+    return items.length > 0 ? items[0] : null;
+  } catch {
+    return null;
+  }
+}
