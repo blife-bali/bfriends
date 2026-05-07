@@ -183,7 +183,7 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
         <div className={styles.logoContainer}>
         <div className={styles.footerLogo}>
           <img 
-            src="/images/icons/logo-bfriends-hor.png" 
+            src="/images/icons/logo-default.svg"
             alt="BFriends" 
             className={styles.logoImage}
           />

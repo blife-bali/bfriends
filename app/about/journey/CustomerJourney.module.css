@@ -141,6 +141,14 @@
   opacity: 1;
 }
 
+.parallaxLayer {
+  position: absolute;
+  inset: 0;
+  top: -8%;
+  height: 116%;
+  will-change: transform;
+}
+
 .blockSectionImage {
   object-fit: cover;
   object-position: center;

@@ -78,16 +78,8 @@ export default async function AboutPage() {
           body={journeySection?.body}
           imageUrl={journeySection?.image}
         />
-        <Manifesto
-          headline={manifesto?.headline}
-          body={manifesto?.body}
-        />
-        <CoreBeliefs beliefs={coreBeliefs} />
-        <IntegratedSelf
-          headline={integratedSelf?.headline}
-          body={integratedSelf?.body}
-          image={integratedSelf?.image}
-        />
+        
+        
         <BLifeEcosystem items={ecosystemItems} />
       </main>
       <SiteLocation />

@@ -3,10 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { type ProgramData, type ProgramSessionGroup } from "@/lib/programs-data";
+import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
+import { type MockProgram } from "@/mock/programs";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
-import { ArrowRight, ArrowUpRight, ChevronLeft } from "lucide-react";
+import { ArrowRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./ProgramContent.module.css";
 
@@ -17,46 +17,41 @@ const FRAMEWORK_FALLBACK_TITLE = "The Framework";
 const FRAMEWORK_FALLBACK_PARAGRAPH =
   "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
 
-function getSessionGroups(program: ProgramData & { sessionGroups?: ProgramSessionGroup[] }): ProgramSessionGroup[] {
-  const fromDb = program.sessionGroups;
-  if (Array.isArray(fromDb) && fromDb.length > 0) {
-    return fromDb;
-  }
-  if (program.sessions && program.sessions.length > 0) {
-    return [{ typeTitle: "Signature Sessions", sessions: program.sessions }];
-  }
-  return [];
-}
-
 interface ProgramContentProps {
-  program: ProgramData;
-  programs: ProgramData[];
+  program: MockProgram;
+  programs: MockProgram[];
 }
 
 export default function ProgramContent({ program, programs }: ProgramContentProps) {
   const fwTitle =
-    (typeof program.pillarsTitle === "string" ? program.pillarsTitle.trim() : "") || FRAMEWORK_FALLBACK_TITLE;
+    (typeof program.framework.title === "string" ? program.framework.title.trim() : "") || FRAMEWORK_FALLBACK_TITLE;
   const fwParagraph =
-    (typeof program.pillarsParagraph === "string" ? program.pillarsParagraph.trim() : "") || FRAMEWORK_FALLBACK_PARAGRAPH;
+    (typeof program.framework.sub === "string" ? program.framework.sub.trim() : "") || FRAMEWORK_FALLBACK_PARAGRAPH;
   const fwImage =
-    program.pillarsImage || program.image || FRAMEWORK_IMAGE_FALLBACK;
+    program.framework.image || program.general.image || FRAMEWORK_IMAGE_FALLBACK;
+  const currentIndex = programs.findIndex((p) => p.general.slug === program.general.slug);
+  const previousSlug = currentIndex > 0 ? programs[currentIndex - 1].general.slug : undefined;
+  const nextSlug =
+    currentIndex >= 0 && currentIndex < programs.length - 1
+      ? programs[currentIndex + 1].general.slug
+      : undefined;
 
   return (
     <div className={styles.root}>
-      {program.philosophy && <PhilosophySection philosophy={program.philosophy} />}
+      {program.intro.sub && <PhilosophySection title={program.intro.title} body={program.intro.sub} />}
       <FrameworkSection title={fwTitle} paragraph={fwParagraph} imageUrl={fwImage} />
       {(() => {
-        const sessionGroups = getSessionGroups(program);
+        const sessionGroups = program.sessions_group || [];
         const total = sessionGroups.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
         return total > 0 ? (
-          <SessionsSection sessionGroups={sessionGroups} fallbackImage={program.image} />
+          <SessionsSection sessionGroups={sessionGroups} fallbackImage={program.general.image} />
         ) : null;
       })()}
       <ProgramCta program={program} />
-      {(program.previousProgram || program.nextProgram) && (
+      {false && (previousSlug || nextSlug) && (
         <ProgramNavFooter
-          previousSlug={program.previousProgram}
-          nextSlug={program.nextProgram}
+          previousSlug={previousSlug}
+          nextSlug={nextSlug}
           programs={programs}
         />
       )}
@@ -64,7 +59,7 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
   );
 }
 
-function PhilosophySection({ philosophy }: { philosophy: string }) {
+function PhilosophySection({ title, body }: { title: string; body: string }) {
   return (
     <section
       className={styles.philosophy}
@@ -72,9 +67,9 @@ function PhilosophySection({ philosophy }: { philosophy: string }) {
     >
       <div className={styles.philosophyInner}>
         <h2 id="program-philosophy-title" className={styles.philosophyTitle}>
-          The Philosophy
+          {title}
         </h2>
-        <p className={styles.philosophyBody}>{philosophy}</p>
+        <p className={styles.philosophyBody}>{body}</p>
       </div>
     </section>
   );
@@ -94,10 +89,42 @@ function FrameworkSection({
   const inView = useInView(ref, { once: true, amount: 0.12 });
   const [isImageInView, setIsImageInView] = useState(false);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
+  const scrollDirection = useRef<"up" | "down">("down");
+
+  const { scrollYProgress } = useScroll({
+    target: imageWrapperRef,
+    offset: ["start end", "end start"],
+  });
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.4,
+  });
+  const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY !== lastScrollY.current) {
+        scrollDirection.current = currentY > lastScrollY.current ? "down" : "up";
+        lastScrollY.current = currentY;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsImageInView(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageInView(true);
+        } else if (scrollDirection.current === "up") {
+          setIsImageInView(false);
+        }
+      },
       { threshold: 0.25, rootMargin: "0px" }
     );
     if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
@@ -107,19 +134,19 @@ function FrameworkSection({
   return (
     <section ref={ref} className={styles.framework} aria-labelledby="program-framework-title">
       <div className={styles.frameworkContainer}>
-        <p className={styles.eyebrow}>02 / The Framework</p>
-
         <div className={styles.frameworkImageWrap} ref={imageWrapperRef}>
           <div
             className={`${styles.frameworkImageInner} ${isImageInView ? styles.frameworkImageInnerVisible : styles.frameworkImageInnerBefore}`}
           >
-            <Image
-              src={imageUrl}
-              alt=""
-              fill
-              className={styles.frameworkSectionImage}
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
-            />
+            <motion.div className={styles.parallaxLayer} style={{ y }}>
+              <Image
+                src={imageUrl}
+                alt=""
+                fill
+                className={styles.frameworkSectionImage}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
+              />
+            </motion.div>
           </div>
         </div>
 
@@ -147,7 +174,7 @@ function SessionsSection({
   sessionGroups,
   fallbackImage,
 }: {
-  sessionGroups: ProgramSessionGroup[];
+  sessionGroups: MockProgram["sessions_group"];
   fallbackImage: string;
 }) {
   const ref = useRef<HTMLElement>(null);
@@ -157,23 +184,20 @@ function SessionsSection({
   return (
     <section ref={ref} className={styles.sessions} aria-label="Signature Sessions">
       <div className={styles.container}>
-        <p className={styles.eyebrow}>Signature Sessions</p>
         {sessionGroups.map((group, gi) => {
           const sessions = group.sessions || [];
-          const showGroupHeading =
-            sessionGroups.length > 1 ||
-            (group.typeTitle && group.typeTitle !== "Signature Sessions");
+          const showGroupHeading = Boolean(group.name?.trim());
           return (
-            <div key={`${group.typeTitle}-${gi}`} className={styles.sessionGroup}>
+            <div key={`${group.name}-${gi}`} className={styles.sessionGroup}>
               {showGroupHeading && (
-                <h3 className={styles.sessionGroupTitle}>{group.typeTitle}</h3>
+                <h3 className={styles.sessionEyebrow}>{group.name}</h3>
               )}
               <ul className={styles.sessionsGrid}>
                 {sessions.map((session, si) => {
                   const i = cardIndex++;
                   return (
                     <motion.li
-                      key={`${gi}-${si}-${session.title}`}
+                      key={`${gi}-${si}-${session.name}`}
                       className={styles.sessionCard}
                       initial={{ opacity: 0, y: 24 }}
                       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -193,8 +217,9 @@ function SessionsSection({
                         />
                       </div>
                       <div className={styles.sessionCardContent}>
-                        <h4 className={styles.sessionCardTitle}>{session.title}</h4>
-                        <p className={styles.sessionCardDesc}>{session.description}</p>
+                        <h4 className={styles.sessionCardTitle}>{session.name}</h4>
+                        <p className={styles.sessionCardDesc}>{session.extra}</p>
+                        <p className={styles.sessionCardDesc}>{session.desc}</p>
                       </div>
                     </motion.li>
                   );
@@ -208,13 +233,13 @@ function SessionsSection({
   );
 }
 
-function ProgramCta({ program }: { program: ProgramData }) {
+function ProgramCta({ program }: { program: MockProgram }) {
   return (
     <section className={styles.cta} aria-label="Get started">
       <div className={styles.container}>
         <p className={styles.eyebrow}>Get started</p>
         <h2 className={styles.ctaHeading}>
-          Ready to experience {program.name}?
+          Ready to experience {program.general.name}?
         </h2>
         <Button
           href={BOOK_NOW_URL}
@@ -237,13 +262,13 @@ function ProgramNavFooter({
 }: {
   previousSlug?: string;
   nextSlug?: string;
-  programs: ProgramData[];
+  programs: MockProgram[];
 }) {
   const previousProgram = previousSlug
-    ? programs.find((p) => p.slug === previousSlug)
+    ? programs.find((p) => p.general.slug === previousSlug)
     : null;
   const nextProgram = nextSlug
-    ? programs.find((p) => p.slug === nextSlug)
+    ? programs.find((p) => p.general.slug === nextSlug)
     : null;
 
   if (!previousProgram && !nextProgram) return null;
@@ -261,7 +286,7 @@ function ProgramNavFooter({
         >
           <div
             className={styles.programNavBg}
-            style={{ backgroundImage: `url(${previousProgram.image})` }}
+            style={{ backgroundImage: `url(${previousProgram.general.image})` }}
             aria-hidden
           />
           <div className={styles.programNavOverlay} aria-hidden />
@@ -271,7 +296,7 @@ function ProgramNavFooter({
               <span className={styles.programNavIcon}>
                 <ChevronLeft aria-hidden />
               </span>
-              {previousProgram.name}
+              {previousProgram.general.name}
             </span>
           </div>
         </Link>
@@ -285,14 +310,14 @@ function ProgramNavFooter({
         >
           <div
             className={styles.programNavBg}
-            style={{ backgroundImage: `url(${nextProgram.image})` }}
+            style={{ backgroundImage: `url(${nextProgram.general.image})` }}
             aria-hidden
           />
           <div className={styles.programNavOverlay} aria-hidden />
           <div className={styles.programNavContent}>
             <span className={styles.programNavLabel}>Next</span>
             <span className={styles.programNavText}>
-              {nextProgram.name}
+              {nextProgram.general.name}
               <span className={styles.programNavIcon}>
                 <ArrowRight aria-hidden />
               </span>

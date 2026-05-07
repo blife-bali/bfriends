@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Hero.module.css";
@@ -46,21 +45,21 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.buttonGroup}>
-          <Button
+          {/* <Button
             className={styles.button}
             color="var(--color-white-100)"
             href="/about"
             showIcon
           >
             Learn More
-          </Button>
+          </Button> */}
           <Button
             className={styles.button}
             color="var(--color-white-100)"
             href="https://wa.me/6281128742021"
             showIcon
           >
-            Reserve Schedule
+            Reserve Your Moments
           </Button>
         </div>
       </div>

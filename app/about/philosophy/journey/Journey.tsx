@@ -1,4 +1,8 @@
+ "use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Journey.module.css";
 
@@ -16,6 +20,50 @@ export default function Journey({
   body?: string | null;
   imageUrl?: string | null;
 }) {
+  const [isImageInView, setIsImageInView] = useState(false);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
+  const scrollDirection = useRef<"up" | "down">("down");
+
+  const { scrollYProgress } = useScroll({
+    target: imageWrapperRef,
+    offset: ["start end", "end start"],
+  });
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.4,
+  });
+  const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY !== lastScrollY.current) {
+        scrollDirection.current = currentY > lastScrollY.current ? "down" : "up";
+        lastScrollY.current = currentY;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageInView(true);
+        } else if (scrollDirection.current === "up") {
+          setIsImageInView(false);
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px" }
+    );
+    if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.section} aria-label="BFriends Journey">
       <div className={styles.container}>
@@ -32,14 +80,20 @@ export default function Journey({
           </Button>
         </div>
 
-        <div className={styles.imageWrap}>
-          <Image
-            src={imageUrl || JOURNEY_IMAGE}
-            alt="BFriends Journey"
-            fill
-            className={styles.image}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+        <div className={styles.imageWrap} ref={imageWrapperRef}>
+          <div
+            className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
+          >
+            <motion.div className={styles.parallaxLayer} style={{ y }}>
+              <Image
+                src={imageUrl || JOURNEY_IMAGE}
+                alt="BFriends Journey"
+                fill
+                className={styles.image}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

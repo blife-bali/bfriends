@@ -11,6 +11,7 @@ type PageHeaderProgramsProps = {
   variant: "programs";
   title: string;
   image?: string;
+  showBookNowButton?: boolean;
   subtitle?: never;
   breadcrumb?: never;
 };
@@ -42,6 +43,7 @@ export default function PageHeader(props: PageHeaderProps) {
   const title = props.title;
   const subtitle = !isPrograms ? props.subtitle : undefined;
   const breadcrumb = !isPrograms ? props.breadcrumb : undefined;
+  const showBookNowButton = isPrograms ? props.showBookNowButton !== false : false;
 
   return (
     <section className={sectionClass}>
@@ -66,16 +68,18 @@ export default function PageHeader(props: PageHeaderProps) {
           <>
             <p className={styles.programsEyebrow}>BFriends</p>
             <h1 className={styles.title}>{title}</h1>
-            <Button
-              href={BOOK_NOW_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              showIcon
-              className={styles.programsBookButton}
-              color={useImage ? "var(--color-white-100)" : undefined}
-            >
-              Book Now
-            </Button>
+            {showBookNowButton && (
+              <Button
+                href={BOOK_NOW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                showIcon
+                className={styles.programsBookButton}
+                color={useImage ? "var(--color-white-100)" : undefined}
+              >
+                Book Now
+              </Button>
+            )}
           </>
         ) : (
           <>

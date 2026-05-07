@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Intro.module.css";
 
@@ -28,10 +29,42 @@ export default function Intro({
 }: IntroProps) {
   const [isImageInView, setIsImageInView] = useState(false);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
+  const scrollDirection = useRef<"up" | "down">("down");
+
+  const { scrollYProgress } = useScroll({
+    target: imageWrapperRef,
+    offset: ["start end", "end start"],
+  });
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.4,
+  });
+  const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY !== lastScrollY.current) {
+        scrollDirection.current = currentY > lastScrollY.current ? "down" : "up";
+        lastScrollY.current = currentY;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsImageInView(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageInView(true);
+        } else if (scrollDirection.current === "up") {
+          setIsImageInView(false);
+        }
+      },
       { threshold: 0.25, rootMargin: "0px" }
     );
     if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
@@ -69,13 +102,15 @@ export default function Intro({
             <div
               className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
             >
-              <Image
-                src={imageUrl}
-                alt="BFriends"
-                fill
-                className={styles.sectionImage}
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
-              />
+              <motion.div className={styles.parallaxLayer} style={{ y }}>
+                <Image
+                  src={imageUrl}
+                  alt="BFriends"
+                  fill
+                  className={styles.sectionImage}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
+                />
+              </motion.div>
             </div>
           </div>
         )}

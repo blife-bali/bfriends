@@ -55,7 +55,7 @@
 .navShell:not(.navShellSolid) .left {
   height: 72px;
   width: fit-content;
-  background-color: var(--color-cream-100);
+  /* background-color: var(--color-cream-100); */
   padding: 0 24px;
 }
 

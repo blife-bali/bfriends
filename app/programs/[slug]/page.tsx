@@ -1,14 +1,13 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getProgramBySlug, getProgramSlugs, getPrograms } from "@/lib/cms";
+import { mockSpaPrograms } from "@/mock/programs";
 
 export const dynamic = "force-dynamic";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import ProgramContent from "./ProgramContent";
 
 export async function generateStaticParams() {
-  const slugs = await getProgramSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return mockSpaPrograms.map((program) => ({ slug: program.general.slug }));
 }
 
 export async function generateMetadata({
@@ -17,20 +16,22 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const program = await getProgramBySlug(slug);
+  const program = mockSpaPrograms.find(
+    (item) => item.general.slug.toLowerCase() === slug.toLowerCase()
+  );
   if (!program) return {};
 
-  const title = program.seo_title || `${program.name} | BFriends`;
-  const description =
-    program.seo_description ||
-    program.philosophy ||
-    program.title ||
-    `Discover the ${program.name} program at BFriends.`;
+  const title = program.seo.seo_title || `${program.general.name} | BFriends`;
+  const description = program.seo.seo_description || program.intro.sub;
 
   return {
     title,
     description,
-    openGraph: { title, description, images: program.image ? [{ url: program.image }] : [] },
+    openGraph: {
+      title,
+      description,
+      images: program.general.image ? [{ url: program.general.image }] : [],
+    },
   };
 }
 
@@ -40,14 +41,22 @@ export default async function ProgramPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [program, programs] = await Promise.all([getProgramBySlug(slug), getPrograms()]);
+  const programs = mockSpaPrograms;
+  const program = programs.find(
+    (item) => item.general.slug.toLowerCase() === slug.toLowerCase()
+  );
   if (!program) notFound();
 
-  const headerImage = program.image ?? "/images/hero-test.png";
+  const headerImage = program.general.image ?? "/images/hero-test.png";
 
   return (
     <>
-      <PageHeader variant="programs" title={program.name} image={headerImage} />
+      <PageHeader
+        variant="programs"
+        title={program.general.name}
+        image={headerImage}
+        showBookNowButton={program.general.book_now_button}
+      />
       <main>
         <ProgramContent program={program} programs={programs} />
       </main>
