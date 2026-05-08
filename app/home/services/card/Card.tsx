@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 
 interface ServicesCardProps {
   image: string;
+  name: string;
   title: string;
   subheading: string;
   buttonLabel: string;
@@ -11,6 +12,7 @@ interface ServicesCardProps {
 
 export default function Card({
   image,
+  name,
   title,
   subheading,
   buttonLabel,
@@ -29,7 +31,8 @@ export default function Card({
         />
       </div>
       <div className={styles.body}>
-        <h3 className={styles.title}>{title}</h3>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.title}>{title}</p>
         <p className={styles.subheading}>{subheading}</p>
         <Button
           href={`/programs/${slug}`}

@@ -13,6 +13,7 @@ type ProgramSource = ProgramData & { slug?: string; button_label?: string };
 
 type ServicesProgram = {
   name: string;
+  title: string;
   subheading: string;
   image: string;
   buttonLabel: string;
@@ -22,7 +23,8 @@ type ServicesProgram = {
 function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram[] {
   if (!source || source.length === 0) return [];
   return source.map((p) => ({
-    name: p.name,
+    name: p.name ?? p.title ?? "",
+    title: p.title ?? p.name,
     subheading: p.subheading ?? "",
     image: p.image || DEFAULT_DESKTOP_IMAGE,
     buttonLabel: p.buttonLabel ?? p.button_label ?? "Discover",
@@ -122,7 +124,8 @@ export default function Section({
               <div key={program.slug} className={styles.carouselItem}>
                 <Card
                   image={program.image || DEFAULT_DESKTOP_IMAGE}
-                  title={program.name}
+                  name={program.name}
+                  title={program.title}
                   subheading={program.subheading}
                   buttonLabel={program.buttonLabel}
                   slug={program.slug}

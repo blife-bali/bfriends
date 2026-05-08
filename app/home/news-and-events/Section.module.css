@@ -20,7 +20,7 @@
   grid-template-columns: 1fr 2fr;
   grid-template-areas:
     "left right"
-    "bottom bottom";
+    "button button";
   gap: 40px;
   align-items: start;
   position: relative;
@@ -40,7 +40,7 @@
   grid-area: left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 32px;
   position: relative;
   z-index: 3;
@@ -127,19 +127,8 @@
   display: flex;
 }
 
-.bottomBar {
-  grid-area: bottom;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  margin-top: 8px;
-  position: relative;
-  z-index: 7;
-}
-
 .buttonContainer {
+  grid-area: button;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -196,6 +185,7 @@
 
   .leftColumn {
     position: static;
+    justify-content: flex-start;
     gap: 24px;
   }
 
@@ -228,11 +218,6 @@
     display: none !important;
   }
 
-  .bottomBar {
-    order: 3;
-    width: 100%;
-  }
-
   .navContainer {
     display: none;
   }
@@ -260,12 +245,6 @@
 
   .hideOnMobile {
     display: none !important;
-  }
-
-  .bottomBar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
   }
 
   .buttonContainer {

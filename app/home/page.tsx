@@ -43,6 +43,7 @@ export default async function HomePage() {
     .sort((a, b) => a.general.sort_order - b.general.sort_order)
     .map((program) => ({
       name: program.general.name,
+      title: program.general.title || program.general.name,
       subheading: program.general.subheading,
       image: program.general.image,
       buttonLabel: program.general.button_label,

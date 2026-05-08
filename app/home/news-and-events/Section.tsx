@@ -77,6 +77,32 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
               News & Events <em>Across BLife Ecosystem</em>
             </h2>
           </div>
+          <div className={styles.navContainer}>
+            <button
+              type="button"
+              className={styles.navButton}
+              onClick={() => {
+                trackEvent('carousel_nav', { carousel: 'news_events', direction: 'prev' });
+                scrollPrev();
+              }}
+              disabled={!canScrollPrev}
+              aria-label="Previous"
+            >
+              <ChevronLeft size={24} strokeWidth={1.5} />
+            </button>
+            <button
+              type="button"
+              className={styles.navButton}
+              onClick={() => {
+                trackEvent('carousel_nav', { carousel: 'news_events', direction: 'next' });
+                scrollNext();
+              }}
+              disabled={!canScrollNext}
+              aria-label="Next"
+            >
+              <ChevronRight size={24} strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
 
         <div className={styles.rightColumn}>
@@ -100,51 +126,23 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
           </div>
         </div>
 
-        <div className={styles.bottomBar}>
-          <div className={styles.buttonContainer}>
-            <Button
-              color="var(--color-green-100)"
-              showIcon
-              href="/community/event-workshop"
-              onClick={() => trackEvent('cta_click', { label: 'more_events', location: 'home_news_events' })}
-            >
-              More events
-            </Button>
-            <Button
-              color="var(--color-green-100)"
-              showIcon
-              href="/community/blife-ecosystem-news"
-              onClick={() => trackEvent('cta_click', { label: 'more_news', location: 'home_news_events' })}
-            >
-              More news
-            </Button>
-          </div>
-          <div className={styles.navContainer}>
-            <button 
-              type="button"
-              className={styles.navButton} 
-              onClick={() => {
-                trackEvent('carousel_nav', { carousel: 'news_events', direction: 'prev' });
-                scrollPrev();
-              }} 
-              disabled={!canScrollPrev}
-              aria-label="Previous"
-            >
-              <ChevronLeft size={24} strokeWidth={1.5} />
-            </button>
-            <button 
-              type="button"
-              className={styles.navButton} 
-              onClick={() => {
-                trackEvent('carousel_nav', { carousel: 'news_events', direction: 'next' });
-                scrollNext();
-              }} 
-              disabled={!canScrollNext}
-              aria-label="Next"
-            >
-              <ChevronRight size={24} strokeWidth={1.5} />
-            </button>
-          </div>
+        <div className={styles.buttonContainer}>
+          <Button
+            color="var(--color-green-100)"
+            showIcon
+            href="/community/event-workshop"
+            onClick={() => trackEvent('cta_click', { label: 'more_events', location: 'home_news_events' })}
+          >
+            More events
+          </Button>
+          <Button
+            color="var(--color-green-100)"
+            showIcon
+            href="/community/blife-ecosystem-news"
+            onClick={() => trackEvent('cta_click', { label: 'more_news', location: 'home_news_events' })}
+          >
+            More news
+          </Button>
         </div>
       </div>
     </section>
