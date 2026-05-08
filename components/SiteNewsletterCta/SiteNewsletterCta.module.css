@@ -3,13 +3,13 @@
 /* Subscription Section */
 .subscriptionSection {
   background-color: var(--color-white-100);
-  padding: 128px 0;
+  padding: 160px 0;
   border-bottom: 1px solid var(--color-cream-40);
 }
 
 /* Subscription Wrapper */
 .subscribeWrapper {
-  max-width: 1568px;
+  max-width: 1660px;
   padding: 0 64px;
   margin: 0 auto;
 }
@@ -71,6 +71,7 @@
   height: 96px;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 6px;
 }
 
 .marqueeTextContainer {
@@ -100,6 +101,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-cream-40);
+  border-radius: 6px;
 }
 
 .newsletterContent {
@@ -141,6 +143,8 @@
 .newsletterInputWrapper {
   position: relative;
   width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .newsletterInput {

@@ -11,8 +11,8 @@
 
 .container {
   width: 100%;
-  /* max-width: 1568px; */
-  padding: 128px 0 0 0;
+  /* max-width: 1660px; */
+  padding: 160px 0 0 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -93,11 +93,11 @@
 
 .journeyBlockWrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1660px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  padding: 120px 64px ;
+  gap: 96px;
+  padding: 160px 64px ;
 }
 
 .eyebrow {
@@ -111,93 +111,8 @@
 }
 
 .journeyBlockEven {
-  background-color: var(--color-blue-5);
+  background-color: var(--color-white-100);
   
-}
-
-/* Image block – same as system section */
-.blockImageWrapper {
-  width: 100%;
-  
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-}
-
-.blockImageInner {
-  width: 100%;
-  max-width: 1568px;
-  aspect-ratio: 16 / 9;
-  position: relative;
-  overflow: hidden;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.blockImageInnerBefore {
-  opacity: 0.1;
-}
-
-.blockImageInnerVisible {
-  opacity: 1;
-}
-
-.parallaxLayer {
-  position: absolute;
-  inset: 0;
-  top: -8%;
-  height: 116%;
-  will-change: transform;
-}
-
-.blockSectionImage {
-  object-fit: cover;
-  object-position: center;
-  image-rendering: -webkit-optimize-contrast;
-}
-
-/* Conclusion container – same as system section */
-.blockConclusionContainer {
-  
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  max-width: 1568px;
-  align-items: start;
-}
-
-.blockLeftConclusion {
-  display: flex;
-  flex-direction: column;
-}
-
-.blockConclusionTitle {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 3vw, 40px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--color-blue-100);
-  text-align: left;
-  margin: 0;
-}
-
-.blockRightConclusion {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 24px;
-}
-
-.blockConclusionText {
-  font-family: var(--font-sans);
-  font-size: clamp(18px, 1.8vw, 20px);
-  line-height: 1.5;
-  letter-spacing: -0.04em;
-  color: var(--color-cream-140);
-  margin: 0;
-  text-align: left;
 }
 
 .subpointsList {
@@ -247,34 +162,8 @@
   }
 
   .journeyBlockWrapper {
-    padding: 80px 48px;
-    gap: 64px;
-  }
-
-  .blockConclusionContainer {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    align-items: stretch;
-  }
-
-  .blockConclusionTitle {
-    text-align: center;
-  }
-
-  .blockRightConclusion {
-    align-items: center;
-  }
-
-  .blockConclusionText {
-    text-align: center;
-  }
-
-  .journeyBlocks {
-    gap: 64px;
-  }
-
-  .journeyBlock {
-    gap: 48px;
+    padding: 104px 48px;
+    gap: 56px;
   }
 }
 
@@ -299,31 +188,8 @@
   }
 
   .journeyBlockWrapper {
-    padding: 48px 24px;
-    gap: 48px;
-  }
-
-  .blockConclusionContainer {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .blockConclusionTitle {
-    font-size: clamp(26px, 5vw, 32px);
-    text-align: center;
-  }
-
-  .blockConclusionText {
-    font-size: clamp(16px, 1.8vw, 18px);
-    text-align: center;
-  }
-
-  .journeyBlocks {
-    gap: 48px;
-  }
-
-  .journeyBlock {
-    gap: 32px;
+    padding: 72px 24px;
+    gap: 40px;
   }
 }
 
@@ -337,7 +203,7 @@
   }
 
   .journeyBlockWrapper {
-    padding: 32px 16px;
+    padding: 48px 16px;
     gap: 40px;
   }
 

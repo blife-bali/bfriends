@@ -29,7 +29,7 @@
 .contentWrapper {
   position: relative;
   width: 100%;
-  max-width: 1568px;
+  max-width: 1660px;
   display: flex;
   flex-direction: row;
   align-items: space-between;
@@ -100,7 +100,7 @@
   position: relative;
   z-index: 2;
   width: fit-content;
-  max-width: 1568px;
+  max-width: 1660px;
   padding: 64px;
   display: flex;
   flex-direction: row;
@@ -151,7 +151,7 @@
 /* Card Container - positioned absolutely like points */
 .cardContainer {
   position: relative;
-  max-width: 1568px;
+  max-width: 1660px;
   height: fit-content;
   inset: 0;
   z-index: 2;

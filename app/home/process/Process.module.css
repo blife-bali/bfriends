@@ -13,8 +13,8 @@
 
 .container {
   width: 100%;
-  max-width: 1568px;
-  padding: 0 0 128px 0;
+  max-width: 1660px;
+  padding: 0 0 160px 0;
   display: flex;
   flex-direction: column;
   align-items: center;

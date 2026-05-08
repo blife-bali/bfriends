@@ -8,11 +8,14 @@ import { type MockProgram } from "@/mock/programs";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { ArrowRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
+import VideoBlock from "@/components/VideoBlock/VideoBlock";
+import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./ProgramContent.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
 const FRAMEWORK_IMAGE_FALLBACK = "/images/hero-test.png";
+const PROGRAM_VIDEO_FALLBACK = "/videos/BFriends2.mp4";
 const FRAMEWORK_FALLBACK_TITLE = "The Framework";
 const FRAMEWORK_FALLBACK_PARAGRAPH =
   "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
@@ -29,6 +32,8 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
     (typeof program.framework.sub === "string" ? program.framework.sub.trim() : "") || FRAMEWORK_FALLBACK_PARAGRAPH;
   const fwImage =
     program.framework.image || program.general.image || FRAMEWORK_IMAGE_FALLBACK;
+  const fwVideo =
+    (typeof program.general.video === "string" && program.general.video.trim()) || PROGRAM_VIDEO_FALLBACK;
   const currentIndex = programs.findIndex((p) => p.general.slug === program.general.slug);
   const previousSlug = currentIndex > 0 ? programs[currentIndex - 1].general.slug : undefined;
   const nextSlug =
@@ -44,9 +49,10 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
         const sessionGroups = program.sessions_group || [];
         const total = sessionGroups.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
         return total > 0 ? (
-          <SessionsSection sessionGroups={sessionGroups} fallbackImage={program.general.image} />
+          <SessionsSection sessionGroups={sessionGroups} />
         ) : null;
       })()}
+      <ProgramVideoSection videoUrl={fwVideo} />
       <ProgramCta program={program} />
       {false && (previousSlug || nextSlug) && (
         <ProgramNavFooter
@@ -99,7 +105,7 @@ function FrameworkSection({
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 20,
-    mass: 0.4,
+    mass: 0.01,
   });
   const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
 
@@ -134,16 +140,16 @@ function FrameworkSection({
   return (
     <section ref={ref} className={styles.framework} aria-labelledby="program-framework-title">
       <div className={styles.frameworkContainer}>
-        <div className={styles.frameworkImageWrap} ref={imageWrapperRef}>
+        <div className={parallax.imageWrap} ref={imageWrapperRef}>
           <div
-            className={`${styles.frameworkImageInner} ${isImageInView ? styles.frameworkImageInnerVisible : styles.frameworkImageInnerBefore}`}
+            className={`${parallax.imageFrame} ${parallax.imageFrameRatio169} ${isImageInView ? parallax.imageFrameVisible : parallax.imageFrameBefore}`}
           >
-            <motion.div className={styles.parallaxLayer} style={{ y }}>
+            <motion.div className={parallax.parallaxLayer} style={{ y }}>
               <Image
                 src={imageUrl}
                 alt=""
                 fill
-                className={styles.frameworkSectionImage}
+                className={parallax.coverImage}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
               />
             </motion.div>
@@ -151,18 +157,18 @@ function FrameworkSection({
         </div>
 
         <motion.div
-          className={styles.frameworkConclusion}
+          className={parallax.copyGrid}
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55, ease: EASE }}
         >
-          <div className={styles.frameworkLeft}>
-            <h2 id="program-framework-title" className={styles.frameworkConclusionTitle}>
+          <div className={parallax.copyColLeft}>
+            <h2 id="program-framework-title" className={`${parallax.copyTitle} ${parallax.copyTitleLg}`}>
               {title}
             </h2>
           </div>
-          <div className={styles.frameworkRight}>
-            <p className={styles.frameworkConclusionText}>{paragraph}</p>
+          <div className={`${parallax.copyColRight} ${parallax.copyColGapTight}`}>
+            <p className={`${parallax.copyBody} ${parallax.copyBodyPreLine}`}>{paragraph}</p>
           </div>
         </motion.div>
       </div>
@@ -170,56 +176,101 @@ function FrameworkSection({
   );
 }
 
+function ProgramVideoSection({ videoUrl }: { videoUrl: string }) {
+  return (
+    <section className={styles.framework} aria-label="Program video">
+      <div className={styles.frameworkContainer}>
+        <VideoBlock src={videoUrl} />
+      </div>
+    </section>
+  );
+}
+
 function SessionsSection({
   sessionGroups,
-  fallbackImage,
 }: {
   sessionGroups: MockProgram["sessions_group"];
-  fallbackImage: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
-  let cardIndex = 0;
+  const [openSessionId, setOpenSessionId] = useState<string | null>(null);
+
+  const toggleSession = (id: string) => {
+    setOpenSessionId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <section ref={ref} className={styles.sessions} aria-label="Signature Sessions">
-      <div className={styles.container}>
+      <div className={`${styles.container} ${styles.sessionsLayout}`}>
+        <motion.aside
+          className={styles.sessionsIntro}
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: EASE }}
+        >
+          <div className={styles.sessionsIntroSticky}>
+            <h2 className={styles.sessionsTitle}>Signature <br/>Sessions</h2>
+            <Button
+              href={BOOK_NOW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="var(--color-blue-100)"
+              showIcon
+            >
+              Reserve your moments
+            </Button>
+          </div>
+        </motion.aside>
+
+        <div className={styles.sessionsGroups}>
         {sessionGroups.map((group, gi) => {
           const sessions = group.sessions || [];
           const showGroupHeading = Boolean(group.name?.trim());
           return (
             <div key={`${group.name}-${gi}`} className={styles.sessionGroup}>
               {showGroupHeading && (
-                <h3 className={styles.sessionEyebrow}>{group.name}</h3>
+                <h3 className={styles.sessionGroupTitle}>{group.name}</h3>
               )}
-              <ul className={styles.sessionsGrid}>
+              <ul className={styles.sessionItems}>
                 {sessions.map((session, si) => {
-                  const i = cardIndex++;
+                  const sessionId = `${gi}-${si}-${session.name}`;
+                  const detailsId = `session-details-${gi}-${si}`;
+                  const isOpen = openSessionId === sessionId;
                   return (
                     <motion.li
-                      key={`${gi}-${si}-${session.name}`}
-                      className={styles.sessionCard}
+                      key={sessionId}
+                      className={styles.sessionItem}
                       initial={{ opacity: 0, y: 24 }}
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{
                         duration: 0.5,
-                        delay: i * 0.06,
+                        delay: (gi * 0.08) + si * 0.05,
                         ease: EASE,
                       }}
                     >
-                      <div className={styles.sessionCardImageWrap}>
-                        <Image
-                          src={session.image ?? fallbackImage}
-                          alt=""
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          className={styles.sessionCardImage}
-                        />
-                      </div>
-                      <div className={styles.sessionCardContent}>
-                        <h4 className={styles.sessionCardTitle}>{session.name}</h4>
-                        <p className={styles.sessionCardDesc}>{session.extra}</p>
-                        <p className={styles.sessionCardDesc}>{session.desc}</p>
+                      <button
+                        type="button"
+                        className={styles.sessionItemTrigger}
+                        onClick={() => toggleSession(sessionId)}
+                        aria-expanded={isOpen}
+                        aria-controls={detailsId}
+                      >
+                        <h4 className={styles.sessionItemTitle}>{session.name}</h4>
+                        <span
+                          className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
+                          aria-hidden
+                        >
+                          +
+                        </span>
+                      </button>
+                      <div
+                        id={detailsId}
+                        className={`${styles.sessionItemDetails} ${isOpen ? styles.sessionItemDetailsOpen : ""}`}
+                      >
+                        <div className={styles.sessionItemDetailsInner}>
+                          {session.extra && <p className={styles.sessionItemText}>{session.extra}</p>}
+                          {session.desc && <p className={styles.sessionItemText}>{session.desc}</p>}
+                        </div>
                       </div>
                     </motion.li>
                   );
@@ -228,6 +279,7 @@ function SessionsSection({
             </div>
           );
         })}
+        </div>
       </div>
     </section>
   );

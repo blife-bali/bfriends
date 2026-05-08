@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import styles from "./CustomerJourney.module.css";
+import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 
 interface JourneyBlockImageProps {
   src: string;
@@ -23,7 +23,7 @@ export default function JourneyBlockImage({ src, alt }: JourneyBlockImageProps) 
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 20,
-    mass: 0.4,
+    mass: 0.01,
   });
   const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
 
@@ -56,17 +56,17 @@ export default function JourneyBlockImage({ src, alt }: JourneyBlockImageProps) 
   }, []);
 
   return (
-    <div className={styles.blockImageWrapper} ref={wrapperRef}>
+    <div className={parallax.imageWrap} ref={wrapperRef}>
       <div
-        className={`${styles.blockImageInner} ${isInView ? styles.blockImageInnerVisible : styles.blockImageInnerBefore}`}
+        className={`${parallax.imageFrame} ${parallax.imageFrameRatioIntro} ${isInView ? parallax.imageFrameVisible : parallax.imageFrameBefore}`}
       >
-        <motion.div className={styles.parallaxLayer} style={{ y }}>
+        <motion.div className={parallax.parallaxLayer} style={{ y }}>
           <Image
             src={src}
             alt={alt}
             fill
-            className={styles.blockSectionImage}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1000px"
+            className={`${parallax.coverImage} ${parallax.coverImageSharp}`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1660px"
             quality={100}
             unoptimized
           />

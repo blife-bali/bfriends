@@ -27,10 +27,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 128px 64px;
+  padding: 160px 64px;
   box-sizing: border-box;
   gap: 96px;
-  max-width: 1568px;
+  max-width: 1660px;
 }
 
 .textColumn {
@@ -73,15 +73,17 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  border-radius: 6px;
 }
 
 .imageInner {
   width: 100%;
-  max-width: 1568px;
+  max-width: 1660px;
   aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  border-radius: 6px;
 }
 
 .imageInnerBefore {
@@ -112,7 +114,7 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  max-width: 1568px;
+  max-width: 1660px;
   align-items: start;
 }
 

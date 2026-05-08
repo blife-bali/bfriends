@@ -1,0 +1,206 @@
+@reference "../../app/globals.css";
+
+/* ----- Image stack ----- */
+.imageWrap {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.imageFrame {
+  width: 100%;
+  max-width: 1660px;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  border-radius: 6px;
+}
+
+.imageFrameRatio169 {
+  aspect-ratio: 16 / 9;
+}
+
+.imageFrameRatioIntro {
+  aspect-ratio: 16 / 8.5;
+}
+
+.imageFrameBefore {
+  opacity: 0.1;
+  transform: scale(1.1);
+}
+
+.imageFrameVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.parallaxLayer {
+  position: absolute;
+  inset: 0;
+  top: -8%;
+  height: 116%;
+  will-change: transform;
+}
+
+.coverImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.coverImageSharp {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ----- Two-column copy ----- */
+.copyGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1660px;
+  align-items: start;
+}
+
+.copyColLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+  text-align: left;
+  margin: 0;
+}
+
+.copyTitleMd {
+  font-size: clamp(28px, 3vw, 32px);
+  max-width: 16ch;
+}
+
+.copyTitleLg {
+  font-size: clamp(36px, 3vw, 40px);
+  max-width: 16ch;
+}
+
+.copyColRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+}
+
+.copyColGapTight {
+  gap: 24px;
+}
+
+.copyBody {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 1.8vw, 19px);
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  color: var(--color-cream-140);
+  margin: 0;
+  text-align: left;
+}
+
+.copyBodyMaxCh {
+  max-width: 120ch;
+}
+
+.copyBodyPreLine {
+  white-space: pre-line;
+}
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+  .imageFrameRatio169,
+  .imageFrameRatioIntro {
+    aspect-ratio: 16 / 10;
+  }
+
+  .copyGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .copyTitleMd {
+    text-align: left;
+    max-width: 100%;
+    font-size: clamp(30px, 4vw, 38px);
+  }
+
+  .copyTitleLg {
+    text-align: left;
+    max-width: 100%;
+    font-size: clamp(30px, 4vw, 38px);
+  }
+
+  .copyColRight {
+    align-items: flex-start;
+  }
+
+  .copyBody {
+    text-align: left;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 768px) {
+  .imageWrap {
+    padding: 0;
+  }
+
+  .imageFrameRatio169,
+  .imageFrameRatioIntro {
+    aspect-ratio: 4 / 3;
+  }
+
+  .copyGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .copyTitleMd {
+    font-size: clamp(26px, 7vw, 34px);
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .copyTitleLg {
+    font-size: clamp(26px, 7vw, 34px);
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .copyColRight {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .copyBody {
+    font-size: clamp(15px, 4vw, 17px);
+    text-align: left;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .copyTitleMd {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .copyTitleLg {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .copyBody {
+    font-size: 15px;
+  }
+}

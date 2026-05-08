@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Instagram, Mail, Phone } from "lucide-react";
 import styles from "./Footer.module.css";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site-contact";
 import { trackEvent } from "@/lib/gtag";
+import { mockSpaPrograms } from "@/mock/programs";
 
 interface ProgramLink {
   name: string;
@@ -202,28 +202,14 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
 }
 
 export default function Footer() {
-  const [programs, setPrograms] = useState<ProgramLink[]>([]);
-
-  useEffect(() => {
-    let cancelled = false;
-    const loadPrograms = async () => {
-      try {
-        const res = await fetch('/api/programs');
-        if (!res.ok) return;
-        const data = await res.json();
-        if (!Array.isArray(data) || data.length === 0) return;
-        if (!cancelled) {
-          setPrograms(data);
-        }
-      } catch {
-        // Keep static fallback data.
-      }
-    };
-    loadPrograms();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const programs: ProgramLink[] = mockSpaPrograms
+    .slice()
+    .sort((a, b) => a.general.sort_order - b.general.sort_order)
+    .map((program) => ({
+      name: program.general.name,
+      slug: program.general.slug,
+      image: program.general.image,
+    }));
 
   return (
     <footer>

@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { navColumns, programsNavItems } from "@/lib/nav-config";
+import { navColumns } from "@/lib/nav-config";
+import { mockSpaPrograms } from "@/mock/programs";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { trackEvent } from "@/lib/gtag";
 import styles from "./Navbar.module.css";
@@ -18,7 +19,15 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<ActiveMenuId>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isInteractionEnabled, setIsInteractionEnabled] = useState(false);
-  const [programItems, setProgramItems] = useState<{ label: string; href: string; image?: string }[]>([...programsNavItems]);
+  const programItems =
+    mockSpaPrograms
+      .slice()
+      .sort((a, b) => a.general.sort_order - b.general.sort_order)
+      .map((program) => ({
+        label: program.general.name,
+        href: `/programs/${program.general.slug}`,
+        image: program.general.image || undefined,
+      }));
   const navRef = useRef<HTMLDivElement>(null);
   const mobileSidebarRef = useRef<HTMLDivElement>(null);
 
@@ -26,32 +35,6 @@ export default function Navbar() {
     const timer = setTimeout(() => setIsInteractionEnabled(true), 2000);
     return () => clearTimeout(timer);
   }, [pathname]);
-
-  useEffect(() => {
-    let cancelled = false;
-    const loadPrograms = async () => {
-      try {
-        const res = await fetch('/api/programs');
-        if (!res.ok) return;
-        const data = await res.json();
-        if (!Array.isArray(data)) return;
-        const items = data.map((p: { name: string; slug: string; image?: string | null }) => ({
-          label: p.name,
-          href: `/programs/${p.slug}`,
-          image: p.image || undefined,
-        }));
-        if (!cancelled && items.length > 0) {
-          setProgramItems(items);
-        }
-      } catch {
-        // Keep static fallback from nav-config.
-      }
-    };
-    loadPrograms();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -218,40 +201,59 @@ export default function Navbar() {
 
           {activeMenu !== null && !isMobileMenuOpen && (
             <div className={styles.dropdown}>
-              {(activeMenu === "programs" ? programItems : (navColumns.find((c) => c.id === activeMenu)?.items || [])).map((item) => (
-                <div key={item.href} className={styles.linkContainer}>
-                  <Link
-                    href={item.href}
-                    className={styles.link}
-                    onClick={() => {
-                      trackEvent('nav_click', {
-                        label: item.label,
-                        location:
-                          activeMenu === 'about' ? 'dropdown_about'
-                          : activeMenu === 'programs' ? 'dropdown_programs'
-                          : 'dropdown_community',
-                      });
-                      closeMenu();
-                    }}
+              <div
+                className={`${styles.dropdownMainContainer} ${
+                  activeMenu === "programs"
+                    ? styles.dropdownMainContainerPrograms
+                    : styles.dropdownMainContainerCompact
+                }`}
+              >
+                {(activeMenu === "programs" ? programItems : (navColumns.find((c) => c.id === activeMenu)?.items || [])).map((item) => (
+                  <div
+                    key={item.href}
+                    className={`${styles.linkContainer} ${
+                      activeMenu === "programs"
+                        ? styles.linkContainerPrograms
+                        : styles.linkContainerCompact
+                    }`}
                   >
-                    {activeMenu === "programs" && (
-                      <span className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}>
-                        {item.image ? (
-                          <Image
-                            src={item.image}
-                            alt=""
-                            width={400}
-                            height={240}
-                            className={styles.linkImageImg}
-                            sizes="200px"
-                          />
-                        ) : null}
-                      </span>
-                    )}
-                    <span className={styles.linkLabel}>{item.label}</span>
-                  </Link>
-                </div>
-              ))}
+                    <Link
+                      href={item.href}
+                      className={`${styles.link} ${
+                        activeMenu === "programs"
+                          ? styles.linkPrograms
+                          : styles.linkCompact
+                      }`}
+                      onClick={() => {
+                        trackEvent('nav_click', {
+                          label: item.label,
+                          location:
+                            activeMenu === 'about' ? 'dropdown_about'
+                            : activeMenu === 'programs' ? 'dropdown_programs'
+                            : 'dropdown_community',
+                        });
+                        closeMenu();
+                      }}
+                    >
+                      {activeMenu === "programs" && (
+                        <span className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}>
+                          {item.image ? (
+                            <Image
+                              src={item.image}
+                              alt=""
+                              width={400}
+                              height={240}
+                              className={styles.linkImageImg}
+                              sizes="(max-width: 1660px) calc((100vw - 80px - 120px) / 5), 280px"
+                            />
+                          ) : null}
+                        </span>
+                      )}
+                      <span className={styles.linkLabel}>{item.label}</span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>

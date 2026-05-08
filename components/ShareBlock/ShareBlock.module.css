@@ -37,7 +37,7 @@
 
 .shareButton:hover {
   border-color: var(--color-blue-60);
-  background: var(--color-blue-5);
+  background: var(--color-white-100);
 }
 
 .shareButton svg {

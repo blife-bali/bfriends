@@ -32,7 +32,7 @@ export default function Journey({
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 20,
-    mass: 0.4,
+    mass: 0.01,
   });
   const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
 

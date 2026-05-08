@@ -7,6 +7,7 @@ export type MockProgramGeneral = {
   button_label: string;
   book_now_button: boolean;
   image: string;
+  video: string;
 };
 
 export type MockProgramIntro = {
@@ -26,7 +27,6 @@ export type MockProgramFramework = {
 };
 
 export type MockProgramSession = {
-  image: string | null;
   name: string;
   extra: string;
   desc: string;
@@ -56,6 +56,7 @@ export const mockSpaPrograms: MockProgram[] = [
       button_label: "Discover Spa",
       book_now_button: true,
       image: "https://storageb.awancode.com/1776919776304_DDK09585.webp",
+      video: "/videos/BFriends2.mp4",
     },
     seo: {
       seo_title: "Integrate Therapies | BFriends Bali",
@@ -76,62 +77,52 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "BFriends Signature Body Rituals",
         sessions: [
           {
-            image: "/images/Integrate/DDK09278.webp",
             name: "Body Alignment Therapy",
             extra: "IDR 750K | 90 Minutes",
             desc:
               "Structural realignment ritual focused on posture, mobility, and muscular balance.",
           },
           {
-            image: "/images/Integrate/DDK09396.webp",
             name: "Body Mask",
             extra: "IDR 440K | 30 Minutes",
             desc: "Nourishing body wrap to restore skin softness while calming surface tension.",
           },
           {
-            image: "/images/Integrate/DDK09558.webp",
             name: "Body Scrub",
             extra: "IDR 440K | 30 Minutes",
             desc: "Exfoliating ritual that removes dull buildup and refreshes overall skin texture.",
           },
           {
-            image: "/images/Integrate/DDK09585.webp",
             name: "Core & Gut Harmony",
             extra: "IDR 300K | 30 Minutes",
             desc: "Targeted abdominal care designed to support digestion, breathing, and core stability.",
           },
           {
-            image: "/images/Integrate/DDK09278.webp",
             name: "Deep Circulation Flow",
             extra: "IDR 770K | 90 Minutes",
             desc: "Circulation-focused bodywork to stimulate flow and reduce heaviness through the limbs.",
           },
           {
-            image: "/images/Integrate/DDK09396.webp",
             name: "Deep Rest Therapy",
             extra: "IDR 600K | 60 Minutes",
             desc: "Slow, grounding ritual to settle the nervous system and promote deep physical rest.",
           },
           {
-            image: "/images/Integrate/DDK09558.webp",
             name: "Foot Massage",
             extra: "IDR 440K | 60 Minutes",
             desc: "Pressure-point based foot therapy that relieves fatigue and resets whole-body comfort.",
           },
           {
-            image: "/images/Integrate/DDK09585.webp",
             name: "Kids Massage",
             extra: "IDR 550K | 60 Minutes",
             desc: "Gentle child-friendly massage tailored for relaxation, comfort, and safe body awareness.",
           },
           {
-            image: "/images/Integrate/DDK09278.webp",
             name: "Korean Body Scrub",
             extra: "IDR 770K | 60 Minutes",
             desc: "Traditional Korean full-body exfoliation ritual for smoother skin and renewed circulation.",
           },
           {
-            image: "/images/Integrate/DDK09396.webp",
             name: "Youth Rejuvenation",
             extra: "IDR 800K | 90 Minutes",
             desc: "Comprehensive restorative ritual that combines renewal, circulation, and relaxation.",
@@ -150,6 +141,7 @@ export const mockSpaPrograms: MockProgram[] = [
       button_label: "Discover Beauty",
       book_now_button: true,
       image: "https://storageb.awancode.com/1776919824555_DDK00418.webp",
+      video: "/videos/BFriends2.mp4",
     },
     seo: {
       seo_title: "Enhance K-Beauty Spa | BFriends Bali",
@@ -170,31 +162,26 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "BFriends Facial Treatments",
         sessions: [
           {
-            image: "/images/Enhance/DDK00316.webp",
             name: "Glass Glow",
             extra: "IDR 1200K | 80 Minutes",
             desc: "Radiance-focused facial to refine tone, texture, and luminosity with Korean skin prep.",
           },
           {
-            image: "/images/Enhance/DDK00330.webp",
             name: "Sculpt Lift",
             extra: "IDR 1100K | 90 Minutes",
             desc: "Lifting facial ritual that sculpts contours and releases facial tension.",
           },
           {
-            image: "/images/Enhance/DDK00433.webp",
             name: "Hydra Infusion",
             extra: "IDR 770K | 60 Minutes",
             desc: "Deep hydration treatment to restore barrier health and skin comfort.",
           },
           {
-            image: "/images/Enhance/DDK00316.webp",
             name: "Pore Refine",
             extra: "IDR 770K | 60 Minutes",
             desc: "Gentle pore-refining care to reduce congestion and smooth texture.",
           },
           {
-            image: "/images/Enhance/DDK00330.webp",
             name: "Sun Soothe",
             extra: "IDR 550K | 40 Minutes",
             desc: "Cooling recovery facial to calm overheated or sun-exposed skin.",
@@ -205,19 +192,16 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "BFriends Scalp & Hair Rituals",
         sessions: [
           {
-            image: "/images/Enhance/DDK00316.webp",
             name: "Scalp Clarity Ritual",
             extra: "| 45 Minutes",
             desc: "Purifying scalp ritual to cleanse buildup and rebalance scalp condition.",
           },
           {
-            image: "/images/Enhance/DDK00330.webp",
             name: "Hair Strength Therapy",
             extra: "| 70 Minutes",
             desc: "Targeted scalp and hair therapy to strengthen roots and improve vitality.",
           },
           {
-            image: "/images/Enhance/DDK00433.webp",
             name: "Deep Rest Ritual",
             extra: "| 60 Minutes",
             desc: "Head-focused calming ritual to release stress and encourage deep relaxation.",
@@ -236,6 +220,7 @@ export const mockSpaPrograms: MockProgram[] = [
       button_label: "Discover Fitness",
       book_now_button: true,
       image: "/uploads/1776847191820_DDK09881.webp",
+      video: "/videos/BFriends2.mp4",
     },
     seo: {
       seo_title: "Fitness Program | BFriends Bali",
@@ -256,31 +241,26 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "wellness movement",
         sessions: [
           {
-            image: "/images/Nurture/DDK09021.webp",
             name: "Essential Class - Yoga",
             extra: "60 | 75 minutes",
             desc: "A foundational yoga class to improve flexibility, stability, and mindful breath awareness.",
           },
           {
-            image: "/images/Nurture/DDK09078.webp",
             name: "Signature Class - Barre",
             extra: "50 minutes",
             desc: "An energizing Barre and Dance-inspired class for posture, control, and functional strength.",
           },
           {
-            image: "/images/Nurture/DDK09005.webp",
             name: "Group Class",
             extra: "50 minutes",
             desc: "Shared movement training that restores strength, mobility, and breath flow in a small group.",
           },
           {
-            image: "/images/Nurture/DDK09152.webp",
             name: "Workshops",
             extra: "90 | 120 minutes",
             desc: "Specialty sessions exploring breathwork, meditation, and sound-based restoration.",
           },
           {
-            image: "/images/Nurture/kidsyoga.jpeg",
             name: "Kids Yoga",
             extra: "45 minutes",
             desc: "A joyful class for children to build focus, coordination, and confidence through movement.",
@@ -291,14 +271,12 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "fitness",
         sessions: [
           {
-            image: "/images/Fitness/DDK09685.webp",
             name: "Private Training - Single Session",
             extra: "50 Minutes | 1/3/5/10 Sessions",
             desc:
               "A private guided movement session to restore balance, build strength, and improve functional conditioning.",
           },
           {
-            image: "/images/Fitness/DDK09821.webp",
             name: "Group Class",
             extra: "50 Minutes | 1/3/5/10 Sessions",
             desc:
@@ -318,6 +296,7 @@ export const mockSpaPrograms: MockProgram[] = [
       button_label: "Discover Climbing",
       book_now_button: false,
       image: "/images/programs/D.webp",
+      video: "/videos/BFriends2.mp4",
     },
     seo: {
       seo_title: "Dare Wall Climbing | BFriends Bali",
@@ -339,25 +318,21 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "Signature Sessions",
         sessions: [
           {
-            image: "/images/programs/D.webp",
             name: "Outdoor Expeditions",
             extra: "60 Minutes",
             desc: "Nature-based endurance challenges.",
           },
           {
-            image: "/images/programs/D.webp",
             name: "BFriends Games",
             extra: "75 Minutes",
             desc: "Community-wide competitive fitness events.",
           },
           {
-            image: "/images/programs/D.webp",
             name: "Endurance Challenges",
             extra: "90 Minutes",
             desc: "Long-format stamina tests for advanced members.",
           },
           {
-            image: "/images/programs/D.webp",
             name: "Skill Masterclasses",
             extra: "60 Minutes",
             desc: "Intensive workshops on advanced movement techniques.",
@@ -376,6 +351,7 @@ export const mockSpaPrograms: MockProgram[] = [
       button_label: "Discover Cafe",
       book_now_button: false,
       image: "https://storageb.awancode.com/1776919921903_DDK00062.webp",
+      video: "/videos/BFriends2.mp4",
     },
     seo: {
       seo_title: "Restore Cafe | BFriends Bali",
@@ -397,28 +373,24 @@ export const mockSpaPrograms: MockProgram[] = [
         name: "Signature Sessions",
         sessions: [
           {
-            image: "/images/Restore/DDK09897.webp",
             name: "Signature Kimbap",
             extra: "Contact for price | 60 Minutes",
             desc:
               "Hand-rolled Korean kimbap crafted for post-workout nourishment-balanced, savory, and light enough to keep you moving.",
           },
           {
-            image: "/images/Restore/DDK09929.webp",
             name: "Healthy Breakfast",
             extra: "Contact for price | 75 Minutes",
             desc:
               "Warm, comforting breakfast plates built on whole ingredients to gently refuel the body at the start of your day.",
           },
           {
-            image: "/images/Restore/DDK09935.webp",
             name: "Dessert Menu",
             extra: "Contact for price | 90 Minutes",
             desc:
               "Thoughtfully portioned desserts that satisfy the craving while staying aligned with your broader wellness goals.",
           },
           {
-            image: "/images/Restore/DDK09994.webp",
             name: "Korean Cheong x Jamu",
             extra: "Contact for price | 60 Minutes",
             desc:

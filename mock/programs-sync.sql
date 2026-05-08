@@ -123,16 +123,16 @@ VALUES (@spa_id, 'BFriends Signature Body Rituals', 0);
 SET @spa_type_1 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@spa_id, @spa_type_1, 'Body Alignment Therapy', 'Structural realignment ritual focused on posture, mobility, and muscular balance.', '/images/Integrate/DDK09278.webp', 0),
-(@spa_id, @spa_type_1, 'Body Mask', 'Nourishing body wrap to restore skin softness while calming surface tension.', '/images/Integrate/DDK09396.webp', 1),
-(@spa_id, @spa_type_1, 'Body Scrub', 'Exfoliating ritual that removes dull buildup and refreshes overall skin texture.', '/images/Integrate/DDK09558.webp', 2),
-(@spa_id, @spa_type_1, 'Core & Gut Harmony', 'Targeted abdominal care designed to support digestion, breathing, and core stability.', '/images/Integrate/DDK09585.webp', 3),
-(@spa_id, @spa_type_1, 'Deep Circulation Flow', 'Circulation-focused bodywork to stimulate flow and reduce heaviness through the limbs.', '/images/Integrate/DDK09278.webp', 4),
-(@spa_id, @spa_type_1, 'Deep Rest Therapy', 'Slow, grounding ritual to settle the nervous system and promote deep physical rest.', '/images/Integrate/DDK09396.webp', 5),
-(@spa_id, @spa_type_1, 'Foot Massage', 'Pressure-point based foot therapy that relieves fatigue and resets whole-body comfort.', '/images/Integrate/DDK09558.webp', 6),
-(@spa_id, @spa_type_1, 'Kids Massage', 'Gentle child-friendly massage tailored for relaxation, comfort, and safe body awareness.', '/images/Integrate/DDK09585.webp', 7),
-(@spa_id, @spa_type_1, 'Korean Body Scrub', 'Traditional Korean full-body exfoliation ritual for smoother skin and renewed circulation.', '/images/Integrate/DDK09278.webp', 8),
-(@spa_id, @spa_type_1, 'Youth Rejuvenation', 'Comprehensive restorative ritual that combines renewal, circulation, and relaxation.', '/images/Integrate/DDK09396.webp', 9);
+(@spa_id, @spa_type_1, 'Body Alignment Therapy', 'Structural realignment ritual focused on posture, mobility, and muscular balance.', NULL, 0),
+(@spa_id, @spa_type_1, 'Body Mask', 'Nourishing body wrap to restore skin softness while calming surface tension.', NULL, 1),
+(@spa_id, @spa_type_1, 'Body Scrub', 'Exfoliating ritual that removes dull buildup and refreshes overall skin texture.', NULL, 2),
+(@spa_id, @spa_type_1, 'Core & Gut Harmony', 'Targeted abdominal care designed to support digestion, breathing, and core stability.', NULL, 3),
+(@spa_id, @spa_type_1, 'Deep Circulation Flow', 'Circulation-focused bodywork to stimulate flow and reduce heaviness through the limbs.', NULL, 4),
+(@spa_id, @spa_type_1, 'Deep Rest Therapy', 'Slow, grounding ritual to settle the nervous system and promote deep physical rest.', NULL, 5),
+(@spa_id, @spa_type_1, 'Foot Massage', 'Pressure-point based foot therapy that relieves fatigue and resets whole-body comfort.', NULL, 6),
+(@spa_id, @spa_type_1, 'Kids Massage', 'Gentle child-friendly massage tailored for relaxation, comfort, and safe body awareness.', NULL, 7),
+(@spa_id, @spa_type_1, 'Korean Body Scrub', 'Traditional Korean full-body exfoliation ritual for smoother skin and renewed circulation.', NULL, 8),
+(@spa_id, @spa_type_1, 'Youth Rejuvenation', 'Comprehensive restorative ritual that combines renewal, circulation, and relaxation.', NULL, 9);
 
 -- ----------------------------
 -- Beauty session groups
@@ -142,20 +142,20 @@ VALUES (@beauty_id, 'BFriends Facial Treatments', 0);
 SET @beauty_type_1 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@beauty_id, @beauty_type_1, 'Glass Glow', 'Radiance-focused facial to refine tone, texture, and luminosity with Korean skin prep.', '/images/Enhance/DDK00316.webp', 0),
-(@beauty_id, @beauty_type_1, 'Sculpt Lift', 'Lifting facial ritual that sculpts contours and releases facial tension.', '/images/Enhance/DDK00330.webp', 1),
-(@beauty_id, @beauty_type_1, 'Hydra Infusion', 'Deep hydration treatment to restore barrier health and skin comfort.', '/images/Enhance/DDK00433.webp', 2),
-(@beauty_id, @beauty_type_1, 'Pore Refine', 'Gentle pore-refining care to reduce congestion and smooth texture.', '/images/Enhance/DDK00316.webp', 3),
-(@beauty_id, @beauty_type_1, 'Sun Soothe', 'Cooling recovery facial to calm overheated or sun-exposed skin.', '/images/Enhance/DDK00330.webp', 4);
+(@beauty_id, @beauty_type_1, 'Glass Glow', 'Radiance-focused facial to refine tone, texture, and luminosity with Korean skin prep.', NULL, 0),
+(@beauty_id, @beauty_type_1, 'Sculpt Lift', 'Lifting facial ritual that sculpts contours and releases facial tension.', NULL, 1),
+(@beauty_id, @beauty_type_1, 'Hydra Infusion', 'Deep hydration treatment to restore barrier health and skin comfort.', NULL, 2),
+(@beauty_id, @beauty_type_1, 'Pore Refine', 'Gentle pore-refining care to reduce congestion and smooth texture.', NULL, 3),
+(@beauty_id, @beauty_type_1, 'Sun Soothe', 'Cooling recovery facial to calm overheated or sun-exposed skin.', NULL, 4);
 
 INSERT INTO bfriends_program_session_types (program_id, title, sort_order)
 VALUES (@beauty_id, 'BFriends Scalp & Hair Rituals', 1);
 SET @beauty_type_2 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@beauty_id, @beauty_type_2, 'Scalp Clarity Ritual', 'Purifying scalp ritual to cleanse buildup and rebalance scalp condition.', '/images/Enhance/DDK00316.webp', 0),
-(@beauty_id, @beauty_type_2, 'Hair Strength Therapy', 'Targeted scalp and hair therapy to strengthen roots and improve vitality.', '/images/Enhance/DDK00330.webp', 1),
-(@beauty_id, @beauty_type_2, 'Deep Rest Ritual', 'Head-focused calming ritual to release stress and encourage deep relaxation.', '/images/Enhance/DDK00433.webp', 2);
+(@beauty_id, @beauty_type_2, 'Scalp Clarity Ritual', 'Purifying scalp ritual to cleanse buildup and rebalance scalp condition.', NULL, 0),
+(@beauty_id, @beauty_type_2, 'Hair Strength Therapy', 'Targeted scalp and hair therapy to strengthen roots and improve vitality.', NULL, 1),
+(@beauty_id, @beauty_type_2, 'Deep Rest Ritual', 'Head-focused calming ritual to release stress and encourage deep relaxation.', NULL, 2);
 
 -- ----------------------------
 -- Wellness Movement and Fitness session groups
@@ -165,19 +165,19 @@ VALUES (@fitness_id, 'wellness movement', 0);
 SET @fit_type_1 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@fitness_id, @fit_type_1, 'Essential Class - Yoga', 'A foundational yoga class to improve flexibility, stability, and mindful breath awareness.', '/uploads/1776847217039_DDK09740.webp', 0),
-(@fitness_id, @fit_type_1, 'Signature Class - Barre', 'An energizing Barre and Dance-inspired class for posture, control, and functional strength.', '/images/Fitness/DDK09740.webp', 1),
-(@fitness_id, @fit_type_1, 'Group Class', 'Shared movement training that restores strength, mobility, and breath flow in a small group.', '/images/Fitness/DDK09791.webp', 2),
-(@fitness_id, @fit_type_1, 'Workshops', 'Specialty sessions exploring breathwork, meditation, and sound-based restoration.', '/images/Fitness/DDK09821.webp', 3),
-(@fitness_id, @fit_type_1, 'Kids Yoga', 'A joyful class for children to build focus, coordination, and confidence through movement.', '/images/Fitness/DDK09685.webp', 4);
+(@fitness_id, @fit_type_1, 'Essential Class - Yoga', 'A foundational yoga class to improve flexibility, stability, and mindful breath awareness.', NULL, 0),
+(@fitness_id, @fit_type_1, 'Signature Class - Barre', 'An energizing Barre and Dance-inspired class for posture, control, and functional strength.', NULL, 1),
+(@fitness_id, @fit_type_1, 'Group Class', 'Shared movement training that restores strength, mobility, and breath flow in a small group.', NULL, 2),
+(@fitness_id, @fit_type_1, 'Workshops', 'Specialty sessions exploring breathwork, meditation, and sound-based restoration.', NULL, 3),
+(@fitness_id, @fit_type_1, 'Kids Yoga', 'A joyful class for children to build focus, coordination, and confidence through movement.', NULL, 4);
 
 INSERT INTO bfriends_program_session_types (program_id, title, sort_order)
 VALUES (@fitness_id, 'fitness', 1);
 SET @fit_type_2 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@fitness_id, @fit_type_2, 'Private Training - Single Session', 'A private guided movement session to restore balance, build strength, and improve functional conditioning.', '/images/Fitness/DDK09881.webp', 0),
-(@fitness_id, @fit_type_2, 'Group Class', 'A shared movement session designed to build strength, mobility, and breath-led flow in an intimate group.', '/images/Fitness/DDK09791.webp', 1);
+(@fitness_id, @fit_type_2, 'Private Training - Single Session', 'A private guided movement session to restore balance, build strength, and improve functional conditioning.', NULL, 0),
+(@fitness_id, @fit_type_2, 'Group Class', 'A shared movement session designed to build strength, mobility, and breath-led flow in an intimate group.', NULL, 1);
 
 -- ----------------------------
 -- Climbing session group
@@ -187,10 +187,10 @@ VALUES (@climbing_id, 'Signature Sessions', 0);
 SET @climb_type_1 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@climbing_id, @climb_type_1, 'Outdoor Expeditions', 'Nature-based endurance challenges.', '/images/programs/D.webp', 0),
-(@climbing_id, @climb_type_1, 'BFriends Games', 'Community-wide competitive fitness events.', '/images/programs/D.webp', 1),
-(@climbing_id, @climb_type_1, 'Endurance Challenges', 'Long-format stamina tests for advanced members.', '/images/programs/D.webp', 2),
-(@climbing_id, @climb_type_1, 'Skill Masterclasses', 'Intensive workshops on advanced movement techniques.', '/images/programs/D.webp', 3);
+(@climbing_id, @climb_type_1, 'Outdoor Expeditions', 'Nature-based endurance challenges.', NULL, 0),
+(@climbing_id, @climb_type_1, 'BFriends Games', 'Community-wide competitive fitness events.', NULL, 1),
+(@climbing_id, @climb_type_1, 'Endurance Challenges', 'Long-format stamina tests for advanced members.', NULL, 2),
+(@climbing_id, @climb_type_1, 'Skill Masterclasses', 'Intensive workshops on advanced movement techniques.', NULL, 3);
 
 -- ----------------------------
 -- Cafe session group
@@ -200,10 +200,10 @@ VALUES (@cafe_id, 'Signature Sessions', 0);
 SET @cafe_type_1 = LAST_INSERT_ID();
 
 INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, sort_order) VALUES
-(@cafe_id, @cafe_type_1, 'Signature Kimbap', 'Hand-rolled Korean kimbap crafted for post-workout nourishment-balanced, savory, and light enough to keep you moving.', '/images/Restore/DDK09897.webp', 0),
-(@cafe_id, @cafe_type_1, 'Healthy Breakfast', 'Warm, comforting breakfast plates built on whole ingredients to gently refuel the body at the start of your day.', '/images/Restore/DDK09929.webp', 1),
-(@cafe_id, @cafe_type_1, 'Dessert Menu', 'Thoughtfully portioned desserts that satisfy the craving while staying aligned with your broader wellness goals.', '/images/Restore/DDK09935.webp', 2),
-(@cafe_id, @cafe_type_1, 'Korean Cheong x Jamu', 'Heritage-inspired concentrates and tonics, marrying Korean Cheong and Indonesian Jamu for restorative daily sips.', '/images/Restore/DDK09994.webp', 3);
+(@cafe_id, @cafe_type_1, 'Signature Kimbap', 'Hand-rolled Korean kimbap crafted for post-workout nourishment-balanced, savory, and light enough to keep you moving.', NULL, 0),
+(@cafe_id, @cafe_type_1, 'Healthy Breakfast', 'Warm, comforting breakfast plates built on whole ingredients to gently refuel the body at the start of your day.', NULL, 1),
+(@cafe_id, @cafe_type_1, 'Dessert Menu', 'Thoughtfully portioned desserts that satisfy the craving while staying aligned with your broader wellness goals.', NULL, 2),
+(@cafe_id, @cafe_type_1, 'Korean Cheong x Jamu', 'Heritage-inspired concentrates and tonics, marrying Korean Cheong and Indonesian Jamu for restorative daily sips.', NULL, 3);
 
 COMMIT;
 

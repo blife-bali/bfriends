@@ -9,6 +9,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import SystemCard from "./Card";
 import { trackEvent } from "@/lib/gtag";
+import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./Section.module.css";
 
 const SYSTEM_IMAGE = "/images/Integrate/DDK09558.jpg";
@@ -43,7 +44,7 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 20,
-    mass: 0.4,
+    mass: 0.01,
   });
   const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
 
@@ -112,16 +113,16 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
         </div> */}
 
         {/* Image block (mirrors intro video wrapper – image instead of video) */}
-        <div className={styles.imageWrapper} ref={imageWrapperRef}>
+        <div className={parallax.imageWrap} ref={imageWrapperRef}>
           <div
-            className={`${styles.imageInner} ${isImageInView ? styles.imageInnerVisible : styles.imageInnerBefore}`}
+            className={`${parallax.imageFrame} ${parallax.imageFrameRatio169} ${isImageInView ? parallax.imageFrameVisible : parallax.imageFrameBefore}`}
           >
-            <motion.div className={styles.parallaxLayer} style={{ y }}>
+            <motion.div className={parallax.parallaxLayer} style={{ y }}>
               <Image
                 src={imageUrl}
                 alt="BFriends system"
                 fill
-                className={styles.sectionImage}
+                className={parallax.coverImage}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
               />
             </motion.div>
@@ -129,13 +130,13 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
         </div>
 
         {/* Conclusion container (same structure as Intro) */}
-        <div className={styles.conclusionContainer}>
-          <div className={styles.leftConclusion}>
-            <h2 className={styles.conclusionTitle}>BFriends Journey</h2>
+        <div className={parallax.copyGrid}>
+          <div className={parallax.copyColLeft}>
+            <h2 className={`${parallax.copyTitle} ${parallax.copyTitleLg}`}>BFriends Journey</h2>
           </div>
-          <div className={styles.rightConclusion}>
+          <div className={`${parallax.copyColRight} ${styles.rightConclusion}`}>
             {paragraphs.map((paragraph: string, idx: number) => (
-              <p key={idx} className={styles.conclusionText}>{paragraph}</p>
+              <p key={idx} className={parallax.copyBody}>{paragraph}</p>
             ))}
             <Button
               href="/about/journey"

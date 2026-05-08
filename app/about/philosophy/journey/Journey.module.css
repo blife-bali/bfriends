@@ -7,7 +7,7 @@
 }
 
 .container {
-  max-width: 1568px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 64px;
   display: grid;
@@ -52,6 +52,7 @@
   width: 100%;
   min-height: 520px;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .imageInner {
@@ -60,6 +61,7 @@
   position: relative;
   overflow: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  border-radius: 6px;
 }
 
 .imageInnerBefore {

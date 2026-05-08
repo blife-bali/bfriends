@@ -12,12 +12,12 @@ import {
   getIntroByPage,
   getWhyCards,
   getProcessSteps,
-  getPrograms,
   getEvents,
   getNews,
 } from "@/lib/cms";
 import SiteLocation from "@/components/SiteLocation/SiteLocation";
 import SiteNewsletterCta from "@/components/SiteNewsletterCta/SiteNewsletterCta";
+import { mockSpaPrograms } from "@/mock/programs";
 
 export const dynamic = "force-dynamic";
 
@@ -30,15 +30,24 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [hero, intro, whyCards, processSteps, programs, events, news] = await Promise.all([
+  const [hero, intro, whyCards, processSteps, events, news] = await Promise.all([
     getHeroByPage("home"),
     getIntroByPage("home"),
     getWhyCards(),
     getProcessSteps("home"),
-    getPrograms(),
     getEvents(),
     getNews(),
   ]);
+  const programs = mockSpaPrograms
+    .slice()
+    .sort((a, b) => a.general.sort_order - b.general.sort_order)
+    .map((program) => ({
+      name: program.general.name,
+      subheading: program.general.subheading,
+      image: program.general.image,
+      buttonLabel: program.general.button_label,
+      slug: program.general.slug,
+    }));
 
   return (
     <>

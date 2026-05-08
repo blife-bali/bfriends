@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyBlockImage from "./JourneyBlockImage";
+import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./CustomerJourney.module.css";
 import { getPageSeo, getProcessSteps, getPageHeader } from "@/lib/cms";
 
@@ -62,12 +63,12 @@ export default async function JourneyPage() {
               <div className={styles.journeyBlockWrapper}>
                 <p className={styles.eyebrow}>Step {step.number}</p>
                 <JourneyBlockImage src={step.image} alt={step.title} />
-                <div className={styles.blockConclusionContainer}>
-                  <div className={styles.blockLeftConclusion}>
-                    <h3 className={styles.blockConclusionTitle}>{step.title}</h3>
+                <div className={parallax.copyGrid}>
+                  <div className={parallax.copyColLeft}>
+                    <h3 className={`${parallax.copyTitle} ${parallax.copyTitleLg}`}>{step.title}</h3>
                   </div>
-                  <div className={styles.blockRightConclusion}>
-                    <p className={styles.blockConclusionText}>{step.description}</p>
+                  <div className={parallax.copyColRight}>
+                    <p className={parallax.copyBody}>{step.description}</p>
                     {step.subpoints && step.subpoints.length > 0 && (
                       <ul className={styles.subpointsList}>
                         {step.subpoints.map((sp: any, i: number) => (

@@ -2,13 +2,13 @@
 
 .section {
   width: 100%;
-  background-color: var(--color-blue-5);
+  background-color: var(--color-white-100);
   padding: 96px 0;
   box-sizing: border-box;
 }
 
 .container {
-  max-width: 1568px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 64px;
   box-sizing: border-box;

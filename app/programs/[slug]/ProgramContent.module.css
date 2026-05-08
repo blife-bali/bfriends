@@ -6,12 +6,12 @@
   --foreground: var(--color-blue-100);
   background: var(--background);
   color: var(--foreground);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .container {
   width: 100%;
-  max-width: 1568px;
+  max-width: 1660px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 64px;
@@ -23,7 +23,7 @@
 .philosophy {
   width: 100%;
   box-sizing: border-box;
-  padding-top: 128px;
+  padding-top: 160px;
   margin: 0 auto;
 }
 
@@ -111,12 +111,12 @@
 .framework {
   width: 100%;
   background-color: var(--color-white-100);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .frameworkContainer {
   width: 100%;
-  max-width: 1568px;
+  max-width: 1660px;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -132,114 +132,10 @@
   padding-bottom: 0;
 }
 
-.frameworkImageWrap {
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-}
-
-.frameworkImageInner {
-  width: 100%;
-  max-width: 1568px;
-  aspect-ratio: 16 / 9;
-  position: relative;
-  overflow: hidden;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
-
-.frameworkImageInnerBefore {
-  opacity: 0.1;
-  transform: scale(1.1);
-}
-
-.frameworkImageInnerVisible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.parallaxLayer {
-  position: absolute;
-  inset: 0;
-  top: -8%;
-  height: 116%;
-  will-change: transform;
-}
-
-.frameworkSectionImage {
-  object-fit: cover;
-  object-position: center;
-}
-
-.frameworkConclusion {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  max-width: 1568px;
-  align-items: start;
-}
-
-.frameworkLeft {
-  display: flex;
-  flex-direction: column;
-}
-
-.frameworkConclusionTitle {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 3vw, 40px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--color-blue-100);
-  text-align: left;
-  margin: 0;
-  max-width: 16ch;
-}
-
-.frameworkRight {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 24px;
-}
-
-.frameworkConclusionText {
-  font-family: var(--font-sans);
-  font-size: clamp(18px, 1.8vw, 20px);
-  line-height: 1.5;
-  letter-spacing: -0.04em;
-  color: var(--color-cream-140);
-  margin: 0;
-  text-align: left;
-  white-space: pre-line;
-}
-
 @media (max-width: 1024px) {
   .frameworkContainer {
     padding: 72px 48px;
     gap: 48px;
-  }
-
-  .frameworkImageInner {
-    aspect-ratio: 16 / 10;
-  }
-
-  .frameworkConclusion {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: stretch;
-  }
-
-  .frameworkConclusionTitle {
-    text-align: left;
-    max-width: 100%;
-    font-size: clamp(30px, 4vw, 38px);
-  }
-
-  .frameworkConclusionText {
-    text-align: left;
   }
 }
 
@@ -248,23 +144,6 @@
     padding: 48px 24px;
     gap: 40px;
   }
-
-  .frameworkImageInner {
-    aspect-ratio: 4 / 3;
-  }
-
-  .frameworkConclusion {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .frameworkConclusionTitle {
-    font-size: clamp(26px, 7vw, 34px);
-  }
-
-  .frameworkConclusionText {
-    font-size: clamp(15px, 4vw, 17px);
-  }
 }
 
 @media (max-width: 480px) {
@@ -272,106 +151,145 @@
     padding: 48px 20px;
     gap: 32px;
   }
-
-  .frameworkConclusionTitle {
-    font-size: clamp(24px, 7vw, 30px);
-  }
-
-  .frameworkConclusionText {
-    font-size: 15px;
-  }
 }
 
-/* ---------- Section D: Sessions (3-col visual cards) ---------- */
+/* ---------- Section D: Sessions (sticky intro + accordion items) ---------- */
 .sessions {
   padding: 96px 0;
 }
 
-.sessionGroup {
-  margin-top: 40px;
+.sessionsLayout {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 2fr);
+  gap: 48px;
+  align-items: start;
 }
 
-.sessionGroup:first-of-type {
-  margin-top: 0;
+.sessionsIntro {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  height: max-content;
+  z-index: 2;
+}
+
+.sessionsIntroSticky {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.sessionsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.2vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-blue-100);
+  margin: 0;
 }
 
 .sessionGroupTitle {
   font-family: var(--font-sans);
-  font-size: clamp(12px, 1vw, 13px);
+  font-size: clamp(14px, 1.2vw, 17px);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  /* letter-spacing: -0.02em; */
+  line-height: 1.2;
   text-transform: uppercase;
-  color: var(--color-cream-140);
-  margin: 0 0 20px;
+  color: var(--color-cream-100);
+  margin: 0 0 16px;
+
 }
 
-.sessionEyebrow {
-  font-family: var(--font-sans);
-  font-size: clamp(18px, 1.6vw, 24px);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-blue-100);
-  margin: 0 0 40px;
+.sessionsGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
 }
 
-.sessionsGrid {
+.sessionGroup {
+  padding-top: 8px;
+}
+
+.sessionItems {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 16%, transparent);
 }
 
-@media (max-width: 1024px) {
-  .sessionsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.sessionItem {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 16%, transparent);
 }
 
-.sessionCard {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
-  background: var(--color-white-100);
-  overflow: hidden;
-}
-
-.sessionCardImageWrap {
-  position: relative;
+.sessionItemTrigger {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
-.sessionCardImage {
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.sessionCard:hover .sessionCardImage {
-  transform: scale(1.05);
-}
-
-.sessionCardContent {
-  padding: 24px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 0;
+  background: transparent;
+  padding: 20px 0;
+  text-align: left;
+  cursor: pointer;
 }
 
-.sessionCardTitle {
+.sessionItemTitle {
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.2vw, 15px);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: clamp(20px, 1.9vw, 28px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: none;
   color: var(--color-blue-100);
+  text-transform: uppercase;
   margin: 0;
 }
 
-.sessionCardDesc {
+.sessionItemIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--color-blue-100);
+  transform: rotate(0deg);
+  transition: transform 0.28s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.sessionItemIconOpen {
+  transform: rotate(45deg);
+}
+
+.sessionItemDetails {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition:
+    max-height 0.32s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.sessionItemDetailsOpen {
+  max-height: 260px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.sessionItemDetailsInner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.sessionItemText {
   font-family: var(--font-sans);
   font-size: clamp(14px, 1.1vw, 15px);
   line-height: 1.55;
@@ -379,18 +297,44 @@
   margin: 0;
 }
 
+.sessionItemTrigger:hover .sessionItemTitle {
+  color: color-mix(in srgb, var(--color-blue-100) 82%, var(--color-black-100));
+}
+
+.sessionItemTrigger:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-blue-100) 45%, transparent);
+  outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
   .sessions {
     padding: 48px 0;
   }
 
-  .sessionGroup {
-    margin-top: 32px;
+  .sessionsLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .sessionsGrid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .sessionsIntroSticky {
+    gap: 20px;
+  }
+
+  .sessionsIntro {
+    position: static;
+    top: auto;
+  }
+
+  .sessionsGroups {
+    gap: 32px;
+  }
+
+  .sessionGroup {
+    padding-top: 0;
+  }
+
+  .sessionItemTrigger {
+    padding: 18px 0;
   }
 }
 
@@ -421,7 +365,7 @@
 
 .programNavFooterEyebrowWrap {
   width: 100%;
-  max-width: 1568px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 64px 16px;
   box-sizing: border-box;
@@ -527,7 +471,7 @@
 
 .programNavPlaceholder {
   min-height: 280px;
-  background: var(--color-blue-5);
+  background: var(--color-white-100);
 }
 
 @media (max-width: 768px) {

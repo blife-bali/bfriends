@@ -8,7 +8,7 @@
 }
 
 .container {
-  max-width: 1568px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 64px;
   box-sizing: border-box;
@@ -67,7 +67,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-green-100);
+  border: 1px solid color-mix(in srgb, var(--color-green-100) 55%, transparent);
+  border-radius: 6px;
   background: var(--color-white-100);
   color: var(--color-green-100);
   transition: opacity 0.2s, background 0.2s, color 0.2s;
