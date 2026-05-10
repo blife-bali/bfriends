@@ -8,17 +8,18 @@ import ImageUploader from '@/components/admin/ImageUploader';
 import Toast from '@/components/admin/Toast';
 
 interface ProgramStep { id?: number; step_id: string; title: string; description: string; sort_order: number; }
-interface ProgramSession { id?: number; title: string; description: string; image: string; icon: string; sort_order: number; }
+interface ProgramSession { id?: number; title: string; extra: string; description: string; image: string; icon: string; sort_order: number; }
 interface ProgramSessionType { id?: number | null; title: string; sort_order: number; sessions: ProgramSession[]; }
 
 interface Program {
   id?: number;
   name: string; slug: string; eyebrow: string; title: string;
-  subheading: string; image: string; button_label: string; quote: string;
+  subheading: string; image: string; video: string; button_label: string; book_now_button: number; quote: string;
   philosophy: string; breadcrumb: string; philosophy_image: string;
   pillars_image: string; pillars_title: string; pillars_paragraph: string;
   previous_program: string; next_program: string;
   seo_title: string; seo_description: string;
+  intro_title: string; intro_sub: string;
   sort_order: number; is_active: number;
   steps: ProgramStep[];
   /** Nested groups persisted as `session_types` on save; `sessions` kept empty so PUT uses groups only. */
@@ -26,12 +27,13 @@ interface Program {
   sessions?: ProgramSession[];
 }
 
-const emptySession: ProgramSession = { title: '', description: '', image: '', icon: '', sort_order: 0 };
+const emptySession: ProgramSession = { title: '', extra: '', description: '', image: '', icon: '', sort_order: 0 };
 
 function mapLoadedSession(s: Record<string, unknown>): ProgramSession {
   return {
     id: typeof s.id === 'number' ? s.id : undefined,
     title: String(s.title ?? ''),
+    extra: String(s.extra ?? ''),
     description: String(s.description ?? ''),
     image: String(s.image ?? ''),
     icon: String(s.icon ?? ''),
@@ -46,15 +48,17 @@ export default function ProgramDetailPage() {
   const [tab, setTab] = useState('general');
   const [program, setProgram] = useState<Program>({
     name: '', slug: '', eyebrow: '', title: '', subheading: '',
-    image: '', button_label: '', quote: '', philosophy: '', breadcrumb: '',
+    image: '', video: '', button_label: '', book_now_button: 1, quote: '', philosophy: '', breadcrumb: '',
     philosophy_image: '', pillars_image: '', pillars_title: '', pillars_paragraph: '',
     previous_program: '', next_program: '',
     seo_title: '', seo_description: '',
+    intro_title: '', intro_sub: '',
     sort_order: 0, is_active: 1, steps: [],
     session_types: [{ title: 'Signature Sessions', sort_order: 0, sessions: [] }],
     sessions: [],
   });
   const [username, setUsername] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   useEffect(() => {
@@ -95,15 +99,21 @@ export default function ProgramDetailPage() {
   };
 
   const handleSave = async () => {
+    if (isSaving) return;
+    setIsSaving(true);
     const url = isNew ? '/api/admin/programs' : `/api/admin/programs/${params.id}`;
     const method = isNew ? 'POST' : 'PUT';
-    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(program) });
-    if (res.ok) {
-      const saved = await res.json();
-      setToast({ message: 'Program saved!', type: 'success' });
-      if (isNew && saved.id) router.push(`/admin/programs/${saved.id}`);
-    } else {
+    try {
+      const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(program) });
+      if (res.ok) {
+        router.push('/admin/programs');
+      } else {
+        setToast({ message: 'Failed to save', type: 'error' });
+        setIsSaving(false);
+      }
+    } catch {
       setToast({ message: 'Failed to save', type: 'error' });
+      setIsSaving(false);
     }
   };
 
@@ -159,6 +169,7 @@ export default function ProgramDetailPage() {
   const tabs = [
     { key: 'general', label: 'General' },
     { key: 'seo', label: 'SEO' },
+    { key: 'intro', label: 'Intro' },
     { key: 'philosophy', label: 'Philosophy' },
     { key: 'framework', label: 'Framework' },
     { key: 'sessions', label: 'Sessions' },
@@ -186,6 +197,8 @@ export default function ProgramDetailPage() {
             <FormField label="Title" name="title" value={program.title || ''} onChange={(v: string) => update('title', v)} />
             <FormField label="Subheading" name="subheading" value={program.subheading || ''} onChange={(v: string) => update('subheading', v)} />
             <FormField label="Button Label" name="button_label" value={program.button_label || ''} onChange={(v: string) => update('button_label', v)} />
+            <FormField label="Book Now Button" name="book_now_button" type="checkbox" value={!!program.book_now_button} onChange={(v: boolean) => update('book_now_button', v ? 1 : 0)} />
+            <FormField label="Video URL" name="video" value={program.video || ''} onChange={(v: string) => update('video', v)} placeholder="/videos/BFriends2.mp4" />
             <FormField label="Breadcrumb" name="breadcrumb" value={program.breadcrumb || ''} onChange={(v: string) => update('breadcrumb', v)} />
             <div className="admin-form-group">
               <label>Image</label>
@@ -199,6 +212,13 @@ export default function ProgramDetailPage() {
           <div>
             <FormField label="SEO Title" name="seo_title" value={program.seo_title || ''} onChange={(v: string) => update('seo_title', v)} placeholder="Override default page title for search engines" />
             <FormField label="SEO Description" name="seo_description" type="textarea" value={program.seo_description || ''} onChange={(v: string) => update('seo_description', v)} placeholder="Override default page description for search engines" />
+          </div>
+        )}
+
+        {tab === 'intro' && (
+          <div>
+            <FormField label="Intro Title" name="intro_title" value={program.intro_title || ''} onChange={(v: string) => update('intro_title', v)} />
+            <FormField label="Intro Subheading" name="intro_sub" type="textarea" value={program.intro_sub || ''} onChange={(v: string) => update('intro_sub', v)} />
           </div>
         )}
 
@@ -263,6 +283,8 @@ export default function ProgramDetailPage() {
                         placeholder="Icon name" value={session.icon || ''} onChange={(e) => updateSession(ti, si, 'icon', e.target.value)} />
                       <button type="button" onClick={() => removeSession(ti, si)} className="admin-btn admin-btn-danger admin-btn-sm">X</button>
                     </div>
+                    <input style={{ width: '100%', padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4, marginBottom: 8 }}
+                      placeholder="Extra (e.g. IDR 770K | 60 Minutes)" value={session.extra || ''} onChange={(e) => updateSession(ti, si, 'extra', e.target.value)} />
                     <textarea style={{ width: '100%', padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4, minHeight: 60, fontFamily: 'var(--font-sans)', fontSize: 14 }}
                       placeholder="Description" value={session.description} onChange={(e) => updateSession(ti, si, 'description', e.target.value)} />
                     <div className="admin-form-group" style={{ marginTop: 8 }}>
@@ -276,7 +298,9 @@ export default function ProgramDetailPage() {
         )}
 
         <div style={{ marginTop: 24, display: 'flex', gap: 10 }}>
-          <button onClick={handleSave} className="admin-btn admin-btn-primary">Save Program</button>
+          <button onClick={handleSave} className="admin-btn admin-btn-primary" disabled={isSaving}>
+            {isSaving ? 'Saving...' : 'Save Program'}
+          </button>
           {!isNew && <button onClick={handleDelete} className="admin-btn admin-btn-danger">Delete Program</button>}
           <button onClick={() => router.push('/admin/programs')} className="admin-btn admin-btn-outline">Back</button>
         </div>

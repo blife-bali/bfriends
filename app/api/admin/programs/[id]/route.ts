@@ -72,7 +72,9 @@ export async function PUT(
       title,
       subheading,
       image,
+      video,
       button_label,
+      book_now_button,
       quote,
       philosophy,
       breadcrumb,
@@ -84,6 +86,8 @@ export async function PUT(
       next_program,
       seo_title,
       seo_description,
+      intro_title,
+      intro_sub,
       sort_order,
       is_active,
       steps,
@@ -98,16 +102,16 @@ export async function PUT(
       const [result] = await connection.execute(
         `UPDATE bfriends_programs SET
           name = ?, slug = ?, eyebrow = ?, title = ?, subheading = ?,
-          image = ?, button_label = ?, quote = ?, philosophy = ?, breadcrumb = ?,
+          image = ?, video = ?, button_label = ?, book_now_button = ?, quote = ?, philosophy = ?, breadcrumb = ?,
           philosophy_image = ?, pillars_image = ?, pillars_title = ?, pillars_paragraph = ?,
           previous_program = ?,
-          next_program = ?, seo_title = ?, seo_description = ?, sort_order = ?, is_active = ?
+          next_program = ?, seo_title = ?, seo_description = ?, intro_title = ?, intro_sub = ?, sort_order = ?, is_active = ?
         WHERE id = ?`,
         [
-          name, slug, eyebrow, title, subheading, image, button_label,
+          name, slug, eyebrow, title, subheading, image, video || null, button_label, book_now_button ? 1 : 0,
           quote, philosophy, breadcrumb, philosophy_image, pillars_image,
           pillars_title || null, pillars_paragraph || null,
-          previous_program, next_program, seo_title || null, seo_description || null, sort_order ?? 0, is_active ?? 1, id,
+          previous_program, next_program, seo_title || null, seo_description || null, intro_title || null, intro_sub || null, sort_order ?? 0, is_active ?? 1, id,
         ]
       );
 

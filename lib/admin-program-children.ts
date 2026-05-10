@@ -7,6 +7,7 @@ export type SessionTypeInput = {
   sort_order?: number;
   sessions?: Array<{
     title?: string;
+    extra?: string | null;
     description?: string;
     image?: string | null;
     icon?: string | null;
@@ -73,12 +74,13 @@ export async function replaceProgramChildren(
     for (let si = 0; si < sessions.length; si++) {
       const session = sessions[si];
       await connection.execute(
-        `INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, description, image, icon, sort_order)
-         VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO bfriends_program_sessions (program_id, session_type_id, title, extra, description, image, icon, sort_order)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           programId,
           typeId,
           session.title || "",
+          session.extra || null,
           session.description || "",
           session.image || null,
           session.icon || null,
@@ -117,15 +119,14 @@ export function buildSessionTypesForAdmin(typesRows: any[], sessionsRows: any[])
   return nested;
 }
 
-/** Public page: [{ typeTitle, sessions: [{ title, description, image }] }] */
 export function buildSessionGroupsPublic(typesRows: any[], sessionsRows: any[]) {
   const admin = buildSessionTypesForAdmin(typesRows, sessionsRows);
   return admin.map((g) => ({
-    typeTitle: g.title,
+    name: g.title,
     sessions: (g.sessions || []).map((s: any) => ({
-      title: s.title,
-      description: s.description,
-      image: s.image ?? undefined,
+      name: s.title,
+      extra: s.extra ?? "",
+      desc: s.description ?? "",
     })),
   }));
 }

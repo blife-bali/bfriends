@@ -14,7 +14,9 @@
       "Bash(Out-String -Width 300)",
       "Bash(mysql -h 103.150.101.31 -P 3306 -u bnesta_all -p'Bnesta2020@' bnesta_all -e \"SELECT COUNT\\(*\\) as cnt FROM bfriends_faqs\")",
       "Bash(npx tsx *)",
-      "Bash(mkdir -p \"c:/project/bfriends/app/api/admin/journey-section\" && mkdir -p \"c:/project/bfriends/app/api/admin/journey-section/[id]\" && mkdir -p \"c:/project/bfriends/app/admin/journey-section\")"
+      "Bash(mkdir -p \"c:/project/bfriends/app/api/admin/journey-section\" && mkdir -p \"c:/project/bfriends/app/api/admin/journey-section/[id]\" && mkdir -p \"c:/project/bfriends/app/admin/journey-section\")",
+      "PowerShell(node \"scripts\\\\migrate-and-import-programs.mjs\")",
+      "PowerShell(npm.cmd run build)"
     ],
     "additionalDirectories": [
       "c:\\project\\bfriends\\app\\api\\admin\\journey-section"

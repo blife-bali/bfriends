@@ -1,6 +1,41 @@
 import pool from '@/lib/db';
 import { buildSessionGroupsPublic } from '@/lib/admin-program-children';
 
+export type PublicProgram = {
+  general: {
+    name: string;
+    slug: string;
+    sort_order: number;
+    title: string;
+    subheading: string;
+    button_label: string;
+    book_now_button: boolean;
+    image: string;
+    video: string;
+  };
+  seo: {
+    seo_title: string;
+    seo_description: string;
+  };
+  intro: {
+    title: string;
+    sub: string;
+  };
+  framework: {
+    image: string | null;
+    title: string;
+    sub: string;
+  };
+  sessions_group: Array<{
+    name: string;
+    sessions: Array<{
+      name: string;
+      extra: string;
+      desc: string;
+    }>;
+  }>;
+};
+
 // Helper: run query, return [] on error
 async function tryDb<T>(query: string): Promise<T[]> {
   try {
@@ -103,21 +138,27 @@ export async function getProgramBySlug(slug: string) {
         [prog.id]
       );
       const [sessionRows] = await pool.execute(
-        'SELECT title, description, image, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+        'SELECT title, extra, description, image, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
         [prog.id]
       );
       sessions = sessionRows as any[];
       sessionGroups = buildSessionGroupsPublic(typeRows as any[], sessionRows as any[]);
     } catch {
       const [sessionRows] = await pool.execute(
-        'SELECT title, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+        'SELECT title, extra, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
         [prog.id]
       );
       sessions = sessionRows as any[];
-      sessionGroups =
-        sessions.length > 0
-          ? [{ typeTitle: 'Signature Sessions', sessions }]
-          : [];
+      sessionGroups = sessions.length > 0
+        ? [{
+            name: 'Signature Sessions',
+            sessions: sessions.map((s) => ({
+              name: s.title,
+              extra: s.extra ?? '',
+              desc: s.description ?? '',
+            })),
+          }]
+        : [];
     }
 
     prog.sessions = sessions;
@@ -148,6 +189,75 @@ export async function getProgramSlugs(): Promise<string[]> {
   } catch {
     return [];
   }
+}
+
+async function mapProgramRowToPublicProgram(prog: any): Promise<PublicProgram> {
+  const [typeRows] = await pool.execute(
+    'SELECT * FROM bfriends_program_session_types WHERE program_id = ? ORDER BY sort_order, id',
+    [prog.id]
+  );
+  const [sessionRows] = await pool.execute(
+    'SELECT title, extra, description, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+    [prog.id]
+  );
+
+  return {
+    general: {
+      name: prog.name ?? '',
+      slug: prog.slug ?? '',
+      sort_order: prog.sort_order ?? 0,
+      title: prog.title ?? '',
+      subheading: prog.subheading ?? '',
+      button_label: prog.button_label ?? '',
+      book_now_button: Boolean(prog.book_now_button ?? 1),
+      image: prog.image ?? '',
+      video: prog.video ?? '',
+    },
+    seo: {
+      seo_title: prog.seo_title ?? '',
+      seo_description: prog.seo_description ?? '',
+    },
+    intro: {
+      title: prog.intro_title ?? prog.title ?? '',
+      sub: prog.intro_sub ?? prog.philosophy ?? '',
+    },
+    framework: {
+      image: prog.pillars_image ?? null,
+      title: prog.pillars_title ?? '',
+      sub: prog.pillars_paragraph ?? '',
+    },
+    sessions_group: buildSessionGroupsPublic(typeRows as any[], sessionRows as any[]),
+  };
+}
+
+export async function getPublicPrograms(): Promise<PublicProgram[]> {
+  try {
+    const [rows] = await pool.execute(
+      'SELECT * FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order, id'
+    );
+    const programs = rows as any[];
+    return Promise.all(programs.map(mapProgramRowToPublicProgram));
+  } catch {
+    return [];
+  }
+}
+
+export async function getPublicProgramBySlug(slug: string): Promise<PublicProgram | null> {
+  try {
+    const [rows] = await pool.execute(
+      'SELECT * FROM bfriends_programs WHERE LOWER(slug) = LOWER(?) AND is_active = 1 LIMIT 1',
+      [slug]
+    );
+    const programs = rows as any[];
+    if (programs.length === 0) return null;
+    return mapProgramRowToPublicProgram(programs[0]);
+  } catch {
+    return null;
+  }
+}
+
+export async function getPublicProgramSlugs(): Promise<string[]> {
+  return getProgramSlugs();
 }
 
 export async function getEvents() {

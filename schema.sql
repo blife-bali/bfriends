@@ -27,6 +27,11 @@ ALTER TABLE bfriends_programs ADD COLUMN seo_description TEXT DEFAULT NULL AFTER
 
 ALTER TABLE bfriends_programs ADD COLUMN pillars_title VARCHAR(500) NULL AFTER pillars_image;
 ALTER TABLE bfriends_programs ADD COLUMN pillars_paragraph TEXT NULL AFTER pillars_title;
+ALTER TABLE bfriends_programs ADD COLUMN book_now_button TINYINT(1) NOT NULL DEFAULT 1 AFTER button_label;
+ALTER TABLE bfriends_programs ADD COLUMN video VARCHAR(500) DEFAULT NULL AFTER image;
+ALTER TABLE bfriends_programs ADD COLUMN intro_title VARCHAR(500) DEFAULT NULL AFTER seo_description;
+ALTER TABLE bfriends_programs ADD COLUMN intro_sub TEXT DEFAULT NULL AFTER intro_title;
+ALTER TABLE bfriends_program_sessions ADD COLUMN extra VARCHAR(255) DEFAULT NULL AFTER title;
 
 -- Program session types (groupings, e.g. Facial vs Scalp)
 CREATE TABLE IF NOT EXISTS bfriends_program_session_types (
@@ -133,14 +138,22 @@ CREATE TABLE IF NOT EXISTS bfriends_programs (
   title VARCHAR(500),
   subheading VARCHAR(500),
   image VARCHAR(500),
+  video VARCHAR(500),
   button_label VARCHAR(100),
+  book_now_button TINYINT(1) NOT NULL DEFAULT 1,
   quote TEXT,
   philosophy TEXT,
   breadcrumb VARCHAR(200),
   philosophy_image VARCHAR(500),
   pillars_image VARCHAR(500),
+  pillars_title VARCHAR(500),
+  pillars_paragraph TEXT,
   previous_program VARCHAR(100),
   next_program VARCHAR(100),
+  seo_title VARCHAR(300),
+  seo_description TEXT,
+  intro_title VARCHAR(500),
+  intro_sub TEXT,
   sort_order INT DEFAULT 0,
   is_active TINYINT(1) DEFAULT 1,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -173,6 +186,7 @@ CREATE TABLE IF NOT EXISTS bfriends_program_sessions (
   id INT AUTO_INCREMENT PRIMARY KEY,
   program_id INT NOT NULL,
   title VARCHAR(200) NOT NULL,
+  extra VARCHAR(255),
   description TEXT NOT NULL,
   image VARCHAR(500),
   icon VARCHAR(100),

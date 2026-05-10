@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { mockSpaPrograms } from "@/mock/programs";
+import { getPublicProgramBySlug, getPublicPrograms, getPublicProgramSlugs } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import ProgramContent from "./ProgramContent";
 
 export async function generateStaticParams() {
-  return mockSpaPrograms.map((program) => ({ slug: program.general.slug }));
+  const slugs = await getPublicProgramSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -16,9 +17,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const program = mockSpaPrograms.find(
-    (item) => item.general.slug.toLowerCase() === slug.toLowerCase()
-  );
+  const program = await getPublicProgramBySlug(slug);
   if (!program) return {};
 
   const title = program.seo.seo_title || `${program.general.name} | BFriends`;
@@ -41,10 +40,10 @@ export default async function ProgramPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const programs = mockSpaPrograms;
-  const program = programs.find(
-    (item) => item.general.slug.toLowerCase() === slug.toLowerCase()
-  );
+  const [program, programs] = await Promise.all([
+    getPublicProgramBySlug(slug),
+    getPublicPrograms(),
+  ]);
   if (!program) notFound();
 
   const headerImage = program.general.image ?? "/images/hero-test.png";

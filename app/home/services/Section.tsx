@@ -2,14 +2,21 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { type ProgramData } from "@/lib/programs-data";
 import Card from "./card/Card";
 import { trackEvent } from "@/lib/gtag";
 import styles from "./Section.module.css";
 
 const DEFAULT_DESKTOP_IMAGE = "/images/programs/D.webp";
 
-type ProgramSource = ProgramData & { slug?: string; button_label?: string };
+type ProgramSource = {
+  name?: string;
+  title?: string;
+  subheading?: string;
+  image?: string;
+  buttonLabel?: string;
+  button_label?: string;
+  slug?: string;
+};
 
 type ServicesProgram = {
   name: string;
@@ -24,11 +31,11 @@ function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram
   if (!source || source.length === 0) return [];
   return source.map((p) => ({
     name: p.name ?? p.title ?? "",
-    title: p.title ?? p.name,
+    title: p.title ?? p.name ?? "",
     subheading: p.subheading ?? "",
     image: p.image || DEFAULT_DESKTOP_IMAGE,
     buttonLabel: p.buttonLabel ?? p.button_label ?? "Discover",
-    slug: (p.slug ?? p.name).toLowerCase(),
+    slug: (p.slug ?? p.name ?? "").toLowerCase(),
   }));
 }
 

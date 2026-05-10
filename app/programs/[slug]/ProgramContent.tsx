@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
-import { type MockProgram } from "@/mock/programs";
+import { type PublicProgram } from "@/lib/cms";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { ArrowRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
@@ -21,8 +21,8 @@ const FRAMEWORK_FALLBACK_PARAGRAPH =
   "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
 
 interface ProgramContentProps {
-  program: MockProgram;
-  programs: MockProgram[];
+  program: PublicProgram;
+  programs: PublicProgram[];
 }
 
 export default function ProgramContent({ program, programs }: ProgramContentProps) {
@@ -189,7 +189,7 @@ function ProgramVideoSection({ videoUrl }: { videoUrl: string }) {
 function SessionsSection({
   sessionGroups,
 }: {
-  sessionGroups: MockProgram["sessions_group"];
+  sessionGroups: PublicProgram["sessions_group"];
 }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
@@ -285,7 +285,7 @@ function SessionsSection({
   );
 }
 
-function ProgramCta({ program }: { program: MockProgram }) {
+function ProgramCta({ program }: { program: PublicProgram }) {
   return (
     <section className={styles.cta} aria-label="Get started">
       <div className={styles.container}>
@@ -314,7 +314,7 @@ function ProgramNavFooter({
 }: {
   previousSlug?: string;
   nextSlug?: string;
-  programs: MockProgram[];
+  programs: PublicProgram[];
 }) {
   const previousProgram = previousSlug
     ? programs.find((p) => p.general.slug === previousSlug)
