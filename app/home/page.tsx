@@ -6,6 +6,8 @@ import { Section as ServicesSection } from "./services";
 import { Section as SystemSection } from "./system";
 import { Section as FaqSection } from "./faq";
 import { Section as NewsAndEventsSection } from "./news-and-events";
+import VideoBlock from "@/components/VideoBlock/VideoBlock";
+import styles from "./page.module.css";
 import {
   getPageSeo,
   getHeroByPage,
@@ -63,6 +65,11 @@ export default async function HomePage() {
       <SystemSection steps={processSteps} />
       
       <WhyBFriends cards={whyCards} />
+      <section className={styles.videoSection} aria-label="BFriends video">
+        <div className={styles.videoContainer}>
+          <VideoBlock src={hero?.video_url || "/videos/BFriends2.mp4"} />
+        </div>
+      </section>
       <FaqSection />
       <SiteLocation />
       <NewsAndEventsSection events={events} news={news} />

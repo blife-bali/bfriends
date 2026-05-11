@@ -1,16 +1,17 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Instagram, Mail, Phone } from "lucide-react";
 import styles from "./Footer.module.css";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site-contact";
 import { trackEvent } from "@/lib/gtag";
-import { mockSpaPrograms } from "@/mock/programs";
 
 interface ProgramLink {
   name: string;
   slug: string;
   image?: string | null;
+  sort?: number;
 }
 
 function FooterSection({ programs }: { programs: ProgramLink[] }) {
@@ -202,14 +203,29 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
 }
 
 export default function Footer() {
-  const programs: ProgramLink[] = mockSpaPrograms
-    .slice()
-    .sort((a, b) => a.general.sort_order - b.general.sort_order)
-    .map((program) => ({
-      name: program.general.name,
-      slug: program.general.slug,
-      image: program.general.image,
-    }));
+  const [programs, setPrograms] = useState<ProgramLink[]>([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadPrograms() {
+      try {
+        const response = await fetch("/api/programs", { cache: "no-store" });
+        if (!response.ok) return;
+        const data: ProgramLink[] = await response.json();
+        if (!isMounted) return;
+        setPrograms(data);
+      } catch {
+        if (isMounted) setPrograms([]);
+      }
+    }
+
+    loadPrograms();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <footer>

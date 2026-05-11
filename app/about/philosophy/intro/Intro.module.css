@@ -13,7 +13,10 @@
 
 .introTextOnly {
   min-height: auto;
-  padding: 96px 0;
+  padding-top: var(--section-padding-y-first-top);
+  padding-bottom: var(--section-padding-y-first-bottom);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .introTextOnly .container {
@@ -27,10 +30,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 160px 64px;
+  padding-top: var(--section-padding-y-first-top);
+  padding-bottom: var(--section-padding-y-first-bottom);
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
   box-sizing: border-box;
   gap: 96px;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
 }
 
 .textColumn {
@@ -73,17 +79,17 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .imageInner {
   width: 100%;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .imageInnerBefore {
@@ -114,7 +120,7 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   align-items: start;
 }
 
@@ -168,7 +174,6 @@
 
   .container {
     gap: 56px;
-    padding: 80px 48px;
   }
 
   .description {
@@ -208,7 +213,6 @@
 @media (max-width: 768px) {
   .container {
     gap: 40px;
-    padding: 56px 24px;
   }
 
   .imageInner {
@@ -253,7 +257,6 @@
 @media (max-width: 480px) {
   .container {
     gap: 32px;
-    padding: 48px 20px;
   }
 
   .conclusionTitle {

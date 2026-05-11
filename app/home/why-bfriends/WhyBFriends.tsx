@@ -68,7 +68,7 @@ export default function WhyBFriends({ cards = [] }: { cards?: any[] }) {
               showIcon
               className={styles.button}
             >
-              Book now
+              Reserve Your Moments
             </Button>
           </div>
           <div className={`${styles.arrowContainer} ${styles.desktopArrows}`}>

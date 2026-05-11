@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "./card/Card";
 import { trackEvent } from "@/lib/gtag";
-import styles from "./Section.module.css";
+import styles from "./AboutServicesSection.module.css";
 
 const DEFAULT_DESKTOP_IMAGE = "/images/programs/D.webp";
 
@@ -39,8 +39,7 @@ function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram
   }));
 }
 
-
-export default function Section({
+export default function AboutServicesSection({
   programs: programsProp,
 }: {
   programs?: ProgramSource[];
@@ -72,7 +71,10 @@ export default function Section({
   }, [programs.length, updateArrows]);
 
   const scrollByAmount = (dir: 1 | -1) => {
-    trackEvent('services_interact', { action: 'carousel_arrow', direction: dir === 1 ? 'next' : 'prev' });
+    trackEvent("services_interact", {
+      action: "carousel_arrow",
+      direction: dir === 1 ? "next" : "prev",
+    });
     const el = carouselRef.current;
     if (!el) return;
     const items = Array.from(el.querySelectorAll<HTMLElement>(`.${styles.carouselItem}`));
@@ -98,10 +100,7 @@ export default function Section({
       <div className={styles.mainContainer}>
         <div className={styles.titleRow}>
           <div className={styles.titleContainer}>
-            {/* <p className={styles.eyebrow}>Our Programs</p> */}
-            <h2 className={styles.eyebrow}>
-              BFriends Programs
-            </h2>
+            <h2 className={styles.eyebrow}>BFriends Programs</h2>
           </div>
           <div className={`${styles.arrowContainer} ${styles.desktopArrows}`}>
             <button

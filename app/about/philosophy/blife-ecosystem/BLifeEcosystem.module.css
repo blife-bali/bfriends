@@ -5,10 +5,11 @@
   background-color: var(--color-white-100);
   padding: 80px 0 160px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1660px;
+  
   margin: 0 auto;
   padding: 0 64px;
   box-sizing: border-box;
@@ -21,6 +22,7 @@
   text-align: center;
   gap: 16px;
   margin-bottom: 48px;
+  max-width: 1660px;
 }
 
 .eyebrow {
@@ -35,7 +37,7 @@
 
 .headerTitle {
   font-family: var(--font-display);
-  font-size: clamp(24px, 2vw, 32px);
+  font-size: clamp(40px, 2vw, 48px);
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -51,6 +53,8 @@
   line-height: 1.6;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
+  text-align: justify;
+  text-align-last: center;
 }
 
 .controls {
@@ -58,6 +62,7 @@
   justify-content: flex-end;
   gap: 12px;
   margin-bottom: 28px;
+  
 }
 
 .arrowButton {
@@ -72,6 +77,7 @@
   background: var(--color-white-100);
   color: var(--color-green-100);
   transition: opacity 0.2s, background 0.2s, color 0.2s;
+  
 }
 
 .arrowButton:hover:not(:disabled) {
@@ -86,16 +92,14 @@
 
 .carousel {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow: visible;
 }
 
-.carousel::-webkit-scrollbar {
-  display: none;
+.carouselViewport {
+  width: 100%;
+  
+  overflow-y: hidden;
 }
 
 .carouselTrack {
@@ -106,16 +110,15 @@
 
 .cardLink {
   display: block;
-  flex: 0 0 calc((100% - (2 * 32px)) / 3);
+  flex: 0 0 calc((100% - (1.5 * 32px)) / 2.5);
   min-width: 0;
   scroll-snap-align: start;
   text-decoration: none;
 }
 
 .carouselItem {
-  flex: 0 0 calc((100% - (2 * 32px)) / 3);
+  flex: 0 0 calc((100% - (1.5 * 32px)) / 2.5);
   min-width: 0;
-  scroll-snap-align: start;
 }
 
 /* Tablet: 768px - 1024px */
@@ -158,12 +161,12 @@
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
-  .section {
-    padding: 48px 0;
+  .container {
+    padding: 0 var(--section-padding-x);
   }
 
-  .container {
-    padding: 0 24px;
+  .section {
+    overflow-x: hidden;
   }
 
   .header {
@@ -197,12 +200,8 @@
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding: 32px 0;
-  }
-
   .container {
-    padding: 0 16px;
+    padding: 0 var(--section-padding-x);
   }
 
   .cardLink,

@@ -7,9 +7,9 @@
 }
 
 .container {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 var(--section-padding-x);
   box-sizing: border-box;
 }
 
@@ -25,7 +25,10 @@
 
 /* ---------- Philosophy (sticky split) ---------- */
 .philosophy {
-  padding: 96px 0;
+  padding-top: var(--section-padding-y-first-top);
+  padding-bottom: var(--section-padding-y-first-bottom);
+  padding-left: 0;
+  padding-right: 0;
   background-color: var(--color-white-100);
 }
 
@@ -62,7 +65,7 @@
 
 /* ---------- Access Grid ---------- */
 .access {
-  padding: 96px 0;
+  padding: var(--section-padding-y) 0;
 }
 
 .accessHeading {
@@ -117,7 +120,10 @@
 
 /* ---------- CTA ---------- */
 .cta {
-  padding: 96px 0 120px;
+  padding-top: var(--section-padding-y-last-top);
+  padding-bottom: var(--section-padding-y-last-bottom);
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
 }
 
@@ -154,11 +160,14 @@
 /* Mobile: < 768px */
 @media (max-width: 768px) {
   .container {
-    padding: 0 24px;
+    padding: 0 var(--section-padding-x);
   }
 
   .philosophy {
-    padding: 64px 0;
+    padding-top: var(--section-padding-y-first-top);
+    padding-bottom: var(--section-padding-y-first-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .philosophyHeading {
@@ -170,7 +179,7 @@
   }
 
   .access {
-    padding: 64px 0;
+    padding: var(--section-padding-y) 0;
   }
 
   .accessHeading {
@@ -187,7 +196,10 @@
   }
 
   .cta {
-    padding: 64px 0 80px;
+    padding-top: var(--section-padding-y-last-top);
+    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .ctaHeading {
@@ -197,15 +209,18 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 var(--section-padding-x);
   }
 
   .philosophy {
-    padding: 48px 0;
+    padding-top: var(--section-padding-y-first-top);
+    padding-bottom: var(--section-padding-y-first-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .access {
-    padding: 48px 0;
+    padding: var(--section-padding-y) 0;
   }
 
   .accessCard {
@@ -213,7 +228,10 @@
   }
 
   .cta {
-    padding: 48px 0 64px;
+    padding-top: var(--section-padding-y-last-top);
+    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .ctaHeading {

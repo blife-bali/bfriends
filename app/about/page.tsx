@@ -8,7 +8,7 @@ import CoreBeliefs from "./philosophy/core-beliefs/CoreBeliefs";
 import IntegratedSelf from "./philosophy/integrated-self/IntegratedSelf";
 import BLifeEcosystem from "./philosophy/blife-ecosystem/BLifeEcosystem";
 import SiteLocation from "@/components/SiteLocation/SiteLocation";
-import SiteNewsletterCta from "@/components/SiteNewsletterCta/SiteNewsletterCta";
+import { AboutServicesSection } from "@/components/AboutServicesSection";
 import styles from "./philosophy/page.module.css";
 import {
   getPageSeo,
@@ -18,6 +18,7 @@ import {
   getPhilosophySectionByKey,
   getCoreBeliefs,
   getEcosystemItems,
+  getPublicPrograms,
 } from "@/lib/cms";
 import { getJourneySection } from "@/lib/cms";
 
@@ -40,7 +41,7 @@ const DEFAULT_HEADER = {
 };
 
 export default async function AboutPage() {
-  const [pageHeader, intro, whyCards, journeySection, manifesto, integratedSelf, coreBeliefs, ecosystemItems] = await Promise.all([
+  const [pageHeader, intro, whyCards, journeySection, manifesto, integratedSelf, coreBeliefs, ecosystemItems, publicPrograms] = await Promise.all([
     getPageHeader("philosophy"),
     getIntroByPage("home"),
     getWhyCards(true),
@@ -49,7 +50,17 @@ export default async function AboutPage() {
     getPhilosophySectionByKey("integrated_self"),
     getCoreBeliefs(),
     getEcosystemItems(),
+    getPublicPrograms(),
   ]);
+
+  const programs = publicPrograms.map((program) => ({
+    name: program.general.name,
+    title: program.general.title || program.general.name,
+    subheading: program.general.subheading,
+    image: program.general.image,
+    buttonLabel: program.general.button_label,
+    slug: program.general.slug,
+  }));
 
   const header = {
     title: DEFAULT_HEADER.title,
@@ -72,7 +83,7 @@ export default async function AboutPage() {
           showCta={false}
         />
 
-        <WhyBFriends cards={whyCards} />
+        {/* <WhyBFriends cards={whyCards} /> */}
         <Journey
           headline={journeySection?.headline}
           body={journeySection?.body}
@@ -82,8 +93,8 @@ export default async function AboutPage() {
         
         <BLifeEcosystem items={ecosystemItems} />
       </main>
-      <SiteLocation />
-      <SiteNewsletterCta />
+      {/* <SiteLocation /> */}
+      <AboutServicesSection programs={programs} />
     </>
   );
 }

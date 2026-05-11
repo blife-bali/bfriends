@@ -3,14 +3,14 @@
 .section {
   width: 100%;
   background-color: var(--color-white-100);
-  padding: 96px 0;
+  padding: var(--section-padding-y) 0;
   box-sizing: border-box;
 }
 
 .container {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 var(--section-padding-x);
   box-sizing: border-box;
 }
 
@@ -109,12 +109,8 @@
 
 /* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
-  .section {
-    padding: 72px 0;
-  }
-
   .container {
-    padding: 0 48px;
+    padding: 0 var(--section-padding-x);
   }
 
   .grid {
@@ -142,12 +138,8 @@
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
-  .section {
-    padding: 48px 0;
-  }
-
   .container {
-    padding: 0 24px;
+    padding: 0 var(--section-padding-x);
   }
 
   .card {
@@ -167,12 +159,8 @@
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding: 32px 0;
-  }
-
   .container {
-    padding: 0 16px;
+    padding: 0 var(--section-padding-x);
   }
 
   .card {

@@ -7,9 +7,9 @@
 }
 
 .container {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 0 var(--section-padding-x);
   box-sizing: border-box;
 }
 
@@ -25,7 +25,10 @@
 
 /* ---------- Concept (text block) ---------- */
 .concept {
-  padding: 96px 0;
+  padding-top: var(--section-padding-y-first-top);
+  padding-bottom: var(--section-padding-y-first-bottom);
+  padding-left: 0;
+  padding-right: 0;
   background-color: var(--color-white-100);
 }
 
@@ -51,7 +54,7 @@
 
 /* ---------- Tiers (pricing cards) ---------- */
 .tiers {
-  padding: 96px 0;
+  padding: var(--section-padding-y) 0;
 }
 
 .tiersHeading {
@@ -154,7 +157,10 @@
 
 /* ---------- Usage menu ---------- */
 .usage {
-  padding: 96px 0 120px;
+  padding-top: var(--section-padding-y-last-top);
+  padding-bottom: var(--section-padding-y-last-bottom);
+  padding-left: 0;
+  padding-right: 0;
   background-color: var(--color-white-100);
 }
 
@@ -222,11 +228,14 @@
 /* Mobile: < 768px */
 @media (max-width: 768px) {
   .container {
-    padding: 0 24px;
+    padding: 0 var(--section-padding-x);
   }
 
   .concept {
-    padding: 64px 0;
+    padding-top: var(--section-padding-y-first-top);
+    padding-bottom: var(--section-padding-y-first-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .conceptHeading {
@@ -238,7 +247,7 @@
   }
 
   .tiers {
-    padding: 64px 0;
+    padding: var(--section-padding-y) 0;
   }
 
   .tiersHeading {
@@ -258,7 +267,10 @@
   }
 
   .usage {
-    padding: 64px 0 80px;
+    padding-top: var(--section-padding-y-last-top);
+    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .usageItem {
@@ -270,15 +282,18 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 var(--section-padding-x);
   }
 
   .concept {
-    padding: 48px 0;
+    padding-top: var(--section-padding-y-first-top);
+    padding-bottom: var(--section-padding-y-first-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .tiers {
-    padding: 48px 0;
+    padding: var(--section-padding-y) 0;
   }
 
   .tierCard {
@@ -286,6 +301,9 @@
   }
 
   .usage {
-    padding: 48px 0 64px;
+    padding-top: var(--section-padding-y-last-top);
+    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 }

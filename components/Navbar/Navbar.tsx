@@ -6,12 +6,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navColumns } from "@/lib/nav-config";
-import { mockSpaPrograms } from "@/mock/programs";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { trackEvent } from "@/lib/gtag";
 import styles from "./Navbar.module.css";
 
 export type ActiveMenuId = "about" | "programs" | "membership" | "community" | null;
+
+interface ProgramApiItem {
+  name: string;
+  slug: string;
+  image?: string | null;
+  sort?: number;
+}
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -19,15 +25,9 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<ActiveMenuId>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isInteractionEnabled, setIsInteractionEnabled] = useState(false);
-  const programItems =
-    mockSpaPrograms
-      .slice()
-      .sort((a, b) => a.general.sort_order - b.general.sort_order)
-      .map((program) => ({
-        label: program.general.name,
-        href: `/programs/${program.general.slug}`,
-        image: program.general.image || undefined,
-      }));
+  const [programItems, setProgramItems] = useState<
+    { label: string; href: string; image?: string }[]
+  >([]);
   const navRef = useRef<HTMLDivElement>(null);
   const mobileSidebarRef = useRef<HTMLDivElement>(null);
 
@@ -35,6 +35,35 @@ export default function Navbar() {
     const timer = setTimeout(() => setIsInteractionEnabled(true), 2000);
     return () => clearTimeout(timer);
   }, [pathname]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadPrograms() {
+      try {
+        const response = await fetch("/api/programs", { cache: "no-store" });
+        if (!response.ok) return;
+        const data: ProgramApiItem[] = await response.json();
+        if (!isMounted) return;
+        setProgramItems(
+          data
+            .map((program) => ({
+              label: program.name,
+              href: `/programs/${program.slug}`,
+              image: program.image || undefined,
+            })),
+        );
+      } catch {
+        if (isMounted) setProgramItems([]);
+      }
+    }
+
+    loadPrograms();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

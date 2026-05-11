@@ -6,9 +6,9 @@
 }
 
 .sectionHeader {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 2rem 4rem 0;
+  padding: 2rem var(--section-padding-x) 0;
   box-sizing: border-box;
 }
 
@@ -30,9 +30,9 @@
 }
 
 .filtersContainer {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 var(--section-padding-x);
   display: flex;
   gap: 1.25rem;
   flex-wrap: nowrap;
@@ -156,18 +156,18 @@
 }
 
 .grid {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 3rem 4rem 5rem;
+  padding: 3rem var(--section-padding-x) 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
 .noResults {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 4rem 4rem;
+  padding: 4rem var(--section-padding-x);
   text-align: center;
 }
 
@@ -179,9 +179,9 @@
 }
 
 .pagination {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 4rem 3.5rem;
+  padding: 0 var(--section-padding-x) 3.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -222,28 +222,28 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 2.5rem 2.5rem 4rem;
+    padding: 2.5rem var(--section-padding-x) 4rem;
   }
 
   .filtersContainer {
-    padding: 0 2.5rem;
+    padding: 0 var(--section-padding-x);
   }
 
   .pagination {
-    padding: 0 2.5rem 3rem;
+    padding: 0 var(--section-padding-x) 3rem;
   }
 }
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
   .sectionHeader {
-    padding: 1.5rem 1.5rem 0;
+    padding: 1.5rem var(--section-padding-x) 0;
   }
 
   .filtersContainer {
     flex-direction: column;
     align-items: stretch;
-    padding: 0 1.5rem;
+    padding: 0 var(--section-padding-x);
     flex-wrap: wrap;
   }
 
@@ -258,39 +258,39 @@
 
   .grid {
     grid-template-columns: 1fr;
-    padding: 2rem 1.5rem 3rem;
+    padding: 2rem var(--section-padding-x) 3rem;
     gap: 1.5rem;
   }
 
   .noResults {
-    padding: 3rem 1.5rem;
+    padding: 3rem var(--section-padding-x);
   }
 
   .pagination {
-    padding: 0 1.5rem 2.5rem;
+    padding: 0 var(--section-padding-x) 2.5rem;
     gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .sectionHeader {
-    padding: 1rem 1rem 0;
+    padding: 1rem var(--section-padding-x) 0;
   }
 
   .filtersContainer {
-    padding: 0 1rem;
+    padding: 0 var(--section-padding-x);
   }
 
   .grid {
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem var(--section-padding-x) 2rem;
     gap: 1.25rem;
   }
 
   .noResults {
-    padding: 2rem 1rem;
+    padding: 2rem var(--section-padding-x);
   }
 
   .pagination {
-    padding: 0 1rem 2rem;
+    padding: 0 var(--section-padding-x) 2rem;
   }
 }

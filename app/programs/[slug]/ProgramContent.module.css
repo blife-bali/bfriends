@@ -11,11 +11,11 @@
 
 .container {
   width: 100%;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 64px;
-  padding-right: 64px;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
   box-sizing: border-box;
 }
 
@@ -23,7 +23,7 @@
 .philosophy {
   width: 100%;
   box-sizing: border-box;
-  padding-top: 160px;
+  padding-top: var(--section-padding-y-first-top);
   margin: 0 auto;
 }
 
@@ -31,7 +31,7 @@
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
-  padding: 0 64px 80px;
+  padding: 0 var(--section-padding-x) var(--section-padding-y-first-bottom);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -116,13 +116,13 @@
 
 .frameworkContainer {
   width: 100%;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 96px 64px;
+  padding: var(--section-padding-y) var(--section-padding-x);
   box-sizing: border-box;
   gap: 64px;
 }
@@ -340,7 +340,10 @@
 
 /* ---------- CTA (same styling as Passport / Charm) ---------- */
 .cta {
-  padding: 96px 0 120px;
+  padding-top: var(--section-padding-y-last-top);
+  padding-bottom: var(--section-padding-y-last-bottom);
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
   border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent);
   /* border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 18%, transparent); */
@@ -365,9 +368,9 @@
 
 .programNavFooterEyebrowWrap {
   width: 100%;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 64px 16px;
+  padding: 0 var(--section-padding-x) 16px;
   box-sizing: border-box;
 }
 
@@ -476,7 +479,10 @@
 
 @media (max-width: 768px) {
   .cta {
-    padding: 64px 0 80px;
+    padding-top: var(--section-padding-y-last-top);
+    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .programNavFooterEyebrowWrap {
@@ -510,7 +516,10 @@
 
 @media (max-width: 480px) {
   .cta {
-    padding: 48px 0 64px;
+    padding-top: var(--section-padding-y-last-top);
+    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .programNavFooterEyebrowWrap {

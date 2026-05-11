@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import EcosystemCard from "./EcosystemCard";
 import styles from "./BLifeEcosystem.module.css";
 
@@ -56,46 +57,36 @@ function getMappedHref(name: string) {
 export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[] }) {
   const list = items;
   const ref = useRef<HTMLElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    containScroll: "trimSnaps",
+    loop: false,
+  });
 
   const updateArrows = useCallback(() => {
-    const el = carouselRef.current;
-    if (!el) return;
-    const maxScrollLeft = el.scrollWidth - el.clientWidth;
-    setCanScrollPrev(el.scrollLeft > 1);
-    setCanScrollNext(el.scrollLeft < maxScrollLeft - 1);
-  }, []);
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
 
   useEffect(() => {
+    if (!emblaApi) return;
     updateArrows();
-    const el = carouselRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", updateArrows, { passive: true });
-    window.addEventListener("resize", updateArrows);
+    emblaApi.on("select", updateArrows);
+    emblaApi.on("reInit", updateArrows);
     return () => {
-      el.removeEventListener("scroll", updateArrows);
-      window.removeEventListener("resize", updateArrows);
+      emblaApi.off("select", updateArrows);
+      emblaApi.off("reInit", updateArrows);
     };
-  }, [list.length, updateArrows]);
+  }, [emblaApi, list.length, updateArrows]);
 
   const scrollByAmount = (dir: 1 | -1) => {
-    const el = carouselRef.current;
-    if (!el) return;
-    const cards = Array.from(el.querySelectorAll<HTMLElement>(`.${styles.carouselItem}`));
-    if (!cards.length) return;
-
-    const scrollLeft = el.scrollLeft;
-    const currentIndex = cards.reduce((closestIdx, card, idx) => {
-      const currentDistance = Math.abs(cards[closestIdx].offsetLeft - scrollLeft);
-      const nextDistance = Math.abs(card.offsetLeft - scrollLeft);
-      return nextDistance < currentDistance ? idx : closestIdx;
-    }, 0);
-
-    const nextIndex = Math.min(Math.max(currentIndex + dir, 0), cards.length - 1);
-    el.scrollTo({ left: cards[nextIndex].offsetLeft, behavior: "smooth" });
+    if (!emblaApi) return;
+    if (dir === 1) emblaApi.scrollNext();
+    else emblaApi.scrollPrev();
   };
 
   if (list.length === 0) return null;
@@ -110,7 +101,7 @@ export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[]
           variants={fadeUp}
           transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
         >
-          <p className={styles.eyebrow}>The Ecosystem</p>
+          
           <h2 className={styles.headerTitle}>BLife Destinations</h2>
           <p className={styles.headerSub}>
             Designed around different rhythms of life, BLife offers a collection of spaces that support work, rest,
@@ -147,38 +138,40 @@ export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[]
           </button>
         </div>
 
-        <div className={styles.carousel} ref={carouselRef}>
-          <div className={styles.carouselTrack}>
-            {list.map((item, i) => {
-              const normalizedName = normalizeName(item.name);
-              const card = (
-                <motion.div
-                  key={item.id}
-                  className={styles.carouselItem}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                  variants={fadeUp}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.06 + i * 0.06,
-                    ease: [0.22, 0.61, 0.36, 1],
-                  }}
-                >
-                  <EcosystemCard
-                    image={
-                      item.image ||
-                      getMappedImage(normalizedName) ||
-                      "/images/Integrate/DDK09558.webp"
-                    }
-                    title={item.name}
-                    description={item.description}
-                    href={getMappedHref(normalizedName)}
-                  />
-                </motion.div>
-              );
+        <div className={styles.carousel}>
+          <div className={styles.carouselViewport} ref={emblaRef}>
+            <div className={styles.carouselTrack}>
+              {list.map((item, i) => {
+                const normalizedName = normalizeName(item.name);
+                const card = (
+                  <motion.div
+                    key={item.id}
+                    className={styles.carouselItem}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    variants={fadeUp}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.06 + i * 0.06,
+                      ease: [0.22, 0.61, 0.36, 1],
+                    }}
+                  >
+                    <EcosystemCard
+                      image={
+                        item.image ||
+                        getMappedImage(normalizedName) ||
+                        "/images/Integrate/DDK09558.webp"
+                      }
+                      title={item.name}
+                      description={item.description}
+                      href={getMappedHref(normalizedName)}
+                    />
+                  </motion.div>
+                );
 
-              return card;
-            })}
+                return card;
+              })}
+            </div>
           </div>
         </div>
       </div>
