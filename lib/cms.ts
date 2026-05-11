@@ -32,6 +32,7 @@ export type PublicProgram = {
       name: string;
       extra: string;
       desc: string;
+      image?: string;
     }>;
   }>;
 };
@@ -156,6 +157,7 @@ export async function getProgramBySlug(slug: string) {
               name: s.title,
               extra: s.extra ?? '',
               desc: s.description ?? '',
+              image: s.image ?? '',
             })),
           }]
         : [];
@@ -197,7 +199,7 @@ async function mapProgramRowToPublicProgram(prog: any): Promise<PublicProgram> {
     [prog.id]
   );
   const [sessionRows] = await pool.execute(
-    'SELECT title, extra, description, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
+    'SELECT title, extra, description, image, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
     [prog.id]
   );
 

@@ -127,6 +127,7 @@ export function buildSessionGroupsPublic(typesRows: any[], sessionsRows: any[]) 
       name: s.title,
       extra: s.extra ?? "",
       desc: s.description ?? "",
+      image: s.image ?? "",
     })),
   }));
 }

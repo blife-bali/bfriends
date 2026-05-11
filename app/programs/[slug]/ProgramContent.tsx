@@ -40,6 +40,12 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
     currentIndex >= 0 && currentIndex < programs.length - 1
       ? programs[currentIndex + 1].general.slug
       : undefined;
+  const isCafeProgram =
+    program.general.slug.trim().toLowerCase() === "cafe" ||
+    program.general.name.trim().toLowerCase() === "cafe";
+  const shouldHideCta =
+    ["cafe", "climbing"].includes(program.general.slug.trim().toLowerCase()) ||
+    ["cafe", "climbing"].includes(program.general.name.trim().toLowerCase());
 
   return (
     <div className={styles.root}>
@@ -49,11 +55,11 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
         const sessionGroups = program.sessions_group || [];
         const total = sessionGroups.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
         return total > 0 ? (
-          <SessionsSection sessionGroups={sessionGroups} />
+          <SessionsSection sessionGroups={sessionGroups} isCafeProgram={isCafeProgram} />
         ) : null;
       })()}
       <ProgramVideoSection videoUrl={fwVideo} />
-      <ProgramCta program={program} />
+      {!shouldHideCta && <ProgramCta program={program} />}
       {false && (previousSlug || nextSlug) && (
         <ProgramNavFooter
           previousSlug={previousSlug}
@@ -188,8 +194,10 @@ function ProgramVideoSection({ videoUrl }: { videoUrl: string }) {
 
 function SessionsSection({
   sessionGroups,
+  isCafeProgram,
 }: {
   sessionGroups: PublicProgram["sessions_group"];
+  isCafeProgram: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
@@ -201,7 +209,9 @@ function SessionsSection({
 
   return (
     <section ref={ref} className={styles.sessions} aria-label="Signature Sessions">
-      <div className={`${styles.container} ${styles.sessionsLayout}`}>
+      <div
+        className={`${styles.container} ${styles.sessionsLayout} ${isCafeProgram ? styles.sessionsLayoutCafe : ""}`}
+      >
         <motion.aside
           className={styles.sessionsIntro}
           initial={{ opacity: 0, y: 24 }}
@@ -222,24 +232,28 @@ function SessionsSection({
           </div>
         </motion.aside>
 
-        <div className={styles.sessionsGroups}>
+        <div className={`${styles.sessionsGroups} ${isCafeProgram ? styles.sessionsGroupsCafe : ""}`}>
         {sessionGroups.map((group, gi) => {
           const sessions = group.sessions || [];
           const showGroupHeading = Boolean(group.name?.trim());
           return (
-            <div key={`${group.name}-${gi}`} className={styles.sessionGroup}>
+            <div
+              key={`${group.name}-${gi}`}
+              className={`${styles.sessionGroup} ${isCafeProgram ? styles.sessionGroupCafe : ""}`}
+            >
               {showGroupHeading && (
                 <h3 className={styles.sessionGroupTitle}>{group.name}</h3>
               )}
-              <ul className={styles.sessionItems}>
+              <ul className={`${styles.sessionItems} ${isCafeProgram ? styles.sessionItemsCafe : ""}`}>
                 {sessions.map((session, si) => {
                   const sessionId = `${gi}-${si}-${session.name}`;
                   const detailsId = `session-details-${gi}-${si}`;
                   const isOpen = openSessionId === sessionId;
+                  const hasImage = Boolean(session.image?.trim());
                   return (
                     <motion.li
                       key={sessionId}
-                      className={styles.sessionItem}
+                      className={`${styles.sessionItem} ${isCafeProgram ? styles.sessionItemCafe : ""}`}
                       initial={{ opacity: 0, y: 24 }}
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{
@@ -255,13 +269,38 @@ function SessionsSection({
                         aria-expanded={isOpen}
                         aria-controls={detailsId}
                       >
-                        <h4 className={styles.sessionItemTitle}>{session.name}</h4>
-                        <span
-                          className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
-                          aria-hidden
-                        >
-                          +
-                        </span>
+                        {isCafeProgram && hasImage && (
+                          <div className={styles.sessionItemImageWrap}>
+                            <Image
+                              src={session.image as string}
+                              alt={session.name}
+                              fill
+                              className={styles.sessionItemImage}
+                              sizes="(max-width: 768px) 100vw, 30vw"
+                            />
+                          </div>
+                        )}
+                        {isCafeProgram ? (
+                          <div className={styles.sessionItemHeader}>
+                            <h4 className={styles.sessionItemTitle}>{session.name}</h4>
+                            <span
+                              className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
+                              aria-hidden
+                            >
+                              +
+                            </span>
+                          </div>
+                        ) : (
+                          <>
+                            <h4 className={styles.sessionItemTitle}>{session.name}</h4>
+                            <span
+                              className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
+                              aria-hidden
+                            >
+                              +
+                            </span>
+                          </>
+                        )}
                       </button>
                       <div
                         id={detailsId}
