@@ -11,7 +11,7 @@ const DEFAULT_DESKTOP_IMAGE = "/images/programs/D.webp";
 type ProgramSource = {
   name?: string;
   title?: string;
-  subheading?: string;
+  // subheading?: string;
   image?: string;
   buttonLabel?: string;
   button_label?: string;
@@ -21,7 +21,7 @@ type ProgramSource = {
 type ServicesProgram = {
   name: string;
   title: string;
-  subheading: string;
+  // subheading: string;
   image: string;
   buttonLabel: string;
   slug: string;
@@ -32,7 +32,7 @@ function normalizePrograms(source: ProgramSource[] | undefined): ServicesProgram
   return source.map((p) => ({
     name: p.name ?? p.title ?? "",
     title: p.title ?? p.name ?? "",
-    subheading: p.subheading ?? "",
+    // subheading: p.subheading ?? "",
     image: p.image || DEFAULT_DESKTOP_IMAGE,
     buttonLabel: p.buttonLabel ?? p.button_label ?? "Discover",
     slug: (p.slug ?? p.name ?? "").toLowerCase(),
@@ -132,7 +132,7 @@ export default function AboutServicesSection({
                   image={program.image || DEFAULT_DESKTOP_IMAGE}
                   name={program.name}
                   title={program.title}
-                  subheading={program.subheading}
+                  // subheading={program.subheading}//
                   buttonLabel={program.buttonLabel}
                   slug={program.slug}
                 />

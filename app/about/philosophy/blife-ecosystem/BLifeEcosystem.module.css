@@ -9,7 +9,7 @@
 }
 
 .container {
-  
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 64px;
   box-sizing: border-box;
@@ -22,7 +22,6 @@
   text-align: center;
   gap: 16px;
   margin-bottom: 48px;
-  max-width: 1660px;
 }
 
 .eyebrow {
@@ -62,7 +61,6 @@
   justify-content: flex-end;
   gap: 12px;
   margin-bottom: 28px;
-  
 }
 
 .arrowButton {
@@ -77,7 +75,6 @@
   background: var(--color-white-100);
   color: var(--color-green-100);
   transition: opacity 0.2s, background 0.2s, color 0.2s;
-  
 }
 
 .arrowButton:hover:not(:disabled) {
@@ -92,14 +89,12 @@
 
 .carousel {
   width: 100%;
-  max-width: 100%;
-  overflow: visible;
-}
-
-.carouselViewport {
-  width: 100%;
-  
+  overflow-x: auto;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .carouselTrack {
@@ -108,17 +103,22 @@
   gap: 32px;
 }
 
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
 .cardLink {
   display: block;
-  flex: 0 0 calc((100% - (1.5 * 32px)) / 2.5);
+  flex: 0 0 calc((100% - (2 * 32px)) / 3);
   min-width: 0;
   scroll-snap-align: start;
   text-decoration: none;
 }
 
 .carouselItem {
-  flex: 0 0 calc((100% - (1.5 * 32px)) / 2.5);
+  flex: 0 0 calc((100% - (2 * 32px)) / 3);
   min-width: 0;
+  scroll-snap-align: start;
 }
 
 /* Tablet: 768px - 1024px */

@@ -340,8 +340,8 @@
 
 /* ---------- CTA (same styling as Passport / Charm) ---------- */
 .cta {
-  padding-top: var(--section-padding-y-last-top);
-  padding-bottom: var(--section-padding-y-last-bottom);
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
   padding-left: 0;
   padding-right: 0;
   text-align: center;
@@ -479,8 +479,8 @@
 
 @media (max-width: 768px) {
   .cta {
-    padding-top: var(--section-padding-y-last-top);
-    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
     padding-left: 0;
     padding-right: 0;
   }
@@ -516,8 +516,8 @@
 
 @media (max-width: 480px) {
   .cta {
-    padding-top: var(--section-padding-y-last-top);
-    padding-bottom: var(--section-padding-y-last-bottom);
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
     padding-left: 0;
     padding-right: 0;
   }

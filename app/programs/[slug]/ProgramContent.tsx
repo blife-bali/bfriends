@@ -209,7 +209,7 @@ function SessionsSection({
           transition={{ duration: 0.5, ease: EASE }}
         >
           <div className={styles.sessionsIntroSticky}>
-            <h2 className={styles.sessionsTitle}>Signature <br/>Sessions</h2>
+            <h2 className={styles.sessionsTitle}>Signature Sessions</h2>
             <Button
               href={BOOK_NOW_URL}
               target="_blank"

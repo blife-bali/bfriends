@@ -5,7 +5,7 @@ interface ServicesCardProps {
   image: string;
   name: string;
   title: string;
-  subheading: string;
+  subheading?: string;
   buttonLabel: string;
   slug: string;
 }
@@ -33,7 +33,7 @@ export default function Card({
       <div className={styles.body}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.title}>{title}</p>
-        <p className={styles.subheading}>{subheading}</p>
+        {subheading ? <p className={styles.subheading}>{subheading}</p> : null}
         <Button
           href={`/programs/${slug}`}
           color="var(--color-blue-100)"
