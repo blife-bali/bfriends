@@ -6,16 +6,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .mainContainer {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 72px;
-  padding: 160px 64px;
+  gap: var(--section-gap);
+  padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 /* Top */
@@ -41,7 +41,7 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .desktopArrows {
@@ -60,7 +60,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid color-mix(in srgb, var(--color-green-100) 55%, transparent);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   background: var(--color-white-100);
   color: var(--color-green-100);
   transition: opacity 0.2s, background 0.2s, color 0.2s;
@@ -96,10 +96,10 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(40px, 3vw, 48px);
-  font-weight: 700;
+  font-size: clamp(36px, 3vw, 44px);
+  font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   color: var(--color-blue-100);
   margin: 0;
 }
@@ -110,8 +110,8 @@
 
 .subheading {
   font-family: var(--font-sans);
-  font-size: clamp(18px, 1.5vw, 20px);
-  line-height: 1.6;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.55;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
   margin: 0;
@@ -139,25 +139,20 @@
 
 .carouselTrack {
   display: flex;
-  gap: 72px;
+  gap: 32px;
   align-items: stretch;
   width: 100%;
   padding-bottom: 4px;
 }
 
 .carouselItem {
-  flex: 0 0 calc((100% - (2 * 72px)) / 3);
+  flex: 0 0 calc((100% - (2 * 32px)) / 3);
   min-width: 0;
   scroll-snap-align: start;
 }
 
 /* Tablet large: 1024px - 1200px */
 @media (max-width: 1200px) {
-  .mainContainer {
-    padding: 96px 48px;
-    gap: 56px;
-  }
-
   .subheading {
     max-width: 100%;
   }
@@ -173,11 +168,6 @@
 
 /* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
-  .mainContainer {
-    padding: 72px 48px;
-    gap: 40px;
-  }
-
   .titleContainer {
     max-width: 100%;
     width: 100%;
@@ -221,11 +211,6 @@
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
-  .mainContainer {
-    padding: 56px 24px;
-    gap: 32px;
-  }
-
   .titleContainer {
     gap: 12px;
   }
@@ -236,11 +221,11 @@
   }
 
   .title {
-    font-size: clamp(28px, 7vw, 36px);
+    font-size: clamp(26px, 7vw, 32px);
   }
 
   .subheading {
-    font-size: clamp(15px, 4vw, 17px);
+    font-size: clamp(14px, 4vw, 16px);
   }
 
   .carouselTrack {
@@ -255,12 +240,8 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .mainContainer {
-    padding: 48px 20px;
-  }
-
   .title {
-    font-size: clamp(24px, 7vw, 32px);
+    font-size: clamp(22px, 7vw, 28px);
   }
 
   .carouselItem {

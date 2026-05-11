@@ -3,14 +3,14 @@
 /* Subscription Section */
 .subscriptionSection {
   background-color: var(--color-white-100);
-  padding: 160px 0;
-  border-bottom: 1px solid var(--color-cream-40);
+  padding: var(--section-padding-y) 0;
+  border-top: 1px solid var(--color-cream-40);
 }
 
 /* Subscription Wrapper */
 .subscribeWrapper {
-  max-width: 1660px;
-  padding: 0 64px;
+  max-width: var(--section-max-width);
+  padding: 0 var(--section-padding-x);
   margin: 0 auto;
 }
 
@@ -71,7 +71,7 @@
   height: 96px;
   overflow: hidden;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .marqueeTextContainer {
@@ -95,13 +95,14 @@
 /* Newsletter Container */
 .newsletterContainer {
   background: none;
-  padding: 64px 24px;
-  height: 600px;
+  padding: 56px 32px;
+  height: auto;
+  min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-cream-40);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .newsletterContent {
@@ -111,8 +112,9 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 32px);
-  font-weight: 400;
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   line-height: 1.2;
   color: var(--color-blue-100);
   margin-bottom: 24px;
@@ -124,9 +126,9 @@
 
 .subheading {
   font-family: var(--font-sans);
-  font-size: clamp(18px, 1.5vw, 20px);
+  font-size: clamp(15px, 1.2vw, 17px);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.55;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
   margin-bottom: 32px;
@@ -143,13 +145,13 @@
 .newsletterInputWrapper {
   position: relative;
   width: 100%;
-  border-radius: 6px;
+  border-radius: 12px 0 0 12px;
   overflow: hidden;
 }
 
 .newsletterInput {
   width: 100%;
-  height: 40px;
+  height: 48px;
   padding: 0 24px;
   background-color: var(--color-white-100);
   border: 1px solid var(--color-blue-40);
@@ -158,6 +160,7 @@
   font-family: var(--font-display);
   font-size: clamp(12px, 4vw, 14px);
   transition: border-color 0.2s ease;
+  border-radius: 12px 0 0 12px;
 }
 
 .newsletterInput::placeholder {
@@ -175,6 +178,7 @@
   border: 1px solid var(--color-blue-100);
   height: 100%;
   padding: 0 24px;
+  border-radius: 0 12px 12px 0;
 }
 
 .buttonWrap button:hover {
@@ -202,29 +206,20 @@
 
 /* Responsive - Tablet (1024px) */
 @media (max-width: 1024px) {
-  .subscriptionSection {
-    padding: 96px 0;
-  }
-
-  .subscribeWrapper {
-    padding: 0 32px;
-  }
-
   .marqueeContainer {
     margin-bottom: 48px;
   }
 
   .newsletterContainer {
-    padding: 48px 20px;
-    height: 500px;
+    padding: 48px 24px;
+    min-height: 440px;
   }
 
   .heading {
-    font-size: clamp(24px, 3vw, 28px);
+    font-size: clamp(24px, 3vw, 32px);
   }
 
   .subheading {
-    font-size: clamp(14px, 3vw, 15px);
     margin-bottom: 28px;
   }
 
@@ -235,14 +230,6 @@
 
 /* Responsive - Mobile (768px) */
 @media (max-width: 768px) {
-  .subscriptionSection {
-    padding: 64px 0;
-  }
-
-  .subscribeWrapper {
-    padding: 0 24px;
-  }
-
   .marqueeContainer {
     margin-bottom: 32px;
     gap: 16px;
@@ -274,8 +261,7 @@
 
   .newsletterContainer {
     padding: 40px 20px;
-    height: auto;
-    min-height: 450px;
+    min-height: 400px;
   }
 
   .newsletterContent {
@@ -283,12 +269,11 @@
   }
 
   .heading {
-    font-size: clamp(20px, 5vw, 24px);
+    font-size: clamp(22px, 6vw, 28px);
     margin-bottom: 20px;
   }
 
   .subheading {
-    font-size: clamp(13px, 4vw, 14px);
     margin-bottom: 24px;
     max-width: 100%;
   }
@@ -300,7 +285,7 @@
   }
 
   .newsletterInput {
-    height: 44px;
+    height: 48px;
     padding: 0 20px;
   }
 
@@ -320,14 +305,6 @@
 
 /* Responsive - Small Mobile (480px) */
 @media (max-width: 480px) {
-  .subscriptionSection {
-    padding: 48px 0;
-  }
-
-  .subscribeWrapper {
-    padding: 0 16px;
-  }
-
   .marqueeContainer {
     margin-bottom: 24px;
     gap: 12px;
@@ -359,18 +336,16 @@
 
   .newsletterContainer {
     padding: 32px 16px;
-    min-height: 380px;
+    min-height: 360px;
   }
 
   .heading {
-    font-size: clamp(18px, 6vw, 22px);
+    font-size: clamp(20px, 6vw, 24px);
     margin-bottom: 16px;
   }
 
   .subheading {
-    font-size: clamp(12px, 4vw, 13px);
     margin-bottom: 20px;
-    line-height: 1.6;
   }
 
   .newsletterInput {

@@ -79,7 +79,7 @@ export default function NewsPage() {
     <AdminLayout title="News" username={username}>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>BLife Ecosystem News</h2>
+          <h2>BFriends Journal</h2>
           <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add News</button>
         </div>
         <DataTable

@@ -167,11 +167,11 @@ function FooterSection({ programs }: { programs: ProgramLink[] }) {
                 Event & Workshop
               </Link>
               <Link
-                href="/community/news"
+                href="/community/journal"
                 className={styles.footerLink}
                 onClick={() => trackEvent('footer_click', { label: 'ecosystem_news', category: 'community' })}
               >
-                BLife Ecosystem News
+                BFriends Journal
               </Link>
             </nav>
           </div>

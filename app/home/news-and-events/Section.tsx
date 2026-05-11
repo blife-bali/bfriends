@@ -72,9 +72,9 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
       <div className={styles.container}>
         <div className={styles.leftColumn}>
           <div className={styles.header}>
-            <p className={styles.eyebrow}>News & Events</p>
+            {/* <p className={styles.eyebrow}>News & Events</p> */}
             <h2 className={styles.heading}>
-              News & Events <em>Across BLife Ecosystem</em>
+              BFriends <em>Journals <br/> & Events</em>
             </h2>
           </div>
           <div className={styles.navContainer}>
@@ -126,7 +126,7 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
           </div>
         </div>
 
-        <div className={styles.buttonContainer}>
+        {/* <div className={styles.buttonContainer}>
           <Button
             color="var(--color-green-100)"
             showIcon
@@ -138,12 +138,12 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
           <Button
             color="var(--color-green-100)"
             showIcon
-            href="/community/blife-ecosystem-news"
+            href="/community/journal"
             onClick={() => trackEvent('cta_click', { label: 'more_news', location: 'home_news_events' })}
           >
-            More news
+            BFriends Journal
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

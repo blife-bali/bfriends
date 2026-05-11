@@ -59,12 +59,13 @@ export default async function HomePage() {
         body={intro?.body}
         imageUrl={intro?.image_url}
       />
-      <WhyBFriends cards={whyCards} />
-      <SystemSection steps={processSteps} />
       <ServicesSection programs={programs} />
+      <SystemSection steps={processSteps} />
+      
+      <WhyBFriends cards={whyCards} />
       <FaqSection />
-      <NewsAndEventsSection events={events} news={news} />
       <SiteLocation />
+      <NewsAndEventsSection events={events} news={news} />
       <SiteNewsletterCta />
     </>
   );

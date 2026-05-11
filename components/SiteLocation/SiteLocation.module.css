@@ -3,40 +3,42 @@
 /* Location Section */
 .locationSection {
   width: 100%;
-  height: 500px;
-  background-color: var(--color-blue-100);
+  background-color: var(--color-white-100);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding-y) 0;
+  box-sizing: border-box;
 }
 
 .mapWrapper {
   width: 100%;
-  height: 100%;
+  height: 600px;
+  max-width: var(--section-max-width);
   position: relative;
+  padding: 0 var(--section-padding-x);
+  box-sizing: border-box;
 }
 
 .map {
   width: 100%;
   height: 100%;
   display: block;
-}
-
-/* Responsive - Tablet (1024px) */
-@media (max-width: 1024px) {
-  .locationSection {
-    height: 600px;
-  }
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 /* Responsive - Mobile (768px) */
 @media (max-width: 768px) {
-  .locationSection {
+  .mapWrapper {
     height: 450px;
   }
 }
 
 /* Responsive - Small Mobile (480px) */
 @media (max-width: 480px) {
-  .locationSection {
+  .mapWrapper {
     height: 350px;
   }
 }

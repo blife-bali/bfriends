@@ -160,6 +160,53 @@
   --color-green-120: var(--color-green-120);
   --color-green-140: var(--color-green-140);
   --color-green-160: var(--color-green-160);
+
+  /* Layout & radius (used by CSS modules site-wide; responsive overrides below) */
+  --section-max-width: 1660px;
+  --section-padding-y: 96px;
+  --section-padding-x: 64px;
+  --section-gap: 48px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /*
+   * Page edge sections (first / last):
+   * first — padding-top = 2× padding-bottom (bottom = --section-padding-y)
+   * last  — padding-bottom = 2× padding-top (top = --section-padding-y)
+   */
+  --section-padding-y-first-top: calc(2 * var(--section-padding-y));
+  --section-padding-y-first-bottom: var(--section-padding-y);
+  --section-padding-y-last-top: var(--section-padding-y);
+  --section-padding-y-last-bottom: calc(2 * var(--section-padding-y));
+}
+
+@media (max-width: 1024px) {
+  :root,
+  :host {
+    --section-padding-y: 96px;
+    --section-padding-x: 48px;
+    --section-gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root,
+  :host {
+    --section-padding-y: 64px;
+    --section-padding-x: 24px;
+    --section-gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root,
+  :host {
+    --section-padding-y: 56px;
+    --section-padding-x: 20px;
+    --section-gap: 24px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

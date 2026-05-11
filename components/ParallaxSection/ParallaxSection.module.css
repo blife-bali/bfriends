@@ -10,11 +10,11 @@
 
 .imageFrame {
   width: 100%;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   position: relative;
   overflow: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .imageFrameRatio169 {
@@ -58,7 +58,7 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   align-items: start;
 }
 
@@ -69,10 +69,10 @@
 
 .copyTitle {
   font-family: var(--font-display);
-  font-size: clamp(36px, 3vw, 40px);
-  font-weight: 400;
+  font-size: clamp(36px, 3vw, 44px);
+  font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--color-blue-100);
   text-align: left;
   margin: 0;
@@ -93,9 +93,9 @@
 
 .copyBody {
   font-family: var(--font-sans);
-  font-size: clamp(18px, 1.8vw, 19px);
-  line-height: 1.5;
-  letter-spacing: -0.04em;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
   color: var(--color-cream-140);
   margin: 0;
   text-align: left;

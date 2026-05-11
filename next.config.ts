@@ -23,6 +23,16 @@ const nextConfig: NextConfig = {
         destination: "/about/journey",
         permanent: true,
       },
+      {
+        source: "/community/bfriends-journal",
+        destination: "/community/journal",
+        permanent: true,
+      },
+      {
+        source: "/community/blife-ecosystem-news",
+        destination: "/community/journal",
+        permanent: true,
+      },
     ];
   },
   images: {

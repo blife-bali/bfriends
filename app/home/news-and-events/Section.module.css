@@ -6,22 +6,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 160px 0;
+  padding-top: var(--section-padding-y-last-top);
+  padding-bottom: var(--section-padding-y-last-bottom);
+  padding-left: 0;
+  padding-right: 0;
   overflow: hidden;
 }
 
 .container {
   --carousel-gap: 24px;
   width: 100%;
-  max-width: 1660px;
-  padding: 0 64px;
+  max-width: var(--section-max-width);
+  padding: 0 var(--section-padding-x);
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas:
     "left right"
     "button button";
-  gap: 40px;
+  gap: var(--section-gap);
   align-items: start;
   position: relative;
 }
@@ -41,7 +44,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 32px;
+  gap: 24px;
   position: relative;
   z-index: 3;
   height: 100%;
@@ -53,7 +56,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   position: relative;
   z-index: 6;
 }
@@ -78,9 +81,9 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(40px, 4vw, 48px);
-  font-weight: 400;
-  letter-spacing: -0.04em;
+  font-size: clamp(36px, 3vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   line-height: 120%;
   color: var(--color-green-100);
   margin: 0;
@@ -150,6 +153,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-green-100);
+  border-radius: var(--radius-md);
   background: var(--color-white-100);
   color: var(--color-green-100);
   cursor: pointer;
@@ -168,15 +172,9 @@
 
 /* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
-  .section {
-    padding: 72px 0;
-  }
-
   .container {
-    padding: 0 48px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
   }
 
   .container::before {
@@ -186,7 +184,7 @@
   .leftColumn {
     position: static;
     justify-content: flex-start;
-    gap: 24px;
+    gap: 20px;
   }
 
   .rightColumn {
@@ -198,7 +196,7 @@
   }
 
   .heading {
-    font-size: clamp(32px, 4vw, 40px);
+    font-size: clamp(28px, 4vw, 36px);
     text-align: left;
   }
 
@@ -225,17 +223,8 @@
 
 /* Mobile: < 768px */
 @media (max-width: 768px) {
-  .section {
-    padding: 56px 0;
-  }
-
-  .container {
-    padding: 0 24px;
-    gap: 24px;
-  }
-
   .heading {
-    font-size: clamp(26px, 7vw, 34px);
+    font-size: clamp(26px, 7vw, 32px);
   }
 
   .gridContainer {
@@ -265,14 +254,6 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .section {
-    padding: 48px 0;
-  }
-
-  .container {
-    padding: 0 20px;
-  }
-
   .heading {
     font-size: clamp(22px, 7vw, 28px);
   }

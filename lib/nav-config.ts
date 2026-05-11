@@ -16,7 +16,7 @@ export const membershipNavItems = [
 /** Community links. */
 export const communityNavItems = [
   { label: "Event & Workshop", href: "/community/event-workshop" },
-  { label: "BLife Ecosystem News", href: "/community/blife-ecosystem-news" },
+  { label: "BFriends Journal", href: "/community/journal" },
 ] as const;
 
 export type NavColumnId = "about" | "programs" | "membership" | "community";

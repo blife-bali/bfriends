@@ -54,7 +54,7 @@ export default function WhyBFriends({ cards = [] }: { cards?: any[] }) {
       <div className={styles.mainContainer}>
         <div className={styles.titleRow}>
           <div className={styles.titleContainer}>
-            <p className={styles.eyebrow}>Core Philosophy</p>
+            {/* <p className={styles.eyebrow}>Core Philosophy</p> */}
             <h2 className={styles.title}>Why <em>BFriends</em>?</h2>
             <p className={styles.subheading}>
               Real progress doesn’t come from pressure. It comes from understanding what you need and

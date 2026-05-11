@@ -23,7 +23,7 @@ const HERO_COPY: Record<
       "Workshop, gatherings, wellness sessions, and shared experiences within the BFriends community",
   },
   news: {
-    title: "The Bfriends Journal",
+    title: "BFriends Journal",
     description:
       "A collection of stories, rituals, movement, and meaningful experiences from the BFriends Community",
   },

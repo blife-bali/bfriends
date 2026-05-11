@@ -248,7 +248,7 @@ INSERT INTO bfriends_page_headers (page_key, title, breadcrumb, image) VALUES
 ('bfriends-passport', 'BFriends Passport', 'Membership / Passport', '/images/membership/passport.jpg'),
 ('charm', 'Charm', 'Membership / Charm', '/images/membership/charm.jpg'),
 ('event-workshop', 'Event & Workshop', 'Community / Events', '/images/community/events.jpg'),
-('blife-ecosystem-news', 'BLife Ecosystem News', 'Community / News', '/images/community/news.jpg');
+('blife-ecosystem-news', 'BFriends Journal', 'Community / Journal', '/images/community/news.jpg');
 
 -- ============================================================
 -- 10. Philosophy Sections

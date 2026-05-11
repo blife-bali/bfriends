@@ -236,7 +236,7 @@ export async function POST(req: Request) {
         { page_key: 'bfriends-passport', title: 'BFriends Passport', breadcrumb: 'Membership / Passport', image: '/images/membership/passport.jpg' },
         { page_key: 'charm', title: 'Charm', breadcrumb: 'Membership / Charm', image: '/images/membership/charm.jpg' },
         { page_key: 'event-workshop', title: 'Event & Workshop', breadcrumb: 'Community / Events', image: '/images/community/events.jpg' },
-        { page_key: 'blife-ecosystem-news', title: 'BLife Ecosystem News', breadcrumb: 'Community / News', image: '/images/community/news.jpg' },
+        { page_key: 'blife-ecosystem-news', title: 'BFriends Journal', breadcrumb: 'Community / Journal', image: '/images/community/news.jpg' },
       ];
       for (const h of headers) {
         await pool.execute(

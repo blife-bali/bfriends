@@ -61,7 +61,7 @@ export default function NewsContent({ initialNews = [] }: { initialNews?: any[] 
   return (
     <section className={styles.section}>
       {/* <div className={styles.sectionHeader}>
-        <p className={styles.eyebrow}>BLife Ecosystem News</p>
+        <p className={styles.eyebrow}>BFriends Journal</p>
       </div> */}
       <div className={styles.filters}>
         <div className={styles.filtersContainer}>

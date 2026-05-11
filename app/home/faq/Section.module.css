@@ -7,7 +7,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  padding: 56px 24px;
+  padding: var(--section-padding-y) var(--section-padding-x);
   border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 8%, transparent);
 }
 
@@ -24,7 +24,7 @@
 
 .container {
   width: 100%;
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   position: relative;
   z-index: 1;
   display: flex;
@@ -38,12 +38,11 @@
 .heading {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(28px, 2.8vw, 40px);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   line-height: 1.15;
   color: var(--color-blue-100);
-  text-transform: uppercase;
 }
 
 .heading em {
@@ -54,7 +53,7 @@
   color: var(--color-blue-100);
   background: var(--color-white-100);
   border: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   padding: 12px 22px;
   min-height: 44px;
 }
@@ -65,27 +64,19 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .section {
-    padding: 48px 24px;
-  }
-
   .heading {
-    font-size: clamp(24px, 4vw, 34px);
+    font-size: clamp(24px, 3vw, 32px);
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .section {
-    padding: 44px 20px;
-  }
-
   .gridOverlay {
     background-size: 56px 56px;
   }
 
   .heading {
-    font-size: clamp(22px, 6vw, 30px);
+    font-size: clamp(22px, 6vw, 28px);
     padding: 0 8px;
   }
 
@@ -97,10 +88,6 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .section {
-    padding: 40px 16px;
-  }
-
   .heading {
     font-size: clamp(20px, 6vw, 26px);
   }

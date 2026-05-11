@@ -98,9 +98,9 @@ export default function Section({
       <div className={styles.mainContainer}>
         <div className={styles.titleRow}>
           <div className={styles.titleContainer}>
-            <p className={styles.eyebrow}>Our Programs</p>
+            {/* <p className={styles.eyebrow}>Our Programs</p> */}
             <h2 className={styles.title}>
-              The <em>Journey</em> at BFriends
+              BFriends Programs
             </h2>
           </div>
           <div className={`${styles.arrowContainer} ${styles.desktopArrows}`}>

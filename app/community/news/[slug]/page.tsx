@@ -98,8 +98,8 @@ export default async function NewsSlugPage({
         </div>
 
         <div className={styles.backBlock}>
-          <Link href="/community/blife-ecosystem-news" className={styles.backLink}>
-            ← Back to BLife Ecosystem News
+          <Link href="/community/journal" className={styles.backLink}>
+            ← Back to BFriends Journal
           </Link>
         </div>
 
