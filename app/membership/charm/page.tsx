@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import CharmContent from "./CharmContent";
 import styles from "./Charm.module.css";
-import { getPageSeo, getCharmTiers, getCharmUsage, getPageHeader, getMembershipContent } from "@/lib/cms";
+import { getPageSeo, getCharmTiers, getCharmUsage, resolvePageHeader, getMembershipContent } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -21,10 +21,10 @@ const DEFAULT_HEADER = {
 };
 
 export default async function CharmPage() {
-  const [tiers, usageItems, pageHeader, membershipContent] = await Promise.all([
+  const [tiers, usageItems, header, membershipContent] = await Promise.all([
     getCharmTiers(),
     getCharmUsage(),
-    getPageHeader("charm"),
+    resolvePageHeader("charm", DEFAULT_HEADER),
     getMembershipContent(),
   ]);
 
@@ -33,9 +33,9 @@ export default async function CharmPage() {
   return (
     <>
       <PageHeader
-        breadcrumb={pageHeader?.breadcrumb || DEFAULT_HEADER.breadcrumb}
-        title={pageHeader?.title || DEFAULT_HEADER.title}
-        image={pageHeader?.image || DEFAULT_HEADER.image}
+        breadcrumb={header.breadcrumb}
+        title={header.title}
+        image={header.image}
       />
       <main className={styles.page}>
         <CharmContent

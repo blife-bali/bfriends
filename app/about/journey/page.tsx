@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyBlockImage from "./JourneyBlockImage";
 import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./CustomerJourney.module.css";
-import { getPageSeo, getProcessSteps, getPageHeader } from "@/lib/cms";
+import { getPageSeo, getProcessSteps, resolvePageHeader } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -24,16 +24,10 @@ const DEFAULT_HEADER = {
 };
 
 export default async function JourneyPage() {
-  const [processSteps, pageHeader] = await Promise.all([
+  const [processSteps, header] = await Promise.all([
     getProcessSteps("customer-journey"),
-    getPageHeader("customer-journey"),
+    resolvePageHeader("customer-journey", DEFAULT_HEADER),
   ]);
-
-  const header = {
-    breadcrumb: DEFAULT_HEADER.breadcrumb,
-    title: DEFAULT_HEADER.title,
-    image: pageHeader?.image || DEFAULT_HEADER.image,
-  };
 
   return (
     <main className={styles.page}>

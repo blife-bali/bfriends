@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JournalPageHeader from "@/components/JournalPageHeader/JournalPageHeader";
 import { AboutServicesSection } from "@/components/AboutServicesSection";
 import NewsContent from "./NewsContent";
-import { getPageSeo, getNews, getPageHeader, getPublicPrograms } from "@/lib/cms";
+import { getPageSeo, getNews, resolvePageHeader, getPublicPrograms } from "@/lib/cms";
 import { pickLatestJournalItem } from "@/lib/journal";
 
 export const dynamic = "force-dynamic";
@@ -15,10 +15,16 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const DEFAULT_HEADER = {
+  title: "BFriends Journal",
+  breadcrumb: "Community / Journal",
+  image: "/images/community/news.jpg",
+};
+
 export default async function JournalListingPage() {
-  const [news, pageHeader, publicPrograms] = await Promise.all([
+  const [news, header, publicPrograms] = await Promise.all([
     getNews(),
-    getPageHeader("blife-ecosystem-news"),
+    resolvePageHeader("blife-ecosystem-news", DEFAULT_HEADER),
     getPublicPrograms(),
   ]);
 
@@ -34,7 +40,7 @@ export default async function JournalListingPage() {
 
   return (
     <>
-      <JournalPageHeader kind="news" featured={featured} headerImage={pageHeader?.image} overrideTitle={pageHeader?.title} overrideDescription={(pageHeader as any)?.description} />
+      <JournalPageHeader kind="news" featured={featured} headerImage={header.image} overrideTitle={header.title} overrideDescription={header.description} />
       <main>
         <NewsContent initialNews={news} />
       </main>

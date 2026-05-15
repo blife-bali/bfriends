@@ -376,6 +376,44 @@ export async function getPageHeader(pageKey: string) {
   }
 }
 
+/** First matching row when CMS uses alternate keys (e.g. about vs philosophy). */
+export async function getPageHeaderByKeys(pageKeys: string[]) {
+  for (const key of pageKeys) {
+    const row = await getPageHeader(key);
+    if (row) return row;
+  }
+  return null;
+}
+
+export type ResolvedPageHeader = {
+  title: string;
+  breadcrumb: string;
+  image: string;
+  description: string | null;
+};
+
+/** Merge CMS page header row with code fallbacks for visible hero/header. */
+export async function resolvePageHeader(
+  pageKey: string | string[],
+  defaults: { title: string; breadcrumb: string; image: string }
+): Promise<ResolvedPageHeader> {
+  const row = Array.isArray(pageKey)
+    ? await getPageHeaderByKeys(pageKey)
+    : await getPageHeader(pageKey);
+
+  const title = (row?.title as string | undefined)?.trim();
+  const breadcrumb = (row?.breadcrumb as string | undefined)?.trim();
+  const image = (row?.image as string | undefined)?.trim();
+  const description = (row?.description as string | undefined)?.trim();
+
+  return {
+    title: title || defaults.title,
+    breadcrumb: breadcrumb || defaults.breadcrumb,
+    image: image || defaults.image,
+    description: description || null,
+  };
+}
+
 export async function getMembershipContent() {
   return tryDb<any>('SELECT * FROM bfriends_membership_content WHERE is_active = 1');
 }

@@ -12,7 +12,7 @@ import { AboutServicesSection } from "@/components/AboutServicesSection";
 import styles from "./philosophy/page.module.css";
 import {
   getPageSeo,
-  getPageHeader,
+  resolvePageHeader,
   getIntroByPage,
   getWhyCards,
   getPhilosophySectionByKey,
@@ -41,8 +41,8 @@ const DEFAULT_HEADER = {
 };
 
 export default async function AboutPage() {
-  const [pageHeader, intro, whyCards, journeySection, manifesto, integratedSelf, coreBeliefs, ecosystemItems, publicPrograms] = await Promise.all([
-    getPageHeader("philosophy"),
+  const [header, intro, whyCards, journeySection, manifesto, integratedSelf, coreBeliefs, ecosystemItems, publicPrograms] = await Promise.all([
+    resolvePageHeader(["about", "philosophy"], DEFAULT_HEADER),
     getIntroByPage("home"),
     getWhyCards(true),
     getJourneySection(),
@@ -61,12 +61,6 @@ export default async function AboutPage() {
     buttonLabel: program.general.button_label,
     slug: program.general.slug,
   }));
-
-  const header = {
-    title: DEFAULT_HEADER.title,
-    breadcrumb: DEFAULT_HEADER.breadcrumb,
-    image: pageHeader?.image || DEFAULT_HEADER.image,
-  };
 
   return (
     <>

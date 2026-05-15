@@ -9,7 +9,16 @@ import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
 
-interface PageHeader { id?: number; page_key: string; title: string; breadcrumb: string; image: string; seo_title: string; seo_description: string; }
+interface PageHeader {
+  id?: number;
+  page_key: string;
+  title: string;
+  breadcrumb: string;
+  description?: string;
+  image: string;
+  seo_title: string;
+  seo_description: string;
+}
 
 export default function PagesPage() {
   const [headers, setHeaders] = useState<PageHeader[]>([]);
@@ -52,7 +61,7 @@ export default function PagesPage() {
       <div className="admin-card">
         <div className="admin-card-header">
           <h2>Page Headers</h2>
-          <button onClick={() => setEditing({ page_key: '', title: '', breadcrumb: '', image: '', seo_title: '', seo_description: '' })} className="admin-btn admin-btn-primary">+ Add</button>
+          <button onClick={() => setEditing({ page_key: '', title: '', breadcrumb: '', description: '', image: '', seo_title: '', seo_description: '' })} className="admin-btn admin-btn-primary">+ Add</button>
         </div>
         <DataTable
           columns={[
@@ -73,6 +82,7 @@ export default function PagesPage() {
             <FormField label="Page Key" name="page_key" value={editing.page_key || ''} onChange={(v: string) => setEditing({ ...editing, page_key: v })} placeholder="e.g. philosophy, customer-journey" />
             <FormField label="Title" name="title" value={editing.title || ''} onChange={(v: string) => setEditing({ ...editing, title: v })} required />
             <FormField label="Breadcrumb" name="breadcrumb" value={editing.breadcrumb || ''} onChange={(v: string) => setEditing({ ...editing, breadcrumb: v })} />
+            <FormField label="Description" name="description" type="textarea" value={editing.description || ''} onChange={(v: string) => setEditing({ ...editing, description: v })} placeholder="Optional subtitle (Events & Journal listing pages)" />
             <div className="admin-form-group">
               <label>Image</label>
               <ImageUploader value={editing.image || ''} onChange={(url: string) => setEditing({ ...editing, image: url })} />

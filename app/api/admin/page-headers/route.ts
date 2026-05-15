@@ -21,12 +21,20 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { page_key, title, breadcrumb, image } = body;
+    const { page_key, title, breadcrumb, image, description, seo_title, seo_description } = body;
 
     const [result] = await pool.execute(
-      `INSERT INTO bfriends_page_headers (page_key, title, breadcrumb, image)
-       VALUES (?, ?, ?, ?)`,
-      [page_key, title, breadcrumb, image]
+      `INSERT INTO bfriends_page_headers (page_key, title, breadcrumb, image, description, seo_title, seo_description)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [
+        page_key,
+        title,
+        breadcrumb ?? null,
+        image ?? null,
+        description ?? null,
+        seo_title ?? null,
+        seo_description ?? null,
+      ]
     );
 
     const insertResult = result as any;

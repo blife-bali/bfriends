@@ -107,7 +107,7 @@ export default function HeroPage() {
               <VideoUploader value={editing.video_url} onChange={(url: string) => setEditing({ ...editing, video_url: url })} />
             </div>
             <div className="admin-form-group">
-              <small style={{ color: '#6b7280' }}>Hero hanya digunakan untuk halaman Home.</small>
+              <small style={{ color: 'var(--admin-muted)' }}>Hero hanya digunakan untuk halaman Home.</small>
             </div>
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />

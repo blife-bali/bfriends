@@ -38,12 +38,22 @@ export async function PUT(
   try {
     const { id } = await params;
     const body = await req.json();
-    const { page_key, title, breadcrumb, image } = body;
+    const { page_key, title, breadcrumb, image, description, seo_title, seo_description } = body;
 
     const [result] = await pool.execute(
-      `UPDATE bfriends_page_headers SET page_key = ?, title = ?, breadcrumb = ?, image = ?
+      `UPDATE bfriends_page_headers SET page_key = ?, title = ?, breadcrumb = ?, image = ?,
+       description = ?, seo_title = ?, seo_description = ?
        WHERE id = ?`,
-      [page_key, title, breadcrumb, image, id]
+      [
+        page_key,
+        title,
+        breadcrumb ?? null,
+        image ?? null,
+        description ?? null,
+        seo_title ?? null,
+        seo_description ?? null,
+        id,
+      ]
     );
 
     const updateResult = result as any;

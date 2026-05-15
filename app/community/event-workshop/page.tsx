@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JournalPageHeader from "@/components/JournalPageHeader/JournalPageHeader";
 import { AboutServicesSection } from "@/components/AboutServicesSection";
 import EventsContent from "./EventsContent";
-import { getPageSeo, getEvents, getPageHeader, getPublicPrograms } from "@/lib/cms";
+import { getPageSeo, getEvents, resolvePageHeader, getPublicPrograms } from "@/lib/cms";
 import { pickLatestJournalItem } from "@/lib/journal";
 
 export const dynamic = "force-dynamic";
@@ -15,10 +15,16 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const DEFAULT_HEADER = {
+  title: "Event and Workshop",
+  breadcrumb: "Community / Events",
+  image: "/images/community/events.jpg",
+};
+
 export default async function EventWorkshopPage() {
-  const [events, pageHeader, publicPrograms] = await Promise.all([
+  const [events, header, publicPrograms] = await Promise.all([
     getEvents(),
-    getPageHeader("event-workshop"),
+    resolvePageHeader("event-workshop", DEFAULT_HEADER),
     getPublicPrograms(),
   ]);
 
@@ -34,7 +40,7 @@ export default async function EventWorkshopPage() {
 
   return (
     <>
-      <JournalPageHeader kind="events" featured={featured} headerImage={pageHeader?.image} overrideTitle={pageHeader?.title} overrideDescription={(pageHeader as any)?.description} />
+      <JournalPageHeader kind="events" featured={featured} headerImage={header.image} overrideTitle={header.title} overrideDescription={header.description} />
       <main>
         <EventsContent initialEvents={events} />
       </main>

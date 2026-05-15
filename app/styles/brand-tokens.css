@@ -1,0 +1,102 @@
+/* Local font: Sweet Sans Pro (public/fonts/sweet0sans) */
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Sans Pro";
+  src: url("/fonts/sweet0sans/SweetSansPro-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========== Base colors (shared by marketing + admin) ========== */
+:root {
+  --font-sans: "Sweet Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  --color-blue: #134053;
+  --color-white: #FEFFFF;
+  --color-cream: #B29A7C;
+  --color-beige: #ECD8BD;
+  --color-green: #1B5551;
+
+  /* Below 100: color at X% opacity on white #FEFFFF */
+  /* Blue variants */
+  --color-blue-5: #F2F5F6;
+  --color-blue-20: #CFD8DC;
+  --color-blue-40: #A0B2BA;
+  --color-blue-60: #718C98;
+  --color-blue-80: #426675;
+  --color-blue-100: #134053;
+  --color-blue-120: #0F3342;
+  --color-blue-140: #0B2633;
+  --color-blue-160: #071A21;
+
+  /* White variants (120–160: black overlay on white) */
+  --color-white-20: #FEFFFF;
+  --color-white-40: #FEFFFF;
+  --color-white-60: #FEFFFF;
+  --color-white-80: #FEFFFF;
+  --color-white-100: #FEFFFF;
+  --color-white-120: #CBCCCC;
+  --color-white-140: #989999;
+  --color-white-160: #656666;
+
+  /* Cream variants */
+  --color-cream-20: #EFEBE5;
+  --color-cream-40: #E0D7CB;
+  --color-cream-60: #D0C2B0;
+  --color-cream-80: #C1AE96;
+  --color-cream-100: #B29A7C;
+  --color-cream-120: #8E7B63;
+  --color-cream-140: #473E31;
+  --color-cream-160: #473E31;
+
+  /* Beige variants */
+  --color-beige-20: #FAF7F2;
+  --color-beige-40: #F7EFE5;
+  --color-beige-60: #F3E8D7;
+  --color-beige-80: #F0E0CA;
+  --color-beige-100: #ECD8BD;
+  --color-beige-120: #BCAC98;
+  --color-beige-140: #8D8171;
+  --color-beige-160: #5E564C;
+
+  /* Green variants */
+  --color-green-20: #D1DDDC;
+  --color-green-40: #A0BBBD;
+  --color-green-60: #769997;
+  --color-green-80: #487774;
+  --color-green-100: #1B5551;
+  --color-green-120: #164440;
+  --color-green-140: #103330;
+  --color-green-160: #0B2220;
+
+  /* Semantic aliases */
+  --background: var(--color-white-100);
+  --foreground: var(--color-blue-100);
+}

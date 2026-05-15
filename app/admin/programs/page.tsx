@@ -39,7 +39,7 @@ export default function ProgramsPage() {
     <AdminLayout title="Programs" username={username}>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>F.R.I.E.N.D Programs</h2>
+          <h2>BFriends Programs</h2>
           <Link href="/admin/programs/new" className="admin-btn admin-btn-primary">+ Add Program</Link>
         </div>
         <DataTable
