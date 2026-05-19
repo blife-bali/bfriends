@@ -1,7 +1,6 @@
 /** About BFriends links. */
 export const aboutNavItems = [
-  { label: "About BFriends", href: "/about" },
-  { label: "BFriends Journey", href: "/about/journey" },
+  { label: "Friends Journey", href: "/about/journey" },
 ] as const;
 
 /** Programs: filled at runtime from /api/programs. */

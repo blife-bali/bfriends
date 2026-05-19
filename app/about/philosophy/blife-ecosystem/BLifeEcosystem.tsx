@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import EcosystemCard from "./EcosystemCard";
+import { getEcosystemHref, normalizeEcosystemName } from "@/lib/site-ecosystem-links";
 import styles from "./BLifeEcosystem.module.css";
 
 interface EcosystemItem {
@@ -29,28 +30,9 @@ const ECOSYSTEM_IMAGE_BY_NAME: Array<{ match: RegExp; image: string }> = [
   { match: /^alamk?ulkul$/, image: "/ecosystem/alamkulkul.jpg" },
 ];
 
-const ECOSYSTEM_LINK_BY_NAME: Array<{ match: RegExp; href?: string }> = [
-  { match: /^bwork$/, href: "https://bwork.id" },
-  { match: /^bnesta$/, href: "https://bnesta.id" },
-  { match: /^blive$/, href: "https://blive.id" },
-  { match: /^bfriends$/, href: undefined },
-  { match: /^bwellness$/, href: "https://instagram.com/bwellness" },
-  { match: /^nulook$/, href: "https://nulook.co.id" },
-  { match: /^alamk?ulkul$/, href: "https://alamkulkul.com" },
-];
-
-function normalizeName(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]/g, "");
-}
-
 function getMappedImage(name: string) {
   const matched = ECOSYSTEM_IMAGE_BY_NAME.find((entry) => entry.match.test(name));
   return matched?.image;
-}
-
-function getMappedHref(name: string) {
-  const matched = ECOSYSTEM_LINK_BY_NAME.find((entry) => entry.match.test(name));
-  return matched?.href;
 }
 
 export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[] }) {
@@ -150,7 +132,7 @@ export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[]
         <div className={styles.carousel} ref={carouselRef}>
           <div className={styles.carouselTrack}>
             {list.map((item, i) => {
-              const normalizedName = normalizeName(item.name);
+              const normalizedName = normalizeEcosystemName(item.name);
               const card = (
                 <motion.div
                   key={item.id}
@@ -172,7 +154,7 @@ export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[]
                     }
                     title={item.name}
                     description={item.description}
-                    href={getMappedHref(normalizedName)}
+                    href={getEcosystemHref(item.name, item.url)}
                   />
                 </motion.div>
               );

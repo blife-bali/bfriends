@@ -56,9 +56,8 @@ export default function Section({ programs = [] }: { programs?: any[] }) {
           width={isMobile ? 750 : 1536}
           height={isMobile ? 1334 : 1080}
           className={styles.backgroundImage}
-          quality={100}
+          quality={75}
           priority
-          unoptimized={true}
         />
         <div className={styles.backgroundOverlay} />
 

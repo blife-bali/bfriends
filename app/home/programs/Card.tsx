@@ -44,9 +44,8 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
           width={480}
           height={640}
           className={styles.cardImage}
-          quality={100}
+          quality={75}
           priority={program.slug === "fitness"}
-          unoptimized={true}
         />
         <div className={styles.cardOverlay} />
       </div>

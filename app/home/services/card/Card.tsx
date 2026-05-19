@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Card.module.css";
 
@@ -21,12 +22,13 @@ export default function Card({
   return (
     <article className={styles.card}>
       <div className={styles.imageWrap}>
-        <img
+        <Image
           src={image}
           alt={title}
+          fill
           className={styles.image}
-          loading="lazy"
-          decoding="async"
+          sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 33vw"
+          quality={75}
           draggable={false}
         />
       </div>

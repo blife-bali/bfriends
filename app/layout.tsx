@@ -3,6 +3,7 @@ import { Libre_Bodoni } from "next/font/google";
 import MainLayout from "@/components/MainLayout/MainLayout";
 import PageEntryClient from "@/components/PageEntry/PageEntryClient";
 import AnalyticsProvider from "@/components/Analytics/AnalyticsProvider";
+import LenisProvider from "@/components/Lenis/LenisProvider";
 import { SoundProvider } from "@/contexts/SoundContext";
 import { getGoogleAnalyticsId } from "@/lib/gtag-server";
 import "./globals.css";
@@ -92,11 +93,13 @@ export default async function RootLayout({
       </head>
       <body className="antialiased">
         <AnalyticsProvider measurementId={gaId} />
-        <SoundProvider>
-          <MainLayout>
-            <PageEntryClient>{children}</PageEntryClient>
-          </MainLayout>
-        </SoundProvider>
+        <LenisProvider>
+          <SoundProvider>
+            <MainLayout>
+              <PageEntryClient>{children}</PageEntryClient>
+            </MainLayout>
+          </SoundProvider>
+        </LenisProvider>
       </body>
     </html>
   );

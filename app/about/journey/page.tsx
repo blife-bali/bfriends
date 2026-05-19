@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyBlockImage from "./JourneyBlockImage";
-import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./CustomerJourney.module.css";
 import { getPageSeo, getProcessSteps, resolvePageHeader } from "@/lib/cms";
 
@@ -39,10 +38,10 @@ export default async function JourneyPage() {
       <div className={styles.container}>
         <section className={styles.intro} aria-labelledby="journey-intro-title">
           <h2 id="journey-intro-title" className={styles.introTitle}>
-            The BFriends Journey
+            The Friends Journey
           </h2>
           <p className={styles.introSub}>
-            The BFriends Journey is a unique experience that combines the best of both worlds: the
+            The Friends Journey is a unique experience that combines the best of both worlds: the
             physical and the digital. It&apos;s a journey that starts with a physical product and
             continues in the digital world, where you can interact with your BFriend in a whole new
             way.
@@ -55,14 +54,14 @@ export default async function JourneyPage() {
               className={`${styles.journeyBlock} ${index % 2 === 1 ? styles.journeyBlockEven : ""}`}
             >
               <div className={styles.journeyBlockWrapper}>
-                <p className={styles.eyebrow}>Step {step.number}</p>
-                <JourneyBlockImage src={step.image} alt={step.title} />
-                <div className={parallax.copyGrid}>
-                  <div className={parallax.copyColLeft}>
-                    <h3 className={`${parallax.copyTitle} ${parallax.copyTitleLg}`}>{step.title}</h3>
+                <div className={styles.contentGrid}>
+                  <div className={styles.contentColImage}>
+                    <JourneyBlockImage src={step.image} alt={step.title} />
                   </div>
-                  <div className={parallax.copyColRight}>
-                    <p className={parallax.copyBody}>{step.description}</p>
+                  <div className={styles.contentCol}>
+                    <p className={styles.eyebrow}>Step {step.number}</p>
+                    <h3 className={styles.blockTitle}>{step.title}</h3>
+                    <p className={styles.blockBody}>{step.description}</p>
                     {step.subpoints && step.subpoints.length > 0 && (
                       <ul className={styles.subpointsList}>
                         {step.subpoints.map((sp: any, i: number) => (
