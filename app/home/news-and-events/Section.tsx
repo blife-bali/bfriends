@@ -129,7 +129,6 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
         {/* <div className={styles.buttonContainer}>
           <Button
             color="var(--color-green-100)"
-            showIcon
             href="/community/event-workshop"
             onClick={() => trackEvent('cta_click', { label: 'more_events', location: 'home_news_events' })}
           >
@@ -137,7 +136,6 @@ export default function Section({ events = [], news = [] }: { events?: any[]; ne
           </Button>
           <Button
             color="var(--color-green-100)"
-            showIcon
             href="/community/journal"
             onClick={() => trackEvent('cta_click', { label: 'more_news', location: 'home_news_events' })}
           >

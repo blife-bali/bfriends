@@ -225,7 +225,6 @@ function SessionsSection({
               target="_blank"
               rel="noopener noreferrer"
               color="var(--color-blue-100)"
-              showIcon
             >
               Reserve your moments
             </Button>
@@ -337,7 +336,6 @@ function ProgramCta({ program }: { program: PublicProgram }) {
           target="_blank"
           rel="noopener noreferrer"
           color="var(--color-blue-100)"
-          showIcon
         >
           Book a session
         </Button>

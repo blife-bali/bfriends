@@ -66,7 +66,6 @@ export default function Card({ program, onClose, isMobile }: CardProps) {
             href={`/programs/${program.slug}`}
             className={styles.cardButton}
             color="var(--color-white-100)"
-            showIcon
             onClick={() => trackEvent('card_click', { card_type: 'program', slug: program.slug })}
           >
             {program.buttonLabel}

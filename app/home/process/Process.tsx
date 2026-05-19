@@ -26,7 +26,6 @@ export default function Process() {
               href="#contact"
               className={styles.bookNowButton}
               color="#134053"
-              showIcon
             >
               Your Journey
             </Button>

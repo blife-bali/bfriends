@@ -34,7 +34,6 @@ export default function EcosystemCard({ image, title, description, href }: Ecosy
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            showIcon
             className={styles.button}
             color="var(--color-blue-100)"
           >

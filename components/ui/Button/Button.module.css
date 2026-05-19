@@ -1,8 +1,7 @@
-/* Single style: link-like with optional arrow (same as navbar Book Now) */
+/* Link-like CTA with always-visible underline; hover slides line right then in from left */
 .button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   padding: 0 0 6px;
   border: none;
   background: none;
@@ -16,6 +15,7 @@
   transition: color 0.2s, opacity 0.2s;
   opacity: 0.9;
   position: relative;
+  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -34,26 +34,59 @@
   left: 0;
   bottom: 0;
   height: 1px;
-  width: 0;
-  background: currentColor;
-  transition: width 0.4s ease;
-}
-
-.button:hover:not(:disabled)::after {
   width: 100%;
+  background: currentColor;
+  transform: translate3d(0, 0, 0);
 }
 
-.button:hover:not(:disabled) .iconPart {
-  transform: translate(2px, -2px);
+.button:not(.buttonUnderlineOnHover):hover:not(:disabled)::after {
+  animation: button-underline-slide 0.5s ease-in-out;
+}
+
+/* Navbar-style: hidden at rest; one slide-in on hover, slide-out on leave */
+.buttonUnderlineOnHover::after {
+  transform: translate3d(-101%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonUnderlineOnHover:hover:not(:disabled)::after {
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes button-underline-slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  45% {
+    transform: translate3d(101%, 0, 0);
+  }
+
+  46% {
+    transform: translate3d(-101%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:not(.buttonUnderlineOnHover):hover:not(:disabled)::after {
+    animation: none;
+  }
+
+  .buttonUnderlineOnHover::after {
+    transition: none;
+  }
+
+  .buttonUnderlineOnHover:hover:not(:disabled)::after {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .textPart {
   white-space: nowrap;
-}
-
-.iconPart {
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
 }
 
 .fullWidth {

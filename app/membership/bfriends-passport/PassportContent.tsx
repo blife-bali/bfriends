@@ -83,7 +83,6 @@ export default function PassportContent({
           <Button
             href="/contact"
             color="var(--color-blue-100)"
-            showIcon
           >
             Apply for Passport
           </Button>

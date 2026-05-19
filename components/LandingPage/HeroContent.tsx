@@ -105,7 +105,6 @@ export default function HeroContent({ onButtonAnimationStart }: { onButtonAnimat
         }}
         className={styles.scrollButton}
         style={{ opacity: 0 }}
-        showIcon={false}
       >
         Discover More <ChevronDown className="w-5 h-5" />
       </Button>

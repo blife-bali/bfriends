@@ -65,7 +65,6 @@ export default function WhyBFriends({ cards = [] }: { cards?: any[] }) {
               href={BOOK_NOW_URL}
               target="_blank"
               rel="noopener noreferrer"
-              showIcon
               className={styles.button}
             >
               Reserve Your Moments

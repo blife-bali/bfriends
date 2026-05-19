@@ -49,7 +49,6 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
             className={styles.button}
             color="var(--color-white-100)"
             href="/about"
-            showIcon
           >
             Learn More
           </Button> */}
@@ -57,7 +56,6 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
             className={styles.button}
             color="var(--color-white-100)"
             href="https://wa.me/6281128742021"
-            showIcon
           >
             Reserve Your Moments
           </Button>

@@ -143,7 +143,6 @@ export default function SiteNewsletterCta() {
                     type="submit"
                     disabled={isSubmitting}
                     color="var(--color-white-100)"
-                    showIcon
                     style={{ opacity: isSubmitting ? 0.7 : 1 }}
                   >
                     {isSubmitting ? "Subscribing..." : "Subscribe"}

@@ -37,7 +37,6 @@ export default function Card({
         <Button
           href={`/programs/${slug}`}
           color="var(--color-blue-100)"
-          showIcon
           className={styles.button}
         >
           {buttonLabel}

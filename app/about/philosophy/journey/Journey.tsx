@@ -74,7 +74,6 @@ export default function Journey({
             href="/about/journey"
             className={styles.cta}
             color="var(--color-blue-100)"
-            showIcon
           >
             The BFriends Journey
           </Button>

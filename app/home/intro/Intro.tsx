@@ -125,7 +125,6 @@ export default function Intro({
                 href="/about"
                 className={styles.button}
                 color="var(--color-blue-100)"
-                showIcon
               >
                 About Us
               </Button>

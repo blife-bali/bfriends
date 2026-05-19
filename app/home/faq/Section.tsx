@@ -16,7 +16,6 @@ export default function Section() {
         <Button
           href="/faq"
           color="var(--color-blue-100)"
-          showIcon
           className={styles.faqButton}
         >
           FAQs

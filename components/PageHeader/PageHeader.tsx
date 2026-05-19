@@ -73,7 +73,6 @@ export default function PageHeader(props: PageHeaderProps) {
                 href={BOOK_NOW_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                showIcon
                 className={styles.programsBookButton}
                 color={useImage ? "var(--color-white-100)" : undefined}
               >

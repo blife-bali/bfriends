@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
-import { ArrowUpRight } from "lucide-react";
 import styles from "./Button.module.css";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,28 +9,26 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   rel?: string;
   /** Text/icon color (e.g. var(--color-blue-100)) */
   color?: string;
-  /** Show arrow icon after text. Default false */
-  showIcon?: boolean;
+  /** `always` = underline visible at rest; `hover` = underline animates in on hover only */
+  underline?: "always" | "hover";
   fullWidth?: boolean;
   children: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  ({ href, target, rel, color, showIcon = false, fullWidth, children, className, disabled, style, ...props }, ref) => {
+  ({ href, target, rel, color, underline = "always", fullWidth, children, className, disabled, style, ...props }, ref) => {
     const isLink = Boolean(href);
     const wrapperStyle = { ...style } as React.CSSProperties & Record<string, string>;
     if (color) wrapperStyle["--button-color"] = color;
 
-    const wrapperClasses = clsx(styles.button, fullWidth && styles.fullWidth, className);
-
-    const content = (
-      <>
-        <span className={styles.textPart}>{children}</span>
-        {showIcon && (
-          <ArrowUpRight size={14} className={styles.iconPart} aria-hidden />
-        )}
-      </>
+    const wrapperClasses = clsx(
+      styles.button,
+      underline === "hover" && styles.buttonUnderlineOnHover,
+      fullWidth && styles.fullWidth,
+      className
     );
+
+    const content = <span className={styles.textPart}>{children}</span>;
 
     if (isLink) {
       return (

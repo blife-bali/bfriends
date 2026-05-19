@@ -142,7 +142,6 @@ export default function SystemSection({ steps = [] }: { steps?: any[] }) {
               href="/about/journey"
               className={styles.conclusionButton}
               color="var(--color-blue-100)"
-              showIcon
               onClick={() => trackEvent('cta_click', { label: 'view_customer_journey', location: 'home_system' })}
             >
               View BFriends Journey

@@ -42,20 +42,8 @@
   height: 22px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .floater {
-    bottom: 8px;
-    right: 8px;
-    gap: 8px;
-  }
-
-  .button {
-    width: 44px;
-    height: 44px;
-  }
-
-  .button svg {
-    width: 20px;
-    height: 20px;
+    display: none;
   }
 }
