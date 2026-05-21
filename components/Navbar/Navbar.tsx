@@ -10,7 +10,7 @@ import { trackEvent } from "@/lib/gtag";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Navbar.module.css";
 
-export type ActiveMenuId = "about" | "programs" | "membership" | "community" | null;
+export type ActiveMenuId = "about" | "programs" | "treatments" | "membership" | "community" | null;
 
 const CURRENT_LANGUAGE = {
   name: "English",
@@ -31,6 +31,7 @@ function MenuGrid({
   pathname,
   activeMenu,
   isProgramPage,
+  isTreatmentPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -40,6 +41,7 @@ function MenuGrid({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
+  isTreatmentPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -67,7 +69,7 @@ function MenuGrid({
           >
             <button
               type="button"
-              className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
+              className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "treatments" && isTreatmentPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
               onClick={() => {
                 onNavClick(col.title);
                 onToggleMenu(col.id);
@@ -85,6 +87,7 @@ function MobileMenuList({
   pathname,
   activeMenu,
   isProgramPage,
+  isTreatmentPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -96,6 +99,7 @@ function MobileMenuList({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
+  isTreatmentPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -127,6 +131,7 @@ function MobileMenuList({
         const isSelected =
           (col.id === "about" && isAboutPage) ||
           (col.id === "programs" && isProgramPage) ||
+          (col.id === "treatments" && isTreatmentPage) ||
           (col.id === "membership" && isMembershipPage) ||
           (col.id === "community" && isCommunityPage);
 
@@ -264,6 +269,7 @@ export default function Navbar() {
   };
 
   const isProgramPage = pathname.startsWith("/programs/");
+  const isTreatmentPage = pathname.startsWith("/treatment/");
   const isAboutPage = pathname.startsWith("/about/");
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
@@ -293,7 +299,9 @@ export default function Navbar() {
           ? "dropdown_about"
           : menuId === "programs"
             ? "dropdown_programs"
-            : "dropdown_community",
+            : menuId === "treatments"
+              ? "dropdown_treatments"
+              : "dropdown_community",
     });
     closeMenu();
   };
@@ -301,7 +309,11 @@ export default function Navbar() {
   const dropdownItems =
     activeMenu === "programs"
       ? programItems
-      : [...(navColumns.find((c) => c.id === activeMenu)?.items || [])];
+      : [...(navColumns.find((c) => c.id === activeMenu)?.items ?? [])];
+
+  const isProgramsDropdown = activeMenu === "programs";
+  const isTreatmentsDropdown = activeMenu === "treatments";
+  const isDropdownWithImages = isProgramsDropdown || isTreatmentsDropdown;
 
   return (
     <>
@@ -418,6 +430,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
+                isTreatmentPage={isTreatmentPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}
@@ -431,24 +444,28 @@ export default function Navbar() {
             <div className={styles.dropdown}>
               <div
                 className={`${styles.dropdownMainContainer} ${
-                  activeMenu === "programs"
+                  isProgramsDropdown
                     ? styles.dropdownMainContainerPrograms
-                    : styles.dropdownMainContainerCompact
+                    : isTreatmentsDropdown
+                      ? styles.dropdownMainContainerTreatments
+                      : styles.dropdownMainContainerCompact
                 }`}
               >
                 {dropdownItems.map((item) => (
                   <div
                     key={item.href}
                     className={`${styles.linkContainer} ${
-                      activeMenu === "programs"
+                      isProgramsDropdown
                         ? styles.linkContainerPrograms
-                        : styles.linkContainerCompact
+                        : isTreatmentsDropdown
+                          ? styles.linkContainerTreatments
+                          : styles.linkContainerCompact
                     }`}
                   >
                     <Link
                       href={item.href}
                       className={`${styles.link} ${
-                        activeMenu === "programs" ? styles.linkPrograms : styles.linkCompact
+                        isDropdownWithImages ? styles.linkPrograms : styles.linkCompact
                       }`}
                       onClick={() => {
                         trackEvent("nav_click", {
@@ -458,12 +475,14 @@ export default function Navbar() {
                               ? "dropdown_about"
                               : activeMenu === "programs"
                                 ? "dropdown_programs"
-                                : "dropdown_community",
+                                : activeMenu === "treatments"
+                                  ? "dropdown_treatments"
+                                  : "dropdown_community",
                         });
                         closeMenu();
                       }}
                     >
-                      {activeMenu === "programs" && (
+                      {isDropdownWithImages && (
                         <span
                           className={`${styles.linkImage} ${!item.image ? styles.linkImagePlaceholder : ""}`}
                         >
@@ -497,6 +516,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
+                isTreatmentPage={isTreatmentPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}

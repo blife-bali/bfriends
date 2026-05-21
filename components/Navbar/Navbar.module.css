@@ -202,6 +202,12 @@
   justify-content: center;
 }
 
+.dropdownMainContainerTreatments {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .dropdownMainContainerCompact {
   width: fit-content;
   max-width: calc(100% - 128px);
@@ -236,6 +242,21 @@
   flex: 1 1 0;
   min-width: 0;
   width: 100%;
+}
+
+.dropdown .linkContainerTreatments {
+  flex: 0 0 auto;
+  width: min(280px, calc((100% - 24px) / 2));
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.dropdown .linkContainerTreatments .linkImage {
+  aspect-ratio: 16 / 10;
+}
+
+.dropdown .linkContainerTreatments .link {
+  margin: 16px 0;
 }
 
 .dropdown .linkContainerCompact {

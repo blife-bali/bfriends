@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Footer.module.css";
 import { FOOTER_SOCIAL_LINKS } from "@/lib/site-social";
 

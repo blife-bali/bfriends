@@ -77,8 +77,20 @@ function FooterSection({
                 >
                   Friends Journey
                 </Link>
-                <span className={styles.footerLinkPending}>Facilities</span>
-                <span className={styles.footerLinkPending}>Our Staff</span>
+                <Link
+                  href="/about/facilities"
+                  className={styles.footerLink}
+                  onClick={() => trackEvent("footer_click", { label: "facilities", category: "page" })}
+                >
+                  Facilities
+                </Link>
+                <Link
+                  href="/about/staff"
+                  className={styles.footerLink}
+                  onClick={() => trackEvent("footer_click", { label: "our_staff", category: "page" })}
+                >
+                  Our Staff
+                </Link>
               </nav>
             </div>
             <div className={styles.footerLinksGroup}>
