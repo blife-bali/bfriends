@@ -2,14 +2,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import { AboutServicesSection } from "@/components/AboutServicesSection";
-import TreatmentSessionsSection from "./TreatmentSessionsSection";
+import SpaSessionsSection from "./SpaSessionsSection";
 import { getPublicPrograms } from "@/lib/cms";
-import { getTreatmentPageData, getTreatmentSlugs } from "@/lib/treatments";
+import { getSpaPageData, getSpaSlugs } from "@/lib/spa";
 
 export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
-  return getTreatmentSlugs().map((slug) => ({ slug }));
+  return getSpaSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await getTreatmentPageData(slug);
+  const data = await getSpaPageData(slug);
   if (!data) return {};
 
   const { config } = data;
@@ -33,21 +33,21 @@ export async function generateMetadata({
   };
 }
 
-export default async function TreatmentPage({
+export default async function SpaPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [data, publicPrograms] = await Promise.all([
-    getTreatmentPageData(slug),
+  const [data, allPrograms] = await Promise.all([
+    getSpaPageData(slug),
     getPublicPrograms(),
   ]);
   if (!data) notFound();
 
   const { config, sessions_group } = data;
   const sessionCount = sessions_group.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
-  const allPrograms = publicPrograms.map((program) => ({
+  const carouselPrograms = allPrograms.map((program) => ({
     name: program.general.name,
     title: program.general.title || program.general.name,
     subheading: program.general.subheading,
@@ -66,12 +66,14 @@ export default async function TreatmentPage({
       />
       <main>
         {sessionCount > 0 && (
-          <TreatmentSessionsSection
+          <SpaSessionsSection
             sessionGroups={sessions_group}
             ariaLabel={config.sessions_title}
           />
         )}
-        {allPrograms.length > 0 && <AboutServicesSection programs={allPrograms} />}
+        {carouselPrograms.length > 0 && (
+          <AboutServicesSection programs={carouselPrograms} />
+        )}
       </main>
     </>
   );

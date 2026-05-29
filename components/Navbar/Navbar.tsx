@@ -10,7 +10,7 @@ import { trackEvent } from "@/lib/gtag";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Navbar.module.css";
 
-export type ActiveMenuId = "about" | "programs" | "treatments" | "membership" | "community" | null;
+export type ActiveMenuId = "about" | "programs" | "spa" | "membership" | "community" | null;
 
 const CURRENT_LANGUAGE = {
   name: "English",
@@ -31,7 +31,7 @@ function MenuGrid({
   pathname,
   activeMenu,
   isProgramPage,
-  isTreatmentPage,
+  isSpaPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -41,7 +41,7 @@ function MenuGrid({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
-  isTreatmentPage: boolean;
+  isSpaPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -69,7 +69,7 @@ function MenuGrid({
           >
             <button
               type="button"
-              className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "treatments" && isTreatmentPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
+              className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "spa" && isSpaPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
               onClick={() => {
                 onNavClick(col.title);
                 onToggleMenu(col.id);
@@ -87,7 +87,7 @@ function MobileMenuList({
   pathname,
   activeMenu,
   isProgramPage,
-  isTreatmentPage,
+  isSpaPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -99,7 +99,7 @@ function MobileMenuList({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
-  isTreatmentPage: boolean;
+  isSpaPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -131,7 +131,7 @@ function MobileMenuList({
         const isSelected =
           (col.id === "about" && isAboutPage) ||
           (col.id === "programs" && isProgramPage) ||
-          (col.id === "treatments" && isTreatmentPage) ||
+          (col.id === "spa" && isSpaPage) ||
           (col.id === "membership" && isMembershipPage) ||
           (col.id === "community" && isCommunityPage);
 
@@ -269,7 +269,7 @@ export default function Navbar() {
   };
 
   const isProgramPage = pathname.startsWith("/programs/");
-  const isTreatmentPage = pathname.startsWith("/treatment/");
+  const isSpaPage = pathname.startsWith("/spa/");
   const isAboutPage = pathname.startsWith("/about/");
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
@@ -299,8 +299,8 @@ export default function Navbar() {
           ? "dropdown_about"
           : menuId === "programs"
             ? "dropdown_programs"
-            : menuId === "treatments"
-              ? "dropdown_treatments"
+            : menuId === "spa"
+              ? "dropdown_spa"
               : "dropdown_community",
     });
     closeMenu();
@@ -312,8 +312,8 @@ export default function Navbar() {
       : [...(navColumns.find((c) => c.id === activeMenu)?.items ?? [])];
 
   const isProgramsDropdown = activeMenu === "programs";
-  const isTreatmentsDropdown = activeMenu === "treatments";
-  const isDropdownWithImages = isProgramsDropdown || isTreatmentsDropdown;
+  const isSpaDropdown = activeMenu === "spa";
+  const isDropdownWithImages = isProgramsDropdown || isSpaDropdown;
 
   return (
     <>
@@ -430,7 +430,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
-                isTreatmentPage={isTreatmentPage}
+                isSpaPage={isSpaPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}
@@ -444,22 +444,18 @@ export default function Navbar() {
             <div className={styles.dropdown}>
               <div
                 className={`${styles.dropdownMainContainer} ${
-                  isProgramsDropdown
+                  isDropdownWithImages
                     ? styles.dropdownMainContainerPrograms
-                    : isTreatmentsDropdown
-                      ? styles.dropdownMainContainerTreatments
-                      : styles.dropdownMainContainerCompact
+                    : styles.dropdownMainContainerCompact
                 }`}
               >
                 {dropdownItems.map((item) => (
                   <div
                     key={item.href}
                     className={`${styles.linkContainer} ${
-                      isProgramsDropdown
+                      isDropdownWithImages
                         ? styles.linkContainerPrograms
-                        : isTreatmentsDropdown
-                          ? styles.linkContainerTreatments
-                          : styles.linkContainerCompact
+                        : styles.linkContainerCompact
                     }`}
                   >
                     <Link
@@ -475,8 +471,8 @@ export default function Navbar() {
                               ? "dropdown_about"
                               : activeMenu === "programs"
                                 ? "dropdown_programs"
-                                : activeMenu === "treatments"
-                                  ? "dropdown_treatments"
+                                : activeMenu === "spa"
+                                  ? "dropdown_spa"
                                   : "dropdown_community",
                         });
                         closeMenu();
@@ -516,7 +512,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
-                isTreatmentPage={isTreatmentPage}
+                isSpaPage={isSpaPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}

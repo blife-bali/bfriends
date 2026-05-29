@@ -33,6 +33,21 @@ const nextConfig: NextConfig = {
         destination: "/community/journal",
         permanent: true,
       },
+      {
+        source: "/treatment/beauty-treatments",
+        destination: "/spa/facials",
+        permanent: true,
+      },
+      {
+        source: "/treatment/spa-treatment",
+        destination: "/spa/spa",
+        permanent: true,
+      },
+      {
+        source: "/treatment/:slug",
+        destination: "/spa/:slug",
+        permanent: true,
+      },
     ];
   },
   images: {

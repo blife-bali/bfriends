@@ -1,4 +1,4 @@
-import { mockTreatmentPages, treatmentSlugs } from "@/mock/treatments";
+import { mockSpaPages, spaSlugs } from "@/mock/spa";
 
 /** About BFriends links. */
 export const aboutNavItems = [
@@ -10,11 +10,11 @@ export const aboutNavItems = [
 /** Programs: filled at runtime from /api/programs. */
 export const programsNavItems: { label: string; href: string; image?: string }[] = [];
 
-/** Treatment pages (Look Better / Feel Better). */
-export const treatmentsNavItems = treatmentSlugs.map((slug) => ({
-  label: mockTreatmentPages[slug].title,
-  href: `/treatment/${slug}`,
-  image: mockTreatmentPages[slug].header_image,
+/** Spa section pages. */
+export const spaNavItems = spaSlugs.map((slug) => ({
+  label: mockSpaPages[slug].title,
+  href: `/spa/${slug}`,
+  image: mockSpaPages[slug].header_image,
 }));
 
 /** Membership links. */
@@ -29,12 +29,12 @@ export const communityNavItems = [
   { label: "BFriends Journal", href: "/community/journal" },
 ] as const;
 
-export type NavColumnId = "about" | "programs" | "treatments" | "membership" | "community";
+export type NavColumnId = "about" | "programs" | "spa" | "membership" | "community";
 
 export const navColumns: { id: NavColumnId; title: string; items: readonly { label: string; href: string; image?: string }[] }[] = [
   { id: "about", title: "About BFriends", items: aboutNavItems },
   { id: "programs", title: "Programs", items: programsNavItems },
-  { id: "treatments", title: "Treatments", items: treatmentsNavItems },
+  { id: "spa", title: "Spa", items: spaNavItems },
   { id: "membership", title: "Membership", items: membershipNavItems },
   { id: "community", title: "Journal", items: communityNavItems },
 ];

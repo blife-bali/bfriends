@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import type { PublicProgram } from "@/lib/cms";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
@@ -14,14 +13,12 @@ export type SessionGroups = PublicProgram["sessions_group"];
 
 interface SessionsSectionProps {
   sessionGroups: SessionGroups;
-  isCafeProgram?: boolean;
   title?: string;
   ariaLabel?: string;
 }
 
 export default function SessionsSection({
   sessionGroups,
-  isCafeProgram = false,
   title = "Signature Sessions",
   ariaLabel = "Signature Sessions",
 }: SessionsSectionProps) {
@@ -35,9 +32,7 @@ export default function SessionsSection({
 
   return (
     <section ref={ref} className={styles.sessions} aria-label={ariaLabel}>
-      <div
-        className={`${styles.container} ${styles.sessionsLayout} ${isCafeProgram ? styles.sessionsLayoutCafe : ""}`}
-      >
+      <div className={`${styles.container} ${styles.sessionsLayout}`}>
         <motion.aside
           className={styles.sessionsIntro}
           initial={{ opacity: 0, y: 24 }}
@@ -57,26 +52,22 @@ export default function SessionsSection({
           </div>
         </motion.aside>
 
-        <div className={`${styles.sessionsGroups} ${isCafeProgram ? styles.sessionsGroupsCafe : ""}`}>
+        <div className={styles.sessionsGroups}>
           {sessionGroups.map((group, gi) => {
             const sessions = group.sessions || [];
             const showGroupHeading = Boolean(group.name?.trim());
             return (
-              <div
-                key={`${group.name}-${gi}`}
-                className={`${styles.sessionGroup} ${isCafeProgram ? styles.sessionGroupCafe : ""}`}
-              >
+              <div key={`${group.name}-${gi}`} className={styles.sessionGroup}>
                 {showGroupHeading && <h3 className={styles.sessionGroupTitle}>{group.name}</h3>}
-                <ul className={`${styles.sessionItems} ${isCafeProgram ? styles.sessionItemsCafe : ""}`}>
+                <ul className={styles.sessionItems}>
                   {sessions.map((session, si) => {
                     const sessionId = `${gi}-${si}-${session.name}`;
                     const detailsId = `session-details-${gi}-${si}`;
                     const isOpen = openSessionId === sessionId;
-                    const hasImage = Boolean(session.image?.trim());
                     return (
                       <motion.li
                         key={sessionId}
-                        className={`${styles.sessionItem} ${isCafeProgram ? styles.sessionItemCafe : ""}`}
+                        className={styles.sessionItem}
                         initial={{ opacity: 0, y: 24 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{
@@ -92,38 +83,13 @@ export default function SessionsSection({
                           aria-expanded={isOpen}
                           aria-controls={detailsId}
                         >
-                          {isCafeProgram && hasImage && (
-                            <div className={styles.sessionItemImageWrap}>
-                              <Image
-                                src={session.image as string}
-                                alt={session.name}
-                                fill
-                                className={styles.sessionItemImage}
-                                sizes="(max-width: 768px) 100vw, 30vw"
-                              />
-                            </div>
-                          )}
-                          {isCafeProgram ? (
-                            <div className={styles.sessionItemHeader}>
-                              <h4 className={styles.sessionItemTitle}>{session.name}</h4>
-                              <span
-                                className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
-                                aria-hidden
-                              >
-                                +
-                              </span>
-                            </div>
-                          ) : (
-                            <>
-                              <h4 className={styles.sessionItemTitle}>{session.name}</h4>
-                              <span
-                                className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
-                                aria-hidden
-                              >
-                                +
-                              </span>
-                            </>
-                          )}
+                          <h4 className={styles.sessionItemTitle}>{session.name}</h4>
+                          <span
+                            className={`${styles.sessionItemIcon} ${isOpen ? styles.sessionItemIconOpen : ""}`}
+                            aria-hidden
+                          >
+                            +
+                          </span>
                         </button>
                         <div
                           id={detailsId}

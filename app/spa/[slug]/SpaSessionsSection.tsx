@@ -3,21 +3,21 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import type { PublicProgram } from "@/lib/cms";
-import styles from "./TreatmentSessionsSection.module.css";
+import styles from "./SpaSessionsSection.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
-export type TreatmentSessionGroups = PublicProgram["sessions_group"];
+export type SpaSessionGroups = PublicProgram["sessions_group"];
 
-interface TreatmentSessionsSectionProps {
-  sessionGroups: TreatmentSessionGroups;
+interface SpaSessionsSectionProps {
+  sessionGroups: SpaSessionGroups;
   ariaLabel?: string;
 }
 
-export default function TreatmentSessionsSection({
+export default function SpaSessionsSection({
   sessionGroups,
-  ariaLabel = "Treatments",
-}: TreatmentSessionsSectionProps) {
+  ariaLabel = "Spa",
+}: SpaSessionsSectionProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
   const [openSessionId, setOpenSessionId] = useState<string | null>(null);
@@ -39,7 +39,7 @@ export default function TreatmentSessionsSection({
                 <ul className={styles.items}>
                   {sessions.map((session, si) => {
                     const sessionId = `${gi}-${si}-${session.name}`;
-                    const detailsId = `treatment-session-${gi}-${si}`;
+                    const detailsId = `spa-session-${gi}-${si}`;
                     const isOpen = openSessionId === sessionId;
                     return (
                       <motion.li

@@ -14,7 +14,7 @@ export type GAEventParams = {
       | 'mobile_sidebar'
       | 'dropdown_about'
       | 'dropdown_programs'
-      | 'dropdown_treatments'
+      | 'dropdown_spa'
       | 'dropdown_community';
   };
   cta_click: { label: string; location: string };

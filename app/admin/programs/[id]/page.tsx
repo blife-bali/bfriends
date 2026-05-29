@@ -6,10 +6,12 @@ import AdminLayout from '@/components/admin/AdminLayout';
 import FormField from '@/components/admin/FormField';
 import ImageUploader from '@/components/admin/ImageUploader';
 import Toast from '@/components/admin/Toast';
+import ProgramSessionsEditor, {
+  type ProgramSession,
+  type ProgramSessionType,
+} from '@/components/admin/ProgramSessionsEditor';
 
 interface ProgramStep { id?: number; step_id: string; title: string; description: string; sort_order: number; }
-interface ProgramSession { id?: number; title: string; extra: string; description: string; image: string; icon: string; sort_order: number; }
-interface ProgramSessionType { id?: number | null; title: string; sort_order: number; sessions: ProgramSession[]; }
 
 interface Program {
   id?: number;
@@ -26,8 +28,6 @@ interface Program {
   session_types: ProgramSessionType[];
   sessions?: ProgramSession[];
 }
-
-const emptySession: ProgramSession = { title: '', extra: '', description: '', image: '', icon: '', sort_order: 0 };
 
 function mapLoadedSession(s: Record<string, unknown>): ProgramSession {
   return {
@@ -126,46 +126,6 @@ export default function ProgramDetailPage() {
 
   const update = (field: string, value: any) => setProgram({ ...program, [field]: value });
 
-  // Session types + nested sessions (PUT `session_types`)
-  const addSessionType = () =>
-    setProgram({
-      ...program,
-      session_types: [
-        ...program.session_types,
-        { title: 'New category', sort_order: program.session_types.length, sessions: [] },
-      ],
-    });
-  const removeSessionType = (ti: number) => {
-    const st = [...program.session_types];
-    st.splice(ti, 1);
-    setProgram({ ...program, session_types: st.length ? st : [{ title: 'Signature Sessions', sort_order: 0, sessions: [] }] });
-  };
-  const updateSessionType = (ti: number, field: keyof ProgramSessionType, value: unknown) => {
-    const st = [...program.session_types];
-    st[ti] = { ...st[ti], [field]: value } as ProgramSessionType;
-    setProgram({ ...program, session_types: st });
-  };
-  const addSession = (ti: number) => {
-    const st = [...program.session_types];
-    const sessions = [...(st[ti].sessions || []), { ...emptySession, sort_order: st[ti].sessions.length }];
-    st[ti] = { ...st[ti], sessions };
-    setProgram({ ...program, session_types: st });
-  };
-  const removeSession = (ti: number, si: number) => {
-    const st = [...program.session_types];
-    const sessions = [...st[ti].sessions];
-    sessions.splice(si, 1);
-    st[ti] = { ...st[ti], sessions };
-    setProgram({ ...program, session_types: st });
-  };
-  const updateSession = (ti: number, si: number, field: string, value: unknown) => {
-    const st = [...program.session_types];
-    const sessions = [...st[ti].sessions];
-    sessions[si] = { ...sessions[si], [field]: value } as ProgramSession;
-    st[ti] = { ...st[ti], sessions };
-    setProgram({ ...program, session_types: st });
-  };
-
   const tabs = [
     { key: 'general', label: 'General' },
     { key: 'seo', label: 'SEO' },
@@ -253,47 +213,13 @@ export default function ProgramDetailPage() {
 
         {tab === 'sessions' && (
           <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8 }}>
-              <strong style={{ color: 'var(--admin-dark-blue)' }}>Program sessions</strong>
-              <div style={{ display: 'flex', gap: 8 }}>
-                <button type="button" onClick={addSessionType} className="admin-btn admin-btn-secondary admin-btn-sm">+ Session type</button>
-              </div>
-            </div>
-            <p style={{ color: 'var(--admin-muted)', marginBottom: 16, fontSize: 14 }}>
-              Each type becomes a heading on the public program page. Sessions are listed in a grid under that heading.
-            </p>
-            {program.session_types.map((stype, ti) => (
-              <div key={ti} style={{ background: 'var(--admin-cream-2)', padding: 16, borderRadius: 8, marginBottom: 16 }}>
-                <div style={{ display: 'flex', gap: 8, marginBottom: 12, alignItems: 'center' }}>
-                  <input
-                    style={{ flex: 1, padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4 }}
-                    placeholder="Type title (e.g. Facial treatments)"
-                    value={stype.title}
-                    onChange={(e) => updateSessionType(ti, 'title', e.target.value)}
-                  />
-                  <button type="button" onClick={() => addSession(ti)} className="admin-btn admin-btn-secondary admin-btn-sm">+ Session</button>
-                  <button type="button" onClick={() => removeSessionType(ti)} className="admin-btn admin-btn-danger admin-btn-sm">Remove type</button>
-                </div>
-                {(stype.sessions || []).map((session, si) => (
-                  <div key={si} style={{ background: 'var(--color-white-100)', padding: 12, borderRadius: 6, marginBottom: 10, border: '1px solid var(--admin-border)' }}>
-                    <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
-                      <input style={{ flex: 2, padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4 }}
-                        placeholder="Title" value={session.title} onChange={(e) => updateSession(ti, si, 'title', e.target.value)} />
-                      <input style={{ flex: 1, padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4 }}
-                        placeholder="Icon name" value={session.icon || ''} onChange={(e) => updateSession(ti, si, 'icon', e.target.value)} />
-                      <button type="button" onClick={() => removeSession(ti, si)} className="admin-btn admin-btn-danger admin-btn-sm">X</button>
-                    </div>
-                    <input style={{ width: '100%', padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4, marginBottom: 8 }}
-                      placeholder="Extra (e.g. IDR 770K | 60 Minutes)" value={session.extra || ''} onChange={(e) => updateSession(ti, si, 'extra', e.target.value)} />
-                    <textarea style={{ width: '100%', padding: '8px 12px', border: '1px solid var(--admin-border)', borderRadius: 4, minHeight: 60, fontFamily: 'var(--font-sans)', fontSize: 14 }}
-                      placeholder="Description" value={session.description} onChange={(e) => updateSession(ti, si, 'description', e.target.value)} />
-                    <div className="admin-form-group" style={{ marginTop: 8 }}>
-                      <ImageUploader value={session.image || ''} onChange={(url: string) => updateSession(ti, si, 'image', url)} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <strong style={{ color: 'var(--admin-dark-blue)', display: 'block', marginBottom: 12 }}>
+              Program sessions
+            </strong>
+            <ProgramSessionsEditor
+              sessionTypes={program.session_types}
+              onChange={(session_types) => setProgram({ ...program, session_types })}
+            />
           </div>
         )}
 
