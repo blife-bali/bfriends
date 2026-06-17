@@ -3,92 +3,185 @@
 .section {
   width: 100%;
   background-color: var(--color-white-100);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  padding: var(--section-padding-y) var(--section-padding-x);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 8%, transparent);
-}
-
-.gridOverlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.26;
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--color-blue-100) 22%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--color-blue-100) 22%, transparent) 1px, transparent 1px);
-  background-size: 72px 72px;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
 }
 
 .container {
   width: 100%;
   max-width: var(--section-max-width);
-  position: relative;
-  z-index: 1;
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ── Left column ── */
+.header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  text-align: center;
+  align-items: flex-start;
+  gap: 16px;
+  position: sticky;
+  top: 120px;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  margin: 0;
 }
 
 .heading {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(28px, 2.5vw, 36px);
-  font-weight: 500;
+  font-size: clamp(30px, 2.8vw, 40px);
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: var(--color-blue-100);
+  max-width: 14ch;
 }
 
-.heading em {
-  font-style: normal;
+.sub {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
+  max-width: 36ch;
 }
 
 .faqButton {
-  color: var(--color-blue-100);
-  background: var(--color-white-100);
-  border: 1px solid color-mix(in srgb, var(--color-blue-100) 20%, transparent);
-  border-radius: var(--radius-md);
-  padding: 12px 22px;
-  min-height: 44px;
+  margin-top: 8px;
 }
 
-.faqButton::after {
-  display: none;
+/* ── Right column: accordion ── */
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+}
+
+.item:first-child {
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.questionText {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--color-blue-100);
+}
+
+.chevron {
+  color: var(--color-blue-100);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Smooth height animation via grid trick */
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+
+.answerOpen {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  overflow: hidden;
+}
+
+.answerText {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  color: var(--color-cream-140);
+  margin: 0;
+  padding-bottom: 24px;
+}
+
+.empty {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--color-cream-140);
+  margin: 0;
+  padding: 24px 0;
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .heading {
-    font-size: clamp(24px, 3vw, 32px);
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    padding: 72px 48px;
+  }
+
+  .header {
+    position: static;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .gridOverlay {
-    background-size: 56px 56px;
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 56px 24px;
+  }
+
+  .header {
+    position: static;
   }
 
   .heading {
-    font-size: clamp(22px, 6vw, 28px);
-    padding: 0 8px;
-  }
-
-  .faqButton {
-    min-height: 48px;
-    padding: 14px 24px;
+    max-width: 100%;
   }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .heading {
-    font-size: clamp(20px, 6vw, 26px);
+  .container {
+    padding: 48px 16px;
+  }
+
+  .question {
+    padding: 20px 0;
   }
 }

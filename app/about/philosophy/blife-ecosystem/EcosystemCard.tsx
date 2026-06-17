@@ -9,9 +9,11 @@ interface EcosystemCardProps {
   title: string;
   description: string;
   href?: string;
+  pillar?: string;
+  buttonLabel?: string;
 }
 
-export default function EcosystemCard({ image, title, description, href }: EcosystemCardProps) {
+export default function EcosystemCard({ image, title, description, href, pillar, buttonLabel = "Visit" }: EcosystemCardProps) {
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
@@ -27,6 +29,7 @@ export default function EcosystemCard({ image, title, description, href }: Ecosy
         />
       </div>
       <div className={styles.content}>
+        {pillar && <p className={styles.pillar}>{pillar}</p>}
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
         {href && (
@@ -37,7 +40,7 @@ export default function EcosystemCard({ image, title, description, href }: Ecosy
             className={styles.button}
             color="var(--color-blue-100)"
           >
-            Visit
+            {buttonLabel}
           </Button>
         )}
       </div>

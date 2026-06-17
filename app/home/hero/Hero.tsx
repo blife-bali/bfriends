@@ -5,9 +5,19 @@ import Button from "@/components/ui/Button/Button";
 import styles from "./Hero.module.css";
 
 const DEFAULT_TITLE = "Find What Your Body Needs Today";
+const DEFAULT_SUBTITLE =
+  "A personalized wellness journey powered by advanced body assessment technology and expert guidance, designed to evolve with your body's changing needs.";
 const DEFAULT_VIDEO = "/videos/BFriends2.mp4";
 
-export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }: { title?: string; videoUrl?: string }) {
+export default function Hero({
+  title = DEFAULT_TITLE,
+  subtitle = DEFAULT_SUBTITLE,
+  videoUrl = DEFAULT_VIDEO,
+}: {
+  title?: string;
+  subtitle?: string;
+  videoUrl?: string;
+}) {
   const [blurAmount, setBlurAmount] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -44,20 +54,22 @@ export default function Hero({ title = DEFAULT_TITLE, videoUrl = DEFAULT_VIDEO }
       <div className={styles.overlay} aria-hidden />
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>
+        {subtitle ? <p className={styles.subtitle}>{subtitle}</p> : null}
         <div className={styles.buttonGroup}>
-          {/* <Button
-            className={styles.button}
+          <Button
+            variant="border"
+            className={styles.buttonPrimary}
             color="var(--color-white-100)"
             href="/about"
           >
-            Learn More
-          </Button> */}
+            Discover The BFriends Method
+          </Button>
           <Button
-            className={styles.button}
+            className={styles.buttonSecondary}
             color="var(--color-white-100)"
-            href="https://wa.me/6281128742021"
+            href="/programs"
           >
-            Reserve Your Moments
+            Explore Programmes
           </Button>
         </div>
       </div>

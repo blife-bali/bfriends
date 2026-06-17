@@ -16,7 +16,22 @@
       "Bash(npx tsx *)",
       "Bash(mkdir -p \"c:/project/bfriends/app/api/admin/journey-section\" && mkdir -p \"c:/project/bfriends/app/api/admin/journey-section/[id]\" && mkdir -p \"c:/project/bfriends/app/admin/journey-section\")",
       "PowerShell(node \"scripts\\\\migrate-and-import-programs.mjs\")",
-      "PowerShell(npm.cmd run build)"
+      "PowerShell(npm.cmd run build)",
+      "Bash(pandoc \"C:\\\\Users\\\\Indra\\\\Downloads\\\\BFriends Website \\(1\\).docx\" -o - --to markdown)",
+      "Bash(python -c ' *)",
+      "Bash(where pandoc *)",
+      "Bash(pandoc \"C:\\\\Users\\\\Indra\\\\Downloads\\\\BFriends Website \\(1\\).docx\" -t plain)",
+      "Bash(dir /B /S \"C:\\\\Users\\\\Indra\\\\Documents\\\\Codes\\\\BLife\\\\BFriends\\\\bfriends\\\\src\")",
+      "Bash(findstr /V \"node_modules\")",
+      "mcp__visualize__show_widget",
+      "Bash(git checkout *)",
+      "Bash(npx tsc *)",
+      "Bash(ls \"C:\\\\Users\\\\Indra\\\\Documents\\\\Codes\\\\BLife\\\\BFriends\" 2>&1)",
+      "Bash(dir \"C:\\\\Users\\\\Indra\\\\Downloads\" /b)",
+      "Bash(PowerShell -Command \"Get-ChildItem 'C:\\\\Users\\\\Indra\\\\Documents\\\\Codes\\\\BLife\\\\BFriends\\\\bfriends' -Filter '*.docx' -Recurse -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Read(//c/Users/Indra/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/f2ef60ba-223e-4b64-bce4-0a105eea497f/812c9aef-2cc9-431b-b7bc-01201ee1ce4e/skills/docx/**)",
+      "Bash(pandoc --strip-comments -t markdown \"C:\\\\Users\\\\Indra\\\\Downloads\\\\BFriends Website \\(1\\).docx\")",
+      "PowerShell(python --version)"
     ],
     "additionalDirectories": [
       "c:\\project\\bfriends\\app\\api\\admin\\journey-section"

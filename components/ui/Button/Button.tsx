@@ -11,19 +11,22 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
   /** `always` = underline visible at rest; `hover` = underline animates in on hover only */
   underline?: "always" | "hover";
+  /** `link` = text CTA with underline; `border` = pill outline button */
+  variant?: "link" | "border";
   fullWidth?: boolean;
   children: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  ({ href, target, rel, color, underline = "always", fullWidth, children, className, disabled, style, ...props }, ref) => {
+  ({ href, target, rel, color, underline = "always", variant = "link", fullWidth, children, className, disabled, style, ...props }, ref) => {
     const isLink = Boolean(href);
     const wrapperStyle = { ...style } as React.CSSProperties & Record<string, string>;
     if (color) wrapperStyle["--button-color"] = color;
 
     const wrapperClasses = clsx(
       styles.button,
-      underline === "hover" && styles.buttonUnderlineOnHover,
+      variant === "border" && styles.buttonBorder,
+      variant === "link" && underline === "hover" && styles.buttonUnderlineOnHover,
       fullWidth && styles.fullWidth,
       className
     );

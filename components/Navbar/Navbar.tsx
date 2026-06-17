@@ -10,7 +10,7 @@ import { trackEvent } from "@/lib/gtag";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Navbar.module.css";
 
-export type ActiveMenuId = "about" | "programs" | "spa" | "membership" | "community" | null;
+export type ActiveMenuId = "about" | "programs" | "facilities" | "membership" | "community" | null;
 
 const CURRENT_LANGUAGE = {
   name: "English",
@@ -27,11 +27,17 @@ interface ProgramApiItem {
 
 type NavItem = { label: string; href: string; image?: string };
 
+/** Columns that navigate directly instead of opening a dropdown. */
+const DIRECT_LINK_HREFS: Partial<Record<NavColumnId, string>> = {
+  about: "/about",
+  facilities: "/about/facilities",
+};
+
 function MenuGrid({
   pathname,
   activeMenu,
   isProgramPage,
-  isSpaPage,
+  isFacilitiesPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -41,7 +47,7 @@ function MenuGrid({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
-  isSpaPage: boolean;
+  isFacilitiesPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -62,23 +68,43 @@ function MenuGrid({
 
       {navColumns
         .filter((col) => col.id !== "membership")
-        .map((col) => (
-          <div
-            key={col.id}
-            className={`${styles.navItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
-          >
-            <button
-              type="button"
-              className={`${styles.menuTop} ${col.id === "about" && isAboutPage ? styles.menuTopSelected : ""} ${col.id === "programs" && isProgramPage ? styles.menuTopSelected : ""} ${col.id === "spa" && isSpaPage ? styles.menuTopSelected : ""} ${col.id === "membership" && isMembershipPage ? styles.menuTopSelected : ""} ${col.id === "community" && isCommunityPage ? styles.menuTopSelected : ""}`}
-              onClick={() => {
-                onNavClick(col.title);
-                onToggleMenu(col.id);
-              }}
+        .map((col) => {
+          const directHref = DIRECT_LINK_HREFS[col.id];
+          const isSelected =
+            (col.id === "about" && isAboutPage) ||
+            (col.id === "facilities" && isFacilitiesPage) ||
+            (col.id === "programs" && isProgramPage) ||
+            (col.id === "membership" && isMembershipPage) ||
+            (col.id === "community" && isCommunityPage);
+
+          return (
+            <div
+              key={col.id}
+              className={`${styles.navItemWrapper} ${activeMenu === col.id ? styles.active : ""}`}
             >
-              {col.title}
-            </button>
-          </div>
-        ))}
+              {directHref ? (
+                <Link
+                  href={directHref}
+                  className={`${styles.menuTop} ${isSelected ? styles.menuTopSelected : ""}`}
+                  onClick={() => onNavClick(col.title)}
+                >
+                  {col.title}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  className={`${styles.menuTop} ${isSelected ? styles.menuTopSelected : ""}`}
+                  onClick={() => {
+                    onNavClick(col.title);
+                    onToggleMenu(col.id);
+                  }}
+                >
+                  {col.title}
+                </button>
+              )}
+            </div>
+          );
+        })}
     </nav>
   );
 }
@@ -87,7 +113,7 @@ function MobileMenuList({
   pathname,
   activeMenu,
   isProgramPage,
-  isSpaPage,
+  isFacilitiesPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -99,7 +125,7 @@ function MobileMenuList({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
-  isSpaPage: boolean;
+  isFacilitiesPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -131,9 +157,24 @@ function MobileMenuList({
         const isSelected =
           (col.id === "about" && isAboutPage) ||
           (col.id === "programs" && isProgramPage) ||
-          (col.id === "spa" && isSpaPage) ||
+          (col.id === "facilities" && isFacilitiesPage) ||
           (col.id === "membership" && isMembershipPage) ||
           (col.id === "community" && isCommunityPage);
+
+        const directHref = DIRECT_LINK_HREFS[col.id];
+        if (directHref) {
+          return (
+            <div key={col.id} className={styles.mobileNavItem}>
+              <Link
+                href={directHref}
+                className={`${styles.menuTop} ${isSelected ? styles.menuTopSelected : ""}`}
+                onClick={() => onNavClick(col.title)}
+              >
+                {col.title}
+              </Link>
+            </div>
+          );
+        }
 
         return (
           <div key={col.id} className={styles.mobileNavItem}>
@@ -269,8 +310,8 @@ export default function Navbar() {
   };
 
   const isProgramPage = pathname.startsWith("/programs/");
-  const isSpaPage = pathname.startsWith("/spa/");
-  const isAboutPage = pathname.startsWith("/about/");
+  const isFacilitiesPage = pathname.startsWith("/about/facilities");
+  const isAboutPage = pathname === "/about" || pathname.startsWith("/about/");
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
 
@@ -288,7 +329,7 @@ export default function Navbar() {
 
   const handleNavClick = (label: string) => {
     trackEvent("nav_click", { label, location: "navbar" });
-    if (label === "Home") closeMenu();
+    if (label === "Home" || label === "About BFriends") closeMenu();
   };
 
   const handleMobileSubmenuClick = (label: string, menuId: NavColumnId) => {
@@ -299,8 +340,8 @@ export default function Navbar() {
           ? "dropdown_about"
           : menuId === "programs"
             ? "dropdown_programs"
-            : menuId === "spa"
-              ? "dropdown_spa"
+            : menuId === "facilities"
+              ? "dropdown_facilities"
               : "dropdown_community",
     });
     closeMenu();
@@ -312,8 +353,8 @@ export default function Navbar() {
       : [...(navColumns.find((c) => c.id === activeMenu)?.items ?? [])];
 
   const isProgramsDropdown = activeMenu === "programs";
-  const isSpaDropdown = activeMenu === "spa";
-  const isDropdownWithImages = isProgramsDropdown || isSpaDropdown;
+  const isFacilitiesDropdown = activeMenu === "facilities";
+  const isDropdownWithImages = isProgramsDropdown || isFacilitiesDropdown;
 
   return (
     <>
@@ -430,7 +471,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
-                isSpaPage={isSpaPage}
+                isFacilitiesPage={isFacilitiesPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}
@@ -471,8 +512,8 @@ export default function Navbar() {
                               ? "dropdown_about"
                               : activeMenu === "programs"
                                 ? "dropdown_programs"
-                                : activeMenu === "spa"
-                                  ? "dropdown_spa"
+                                : activeMenu === "facilities"
+                                  ? "dropdown_facilities"
                                   : "dropdown_community",
                         });
                         closeMenu();
@@ -512,7 +553,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
-                isSpaPage={isSpaPage}
+                isFacilitiesPage={isFacilitiesPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}

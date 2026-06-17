@@ -1,3 +1,20 @@
+import type { FacilityId } from "@/mock/facilities";
+
+/** Program slugs used to associate staff with programme pages. */
+export const STAFF_PROGRAM_SLUGS = [
+  "feel-better",
+  "move-better",
+  "live-better",
+  "look-better",
+  "fitness",
+  "spa",
+  "beauty",
+  "climbing",
+  "cafe",
+] as const;
+
+export type StaffProgramSlug = (typeof STAFF_PROGRAM_SLUGS)[number];
+
 export type MockStaffMember = {
   id: string;
   name: string;
@@ -5,6 +22,8 @@ export type MockStaffMember = {
   sub: string;
   image: string | null;
   sort_order: number;
+  facilities: FacilityId[];
+  programs: StaffProgramSlug[];
 };
 
 export type MockStaffPage = {
@@ -37,6 +56,8 @@ export const mockStaff: MockStaffMember[] = [
     sub: "Program design & progress tracking",
     image: null,
     sort_order: 0,
+    facilities: ["gym", "cafe", "wellness-spa", "beauty-spa", "yoga-space", "wallclimbing"],
+    programs: ["feel-better", "move-better", "live-better", "look-better"],
   },
   {
     id: "daniel-hart",
@@ -45,6 +66,8 @@ export const mockStaff: MockStaffMember[] = [
     sub: "Functional training · InBody",
     image: "/images/Fitness/DDK09605.webp",
     sort_order: 1,
+    facilities: ["gym", "wallclimbing"],
+    programs: ["move-better", "fitness", "climbing"],
   },
   {
     id: "sarah-lee",
@@ -53,6 +76,8 @@ export const mockStaff: MockStaffMember[] = [
     sub: "Manual therapy · Sports recovery",
     image: "/images/Integrate/DDK09193.webp",
     sort_order: 2,
+    facilities: ["wellness-spa"],
+    programs: ["feel-better", "spa"],
   },
   {
     id: "hana-park",
@@ -61,6 +86,8 @@ export const mockStaff: MockStaffMember[] = [
     sub: "K-Glow facial · Skin diagnostics",
     image: "/images/Enhance/DDK00316.webp",
     sort_order: 3,
+    facilities: ["beauty-spa"],
+    programs: ["look-better", "beauty"],
   },
   {
     id: "ayu-pratiwi",
@@ -69,6 +96,8 @@ export const mockStaff: MockStaffMember[] = [
     sub: "Vinyasa · Breathwork",
     image: "/images/Nurture/DDK09001.webp",
     sort_order: 4,
+    facilities: ["yoga-space"],
+    programs: ["move-better"],
   },
   {
     id: "james-chen",
@@ -77,5 +106,7 @@ export const mockStaff: MockStaffMember[] = [
     sub: "Deep tissue · Recovery rituals",
     image: "/images/Integrate/DDK09278.webp",
     sort_order: 5,
+    facilities: ["wellness-spa"],
+    programs: ["feel-better", "spa"],
   },
 ];

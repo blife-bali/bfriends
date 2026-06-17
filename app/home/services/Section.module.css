@@ -18,75 +18,59 @@
   padding: var(--section-padding-y) var(--section-padding-x);
 }
 
-.titleRow {
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-}
-
+/* stacked: eyebrow + title + sub vertically */
 .titleContainer {
-  flex: 1;
-  max-width: 960px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
-  text-align: left;
+  max-width: 720px;
 }
 
-.arrowContainer {
+/* split: title left, sub right in a 2-col grid */
+.titleContainerSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+}
+
+/* centered: title + sub stacked and centered */
+.titleContainerCentered {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-  border-radius: var(--radius-md);
-}
-
-.desktopArrows {
-  display: flex;
-}
-
-.mobileArrows {
-  display: none;
-}
-
-.arrowButton {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--color-green-100) 55%, transparent);
-  border-radius: var(--radius-md);
-  background: var(--color-white-100);
-  color: var(--color-green-100);
-  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  gap: 16px;
+  width: 100%;
+  text-align: center;
 }
 
-.arrowButton:hover:not(:disabled) {
-  background: var(--color-green-100);
-  color: var(--color-white-100);
+.titleContainerCentered .titleLeft {
+  align-items: center;
 }
 
-.arrowButton:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
+.titleContainerCentered .sectionSub {
+  max-width: 64ch;
+  text-align: center;
 }
 
-.arrowButtonLeft {
-  cursor: pointer;
+/* used in both layouts — stacked has it inside the column flex, split has it as left column */
+.titleLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.arrowButtonRight {
-  cursor: pointer;
+/* in stacked mode, titleContainer wraps titleLeft + sub together */
+.titleContainer .sectionSub {
+  max-width: 64ch;
 }
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: clamp(12px, 1vw, 13px);
+  font-size: clamp(11px, 0.85vw, 13px);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -94,122 +78,77 @@
   margin: 0;
 }
 
-.title {
+.sectionTitle {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(36px, 3vw, 44px);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.2;
   color: var(--color-blue-100);
 }
 
-.title em {
-  font-style: normal;
+.sectionSub {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
+  max-width: 64ch;
 }
 
-.carousel {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carouselTrack {
+.programGrid {
   display: flex;
-  gap: 48px;
+  flex-wrap: wrap;
+  gap: 32px;
   align-items: stretch;
-  width: 100%;
-  padding-bottom: 4px;
 }
 
-.carouselItem {
-  flex: 0 0 calc((100% - (2 * 48px)) / 3);
-  min-width: 0;
-  scroll-snap-align: start;
-}
-
-/* Tablet large */
-@media (max-width: 1200px) {
-  .carouselTrack {
-    gap: 32px;
-  }
-
-  .carouselItem {
-    flex-basis: calc((100% - (2 * 32px)) / 3);
-  }
+.programItem {
+  flex: 1 1 0;
+  min-width: 200px;
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .titleContainer {
-    max-width: 100%;
-    width: 100%;
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  .titleRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .desktopArrows {
-    display: none;
-  }
-
-  .mobileArrows {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 8px;
-  }
-
-  .carouselTrack {
+  .programGrid {
     gap: 24px;
   }
 
-  .carouselItem {
-    flex-basis: calc((100% - 24px) / 2);
+  .sectionTitle {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .titleContainerSplit {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .title {
+  .sectionTitle {
     font-size: clamp(26px, 7vw, 32px);
   }
 
-  .titleRow {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .carouselTrack {
+  .programGrid {
     gap: 16px;
   }
 
-  .carouselItem {
-    flex-basis: 85%;
-    min-width: 240px;
+  .programItem {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 140px;
   }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .title {
+  .sectionTitle {
     font-size: clamp(22px, 7vw, 28px);
   }
 
-  .carouselItem {
-    flex-basis: 90%;
+  .programItem {
+    flex: 1 1 100%;
   }
 }

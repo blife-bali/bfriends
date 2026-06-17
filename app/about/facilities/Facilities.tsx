@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import type { MockFacility } from "@/mock/facilities";
-import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./Facilities.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
@@ -15,24 +16,22 @@ interface FacilitiesProps {
 
 export default function Facilities({ facilities }: FacilitiesProps) {
   return (
-    <div className={styles.facilityList}>
+    <div className={styles.list}>
       {facilities.map((facility, index) => (
-        <FacilityBlock key={facility.id} facility={facility} index={index} />
+        <FacilityRow key={facility.id} facility={facility} index={index} />
       ))}
     </div>
   );
 }
 
-function FacilityBlock({ facility, index }: { facility: MockFacility; index: number }) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const inView = useInView(sectionRef, { once: true, amount: 0.12 });
-  const [isImageInView, setIsImageInView] = useState(false);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
-  const lastScrollY = useRef(0);
-  const scrollDirection = useRef<"up" | "down">("down");
+function FacilityRow({ facility, index }: { facility: MockFacility; index: number }) {
+  const rowRef = useRef<HTMLElement>(null);
+  const mediaRef = useRef<HTMLAnchorElement>(null);
+  const inView = useInView(rowRef, { once: true, amount: 0.2 });
+  const reversed = index % 2 === 1;
 
   const { scrollYProgress } = useScroll({
-    target: imageWrapperRef,
+    target: mediaRef,
     offset: ["start end", "end start"],
   });
   const smoothProgress = useSpring(scrollYProgress, {
@@ -40,78 +39,52 @@ function FacilityBlock({ facility, index }: { facility: MockFacility; index: num
     damping: 20,
     mass: 0.01,
   });
-  const y = useTransform(smoothProgress, [0, 1], ["-20%", "20%"]);
-
-  useEffect(() => {
-    lastScrollY.current = window.scrollY;
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      if (currentY !== lastScrollY.current) {
-        scrollDirection.current = currentY > lastScrollY.current ? "down" : "up";
-        lastScrollY.current = currentY;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsImageInView(true);
-        } else if (scrollDirection.current === "up") {
-          setIsImageInView(false);
-        }
-      },
-      { threshold: 0.25, rootMargin: "0px" }
-    );
-    if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const y = useTransform(smoothProgress, [0, 1], ["-12%", "12%"]);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`${styles.facilityBlock} ${index % 2 === 1 ? styles.facilityBlockEven : ""}`}
+    <motion.section
+      ref={rowRef}
+      className={`${styles.row} ${reversed ? styles.rowReversed : ""}`}
       aria-labelledby={`facility-${facility.id}-title`}
+      initial={{ opacity: 0, y: 32 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: EASE }}
     >
-      <div className={styles.facilityBlockWrapper}>
-        <div className={styles.blockInner}>
-          <div className={parallax.imageWrap} ref={imageWrapperRef}>
-            <div
-              className={`${parallax.imageFrame} ${parallax.imageFrameRatio169} ${isImageInView ? parallax.imageFrameVisible : parallax.imageFrameBefore}`}
-            >
-              <motion.div className={parallax.parallaxLayer} style={{ y }}>
-                <Image
-                  src={facility.image}
-                  alt={facility.name}
-                  fill
-                  className={parallax.coverImage}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
-                />
-              </motion.div>
-            </div>
-          </div>
+      <Link href={`/about/facilities/${facility.id}`} className={styles.media} ref={mediaRef}>
+        <motion.div className={styles.mediaLayer} style={{ y }}>
+          <Image
+            src={facility.image}
+            alt={facility.name}
+            fill
+            className={styles.image}
+            sizes="(max-width: 900px) 100vw, 50vw"
+          />
+        </motion.div>
+        <span className={styles.index} aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      </Link>
 
-          <motion.div
-            className={parallax.copyGrid}
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.55, ease: EASE }}
-          >
-            <div className={`${parallax.copyColLeft} ${styles.copyColLeft}`}>
-              <p className={styles.floor}>{facility.floor}</p>
-              <h2 id={`facility-${facility.id}-title`} className={parallax.copyTitle}>
-                {facility.name}
-              </h2>
-            </div>
-            <div className={`${parallax.copyColRight} ${parallax.copyColGapTight}`}>
-              <p className={`${parallax.copyBody} ${parallax.copyBodyPreLine}`}>{facility.sub}</p>
-            </div>
-          </motion.div>
+      <div className={styles.copy}>
+        <div className={styles.metaRow}>
+          <span className={styles.pillar}>{facility.pillarLabel}</span>
+          <span className={styles.metaDivider} aria-hidden="true" />
+          <span className={styles.floor}>{facility.floor}</span>
         </div>
+
+        <h2 id={`facility-${facility.id}-title`} className={styles.title}>
+          {facility.name}
+        </h2>
+
+        <p className={styles.body}>{facility.sub}</p>
+
+        <Link href={`/about/facilities/${facility.id}`} className={styles.cta}>
+          <span className={styles.ctaLabel}>Explore {facility.name}</span>
+          <span className={styles.ctaIcon} aria-hidden="true">
+            <ArrowRight size={16} strokeWidth={2} />
+          </span>
+        </Link>
       </div>
-    </section>
+    </motion.section>
   );
 }

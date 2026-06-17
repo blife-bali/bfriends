@@ -22,6 +22,7 @@ type PageHeaderDefaultProps = {
   subtitle?: string;
   breadcrumb?: string;
   image?: string;
+  cta?: { label: string; href: string };
 };
 
 export type PageHeaderProps = PageHeaderProgramsProps | PageHeaderDefaultProps;
@@ -43,6 +44,7 @@ export default function PageHeader(props: PageHeaderProps) {
   const title = props.title;
   const subtitle = !isPrograms ? props.subtitle : undefined;
   const breadcrumb = !isPrograms ? props.breadcrumb : undefined;
+  const cta = !isPrograms ? props.cta : undefined;
   const showBookNowButton = isPrograms ? props.showBookNowButton !== false : false;
 
   return (
@@ -85,6 +87,15 @@ export default function PageHeader(props: PageHeaderProps) {
             {breadcrumb && <p className={styles.breadcrumb}>{breadcrumb}</p>}
             <h1 className={styles.title}>{title}</h1>
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+            {cta && (
+              <Button
+                href={cta.href}
+                color="var(--color-white-100)"
+                className={styles.headerCta}
+              >
+                {cta.label}
+              </Button>
+            )}
           </>
         )}
       </div>

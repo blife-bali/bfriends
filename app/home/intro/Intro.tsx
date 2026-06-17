@@ -7,6 +7,21 @@ import Button from "@/components/ui/Button/Button";
 import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
 import styles from "./Intro.module.css";
 
+const CONTENT_BLOCKS = [
+  {
+    title: "Data-Driven Assessment",
+    body: "Gain valuable insights into your body's current condition through a comprehensive wellness assessment.",
+  },
+  {
+    title: "Personalised Recommendations",
+    body: "Receive tailored guidance based on your individual needs, goals, and lifestyle.",
+  },
+  {
+    title: "Expert-Led Support",
+    body: "Work alongside experienced wellness professionals who help you navigate every stage of your journey.",
+  },
+];
+
 const DEFAULT_HEADLINE = "Feeling tired, out of balance, or stuck in a routine?";
 const DEFAULT_BODY =
   "Your body doesn’t always need more effort; sometimes it needs the right kind of care. At the center of Kerobokan, Bali, BFriends will help you start where you are and guide you toward what you need.";
@@ -20,6 +35,7 @@ export interface IntroProps {
   imageUrl?: string;
   showCta?: boolean;
   showImage?: boolean;
+  showBlocks?: boolean;
 }
 
 export default function Intro({
@@ -28,6 +44,7 @@ export default function Intro({
   imageUrl = INTRO_IMAGE,
   showCta = true,
   showImage = true,
+  showBlocks = false,
 }: IntroProps) {
   const [isImageInView, setIsImageInView] = useState(false);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -77,25 +94,37 @@ export default function Intro({
   return (
     <section className={`${styles.intro} ${textOnly ? styles.introTextOnly : ""}`}>
       <div className={styles.container}>
-        {/* <div className={styles.textColumn}>
-          {body != null && body !== "" && (
-            <div className={styles.descriptionContainer}>
-              <p className={styles.description}>
-                <span className={styles.maskWrap}>
-                  <motion.span
-                    className={styles.maskInner}
-                    initial={{ y: "100%" }}
-                    animate={textInView ? { y: "0%" } : { y: "100%" }}
-                    transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 0.61, 0.36, 1] }}
-                  >
-                    {body}
-                  </motion.span>
-                </span>
-              </p>
-            </div>
-          )}
-        </div> */}
+        {/* 1. Centered Header */}
+        <div className={styles.textColumn}>
+          <div className={styles.descriptionContainer}>
+            <h2 className={styles.heading}>{headline}</h2>
+            <p className={styles.description}>{body}</p>
+            {showCta && (
+              <Button
+                href="/about"
+                className={styles.button}
+                color="var(--color-blue-100)"
+              >
+                About Us
+              </Button>
+            )}
+          </div>
+        </div>
 
+        {/* 2. Content Blocks */}
+        {showBlocks && (
+          <div className={styles.contentBlocks}>
+            {CONTENT_BLOCKS.map((block, i) => (
+              <div key={block.title} className={styles.contentBlock}>
+                <span className={styles.contentBlockNumber}>0{i + 1}</span>
+                <h3 className={styles.contentBlockTitle}>{block.title}</h3>
+                <p className={styles.contentBlockBody}>{block.body}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* 3. Parallax Image */}
         {showImage && (
           <div className={parallax.imageWrap} ref={imageWrapperRef}>
             <div
@@ -113,24 +142,6 @@ export default function Intro({
             </div>
           </div>
         )}
-
-        <div className={parallax.copyGrid}>
-          <div className={parallax.copyColLeft}>
-            <h2 className={`${parallax.copyTitle} ${parallax.copyTitleMd}`}>{headline}</h2>
-          </div>
-          <div className={`${parallax.copyColRight} ${styles.rightConclusion}`}>
-            <p className={`${parallax.copyBody} ${parallax.copyBodyMaxCh}`}>{body}</p>
-            {showCta && (
-              <Button
-                href="/about"
-                className={styles.button}
-                color="var(--color-blue-100)"
-              >
-                About Us
-              </Button>
-            )}
-          </div>
-        </div>
       </div>
     </section>
   );

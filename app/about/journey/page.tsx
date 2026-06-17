@@ -34,6 +34,7 @@ export default async function JourneyPage() {
         breadcrumb={header.breadcrumb}
         title={header.title}
         image={header.image}
+        subtitle={header.description ?? undefined}
       />
       <div className={styles.container}>
         <section className={styles.intro} aria-labelledby="journey-intro-title">

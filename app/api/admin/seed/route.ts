@@ -69,7 +69,7 @@ export async function POST(req: Request) {
     if ((existingHero as any[])[0].c === 0) {
       await pool.execute(
         `INSERT INTO bfriends_hero_sections (page, title, subtitle, video_url, image_url, sort_order) VALUES (?, ?, ?, ?, ?, ?)`,
-        ['home', 'Welcome to BFriends', 'Your wellness journey starts here', '/videos/bfriends-hero.mp4', '/images/hero/hero-bg.jpg', 0]
+        ['home', 'Find What Your Body Needs Today', 'A personalized wellness journey powered by advanced body assessment technology and expert guidance, designed to evolve with your body\'s changing needs.', '/videos/bfriends-hero.mp4', '/images/hero/hero-bg.jpg', 0]
       );
       results.push('Hero section seeded');
     }

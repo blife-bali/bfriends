@@ -21,6 +21,48 @@ const FRAMEWORK_FALLBACK_TITLE = "The Framework";
 const FRAMEWORK_FALLBACK_PARAGRAPH =
   "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
 
+const PROGRAM_CTA_BY_SLUG: Record<string, { heading: string; label: string; href: string }> = {
+  "spa": {
+    heading: "Ready to start your recovery journey?",
+    label: "Start Your Recovery Journey",
+    href: "/spa",
+  },
+  "fitness": {
+    heading: "Ready to find your movement plan?",
+    label: "Find Your Movement Plan",
+    href: "/contact",
+  },
+  "cafe": {
+    heading: "Ready to build healthier habits?",
+    label: "Find Your Movement Plan",
+    href: "/contact",
+  },
+  "beauty": {
+    heading: "Ready to elevate your self-care routine?",
+    label: "Elevate Your Self-Care Routine",
+    href: "/contact",
+  },
+};
+
+const PROGRAM_INFO_BY_SLUG: Record<string, { whatYouWillFind: string[]; whoItsFor: string[] }> = {
+  "spa": {
+    whatYouWillFind: ["Body Treatments", "Massage Therapy", "Recovery Rituals", "Relaxation Experiences", "Wellness Assessments"],
+    whoItsFor: ["Busy professionals", "High-stress lifestyles", "Recovery needs", "Mental fatigue", "Burnout prevention"],
+  },
+  "fitness": {
+    whatYouWillFind: ["Yoga", "Barre", "Fitness Training", "Climbing", "Mobility Support"],
+    whoItsFor: ["Active individuals", "Mobility improvement", "Physical wellbeing", "Injury prevention", "Performance enhancement"],
+  },
+  "cafe": {
+    whatYouWillFind: ["Healthy Nutrition", "Wellness Lifestyle Guidance", "Community Activities", "Healthy Café", "Wellness Education"],
+    whoItsFor: ["Lifestyle improvement", "Long-term wellness", "Habit building", "Sustainable wellbeing"],
+  },
+  "beauty": {
+    whatYouWillFind: ["Facial Treatments", "Skin Care", "Beauty Therapy", "Personalised Consultations"],
+    whoItsFor: ["Skin health", "Beauty maintenance", "Healthy aging", "Self-care"],
+  },
+};
+
 interface ProgramContentProps {
   program: PublicProgram;
   programs: PublicProgram[];
@@ -41,23 +83,29 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
     currentIndex >= 0 && currentIndex < programs.length - 1
       ? programs[currentIndex + 1].general.slug
       : undefined;
-  const shouldHideCta =
-    ["cafe", "climbing"].includes(program.general.slug.trim().toLowerCase()) ||
-    ["cafe", "climbing"].includes(program.general.name.trim().toLowerCase());
+  const slug = program.general.slug.trim().toLowerCase();
+  const shouldHideCta = false;
+  const ctaConfig = PROGRAM_CTA_BY_SLUG[slug];
+  const fallback = PROGRAM_INFO_BY_SLUG[slug] ?? { whatYouWillFind: [], whoItsFor: [] };
+  const whatYouWillFind = program.what_you_find?.length ? program.what_you_find : fallback.whatYouWillFind;
+  const whoItsFor = program.who_its_for?.length ? program.who_its_for : fallback.whoItsFor;
 
   return (
     <div className={styles.root}>
       {program.intro.sub && <PhilosophySection title={program.intro.title} body={program.intro.sub} />}
       <FrameworkSection title={fwTitle} paragraph={fwParagraph} imageUrl={fwImage} />
+      {(whatYouWillFind.length > 0 || whoItsFor.length > 0) && (
+        <ProgramInfoSection whatYouWillFind={whatYouWillFind} whoItsFor={whoItsFor} />
+      )}
       {(() => {
         const sessionGroups = program.sessions_group || [];
         const total = sessionGroups.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
         return total > 0 ? (
-          <SessionsSection sessionGroups={sessionGroups} title="Signature Sessions" />
+          <SessionsSection sessionGroups={sessionGroups} title="Membership & Pricing" />
         ) : null;
       })()}
       <ProgramVideoSection videoUrl={fwVideo} />
-      {!shouldHideCta && <ProgramCta program={program} />}
+      {!shouldHideCta && <ProgramCta program={program} ctaConfig={ctaConfig} />}
       {false && (previousSlug || nextSlug) && (
         <ProgramNavFooter
           previousSlug={previousSlug}
@@ -66,6 +114,51 @@ export default function ProgramContent({ program, programs }: ProgramContentProp
         />
       )}
     </div>
+  );
+}
+
+function ProgramInfoSection({
+  whatYouWillFind,
+  whoItsFor,
+}: {
+  whatYouWillFind: string[];
+  whoItsFor: string[];
+}) {
+  return (
+    <section className={styles.infoSection}>
+      <div className={styles.infoContainer}>
+        {whatYouWillFind.length > 0 && (
+          <div className={styles.infoCol}>
+            <p className={styles.infoHeading}>What You Will Find</p>
+            <ul className={styles.infoList}>
+              {whatYouWillFind.map((item, i) => (
+                <li key={item} className={styles.infoItem}>
+                  <span className={styles.infoItemNumber}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className={styles.infoItemLabel}>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {whoItsFor.length > 0 && (
+          <div className={styles.infoCol}>
+            <p className={styles.infoHeading}>Who It&apos;s For</p>
+            <ul className={styles.infoList}>
+              {whoItsFor.map((item, i) => (
+                <li key={item} className={styles.infoItem}>
+                  <span className={styles.infoItemNumber}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className={styles.infoItemLabel}>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
@@ -190,21 +283,29 @@ function ProgramVideoSection({ videoUrl }: { videoUrl: string }) {
   );
 }
 
-function ProgramCta({ program }: { program: PublicProgram }) {
+function ProgramCta({
+  program,
+  ctaConfig,
+}: {
+  program: PublicProgram;
+  ctaConfig?: { heading: string; label: string; href: string };
+}) {
+  const heading = ctaConfig?.heading ?? `Ready to experience ${program.general.name}?`;
+  const label = ctaConfig?.label ?? "Book a session";
+  const href = ctaConfig?.href ?? BOOK_NOW_URL;
+  const isExternal = href === BOOK_NOW_URL;
+
   return (
     <section className={styles.cta} aria-label="Get started">
       <div className={styles.container}>
         <p className={styles.eyebrow}>Get started</p>
-        <h2 className={styles.ctaHeading}>
-          Ready to experience {program.general.name}?
-        </h2>
+        <h2 className={styles.ctaHeading}>{heading}</h2>
         <Button
-          href={BOOK_NOW_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={href}
+          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           color="var(--color-blue-100)"
         >
-          Book a session
+          {label}
         </Button>
       </div>
     </section>

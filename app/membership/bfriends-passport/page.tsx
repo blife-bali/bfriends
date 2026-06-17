@@ -35,6 +35,7 @@ export default async function BFriendsPassportPage() {
         breadcrumb={header.breadcrumb}
         title={header.title}
         image={header.image}
+        subtitle={header.description ?? undefined}
       />
       <main className={styles.page}>
         <PassportContent

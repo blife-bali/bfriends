@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Staff from "./Staff";
 import styles from "./Staff.module.css";
-import { mockStaff, mockStaffPage } from "@/mock/staff";
+import { getStaffSorted } from "@/lib/staff";
+import { mockStaffPage } from "@/mock/staff";
 
 export const metadata: Metadata = {
   title: mockStaffPage.seo_title,
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function StaffPage() {
-  const members = [...mockStaff].sort((a, b) => a.sort_order - b.sort_order);
+  const members = getStaffSorted();
 
   return (
     <main className={styles.page}>

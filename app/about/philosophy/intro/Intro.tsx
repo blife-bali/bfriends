@@ -18,6 +18,7 @@ export interface IntroProps {
   imageUrl?: string;
   showCta?: boolean;
   showImage?: boolean;
+  showCopy?: boolean;
 }
 
 export default function Intro({
@@ -26,6 +27,7 @@ export default function Intro({
   imageUrl = INTRO_IMAGE,
   showCta = true,
   showImage = true,
+  showCopy = true,
 }: IntroProps) {
   const [isImageInView, setIsImageInView] = useState(false);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -78,23 +80,25 @@ export default function Intro({
         
 
         {/* Title container moved above image for philosophy page */}
-        <div className={styles.conclusionContainer}>
-          <div className={styles.leftConclusion}>
-            <h2 className={styles.conclusionTitle}>About BFriends</h2>
+        {showCopy && (
+          <div className={styles.conclusionContainer}>
+            <div className={styles.leftConclusion}>
+              <h2 className={styles.conclusionTitle}>About BFriends</h2>
+            </div>
+            <div className={styles.rightConclusion}>
+              <p className={styles.conclusionText}>{body}</p>
+              {showCta && (
+                <Button
+                  href="/about"
+                  className={styles.button}
+                  color="var(--color-blue-100)"
+                >
+                  About Us
+                </Button>
+              )}
+            </div>
           </div>
-          <div className={styles.rightConclusion}>
-            <p className={styles.conclusionText}>{body}</p>
-            {showCta && (
-              <Button
-                href="/about"
-                className={styles.button}
-                color="var(--color-blue-100)"
-              >
-                About Us
-              </Button>
-            )}
-          </div>
-        </div>
+        )}
 
         {showImage && (
           <div className={styles.imageWrapper} ref={imageWrapperRef}>

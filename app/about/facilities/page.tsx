@@ -21,6 +21,7 @@ export default function FacilitiesPage() {
       />
       <div className={styles.container}>
         <section className={styles.intro} aria-labelledby="facilities-intro-title">
+          <p className={styles.introEyebrow}>{mockFacilitiesPage.breadcrumb.split("/").pop()?.trim()}</p>
           <h2 id="facilities-intro-title" className={styles.introTitle}>
             {mockFacilitiesPage.intro_title}
           </h2>

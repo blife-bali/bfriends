@@ -13,6 +13,8 @@ interface EcosystemItem {
   description: string;
   image?: string | null;
   url?: string | null;
+  pillar?: string | null;
+  button_label?: string | null;
 }
 
 const fadeUp = {
@@ -30,9 +32,39 @@ const ECOSYSTEM_IMAGE_BY_NAME: Array<{ match: RegExp; image: string }> = [
   { match: /^alamk?ulkul$/, image: "/ecosystem/alamkulkul.jpg" },
 ];
 
+const ECOSYSTEM_PILLAR_BY_NAME: Array<{ match: RegExp; pillar: string }> = [
+  { match: /^bwork$/, pillar: "Work" },
+  { match: /^blive$/, pillar: "Stay" },
+  { match: /^bnesta$/, pillar: "Stay" },
+  { match: /^bfriends$/, pillar: "Wellness" },
+  { match: /^bwellness$/, pillar: "Medical Wellness" },
+  { match: /^nulook$/, pillar: "Care" },
+  { match: /^alamk?ulkul$/, pillar: "Stay" },
+];
+
+const ECOSYSTEM_CTA_BY_NAME: Array<{ match: RegExp; label: string }> = [
+  { match: /^bwork$/, label: "Visit BWork" },
+  { match: /^blive$/, label: "Visit BLive" },
+  { match: /^bnesta$/, label: "Visit BNesta" },
+  { match: /^bfriends$/, label: "Visit BFriends" },
+  { match: /^bwellness$/, label: "Visit BWellness" },
+  { match: /^nulook$/, label: "Visit NuLook" },
+  { match: /^alamk?ulkul$/, label: "Visit Alam Kulkul" },
+];
+
 function getMappedImage(name: string) {
   const matched = ECOSYSTEM_IMAGE_BY_NAME.find((entry) => entry.match.test(name));
   return matched?.image;
+}
+
+function getMappedPillar(name: string) {
+  const matched = ECOSYSTEM_PILLAR_BY_NAME.find((entry) => entry.match.test(name));
+  return matched?.pillar;
+}
+
+function getMappedCta(name: string) {
+  const matched = ECOSYSTEM_CTA_BY_NAME.find((entry) => entry.match.test(name));
+  return matched?.label ?? "Visit";
 }
 
 export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[] }) {
@@ -93,19 +125,10 @@ export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[]
           transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
         >
           
-          <h2 className={styles.headerTitle}>BLife Destinations</h2>
+          <h2 className={styles.headerTitle}>Part Of A Larger Wellness Ecosystem</h2>
           <p className={styles.headerSub}>
-            Designed around different rhythms of life, BLife offers a collection of spaces that support work, rest,
-            wellness, and meaningful connection in Bali. From focused coworking environments and restorative stays to
-            movement-based wellness and community-driven experiences, each destination is created with its own purpose
-            while staying connected through one shared philosophy: helping people live better, slower, and more
-            intentionally.
-          </p>
-          <p className={styles.headerSub}>
-            More than standalone spaces, BLife is building an ecosystem for continuous care, where daily routines,
-            recovery, movement, connection, and personal growth naturally flow across each destination. Rooted in the
-            balance between productivity and restoration, BLife combines thoughtful design, local culture, and
-            everyday wellness to create experiences that support a more sustainable way of living.
+            BFriends is part of Daewoong&apos;s growing ecosystem in Bali, connecting wellness, hospitality, living, work,
+            and lifestyle experiences into one interconnected journey designed to support better living.
           </p>
         </motion.header>
         <div className={styles.controls}>
@@ -155,6 +178,8 @@ export default function BLifeEcosystem({ items = [] }: { items?: EcosystemItem[]
                     title={item.name}
                     description={item.description}
                     href={getEcosystemHref(item.name, item.url)}
+                    pillar={item.pillar || getMappedPillar(normalizedName) || undefined}
+                    buttonLabel={item.button_label || getMappedCta(normalizedName)}
                   />
                 </motion.div>
               );

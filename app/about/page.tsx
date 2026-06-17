@@ -1,26 +1,16 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Intro from "./philosophy/intro/Intro";
-import WhyBFriends from "@/app/home/why-bfriends/WhyBFriends";
-import Journey from "./philosophy/journey/Journey";
-import Manifesto from "./philosophy/manifesto/Manifesto";
-import CoreBeliefs from "./philosophy/core-beliefs/CoreBeliefs";
-import IntegratedSelf from "./philosophy/integrated-self/IntegratedSelf";
 import BLifeEcosystem from "./philosophy/blife-ecosystem/BLifeEcosystem";
-import SiteLocation from "@/components/SiteLocation/SiteLocation";
-import { AboutServicesSection } from "@/components/AboutServicesSection";
+import ExpertsSection from "./philosophy/experts/Experts";
+import { AboutFramework } from "@/components/AboutFramework";
 import styles from "./philosophy/page.module.css";
 import {
   getPageSeo,
   resolvePageHeader,
   getIntroByPage,
-  getWhyCards,
-  getPhilosophySectionByKey,
-  getCoreBeliefs,
   getEcosystemItems,
-  getPublicPrograms,
 } from "@/lib/cms";
-import { getJourneySection } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -41,54 +31,38 @@ const DEFAULT_HEADER = {
 };
 
 export default async function AboutPage() {
-  const [header, intro, whyCards, journeySection, manifesto, integratedSelf, coreBeliefs, ecosystemItems, publicPrograms] = await Promise.all([
+  const [header, intro, ecosystemItems] = await Promise.all([
     resolvePageHeader(["about", "philosophy"], DEFAULT_HEADER),
     getIntroByPage("home"),
-    getWhyCards(true),
-    getJourneySection(),
-    getPhilosophySectionByKey("manifesto"),
-    getPhilosophySectionByKey("integrated_self"),
-    getCoreBeliefs(),
     getEcosystemItems(),
-    getPublicPrograms(),
   ]);
 
-  const programs = publicPrograms.map((program) => ({
-    name: program.general.name,
-    title: program.general.title || program.general.name,
-    subheading: program.general.subheading,
-    image: program.general.image,
-    buttonLabel: program.general.button_label,
-    slug: program.general.slug,
-  }));
-
   return (
-    <>
-      <main className={styles.page}>
-        <PageHeader
-          title={header.title}
-          breadcrumb={header.breadcrumb}
-          image={header.image}
-        />
-        <Intro
-          headline={intro?.headline}
-          body={intro?.body}
-          imageUrl={intro?.image_url}
-          showCta={false}
-        />
-
-        {/* <WhyBFriends cards={whyCards} /> */}
-        <Journey
-          headline={journeySection?.headline}
-          body={journeySection?.body}
-          imageUrl={journeySection?.image}
-        />
-        
-        
-        <BLifeEcosystem items={ecosystemItems} />
-      </main>
-      {/* <SiteLocation /> */}
-      <AboutServicesSection programs={programs} />
-    </>
+    <main className={styles.page}>
+      <PageHeader
+        title={header.title}
+        breadcrumb={header.breadcrumb}
+        image={header.image}
+        subtitle={header.description ?? undefined}
+        cta={{ label: "Explore Programmes", href: "/programs" }}
+      />
+      <Intro
+        headline={intro?.headline}
+        body={intro?.body}
+        imageUrl={intro?.image_url}
+        showCta={false}
+        showCopy={false}
+      />
+      <ExpertsSection
+        description={[
+          "Behind every recommendation is a team of experienced professionals dedicated to helping individuals make meaningful and sustainable progress.",
+          "Through expert interpretation, personalized guidance and ongoing support, wellness becomes more than a routine — it becomes a journey built around you.",
+        ]}
+        ctaLabel="Explore Our Programmes"
+        ctaHref="/about/facilities"
+      />
+      <AboutFramework />
+      <BLifeEcosystem items={ecosystemItems} />
+    </main>
   );
 }

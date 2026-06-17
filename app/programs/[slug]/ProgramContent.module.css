@@ -107,6 +107,117 @@
   }
 }
 
+/* ---------- Section: What You Will Find + Who It's For ---------- */
+.infoSection {
+  width: 100%;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 14%, transparent);
+}
+
+.infoContainer {
+  width: 100%;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoHeading {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  margin: 0 0 8px;
+}
+
+.infoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+  transition: padding-left 0.25s ease;
+}
+
+.infoItem:first-child {
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+}
+
+.infoItem:hover {
+  padding-left: 6px;
+}
+
+.infoItemNumber {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-cream-140);
+  opacity: 0.45;
+  flex-shrink: 0;
+  width: 20px;
+  padding-top: 2px;
+}
+
+.infoItemLabel {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 1.8vw, 30px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-blue-100);
+}
+
+@media (max-width: 1024px) {
+  .infoContainer {
+    gap: 48px;
+    padding: 72px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoContainer {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 48px 24px;
+  }
+
+  .infoItemLabel {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+
+  .infoItem:hover {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoContainer {
+    padding: 48px 16px;
+    gap: 40px;
+  }
+
+  .infoItemLabel {
+    font-size: clamp(18px, 5vw, 22px);
+  }
+}
+
 /* ---------- Section C: Framework (matches home intro: image + two-column title / body) ---------- */
 .framework {
   width: 100%;

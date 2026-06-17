@@ -39,7 +39,7 @@
   transform: translate3d(0, 0, 0);
 }
 
-.button:not(.buttonUnderlineOnHover):hover:not(:disabled)::after {
+.button:not(.buttonUnderlineOnHover):not(.buttonBorder):hover:not(:disabled)::after {
   animation: button-underline-slide 0.5s ease-in-out;
 }
 
@@ -72,7 +72,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button:not(.buttonUnderlineOnHover):hover:not(:disabled)::after {
+  .button:not(.buttonUnderlineOnHover):not(.buttonBorder):hover:not(:disabled)::after {
     animation: none;
   }
 
@@ -83,6 +83,17 @@
   .buttonUnderlineOnHover:hover:not(:disabled)::after {
     transform: translate3d(0, 0, 0);
   }
+}
+
+.buttonBorder {
+  padding: 12px 28px;
+  border: 1px solid var(--button-border-color, currentColor);
+  border-radius: 9999px;
+  overflow: visible;
+}
+
+.buttonBorder::after {
+  display: none;
 }
 
 .textPart {
@@ -102,7 +113,14 @@
 @media (max-width: 768px) {
   .button.fullWidth {
     min-height: 48px;
-    padding: 12px 0;
     justify-content: center;
+  }
+
+  .button.fullWidth:not(.buttonBorder) {
+    padding: 12px 0;
+  }
+
+  .button.fullWidth.buttonBorder {
+    padding: 14px 28px;
   }
 }

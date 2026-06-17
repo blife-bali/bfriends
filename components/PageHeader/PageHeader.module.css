@@ -41,7 +41,7 @@
 
 .content {
   position: relative;
-  max-width: 640px;
+  max-width: 720px;
   width: 100%;
   z-index: 1;
   display: flex;
@@ -76,6 +76,10 @@
 
 .programsBookButton {
   margin-top: 4px;
+}
+
+.headerCta {
+  margin-top: 8px;
 }
 
 .breadcrumb {
@@ -115,7 +119,7 @@
   color: var(--color-white-100);
   line-height: 1.5;
   margin: 0;
-  max-width: 560px;
+  max-width: 720px;
   text-align: center;
 }
 

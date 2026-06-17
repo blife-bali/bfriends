@@ -35,7 +35,6 @@ export default function Card({
       <div className={styles.body}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.title}>{title}</p>
-        <p className={styles.subheading}>{subheading}</p>
         <Button
           href={`/programs/${slug}`}
           color="var(--color-blue-100)"
