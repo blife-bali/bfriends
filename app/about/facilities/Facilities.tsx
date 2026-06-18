@@ -80,9 +80,12 @@ function FacilityRow({ facility, index }: { facility: MockFacility; index: numbe
 
         <Link href={`/about/facilities/${facility.id}`} className={styles.cta}>
           <span className={styles.ctaLabel}>Explore {facility.name}</span>
-          <span className={styles.ctaIcon} aria-hidden="true">
-            <ArrowRight size={16} strokeWidth={2} />
-          </span>
+          <ArrowRight
+            className={styles.ctaArrow}
+            size={18}
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
         </Link>
       </div>
     </motion.section>

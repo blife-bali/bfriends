@@ -29,7 +29,6 @@ const DEFAULT_PILLARS: Pillar[] = [
 const DEFAULT_IMAGE = "/images/Integrate/DDK09585.webp";
 
 export interface AboutFrameworkProps {
-  eyebrow?: string;
   heading?: string;
   sub?: string;
   pillars?: Pillar[];
@@ -39,7 +38,6 @@ export interface AboutFrameworkProps {
 }
 
 export default function AboutFramework({
-  eyebrow = "Feel. Move. Look. Live.",
   heading = "Wellness Designed Around Your Goals",
   sub = "Every programme, service, and recommendation at BFriends is designed to support one or more dimensions of wellbeing.",
   pillars = DEFAULT_PILLARS,
@@ -52,24 +50,29 @@ export default function AboutFramework({
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.contentInner}>
-            <div className={styles.header}>
-              <p className={styles.eyebrow}>{eyebrow}</p>
-              <h2 className={styles.heading}>{heading}</h2>
-              <p className={styles.sub}>{sub}</p>
-            </div>
+            <h2 className={styles.heading}>{heading}</h2>
+            <p className={styles.sub}>{sub}</p>
 
             <ol className={styles.pillars}>
-              {pillars.map((pillar, index) => (
-                <li key={pillar.name} className={styles.pillar}>
-                  <div className={styles.pillarTop}>
-                    <span className={styles.pillarIndex}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className={styles.pillarName}>{pillar.name}</h3>
-                  </div>
-                  <p className={styles.pillarText}>{pillar.body}</p>
-                </li>
-              ))}
+              {pillars.map((pillar, index) => {
+                const isLast = index === pillars.length - 1;
+
+                return (
+                  <li key={pillar.name} className={styles.pillar}>
+                    <div className={styles.pillarMark} aria-hidden="true">
+                      <span className={styles.pillarIndex}>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      {!isLast && <span className={styles.pillarLine} />}
+                    </div>
+
+                    <article className={styles.pillarBody}>
+                      <h3 className={styles.pillarName}>{pillar.name}</h3>
+                      <p className={styles.pillarText}>{pillar.body}</p>
+                    </article>
+                  </li>
+                );
+              })}
             </ol>
 
             <div className={styles.ctaRow}>

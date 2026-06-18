@@ -31,7 +31,9 @@
       "Bash(PowerShell -Command \"Get-ChildItem 'C:\\\\Users\\\\Indra\\\\Documents\\\\Codes\\\\BLife\\\\BFriends\\\\bfriends' -Filter '*.docx' -Recurse -ErrorAction SilentlyContinue | Select-Object FullName\")",
       "Read(//c/Users/Indra/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/f2ef60ba-223e-4b64-bce4-0a105eea497f/812c9aef-2cc9-431b-b7bc-01201ee1ce4e/skills/docx/**)",
       "Bash(pandoc --strip-comments -t markdown \"C:\\\\Users\\\\Indra\\\\Downloads\\\\BFriends Website \\(1\\).docx\")",
-      "PowerShell(python --version)"
+      "PowerShell(python --version)",
+      "Bash(extract-text \"C:\\\\Users\\\\Indra\\\\Downloads\\\\BFriends Website \\(1\\).docx\")",
+      "Bash(pandoc \"C:\\\\Users\\\\Indra\\\\Downloads\\\\BFriends Website \\(1\\).docx\" -t markdown)"
     ],
     "additionalDirectories": [
       "c:\\project\\bfriends\\app\\api\\admin\\journey-section"

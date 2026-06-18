@@ -3,6 +3,7 @@ export type SpaSlug = "spa" | "facials" | "hair" | "nails";
 export type MockSpaPage = {
   slug: SpaSlug;
   title: string;
+  subtitle?: string;
   eyebrow: string;
   breadcrumb: string;
   header_image: string;
@@ -22,7 +23,8 @@ export type MockSpaPage = {
 export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
   spa: {
     slug: "spa",
-    title: "Spa",
+    title: "Spa Treatments for Recovery & Relaxation",
+    subtitle: "Personalised wellness treatments designed to help you recharge, recover, and restore balance.",
     eyebrow: "Feel Better",
     breadcrumb: "Spa / Spa",
     header_image: "/images/Integrate/DDK09278.webp",
@@ -43,7 +45,8 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
   },
   facials: {
     slug: "facials",
-    title: "Facials",
+    title: "Personalised Facial Treatments",
+    subtitle: "Facial treatments tailored to support healthy, refreshed, and radiant skin.",
     eyebrow: "Look Better",
     breadcrumb: "Spa / Facials",
     header_image: "/images/Enhance/DDK00418.webp",
@@ -57,7 +60,8 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
   },
   hair: {
     slug: "hair",
-    title: "Hair",
+    title: "Hair Care Designed Around You",
+    subtitle: "Professional hair treatments and services tailored to your individual needs and preferences.",
     eyebrow: "",
     breadcrumb: "Spa / Hair",
     header_image: "/images/Integrate/DDK09585.webp",
@@ -72,7 +76,8 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
   },
   nails: {
     slug: "nails",
-    title: "Nails",
+    title: "Nail Care & Beauty Services",
+    subtitle: "Thoughtfully designed nail treatments that combine beauty, care, and self-expression.",
     eyebrow: "Look Better",
     breadcrumb: "Spa / Nails",
     header_image: "/images/Enhance/DDK00601.webp",

@@ -284,9 +284,14 @@
     gap: 12px;
   }
 
+  .newsletterInputWrapper {
+    border-radius: 12px;
+  }
+
   .newsletterInput {
     height: 48px;
     padding: 0 20px;
+    border-radius: 12px;
   }
 
   .buttonWrap {
@@ -295,6 +300,7 @@
 
   .buttonWrap button {
     width: 100%;
+    border-radius: 12px;
   }
 
   .successMessage {

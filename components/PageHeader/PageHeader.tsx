@@ -10,9 +10,9 @@ export type PageHeaderVariant = "image" | "noImage" | "programs";
 type PageHeaderProgramsProps = {
   variant: "programs";
   title: string;
+  subtitle?: string;
   image?: string;
   showBookNowButton?: boolean;
-  subtitle?: never;
   breadcrumb?: never;
 };
 
@@ -42,7 +42,7 @@ export default function PageHeader(props: PageHeaderProps) {
   const sectionClass = clsx(styles.pageHeader, !useImage && styles.pageHeaderNoImage);
 
   const title = props.title;
-  const subtitle = !isPrograms ? props.subtitle : undefined;
+  const subtitle = props.subtitle;
   const breadcrumb = !isPrograms ? props.breadcrumb : undefined;
   const cta = !isPrograms ? props.cta : undefined;
   const showBookNowButton = isPrograms ? props.showBookNowButton !== false : false;
@@ -70,6 +70,7 @@ export default function PageHeader(props: PageHeaderProps) {
           <>
             <p className={styles.programsEyebrow}>BFriends</p>
             <h1 className={styles.title}>{title}</h1>
+            {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
             {showBookNowButton && (
               <Button
                 href={BOOK_NOW_URL}

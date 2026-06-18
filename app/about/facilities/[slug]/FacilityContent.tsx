@@ -14,24 +14,31 @@ export default function FacilityContent({ facility }: FacilityContentProps) {
     <div className={styles.root}>
       <div className={styles.topBar}>
         <Link href="/about/facilities" className={styles.back}>
-          <span className={styles.backIcon} aria-hidden="true">
-            <ArrowLeft size={16} strokeWidth={2} />
-          </span>
-          All facilities
+          <ArrowLeft
+            className={styles.backIcon}
+            size={18}
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
+          <span className={styles.backLabel}>All facilities</span>
         </Link>
       </div>
 
-      <section className={styles.about} aria-labelledby="facility-about-title">
-        <div className={styles.aboutInner}>
-          <div className={styles.metaRow}>
-            <span className={styles.pillar}>{facility.pillarLabel}</span>
-            <span className={styles.metaDivider} aria-hidden="true" />
-            <span className={styles.floor}>{facility.floor}</span>
+      <section className={styles.overview} aria-labelledby="facility-about-title">
+        <div className={styles.overviewInner}>
+          <div className={styles.overviewHead}>
+            <div className={styles.metaRow}>
+              <span className={styles.pillar}>{facility.pillarLabel}</span>
+              <span className={styles.metaDot} aria-hidden="true" />
+              <span className={styles.floor}>{facility.floor}</span>
+            </div>
+            <h2 id="facility-about-title" className={styles.overviewTitle}>
+              {facility.about_title}
+            </h2>
           </div>
-          <h2 id="facility-about-title" className={styles.aboutTitle}>
-            {facility.about_title}
-          </h2>
-          <p className={styles.aboutBody}>{facility.about_body}</p>
+          <div className={styles.overviewBody}>
+            <p className={styles.overviewLead}>{facility.about_body}</p>
+          </div>
         </div>
       </section>
 

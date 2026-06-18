@@ -62,7 +62,7 @@
 
   /* Layout & radius (used by CSS modules site-wide; responsive overrides below) */
   --section-max-width: 1660px;
-  --section-padding-y: 96px;
+  --section-padding-y: 120px;
   --section-padding-x: 64px;
   --section-gap: 48px;
   --radius-sm: 6px;
@@ -84,7 +84,7 @@
 @media (max-width: 1024px) {
   :root,
   :host {
-    --section-padding-y: 96px;
+    --section-padding-y: 120px;
     --section-padding-x: 48px;
     --section-gap: 40px;
   }

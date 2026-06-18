@@ -159,9 +159,11 @@
   }
 }
 
-/* Mobile: < 768px */
+/* Mobile: headline → sub → carousel → controls */
 @media (max-width: 768px) {
   .container {
+    display: flex;
+    flex-direction: column;
     padding: 0 var(--section-padding-x);
   }
 
@@ -170,6 +172,9 @@
   }
 
   .header {
+    order: 1;
+    align-items: flex-start;
+    text-align: left;
     gap: 10px;
     margin-bottom: 28px;
   }
@@ -179,13 +184,22 @@
   }
 
   .headerSub {
+    max-width: none;
     font-size: clamp(14px, 3.7vw, 16px);
     line-height: 1.55;
+    text-align: left;
+    text-align-last: auto;
+  }
+
+  .carousel {
+    order: 2;
   }
 
   .controls {
+    order: 3;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-top: clamp(32px, 6vw, 48px);
+    margin-bottom: 0;
   }
 
   .carouselTrack {

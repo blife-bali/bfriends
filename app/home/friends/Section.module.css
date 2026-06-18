@@ -3,14 +3,14 @@
 .section {
   width: 100%;
   background-color: var(--color-white-100);
-  padding: var(--section-padding-y) 0;
-  box-sizing: border-box;
+  overflow-x: clip;
 }
 
 .container {
+  width: 100%;
   max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 var(--section-padding-x);
+  padding: var(--section-padding-y) var(--section-padding-x);
   box-sizing: border-box;
 }
 
@@ -18,63 +18,140 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 4vw, 56px);
-  align-items: start;
+  align-items: center;
 }
 
-.introCol {
-  position: sticky;
-  top: calc(var(--section-padding-y) + 48px);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding-top: 8px;
-}
-
-.title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(32px, 3.2vw, 44px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: var(--color-blue-100);
-}
-
-.body {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(15px, 1.2vw, 17px);
-  line-height: 1.6;
-  letter-spacing: -0.02em;
-  color: var(--color-cream-140);
-}
-
-.cta {
-  align-self: flex-start;
-  margin-top: 8px;
-}
-
-.listCol {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.carouselCol {
   min-width: 0;
+  width: 100%;
+}
+
+.imageFrame {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 1 / 1;
+}
+
+.copyCol {
+  min-width: 0;
+}
+
+.copyGrid {
+  max-width: none;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.embla {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+  height: 100%;
+  touch-action: pan-y pinch-zoom;
+}
+
+.emblaSlide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.slideImage {
+  position: absolute;
+  inset: 0;
+}
+
+.imageScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7, 26, 33, 0.55) 0%,
+    rgba(7, 26, 33, 0.18) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.imageChrome {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 28px);
+  box-sizing: border-box;
+}
+
+.slideTitle {
+  margin: 0;
+  min-width: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--color-white-100);
+  text-align: left;
+}
+
+.arrowGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.navButton {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-white-100) 45%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-blue-160) 25%, transparent);
+  color: var(--color-white-100);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.navButton:hover {
+  background: color-mix(in srgb, var(--color-white-100) 18%, transparent);
+  border-color: var(--color-white-100);
+}
+
+.navButton:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-white-100) 60%, transparent);
+  outline-offset: 2px;
 }
 
 @media (max-width: 1024px) {
   .split {
     grid-template-columns: 1fr;
     gap: 40px;
+    align-items: stretch;
   }
 
-  .introCol {
-    position: static;
+  .copyGrid {
     gap: 20px;
-    padding-top: 0;
   }
 
-  .title {
-    font-size: clamp(28px, 4vw, 36px);
+  .slideTitle {
+    font-size: clamp(20px, 5.5vw, 26px);
   }
 }
 
@@ -83,16 +160,27 @@
     gap: 32px;
   }
 
-  .introCol {
-    gap: 16px;
+  .imageChrome {
+    padding: 20px 16px;
+    gap: 12px;
   }
 
-  .title {
-    font-size: clamp(26px, 7vw, 32px);
+  .slideTitle {
+    font-size: clamp(18px, 5.5vw, 24px);
   }
 
-  .body {
-    font-size: clamp(14px, 3.7vw, 16px);
-    line-height: 1.55;
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .split {
+    gap: 28px;
+  }
+
+  .slideTitle {
+    font-size: clamp(16px, 6vw, 20px);
   }
 }

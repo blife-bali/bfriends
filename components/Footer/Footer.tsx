@@ -71,6 +71,20 @@ function FooterSection({
               <h4 className={styles.footerTitle}>About BFriends</h4>
               <nav>
                 <Link
+                  href="/about"
+                  className={styles.footerLink}
+                  onClick={() => trackEvent("footer_click", { label: "about", category: "page" })}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/spa/spa"
+                  className={styles.footerLink}
+                  onClick={() => trackEvent("footer_click", { label: "spa", category: "page" })}
+                >
+                  Spa
+                </Link>
+                <Link
                   href="/about/journey"
                   className={styles.footerLink}
                   onClick={() => trackEvent("footer_click", { label: "friends_journey", category: "page" })}

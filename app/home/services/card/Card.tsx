@@ -27,7 +27,7 @@ export default function Card({
           alt={title}
           fill
           className={styles.image}
-          sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 25vw"
           quality={75}
           draggable={false}
         />

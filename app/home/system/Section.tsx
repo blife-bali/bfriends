@@ -1,11 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import useEmblaCarousel from "embla-carousel-react";
 import Button from "@/components/ui/Button/Button";
-import StepCard from "./StepCard";
 import { trackEvent } from "@/lib/gtag";
 import styles from "./Section.module.css";
 
@@ -19,9 +16,14 @@ needs over time.
 You don't have to do everything at once. You simply begin where you are—and grow from there.`;
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0 },
 };
+
+interface ProcessSubpoint {
+  title: string;
+  description: string;
+}
 
 interface JourneyStep {
   id: number;
@@ -29,6 +31,7 @@ interface JourneyStep {
   title: string;
   description?: string;
   image: string;
+  subpoints?: ProcessSubpoint[];
 }
 
 function formatStepIndex(number: string | undefined, index: number) {
@@ -44,15 +47,7 @@ export default function SystemSection({
   carouselSteps?: JourneyStep[];
 }) {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.08 });
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    containScroll: "trimSnaps",
-    dragFree: false,
-    slidesToScroll: 1,
-  });
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
+  const inView = useInView(ref, { once: true, amount: 0.06 });
 
   const homeSection = steps?.[0];
   const heading = homeSection?.title || DEFAULT_HEADING;
@@ -61,98 +56,78 @@ export default function SystemSection({
     .map((s: string) => s.trim())
     .filter(Boolean);
 
-  const updateArrows = useCallback(() => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi.reInit();
-    updateArrows();
-    emblaApi.on("select", updateArrows);
-    emblaApi.on("reInit", updateArrows);
-    return () => {
-      emblaApi.off("select", updateArrows);
-      emblaApi.off("reInit", updateArrows);
-    };
-  }, [emblaApi, carouselSteps.length, updateArrows]);
-
   return (
     <section ref={ref} className={styles.section} aria-label="The BFriends system">
       <div className={styles.container}>
-        <motion.div
-          className={styles.titleRow}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={fadeUp}
-          transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
-        >
-          <div className={styles.titleContainer}>
-            <h2 className={styles.headerTitle}>{heading}</h2>
+        <div className={styles.split}>
+          <motion.aside
+            className={styles.introCol}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={fadeUp}
+            transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
+          >
+            <h2 className={styles.title}>{heading}</h2>
             {paragraphs.map((paragraph: string, idx: number) => (
-              <p key={idx} className={styles.headerSub}>
+              <p key={idx} className={styles.body}>
                 {paragraph}
               </p>
             ))}
-          </div>
+            <Button
+              href="/about/journey"
+              color="var(--color-blue-100)"
+              className={styles.cta}
+              onClick={() =>
+                trackEvent("cta_click", {
+                  label: "view_customer_journey",
+                  location: "home_system",
+                })
+              }
+            >
+              View BFriends Journey
+            </Button>
+          </motion.aside>
 
-          {carouselSteps.length > 0 && (
-            <div className={styles.arrowContainer}>
-              <button
-                type="button"
-                className={styles.arrowButton}
-                aria-label="Previous step"
-                onClick={() => emblaApi?.scrollPrev()}
-                disabled={!canScrollPrev}
-              >
-                <ChevronLeft size={24} strokeWidth={1.5} />
-              </button>
-              <button
-                type="button"
-                className={styles.arrowButton}
-                aria-label="Next step"
-                onClick={() => emblaApi?.scrollNext()}
-                disabled={!canScrollNext}
-              >
-                <ChevronRight size={24} strokeWidth={1.5} />
-              </button>
-            </div>
-          )}
-        </motion.div>
-
-        {carouselSteps.length > 0 && (
-          <div className={styles.embla} ref={emblaRef}>
-            <div className={styles.emblaContainer}>
-              {carouselSteps.map((step, index) => (
-                <div key={step.id} className={styles.emblaSlide}>
-                  <StepCard
-                    image={step.image}
-                    index={formatStepIndex(step.number, index)}
-                    title={step.title}
-                    description={step.description}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className={styles.buttonWrapper}>
-          <Button
-            href="/about/journey"
-            className={styles.conclusionButton}
-            color="var(--color-blue-100)"
-            onClick={() =>
-              trackEvent("cta_click", {
-                label: "view_customer_journey",
-                location: "home_system",
-              })
-            }
+          <motion.ol
+            className={styles.flowList}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={fadeUp}
+            transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 0.61, 0.36, 1] }}
           >
-            View BFriends Journey
-          </Button>
+            {carouselSteps.map((step, index) => {
+              const stepIndex = formatStepIndex(step.number, index);
+              const isLast = index === carouselSteps.length - 1;
+
+              return (
+                <li key={step.id} className={styles.flowItem}>
+                  <div className={styles.flowMark} aria-hidden="true">
+                    <span className={styles.stepIndex}>{stepIndex}</span>
+                    {!isLast && <span className={styles.flowLine} />}
+                  </div>
+
+                  <article className={styles.stepCard}>
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+
+                    {step.description && (
+                      <p className={styles.description}>{step.description}</p>
+                    )}
+
+                    {step.subpoints && step.subpoints.length > 0 && (
+                      <ul className={styles.subpoints}>
+                        {step.subpoints.map((sp, i) => (
+                          <li key={i} className={styles.subpoint}>
+                            <span className={styles.subpointTitle}>{sp.title}</span>
+                            <span className={styles.subpointDesc}>{sp.description}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </article>
+                </li>
+              );
+            })}
+          </motion.ol>
         </div>
       </div>
     </section>

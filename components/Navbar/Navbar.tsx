@@ -67,7 +67,7 @@ function MenuGrid({
       </div>
 
       {navColumns
-        .filter((col) => col.id !== "membership")
+        .filter((col) => col.id !== "membership" && col.id !== "community")
         .map((col) => {
           const directHref = DIRECT_LINK_HREFS[col.id];
           const isSelected =
@@ -134,7 +134,7 @@ function MobileMenuList({
   onToggleMenu: (menu: ActiveMenuId) => void;
   onItemClick: (label: string, menuId: NavColumnId) => void;
 }) {
-  const columns = navColumns.filter((col) => col.id !== "membership");
+  const columns = navColumns.filter((col) => col.id !== "membership" && col.id !== "community");
 
   const getSubmenuItems = (colId: NavColumnId): NavItem[] => {
     if (colId === "programs") return programItems;

@@ -110,34 +110,38 @@
 /* ---------- Section: What You Will Find + Who It's For ---------- */
 .infoSection {
   width: 100%;
-  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 14%, transparent);
+  background-color: var(--color-white-100);
+  padding: var(--section-padding-y) 0;
+  box-sizing: border-box;
 }
 
 .infoContainer {
   width: 100%;
   max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: 0 var(--section-padding-x);
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  /* gap: clamp(32px, 5vw, 80px); */
   align-items: start;
 }
 
 .infoCol {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
-.infoHeading {
+.infoTitle {
+  margin: 0 0 clamp(24px, 3vw, 40px);
   font-family: var(--font-sans);
-  font-size: clamp(11px, 0.85vw, 13px);
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--color-cream-100);
   text-transform: uppercase;
-  color: var(--color-cream-140);
-  margin: 0 0 8px;
 }
 
 .infoList {
@@ -148,57 +152,50 @@
 
 .infoItem {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 20px 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
-  transition: padding-left 0.25s ease;
+  align-items: baseline;
+  gap: clamp(16px, 2vw, 32px);
+  padding: clamp(16px, 1.6vw, 22px) 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+  transition: padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.infoItem:first-child {
-  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+.infoItem:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 12%, transparent);
 }
 
 .infoItem:hover {
-  padding-left: 6px;
+  padding-left: 8px;
 }
 
-.infoItemNumber {
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--color-cream-140);
-  opacity: 0.45;
+.infoIndex {
   flex-shrink: 0;
-  width: 20px;
-  padding-top: 2px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: var(--color-green-100);
+  padding-top: 4px;
 }
 
-.infoItemLabel {
+.infoLabel {
   font-family: var(--font-display);
-  font-size: clamp(22px, 1.8vw, 30px);
+  font-size: clamp(22px, 2.1vw, 32px);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--color-blue-100);
 }
 
 @media (max-width: 1024px) {
   .infoContainer {
-    gap: 48px;
-    padding: 72px 48px;
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 6vw, 56px);
   }
 }
 
 @media (max-width: 768px) {
-  .infoContainer {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 48px 24px;
-  }
-
-  .infoItemLabel {
+  .infoLabel {
     font-size: clamp(20px, 5.5vw, 26px);
   }
 
@@ -208,12 +205,7 @@
 }
 
 @media (max-width: 480px) {
-  .infoContainer {
-    padding: 48px 16px;
-    gap: 40px;
-  }
-
-  .infoItemLabel {
+  .infoLabel {
     font-size: clamp(18px, 5vw, 22px);
   }
 }

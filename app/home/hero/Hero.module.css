@@ -144,12 +144,15 @@
   }
 
   .buttonGroup {
+    align-items: center;
     width: 100%;
     gap: 10px;
   }
 
-  .buttonPrimary {
+  .buttonPrimary,
+  .buttonSecondary {
     width: 100%;
+    max-width: 320px;
     min-height: 48px;
     justify-content: center;
   }

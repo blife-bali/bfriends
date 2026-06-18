@@ -1,12 +1,35 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader/PageHeader";
-import { AboutServicesSection } from "@/components/AboutServicesSection";
 import SpaSessionsSection from "./SpaSessionsSection";
-import { getPublicPrograms } from "@/lib/cms";
 import { getSpaPageData, getSpaSlugs } from "@/lib/spa";
+import styles from "./SpaCrossLinks.module.css";
 
 export const dynamic = "force-dynamic";
+
+const SPA_CROSS_LINKS: Record<string, { label: string; href: string }[]> = {
+  spa: [
+    { label: "Explore Facials", href: "/spa/facials" },
+    { label: "Explore Hair Care", href: "/spa/hair" },
+    { label: "Explore Nail Care", href: "/spa/nails" },
+  ],
+  facials: [
+    { label: "Explore Spa Treatment", href: "/spa/spa" },
+    { label: "Explore Hair Care", href: "/spa/hair" },
+    { label: "Explore Nail Care", href: "/spa/nails" },
+  ],
+  hair: [
+    { label: "Explore Spa Treatment", href: "/spa/spa" },
+    { label: "Explore Facials", href: "/spa/facials" },
+    { label: "Explore Nail Care", href: "/spa/nails" },
+  ],
+  nails: [
+    { label: "Explore Spa Treatment", href: "/spa/spa" },
+    { label: "Explore Facials", href: "/spa/facials" },
+    { label: "Explore Hair Care", href: "/spa/hair" },
+  ],
+};
 
 export async function generateStaticParams() {
   return getSpaSlugs().map((slug) => ({ slug }));
@@ -39,30 +62,20 @@ export default async function SpaPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [data, allPrograms] = await Promise.all([
-    getSpaPageData(slug),
-    getPublicPrograms(),
-  ]);
+  const data = await getSpaPageData(slug);
   if (!data) notFound();
 
   const { config, sessions_group } = data;
   const sessionCount = sessions_group.reduce((n, g) => n + (g.sessions?.length ?? 0), 0);
-  const carouselPrograms = allPrograms.map((program) => ({
-    name: program.general.name,
-    title: program.general.title || program.general.name,
-    subheading: program.general.subheading,
-    image: program.general.image,
-    buttonLabel: program.general.button_label,
-    slug: program.general.slug,
-  }));
+  const crossLinks = SPA_CROSS_LINKS[slug] ?? [];
 
   return (
     <>
       <PageHeader
         variant="programs"
         title={config.title}
+        subtitle={config.subtitle}
         image={config.header_image}
-        showBookNowButton
       />
       <main>
         {sessionCount > 0 && (
@@ -71,8 +84,19 @@ export default async function SpaPage({
             ariaLabel={config.sessions_title}
           />
         )}
-        {carouselPrograms.length > 0 && (
-          <AboutServicesSection programs={carouselPrograms} />
+        {crossLinks.length > 0 && (
+          <section className={styles.crossLinks} aria-label="Explore other services">
+            <div className={styles.crossLinksInner}>
+              <p className={styles.crossLinksLabel}>Explore Other Services</p>
+              <div className={styles.crossLinksButtons}>
+                {crossLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className={styles.crossLinkBtn}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
         )}
       </main>
     </>

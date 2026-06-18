@@ -71,7 +71,7 @@ export default async function HomePage() {
         showBlocks
       />
       <SystemSection steps={processSteps} carouselSteps={journeySteps} />
-      <ServicesSection programs={programs} />
+      <ServicesSection programs={programs} headerLayout="centered" />
       <FriendsSection />
       <MembershipSection />
       {/* <WhyBFriends cards={whyCards} /> */}

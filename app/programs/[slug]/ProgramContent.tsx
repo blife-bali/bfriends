@@ -38,9 +38,9 @@ const PROGRAM_CTA_BY_SLUG: Record<string, { heading: string; label: string; href
     href: "/contact",
   },
   "beauty": {
-    heading: "Ready to elevate your self-care routine?",
-    label: "Elevate Your Self-Care Routine",
-    href: "/contact",
+    heading: "Ready to start your recovery journey?",
+    label: "Start Your Recovery Journey",
+    href: "/spa",
   },
 };
 
@@ -124,38 +124,55 @@ function ProgramInfoSection({
   whatYouWillFind: string[];
   whoItsFor: string[];
 }) {
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.12 });
+
   return (
-    <section className={styles.infoSection}>
+    <section
+      ref={ref}
+      className={styles.infoSection}
+      aria-label="What you will find and who it's for"
+    >
       <div className={styles.infoContainer}>
         {whatYouWillFind.length > 0 && (
-          <div className={styles.infoCol}>
-            <p className={styles.infoHeading}>What You Will Find</p>
+          <motion.div
+            className={styles.infoCol}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.55, ease: EASE }}
+          >
+            <h2 className={styles.infoTitle}>What You Will Find</h2>
             <ul className={styles.infoList}>
               {whatYouWillFind.map((item, i) => (
                 <li key={item} className={styles.infoItem}>
-                  <span className={styles.infoItemNumber}>
+                  <span className={styles.infoIndex} aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className={styles.infoItemLabel}>{item}</span>
+                  <span className={styles.infoLabel}>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
         {whoItsFor.length > 0 && (
-          <div className={styles.infoCol}>
-            <p className={styles.infoHeading}>Who It&apos;s For</p>
+          <motion.div
+            className={styles.infoCol}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.55, delay: 0.1, ease: EASE }}
+          >
+            <h2 className={styles.infoTitle}>Who It&apos;s For</h2>
             <ul className={styles.infoList}>
               {whoItsFor.map((item, i) => (
                 <li key={item} className={styles.infoItem}>
-                  <span className={styles.infoItemNumber}>
+                  <span className={styles.infoIndex} aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className={styles.infoItemLabel}>{item}</span>
+                  <span className={styles.infoLabel}>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

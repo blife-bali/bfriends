@@ -35,26 +35,19 @@ export default function MembershipSection({
       </div>
 
       <div className={styles.content}>
-        <div className={styles.copy}>
+        
           <h2 className={styles.title}>{title}</h2>
           {body ? <p className={styles.body}>{body}</p> : null}
-        </div>
+        
 
         <div className={styles.ctaGroup}>
           <Button
             variant="border"
-            className={styles.ctaPrimary}
+            className={styles.cta}
             color="var(--color-blue-100)"
             href="/programs"
           >
-            Explore Programmes
-          </Button>
-          <Button
-            className={styles.ctaSecondary}
-            color="var(--color-blue-100)"
-            href="/membership/bfriends-passport"
-          >
-            View Memberships
+            Explore Programmes and Membership
           </Button>
         </div>
       </div>

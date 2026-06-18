@@ -41,7 +41,6 @@ export default async function AboutPage() {
     <main className={styles.page}>
       <PageHeader
         title={header.title}
-        breadcrumb={header.breadcrumb}
         image={header.image}
         subtitle={header.description ?? undefined}
         cta={{ label: "Explore Programmes", href: "/programs" }}
@@ -58,8 +57,8 @@ export default async function AboutPage() {
           "Behind every recommendation is a team of experienced professionals dedicated to helping individuals make meaningful and sustainable progress.",
           "Through expert interpretation, personalized guidance and ongoing support, wellness becomes more than a routine — it becomes a journey built around you.",
         ]}
-        ctaLabel="Explore Our Programmes"
-        ctaHref="/about/facilities"
+        ctaLabel="Meet The Experts"
+        ctaHref="/about/staff"
       />
       <AboutFramework />
       <BLifeEcosystem items={ecosystemItems} />
