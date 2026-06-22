@@ -48,6 +48,16 @@ const nextConfig: NextConfig = {
         destination: "/spa/:slug",
         permanent: true,
       },
+      {
+        source: "/about/facilities",
+        destination: "/facilities",
+        permanent: true,
+      },
+      {
+        source: "/about/facilities/:slug",
+        destination: "/facilities/:slug",
+        permanent: true,
+      },
     ];
   },
   images: {

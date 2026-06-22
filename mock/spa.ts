@@ -37,7 +37,7 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
       "manicure",
       "pedicure",
     ],
-    services_heading: "Feel Better Programs",
+    services_heading: "Feel Better Programmes",
     sessions_title: "Spa Treatments",
     seo_title: "Spa Treatments | BFriends Bali",
     seo_description:
@@ -52,7 +52,7 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
     header_image: "/images/Enhance/DDK00418.webp",
     program_slugs: ["beauty"],
     session_group_keywords: ["facial"],
-    services_heading: "Look Better Programs",
+    services_heading: "Look Better Programmes",
     sessions_title: "Facial Treatments",
     seo_title: "Facial Treatments | BFriends Bali",
     seo_description:
@@ -68,7 +68,7 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
     program_slugs: ["beauty", "spa", "enhance"],
     program_name_keywords: ["hair", "face and hair", "beauty", "look better"],
     session_group_keywords: ["hair", "scalp"],
-    services_heading: "BFriends Programs",
+    services_heading: "BFriends Programmes",
     sessions_title: "Scalp & Hair Rituals",
     seo_title: "Scalp & Hair Rituals | BFriends Bali",
     seo_description:
@@ -84,7 +84,7 @@ export const mockSpaPages: Record<SpaSlug, MockSpaPage> = {
     program_slugs: ["enhance", "beauty"],
     program_name_keywords: ["look better"],
     session_group_keywords: ["nail", "manicure", "pedicure"],
-    services_heading: "Look Better Programs",
+    services_heading: "Look Better Programmes",
     sessions_title: "Nail Treatments",
     seo_title: "Nail Treatments | BFriends Bali",
     seo_description:

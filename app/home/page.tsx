@@ -19,7 +19,6 @@ import {
   getEvents,
   getNews,
   getPublicPrograms,
-  getJourneySection,
   getFaqs,
 } from "@/lib/cms";
 import SiteLocation from "@/components/SiteLocation/SiteLocation";
@@ -36,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [hero, intro, whyCards, processSteps, journeySteps, events, news, publicPrograms, journeySection, faqs] = await Promise.all([
+  const [hero, intro, whyCards, processSteps, journeySteps, events, news, publicPrograms, faqs] = await Promise.all([
     getHeroByPage("home"),
     getIntroByPage("home"),
     getWhyCards(),
@@ -45,7 +44,6 @@ export default async function HomePage() {
     getEvents(),
     getNews(),
     getPublicPrograms(),
-    getJourneySection(),
     getFaqs(),
   ]);
   const programs = publicPrograms.map((program: import("@/lib/cms").PublicProgram) => ({
@@ -82,8 +80,9 @@ export default async function HomePage() {
       </section> */}
       
       
-      <FaqSection faqs={faqs.slice(0, 4)} />
+      
       <SiteLocation />
+      <FaqSection faqs={faqs.slice(0, 4)} />
       {/* <NewsAndEventsSection events={events} news={news} /> */}
       <SiteNewsletterCta />
     </>

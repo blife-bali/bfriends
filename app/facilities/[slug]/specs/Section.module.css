@@ -1,0 +1,203 @@
+@reference "../../../globals.css";
+
+.section {
+  width: 100%;
+  background-color: var(--color-white-100);
+  padding: var(--section-padding-y) 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  box-sizing: border-box;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.13fr;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: start;
+}
+
+.introCol {
+  position: sticky;
+  top: 40%;
+  transform: translateY(-50%);
+  align-self: start;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.2vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--color-blue-100);
+}
+
+.flowList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.flowItem {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 20px;
+}
+
+.flowMark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.stepIndex {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--color-green-100);
+}
+
+.flowLine {
+  width: 1px;
+  flex: 1;
+  min-height: 24px;
+  margin-top: 14px;
+  background: color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+}
+
+.flowItem:last-child .stepCard {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.stepTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-cream-140);
+}
+
+.subpoints {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
+}
+
+.subpoint {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 8%, transparent);
+}
+
+.subpoint:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.subpointTitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-blue-100);
+}
+
+.subpointDesc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-cream-140);
+}
+
+@media (max-width: 1024px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .introCol {
+    position: static;
+    transform: none;
+  }
+
+  .title {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+}
+
+@media (max-width: 768px) {
+  .split {
+    gap: 32px;
+  }
+
+  .title {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+
+  .description,
+  .subpointDesc {
+    font-size: 14px;
+  }
+
+  .flowItem {
+    gap: 14px;
+  }
+
+  .stepCard {
+    gap: 10px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+  }
+
+  .stepTitle {
+    font-size: clamp(18px, 4.8vw, 22px);
+  }
+
+  .subpoint {
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

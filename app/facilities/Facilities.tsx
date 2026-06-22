@@ -50,7 +50,7 @@ function FacilityRow({ facility, index }: { facility: MockFacility; index: numbe
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: EASE }}
     >
-      <Link href={`/about/facilities/${facility.id}`} className={styles.media} ref={mediaRef}>
+      <Link href={`/facilities/${facility.id}`} className={styles.media} ref={mediaRef}>
         <motion.div className={styles.mediaLayer} style={{ y }}>
           <Image
             src={facility.image}
@@ -66,19 +66,13 @@ function FacilityRow({ facility, index }: { facility: MockFacility; index: numbe
       </Link>
 
       <div className={styles.copy}>
-        <div className={styles.metaRow}>
-          <span className={styles.pillar}>{facility.pillarLabel}</span>
-          <span className={styles.metaDivider} aria-hidden="true" />
-          <span className={styles.floor}>{facility.floor}</span>
-        </div>
-
         <h2 id={`facility-${facility.id}-title`} className={styles.title}>
           {facility.name}
         </h2>
 
         <p className={styles.body}>{facility.sub}</p>
 
-        <Link href={`/about/facilities/${facility.id}`} className={styles.cta}>
+        <Link href={`/facilities/${facility.id}`} className={styles.cta}>
           <span className={styles.ctaLabel}>Explore {facility.name}</span>
           <ArrowRight
             className={styles.ctaArrow}

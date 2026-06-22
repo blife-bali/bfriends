@@ -52,7 +52,7 @@ export default function Section({ programs = [] }: { programs?: any[] }) {
       <div className={styles.background}>
         <Image
           src={isMobile ? "/images/programs/D-mobile.webp" : "/images/programs/D.webp"}
-          alt="Programs"
+          alt="Programmes"
           width={isMobile ? 750 : 1536}
           height={isMobile ? 1334 : 1080}
           className={styles.backgroundImage}
@@ -84,7 +84,7 @@ export default function Section({ programs = [] }: { programs?: any[] }) {
         <div className={styles.contentWrapper}>
           <div className={styles.titleContainer}>
             <p className={styles.eyebrow}>
-              Our Programs
+              Our Programmes
             </p>
             <p className={styles.headingText}>
               The <em>Journey</em> <br/> at BFriends

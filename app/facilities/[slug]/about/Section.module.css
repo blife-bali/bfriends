@@ -1,0 +1,59 @@
+@reference "../../../globals.css";
+
+.section {
+  width: 100%;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  box-sizing: border-box;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 8%, transparent);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.9vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-green-100);
+  margin: 0 0 20px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-blue-100);
+  margin: 0 0 clamp(24px, 3vw, 32px);
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

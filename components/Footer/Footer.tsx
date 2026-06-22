@@ -92,7 +92,7 @@ function FooterSection({
                   Friends Journey
                 </Link>
                 <Link
-                  href="/about/facilities"
+                  href="/facilities"
                   className={styles.footerLink}
                   onClick={() => trackEvent("footer_click", { label: "facilities", category: "page" })}
                 >
@@ -130,7 +130,7 @@ function FooterSection({
 
           <div className={styles.footerColumn}>
             <div className={styles.footerPrograms}>
-              <h4 className={styles.footerTitle}>Programs</h4>
+              <h4 className={styles.footerTitle}>Programmes</h4>
               <nav>
                 {programs.map((program) => (
                   <Link

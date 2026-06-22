@@ -13,6 +13,8 @@ type PageHeaderProgramsProps = {
   subtitle?: string;
   image?: string;
   showBookNowButton?: boolean;
+  showEyebrow?: boolean;
+  eyebrow?: string;
   breadcrumb?: never;
 };
 
@@ -46,6 +48,8 @@ export default function PageHeader(props: PageHeaderProps) {
   const breadcrumb = !isPrograms ? props.breadcrumb : undefined;
   const cta = !isPrograms ? props.cta : undefined;
   const showBookNowButton = isPrograms ? props.showBookNowButton !== false : false;
+  const showEyebrow = isPrograms ? props.showEyebrow !== false : false;
+  const eyebrow = isPrograms ? (props.eyebrow ?? "BFriends") : undefined;
 
   return (
     <section className={sectionClass}>
@@ -68,7 +72,7 @@ export default function PageHeader(props: PageHeaderProps) {
       >
         {isPrograms ? (
           <>
-            <p className={styles.programsEyebrow}>BFriends</p>
+            {showEyebrow && <p className={styles.programsEyebrow}>{eyebrow}</p>}
             <h1 className={styles.title}>{title}</h1>
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
             {showBookNowButton && (

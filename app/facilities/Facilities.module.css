@@ -1,4 +1,4 @@
-@reference "../../globals.css";
+@reference "../globals.css";
 
 .page {
   width: 100%;
@@ -11,7 +11,7 @@
   width: 100%;
   max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: var(--section-padding-y-first-top) var(--section-padding-x) var(--section-padding-y-last-bottom);
+  padding: var(--section-padding-y) var(--section-padding-x);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: clamp(40px, 5vw, 88px);
+}
+
+.row .copy {
+  margin-left: clamp(40px, 5vw, 88px);
+}
+
+.rowReversed .copy {
+  margin-right: clamp(40px, 5vw, 88px);
 }
 
 .rowReversed .media {
@@ -231,7 +238,13 @@
 @media (max-width: 900px) {
   .row {
     grid-template-columns: 1fr;
-    gap: 32px;
+  }
+
+  .row .copy,
+  .rowReversed .copy {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 32px;
   }
 
   .rowReversed .media {

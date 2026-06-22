@@ -350,7 +350,7 @@ function ProgramNavFooter({
   return (
     <section className={styles.programNavFooterSection} aria-label="Previous and next program">
       {/* <div className={styles.programNavFooterEyebrowWrap}>
-        <p className={styles.eyebrow}>Explore Programs</p>
+        <p className={styles.eyebrow}>Explore Programmes</p>
       </div> */}
       <div className={styles.programNavFooter}>
       {previousProgram ? (

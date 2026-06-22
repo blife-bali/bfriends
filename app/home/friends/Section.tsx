@@ -100,7 +100,7 @@ export default function FriendsSection() {
               </div>
               <div className={`${parallax.copyColRight} ${parallax.copyColGapTight}`}>
                 <p className={parallax.copyBody}>{mockFacilitiesPage.intro_body}</p>
-                <Button href="/about/facilities" color="var(--color-blue-100)">
+                <Button href="/facilities" color="var(--color-blue-100)">
                   Explore Facilities
                 </Button>
               </div>

@@ -1,3 +1,5 @@
+import { BOOK_NOW_URL } from "@/lib/site-contact";
+
 export const FACILITY_IDS = [
   "gym",
   "cafe",
@@ -9,6 +11,20 @@ export const FACILITY_IDS = [
 
 export type FacilityId = (typeof FACILITY_IDS)[number];
 
+export type FacilitySpecGroup = {
+  title: string;
+  items: string[];
+  description?: string;
+};
+
+export type FacilityCta = {
+  headline: string;
+  description: string;
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
 export type MockFacility = {
   id: FacilityId;
   name: string;
@@ -16,16 +32,16 @@ export type MockFacility = {
   pillarLabel: string;
   floor: string;
   image: string;
+  gallery_images: string[];
   sub: string;
   sort_order: number;
   seo_title: string;
   seo_description: string;
   hero_headline: string;
-  about_title: string;
   about_body: string;
-  specifications_title: string;
-  specifications: string[];
-  related_program_slug: string;
+  spec_section_label: string;
+  spec_groups: FacilitySpecGroup[];
+  cta: FacilityCta;
 };
 
 export type MockFacilitiesPage = {
@@ -41,42 +57,70 @@ export type MockFacilitiesPage = {
 export const mockFacilitiesPage: MockFacilitiesPage = {
   seo_title: "BFriends Facilities | BFriends Bali",
   seo_description:
-    "Explore BFriends Kerobokan — gym, café, beauty spa, wellness spa, yoga studio, and wall climbing in one integrated wellness destination.",
-  breadcrumb: "About / Facilities",
+    "Explore BFriends Kerobokan — fitness, café, spa & body therapy, facial & beauty, pilates yoga & barre, and climbing in one integrated wellness destination.",
+  breadcrumb: "Facilities",
   header_title: "BFriends Facilities",
   header_image: "/images/programs/D.webp",
-  intro_title: "A Complete Wellness Ecosystem",
+  intro_title: "Designed for Your Wellbeing",
   intro_body:
-    "Every space, service, and experience at BFriends is designed to support your wellness journey. Built around the F.R.I.E.N.D.S framework, our ecosystem brings together movement, recovery, beauty, nutrition, community, and expert support under one destination.",
+    "Every space, service, tool, and expert at BFriends is intentionally designed to support personalized paths toward better wellbeing.",
 };
 
 export const mockFacilities: MockFacility[] = [
   {
     id: "gym",
-    name: "Gym",
+    name: "Fitness",
     pillar: "fitness",
     pillarLabel: "Fitness",
     floor: "Basement",
     image: "/images/Fitness/DDK09594.webp",
-    sub: "The basement gym combines functional training zones, guided strength areas, and Fittrix & InBody analysis so every session starts from what your body actually needs. Training here is not about pushing harder; it is about moving with clarity, confidence, and a routine your Journey Partner designs for you.",
-    sort_order: 0,
-    seo_title: "Gym | BFriends Facilities",
-    seo_description:
-      "Train with purpose at the BFriends basement gym — functional zones, guided strength areas, and Fittrix & InBody analysis in Kerobokan, Bali.",
-    hero_headline: "Find Your Flow",
-    about_title: "About the Gym",
-    about_body:
-      "The basement gym is built for intentional movement. Every zone supports a different training need — from functional strength and mobility to guided conditioning — so your sessions stay aligned with what your body actually requires. With Fittrix posture analysis and InBody composition tracking, your Journey Partner can design a programme rooted in real data, not guesswork.",
-    specifications_title: "Equipment & Training Environment",
-    specifications: [
-      "Functional training zones with free weights and cable systems",
-      "Guided strength and conditioning areas",
-      "Fittrix posture and movement analysis",
-      "InBody composition and body metrics tracking",
-      "Mobility and recovery stations",
-      "Climate-controlled training environment",
+    gallery_images: [
+      "/images/Fitness/DDK09594.webp",
+      "/images/Fitness/DDK09605.webp",
+      "/images/Fitness/DDK09685.webp",
+      "/images/Fitness/DDK09740.webp",
+      "/images/Fitness/DDK09791.webp",
+      "/images/Fitness/DDK09821.webp",
     ],
-    related_program_slug: "fitness",
+    sub: "Customized training and group classes for all levels — with tailored modifications to improve flexibility, strength, posture, and movement confidence.",
+    sort_order: 0,
+    seo_title: "Fitness | BFriends Facilities",
+    seo_description:
+      "Customized training and group classes at the BFriends fitness area — functional zones, guided strength, and assessment-informed programmes in Kerobokan, Bali.",
+    hero_headline: "Find Your Flow",
+    about_body:
+      "Customized training and group classes for all levels with tailored modifications to improve flexibility, strength, posture and movement confidence.",
+    spec_section_label: "Specifications",
+    spec_groups: [
+      {
+        title: "Available Equipment & Facilities",
+        items: [
+          "Free Weights",
+          "Strength Machines",
+          "Calisthenics Training Area",
+          "Bodyweight Training Area",
+        ],
+      },
+      {
+        title: "Available Programmes",
+        items: ["Wellness Movement & Fitness", "Group Classes", "Personal Training"],
+      },
+      {
+        title: "What Makes It Unique",
+        items: [
+          "Personalized movement approach",
+          "Assessment-informed wellness journey",
+          "Expert-guided training experience",
+        ],
+      },
+    ],
+    cta: {
+      headline: "Explore Our Programmes",
+      description:
+        "Discover personalized wellness programmes designed to help you move better and feel stronger.",
+      label: "Explore Programmes",
+      href: "/programs/move-better",
+    },
   },
   {
     id: "cafe",
@@ -85,132 +129,279 @@ export const mockFacilities: MockFacility[] = [
     pillarLabel: "Restore",
     floor: "1st Floor",
     image: "/images/Restore/DDK09897.webp",
-    sub: "BCafé on the first floor is where post-workout restoration meets everyday ritual—signature wellness smoothies, clean nutrition, specialty coffee, and Korean Cheong × Jamu tonics served in a calm lounge you can truly settle into. Recovery is not about stopping; it is the moment your body and energy reconnect.",
+    gallery_images: [
+      "/images/Restore/DDK09897.webp",
+      "/images/Restore/DDK09929.webp",
+      "/images/Restore/DDK09935.webp",
+      "/images/Restore/DDK09994.webp",
+      "/images/Restore/DDK00016.webp",
+      "/images/Restore/DDK00062.webp",
+    ],
+    sub: "Korean-inspired refinement meets Bali's fresh local ingredients — clean, balanced, and nourishing food experiences that support wellness without compromising enjoyment.",
     sort_order: 1,
     seo_title: "Cafe | BFriends Facilities",
     seo_description:
-      "BCafé at BFriends — wellness smoothies, clean nutrition, specialty coffee, and Korean Cheong × Jamu tonics in a calm Kerobokan lounge.",
-    hero_headline: "Restore & Reconnect",
-    about_title: "About BCafé",
+      "BFriends Cafe — Korean-inspired wellness dining with fresh local ingredients, health-focused menus, and a calm social atmosphere in Kerobokan.",
+    hero_headline: "Nourishment For Everyday Wellbeing",
     about_body:
-      "BCafé on the first floor is where post-workout restoration meets everyday ritual. Signature wellness smoothies, clean nutrition, specialty coffee, and Korean Cheong × Jamu tonics are served in a calm lounge designed for you to truly settle in. Recovery is not about stopping — it is the moment your body and energy reconnect.",
-    specifications_title: "Specifications",
-    specifications: [
-      "Signature wellness smoothies and cold-pressed juices",
-      "Clean nutrition bowls and light meals",
-      "Specialty coffee and tea programme",
-      "Korean Cheong × Jamu restorative tonics",
-      "Calm lounge seating with natural light",
-      "Post-workout and pre-session menu options",
+      "BFriends Cafe combines Korean-inspired refinement with Bali's fresh local ingredients to create clean, balanced, and nourishing food experiences. Every menu is thoughtfully prepared to support wellness without compromising enjoyment.",
+    spec_section_label: "Specifications",
+    spec_groups: [
+      {
+        title: "Signature",
+        items: [
+          "FnB selections programmes health focused",
+          "FnB selections use fresh ingredients",
+        ],
+      },
+      {
+        title: "Capacity",
+        items: ["47 Seats"],
+      },
+      {
+        title: "What Makes It Unique",
+        items: [
+          "Wellness-centered dining experience",
+          "Korean-inspired approach",
+          "Designed to complement the Wellness",
+        ],
+      },
     ],
-    related_program_slug: "cafe",
-  },
-  {
-    id: "beauty-spa",
-    name: "Beauty Spa",
-    pillar: "enhance",
-    pillarLabel: "Enhance",
-    floor: "3rd Floor",
-    image: "/images/Enhance/DDK00316.webp",
-    sub: "On the third floor, bright clinical-calm treatment rooms host K-Glow facials, skin boosters, contouring, and advanced laser work—each session guided by K-standard diagnostics and protocols rooted in dermatological practice. Beauty at BFriends is about long-term vitality, not coverage; your outer glow reflects the care built into every visit.",
-    sort_order: 3,
-    seo_title: "Beauty Spa | BFriends Facilities",
-    seo_description:
-      "K-Glow facials, skin boosters, contouring, and advanced laser treatments at the BFriends Beauty Spa on the third floor, Kerobokan.",
-    hero_headline: "Enhance Your Natural Glow",
-    about_title: "About the Beauty Spa",
-    about_body:
-      "On the third floor, bright clinical-calm treatment rooms host K-Glow facials, skin boosters, contouring, and advanced laser work — each session guided by K-standard diagnostics and protocols rooted in dermatological practice. Beauty at BFriends is about long-term vitality, not coverage; your outer glow reflects the care built into every visit.",
-    specifications_title: "Specifications",
-    specifications: [
-      "Clinical-calm treatment suites with adjustable lighting",
-      "K-Glow facial and skin booster protocols",
-      "Advanced contouring and lifting treatments",
-      "Laser and light-based skin therapies",
-      "Dermatological-grade diagnostics and skin analysis",
-      "Private consultation and aftercare rooms",
-    ],
-    related_program_slug: "beauty",
+    cta: {
+      headline: "Support Your Wellness Journey",
+      description: "Explore programmes that combine movement, recovery and nutrition.",
+      label: "Explore Programmes",
+      href: "/programs/live-better",
+    },
   },
   {
     id: "wellness-spa",
-    name: "Wellness Spa",
+    name: "Spa & Body Therapy",
     pillar: "integrate",
     pillarLabel: "Integrate",
     floor: "2nd Floor",
     image: "/images/Integrate/DDK09585.webp",
-    sub: "The second-floor wellness spa offers treatment suites for manual physiotherapy, postural correction, sports recovery, and injury rehabilitation—guided by a six-layer approach that moves from surface renewal to profound rest. Pain is read as a signal; we integrate clinical precision with hands-on care so your body rebuilds strength and alignment with intention.",
-    sort_order: 2,
-    seo_title: "Wellness Spa | BFriends Facilities",
-    seo_description:
-      "Manual physiotherapy, postural correction, sports recovery, and injury rehabilitation at the BFriends Wellness Spa, Kerobokan.",
-    hero_headline: "Integrate Body & Mind",
-    about_title: "About the Wellness Spa",
-    about_body:
-      "The second-floor wellness spa offers treatment suites for manual physiotherapy, postural correction, sports recovery, and injury rehabilitation — guided by a six-layer approach that moves from surface renewal to profound rest. Pain is read as a signal; we integrate clinical precision with hands-on care so your body rebuilds strength and alignment with intention.",
-    specifications_title: "Specifications",
-    specifications: [
-      "Manual physiotherapy and sports recovery suites",
-      "Postural correction and alignment therapy rooms",
-      "Injury rehabilitation and mobility treatment areas",
-      "Six-layer integrative treatment approach",
-      "Private treatment rooms with adjustable beds",
-      "Recovery lounge for post-session rest",
+    gallery_images: [
+      "/images/Integrate/DDK09585.webp",
+      "/images/Integrate/DDK09558.webp",
+      "/images/Integrate/DDK09488.webp",
+      "/images/Integrate/DDK09396.webp",
+      "/images/Integrate/DDK09349.webp",
+      "/images/Integrate/DDK09278.webp",
+      "/images/Integrate/DDK09222.webp",
+      "/images/Integrate/DDK09193.webp",
     ],
-    related_program_slug: "spa",
+    sub: "Personalized body therapies, restorative rituals, and assessment-supported treatments that help your body recover, rebalance, and perform at its best.",
+    sort_order: 2,
+    seo_title: "Spa & Body Therapy | BFriends Facilities",
+    seo_description:
+      "Recovery-focused body therapies, signature rituals, and assessment-supported treatments at BFriends Spa & Body Therapy in Kerobokan.",
+    hero_headline: "Restore Balance. Recover Better.",
+    about_body:
+      "Recovery is an essential part of long-term wellbeing. Through personalized body therapies, restorative rituals, and assessment-supported treatments, BFriends Spa helps the body recover, rebalance, and perform at its best.",
+    spec_section_label: "Treatments & Services",
+    spec_groups: [
+      {
+        title: "Hydro Treatments",
+        items: ["Korean Body Scrub", "Body Scrub", "Body Mask"],
+      },
+      {
+        title: "Signature Body Rituals",
+        items: [
+          "Body Alignment Therapy",
+          "Motion Balance",
+          "Deep Rest Therapy",
+          "Volcanic Stone Flow Massage",
+          "Kids Massage",
+          "Foot Massage",
+          "Core & Gut Harmony",
+        ],
+      },
+      {
+        title: "Assessment & Technology",
+        items: ["Fitrix", "InBody", "Facial Analyze"],
+      },
+      {
+        title: "Signature Experiences",
+        items: ["Body Alignment Therapy", "Deep Rest Therapy"],
+      },
+    ],
+    cta: {
+      headline: "Start Your Recovery Journey",
+      description:
+        "Discover programmes designed around your body's recovery and wellbeing needs.",
+      label: "Explore Programmes",
+      href: "/programs/feel-better",
+    },
+  },
+  {
+    id: "beauty-spa",
+    name: "Facial & Beauty",
+    pillar: "enhance",
+    pillarLabel: "Enhance",
+    floor: "3rd Floor",
+    image: "/images/Enhance/DDK00316.webp",
+    gallery_images: [
+      "/images/Enhance/DDK00316.webp",
+      "/images/Enhance/DDK00601.webp",
+      "/images/Enhance/DDK00561.webp",
+      "/images/Enhance/DDK00532.webp",
+      "/images/Enhance/DDK00433.webp",
+      "/images/Enhance/DDK00418.webp",
+      "/images/Enhance/DDK00330.webp",
+      "/images/Enhance/DDK00276.webp",
+    ],
+    sub: "Advanced treatments and Korean-inspired beauty expertise — personalized care to help you achieve healthier, more radiant skin.",
+    sort_order: 3,
+    seo_title: "Facial & Beauty | BFriends Facilities",
+    seo_description:
+      "Facial treatments, scalp rituals, and Korean-inspired beauty expertise at BFriends Facial & Beauty in Kerobokan, Bali.",
+    hero_headline: "Beauty Backed By Care",
+    about_body:
+      "Every skin and beauty journey is unique. Through advanced treatments, personalized care, and Korean-inspired beauty expertise, BFriends helps you achieve healthier, more radiant skin.",
+    spec_section_label: "Treatments & Services",
+    spec_groups: [
+      {
+        title: "Facial Treatments",
+        items: ["Glass Glow", "Sculpt Lift", "Sun Soothe", "Hydra Infusion", "Pore Refine"],
+      },
+      {
+        title: "Scalp & Hair Rituals",
+        items: ["Scalp Clarity Ritual", "Hair Strength Therapy", "Relaxation Ritual"],
+      },
+      {
+        title: "Technology & Assessment",
+        items: [
+          "Beauty equipment and assessment tools",
+          "Skin analysis technology",
+        ],
+      },
+      {
+        title: "Signature Experiences",
+        items: ["Glass Glow", "Sculpt Lift"],
+      },
+    ],
+    cta: {
+      headline: "Discover Your Personalized Beauty Journey",
+      description: "Explore programmes and treatments tailored to your individual needs.",
+      label: "Explore Programmes",
+      href: "/programs/look-better",
+    },
   },
   {
     id: "yoga-space",
-    name: "Yoga Space",
+    name: "Pilates, Yoga & Barre",
     pillar: "nurture",
     pillarLabel: "Nurture",
     floor: "4th Floor",
     image: "/images/Nurture/DDK09005.webp",
-    sub: "The fourth-floor studio is your pause button in a high-pace world—a dedicated space for yoga, barre, sound healing, guided meditation, and wellness workshops that center the nervous system and deepen mind-body connection. Nurture is intentional softness: giving your mind the same level of care and training as your muscles.",
-    sort_order: 4,
-    seo_title: "Yoga Space | BFriends Facilities",
-    seo_description:
-      "Yoga, barre, sound healing, and guided meditation at the BFriends fourth-floor studio in Kerobokan, Bali.",
-    hero_headline: "Nurture Your Inner Balance",
-    about_title: "About the Yoga Space",
-    about_body:
-      "The fourth-floor studio is your pause button in a high-pace world — a dedicated space for yoga, barre, sound healing, guided meditation, and wellness workshops that center the nervous system and deepen mind-body connection. Nurture is intentional softness: giving your mind the same level of care and training as your muscles.",
-    specifications_title: "Specifications",
-    specifications: [
-      "Open-plan studio with natural light and ventilation",
-      "Premium yoga mats, blocks, and props",
-      "Barre and mobility training equipment",
-      "Sound healing and meditation setup",
-      "Workshop and small-group session capacity",
-      "Quiet changing and preparation area",
+    gallery_images: [
+      "/images/Nurture/DDK09005.webp",
+      "/images/Nurture/DDK09001.webp",
+      "/images/Nurture/DDK09021.webp",
+      "/images/Nurture/DDK09034.webp",
+      "/images/Nurture/DDK09064.webp",
+      "/images/Nurture/DDK09078.webp",
+      "/images/Nurture/DDK09099.webp",
+      "/images/Nurture/DDK09121.webp",
     ],
-    related_program_slug: "fitness",
+    sub: "Movement practices that support strength, mobility, posture, and overall wellbeing — with a deeper connection between body and mind.",
+    sort_order: 4,
+    seo_title: "Pilates, Yoga & Barre | BFriends Facilities",
+    seo_description:
+      "Pilates, yoga, and barre classes with reformer equipment and expert instructors at BFriends in Kerobokan, Bali.",
+    hero_headline: "Move With Intention",
+    about_body:
+      "Through Pilates, Yoga, and Barre, BFriends offers movement practices that support strength, mobility, posture, and overall wellbeing while encouraging deeper connection between body and mind.",
+    spec_section_label: "Treatments & Services",
+    spec_groups: [
+      {
+        title: "Available Classes",
+        items: [
+          "Pilates — Strengthens the body through controlled movement, core engagement, posture improvement, and stability.",
+          "Yoga — Supports flexibility, mobility, mindful breathing, and functional movement.",
+          "Barre — Combines dance-inspired conditioning and strength training to improve posture, balance, and coordination.",
+        ],
+      },
+      {
+        title: "Pilates Equipment",
+        items: [
+          "4 MPX Reformers",
+          "Cadillac / Trapeze Table",
+          "Stability Chair",
+          "Ladder Barrel",
+        ],
+      },
+      {
+        title: "Yoga & Barre Equipment",
+        items: ["Studio equipment and props"],
+      },
+      {
+        title: "Signature Experiences",
+        items: [
+          "Pilates Reformer Training",
+          "Yoga Mobility Practice",
+          "Barre Conditioning",
+        ],
+      },
+    ],
+    cta: {
+      headline: "Move Better Every Day",
+      description: "Discover movement programmes designed to support your wellness journey.",
+      label: "Explore Programmes",
+      href: "/programs/move-better",
+    },
   },
   {
     id: "wallclimbing",
-    name: "Wallclimbing",
+    name: "Climbing",
     pillar: "dare",
     pillarLabel: "Dare",
     floor: "Wallclimbing",
     image: "/images/programs/D.webp",
-    sub: "Our dedicated wall-climbing facility welcomes beginners and experienced climbers alike—build confidence, resilience, and body awareness through intentional movement, curated routes, and community events that celebrate progress. More than sport, climbing here is a practice of trust, breakthrough, and rediscovering the joy of moving forward, one hold at a time.",
-    sort_order: 5,
-    seo_title: "Wallclimbing | BFriends Facilities",
-    seo_description:
-      "Wall climbing for beginners and experienced climbers at BFriends — curated routes, coaching, and community events in Kerobokan.",
-    hero_headline: "Dare to Climb Higher",
-    about_title: "About Wallclimbing",
-    about_body:
-      "Our dedicated wall-climbing facility welcomes beginners and experienced climbers alike — build confidence, resilience, and body awareness through intentional movement, curated routes, and community events that celebrate progress. More than sport, climbing here is a practice of trust, breakthrough, and rediscovering the joy of moving forward, one hold at a time.",
-    specifications_title: "Equipment & Training Environment",
-    specifications: [
-      "Curated bouldering and top-rope routes for all levels",
-      "Auto-belay and safety-certified climbing systems",
-      "Climbing shoes and harness rental available",
-      "Beginner introduction and technique coaching",
-      "Route-setting programme with regular updates",
-      "Community events and progression workshops",
+    gallery_images: [
+      "/images/programs/D.webp",
+      "/images/Fitness/DDK09881.webp",
+      "/images/Fitness/DDK09821.webp",
+      "/images/Fitness/DDK09791.webp",
+      "/images/Fitness/DDK09605.webp",
     ],
-    related_program_slug: "fitness",
+    sub: "Physical movement and mental focus in one rewarding experience — building confidence, resilience, and perseverance on a 15-meter climbing wall.",
+    sort_order: 5,
+    seo_title: "Climbing | BFriends Facilities",
+    seo_description:
+      "15-meter climbing wall for adults and children at BFriends — strength, coordination, and personal growth in Kerobokan.",
+    hero_headline: "Growth Through Challenge",
+    about_body:
+      "Climbing combines physical movement and mental focus to create a rewarding experience that strengthens the body while building confidence and perseverance.",
+    spec_section_label: "Specifications",
+    spec_groups: [
+      {
+        title: "Facility Overview",
+        items: ["15-Meter Climbing Wall"],
+      },
+      {
+        title: "Available Programmes",
+        items: [
+          "Adult Wall Climbing — Full-body movement experience focused on strength, coordination, balance, and endurance.",
+          "Kids Wall Climbing — Fun and engaging climbing experiences that support confidence, coordination, and problem-solving skills.",
+        ],
+      },
+      {
+        title: "What Makes It Unique",
+        items: [
+          "Suitable for both adults and children",
+          "Combines physical challenge with personal growth",
+          "Integrated within the broader BFriends wellness ecosystem",
+        ],
+      },
+    ],
+    cta: {
+      headline: "Take The Next Step In Your Wellness Journey",
+      description: "Explore programmes designed to help you move, grow, and thrive.",
+      label: "Book Schedule",
+      href: BOOK_NOW_URL,
+      external: true,
+    },
   },
 ];

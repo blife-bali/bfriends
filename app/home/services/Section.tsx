@@ -59,7 +59,7 @@ export default function Section({
   if (programs.length === 0) return null;
 
   return (
-    <section className={styles.section} aria-label="Our programs">
+    <section className={styles.section} aria-label="Our programmes">
       <div className={styles.mainContainer}>
         <div
           className={

@@ -96,11 +96,11 @@ export default function AboutServicesSection({
   }
 
   return (
-    <section className={styles.section} aria-label="Our programs">
+    <section className={styles.section} aria-label="Our programmes">
       <div className={styles.mainContainer}>
         <div className={styles.titleRow}>
           <div className={styles.titleContainer}>
-            <h2 className={styles.eyebrow}>BFriends Programs</h2>
+            <h2 className={styles.eyebrow}>BFriends Programmes</h2>
           </div>
           <div className={`${styles.arrowContainer} ${styles.desktopArrows}`}>
             <button

@@ -39,6 +39,18 @@ export type PublicProgram = {
   who_its_for: string[];
 };
 
+/** Pillar programme URLs used by facility CTAs until dedicated CMS entries exist. */
+const PROGRAM_SLUG_ALIASES: Record<string, string> = {
+  "move-better": "fitness",
+  "feel-better": "integrate",
+  "look-better": "enhance",
+  "live-better": "restore",
+};
+
+function resolveProgramSlug(slug: string): string {
+  return PROGRAM_SLUG_ALIASES[slug.toLowerCase()] ?? slug;
+}
+
 function parseStringList(value: unknown): string[] {
   if (!value) return [];
   if (typeof value === 'string') {
@@ -202,9 +214,10 @@ export async function getProgramSlugs(): Promise<string[]> {
     const [rows] = await pool.execute(
       'SELECT slug FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order'
     );
-    return (rows as any[]).map(r => r.slug);
+    const slugs = (rows as any[]).map((r) => r.slug);
+    return [...slugs, ...Object.keys(PROGRAM_SLUG_ALIASES)];
   } catch {
-    return [];
+    return Object.keys(PROGRAM_SLUG_ALIASES);
   }
 }
 
@@ -262,14 +275,22 @@ export async function getPublicPrograms(): Promise<PublicProgram[]> {
 }
 
 export async function getPublicProgramBySlug(slug: string): Promise<PublicProgram | null> {
+  const resolvedSlug = resolveProgramSlug(slug);
   try {
     const [rows] = await pool.execute(
       'SELECT * FROM bfriends_programs WHERE LOWER(slug) = LOWER(?) AND is_active = 1 LIMIT 1',
-      [slug]
+      [resolvedSlug]
     );
     const programs = rows as any[];
     if (programs.length === 0) return null;
-    return mapProgramRowToPublicProgram(programs[0]);
+    const program = await mapProgramRowToPublicProgram(programs[0]);
+    if (resolvedSlug !== slug) {
+      return {
+        ...program,
+        general: { ...program.general, slug },
+      };
+    }
+    return program;
   } catch {
     return null;
   }

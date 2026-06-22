@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navColumns, type NavColumnId } from "@/lib/nav-config";
+import { navColumns, utilityNavItems, helpNavItem, type NavColumnId } from "@/lib/nav-config";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { trackEvent } from "@/lib/gtag";
 import Button from "@/components/ui/Button/Button";
@@ -30,7 +30,7 @@ type NavItem = { label: string; href: string; image?: string };
 /** Columns that navigate directly instead of opening a dropdown. */
 const DIRECT_LINK_HREFS: Partial<Record<NavColumnId, string>> = {
   about: "/about",
-  facilities: "/about/facilities",
+  facilities: "/facilities",
 };
 
 function MenuGrid({
@@ -41,6 +41,7 @@ function MenuGrid({
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
+  isContactPage,
   onNavClick,
   onToggleMenu,
 }: {
@@ -51,6 +52,7 @@ function MenuGrid({
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
+  isContactPage: boolean;
   onNavClick: (label: string) => void;
   onToggleMenu: (menu: ActiveMenuId) => void;
 }) {
@@ -105,6 +107,22 @@ function MenuGrid({
             </div>
           );
         })}
+
+      {utilityNavItems.map((item) => {
+        const isSelected = item.href === "/contact" && isContactPage;
+
+        return (
+          <div key={item.href} className={styles.navItemWrapper}>
+            <Link
+              href={item.href}
+              className={`${styles.menuTop} ${isSelected ? styles.menuTopSelected : ""}`}
+              onClick={() => onNavClick(item.label)}
+            >
+              {item.label}
+            </Link>
+          </div>
+        );
+      })}
     </nav>
   );
 }
@@ -117,6 +135,7 @@ function MobileMenuList({
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
+  isContactPage,
   programItems,
   onNavClick,
   onToggleMenu,
@@ -129,6 +148,7 @@ function MobileMenuList({
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
+  isContactPage: boolean;
   programItems: NavItem[];
   onNavClick: (label: string) => void;
   onToggleMenu: (menu: ActiveMenuId) => void;
@@ -204,6 +224,22 @@ function MobileMenuList({
                 ))}
               </ul>
             )}
+          </div>
+        );
+      })}
+
+      {utilityNavItems.map((item) => {
+        const isSelected = item.href === "/contact" && isContactPage;
+
+        return (
+          <div key={item.href} className={styles.mobileNavItem}>
+            <Link
+              href={item.href}
+              className={`${styles.menuTop} ${isSelected ? styles.menuTopSelected : ""}`}
+              onClick={() => onNavClick(item.label)}
+            >
+              {item.label}
+            </Link>
           </div>
         );
       })}
@@ -309,11 +345,12 @@ export default function Navbar() {
     });
   };
 
-  const isProgramPage = pathname.startsWith("/programs/");
-  const isFacilitiesPage = pathname.startsWith("/about/facilities");
+  const isProgramPage = pathname === "/programs" || pathname.startsWith("/programs/");
+  const isFacilitiesPage = pathname.startsWith("/facilities");
   const isAboutPage = pathname === "/about" || pathname.startsWith("/about/");
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
+  const isContactPage = pathname.startsWith("/contact");
 
   const isEventSlug = pathname.startsWith("/community/event/");
   const isNewsSlug = pathname.startsWith("/community/news/");
@@ -329,7 +366,9 @@ export default function Navbar() {
 
   const handleNavClick = (label: string) => {
     trackEvent("nav_click", { label, location: "navbar" });
-    if (label === "Home" || label === "About BFriends") closeMenu();
+    if (label === "Home" || label === "About BFriends" || label === "Contact" || label === "Help") {
+      closeMenu();
+    }
   };
 
   const handleMobileSubmenuClick = (label: string, menuId: NavColumnId) => {
@@ -440,15 +479,15 @@ export default function Navbar() {
 
               <div className={styles.right}>
                 <Button
-                  href="/contact"
+                  href={helpNavItem.href}
                   underline="hover"
                   className={styles.navCta}
                   onClick={() => {
-                    trackEvent("nav_click", { label: "contact_us", location: "navbar" });
+                    trackEvent("nav_click", { label: "help", location: "navbar" });
                     closeMenu();
                   }}
                 >
-                  Contact Us
+                  {helpNavItem.label}
                 </Button>
                 <Button
                   href={BOOK_NOW_URL}
@@ -456,7 +495,10 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   underline="hover"
                   className={styles.navCta}
-                  onClick={() => trackEvent("cta_click", { label: "book_now", location: "navbar" })}
+                  onClick={() => {
+                    trackEvent("cta_click", { label: "book_now", location: "navbar" });
+                    closeMenu();
+                  }}
                 >
                   Book Now
                 </Button>
@@ -475,6 +517,7 @@ export default function Navbar() {
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}
+                isContactPage={isContactPage}
                 onNavClick={handleNavClick}
                 onToggleMenu={toggleMenu}
               />
@@ -557,6 +600,7 @@ export default function Navbar() {
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}
+                isContactPage={isContactPage}
                 programItems={programItems}
                 onNavClick={handleNavClick}
                 onToggleMenu={toggleMenu}
@@ -565,15 +609,15 @@ export default function Navbar() {
             </div>
             <div className={styles.navBottomMobileActions}>
               <Button
-                href="/contact"
+                href={helpNavItem.href}
                 underline="hover"
                 className={styles.navCta}
                 onClick={() => {
-                  trackEvent("nav_click", { label: "contact_us", location: "navbar" });
+                  trackEvent("nav_click", { label: "help", location: "navbar" });
                   closeMenu();
                 }}
               >
-                Contact Us
+                {helpNavItem.label}
               </Button>
               <Button
                 href={BOOK_NOW_URL}
@@ -581,7 +625,10 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 underline="hover"
                 className={styles.navCta}
-                onClick={() => trackEvent("cta_click", { label: "book_now", location: "navbar" })}
+                onClick={() => {
+                  trackEvent("cta_click", { label: "book_now", location: "navbar" });
+                  closeMenu();
+                }}
               >
                 Book Now
               </Button>

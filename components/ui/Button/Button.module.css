@@ -71,8 +71,27 @@
   }
 }
 
+@keyframes button-border-close-fill {
+  0% {
+    clip-path: inset(0 0 0 0 round 9999px);
+  }
+
+  45% {
+    clip-path: inset(100% 0 0 0 round 9999px);
+  }
+
+  46% {
+    clip-path: inset(100% 0 0 0 round 9999px);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0 round 9999px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .button:not(.buttonUnderlineOnHover):not(.buttonBorder):hover:not(:disabled)::after {
+  .button:not(.buttonUnderlineOnHover):not(.buttonBorder):hover:not(:disabled)::after,
+  .buttonBorder:hover:not(:disabled)::before {
     animation: none;
   }
 
@@ -89,11 +108,30 @@
   padding: 12px 28px;
   border: 1px solid var(--button-border-color, currentColor);
   border-radius: 9999px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .buttonBorder::after {
   display: none;
+}
+
+.buttonBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--button-border-color, currentColor);
+  pointer-events: none;
+  clip-path: inset(0 0 0 0 round 9999px);
+}
+
+.buttonBorder:hover:not(:disabled)::before {
+  animation: button-border-close-fill 0.55s ease-in-out;
+}
+
+.buttonBorder .textPart {
+  position: relative;
+  z-index: 1;
 }
 
 .textPart {
