@@ -14,7 +14,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--section-gap);
+  gap: clamp(48px, 5vw, 72px);
   padding: var(--section-padding-y) var(--section-padding-x);
 }
 
@@ -42,8 +42,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: clamp(14px, 1.5vw, 20px);
   width: 100%;
+  max-width: 56ch;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -81,7 +83,7 @@
 .sectionTitle {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(36px, 3vw, 44px);
+  font-size: clamp(30px, 2.6vw, 38px);
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.2;
@@ -91,8 +93,8 @@
 .sectionSub {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: clamp(15px, 1.2vw, 17px);
-  line-height: 1.6;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
   max-width: 64ch;
@@ -101,8 +103,11 @@
 .programGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(20px, 2.5vw, 32px);
-  align-items: stretch;
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .programItem {
@@ -111,13 +116,18 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
+  .mainContainer {
+    gap: clamp(40px, 5vw, 56px);
+  }
+
   .programGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: clamp(20px, 3vw, 32px);
+    max-width: 640px;
   }
 
   .sectionTitle {
-    font-size: clamp(28px, 4vw, 36px);
+    font-size: clamp(26px, 3.5vw, 32px);
   }
 
   .titleContainerSplit {
@@ -128,12 +138,17 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .mainContainer {
+    gap: clamp(32px, 6vw, 48px);
+  }
+
   .sectionTitle {
-    font-size: clamp(26px, 7vw, 32px);
+    font-size: clamp(24px, 6vw, 28px);
   }
 
   .programGrid {
-    gap: 16px;
+    gap: clamp(20px, 4vw, 28px);
+    max-width: 100%;
   }
 }
 

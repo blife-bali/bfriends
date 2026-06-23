@@ -71,27 +71,8 @@
   }
 }
 
-@keyframes button-border-close-fill {
-  0% {
-    clip-path: inset(0 0 0 0 round 9999px);
-  }
-
-  45% {
-    clip-path: inset(100% 0 0 0 round 9999px);
-  }
-
-  46% {
-    clip-path: inset(100% 0 0 0 round 9999px);
-  }
-
-  100% {
-    clip-path: inset(0 0 0 0 round 9999px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .button:not(.buttonUnderlineOnHover):not(.buttonBorder):hover:not(:disabled)::after,
-  .buttonBorder:hover:not(:disabled)::before {
+  .button:not(.buttonUnderlineOnHover):not(.buttonBorder):hover:not(:disabled)::after {
     animation: none;
   }
 
@@ -108,30 +89,20 @@
   padding: 12px 28px;
   border: 1px solid var(--button-border-color, currentColor);
   border-radius: 9999px;
-  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .buttonBorder::after {
   display: none;
 }
 
-.buttonBorder::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  border: 1px solid var(--button-border-color, currentColor);
-  pointer-events: none;
-  clip-path: inset(0 0 0 0 round 9999px);
-}
-
-.buttonBorder:hover:not(:disabled)::before {
-  animation: button-border-close-fill 0.55s ease-in-out;
-}
-
-.buttonBorder .textPart {
-  position: relative;
-  z-index: 1;
+.buttonBorder:hover:not(:disabled) {
+  opacity: 1;
+  border-color: var(--button-color, var(--color-blue-100));
+  background-color: color-mix(in srgb, var(--button-color, var(--color-blue-100)) 8%, transparent);
 }
 
 .textPart {
