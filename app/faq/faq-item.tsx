@@ -1,5 +1,6 @@
 import styles from "./faq-item.module.css";
 import { Plus } from "lucide-react";
+import RichTextContent from "@/components/RichTextContent/RichTextContent";
 
 type FAQItemProps = {
   question: string;
@@ -18,7 +19,7 @@ export default function FAQItem({ question, answer, defaultOpen = false }: FAQIt
       </summary>
       <div className={styles.answerWrap}>
         <div className={styles.answerInner}>
-          <p className={styles.answer}>{answer}</p>
+          <RichTextContent html={answer} className={styles.answer} />
         </div>
       </div>
     </details>

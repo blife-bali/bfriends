@@ -109,6 +109,21 @@
   position: relative;
 }
 
+.flowSlotLeft:has(.stepCard)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 5px;
+  height: 5px;
+  background: var(--color-white-100);
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 24%, transparent);
+  transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.3s ease;
+}
+
 .flowSlotLeft:has(.stepCard)::after {
   content: "";
   position: absolute;
@@ -138,6 +153,21 @@
   position: relative;
 }
 
+.flowSlotRight:has(.stepCard)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 5px;
+  height: 5px;
+  background: var(--color-white-100);
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 24%, transparent);
+  transform: translate(50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.3s ease;
+}
+
 .flowSlotRight:has(.stepCard)::after {
   content: "";
   position: absolute;
@@ -149,6 +179,12 @@
   transform: translateY(-50%);
   pointer-events: none;
   z-index: 0;
+}
+
+.flowItemActive .flowSlotLeft:has(.stepCard)::before,
+.flowItemActive .flowSlotRight:has(.stepCard)::before {
+  border-color: var(--color-blue-40);
+  background: var(--color-white-100);
 }
 
 .flowItemActive .flowSlotLeft:has(.stepCard)::after,
@@ -187,21 +223,28 @@
 }
 
 .stepCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: clamp(20px, 2.5vw, 28px);
-  border: 1px solid color-mix(in srgb, var(--color-blue-100) 16%, transparent);
-  border-radius: var(--radius-md);
+  padding: 0;
+  border: none;
+  border-radius: 0;
   background: var(--color-white-100);
   box-sizing: border-box;
-  transition:
-    border-color 0.3s ease,
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.flowItemActive .stepCard {
-  border-color: var(--color-blue-40);
+.flowSlotLeft .stepCard {
+  padding-right: clamp(32px, 4vw, 56px);
+}
+
+.flowSlotRight .stepCard {
+  padding-left: clamp(32px, 4vw, 56px);
+}
+
+.flowItemActive .flowSlotLeft .stepCard,
+.flowItemActive .flowSlotRight .stepCard {
   transform: translateY(-3px);
 }
 
@@ -320,6 +363,14 @@
 
   .stepCard {
     gap: 10px;
+  }
+
+  .flowSlotLeft .stepCard {
+    padding-right: clamp(24px, 5vw, 40px);
+  }
+
+  .flowSlotRight .stepCard {
+    padding-left: clamp(24px, 5vw, 40px);
   }
 
   .stepTitle {

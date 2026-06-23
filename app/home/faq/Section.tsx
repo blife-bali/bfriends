@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
+import RichTextContent from "@/components/RichTextContent/RichTextContent";
 import styles from "./Section.module.css";
 
 type FaqItem = { id: number | string; question: string; answer: string };
@@ -14,7 +15,6 @@ export default function Section({ faqs = [] }: { faqs?: FaqItem[] }) {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.eyebrow}>FAQ</p>
           <h2 className={styles.heading}>Frequently Asked Questions</h2>
           <p className={styles.sub}>
             Find answers to common questions about our programmes, treatments,
@@ -46,7 +46,7 @@ export default function Section({ faqs = [] }: { faqs?: FaqItem[] }) {
                 </button>
                 <div className={`${styles.answer} ${isOpen ? styles.answerOpen : ""}`}>
                   <div className={styles.answerInner}>
-                    <p className={styles.answerText}>{faq.answer}</p>
+                    <RichTextContent html={faq.answer} className={styles.answerText} />
                   </div>
                 </div>
               </div>

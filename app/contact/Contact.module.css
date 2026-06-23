@@ -152,11 +152,17 @@
   background: var(--color-green-20);
 }
 
+.hoursGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+}
+
 .hoursBlock {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-top: 8px;
   max-width: 28ch;
 }
 
@@ -171,6 +177,10 @@
 
 .hoursLine {
   color: var(--color-blue-100);
+}
+
+.hoursLabel {
+  font-weight: 500;
 }
 
 @media (max-width: 1024px) {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
+import { sanitizeRichText, stripHtml } from '@/lib/rich-text';
 
 export async function GET() {
   try {
@@ -22,13 +23,15 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { question, answer, sort_order, is_active } = body;
 
-    if (!question || !answer) {
+    if (!question || !answer || !stripHtml(answer)) {
       return NextResponse.json({ error: 'question and answer are required' }, { status: 400 });
     }
 
+    const sanitizedAnswer = sanitizeRichText(answer);
+
     const [result] = await pool.execute(
       'INSERT INTO bfriends_faqs (question, answer, sort_order, is_active) VALUES (?, ?, ?, ?)',
-      [question, answer, sort_order ?? 0, is_active ?? 1]
+      [question, sanitizedAnswer, sort_order ?? 0, is_active ?? 1]
     );
 
     const insertResult = result as any;

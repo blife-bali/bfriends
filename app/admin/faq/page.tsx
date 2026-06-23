@@ -5,8 +5,10 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
+import RichTextEditor from '@/components/admin/RichTextEditor';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import { stripHtml } from '@/lib/rich-text';
 
 interface Faq {
   id?: number;
@@ -41,6 +43,10 @@ export default function FaqPage() {
 
   const handleSave = async () => {
     if (!editing) return;
+    if (!stripHtml(editing.answer)) {
+      setToast({ message: 'Answer is required', type: 'error' });
+      return;
+    }
     const isEdit = !!editing.id;
     const url = isEdit ? `/api/admin/faqs/${editing.id}` : '/api/admin/faqs';
     const method = isEdit ? 'PUT' : 'POST';
@@ -74,7 +80,10 @@ export default function FaqPage() {
           columns={[
             { key: 'sort_order', label: 'Order' },
             { key: 'question', label: 'Question' },
-            { key: 'answer', label: 'Answer', render: (v: string) => v?.length > 80 ? v.slice(0, 80) + '…' : v },
+            { key: 'answer', label: 'Answer', render: (v: string) => {
+              const plain = stripHtml(v ?? '');
+              return plain.length > 80 ? plain.slice(0, 80) + '…' : plain;
+            }},
             { key: 'is_active', label: 'Status', render: (v: number) => (
               <span className={`admin-badge ${v ? 'admin-badge-active' : 'admin-badge-inactive'}`}>{v ? 'Active' : 'Inactive'}</span>
             )},
@@ -87,12 +96,12 @@ export default function FaqPage() {
 
       {editing && (
         <div className="admin-modal-overlay" onClick={() => setEditing(null)}>
-          <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
+          <div className="admin-modal" style={{ width: 720 }} onClick={(e) => e.stopPropagation()}>
             <h3>{editing.id ? 'Edit FAQ' : 'Add FAQ'}</h3>
             <FormField label="Question" name="question" value={editing.question}
               onChange={(v: string) => setEditing({ ...editing, question: v })} required />
-            <FormField label="Answer" name="answer" type="textarea" value={editing.answer}
-              onChange={(v: string) => setEditing({ ...editing, answer: v })} required />
+            <RichTextEditor label="Answer" value={editing.answer}
+              onChange={(v: string) => setEditing({ ...editing, answer: v })} />
             <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
               onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}

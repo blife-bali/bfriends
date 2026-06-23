@@ -1,0 +1,100 @@
+.editorShell {
+  border: 1px solid var(--admin-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white-100);
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  border-bottom: 1px solid var(--admin-border);
+  background: var(--admin-cream);
+}
+
+.toolbarButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-blue-100);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.toolbarButton:hover:not(:disabled) {
+  background: var(--color-white-100);
+  border-color: var(--admin-border);
+}
+
+.toolbarButtonActive {
+  background: var(--color-white-100);
+  border-color: var(--admin-terracotta);
+  color: var(--admin-terracotta);
+}
+
+.toolbarButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.editorViewport {
+  min-height: 180px;
+}
+
+.editorContent {
+  min-height: 180px;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-blue-100);
+  outline: none;
+}
+
+.editorContent p {
+  margin: 0 0 0.75em;
+}
+
+.editorContent p:last-child {
+  margin-bottom: 0;
+}
+
+.editorContent ul,
+.editorContent ol {
+  margin: 0 0 0.75em;
+  padding-left: 1.4em;
+  list-style-position: outside;
+}
+
+.editorContent ul {
+  list-style-type: disc;
+}
+
+.editorContent ol {
+  list-style-type: decimal;
+}
+
+.editorContent li {
+  display: list-item;
+  margin-bottom: 0.35em;
+}
+
+.editorContent a {
+  color: var(--admin-terracotta);
+  text-decoration: underline;
+}
+
+.editorContent:focus {
+  outline: none;
+}
+
+.editorViewport :global(.tiptap) {
+  min-height: 180px;
+}

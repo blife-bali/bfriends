@@ -205,6 +205,7 @@ export interface CharmUsage {
 export interface Faq {
   id: number;
   question: string;
+  /** HTML string from the rich text editor */
   answer: string;
   sort_order: number;
   is_active: number;

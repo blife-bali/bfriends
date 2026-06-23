@@ -106,7 +106,7 @@
   gap: clamp(24px, 3vw, 40px);
   align-items: start;
   width: 100%;
-  max-width: 1040px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

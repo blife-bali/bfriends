@@ -52,13 +52,28 @@ function ContactLocationColumn({
           WhatsApp
         </Link>
       )}
-      {location.hours_title && location.hours_lines && location.hours_lines.length > 0 && (
-        <div className={styles.hoursBlock}>
-          <p className={styles.hoursTitle}>{location.hours_title}</p>
-          {location.hours_lines.map((line) => (
-            <p key={line} className={styles.hoursLine}>
-              {line}
-            </p>
+      {location.hours_sections && location.hours_sections.length > 0 && (
+        <div className={styles.hoursGroup}>
+          {location.hours_sections.map((section) => (
+            <div key={section.title} className={styles.hoursBlock}>
+              <p className={styles.hoursTitle}>{section.title}</p>
+              {section.entries.map((entry) => (
+                <p
+                  key={entry.label ? `${entry.label}-${entry.text}` : entry.text}
+                  className={styles.hoursLine}
+                >
+                  {entry.label ? (
+                    <>
+                      <span className={styles.hoursLabel}>{entry.label}</span>
+                      <br />
+                      {entry.text}
+                    </>
+                  ) : (
+                    entry.text
+                  )}
+                </p>
+              ))}
+            </div>
           ))}
         </div>
       )}

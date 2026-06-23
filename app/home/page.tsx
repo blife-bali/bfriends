@@ -82,7 +82,7 @@ export default async function HomePage() {
       
       
       <SiteLocation />
-      <FaqSection faqs={faqs.slice(0, 4)} />
+      <FaqSection faqs={faqs.slice(0, 6)} />
       {/* <NewsAndEventsSection events={events} news={news} /> */}
       <SiteNewsletterCta />
     </>

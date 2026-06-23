@@ -20,9 +20,9 @@ export default async function FaqPage() {
       <div className={styles.container}>
         <header className={styles.hero}>
           <p className={styles.eyebrow}>Support</p>
-          <h1 className={styles.title}>Frequently Asked Questions</h1>
+          <h1 className={styles.title}>Curious about how BFriends works?</h1>
           <p className={styles.intro}>
-            Find quick answers about BFriends services, bookings, and what to expect when joining our ecosystem.
+            From assessments and personalized programs to facilities and memberships, here are answers to the questions we hear most often.
           </p>
         </header>
 

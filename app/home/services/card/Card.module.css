@@ -3,7 +3,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1.5vw, 16px);
+  gap: clamp(20px, 2.5vw, 24px);
   height: 100%;
 }
 
@@ -25,7 +25,10 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: 1;
+}
+
+.button {
+  align-self: flex-start;
 }
 
 .name {
@@ -41,34 +44,31 @@
 
 .title {
   font-family: var(--font-sans);
-  font-size: clamp(12px, 1vw, 14px);
+  font-size: clamp(12px, 1vw, 13px);
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  color: var(--color-cream-100);
+  color: var(--color-blue-140);
   margin: 0;
+  opacity: 0.8;
+  text-wrap: balance;
+  filter:grayscale(1)
 }
 
 .subheading {
   font-family: var(--font-sans);
   font-size: clamp(12px, 0.95vw, 13px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.45;
   letter-spacing: -0.01em;
   color: var(--color-cream-140);
   margin: 0;
 }
 
-.button {
-  align-self: flex-start;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
 /* Tablet */
 @media (max-width: 1024px) {
   .card {
-    gap: 10px;
+    gap: 20px;
   }
 
   .imageWrap {
@@ -83,16 +83,12 @@
   .title {
     font-size: clamp(12px, 1.5vw, 13px);
   }
-
-  .button {
-    padding-top: 6px;
-  }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .card {
-    gap: 10px;
+    gap: 20px;
   }
 
   .imageWrap {
@@ -119,12 +115,6 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .button {
-    padding-top: 4px;
-    min-height: 40px;
-    font-size: 13px;
   }
 }
 

@@ -6,6 +6,16 @@ export type MockContactChannel = {
   sort_order: number;
 };
 
+export type MockContactHoursEntry = {
+  label?: string;
+  text: string;
+};
+
+export type MockContactHoursSection = {
+  title: string;
+  entries: MockContactHoursEntry[];
+};
+
 export type MockContactLocationColumn = {
   id: string;
   name: string;
@@ -14,8 +24,7 @@ export type MockContactLocationColumn = {
   map_label: string;
   map_href: string;
   channels: MockContactChannel[];
-  hours_title?: string;
-  hours_lines?: string[];
+  hours_sections?: MockContactHoursSection[];
   show_whatsapp_button?: boolean;
 };
 
@@ -114,8 +123,19 @@ export const mockContactLocations: MockContactLocationColumn[] = [
         sort_order: 2,
       },
     ],
-    hours_title: "Guest services",
-    hours_lines: ["Daily, 9:00 AM – 6:00 PM WITA", "Opening 2026 — hours may change"],
+    hours_sections: [
+      {
+        title: "Guest Services",
+        entries: [{ text: "Daily, 7:00 AM – 10:00 PM WITA" }],
+      },
+      {
+        title: "Additional Operational Hours",
+        entries: [
+          { label: "Spa Treatments", text: "Daily, 10:00 AM – 10:00 PM WITA" },
+          { label: "Yoga & Fitness Center", text: "Daily, 8:00 AM – 7:00 PM WITA" },
+        ],
+      },
+    ],
     show_whatsapp_button: true,
   },
   {

@@ -35,14 +35,14 @@ export default function Card({
       <div className={styles.body}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.title}>{title}</p>
-        <Button
-          href={`/programs/${slug}`}
-          color="var(--color-blue-100)"
-          className={styles.button}
-        >
-          {buttonLabel}
-        </Button>
       </div>
+      <Button
+        href={`/programs/${slug}`}
+        color="var(--color-blue-100)"
+        className={styles.button}
+      >
+        {buttonLabel}
+      </Button>
     </article>
   );
 }

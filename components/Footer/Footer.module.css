@@ -228,6 +228,21 @@
   flex-shrink: 0;
 }
 
+.socialIconImage {
+  display: block;
+  width: auto;
+  height: 11px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+.socialIconLink[aria-label="Fresha"] .socialIconImage {
+  height: 8px;
+  max-width: calc(100% - 14px);
+  padding-inline: 7px;
+  box-sizing: content-box;
+}
+
 /* Slight per-icon optical tuning so marks feel even at small size */
 .socialIconLink[aria-label="Facebook"] .socialIconSvg,
 .socialIconLink[aria-label="YouTube"] .socialIconSvg {
@@ -415,6 +430,12 @@
   .socialIconLink[aria-label="X"] .socialIconSvg {
     width: 15px;
     height: 15px;
+  }
+
+  .socialIconLink[aria-label="Fresha"] .socialIconImage {
+    height: 7px;
+    max-width: calc(100% - 12px);
+    padding-inline: 6px;
   }
 
   .footerCopyright {

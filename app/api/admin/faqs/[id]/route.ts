@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
+import { sanitizeRichText } from '@/lib/rich-text';
 
 export async function GET(
   _req: NextRequest,
@@ -43,9 +44,11 @@ export async function PUT(
       return NextResponse.json({ error: 'FAQ not found' }, { status: 404 });
     }
 
+    const sanitizedAnswer = answer != null ? sanitizeRichText(answer) : null;
+
     await pool.execute(
       'UPDATE bfriends_faqs SET question = ?, answer = ?, sort_order = ?, is_active = ? WHERE id = ?',
-      [question ?? null, answer ?? null, sort_order ?? 0, is_active ?? 1, id]
+      [question ?? null, sanitizedAnswer, sort_order ?? 0, is_active ?? 1, id]
     );
 
     const [updated] = await pool.execute(

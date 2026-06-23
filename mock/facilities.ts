@@ -60,7 +60,7 @@ export const mockFacilitiesPage: MockFacilitiesPage = {
     "Explore BFriends Kerobokan — fitness, café, spa & body therapy, facial & beauty, pilates yoga & barre, and climbing in one integrated wellness destination.",
   breadcrumb: "Facilities",
   header_title: "BFriends Facilities",
-  header_image: "/images/programs/D.webp",
+  header_image: "/images/Fitness/DDK09594.webp",
   intro_title: "Designed for Your Wellbeing",
   intro_body:
     "Every space, service, tool, and expert at BFriends is intentionally designed to support personalized paths toward better wellbeing.",

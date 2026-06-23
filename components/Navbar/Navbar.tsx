@@ -30,7 +30,6 @@ type NavItem = { label: string; href: string; image?: string };
 /** Columns that navigate directly instead of opening a dropdown. */
 const DIRECT_LINK_HREFS: Partial<Record<NavColumnId, string>> = {
   about: "/about",
-  facilities: "/facilities",
 };
 
 function MenuGrid({
