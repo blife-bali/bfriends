@@ -1,7 +1,14 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 
 const ALLOWED_TAGS = ["p", "br", "strong", "em", "b", "i", "ul", "ol", "li", "a"];
-const ALLOWED_ATTR = ["href", "target", "rel"];
+
+const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
+  allowedTags: ALLOWED_TAGS,
+  allowedAttributes: {
+    a: ["href", "target", "rel"],
+  },
+  allowedSchemes: ["http", "https", "mailto"],
+};
 
 function looksLikeHtml(value: string): boolean {
   const trimmed = value.trim();
@@ -27,12 +34,7 @@ function addLinkSafetyAttributes(html: string): string {
 }
 
 export function sanitizeRichText(html: string): string {
-  const clean = DOMPurify.sanitize(html, {
-    ALLOWED_TAGS,
-    ALLOWED_ATTR,
-    ALLOW_DATA_ATTR: false,
-  });
-
+  const clean = sanitizeHtml(html, SANITIZE_OPTIONS);
   return addLinkSafetyAttributes(clean);
 }
 
@@ -61,5 +63,5 @@ export function normalizeAnswerForDisplay(answer: string): string {
 }
 
 export function stripHtml(html: string): string {
-  return DOMPurify.sanitize(html, { ALLOWED_TAGS: [] }).trim();
+  return sanitizeHtml(html, { allowedTags: [], allowedAttributes: {} }).trim();
 }
