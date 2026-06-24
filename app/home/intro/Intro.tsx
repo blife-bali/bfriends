@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button/Button";
 import parallax from "@/components/ParallaxSection/ParallaxSection.module.css";
+import videoStyles from "@/components/VideoBlock/VideoBlock.module.css";
 import styles from "./Intro.module.css";
 
 const CONTENT_BLOCKS = [
@@ -25,15 +25,15 @@ const CONTENT_BLOCKS = [
 const DEFAULT_HEADLINE = "Feeling tired, out of balance, or stuck in a routine?";
 const DEFAULT_BODY =
   "Your body doesn’t always need more effort; sometimes it needs the right kind of care. At the center of Kerobokan, Bali, BFriends will help you start where you are and guide you toward what you need.";
-
-// Authentic photo assets aligned to the section meaning (movement + restoration)
-const INTRO_IMAGE = "/images/intro.jpg";
+const DEFAULT_VIDEO = "/videos/BFriends2.mp4";
 
 export interface IntroProps {
   headline?: string;
   body?: string;
-  imageUrl?: string;
+  videoUrl?: string;
   showCta?: boolean;
+  showMedia?: boolean;
+  /** @deprecated Use showMedia */
   showImage?: boolean;
   showBlocks?: boolean;
 }
@@ -41,18 +41,20 @@ export interface IntroProps {
 export default function Intro({
   headline = DEFAULT_HEADLINE,
   body = DEFAULT_BODY,
-  imageUrl = INTRO_IMAGE,
+  videoUrl = DEFAULT_VIDEO,
   showCta = true,
-  showImage = true,
+  showMedia,
+  showImage,
   showBlocks = false,
 }: IntroProps) {
-  const [isImageInView, setIsImageInView] = useState(false);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const shouldShowMedia = showMedia ?? showImage ?? true;
+  const [isMediaInView, setIsMediaInView] = useState(false);
+  const mediaWrapperRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
   const scrollDirection = useRef<"up" | "down">("down");
 
   const { scrollYProgress } = useScroll({
-    target: imageWrapperRef,
+    target: mediaWrapperRef,
     offset: ["start end", "end start"],
   });
   const smoothProgress = useSpring(scrollYProgress, {
@@ -79,22 +81,21 @@ export default function Intro({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsImageInView(true);
+          setIsMediaInView(true);
         } else if (scrollDirection.current === "up") {
-          setIsImageInView(false);
+          setIsMediaInView(false);
         }
       },
       { threshold: 0.25, rootMargin: "0px" }
     );
-    if (imageWrapperRef.current) observer.observe(imageWrapperRef.current);
+    if (mediaWrapperRef.current) observer.observe(mediaWrapperRef.current);
     return () => observer.disconnect();
   }, []);
 
-  const textOnly = !showImage && !showCta;
+  const textOnly = !shouldShowMedia && !showCta;
   return (
     <section className={`${styles.intro} ${textOnly ? styles.introTextOnly : ""}`}>
       <div className={styles.container}>
-        {/* 1. Centered Header */}
         <div className={styles.textColumn}>
           <div className={styles.descriptionContainer}>
             <h2 className={styles.heading}>{headline}</h2>
@@ -111,7 +112,6 @@ export default function Intro({
           </div>
         </div>
 
-        {/* 2. Content Blocks */}
         {showBlocks && (
           <div className={styles.contentBlocks}>
             {CONTENT_BLOCKS.map((block, i) => (
@@ -124,19 +124,21 @@ export default function Intro({
           </div>
         )}
 
-        {/* 3. Parallax Image */}
-        {showImage && (
-          <div className={parallax.imageWrap} ref={imageWrapperRef}>
+        {shouldShowMedia && (
+          <div className={parallax.imageWrap} ref={mediaWrapperRef}>
             <div
-              className={`${parallax.imageFrame} ${parallax.imageFrameRatioIntro} ${isImageInView ? parallax.imageFrameVisible : parallax.imageFrameBefore}`}
+              className={`${parallax.imageFrame} ${parallax.imageFrameRatio169} ${isMediaInView ? parallax.imageFrameVisible : parallax.imageFrameBefore}`}
             >
               <motion.div className={parallax.parallaxLayer} style={{ y }}>
-                <Image
-                  src={imageUrl}
-                  alt="BFriends"
-                  fill
-                  className={parallax.coverImage}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1568px"
+                <video
+                  src={videoUrl}
+                  className={videoStyles.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-hidden
                 />
               </motion.div>
             </div>

@@ -3,8 +3,8 @@ import Button from "@/components/ui/Button/Button";
 import { mockFacilitiesPage } from "@/mock/facilities";
 import styles from "./Section.module.css";
 
-const PRIMARY_IMAGE = "/images/Nurture/DDK09034.webp";
-const SECONDARY_IMAGE = "/images/Integrate/DDK09193.webp";
+const PRIMARY_IMAGE = "/images/Integrate/DDK09396.webp";
+const SECONDARY_IMAGE = "/images/Integrate/DDK00216 (1).webp";
 
 export default function FriendsSection() {
   return (

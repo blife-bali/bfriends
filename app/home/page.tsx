@@ -60,12 +60,12 @@ export default async function HomePage() {
       <Hero
         title={hero?.title}
         subtitle={hero?.subtitle}
-        videoUrl={hero?.video_url}
+        imageUrl={intro?.image_url}
       />
       <Intro
         headline={intro?.headline}
         body={intro?.body}
-        imageUrl={intro?.image_url}
+        videoUrl={hero?.video_url}
         showBlocks
       />
       <SystemSection steps={processSteps} carouselSteps={journeySteps} />

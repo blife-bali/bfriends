@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import { type PublicProgram } from "@/lib/cms";
-import { BOOK_NOW_URL } from "@/lib/site-contact";
+import { WHATSAPP_URL } from "@/lib/site-contact";
 import { ArrowRight, ChevronLeft } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import SessionsSection from "@/components/SessionsSection";
@@ -21,26 +21,42 @@ const FRAMEWORK_FALLBACK_TITLE = "The Framework";
 const FRAMEWORK_FALLBACK_PARAGRAPH =
   "A precision-led approach that connects what your body needs with how we guide you—step by step, in one continuous experience at BFriends.";
 
-const PROGRAM_CTA_BY_SLUG: Record<string, { heading: string; label: string; href: string }> = {
-  "spa": {
-    heading: "Ready to start your recovery journey?",
-    label: "Start Your Recovery Journey",
-    href: "/spa",
-  },
-  "fitness": {
+const PROGRAM_CTA_BY_SLUG: Record<string, { heading: string; label: string }> = {
+  fitness: {
     heading: "Ready to find your movement plan?",
     label: "Find Your Movement Plan",
-    href: "/contact",
   },
-  "cafe": {
-    heading: "Ready to build healthier habits?",
-    label: "Find Your Movement Plan",
-    href: "/contact",
+  restore: {
+    heading: "Ready to start your recovery journey?",
+    label: "Book a session",
   },
-  "beauty": {
+  integrate: {
+    heading: "Ready to restore balance and recovery?",
+    label: "Book a session",
+  },
+  enhance: {
+    heading: "Ready to elevate how you look and feel?",
+    label: "Book a session",
+  },
+  nurture: {
+    heading: "Ready to nurture your wellbeing?",
+    label: "Book a session",
+  },
+  dare: {
+    heading: "Ready to take on your next challenge?",
+    label: "Book a session",
+  },
+  spa: {
     heading: "Ready to start your recovery journey?",
     label: "Start Your Recovery Journey",
-    href: "/spa",
+  },
+  cafe: {
+    heading: "Ready to build healthier habits?",
+    label: "Book a session",
+  },
+  beauty: {
+    heading: "Ready to start your recovery journey?",
+    label: "Start Your Recovery Journey",
   },
 };
 
@@ -305,12 +321,10 @@ function ProgramCta({
   ctaConfig,
 }: {
   program: PublicProgram;
-  ctaConfig?: { heading: string; label: string; href: string };
+  ctaConfig?: { heading: string; label: string };
 }) {
   const heading = ctaConfig?.heading ?? `Ready to experience ${program.general.name}?`;
   const label = ctaConfig?.label ?? "Book a session";
-  const href = ctaConfig?.href ?? BOOK_NOW_URL;
-  const isExternal = href === BOOK_NOW_URL;
 
   return (
     <section className={styles.cta} aria-label="Get started">
@@ -318,8 +332,9 @@ function ProgramCta({
         <p className={styles.eyebrow}>Get started</p>
         <h2 className={styles.ctaHeading}>{heading}</h2>
         <Button
-          href={href}
-          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           color="var(--color-blue-100)"
         >
           {label}

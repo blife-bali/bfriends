@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
-import ImageUploader from '@/components/admin/ImageUploader';
+import VideoUploader from '@/components/admin/VideoUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
 
@@ -14,13 +14,13 @@ interface Intro {
   page: string;
   headline: string;
   body: string;
-  image_url: string;
+  video_url: string;
   show_cta: number;
   sort_order: number;
   is_active: number;
 }
 
-const empty: Intro = { page: 'home', headline: '', body: '', image_url: '', show_cta: 1, sort_order: 0, is_active: 1 };
+const empty: Intro = { page: 'home', headline: '', body: '', video_url: '', show_cta: 1, sort_order: 0, is_active: 1 };
 
 export default function IntroPage() {
   const [items, setItems] = useState<Intro[]>([]);
@@ -101,11 +101,13 @@ export default function IntroPage() {
             <FormField label="Body" name="body" type="textarea" value={editing.body}
               onChange={(v: string) => setEditing({ ...editing, body: v })} required />
             <div className="admin-form-group">
-              <label>Image</label>
-              <ImageUploader value={editing.image_url} onChange={(url: string) => setEditing({ ...editing, image_url: url })} />
+              <label>Intro Video</label>
+              <VideoUploader value={editing.video_url} onChange={(url: string) => setEditing({ ...editing, video_url: url })} />
             </div>
             <div className="admin-form-group">
-              <small style={{ color: 'var(--admin-muted)' }}>Intro ini digunakan untuk Home dan About / Philosophy.</small>
+              <small style={{ color: 'var(--admin-muted)' }}>
+                Video for the Home intro section. Hero background image is managed in Hero.
+              </small>
             </div>
             <FormField label="Show CTA" name="show_cta" type="checkbox" value={!!editing.show_cta}
               onChange={(v: boolean) => setEditing({ ...editing, show_cta: v ? 1 : 0 })} />

@@ -1,25 +1,25 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Hero.module.css";
 
 const DEFAULT_TITLE = "Find What Your Body Needs Today";
 const DEFAULT_SUBTITLE =
   "A personalized wellness journey powered by advanced body assessment technology and expert guidance, designed to evolve with your body's changing needs.";
-const DEFAULT_VIDEO = "/videos/BFriends2.mp4";
+const DEFAULT_IMAGE = "/images/intro.jpg";
 
 export default function Hero({
   title = DEFAULT_TITLE,
   subtitle = DEFAULT_SUBTITLE,
-  videoUrl = DEFAULT_VIDEO,
+  imageUrl = DEFAULT_IMAGE,
 }: {
   title?: string;
   subtitle?: string;
-  videoUrl?: string;
+  imageUrl?: string;
 }) {
   const [blurAmount, setBlurAmount] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,19 +36,14 @@ export default function Hero({
 
   return (
     <section className={styles.hero}>
-      <video
-        ref={videoRef}
-        src={videoUrl}
+      <Image
+        src={imageUrl}
+        alt=""
+        fill
+        priority
         className={styles.background}
         style={{ filter: `blur(${blurAmount}px)` }}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        onEnded={(e) => {
-          e.currentTarget.play().catch(() => undefined);
-        }}
+        sizes="100vw"
         aria-hidden
       />
       <div className={styles.overlay} aria-hidden />

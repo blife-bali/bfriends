@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   motion,
   useInView,
@@ -9,18 +10,14 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Button from "@/components/ui/Button/Button";
-import { trackEvent } from "@/lib/gtag";
-import styles from "./Section.module.css";
+import styles from "./JourneyFlow.module.css";
 
-const DEFAULT_HEADING = "A clear path to move, recover, and improve.";
-const DEFAULT_BODY = `Your journey at BFriends is designed step by step - starting from your baseline, tracking your
-progress, and adjusting as your body heals.
+const DEFAULT_HEADING = "The Friends Journey";
+const DEFAULT_BODY = `The Friends Journey is a unique experience that combines the best of both worlds: the
+physical and the digital. It's a journey that starts with a physical product and continues in the
+digital world, where you can interact with your BFriend in a whole new way.`;
 
-Each phase builds on the last, creating a structured yet flexible path that responds to your
-needs over time.
-
-You don't have to do everything at once. You simply begin where you are—and grow from there.`;
+const FALLBACK_IMAGE = "/images/Integrate/DDK09558.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -29,12 +26,15 @@ const fadeUp = {
 
 interface ProcessSubpoint {
   title: string;
+  description?: string;
 }
 
 interface JourneyStep {
   id: number;
   number?: string;
   title: string;
+  description?: string;
+  image?: string;
   subpoints?: ProcessSubpoint[];
 }
 
@@ -43,45 +43,60 @@ function formatStepIndex(number: string | undefined, index: number) {
   return String(index + 1).padStart(2, "0");
 }
 
-function JourneyStepCard({ step }: { step: JourneyStep }) {
+function JourneyStepContent({ step }: { step: JourneyStep }) {
   const hasPoints = Boolean(step.subpoints && step.subpoints.length > 0);
 
   return (
-    <article
-      className={`${styles.stepCard} ${hasPoints ? styles.stepCardHasPoints : ""}`}
-      style={
-        hasPoints
-          ? ({ "--point-count": step.subpoints!.length } as CSSProperties)
-          : undefined
-      }
-    >
-      {hasPoints && <div className={styles.stepCardSpacer} aria-hidden="true" />}
+    <article className={styles.stepContent}>
       <div className={styles.stepHeader}>
         <h3 className={styles.stepTitle}>{step.title}</h3>
+        {step.description && <p className={styles.stepDescription}>{step.description}</p>}
       </div>
+
       {hasPoints && (
-        <div className={styles.stepPointsRegion}>
+        <>
           <div className={styles.stepDivider} role="separator" />
           <ul className={styles.stepPoints}>
             {step.subpoints!.map((point, i) => (
               <li key={i} className={styles.stepPoint}>
                 <span className={styles.stepPointMarker} aria-hidden="true" />
-                <span className={styles.stepPointText}>{point.title}</span>
+                <div className={styles.stepPointContent}>
+                  <span className={styles.stepPointTitle}>{point.title}</span>
+                  {point.description && (
+                    <span className={styles.stepPointText}>{point.description}</span>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
-        </div>
+        </>
       )}
     </article>
   );
 }
 
-export default function SystemSection({
-  steps = [],
-  carouselSteps = [],
+function JourneyStepImage({ step }: { step: JourneyStep }) {
+  return (
+    <div className={styles.stepImage}>
+      <Image
+        src={step.image || FALLBACK_IMAGE}
+        alt={step.title}
+        fill
+        className={styles.stepImageEl}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    </div>
+  );
+}
+
+export default function JourneyFlow({
+  steps,
+  heading,
+  body,
 }: {
-  steps?: any[];
-  carouselSteps?: JourneyStep[];
+  steps: JourneyStep[];
+  heading?: string;
+  body?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const flowRef = useRef<HTMLDivElement>(null);
@@ -92,12 +107,12 @@ export default function SystemSection({
 
   const { scrollYProgress } = useScroll({
     target: flowRef,
-    offset: ["start 0.85", "end 0.4"],
+    offset: ["start 0.92", "end 0.52"],
   });
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 20,
-    mass: 0.01,
+    stiffness: 280,
+    damping: 32,
+    mass: 0.005,
   });
   const scaleY = useTransform(smoothProgress, [0, 1], [0, 1]);
 
@@ -134,13 +149,13 @@ export default function SystemSection({
     const handleResize = () => updateActiveIndices(smoothProgress.get());
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [smoothProgress, updateActiveIndices, carouselSteps.length]);
+  }, [smoothProgress, updateActiveIndices, steps.length]);
 
   useEffect(() => {
     const updateTrackInset = () => {
       const flow = flowRef.current;
       const firstMark = markRefs.current[0];
-      const lastMark = markRefs.current[carouselSteps.length - 1];
+      const lastMark = markRefs.current[steps.length - 1];
       if (!flow || !firstMark || !lastMark) return;
 
       const flowRect = flow.getBoundingClientRect();
@@ -156,17 +171,16 @@ export default function SystemSection({
     updateTrackInset();
     window.addEventListener("resize", updateTrackInset);
     return () => window.removeEventListener("resize", updateTrackInset);
-  }, [carouselSteps.length]);
+  }, [steps.length]);
 
-  const homeSection = steps?.[0];
-  const heading = homeSection?.title || DEFAULT_HEADING;
-  const paragraphs = (homeSection?.description || DEFAULT_BODY)
+  const title = heading || DEFAULT_HEADING;
+  const paragraphs = (body || DEFAULT_BODY)
     .split("\n\n")
-    .map((s: string) => s.trim())
+    .map((s) => s.trim())
     .filter(Boolean);
 
   return (
-    <section ref={ref} className={styles.section} aria-label="The BFriends system">
+    <section ref={ref} className={styles.section} aria-label="BFriends Journey">
       <div className={styles.container}>
         <motion.header
           className={styles.header}
@@ -175,8 +189,8 @@ export default function SystemSection({
           variants={fadeUp}
           transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
         >
-          <h2 className={styles.title}>{heading}</h2>
-          {paragraphs.map((paragraph: string, idx: number) => (
+          <h2 className={styles.title}>{title}</h2>
+          {paragraphs.map((paragraph, idx) => (
             <p key={idx} className={styles.body}>
               {paragraph}
             </p>
@@ -194,10 +208,9 @@ export default function SystemSection({
           </div>
 
           <ol className={styles.flowList}>
-            {carouselSteps.map((step, index) => {
+            {steps.map((step, index) => {
               const stepIndex = formatStepIndex(step.number, index);
-              const stepNum = index + 1;
-              const cardOnLeft = stepNum % 2 === 0;
+              const contentOnLeft = index % 2 === 1;
 
               return (
                 <li
@@ -207,7 +220,11 @@ export default function SystemSection({
                   }`}
                 >
                   <div className={styles.flowSlotLeft}>
-                    {cardOnLeft && <JourneyStepCard step={step} />}
+                    {contentOnLeft ? (
+                      <JourneyStepContent step={step} />
+                    ) : (
+                      <JourneyStepImage step={step} />
+                    )}
                   </div>
 
                   <div className={styles.flowMark} aria-hidden="true">
@@ -224,29 +241,16 @@ export default function SystemSection({
                   </div>
 
                   <div className={styles.flowSlotRight}>
-                    {!cardOnLeft && <JourneyStepCard step={step} />}
+                    {contentOnLeft ? (
+                      <JourneyStepImage step={step} />
+                    ) : (
+                      <JourneyStepContent step={step} />
+                    )}
                   </div>
                 </li>
               );
             })}
           </ol>
-        </div>
-
-        <div className={styles.flowFooter}>
-          <Button
-            href="/about/journey"
-            variant="border"
-            color="var(--color-blue-80)"
-            
-            onClick={() =>
-              trackEvent("cta_click", {
-                label: "view_customer_journey",
-                location: "home_system",
-              })
-            }
-          >
-            View BFriends Journey
-          </Button>
         </div>
       </div>
     </section>

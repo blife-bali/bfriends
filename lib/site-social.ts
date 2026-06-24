@@ -19,11 +19,13 @@ export const FOOTER_SOCIAL_LINKS = [
     id: "youtube",
     label: "YouTube",
     href: "https://www.youtube.com/@bfriends",
+    hidden: true,
   },
   {
     id: "x",
     label: "X",
     href: "https://x.com/bfriends_bali",
+    hidden: true,
   },
   {
     id: "tiktok",

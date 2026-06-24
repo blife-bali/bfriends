@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
+import {
+  getHomeHeroImageUrl,
+  updateHomeHeroImage,
+  withHeroImageField,
+} from '@/lib/home-section-media';
 
 export async function GET(
   _req: NextRequest,
@@ -13,12 +18,13 @@ export async function GET(
       [id]
     );
 
-    const items = rows as any[];
+    const items = rows as Record<string, unknown>[];
     if (items.length === 0) {
       return NextResponse.json({ error: 'Hero section not found' }, { status: 404 });
     }
 
-    return NextResponse.json(items[0]);
+    const imageUrl = await getHomeHeroImageUrl();
+    return NextResponse.json(withHeroImageField(items[0], imageUrl));
   } catch (error) {
     console.error('Hero GET by id error:', error);
     return NextResponse.json({ error: 'Failed to fetch hero section' }, { status: 500 });
@@ -35,27 +41,38 @@ export async function PUT(
 
     const { id } = await params;
     const body = await req.json();
-    const { title, subtitle, video_url, sort_order, is_active } = body;
+    const { title, subtitle, image_url, sort_order, is_active } = body;
 
     const [existing] = await pool.execute(
       'SELECT id FROM bfriends_hero_sections WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as unknown[]).length === 0) {
       return NextResponse.json({ error: 'Hero section not found' }, { status: 404 });
     }
 
     await pool.execute(
-      'UPDATE bfriends_hero_sections SET page = ?, title = ?, subtitle = ?, video_url = ?, image_url = ?, sort_order = ?, is_active = ? WHERE id = ?',
-      ['home', title, subtitle || null, video_url || null, null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
+      'UPDATE bfriends_hero_sections SET page = ?, title = ?, subtitle = ?, sort_order = ?, is_active = ? WHERE id = ?',
+      ['home', title, subtitle || null, sort_order || 0, is_active !== undefined ? is_active : 1, id]
     );
+
+    if (image_url !== undefined) {
+      try {
+        await updateHomeHeroImage(image_url || null);
+      } catch (mediaError) {
+        console.error('Hero image update error:', mediaError);
+        return NextResponse.json({ error: 'Home intro section not found for hero image' }, { status: 400 });
+      }
+    }
 
     const [updated] = await pool.execute(
       'SELECT * FROM bfriends_hero_sections WHERE id = ?',
       [id]
     );
+    const hero = (updated as Record<string, unknown>[])[0];
+    const mergedImageUrl = await getHomeHeroImageUrl();
 
-    return NextResponse.json((updated as any[])[0]);
+    return NextResponse.json(withHeroImageField(hero, mergedImageUrl));
   } catch (error) {
     console.error('Hero PUT error:', error);
     return NextResponse.json({ error: 'Failed to update hero section' }, { status: 500 });
@@ -76,7 +93,7 @@ export async function DELETE(
       'SELECT id FROM bfriends_hero_sections WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as unknown[]).length === 0) {
       return NextResponse.json({ error: 'Hero section not found' }, { status: 404 });
     }
 
