@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import {
   motion,
   useInView,
@@ -23,25 +22,15 @@ needs over time.
 
 You don't have to do everything at once. You simply begin where you are—and grow from there.`;
 
-const FALLBACK_IMAGE = "/images/Integrate/DDK09558.jpg";
-
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0 },
 };
 
-interface ProcessSubpoint {
-  title: string;
-  description: string;
-}
-
 interface JourneyStep {
   id: number;
   number?: string;
   title: string;
-  description?: string;
-  image: string;
-  subpoints?: ProcessSubpoint[];
 }
 
 function formatStepIndex(number: string | undefined, index: number) {
@@ -53,29 +42,6 @@ function JourneyStepCard({ step }: { step: JourneyStep }) {
   return (
     <article className={styles.stepCard}>
       <h3 className={styles.stepTitle}>{step.title}</h3>
-
-      <div className={styles.stepImageContainer}>
-        <Image
-          src={step.image || FALLBACK_IMAGE}
-          alt={step.title}
-          fill
-          className={styles.stepImage}
-          sizes="(max-width: 768px) 33vw, 22vw"
-        />
-      </div>
-
-      {step.description && <p className={styles.description}>{step.description}</p>}
-
-      {step.subpoints && step.subpoints.length > 0 && (
-        <ul className={styles.subpoints}>
-          {step.subpoints.map((sp, i) => (
-            <li key={i} className={styles.subpoint}>
-              <span className={styles.subpointTitle}>{sp.title}</span>
-              <span className={styles.subpointDesc}>{sp.description}</span>
-            </li>
-          ))}
-        </ul>
-      )}
     </article>
   );
 }

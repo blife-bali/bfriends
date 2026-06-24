@@ -94,7 +94,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(32px, 4vw, 56px);
+  gap: clamp(48px, 6vw, 80px);
 }
 
 .flowItem {
@@ -226,7 +226,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -236,11 +236,13 @@
 }
 
 .flowSlotLeft .stepCard {
-  padding-right: clamp(32px, 4vw, 56px);
+  align-items: flex-end;
+  text-align: right;
+  padding-right: clamp(12px, 1.5vw, 20px);
 }
 
 .flowSlotRight .stepCard {
-  padding-left: clamp(32px, 4vw, 56px);
+  padding-left: clamp(12px, 1.5vw, 20px);
 }
 
 .flowItemActive .flowSlotLeft .stepCard,
@@ -256,64 +258,6 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--color-blue-100);
-}
-
-.stepImageContainer {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  display: none;
-}
-
-.stepImage {
-  object-fit: cover;
-}
-
-.description {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--color-cream-140);
-}
-
-.subpoints {
-  list-style: none;
-  margin: 4px 0 0;
-  padding: 16px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid color-mix(in srgb, var(--color-blue-100) 10%, transparent);
-}
-
-.subpoint {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 14px 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 8%, transparent);
-}
-
-.subpoint:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.subpointTitle {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-blue-100);
-}
-
-.subpointDesc {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--color-cream-140);
 }
 
 @media (max-width: 1200px) {
@@ -337,9 +281,7 @@
     font-size: clamp(26px, 7vw, 32px);
   }
 
-  .body,
-  .description,
-  .subpointDesc {
+  .body {
     font-size: 14px;
   }
 
@@ -348,7 +290,7 @@
   }
 
   .flowList {
-    gap: 28px;
+    gap: 40px;
   }
 
   .stepIndexContainer {
@@ -361,23 +303,15 @@
     padding-top: 28px;
   }
 
-  .stepCard {
-    gap: 10px;
-  }
-
   .flowSlotLeft .stepCard {
-    padding-right: clamp(24px, 5vw, 40px);
+    padding-right: clamp(8px, 2vw, 16px);
   }
 
   .flowSlotRight .stepCard {
-    padding-left: clamp(24px, 5vw, 40px);
+    padding-left: clamp(8px, 2vw, 16px);
   }
 
   .stepTitle {
     font-size: clamp(24px, 6vw, 28px);
-  }
-
-  .subpoint {
-    padding: 12px 0;
   }
 }
