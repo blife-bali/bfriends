@@ -5,7 +5,7 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  padding: clamp(112px, 14vw, 176px) var(--section-padding-x);
+  padding: var(--section-padding-x) var(--section-padding-x) var(--section-padding-y);
 }
 
 .background {

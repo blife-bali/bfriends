@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
-import {
-  getHomeIntroVideoUrl,
-  updateHomeIntroVideo,
-  withIntroVideoField,
-} from '@/lib/home-section-media';
 
 export async function GET(
   _req: NextRequest,
@@ -23,8 +18,7 @@ export async function GET(
       return NextResponse.json({ error: 'Intro section not found' }, { status: 404 });
     }
 
-    const videoUrl = await getHomeIntroVideoUrl();
-    return NextResponse.json(withIntroVideoField(items[0], videoUrl));
+    return NextResponse.json(items[0]);
   } catch (error) {
     console.error('Intro GET by id error:', error);
     return NextResponse.json({ error: 'Failed to fetch intro section' }, { status: 500 });
@@ -41,7 +35,7 @@ export async function PUT(
 
     const { id } = await params;
     const body = await req.json();
-    const { headline, body: bodyText, video_url, show_cta, sort_order, is_active } = body;
+    const { headline, body: bodyText, image_url, show_cta, sort_order, is_active } = body;
 
     const [existing] = await pool.execute(
       'SELECT id FROM bfriends_intro_sections WHERE id = ?',
@@ -52,27 +46,16 @@ export async function PUT(
     }
 
     await pool.execute(
-      'UPDATE bfriends_intro_sections SET page = ?, headline = ?, body = ?, show_cta = ?, sort_order = ?, is_active = ? WHERE id = ?',
-      ['home', headline, bodyText || null, show_cta !== undefined ? show_cta : 1, sort_order || 0, is_active !== undefined ? is_active : 1, id]
+      'UPDATE bfriends_intro_sections SET page = ?, headline = ?, body = ?, image_url = ?, show_cta = ?, sort_order = ?, is_active = ? WHERE id = ?',
+      ['home', headline, bodyText || null, image_url || null, show_cta !== undefined ? show_cta : 1, sort_order || 0, is_active !== undefined ? is_active : 1, id]
     );
-
-    if (video_url !== undefined) {
-      try {
-        await updateHomeIntroVideo(video_url || null);
-      } catch (mediaError) {
-        console.error('Intro video update error:', mediaError);
-        return NextResponse.json({ error: 'Home hero section not found for intro video' }, { status: 400 });
-      }
-    }
 
     const [updated] = await pool.execute(
       'SELECT * FROM bfriends_intro_sections WHERE id = ?',
       [id]
     );
-    const intro = (updated as Record<string, unknown>[])[0];
-    const mergedVideoUrl = await getHomeIntroVideoUrl();
 
-    return NextResponse.json(withIntroVideoField(intro, mergedVideoUrl));
+    return NextResponse.json((updated as Record<string, unknown>[])[0]);
   } catch (error) {
     console.error('Intro PUT error:', error);
     return NextResponse.json({ error: 'Failed to update intro section' }, { status: 500 });

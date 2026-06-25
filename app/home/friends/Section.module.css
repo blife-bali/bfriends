@@ -2,15 +2,16 @@
 
 .section {
   width: 100%;
-  background-color: var(--color-cream-5);
+  background-color: var(--color-white-100);
   overflow-x: clip;
+  padding: 0 var(--section-padding-x);
 }
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: var(--section-padding-x) 0;
   box-sizing: border-box;
 }
 
@@ -42,7 +43,7 @@
 .primaryFrame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/6;
+  aspect-ratio: 8/9;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--color-white-100);
@@ -69,7 +70,7 @@
   position: relative;
   width: 100%;
   /* max-width: 320px; */
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 20/21;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--color-white-100);

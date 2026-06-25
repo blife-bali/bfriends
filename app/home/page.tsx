@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Hero from "./hero/Hero";
-import Intro from "./intro/Intro";
+import { Section as NewIntroSection } from "./new-intro";
 import WhyBFriends from "./why-bfriends/WhyBFriends";
 import { Section as ServicesSection } from "./services";
-import { Section as SystemSection } from "./system";
 import { Section as FaqSection } from "./faq";
 import { Section as NewsAndEventsSection } from "./news-and-events";
 import FriendsSection from "./friends/Section";
@@ -60,15 +59,13 @@ export default async function HomePage() {
       <Hero
         title={hero?.title}
         subtitle={hero?.subtitle}
-        imageUrl={intro?.image_url}
-      />
-      <Intro
-        headline={intro?.headline}
-        body={intro?.body}
         videoUrl={hero?.video_url}
-        showBlocks
       />
-      <SystemSection steps={processSteps} carouselSteps={journeySteps} />
+      <NewIntroSection
+        headline={intro?.headline}
+        steps={processSteps}
+        carouselSteps={journeySteps}
+      />
       <ServicesSection programs={programs} headerLayout="centered" />
       <FriendsSection />
       <MembershipSection />

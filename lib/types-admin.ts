@@ -4,7 +4,6 @@ export interface HeroSection {
   title: string;
   subtitle: string | null;
   video_url: string | null;
-  /** Hero background image; stored in intro row, merged in admin API */
   image_url: string | null;
   sort_order: number;
   is_active: number;
@@ -16,8 +15,6 @@ export interface IntroSection {
   headline: string;
   body: string;
   image_url: string | null;
-  /** Intro section video; stored in hero row, merged in admin API */
-  video_url?: string | null;
   show_cta: number;
   sort_order: number;
   is_active: number;

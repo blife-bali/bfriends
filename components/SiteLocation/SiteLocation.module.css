@@ -1,11 +1,10 @@
 @reference "../../app/globals.css";
 
-/* Location Section */
 .locationSection {
   width: 100%;
   background-color: var(--color-white-100);
-  position: relative;
   display: flex;
+  
   align-items: center;
   justify-content: center;
   padding: var(--section-padding-y) 0;
@@ -14,17 +13,18 @@
 
 .contentWrapper {
   width: 100%;
-  max-width: var(--section-max-width);
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  flex-direction: row;
+  gap: clamp(20px, 3vh, 28px);
   padding: 0 var(--section-padding-x);
   box-sizing: border-box;
 }
 
 .mapWrapper {
   width: 100%;
-  height: 600px;
+  height: clamp(240px, 30vh, 360px);
   position: relative;
   box-sizing: border-box;
 }
@@ -42,63 +42,61 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  gap: clamp(16px, 2.5vw, 32px);
 }
 
 .pointItem {
   display: flex;
   align-items: flex-start;
-  gap: 0.625rem;
+  gap: 10px;
   color: var(--color-blue-100);
-  max-width: 362px;
-  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+  max-width: 300px;
+  font-weight: 400;
 }
 
 .pointIcon {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
-  margin-top: 0.15rem;
+  margin-top: 2px;
+  opacity: 0.8;
 }
 
 .pointLink,
 .pointText {
   margin: 0;
-  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1vw, 15px);
   line-height: 1.5;
-  color: var(--color-blue-100);
+  letter-spacing: -0.01em;
+  color: var(--color-cream-140);
   text-decoration: none;
 }
 
 .pointLink:hover {
+  color: var(--color-blue-100);
   text-decoration: underline;
 }
 
-/* Responsive - Mobile (768px) */
 @media (max-width: 768px) {
+  .contentWrapper {
+    max-width: min(560px, 100%);
+  }
+
   .mapWrapper {
-    height: 450px;
+    height: clamp(220px, 42vw, 300px);
   }
 
   .pointsList {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   .pointItem {
-    max-width: 100%;
-  }
-
-  .pointLink,
-  .pointText {
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsive - Small Mobile (480px) */
-@media (max-width: 480px) {
-  .mapWrapper {
-    height: 350px;
+    max-width: none;
   }
 }

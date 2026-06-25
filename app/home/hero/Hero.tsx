@@ -1,25 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Hero.module.css";
 
 const DEFAULT_TITLE = "Find What Your Body Needs Today";
 const DEFAULT_SUBTITLE =
   "A personalized wellness journey powered by advanced body assessment technology and expert guidance, designed to evolve with your body's changing needs.";
-const DEFAULT_IMAGE = "/images/intro.jpg";
+const DEFAULT_VIDEO = "/videos/BFriends2.mp4";
+
+function resolveMediaUrl(url: string | null | undefined, fallback: string): string {
+  const trimmed = typeof url === "string" ? url.trim() : "";
+  return trimmed || fallback;
+}
 
 export default function Hero({
   title = DEFAULT_TITLE,
   subtitle = DEFAULT_SUBTITLE,
-  imageUrl = DEFAULT_IMAGE,
+  videoUrl,
 }: {
   title?: string;
   subtitle?: string;
-  imageUrl?: string;
+  videoUrl?: string | null;
 }) {
   const [blurAmount, setBlurAmount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const resolvedVideoUrl = resolveMediaUrl(videoUrl, DEFAULT_VIDEO);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,14 +42,19 @@ export default function Hero({
 
   return (
     <section className={styles.hero}>
-      <Image
-        src={imageUrl}
-        alt=""
-        fill
-        priority
+      <video
+        ref={videoRef}
+        src={resolvedVideoUrl}
         className={styles.background}
         style={{ filter: `blur(${blurAmount}px)` }}
-        sizes="100vw"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onEnded={(e) => {
+          e.currentTarget.play().catch(() => undefined);
+        }}
         aria-hidden
       />
       <div className={styles.overlay} aria-hidden />
@@ -55,16 +66,9 @@ export default function Hero({
             variant="border"
             className={styles.buttonPrimary}
             color="var(--color-white-100)"
-            href="/about"
+            href="/contact"
           >
-            Discover The BFriends Method
-          </Button>
-          <Button
-            className={styles.buttonSecondary}
-            color="var(--color-white-100)"
-            href="/programs"
-          >
-            Explore Programmes
+            Find Out More
           </Button>
         </div>
       </div>

@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(48px, 5vw, 72px);
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: var(--section-padding-x) var(--section-padding-x);
 }
 
 /* stacked: eyebrow + title + sub vertically */

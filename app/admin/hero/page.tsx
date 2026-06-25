@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
-import ImageUploader from '@/components/admin/ImageUploader';
+import VideoUploader from '@/components/admin/VideoUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
 
@@ -14,12 +14,12 @@ interface Hero {
   page: string;
   title: string;
   subtitle: string;
-  image_url: string;
+  video_url: string;
   sort_order: number;
   is_active: number;
 }
 
-const empty: Hero = { page: 'home', title: '', subtitle: '', image_url: '', sort_order: 0, is_active: 1 };
+const empty: Hero = { page: 'home', title: '', subtitle: '', video_url: '', sort_order: 0, is_active: 1 };
 
 export default function HeroPage() {
   const [items, setItems] = useState<Hero[]>([]);
@@ -102,13 +102,11 @@ export default function HeroPage() {
             <FormField label="Subtitle" name="subtitle" type="textarea" value={editing.subtitle}
               onChange={(v: string) => setEditing({ ...editing, subtitle: v })} />
             <div className="admin-form-group">
-              <label>Hero Image</label>
-              <ImageUploader value={editing.image_url} onChange={(url: string) => setEditing({ ...editing, image_url: url })} />
+              <label>Video URL</label>
+              <VideoUploader value={editing.video_url} onChange={(url: string) => setEditing({ ...editing, video_url: url })} />
             </div>
             <div className="admin-form-group">
-              <small style={{ color: 'var(--admin-muted)' }}>
-                Hero background image for Home (also used on About). Intro video is managed in Intro.
-              </small>
+              <small style={{ color: 'var(--admin-muted)' }}>Hero video for the Home page.</small>
             </div>
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
