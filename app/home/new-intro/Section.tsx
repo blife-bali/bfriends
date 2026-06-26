@@ -1,10 +1,30 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import Button from "@/components/ui/Button/Button";
-import { trackEvent } from "@/lib/gtag";
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useInView,
+  useMotionValueEvent,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import styles from "./Section.module.css";
+
+interface ProcessSubpoint {
+  title: string;
+  description?: string | null;
+}
+
+interface JourneyStep {
+  id: number;
+  number?: string;
+  title: string;
+  description?: string | null;
+  image?: string | null;
+  subpoints?: ProcessSubpoint[];
+}
 
 const CONTENT_BLOCKS = [
   {
@@ -30,6 +50,7 @@ needs over time.
 
 You don't have to do everything at once. You simply begin where you are—and grow from there.`;
 
+const FALLBACK_IMAGE = "/images/Integrate/DDK09558.webp";
 const EASE_OUT = [0.22, 0.61, 0.36, 1] as const;
 
 const fadeInBlur = {
@@ -59,28 +80,137 @@ const staggerContainer = {
   },
 };
 
-interface JourneyStep {
-  id: number;
-  number?: string;
-  title: string;
-}
-
 function formatStepIndex(number: string | undefined, index: number) {
   if (number) return number.padStart(2, "0");
   return String(index + 1).padStart(2, "0");
 }
 
+function JourneyStepContent({ step }: { step: JourneyStep }) {
+  const hasPoints = Boolean(step.subpoints && step.subpoints.length > 0);
+
+  return (
+    <article className={styles.stepContent}>
+      <div className={styles.stepHeader}>
+        <h3 className={styles.stepTitle}>{step.title}</h3>
+        {step.description && <p className={styles.stepDescription}>{step.description}</p>}
+      </div>
+
+      {hasPoints && (
+        <>
+          <div className={styles.stepDivider} role="separator" />
+          <ul className={styles.stepPoints}>
+            {step.subpoints!.map((point, i) => (
+              <li key={i} className={styles.stepPoint}>
+                <span className={styles.stepPointTitle}>{point.title}</span>
+                {point.description && (
+                  <span className={styles.stepPointText}>{point.description}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </article>
+  );
+}
+
+function JourneyStepImage({ step }: { step: JourneyStep }) {
+  return (
+    <div className={styles.stepImage}>
+      <Image
+        src={step.image || FALLBACK_IMAGE}
+        alt={step.title}
+        fill
+        className={styles.stepImageEl}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    </div>
+  );
+}
+
 export default function NewIntroSection({
   headline = DEFAULT_HEADLINE,
   steps = [],
-  carouselSteps = [],
+  journeySteps = [],
 }: {
   headline?: string;
   steps?: { title?: string; description?: string }[];
-  carouselSteps?: JourneyStep[];
+  journeySteps?: JourneyStep[];
 }) {
   const ref = useRef<HTMLElement>(null);
+  const flowRef = useRef<HTMLDivElement>(null);
+  const markRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const [activeIndices, setActiveIndices] = useState<Set<number>>(new Set());
+  const [trackInset, setTrackInset] = useState({ top: 0, bottom: 0 });
   const inView = useInView(ref, { once: true, amount: 0.15 });
+
+  const { scrollYProgress } = useScroll({
+    target: flowRef,
+    offset: ["start 0.92", "end 0.52"],
+  });
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 280,
+    damping: 32,
+    mass: 0.005,
+  });
+  const scaleY = useTransform(smoothProgress, [0, 1], [0, 1]);
+
+  const updateActiveIndices = useCallback((progress: number) => {
+    const flow = flowRef.current;
+    if (!flow) return;
+
+    const flowRect = flow.getBoundingClientRect();
+    const tipY = progress * flowRect.height;
+    const next = new Set<number>();
+
+    markRefs.current.forEach((mark, index) => {
+      if (!mark) return;
+      const markRect = mark.getBoundingClientRect();
+      const markCenterY = markRect.top - flowRect.top + markRect.height / 2;
+      if (tipY >= markCenterY) {
+        next.add(index);
+      }
+    });
+
+    setActiveIndices((prev) => {
+      if (prev.size === next.size && [...prev].every((i) => next.has(i))) {
+        return prev;
+      }
+      return next;
+    });
+  }, []);
+
+  useMotionValueEvent(smoothProgress, "change", updateActiveIndices);
+
+  useEffect(() => {
+    updateActiveIndices(smoothProgress.get());
+
+    const handleResize = () => updateActiveIndices(smoothProgress.get());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [smoothProgress, updateActiveIndices, journeySteps.length]);
+
+  useEffect(() => {
+    const updateTrackInset = () => {
+      const flow = flowRef.current;
+      const firstMark = markRefs.current[0];
+      const lastMark = markRefs.current[journeySteps.length - 1];
+      if (!flow || !firstMark || !lastMark) return;
+
+      const flowRect = flow.getBoundingClientRect();
+      const firstRect = firstMark.getBoundingClientRect();
+      const lastRect = lastMark.getBoundingClientRect();
+
+      setTrackInset({
+        top: firstRect.top - flowRect.top + firstRect.height / 2,
+        bottom: flowRect.bottom - lastRect.bottom + lastRect.height / 2,
+      });
+    };
+
+    updateTrackInset();
+    window.addEventListener("resize", updateTrackInset);
+    return () => window.removeEventListener("resize", updateTrackInset);
+  }, [journeySteps.length]);
 
   const homeSection = steps?.[0];
   const paragraphs = (homeSection?.description || DEFAULT_SYSTEM_BODY)
@@ -116,63 +246,76 @@ export default function NewIntroSection({
         </motion.div>
 
         <motion.div
-          className={styles.narrative}
+          className={styles.flow}
+          ref={flowRef}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={fadeInBlur}
           transition={{ delay: 0.22 }}
         >
-          {paragraphs.map((paragraph: string, idx: number) => (
-            <p key={idx} className={styles.narrativeParagraph}>
-              {paragraph}
-            </p>
-          ))}
-        </motion.div>
-
-        {carouselSteps.length > 0 && (
-          <motion.div
-            className={styles.journeyPanel}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={fadeInBlur}
-            transition={{ delay: 0.32 }}
+          <div
+            className={styles.flowTrack}
+            style={{ top: trackInset.top, bottom: trackInset.bottom }}
+            aria-hidden="true"
           >
-            <div className={styles.journeyRail}>
-              <div className={styles.journeyLine} aria-hidden="true" />
-              <ol className={styles.journeySteps} aria-label="BFriends journey steps">
-                {carouselSteps.map((step, index) => (
-                  <li key={step.id} className={styles.journeyStep}>
-                    <span className={styles.journeyMark}>
-                      {formatStepIndex(step.number, index)}
-                    </span>
-                    <span className={styles.journeyLabel}>{step.title}</span>
-                  </li>
+            <div className={styles.flowTrackBase} />
+            <motion.div className={styles.flowTrackProgress} style={{ scaleY }} />
+          </div>
+
+          <ol className={styles.flowList} aria-label="BFriends journey steps">
+            <li className={styles.flowItemNarrative}>
+              <div className={styles.narrative}>
+                {paragraphs.map((paragraph: string, idx: number) => (
+                  <p key={idx} className={styles.narrativeParagraph}>
+                    {paragraph}
+                  </p>
                 ))}
-              </ol>
-            </div>
-          </motion.div>
-        )}
+              </div>
+            </li>
 
-        <motion.div
-          className={styles.ctaRow}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={fadeInBlur}
-          transition={{ delay: 0.42 }}
-        >
-          <Button
-            href="/about/journey"
-            variant="border"
-            color="var(--color-blue-80)"
-            onClick={() =>
-              trackEvent("cta_click", {
-                label: "view_customer_journey",
-                location: "home_new_intro",
-              })
-            }
-          >
-            View BFriends Journey
-          </Button>
+            {journeySteps.map((step, index) => {
+              const stepIndex = formatStepIndex(step.number, index);
+              const contentOnLeft = index % 2 === 1;
+
+              return (
+                <li
+                  key={step.id}
+                  className={`${styles.flowItem} ${
+                    activeIndices.has(index) ? styles.flowItemActive : ""
+                  }`}
+                >
+                  <div className={styles.flowSlotLeft}>
+                    {contentOnLeft ? (
+                      <JourneyStepContent step={step} />
+                    ) : (
+                      <JourneyStepImage step={step} />
+                    )}
+                  </div>
+
+                  <div className={styles.flowMark} aria-hidden="true">
+                    <span
+                      ref={(el) => {
+                        markRefs.current[index] = el;
+                      }}
+                      className={`${styles.stepIndexContainer} ${
+                        activeIndices.has(index) ? styles.stepIndexContainerActive : ""
+                      }`}
+                    >
+                      <span className={styles.stepIndex}>{stepIndex}</span>
+                    </span>
+                  </div>
+
+                  <div className={styles.flowSlotRight}>
+                    {contentOnLeft ? (
+                      <JourneyStepImage step={step} />
+                    ) : (
+                      <JourneyStepContent step={step} />
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
         </motion.div>
       </div>
     </section>

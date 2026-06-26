@@ -255,6 +255,7 @@ export default function Navigation() {
   const [programItems, setProgramItems] = useState<NavItem[]>([]);
   const navRef = useRef<HTMLDivElement>(null);
   const mainContainerRef = useRef<HTMLDivElement>(null);
+  const navChromeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsInteractionEnabled(true), 2000);
@@ -309,21 +310,29 @@ export default function Navigation() {
 
   useEffect(() => {
     const mainEl = mainContainerRef.current;
+    const chromeEl = navChromeRef.current;
     const rootEl = navRef.current;
     if (!mainEl || !rootEl) return;
 
-    const syncNavbarMainHeight = () => {
+    const syncNavbarHeights = () => {
       rootEl.style.setProperty("--navbar-main-height", `${mainEl.offsetHeight}px`);
+      if (chromeEl) {
+        document.documentElement.style.setProperty(
+          "--navbar-height",
+          `${chromeEl.offsetHeight}px`,
+        );
+      }
     };
 
-    syncNavbarMainHeight();
-    const observer = new ResizeObserver(syncNavbarMainHeight);
+    syncNavbarHeights();
+    const observer = new ResizeObserver(syncNavbarHeights);
     observer.observe(mainEl);
-    window.addEventListener("resize", syncNavbarMainHeight);
+    if (chromeEl) observer.observe(chromeEl);
+    window.addEventListener("resize", syncNavbarHeights);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener("resize", syncNavbarMainHeight);
+      window.removeEventListener("resize", syncNavbarHeights);
     };
   }, []);
 
@@ -356,12 +365,17 @@ export default function Navigation() {
   const isFaqPage = pathname === "/faq";
 
   const solidBg =
+    isAboutPage ||
     isFaqPage ||
     isEventSlug ||
     isNewsSlug ||
     isScrolled ||
     activeMenu !== null ||
     isMenuOpen;
+
+  const showNavOverlay =
+    isMenuOpen ||
+    (activeMenu !== null && activeMenu !== "programs" && activeMenu !== "facilities");
 
   const handleNavClick = (label: string) => {
     trackEvent("nav_click", { label, location: "navbar" });
@@ -396,7 +410,7 @@ export default function Navigation() {
 
   return (
     <>
-      {(isMenuOpen || activeMenu !== null) && (
+      {showNavOverlay && (
         <div
           className={styles.mobileOverlay}
           onClick={closeMenu}
@@ -409,12 +423,13 @@ export default function Navigation() {
           <div
             className={`${styles.navShell} ${solidBg ? styles.navShellSolid : ""}`}
           >
+            <div ref={navChromeRef} className={styles.navChrome}>
             <div className={styles.navbarMain}>
               <div ref={mainContainerRef} className={styles.mainContainer}>
               <div className={styles.left}>
                 <button
                   type="button"
-                  className={`${styles.menuTop} ${styles.navMainLink} ${styles.navMainLinkPlain} ${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""}`}
+                  className={`${styles.menuTop} ${styles.navMainLink} ${styles.navMainLinkPlain} ${styles.menuToggle} ${styles.navMainMobileOnly} ${isMenuOpen ? styles.menuToggleOpen : ""}`}
                   onClick={() => {
                     trackEvent("nav_click", {
                       label: isMenuOpen ? "menu_close" : "menu_open",
@@ -505,23 +520,22 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Desktop: navbar-bottom + dropdown */}
-          {isMenuOpen && (
-            <div className={styles.navbarBottom}>
-              <MenuGrid
-                pathname={pathname}
-                activeMenu={activeMenu}
-                isProgramPage={isProgramPage}
-                isFacilitiesPage={isFacilitiesPage}
-                isAboutPage={isAboutPage}
-                isMembershipPage={isMembershipPage}
-                isCommunityPage={isCommunityPage}
-                isContactPage={isContactPage}
-                onNavClick={handleNavClick}
-                onToggleMenu={toggleMenu}
-              />
-            </div>
-          )}
+          <div className={styles.navbarBottom}>
+            <MenuGrid
+              pathname={pathname}
+              activeMenu={activeMenu}
+              isProgramPage={isProgramPage}
+              isFacilitiesPage={isFacilitiesPage}
+              isAboutPage={isAboutPage}
+              isMembershipPage={isMembershipPage}
+              isCommunityPage={isCommunityPage}
+              isContactPage={isContactPage}
+              onNavClick={handleNavClick}
+              onToggleMenu={toggleMenu}
+            />
+          </div>
+
+          </div>
 
           {activeMenu !== null && (
             <div className={styles.dropdown}>

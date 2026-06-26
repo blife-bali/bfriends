@@ -1,0 +1,80 @@
+@reference "../../globals.css";
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(12px, 2vw, 16px);
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.9vw, 12px);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-green-100);
+  line-height: 1;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--color-blue-100);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.sub {
+  max-width: 62ch;
+  text-wrap: balance;
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
+}
+
+.sub :global(p) {
+  margin-bottom: 0.65em;
+}
+
+.sub :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    max-width: 24ch;
+  }
+
+  .sub {
+    max-width: 56ch;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    max-width: 100%;
+    font-size: clamp(22px, 5.5vw, 28px);
+  }
+
+  .sub {
+    font-size: clamp(14px, 3.6vw, 15px);
+    max-width: 100%;
+    text-wrap: pretty;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(20px, 6vw, 24px);
+  }
+}

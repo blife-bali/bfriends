@@ -4,19 +4,18 @@
   width: 100%;
   background-color: var(--color-white-100);
   overflow-x: hidden;
-  padding: var(--section-padding-y) var(--section-padding-x) var(--section-padding-x);
+  padding: clamp(64px, 8vw, var(--section-padding-y)) var(--section-padding-x);
   box-sizing: border-box;
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--section-gap);
+  gap: clamp(32px, 5vw, var(--section-gap));
   box-sizing: border-box;
 }
 
@@ -27,13 +26,14 @@
 
 .headline {
   margin: 0 auto;
-  /* max-width: 14ch; */
+  max-width: 28ch;
   font-family: var(--font-display);
-  font-size: clamp(32px, 3.6vw, 44px);
+  font-size: clamp(20px, 2vw, 24px);
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--color-blue-100);
+  text-wrap: balance;
 }
 
 /* —— Three pillars —— */
@@ -47,9 +47,9 @@
 .pillar {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: clamp(24px, 2.5vw, 32px);
-  border: 1px solid var(--color-cream-40);
+  gap: 12px;
+  padding: clamp(20px, 2.5vw, 28px);
+  border: 1px solid var(--color-cream-20);
   border-radius: var(--radius-md);
   background: var(--color-white-100);
   box-sizing: border-box;
@@ -84,14 +84,22 @@
   color: var(--color-cream-140);
 }
 
-/* —— Narrative copy —— */
+/* —— Narrative copy (first row in flow list) —— */
+.flowItemNarrative {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 64px repeat(4, minmax(0, 1fr));
+  column-gap: 12px;
+}
+
 .narrative {
+  grid-column: 1 / -1;
   width: 100%;
-  max-width: 64ch;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 2vw, 16px);
   text-align: center;
 }
 
@@ -102,154 +110,429 @@
   line-height: 1.65;
   letter-spacing: -0.02em;
   color: var(--color-cream-140);
+  max-width: 72ch;
+  text-wrap: balance;
 }
 
-/* —— Journey rail —— */
-.journeyPanel {
+.narrativeParagraph:not(:last-child) {
+  margin-bottom: clamp(8px, 1.5vw, 16px);
+}
+
+/* —— Journey flow list —— */
+.flow {
+  --flow-col-gap: clamp(12px, 2vw, 24px);
+  position: relative;
   width: 100%;
 }
 
-.journeyRail {
-  position: relative;
-  padding: clamp(28px, 3vw, 36px) clamp(20px, 2.5vw, 32px);
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--color-cream-20) 55%, var(--color-white-100));
-  border: 1px solid var(--color-cream-40);
-  box-sizing: border-box;
-}
-
-.journeyLine {
+.flowTrack {
   position: absolute;
-  top: calc(clamp(28px, 3vw, 36px) + 17px);
-  left: clamp(36px, 4vw, 48px);
-  right: clamp(36px, 4vw, 48px);
-  height: 1px;
-  background: color-mix(in srgb, var(--color-blue-100) 16%, transparent);
+  left: calc((100% - 64px - 8 * var(--flow-col-gap)) / 2 + 4 * var(--flow-col-gap) + 32px);
+  transform: translateX(-50%);
+  width: 1px;
   pointer-events: none;
+  z-index: 0;
 }
 
-.journeySteps {
+.flowTrackBase,
+.flowTrackProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.flowTrackBase {
+  background: color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+}
+
+.flowTrackProgress {
+  background: var(--color-blue-40);
+  transform-origin: top;
+}
+
+.flowList {
   position: relative;
   z-index: 1;
   list-style: none;
   margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.journeyStep {
-  flex: 1 1 0;
+  padding: clamp(20px, 4vw, 48px);
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
+  gap: clamp(40px, 6vw, 64px);
+  border: 1px solid var(--color-cream-20);
+  border-radius: var(--radius-lg);
 }
 
-.journeyMark {
+.flowItem {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 64px repeat(4, minmax(0, 1fr));
+  column-gap: var(--flow-col-gap);
+  align-items: center;
+}
+
+.flowSlotLeft {
+  grid-column: 1 / 5;
+  position: relative;
+  min-width: 0;
+}
+
+.flowSlotLeft:has(.stepContent)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 5px;
+  height: 5px;
+  background: var(--color-white-100);
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 24%, transparent);
+  transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.3s ease;
+}
+
+.flowSlotLeft:has(.stepContent)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: calc(var(--flow-col-gap) + 20px);
+  height: 1px;
+  background: color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flowMark {
+  grid-column: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.flowSlotRight {
+  grid-column: 6 / -1;
+  position: relative;
+  min-width: 0;
+}
+
+.flowSlotRight:has(.stepContent)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 5px;
+  height: 5px;
+  background: var(--color-white-100);
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 24%, transparent);
+  transform: translate(50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.3s ease;
+}
+
+.flowSlotRight:has(.stepContent)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: calc(var(--flow-col-gap) + 20px);
+  height: 1px;
+  background: color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flowItemActive .flowSlotLeft:has(.stepContent)::before,
+.flowItemActive .flowSlotRight:has(.stepContent)::before {
+  border-color: var(--color-blue-40);
+  background: var(--color-white-100);
+}
+
+.flowItemActive .flowSlotLeft:has(.stepContent)::after,
+.flowItemActive .flowSlotRight:has(.stepContent)::after {
+  background: var(--color-blue-40);
+}
+
+.stepIndexContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--color-blue-100) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-blue-100) 32%, transparent);
   background: var(--color-white-100);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.stepIndexContainerActive {
+  border-color: var(--color-green-100);
+  transform: scale(1.06);
+}
+
+.stepIndex {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   line-height: 1;
   color: var(--color-green-100);
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-blue-100) 6%, transparent);
 }
 
-.journeyLabel {
-  font-family: var(--font-display);
-  font-size: clamp(12px, 1vw, 15px);
-  font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  color: var(--color-blue-100);
-  hyphens: auto;
-}
-
-/* —— CTA —— */
-.ctaRow {
+.stepContent {
   display: flex;
-  justify-content: center;
-  padding-top: 4px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 clamp(12px, 1.5vw, 20px) 0 0;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.stepHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.stepDivider {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--color-blue-100) 12%, transparent);
+}
+
+.flowSlotRight .stepContent {
+  padding: 0 0 0 clamp(12px, 1.5vw, 20px);
+}
+
+.flowItemActive .stepContent {
+  transform: translateY(-3px);
+}
+
+.stepImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.stepImageEl {
+  object-fit: cover;
+}
+
+.stepTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+}
+
+.stepDescription {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.1vw, 14px);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  color: var(--color-cream-140);
+}
+
+.stepPoints {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stepPoint {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.stepPointTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-blue-100);
+}
+
+.stepPointText {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 1.05vw, 13px);
+  line-height: 1.45;
+  color: var(--color-cream-140);
+}
+
+@media (max-width: 1200px) {
+  .flowSlotLeft {
+    grid-column: 1 / 5;
+  }
+
+  .flowSlotRight {
+    grid-column: 6 / 10;
+  }
 }
 
 @media (max-width: 1024px) {
   .pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 
   .pillar {
-    padding: 22px 20px;
+    padding: 20px;
+  }
+
+  .headline {
+    max-width: 32ch;
   }
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding-top: clamp(48px, 10vw, 64px);
+    padding-bottom: clamp(48px, 10vw, 64px);
+  }
+
   .container {
-    gap: var(--section-gap);
+    gap: clamp(28px, 7vw, 40px);
   }
 
   .headline {
     max-width: none;
-    font-size: clamp(28px, 7vw, 36px);
+    font-size: clamp(20px, 5.5vw, 24px);
   }
 
   .pillars {
     grid-template-columns: 1fr;
   }
 
+  .flowItemNarrative {
+    grid-template-columns: 1fr;
+  }
+
   .narrative {
+    align-items: flex-start;
     text-align: left;
   }
 
-  .journeyRail {
-    padding: 24px 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+  .narrativeParagraph {
+    max-width: none;
+    text-align: left;
   }
 
-  .journeyRail::-webkit-scrollbar {
+  .flow {
+    --flow-col-gap: clamp(8px, 2vw, 12px);
+  }
+
+  .flowList {
+    gap: 40px;
+    padding: clamp(16px, 4vw, 24px);
+    border-radius: var(--radius-md);
+  }
+
+  .flowItem {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .flowSlotLeft,
+  .flowSlotRight {
+    grid-column: 1;
+  }
+
+  .flowSlotLeft:has(.stepContent),
+  .flowSlotRight:has(.stepContent) {
+    order: 2;
+  }
+
+  .flowSlotLeft:has(.stepImage),
+  .flowSlotRight:has(.stepImage) {
+    order: 3;
+  }
+
+  .flowSlotLeft:has(.stepContent)::before,
+  .flowSlotLeft:has(.stepContent)::after,
+  .flowSlotRight:has(.stepContent)::before,
+  .flowSlotRight:has(.stepContent)::after {
     display: none;
   }
 
-  .journeyLine {
-    display: none;
-  }
-
-  .journeySteps {
-    width: max-content;
-    min-width: 100%;
+  .flowMark {
+    grid-column: 1;
     justify-content: flex-start;
-    gap: 20px;
-    padding-inline: 4px;
+    order: 1;
   }
 
-  .journeyStep {
-    flex: 0 0 auto;
-    width: 88px;
+  .flowTrack {
+    display: none;
   }
 
-  .journeyLabel {
+  .stepContent {
+    padding: 0;
+  }
+
+  .flowSlotRight .stepContent {
+    padding: 0;
+  }
+
+  .stepIndexContainer {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stepTitle {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+
+  .stepDescription,
+  .stepPointText {
     font-size: 13px;
+  }
+
+  .stepPointTitle {
+    font-size: 14px;
+  }
+
+  .stepImage {
+    aspect-ratio: 16 / 10;
   }
 }
 
 @media (max-width: 480px) {
-  .journeyStep {
-    width: 76px;
+  .pillar {
+    padding: 18px;
+    gap: 10px;
+  }
+
+  .flowList {
+    gap: 32px;
+  }
+
+  .stepImage {
+    aspect-ratio: 4 / 3;
   }
 }

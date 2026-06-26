@@ -1,0 +1,121 @@
+@reference "../../../globals.css";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--color-cream-20);
+  border-radius: var(--radius-md);
+  background: var(--color-white-100);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--color-cream-40);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-blue-100) 6%, transparent);
+  }
+
+  .card:hover .image {
+    transform: scale(1.04);
+  }
+}
+
+.visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding: clamp(16px, 2vw, 22px);
+}
+
+.index {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-140);
+  line-height: 1;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-100);
+}
+
+.description {
+  margin: 0;
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--color-cream-140);
+}
+
+.button {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.buttonPlaceholder {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1vw, 14px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-blue-60);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visual {
+    aspect-ratio: 16 / 9;
+  }
+
+  .content {
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: clamp(17px, 4.5vw, 20px);
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .visual {
+    aspect-ratio: 3 / 2;
+  }
+}

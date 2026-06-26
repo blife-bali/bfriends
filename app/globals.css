@@ -62,7 +62,8 @@
   --color-green-160: var(--color-green-160);
 
   /* Layout & radius (used by CSS modules site-wide; responsive overrides below) */
-  --section-max-width: 1660px;
+  --section-max-width: 1440px;
+  --content-max-width: 1320px;
   --section-padding-y: 120px;
   --section-padding-x: 64px;
   --section-gap: 48px;
@@ -80,6 +81,9 @@
   --section-padding-y-first-bottom: var(--section-padding-y);
   --section-padding-y-last-top: var(--section-padding-y);
   --section-padding-y-last-bottom: calc(2 * var(--section-padding-y));
+
+  /* Fixed nav chrome height; synced live by Navigation on desktop + mobile */
+  --navbar-height: 152px;
 }
 
 @media (max-width: 1024px) {
@@ -88,6 +92,7 @@
     --section-padding-y: 120px;
     --section-padding-x: 48px;
     --section-gap: 40px;
+    --navbar-height: 80px;
   }
 }
 
@@ -106,6 +111,7 @@
     --section-padding-y: 56px;
     --section-padding-x: 20px;
     --section-gap: 24px;
+    --navbar-height: 72px;
   }
 }
 

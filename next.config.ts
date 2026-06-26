@@ -20,7 +20,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/about/customer-journey",
-        destination: "/about/journey",
+        destination: "/journey",
+        permanent: true,
+      },
+      {
+        source: "/about/journey",
+        destination: "/journey",
+        permanent: true,
+      },
+      {
+        source: "/about/staff",
+        destination: "/about",
         permanent: true,
       },
       {

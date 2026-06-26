@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Button from "@/components/ui/Button/Button";
+import { WHATSAPP_URL } from "@/lib/site-contact";
 import styles from "./Hero.module.css";
 
 const DEFAULT_TITLE = "Find What Your Body Needs Today";
@@ -66,7 +67,9 @@ export default function Hero({
             variant="border"
             className={styles.buttonPrimary}
             color="var(--color-white-100)"
-            href="/contact"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Find Out More
           </Button>

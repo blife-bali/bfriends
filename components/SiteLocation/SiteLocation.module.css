@@ -4,27 +4,27 @@
   width: 100%;
   background-color: var(--color-white-100);
   display: flex;
-  
   align-items: center;
   justify-content: center;
-  padding: var(--section-padding-y) 0;
+  padding: 0 var(--section-padding-x) clamp(64px, 8vw, var(--section-padding-y));
   box-sizing: border-box;
 }
 
 .contentWrapper {
   width: 100%;
-  max-width: 960px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  gap: clamp(20px, 3vh, 28px);
-  padding: 0 var(--section-padding-x);
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  gap: clamp(20px, 3vw, 32px);
+  align-items: stretch;
   box-sizing: border-box;
 }
 
 .mapWrapper {
   width: 100%;
-  height: clamp(240px, 30vh, 360px);
+  min-width: 0;
+  height: clamp(320px, 32vw, 420px);
   position: relative;
   box-sizing: border-box;
 }
@@ -40,11 +40,12 @@
 .pointsList {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: clamp(4px, 1vw, 8px) 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: clamp(16px, 2.5vw, 32px);
+  gap: clamp(16px, 2.5vw, 24px);
+  min-width: 0;
 }
 
 .pointItem {
@@ -52,9 +53,7 @@
   align-items: flex-start;
   gap: 10px;
   color: var(--color-blue-100);
-  flex: 1;
   min-width: 0;
-  max-width: 300px;
   font-weight: 400;
 }
 
@@ -82,13 +81,37 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contentWrapper {
-    max-width: min(560px, 100%);
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 28px);
   }
 
   .mapWrapper {
-    height: clamp(220px, 42vw, 300px);
+    height: clamp(260px, 42vw, 360px);
+  }
+
+  .pointsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: clamp(16px, 3vw, 24px);
+    padding: 0;
+  }
+
+  .pointItem {
+    flex: 1 1 220px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .locationSection {
+    padding-bottom: clamp(48px, 10vw, 64px);
+  }
+
+  .mapWrapper {
+    height: clamp(220px, 52vw, 280px);
   }
 
   .pointsList {
@@ -97,6 +120,18 @@
   }
 
   .pointItem {
-    max-width: none;
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapWrapper {
+    height: clamp(200px, 56vw, 240px);
+  }
+
+  .pointLink,
+  .pointText {
+    font-size: 13px;
   }
 }

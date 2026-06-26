@@ -234,7 +234,7 @@ export default function SystemSection({
 
         <div className={styles.flowFooter}>
           <Button
-            href="/about/journey"
+            href="/journey"
             variant="border"
             color="var(--color-blue-80)"
             

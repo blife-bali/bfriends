@@ -29,6 +29,7 @@
 
 .navbarMain {
   width: 100%;
+  padding: 0 var(--section-padding-x);
 }
 
 .navbarBottom {
@@ -45,14 +46,23 @@
 }
 
 .navShellSolid {
-  background-color: var(--color-white-100);
-  box-shadow: 0 4px 16px rgba(19, 64, 83, 0.08);
+  background-color: color-mix(in srgb, var(--color-white-100) 70%, transparent);
+  backdrop-filter: blur(5px);
+  /* box-shadow: 0 4px 16px rgba(19, 64, 83, 0.08); */
+}
+
+.navShellSolid .dropdown {
+  background-color: transparent;
+}
+
+.navChrome {
+  width: 100%;
 }
 
 .mainContainer {
-  max-width: 1660px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 40px;
+  /* padding: 0 40px; */
   min-height: 88px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -72,7 +82,6 @@
   align-items: center;
   justify-content: flex-start;
   gap: 40px;
-  padding-left: 24px;
 }
 
 /* Center: logo */
@@ -113,6 +122,7 @@
   max-width: 1660px;
   margin: 0 auto;
   width: 100%;
+  max-width: var(--section-max-width);
 }
 
 .navbarBottom .menuGrid {
@@ -421,7 +431,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 32px;
-  padding-right: 24px;
+  /* padding-right: 24px; */
   height: 100%;
 }
 
@@ -528,6 +538,10 @@
   display: flex;
 }
 
+.navMainMobileOnly {
+  display: none;
+}
+
 /* Mobile side panel (hidden on desktop) */
 .navBottomMobile {
   display: none;
@@ -600,6 +614,7 @@
 
   .left {
     order: 2;
+    display: flex;
     gap: 0;
     padding-left: 0;
     flex: 0 0 auto;
@@ -611,6 +626,10 @@
 
   .navMainDesktopOnly {
     display: none;
+  }
+
+  .navMainMobileOnly {
+    display: inline-flex;
   }
 
   .menuToggleLabel {

@@ -64,11 +64,11 @@ export default async function HomePage() {
       <NewIntroSection
         headline={intro?.headline}
         steps={processSteps}
-        carouselSteps={journeySteps}
+        journeySteps={journeySteps}
       />
-      <ServicesSection programs={programs} headerLayout="centered" />
+      {/* <ServicesSection programs={programs} headerLayout="centered" />
       <FriendsSection />
-      <MembershipSection />
+      <MembershipSection /> */}
       {/* <WhyBFriends cards={whyCards} /> */}
       {/* <section className={styles.videoSection} aria-label="BFriends video">
         <div className={styles.videoContainer}>
@@ -79,9 +79,9 @@ export default async function HomePage() {
       
       
       <SiteLocation />
-      <FaqSection faqs={faqs.slice(0, 6)} />
+      {/* <FaqSection faqs={faqs.slice(0, 6)} /> */}
       {/* <NewsAndEventsSection events={events} news={news} /> */}
-      <SiteNewsletterCta />
+      {/* <SiteNewsletterCta /> */}
     </>
   );
 }

@@ -1,0 +1,37 @@
+@reference "../../globals.css";
+
+.section {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: min(100%, 560px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: clamp(18px, 4vw, 24px);
+  }
+
+  .grid > :last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
+  }
+}

@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Button from "@/components/ui/Button/Button";
 import styles from "./AboutFramework.module.css";
 
 type Pillar = {
@@ -26,77 +24,43 @@ const DEFAULT_PILLARS: Pillar[] = [
   },
 ];
 
-const DEFAULT_IMAGE = "/images/Integrate/DDK09585.webp";
-
 export interface AboutFrameworkProps {
+  eyebrow?: string;
   heading?: string;
   sub?: string;
   pillars?: Pillar[];
-  ctaLabel?: string;
-  ctaHref?: string;
-  image?: string;
 }
 
 export default function AboutFramework({
+  eyebrow = "Wellness",
   heading = "Wellness Designed Around Your Goals",
-  sub = "Every programme, service, and recommendation at BFriends is designed to support one or more dimensions of wellbeing.",
+  sub = "Every programme, services and recommendations at BFriends is designed to support one or more dimensions of wellbeing.",
   pillars = DEFAULT_PILLARS,
-  ctaLabel = "Explore Programmes",
-  ctaHref = "/programs",
-  image = DEFAULT_IMAGE,
 }: AboutFrameworkProps) {
   return (
-    <section className={styles.section} aria-label="Feel. Move. Look. Live.">
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.contentInner}>
-            <h2 className={styles.heading}>{heading}</h2>
-            <p className={styles.sub}>{sub}</p>
-
-            <ol className={styles.pillars}>
-              {pillars.map((pillar, index) => {
-                const isLast = index === pillars.length - 1;
-
-                return (
-                  <li key={pillar.name} className={styles.pillar}>
-                    <div className={styles.pillarMark} aria-hidden="true">
-                      <span className={styles.pillarIndex}>
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      {!isLast && <span className={styles.pillarLine} />}
-                    </div>
-
-                    <article className={styles.pillarBody}>
-                      <h3 className={styles.pillarName}>{pillar.name}</h3>
-                      <p className={styles.pillarText}>{pillar.body}</p>
-                    </article>
-                  </li>
-                );
-              })}
-            </ol>
-
-            <div className={styles.ctaRow}>
-              <Button
-                variant="border"
-                href={ctaHref}
-                color="var(--color-blue-100)"
-                className={styles.cta}
-              >
-                {ctaLabel}
-              </Button>
-            </div>
+    <section className={styles.section} aria-label="Wellness framework">
+      <div className={styles.inner}>
+        <header className={styles.header}>
+          <p className={styles.eyebrow}>{eyebrow}</p>
+          <div className={styles.headerGrid}>
+            <h2 className={styles.title}>{heading}</h2>
+            <p className={styles.lead}>{sub}</p>
           </div>
-        </div>
+        </header>
 
-        <div className={styles.media}>
-          <Image
-            src={image}
-            alt=""
-            fill
-            className={styles.image}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        </div>
+        <ol className={styles.pillars}>
+          {pillars.map((pillar, index) => (
+            <li key={pillar.name} className={styles.pillar}>
+              <span className={styles.pillarIndex} aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className={styles.pillarBody}>
+                <h3 className={styles.pillarName}>{pillar.name}</h3>
+                <p className={styles.pillarText}>{pillar.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

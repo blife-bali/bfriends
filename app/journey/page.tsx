@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const DEFAULT_HEADER = {
-  breadcrumb: "About / BFriends Journey",
+  breadcrumb: "BFriends Journey",
   title: "BFriends Journey",
   image: "/images/Integrate/DDK09585.jpg",
 };

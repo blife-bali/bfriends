@@ -2,9 +2,8 @@ import { mockFacilities } from "@/mock/facilities";
 
 /** About BFriends links. */
 export const aboutNavItems = [
-  { label: "Friends Journey", href: "/about/journey" },
+  { label: "Friends Journey", href: "/journey" },
   { label: "Facilities", href: "/facilities" },
-  { label: "Our Staff", href: "/about/staff" },
 ] as const;
 
 /** Programmes: filled at runtime from /api/programs. */
