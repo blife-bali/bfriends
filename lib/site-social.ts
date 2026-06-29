@@ -1,3 +1,5 @@
+import { BOOK_NOW_URL } from "@/lib/site-contact";
+
 export const FOOTER_SOCIAL_LINKS = [
   {
     id: "facebook",
@@ -38,10 +40,9 @@ export const FOOTER_SOCIAL_LINKS = [
     href: "https://www.tripadvisor.com/Attraction_Review-g13356179-d34418734-Reviews-Bfriends_Wellnes_Center-Kerobokan_Kelod_North_Kuta_Bali.html",
   },
   {
-    id: "fresha",
-    label: "Fresha",
-    href: "https://www.fresha.com/a/bfriends-spa-wellness-bali-jalan-teuku-umar-barat-989x-x58o2xek/all-offer?menu=true&share=true&pId=2887128",
-    iconSrc: "/images/icons/fresha.png",
+    id: "zenoti",
+    label: "Zenoti",
+    href: BOOK_NOW_URL,
   },
 ] as const;
 

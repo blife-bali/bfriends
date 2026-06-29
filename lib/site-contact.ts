@@ -1,5 +1,5 @@
 export const BOOK_NOW_URL =
-  "https://www.fresha.com/a/bfriends-spa-wellness-bali-jalan-teuku-umar-barat-989x-x58o2xek/all-offer?menu=true&share=true&pId=2887128";
+  "https://bfriends.zenoti.com/webstoreNew/services/aeb534b8-c0ba-4ccd-ae3f-4fba2da74035";
 
 export const WHATSAPP_URL = "https://wa.me/6281128742021";
 

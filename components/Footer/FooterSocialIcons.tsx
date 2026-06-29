@@ -7,7 +7,7 @@ import { VISIBLE_FOOTER_SOCIAL_LINKS } from "@/lib/site-social";
 type VisibleSocialLink = (typeof VISIBLE_FOOTER_SOCIAL_LINKS)[number];
 
 /** Simple Icons-style paths, normalized to 24×24 for even visual weight */
-const SOCIAL_ICON_PATHS: Record<Exclude<VisibleSocialLink["id"], "fresha">, string> = {
+const SOCIAL_ICON_PATHS: Record<VisibleSocialLink["id"], string> = {
   facebook:
     "M9.101 23.691v-7.98H6.283v-3.667h2.818v-1.958c0-4.136 2.492-6.402 6.233-6.402 1.806 0 3.339.135 3.791.196v3.978h-2.602c-2.053 0-2.451.975-2.451 2.41v2.776h4.86l-.646 3.667h-4.216v7.98H9.101z",
   instagram:
@@ -21,6 +21,8 @@ const SOCIAL_ICON_PATHS: Record<Exclude<VisibleSocialLink["id"], "fresha">, stri
     "M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.2-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z",
   tripadvisor:
     "M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 4.075-1.6L12 19.705l1.922-2.09a5.972 5.972 0 0 0 4.072 1.598 6 6 0 0 0 6-5.998 5.982 5.982 0 0 0-1.957-4.432L24 6.648h-4.35a13.573 13.573 0 0 0-7.644-2.353zM12 6.255c1.531 0 3.063.303 4.504.903C13.943 8.138 12 10.43 12 13.1c0-2.671-1.942-4.962-4.504-5.942A11.72 11.72 0 0 1 12 6.256zM6.002 9.157a4.059 4.059 0 1 1 0 8.118 4.059 4.059 0 0 1 0-8.118zm11.992.002a4.057 4.057 0 1 1 .003 8.115 4.057 4.057 0 0 1-.003-8.115zm-11.992 1.93a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256zm11.992 0a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256z",
+  zenoti:
+    "M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1zm3 18H5V8h14v11z",
 };
 
 function hasIconSrc(
@@ -29,10 +31,8 @@ function hasIconSrc(
   return "iconSrc" in item && typeof item.iconSrc === "string";
 }
 
-type SvgSocialId = Exclude<VisibleSocialLink["id"], "fresha">;
-
 function getSvgIconPath(item: VisibleSocialLink): string {
-  return SOCIAL_ICON_PATHS[item.id as SvgSocialId];
+  return SOCIAL_ICON_PATHS[item.id];
 }
 
 export default function FooterSocialIcons({

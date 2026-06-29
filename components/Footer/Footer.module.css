@@ -131,11 +131,9 @@
   filter: brightness(0) invert(1);
 }
 
-.socialIconLink[aria-label="Fresha"] .socialIconImage {
-  height: 7px;
-  max-width: calc(100% - 12px);
-  padding-inline: 6px;
-  box-sizing: content-box;
+.socialIconLink[aria-label="Zenoti"] .socialIconSvg {
+  width: 18px;
+  height: 18px;
 }
 
 .socialIconLink[aria-label="Facebook"] .socialIconSvg,
