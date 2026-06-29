@@ -17,7 +17,7 @@ const PILLARS: Pillar[] = [
     title: "About BFriends",
     description: "(to be writing soon)",
     buttonLabel: "Explore BFriends →",
-    href: "/facilities",
+    href: "/treatments",
   },
   {
     image: "/images/Nurture/DDK09121.webp",
@@ -42,10 +42,9 @@ export default function ThreePillars() {
   return (
     <section className={styles.section} aria-label="Explore BFriends">
       <div className={styles.grid}>
-        {PILLARS.map((pillar, index) => (
+        {PILLARS.map((pillar) => (
           <PillarCard
             key={pillar.title}
-            index={index + 1}
             image={pillar.image}
             imageAlt={pillar.imageAlt}
             title={pillar.title}

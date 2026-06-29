@@ -1,16 +1,16 @@
 import Image from "next/image";
-import type { FacilityCta } from "@/mock/facilities";
+import type { TreatmentCta } from "@/mock/treatments";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Section.module.css";
 
 interface CtaSectionProps {
-  cta: FacilityCta;
+  cta: TreatmentCta;
   image: string;
 }
 
 export default function CtaSection({ cta, image }: CtaSectionProps) {
   return (
-    <section className={styles.section} aria-labelledby="facility-cta-title">
+    <section className={styles.section} aria-labelledby="treatment-cta-title">
       <div className={styles.background} aria-hidden>
         <Image
           src={image}
@@ -23,7 +23,7 @@ export default function CtaSection({ cta, image }: CtaSectionProps) {
       </div>
 
       <div className={styles.content}>
-        <h2 id="facility-cta-title" className={styles.heading}>
+        <h2 id="treatment-cta-title" className={styles.heading}>
           {cta.headline}
         </h2>
         <p className={styles.body}>{cta.description}</p>
@@ -39,11 +39,11 @@ export default function CtaSection({ cta, image }: CtaSectionProps) {
             {cta.label}
           </Button>
           <Button
-            href="/facilities"
+            href="/treatments"
             color="var(--color-blue-100)"
             className={styles.backButton}
           >
-            Back to Facilities
+            Back to Treatments
           </Button>
         </div>
       </div>

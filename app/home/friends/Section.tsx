@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button/Button";
-import { mockFacilitiesPage } from "@/mock/facilities";
+import { mockTreatmentsPage } from "@/mock/treatments";
 import styles from "./Section.module.css";
 
 const PRIMARY_IMAGE = "/images/Integrate/DDK09396.webp";
@@ -8,11 +8,11 @@ const SECONDARY_IMAGE = "/images/Integrate/DDK00216 (1).webp";
 
 export default function FriendsSection() {
   return (
-    <section className={styles.section} aria-label="BFriends facilities">
+    <section className={styles.section} aria-label="BFriends treatments">
       <div className={styles.container}>
         <div className={styles.split}>
           <div className={styles.leftCol}>
-            <h2 className={styles.title}>{mockFacilitiesPage.header_title}</h2>
+            <h2 className={styles.title}>{mockTreatmentsPage.header_title}</h2>
 
             <div className={styles.primaryFrame}>
               <Image
@@ -36,10 +36,10 @@ export default function FriendsSection() {
               />
             </div>
 
-            <p className={styles.body}>{mockFacilitiesPage.intro_body}</p>
+            <p className={styles.body}>{mockTreatmentsPage.intro_body}</p>
 
-            <Button href="/facilities" color="var(--color-blue-100)">
-              Explore Facilities
+            <Button href="/treatments" color="var(--color-blue-100)">
+              Explore Treatments
             </Button>
           </div>
         </div>

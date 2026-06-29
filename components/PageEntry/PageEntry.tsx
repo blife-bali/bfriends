@@ -12,6 +12,7 @@ const STARTUP_SEEN_KEY = "bfriends-startup-seen";
 export default function PageEntry({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith("/admin") ?? false;
+  const hideFooter = isAdmin || pathname === "/contact";
   const { setSoundEnabled, playAmbience } = useSound();
   const [mounted, setMounted] = useState(false);
   const [phase, setPhase] = useState<"loader" | "startup" | "ready">("loader");
@@ -77,7 +78,7 @@ export default function PageEntry({ children }: { children: React.ReactNode }) {
   return (
     <>
       {children}
-      {!isAdmin && <Footer />}
+      {!hideFooter && <Footer />}
     </>
   );
 }

@@ -1,8 +1,8 @@
-import type { MockFacility } from "@/mock/facilities";
+import type { MockTreatment } from "@/mock/treatments";
 import styles from "./Section.module.css";
 
 interface SpecsSectionProps {
-  facility: Pick<MockFacility, "spec_section_label" | "spec_groups">;
+  treatment: Pick<MockTreatment, "spec_section_label" | "spec_groups">;
 }
 
 function SpecItem({ text }: { text: string }) {
@@ -24,20 +24,20 @@ function SpecItem({ text }: { text: string }) {
   );
 }
 
-export default function SpecsSection({ facility }: SpecsSectionProps) {
+export default function SpecsSection({ treatment }: SpecsSectionProps) {
   return (
-    <section className={styles.section} aria-labelledby="facility-specs-title">
+    <section className={styles.section} aria-labelledby="treatment-specs-title">
       <div className={styles.container}>
         <div className={styles.split}>
           <header className={styles.introCol}>
-            <h2 id="facility-specs-title" className={styles.title}>
-              {facility.spec_section_label}
+            <h2 id="treatment-specs-title" className={styles.title}>
+              {treatment.spec_section_label}
             </h2>
           </header>
 
           <ol className={styles.flowList}>
-            {facility.spec_groups.map((group, index) => {
-              const isLast = index === facility.spec_groups.length - 1;
+            {treatment.spec_groups.map((group, index) => {
+              const isLast = index === treatment.spec_groups.length - 1;
 
               return (
                 <li key={group.title} className={styles.flowItem}>
@@ -50,7 +50,6 @@ export default function SpecsSection({ facility }: SpecsSectionProps) {
 
                   <article className={styles.stepCard}>
                     <h3 className={styles.stepTitle}>{group.title}</h3>
-
                     {group.description && (
                       <p className={styles.description}>{group.description}</p>
                     )}

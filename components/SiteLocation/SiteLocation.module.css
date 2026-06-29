@@ -14,8 +14,8 @@
   width: 100%;
   max-width: var(--content-max-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  display: flex;
+  flex-direction: column;
   gap: clamp(20px, 3vw, 32px);
   align-items: stretch;
   box-sizing: border-box;
@@ -42,7 +42,7 @@
   margin: 0;
   padding: clamp(4px, 1vw, 8px) 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   gap: clamp(16px, 2.5vw, 24px);
   min-width: 0;
@@ -55,6 +55,10 @@
   color: var(--color-blue-100);
   min-width: 0;
   font-weight: 400;
+}
+
+.pointItem:first-child {
+  max-width: 48ch;
 }
 
 .pointIcon {
@@ -74,6 +78,8 @@
   letter-spacing: -0.01em;
   color: var(--color-cream-140);
   text-decoration: none;
+  width: fit-content;
+  min-width: 0;
 }
 
 .pointLink:hover {
@@ -81,27 +87,51 @@
   text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
-  .contentWrapper {
-    grid-template-columns: 1fr;
-    gap: clamp(20px, 4vw, 28px);
-  }
-
+@media (max-width: 1200px) {
   .mapWrapper {
-    height: clamp(260px, 42vw, 360px);
+    height: clamp(280px, 36vw, 380px);
   }
 
   .pointsList {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: clamp(16px, 3vw, 24px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: clamp(14px, 2vw, 20px);
     padding: 0;
   }
 
+  .pointItem:first-child {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
   .pointItem {
-    flex: 1 1 220px;
-    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  .pointLink,
+  .pointText {
+    width: auto;
+    flex: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    gap: clamp(18px, 3.5vw, 24px);
+  }
+
+  .mapWrapper {
+    height: clamp(260px, 40vw, 340px);
+  }
+
+  .pointsList {
+    gap: clamp(14px, 2.5vw, 18px);
+  }
+
+  .pointLink,
+  .pointText {
+    font-size: clamp(13px, 1.3vw, 14px);
   }
 }
 
@@ -110,24 +140,63 @@
     padding-bottom: clamp(48px, 10vw, 64px);
   }
 
+  .contentWrapper {
+    gap: clamp(16px, 4vw, 20px);
+  }
+
   .mapWrapper {
     height: clamp(220px, 52vw, 280px);
   }
 
+  .map {
+    border-radius: var(--radius-sm);
+  }
+
   .pointsList {
+    display: flex;
     flex-direction: column;
     gap: 14px;
+    padding: 0;
   }
 
   .pointItem {
-    flex: none;
     width: 100%;
+    gap: 10px;
+  }
+
+  .pointItem:first-child {
+    max-width: none;
+  }
+
+  .pointLink,
+  .pointText {
+    width: 100%;
+    flex: 1;
+    font-size: clamp(13px, 3.6vw, 14px);
+    line-height: 1.55;
+  }
+
+  .pointIcon {
+    margin-top: 3px;
   }
 }
 
 @media (max-width: 480px) {
   .mapWrapper {
     height: clamp(200px, 56vw, 240px);
+  }
+
+  .pointsList {
+    gap: 12px;
+  }
+
+  .pointItem {
+    gap: 8px;
+  }
+
+  .pointIcon {
+    width: 15px;
+    height: 15px;
   }
 
   .pointLink,

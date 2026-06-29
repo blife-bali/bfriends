@@ -5,26 +5,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
-import type { MockFacility } from "@/mock/facilities";
-import styles from "./Facilities.module.css";
+import type { MockTreatment } from "@/mock/treatments";
+import styles from "./Treatments.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
-interface FacilitiesProps {
-  facilities: MockFacility[];
+interface TreatmentsProps {
+  treatments: MockTreatment[];
 }
 
-export default function Facilities({ facilities }: FacilitiesProps) {
+export default function Treatments({ treatments }: TreatmentsProps) {
   return (
     <div className={styles.list}>
-      {facilities.map((facility, index) => (
-        <FacilityRow key={facility.id} facility={facility} index={index} />
+      {treatments.map((treatment, index) => (
+        <TreatmentRow key={treatment.id} treatment={treatment} index={index} />
       ))}
     </div>
   );
 }
 
-function FacilityRow({ facility, index }: { facility: MockFacility; index: number }) {
+function TreatmentRow({ treatment, index }: { treatment: MockTreatment; index: number }) {
   const rowRef = useRef<HTMLElement>(null);
   const mediaRef = useRef<HTMLAnchorElement>(null);
   const inView = useInView(rowRef, { once: true, amount: 0.2 });
@@ -45,16 +45,16 @@ function FacilityRow({ facility, index }: { facility: MockFacility; index: numbe
     <motion.section
       ref={rowRef}
       className={`${styles.row} ${reversed ? styles.rowReversed : ""}`}
-      aria-labelledby={`facility-${facility.id}-title`}
+      aria-labelledby={`treatment-${treatment.id}-title`}
       initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: EASE }}
     >
-      <Link href={`/facilities/${facility.id}`} className={styles.media} ref={mediaRef}>
+      <Link href={`/treatments/${treatment.id}`} className={styles.media} ref={mediaRef}>
         <motion.div className={styles.mediaLayer} style={{ y }}>
           <Image
-            src={facility.image}
-            alt={facility.name}
+            src={treatment.image}
+            alt={treatment.name}
             fill
             className={styles.image}
             sizes="(max-width: 900px) 100vw, 50vw"
@@ -66,14 +66,14 @@ function FacilityRow({ facility, index }: { facility: MockFacility; index: numbe
       </Link>
 
       <div className={styles.copy}>
-        <h2 id={`facility-${facility.id}-title`} className={styles.title}>
-          {facility.name}
+        <h2 id={`treatment-${treatment.id}-title`} className={styles.title}>
+          {treatment.name}
         </h2>
 
-        <p className={styles.body}>{facility.sub}</p>
+        <p className={styles.body}>{treatment.sub}</p>
 
-        <Link href={`/facilities/${facility.id}`} className={styles.cta}>
-          <span className={styles.ctaLabel}>Explore {facility.name}</span>
+        <Link href={`/treatments/${treatment.id}`} className={styles.cta}>
+          <span className={styles.ctaLabel}>Explore {treatment.name}</span>
           <ArrowRight
             className={styles.ctaArrow}
             size={18}

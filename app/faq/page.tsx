@@ -22,7 +22,7 @@ export default async function FaqPage() {
           <p className={styles.eyebrow}>Support</p>
           <h1 className={styles.title}>Curious about how BFriends works?</h1>
           <p className={styles.intro}>
-            From assessments and personalized programs to facilities and memberships, here are answers to the questions we hear most often.
+            From assessments and personalized programs to treatments and memberships, here are answers to the questions we hear most often.
           </p>
         </header>
 

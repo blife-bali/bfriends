@@ -122,7 +122,7 @@ function JourneyStepImage({ step }: { step: JourneyStep }) {
         alt={step.title}
         fill
         className={styles.stepImageEl}
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 33vw"
       />
     </div>
   );

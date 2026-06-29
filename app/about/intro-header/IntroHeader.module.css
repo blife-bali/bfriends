@@ -28,13 +28,13 @@
   line-height: 1.12;
   letter-spacing: -0.03em;
   color: var(--color-blue-100);
-  max-width: 20ch;
-  text-wrap: balance;
+  /* max-width: 20ch;
+  text-wrap: balance; */
 }
 
 .sub {
-  max-width: 62ch;
-  text-wrap: balance;
+  max-width: 64ch;
+  text-wrap: pretty;
   font-family: var(--font-sans);
   font-size: clamp(14px, 1.2vw, 16px);
   line-height: 1.6;

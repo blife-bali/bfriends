@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader/PageHeader";
 import Contact from "./Contact";
 import { mockContactPage } from "@/mock/contact";
 
@@ -9,14 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return (
-    <main>
-      <PageHeader
-        title={mockContactPage.header_title}
-        subtitle={mockContactPage.header_subtitle}
-        image={mockContactPage.header_image}
-      />
-      <Contact />
-    </main>
-  );
+  return <Contact />;
 }

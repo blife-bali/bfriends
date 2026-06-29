@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/about/staff",
-        destination: "/about",
+        destination: "/journey-partners",
         permanent: true,
       },
       {
@@ -60,12 +60,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/about/facilities",
-        destination: "/facilities",
+        destination: "/treatments",
         permanent: true,
       },
       {
         source: "/about/facilities/:slug",
-        destination: "/facilities/:slug",
+        destination: "/treatments/:slug",
+        permanent: true,
+      },
+      {
+        source: "/facilities",
+        destination: "/treatments",
+        permanent: true,
+      },
+      {
+        source: "/facilities/:slug",
+        destination: "/treatments/:slug",
         permanent: true,
       },
     ];

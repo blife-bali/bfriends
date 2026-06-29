@@ -104,7 +104,7 @@
 }
 
 .narrativeParagraph {
-  margin: 0;
+  margin-bottom: clamp(24px, 6vw, 32px);
   font-family: var(--font-sans);
   font-size: clamp(14px, 1.1vw, 16px);
   line-height: 1.65;
@@ -115,7 +115,7 @@
 }
 
 .narrativeParagraph:not(:last-child) {
-  margin-bottom: clamp(8px, 1.5vw, 16px);
+  margin-bottom: clamp(12px, 2vw, 16px);
 }
 
 /* —— Journey flow list —— */
@@ -157,13 +157,13 @@
   z-index: 1;
   list-style: none;
   margin: 0;
-  padding: clamp(20px, 4vw, 48px);
+  padding: clamp(20px, 4vw, 48px) 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 6vw, 64px);
-  border: 1px solid var(--color-cream-20);
-  border-radius: var(--radius-lg);
+  gap: clamp(24px, 6vw, 32px);
+  border-top: 1px solid var(--color-cream-20);
+  /* border-radius: var(--radius-lg); */
 }
 
 .flowItem {
@@ -174,7 +174,7 @@
 }
 
 .flowSlotLeft {
-  grid-column: 1 / 5;
+  grid-column: 2 / 5;
   position: relative;
   min-width: 0;
 }
@@ -219,7 +219,7 @@
 }
 
 .flowSlotRight {
-  grid-column: 6 / -1;
+  grid-column: 6 / 9;
   position: relative;
   min-width: 0;
 }
@@ -327,7 +327,7 @@
 .stepImage {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 8;
+  aspect-ratio: 5/3;
   overflow: hidden;
   border-radius: var(--radius-md);
 }
@@ -387,12 +387,51 @@
 }
 
 @media (max-width: 1200px) {
+  .flow {
+    --flow-rail: 48px;
+    --flow-col-gap: clamp(10px, 1.5vw, 18px);
+  }
+
+  .flowItem,
+  .flowItemNarrative {
+    grid-template-columns: minmax(0, 1fr) var(--flow-rail) minmax(0, 1fr);
+  }
+
   .flowSlotLeft {
-    grid-column: 1 / 5;
+    grid-column: 1;
+  }
+
+  .flowMark {
+    grid-column: 2;
   }
 
   .flowSlotRight {
-    grid-column: 6 / 10;
+    grid-column: 3;
+  }
+
+  .flowTrack {
+    left: 50%;
+  }
+
+  .flowSlotLeft:has(.stepContent)::after,
+  .flowSlotRight:has(.stepContent)::after {
+    width: calc(var(--flow-col-gap) + 12px);
+  }
+
+  .stepTitle {
+    font-size: clamp(18px, 2.2vw, 26px);
+  }
+
+  .stepContent {
+    padding: 0 clamp(8px, 1vw, 14px) 0 0;
+  }
+
+  .flowSlotRight .stepContent {
+    padding: 0 0 0 clamp(8px, 1vw, 14px);
+  }
+
+  .stepImage {
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -406,8 +445,38 @@
     padding: 20px;
   }
 
+  .pillar:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: min(100%, 420px);
+    justify-self: center;
+  }
+
   .headline {
     max-width: 32ch;
+  }
+
+  .flow {
+    --flow-rail: 44px;
+    --flow-col-gap: clamp(8px, 1.2vw, 14px);
+  }
+
+  .flowList {
+    gap: clamp(28px, 5vw, 40px);
+    padding-top: clamp(16px, 3vw, 32px);
+    padding-bottom: clamp(16px, 3vw, 32px);
+  }
+
+  .stepIndexContainer {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stepIndex {
+    font-size: 11px;
+  }
+
+  .narrativeParagraph {
+    font-size: clamp(14px, 1.4vw, 15px);
   }
 }
 
@@ -428,40 +497,61 @@
 
   .pillars {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pillar:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .flowItemNarrative {
-    grid-template-columns: 1fr;
+    display: block;
   }
 
   .narrative {
     align-items: flex-start;
     text-align: left;
+    gap: clamp(10px, 2.5vw, 14px);
   }
 
   .narrativeParagraph {
     max-width: none;
     text-align: left;
+    font-size: clamp(14px, 3.8vw, 15px);
+    line-height: 1.6;
   }
 
   .flow {
-    --flow-col-gap: clamp(8px, 2vw, 12px);
+    --flow-col-gap: 0;
   }
 
   .flowList {
-    gap: 40px;
-    padding: clamp(16px, 4vw, 24px);
-    border-radius: var(--radius-md);
+    gap: 0;
+    padding: clamp(20px, 5vw, 28px) 0 0;
+    border-radius: 0;
   }
 
   .flowItem {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 3.5vw, 18px);
+    padding-bottom: clamp(32px, 8vw, 40px);
+    margin-bottom: clamp(32px, 8vw, 40px);
+    border-bottom: 1px solid var(--color-cream-20);
+  }
+
+  .flowItem:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
   }
 
   .flowSlotLeft,
   .flowSlotRight {
-    grid-column: 1;
+    width: 100%;
+    min-width: 0;
   }
 
   .flowSlotLeft:has(.stepContent),
@@ -482,7 +572,8 @@
   }
 
   .flowMark {
-    grid-column: 1;
+    width: 100%;
+    height: auto;
     justify-content: flex-start;
     order: 1;
   }
@@ -493,6 +584,7 @@
 
   .stepContent {
     padding: 0;
+    gap: clamp(10px, 2.5vw, 12px);
   }
 
   .flowSlotRight .stepContent {
@@ -511,6 +603,7 @@
   .stepDescription,
   .stepPointText {
     font-size: 13px;
+    line-height: 1.55;
   }
 
   .stepPointTitle {
@@ -528,11 +621,26 @@
     gap: 10px;
   }
 
-  .flowList {
-    gap: 32px;
+  .pillarTitle {
+    font-size: 17px;
+  }
+
+  .pillarBody {
+    font-size: 13px;
+  }
+
+  .flowItem {
+    gap: 12px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
   }
 
   .stepImage {
     aspect-ratio: 4 / 3;
+    border-radius: var(--radius-sm);
+  }
+
+  .stepTitle {
+    font-size: clamp(18px, 5vw, 22px);
   }
 }

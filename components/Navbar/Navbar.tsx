@@ -10,7 +10,7 @@ import { trackEvent } from "@/lib/gtag";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Navbar.module.css";
 
-export type ActiveMenuId = "about" | "programs" | "facilities" | "membership" | "community" | null;
+export type ActiveMenuId = "about" | "programs" | "treatments" | "membership" | "community" | null;
 
 const CURRENT_LANGUAGE = {
   name: "English",
@@ -36,7 +36,7 @@ function MenuGrid({
   pathname,
   activeMenu,
   isProgramPage,
-  isFacilitiesPage,
+  isTreatmentsPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -47,7 +47,7 @@ function MenuGrid({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
-  isFacilitiesPage: boolean;
+  isTreatmentsPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -73,7 +73,7 @@ function MenuGrid({
           const directHref = DIRECT_LINK_HREFS[col.id];
           const isSelected =
             (col.id === "about" && isAboutPage) ||
-            (col.id === "facilities" && isFacilitiesPage) ||
+            (col.id === "treatments" && isTreatmentsPage) ||
             (col.id === "programs" && isProgramPage) ||
             (col.id === "membership" && isMembershipPage) ||
             (col.id === "community" && isCommunityPage);
@@ -130,7 +130,7 @@ function MobileMenuList({
   pathname,
   activeMenu,
   isProgramPage,
-  isFacilitiesPage,
+  isTreatmentsPage,
   isAboutPage,
   isMembershipPage,
   isCommunityPage,
@@ -143,7 +143,7 @@ function MobileMenuList({
   pathname: string;
   activeMenu: ActiveMenuId;
   isProgramPage: boolean;
-  isFacilitiesPage: boolean;
+  isTreatmentsPage: boolean;
   isAboutPage: boolean;
   isMembershipPage: boolean;
   isCommunityPage: boolean;
@@ -176,7 +176,7 @@ function MobileMenuList({
         const isSelected =
           (col.id === "about" && isAboutPage) ||
           (col.id === "programs" && isProgramPage) ||
-          (col.id === "facilities" && isFacilitiesPage) ||
+          (col.id === "treatments" && isTreatmentsPage) ||
           (col.id === "membership" && isMembershipPage) ||
           (col.id === "community" && isCommunityPage);
 
@@ -345,7 +345,7 @@ export default function Navbar() {
   };
 
   const isProgramPage = pathname === "/programs" || pathname.startsWith("/programs/");
-  const isFacilitiesPage = pathname.startsWith("/facilities");
+  const isTreatmentsPage = pathname.startsWith("/treatments");
   const isAboutPage = pathname === "/about" || pathname.startsWith("/about/");
   const isMembershipPage = pathname.startsWith("/membership/");
   const isCommunityPage = pathname.startsWith("/community/");
@@ -378,8 +378,8 @@ export default function Navbar() {
           ? "dropdown_about"
           : menuId === "programs"
             ? "dropdown_programs"
-            : menuId === "facilities"
-              ? "dropdown_facilities"
+            : menuId === "treatments"
+              ? "dropdown_treatments"
               : "dropdown_community",
     });
     closeMenu();
@@ -391,8 +391,8 @@ export default function Navbar() {
       : [...(navColumns.find((c) => c.id === activeMenu)?.items ?? [])];
 
   const isProgramsDropdown = activeMenu === "programs";
-  const isFacilitiesDropdown = activeMenu === "facilities";
-  const isDropdownWithImages = isProgramsDropdown || isFacilitiesDropdown;
+  const isTreatmentsDropdown = activeMenu === "treatments";
+  const isDropdownWithImages = isProgramsDropdown || isTreatmentsDropdown;
 
   return (
     <>
@@ -512,7 +512,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
-                isFacilitiesPage={isFacilitiesPage}
+                isTreatmentsPage={isTreatmentsPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}
@@ -554,8 +554,8 @@ export default function Navbar() {
                               ? "dropdown_about"
                               : activeMenu === "programs"
                                 ? "dropdown_programs"
-                                : activeMenu === "facilities"
-                                  ? "dropdown_facilities"
+                                : activeMenu === "treatments"
+                                  ? "dropdown_treatments"
                                   : "dropdown_community",
                         });
                         closeMenu();
@@ -595,7 +595,7 @@ export default function Navbar() {
                 pathname={pathname}
                 activeMenu={activeMenu}
                 isProgramPage={isProgramPage}
-                isFacilitiesPage={isFacilitiesPage}
+                isTreatmentsPage={isTreatmentsPage}
                 isAboutPage={isAboutPage}
                 isMembershipPage={isMembershipPage}
                 isCommunityPage={isCommunityPage}

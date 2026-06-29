@@ -27,10 +27,10 @@ export const footerAboutLinks: readonly FooterLink[] = [
 ];
 
 export const footerTreatmentLinks: readonly FooterLink[] = [
-  { label: "Fitness", href: "/facilities/gym" },
-  { label: "Café", href: "/facilities/cafe" },
-  { label: "Spa & Body Therapy", href: "/facilities/wellness-spa" },
-  { label: "Facial & Beauty", href: "/facilities/beauty-spa" },
-  { label: "Pilates & Yoga", href: "/facilities/yoga-space" },
-  { label: "Climbing", href: "/facilities/wallclimbing" },
+  { label: "FLOW – FITNESS", href: "/treatments/gym" },
+  { label: "RESTORE – CAFE & LOUNGE", href: "/treatments/cafe" },
+  { label: "INTEGRATE – BODY THERAPY", href: "/treatments/wellness-spa" },
+  { label: "ENHANCE – FACIAL & TREATMENT", href: "/treatments/beauty-spa" },
+  { label: "NURTURE – PILATES, YOGA & BARRE", href: "/treatments/yoga-space" },
+  { label: "DARE – WALL CLIMBING", href: "/treatments/wallclimbing" },
 ];

@@ -3,7 +3,6 @@ import Button from "@/components/ui/Button/Button";
 import styles from "./PillarCard.module.css";
 
 export interface PillarCardProps {
-  index: number;
   image: string;
   imageAlt: string;
   title: string;
@@ -13,7 +12,6 @@ export interface PillarCardProps {
 }
 
 export default function PillarCard({
-  index,
   image,
   imageAlt,
   title,
@@ -33,9 +31,6 @@ export default function PillarCard({
         />
       </div>
       <div className={styles.content}>
-        <span className={styles.index} aria-hidden="true">
-          {String(index).padStart(2, "0")}
-        </span>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
         {href ? (

@@ -1,9 +1,10 @@
-import { mockFacilities } from "@/mock/facilities";
+import { mockTreatments } from "@/mock/treatments";
 
 /** About BFriends links. */
 export const aboutNavItems = [
   { label: "Friends Journey", href: "/journey" },
-  { label: "Facilities", href: "/facilities" },
+  { label: "Journey Partners", href: "/journey-partners" },
+  { label: "Treatments", href: "/treatments" },
 ] as const;
 
 /** Programmes: filled at runtime from /api/programs. */
@@ -17,13 +18,13 @@ export const utilityNavItems = [
 /** Help link shown in the navbar top bar beside Book Now. */
 export const helpNavItem = { label: "Help", href: "/faq" } as const;
 
-/** Facilities section pages. */
-export const facilitiesNavItems = [...mockFacilities]
+/** Treatments section pages. */
+export const treatmentsNavItems = [...mockTreatments]
   .sort((a, b) => a.sort_order - b.sort_order)
-  .map((facility) => ({
-    label: facility.name,
-    href: `/facilities/${facility.id}`,
-    image: facility.image,
+  .map((treatment) => ({
+    label: treatment.name,
+    href: `/treatments/${treatment.id}`,
+    image: treatment.image,
   }));
 
 /** Membership links. */
@@ -38,12 +39,12 @@ export const communityNavItems = [
   { label: "BFriends Journal", href: "/community/journal" },
 ] as const;
 
-export type NavColumnId = "about" | "programs" | "facilities" | "membership" | "community";
+export type NavColumnId = "about" | "programs" | "treatments" | "membership" | "community";
 
 export const navColumns: { id: NavColumnId; title: string; items: readonly { label: string; href: string; image?: string }[] }[] = [
   { id: "about", title: "About BFriends", items: aboutNavItems },
   { id: "programs", title: "Programmes", items: programsNavItems },
-  { id: "facilities", title: "Facilities", items: facilitiesNavItems },
+  { id: "treatments", title: "Treatments", items: treatmentsNavItems },
   { id: "membership", title: "Membership", items: membershipNavItems },
   { id: "community", title: "Journal", items: communityNavItems },
 ];

@@ -7,12 +7,13 @@ import Floater from '@/components/Floater/Floater';
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith('/admin');
+  const isContact = pathname === '/contact';
 
   return (
     <>
-      {!isAdmin && <Navigation />}
+      {!isAdmin && !isContact && <Navigation />}
       {children}
-      {!isAdmin && <Floater />}
+      {!isAdmin && !isContact && <Floater />}
     </>
   );
 }
