@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navColumns, utilityNavItems, helpNavItem, type NavColumnId } from "@/lib/nav-config";
+import { navColumns, utilityNavItems, helpNavItem, type NavColumnId, type NavItem } from "@/lib/nav-config";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { trackEvent } from "@/lib/gtag";
 import Button from "@/components/ui/Button/Button";
@@ -24,8 +24,6 @@ interface ProgramApiItem {
   image?: string | null;
   sort?: number;
 }
-
-type NavItem = { label: string; href: string; image?: string };
 
 /** Columns that navigate directly instead of opening a dropdown. */
 const DIRECT_LINK_HREFS: Partial<Record<NavColumnId, string>> = {
@@ -577,7 +575,14 @@ export default function Navbar() {
                           ) : null}
                         </span>
                       )}
-                      <span className={styles.linkLabel}>{item.label}</span>
+                      {item.labelPrimary && item.labelSecondary ? (
+                        <span className={styles.linkLabel}>
+                          <span className={styles.linkLabelPrimary}>{item.labelPrimary}</span>
+                          <span className={styles.linkLabelSecondary}>{item.labelSecondary}</span>
+                        </span>
+                      ) : (
+                        <span className={styles.linkLabel}>{item.label}</span>
+                      )}
                     </Link>
                   </div>
                 ))}

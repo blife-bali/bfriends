@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import type { MockTreatment } from "@/mock/treatments";
+import { treatmentNameInline } from "@/mock/treatments";
 import styles from "./Treatments.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
@@ -29,6 +30,7 @@ function TreatmentRow({ treatment, index }: { treatment: MockTreatment; index: n
   const mediaRef = useRef<HTMLAnchorElement>(null);
   const inView = useInView(rowRef, { once: true, amount: 0.2 });
   const reversed = index % 2 === 1;
+  const inlineName = treatmentNameInline(treatment);
 
   const { scrollYProgress } = useScroll({
     target: mediaRef,
@@ -54,7 +56,7 @@ function TreatmentRow({ treatment, index }: { treatment: MockTreatment; index: n
         <motion.div className={styles.mediaLayer} style={{ y }}>
           <Image
             src={treatment.image}
-            alt={treatment.name}
+            alt={inlineName}
             fill
             className={styles.image}
             sizes="(max-width: 900px) 100vw, 50vw"
@@ -67,13 +69,13 @@ function TreatmentRow({ treatment, index }: { treatment: MockTreatment; index: n
 
       <div className={styles.copy}>
         <h2 id={`treatment-${treatment.id}-title`} className={styles.title}>
-          {treatment.name}
+          {inlineName}
         </h2>
 
         <p className={styles.body}>{treatment.sub}</p>
 
         <Link href={`/treatments/${treatment.id}`} className={styles.cta}>
-          <span className={styles.ctaLabel}>Explore {treatment.name}</span>
+          <span className={styles.ctaLabel}>Explore {inlineName}</span>
           <ArrowRight
             className={styles.ctaArrow}
             size={18}

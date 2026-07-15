@@ -22,7 +22,9 @@ export const helpNavItem = { label: "Help", href: "/faq" } as const;
 export const treatmentsNavItems = [...mockTreatments]
   .sort((a, b) => a.sort_order - b.sort_order)
   .map((treatment) => ({
-    label: treatment.name,
+    label: `${treatment.name} ${treatment.facility}`,
+    labelPrimary: treatment.name,
+    labelSecondary: treatment.facility,
     href: `/treatments/${treatment.id}`,
     image: treatment.image,
   }));
@@ -41,7 +43,16 @@ export const communityNavItems = [
 
 export type NavColumnId = "about" | "programs" | "treatments" | "membership" | "community";
 
-export const navColumns: { id: NavColumnId; title: string; items: readonly { label: string; href: string; image?: string }[] }[] = [
+export type NavItem = {
+  label: string;
+  href: string;
+  image?: string;
+  /** Optional two-line label used by treatments dropdown. */
+  labelPrimary?: string;
+  labelSecondary?: string;
+};
+
+export const navColumns: { id: NavColumnId; title: string; items: readonly NavItem[] }[] = [
   { id: "about", title: "About BFriends", items: aboutNavItems },
   { id: "programs", title: "Programmes", items: programsNavItems },
   { id: "treatments", title: "Treatments", items: treatmentsNavItems },

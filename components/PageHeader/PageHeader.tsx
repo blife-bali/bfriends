@@ -72,7 +72,17 @@ export default function PageHeader(props: PageHeaderProps) {
       >
         {isPrograms ? (
           <>
-            {showEyebrow && <p className={styles.programsEyebrow}>{eyebrow}</p>}
+            {showEyebrow && eyebrow && (
+              <p className={styles.programsEyebrow}>
+                {eyebrow.includes("\n")
+                  ? eyebrow.split("\n").map((line) => (
+                      <span key={line} className={styles.programsEyebrowLine}>
+                        {line}
+                      </span>
+                    ))
+                  : eyebrow}
+              </p>
+            )}
             <h1 className={styles.title}>{title}</h1>
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
             {showBookNowButton && (

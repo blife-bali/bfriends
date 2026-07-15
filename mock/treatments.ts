@@ -27,7 +27,10 @@ export type TreatmentCta = {
 
 export type MockTreatment = {
   id: TreatmentId;
+  /** Pillar / journey name, e.g. FLOW */
   name: string;
+  /** Facility name shown under name, e.g. FITNESS */
+  facility: string;
   pillar: string;
   pillarLabel: string;
   floor: string;
@@ -42,6 +45,13 @@ export type MockTreatment = {
   spec_groups: TreatmentSpecGroup[];
   cta: TreatmentCta;
 };
+
+/** Single-line label for pages, footer, CTAs, and SEO (not navbar). */
+export function treatmentNameInline(
+  treatment: Pick<MockTreatment, "name" | "facility">,
+): string {
+  return `${treatment.name} | ${treatment.facility}`;
+}
 
 export type MockTreatmentsPage = {
   seo_title: string;
@@ -68,14 +78,15 @@ export const mockTreatmentsPage: MockTreatmentsPage = {
 export const mockTreatments: MockTreatment[] = [
   {
     id: "gym",
-    name: "FLOW – FITNESS",
+    name: "FLOW",
+    facility: "FITNESS",
     pillar: "flow",
     pillarLabel: "Flow",
     floor: "Basement",
     image: "/images/Fitness/DDK09594.webp",
     sub: "Customized training and group classes for all levels — with tailored modifications to improve flexibility, strength, posture, and movement confidence.",
     sort_order: 0,
-    seo_title: "FLOW – FITNESS | BFriends Treatments",
+    seo_title: "FLOW | FITNESS | BFriends Treatments",
     seo_description:
       "Customized training and group classes at the BFriends fitness area — functional zones, guided strength, and assessment-informed programmes in Kerobokan, Bali.",
     hero_headline: "Find Your Flow",
@@ -115,14 +126,15 @@ export const mockTreatments: MockTreatment[] = [
   },
   {
     id: "cafe",
-    name: "RESTORE – CAFE & LOUNGE",
+    name: "RESTORE",
+    facility: "CAFE & LOUNGE",
     pillar: "restore",
     pillarLabel: "Restore",
     floor: "1st Floor",
     image: "/images/Restore/DDK09897.webp",
     sub: "Korean-inspired refinement meets Bali's fresh local ingredients — clean, balanced, and nourishing food experiences that support wellness without compromising enjoyment.",
     sort_order: 1,
-    seo_title: "RESTORE – CAFE & LOUNGE | BFriends Treatments",
+    seo_title: "RESTORE | CAFE & LOUNGE | BFriends Treatments",
     seo_description:
       "BFriends Cafe — Korean-inspired wellness dining with fresh local ingredients, health-focused menus, and a calm social atmosphere in Kerobokan.",
     hero_headline: "Nourishment For Everyday Wellbeing",
@@ -159,14 +171,15 @@ export const mockTreatments: MockTreatment[] = [
   },
   {
     id: "wellness-spa",
-    name: "INTEGRATE – BODY THERAPY",
+    name: "INTEGRATE",
+    facility: "BODY THERAPY",
     pillar: "integrate",
     pillarLabel: "Integrate",
     floor: "2nd Floor",
     image: "/images/Integrate/DDK09585.webp",
     sub: "Personalized body therapies, restorative rituals, and assessment-supported treatments that help your body recover, rebalance, and perform at its best.",
     sort_order: 2,
-    seo_title: "INTEGRATE – BODY THERAPY | BFriends Treatments",
+    seo_title: "INTEGRATE | BODY THERAPY | BFriends Treatments",
     seo_description:
       "Recovery-focused body therapies, signature rituals, and assessment-supported treatments at BFriends Spa & Body Therapy in Kerobokan.",
     hero_headline: "Restore Balance. Recover Better.",
@@ -209,14 +222,15 @@ export const mockTreatments: MockTreatment[] = [
   },
   {
     id: "beauty-spa",
-    name: "ENHANCE – FACIAL & TREATMENT",
+    name: "ENHANCE",
+    facility: "FACIAL & TREATMENT",
     pillar: "enhance",
     pillarLabel: "Enhance",
     floor: "3rd Floor",
     image: "/images/Enhance/DDK00316.webp",
     sub: "Advanced treatments and Korean-inspired beauty expertise — personalized care to help you achieve healthier, more radiant skin.",
     sort_order: 3,
-    seo_title: "ENHANCE – FACIAL & TREATMENT | BFriends Treatments",
+    seo_title: "ENHANCE | FACIAL & TREATMENT | BFriends Treatments",
     seo_description:
       "Facial treatments, scalp rituals, and Korean-inspired beauty expertise at BFriends Facial & Beauty in Kerobokan, Bali.",
     hero_headline: "Beauty Backed By Care",
@@ -253,14 +267,15 @@ export const mockTreatments: MockTreatment[] = [
   },
   {
     id: "yoga-space",
-    name: "NURTURE – PILATES, YOGA & BARRE",
+    name: "NURTURE",
+    facility: "PILATES, YOGA & BARRE",
     pillar: "nurture",
     pillarLabel: "Nurture",
     floor: "4th Floor",
     image: "/images/Nurture/DDK09005.webp",
     sub: "Movement practices that support strength, mobility, posture, and overall wellbeing — with a deeper connection between body and mind.",
     sort_order: 4,
-    seo_title: "NURTURE – PILATES, YOGA & BARRE | BFriends Treatments",
+    seo_title: "NURTURE | PILATES, YOGA & BARRE | BFriends Treatments",
     seo_description:
       "Pilates, yoga, and barre classes with reformer equipment and expert instructors at BFriends in Kerobokan, Bali.",
     hero_headline: "Move With Intention",
@@ -307,14 +322,15 @@ export const mockTreatments: MockTreatment[] = [
   },
   {
     id: "wallclimbing",
-    name: "DARE – WALL CLIMBING",
+    name: "DARE",
+    facility: "WALL CLIMBING",
     pillar: "dare",
     pillarLabel: "Dare",
     floor: "Wallclimbing",
     image: "/images/climbing.jpeg",
     sub: "Physical movement and mental focus in one rewarding experience — building confidence, resilience, and perseverance on a 15-meter climbing wall.",
     sort_order: 5,
-    seo_title: "DARE – WALL CLIMBING | BFriends Treatments",
+    seo_title: "DARE | WALL CLIMBING | BFriends Treatments",
     seo_description:
       "15-meter climbing wall for adults and children at BFriends — strength, coordination, and personal growth in Kerobokan.",
     hero_headline: "Growth Through Challenge",

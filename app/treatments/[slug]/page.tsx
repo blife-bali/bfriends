@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import { getTreatmentBySlug, getTreatmentSlugs } from "@/lib/treatments";
+import { treatmentNameInline } from "@/mock/treatments";
 import { Section as AboutSection } from "./about";
 import { Section as SpecsSection } from "./specs";
 import { Section as CtaSection } from "./cta";
@@ -43,7 +44,7 @@ export default async function TreatmentDetailPage({
     <>
       <PageHeader
         variant="programs"
-        eyebrow={treatment.name}
+        eyebrow={treatmentNameInline(treatment)}
         title={treatment.hero_headline}
         image={treatment.image}
         showBookNowButton={false}

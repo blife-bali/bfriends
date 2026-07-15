@@ -344,13 +344,20 @@
 }
 
 .dropdown .linkLabel {
-  display: block;
-  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   text-align: center;
   line-height: 1.35;
   overflow-wrap: anywhere;
   text-transform: uppercase;
-  /* margin-top: 12px; */
+}
+
+.dropdown .linkLabelPrimary,
+.dropdown .linkLabelSecondary {
+  display: block;
+  width: 100%;
 }
 
 .menuItem {

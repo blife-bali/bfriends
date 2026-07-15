@@ -1,5 +1,6 @@
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { getEcosystemHref } from "@/lib/site-ecosystem-links";
+import { mockTreatments, treatmentNameInline } from "@/mock/treatments";
 
 export type FooterLink = {
   label: string;
@@ -26,11 +27,9 @@ export const footerAboutLinks: readonly FooterLink[] = [
   { label: "BFriends Journal", href: "/community/journal" },
 ];
 
-export const footerTreatmentLinks: readonly FooterLink[] = [
-  { label: "FLOW – FITNESS", href: "/treatments/gym" },
-  { label: "RESTORE – CAFE & LOUNGE", href: "/treatments/cafe" },
-  { label: "INTEGRATE – BODY THERAPY", href: "/treatments/wellness-spa" },
-  { label: "ENHANCE – FACIAL & TREATMENT", href: "/treatments/beauty-spa" },
-  { label: "NURTURE – PILATES, YOGA & BARRE", href: "/treatments/yoga-space" },
-  { label: "DARE – WALL CLIMBING", href: "/treatments/wallclimbing" },
-];
+export const footerTreatmentLinks: readonly FooterLink[] = [...mockTreatments]
+  .sort((a, b) => a.sort_order - b.sort_order)
+  .map((treatment) => ({
+    label: treatmentNameInline(treatment),
+    href: `/treatments/${treatment.id}`,
+  }));
