@@ -10,6 +10,7 @@ import ProgramSessionsEditor, {
   type ProgramSession,
   type ProgramSessionType,
 } from '@/components/admin/ProgramSessionsEditor';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface ProgramStep { id?: number; step_id: string; title: string; description: string; sort_order: number; }
 
@@ -130,13 +131,18 @@ export default function ProgramDetailPage() {
     { key: 'general', label: 'General' },
     { key: 'seo', label: 'SEO' },
     { key: 'intro', label: 'Intro' },
-    { key: 'philosophy', label: 'Philosophy' },
+    // [ NOTES ] Philosophy tab (quote / philosophy / philosophy image / prev-next) is not rendered on /programs/[slug]. Prev/next nav is hard-disabled in ProgramContent. [ END NOTES ] //
+    // { key: 'philosophy', label: 'Philosophy' },
     { key: 'framework', label: 'Framework' },
-    { key: 'sessions', label: 'Sessions' },
+    { key: 'sessions', label: 'Sessions & pricing' },
   ];
 
   return (
     <AdminLayout title={isNew ? 'New Program' : `Edit: ${program.name}`} username={username}>
+      <AdminPageHint variant="live">
+        Shown on <code>/programs/{'{slug}'}</code> and used for spa session lists. <strong>Sessions</strong> are the
+        service / pricing groups visitors see. Inactive programs are hidden from the public site.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-tabs">
           {tabs.map(t => (
@@ -153,13 +159,15 @@ export default function ProgramDetailPage() {
               <FormField label="Slug" name="slug" value={program.slug} onChange={(v: string) => update('slug', v)} />
               <FormField label="Sort Order" name="sort_order" type="number" value={program.sort_order} onChange={(v: number) => update('sort_order', v)} />
             </div>
-            <FormField label="Eyebrow" name="eyebrow" value={program.eyebrow || ''} onChange={(v: string) => update('eyebrow', v)} />
-            <FormField label="Title" name="title" value={program.title || ''} onChange={(v: string) => update('title', v)} />
-            <FormField label="Subheading" name="subheading" value={program.subheading || ''} onChange={(v: string) => update('subheading', v)} />
-            <FormField label="Button Label" name="button_label" value={program.button_label || ''} onChange={(v: string) => update('button_label', v)} />
+            {/* [ NOTES ] Eyebrow is stored in DB but not mapped into PublicProgram / not shown on the public site. [ END NOTES ] */}
+            {/* <FormField label="Eyebrow" name="eyebrow" value={program.eyebrow || ''} onChange={(v: string) => update('eyebrow', v)} /> */}
+            <FormField label="Title" name="title" value={program.title || ''} onChange={(v: string) => update('title', v)} hint="Used on community programme cards; intro title can override the on-page intro heading" />
+            <FormField label="Subheading" name="subheading" value={program.subheading || ''} onChange={(v: string) => update('subheading', v)} hint="Shown on /programs list and community cards" />
+            <FormField label="Button Label" name="button_label" value={program.button_label || ''} onChange={(v: string) => update('button_label', v)} hint="Community About Services cards (not the program detail WhatsApp CTA)" />
             <FormField label="Book Now Button" name="book_now_button" type="checkbox" value={!!program.book_now_button} onChange={(v: boolean) => update('book_now_button', v ? 1 : 0)} />
             <FormField label="Video URL" name="video" value={program.video || ''} onChange={(v: string) => update('video', v)} placeholder="/videos/BFriends2.mp4" />
-            <FormField label="Breadcrumb" name="breadcrumb" value={program.breadcrumb || ''} onChange={(v: string) => update('breadcrumb', v)} />
+            {/* [ NOTES ] Program breadcrumb is not used — /programs/[slug] PageHeader uses name only; /programs list hardcodes "Programmes". [ END NOTES ] */}
+            {/* <FormField label="Breadcrumb" name="breadcrumb" value={program.breadcrumb || ''} onChange={(v: string) => update('breadcrumb', v)} /> */}
             <div className="admin-form-group">
               <label>Image</label>
               <ImageUploader value={program.image || ''} onChange={(url: string) => update('image', url)} />
@@ -182,7 +190,8 @@ export default function ProgramDetailPage() {
           </div>
         )}
 
-        {tab === 'philosophy' && (
+        {/* [ NOTES ] Philosophy tab not on the public program page. Values remain in state/DB on save. [ END NOTES ] */}
+        {/* {tab === 'philosophy' && (
           <div>
             <FormField label="Quote" name="quote" type="textarea" value={program.quote || ''} onChange={(v: string) => update('quote', v)} />
             <FormField label="Philosophy" name="philosophy" type="textarea" value={program.philosophy || ''} onChange={(v: string) => update('philosophy', v)} />
@@ -195,7 +204,7 @@ export default function ProgramDetailPage() {
               <FormField label="Next Program" name="next_program" value={program.next_program || ''} onChange={(v: string) => update('next_program', v)} />
             </div>
           </div>
-        )}
+        )} */}
 
         {tab === 'framework' && (
           <div>

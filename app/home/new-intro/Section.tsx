@@ -26,7 +26,7 @@ interface JourneyStep {
   subpoints?: ProcessSubpoint[];
 }
 
-const CONTENT_BLOCKS = [
+const FALLBACK_PILLARS = [
   {
     title: "Data-Driven Assessment",
     body: "Gain valuable insights into your body's current condition through a comprehensive wellness assessment.",
@@ -40,6 +40,11 @@ const CONTENT_BLOCKS = [
     body: "Work alongside experienced wellness professionals who help you navigate every stage of your journey.",
   },
 ];
+
+export type IntroPillarBlock = {
+  title: string;
+  body: string;
+};
 
 const DEFAULT_HEADLINE = "Feeling tired, out of balance, or stuck in a routine?";
 const DEFAULT_SYSTEM_BODY = `Your journey at BFriends is designed step by step - starting from your baseline, tracking your
@@ -130,10 +135,12 @@ function JourneyStepImage({ step }: { step: JourneyStep }) {
 
 export default function NewIntroSection({
   headline = DEFAULT_HEADLINE,
+  pillars = [],
   steps = [],
   journeySteps = [],
 }: {
   headline?: string;
+  pillars?: IntroPillarBlock[];
   steps?: { title?: string; description?: string }[];
   journeySteps?: JourneyStep[];
 }) {
@@ -217,6 +224,7 @@ export default function NewIntroSection({
     .split("\n\n")
     .map((s: string) => s.trim())
     .filter(Boolean);
+  const pillarBlocks = pillars.length > 0 ? pillars : FALLBACK_PILLARS;
 
   return (
     <section ref={ref} className={styles.section} aria-label="Introduction and BFriends system">
@@ -236,8 +244,8 @@ export default function NewIntroSection({
           animate={inView ? "visible" : "hidden"}
           variants={staggerContainer}
         >
-          {CONTENT_BLOCKS.map((block, i) => (
-            <motion.article key={block.title} className={styles.pillar} variants={fadeInBlur}>
+          {pillarBlocks.map((block, i) => (
+            <motion.article key={`${block.title}-${i}`} className={styles.pillar} variants={fadeInBlur}>
               <span className={styles.pillarIndex}>0{i + 1}</span>
               <h3 className={styles.pillarTitle}>{block.title}</h3>
               <p className={styles.pillarBody}>{block.body}</p>

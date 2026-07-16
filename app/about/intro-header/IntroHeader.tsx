@@ -11,15 +11,17 @@ your needs, goals, and progress.`;
 interface IntroHeaderProps {
   title?: string;
   sub?: string;
+  eyebrow?: string;
 }
 
 export default function IntroHeader({
   title = DEFAULT_TITLE,
   sub = DEFAULT_SUB,
+  eyebrow = "About BFriends",
 }: IntroHeaderProps) {
   return (
     <header className={styles.header} aria-labelledby="about-intro-title">
-      <p className={styles.eyebrow}>About BFriends</p>
+      <p className={styles.eyebrow}>{eyebrow}</p>
       <h1 id="about-intro-title" className={styles.title}>
         {title}
       </h1>

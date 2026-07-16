@@ -8,6 +8,7 @@ import FormField from '@/components/admin/FormField';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Subpoint { id?: number; title: string; description: string; sort_order: number; }
 interface ProcessStep {
@@ -90,12 +91,16 @@ export default function ProcessPage() {
   };
 
   return (
-    <AdminLayout title="Customer Journey" username={username}>
+    <AdminLayout title="Journey steps" username={username}>
+      <AdminPageHint variant="live">
+        These steps appear in two places: the <strong>homepage</strong> journey flow and the
+        <strong> BFriends Journey</strong> page (<code>/journey</code>). Title, description, image, and subpoints are all shown.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Customer Journey (Page)</h2>
+          <h2>Journey steps</h2>
           <button onClick={() => setEditing({ ...empty, subpoints: [] })} className="admin-btn admin-btn-primary">
-            + Add Step
+            + Add step
           </button>
         </div>
         <DataTable
@@ -119,17 +124,21 @@ export default function ProcessPage() {
             <h3>{editing.id ? 'Edit Step' : 'Add Step'}</h3>
             <div className="admin-form-row">
               <FormField label="Number" name="number" value={editing.number}
-                onChange={(v: string) => setEditing({ ...editing, number: v })} placeholder="01, 02, etc." />
+                onChange={(v: string) => setEditing({ ...editing, number: v })} placeholder="01, 02, etc."
+                hint="Step index shown in the journey timeline (e.g. 01)." />
               <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
                 onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             </div>
             <FormField label="Title" name="title" value={editing.title}
-              onChange={(v: string) => setEditing({ ...editing, title: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, title: v })} required
+              hint="Step title on homepage and /journey." />
             <FormField label="Description" name="description" type="textarea" value={editing.description}
-              onChange={(v: string) => setEditing({ ...editing, description: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, description: v })} required
+              hint="Short explanation under the step title." />
             <div className="admin-form-group">
               <label>Image</label>
               <ImageUploader value={editing.image} onChange={(url: string) => setEditing({ ...editing, image: url })} />
+              <p className="admin-field-hint">Photo shown beside each step on homepage and /journey.</p>
             </div>
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />

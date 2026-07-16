@@ -5,9 +5,11 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
-import ImageUploader from '@/components/admin/ImageUploader';
+// [ NOTES ] ImageUploader only used by the hidden journey-section image field that is not on /journey. [ END NOTES ] //
+// import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface JourneySection {
   id?: number;
@@ -66,10 +68,14 @@ export default function JourneySectionPage() {
   };
 
   return (
-    <AdminLayout title="Journey Section" username={username}>
+    <AdminLayout title="Journey page intro" username={username}>
+      <AdminPageHint variant="live">
+        Shown on <strong>BFriends Journey</strong> (<code>/journey</code>) as the heading and body above the steps.
+        Only the first active entry is used.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>About / Journey Section</h2>
+          <h2>Journey page intro</h2>
           <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add</button>
         </div>
         <DataTable
@@ -91,11 +97,16 @@ export default function JourneySectionPage() {
           <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
             <h3>{editing.id ? 'Edit Journey Section' : 'Add Journey Section'}</h3>
             <FormField label="Headline" name="headline" value={editing.headline}
-              onChange={(v: string) => setEditing({ ...editing, headline: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, headline: v })} required
+              hint="Heading above the journey steps on /journey." />
             <FormField label="Body" name="body" type="textarea" value={editing.body}
-              onChange={(v: string) => setEditing({ ...editing, body: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, body: v })} required
+              hint="Supporting text under the heading on /journey." />
+            {/* [ NOTES ] Image is not on /journey yet. Existing image value is preserved on save. [ END NOTES ] */}
+            {/*
             <FormField label="Image URL" name="image" value={editing.image || ''}
               onChange={(v: string) => setEditing({ ...editing, image: v })} placeholder="/images/Integrate/DDK09558.jpg" />
+            */}
             <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
               onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}

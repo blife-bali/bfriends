@@ -406,6 +406,87 @@ body {
   padding: 24px;
 }
 
+/* Page / field hints — clarify what shows on the public site */
+.admin-page-hint {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--admin-border);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--admin-dark-blue);
+}
+
+.admin-page-hint-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.admin-page-hint-body {
+  color: var(--admin-muted);
+}
+
+.admin-page-hint-body strong {
+  color: var(--admin-dark-blue);
+  font-weight: 600;
+}
+
+.admin-page-hint-body code {
+  font-size: 12px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--admin-cream-2);
+  color: var(--admin-dark-blue);
+}
+
+.admin-page-hint--live {
+  background: color-mix(in srgb, var(--admin-success) 8%, var(--color-white-100));
+  border-color: color-mix(in srgb, var(--admin-success) 35%, var(--admin-border));
+}
+
+.admin-page-hint--live .admin-page-hint-label {
+  color: var(--admin-success);
+}
+
+.admin-page-hint--partial {
+  background: color-mix(in srgb, var(--admin-warning) 12%, var(--color-white-100));
+  border-color: color-mix(in srgb, var(--admin-warning) 45%, var(--admin-border));
+}
+
+.admin-page-hint--partial .admin-page-hint-label {
+  color: #9a7b00;
+}
+
+.admin-page-hint--unused {
+  background: color-mix(in srgb, var(--admin-muted) 10%, var(--color-white-100));
+  border-color: var(--admin-border);
+}
+
+.admin-page-hint--unused .admin-page-hint-label {
+  color: var(--admin-muted);
+}
+
+.admin-field-hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--admin-muted);
+}
+
+.admin-field-hint code,
+.admin-content code {
+  font-size: 12px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--admin-cream-2);
+  color: var(--admin-dark-blue);
+}
+
 /* Cards */
 .admin-card {
   background: var(--color-white-100);

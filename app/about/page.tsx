@@ -3,6 +3,7 @@ import IntroHeader from "./intro-header/IntroHeader";
 import ThreePillars from "./three-pillars/ThreePillars";
 import styles from "./page.module.css";
 import { getPageSeo } from "@/lib/cms";
+import { getAboutIntro, getAboutPillars } from "@/lib/supabase-content";
 
 export const dynamic = "force-dynamic";
 
@@ -16,12 +17,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const [intro, pillars] = await Promise.all([getAboutIntro(), getAboutPillars()]);
+
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        <IntroHeader />
-        <ThreePillars />
+        <IntroHeader title={intro.title} sub={intro.sub} eyebrow={intro.eyebrow} />
+        <ThreePillars pillars={pillars} />
       </div>
     </main>
   );

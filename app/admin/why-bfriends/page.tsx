@@ -8,6 +8,7 @@ import FormField from '@/components/admin/FormField';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface WhyCard {
   id?: number;
@@ -66,10 +67,14 @@ export default function WhyBFriendsPage() {
 
   return (
     <AdminLayout title="Why BFriends" username={username}>
+      <AdminPageHint variant="unused">
+        These cards are saved in the database but the homepage &quot;Why BFriends&quot; section is currently
+        turned off, so edits here do not appear on the website.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Why BFriends Cards</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Card</button>
+          <h2>Why BFriends cards</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add card</button>
         </div>
         <DataTable
           columns={[

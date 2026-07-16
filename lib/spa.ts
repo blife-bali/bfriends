@@ -1,5 +1,6 @@
 import { getPublicPrograms, type PublicProgram } from "@/lib/cms";
-import { getMockSpaPage, type MockSpaPage, spaSlugs } from "@/mock/spa";
+import { getSpaPageConfig, getSpaSlugs as getSupabaseSpaSlugs } from "@/lib/supabase-content";
+import type { MockSpaPage, SpaSlug } from "@/mock/spa";
 
 export type SpaSessionGroup = PublicProgram["sessions_group"][number];
 
@@ -166,7 +167,7 @@ function applySpaSessionFilters(
 }
 
 export async function getSpaPageData(slug: string): Promise<SpaPageData | null> {
-  const config = getMockSpaPage(slug);
+  const config = await getSpaPageConfig(slug);
   if (!config) return null;
 
   const allPrograms = await getPublicPrograms();
@@ -205,6 +206,6 @@ export async function getSpaPageData(slug: string): Promise<SpaPageData | null> 
   };
 }
 
-export function getSpaSlugs(): string[] {
-  return [...spaSlugs];
+export async function getSpaSlugs(): Promise<SpaSlug[]> {
+  return getSupabaseSpaSlugs();
 }

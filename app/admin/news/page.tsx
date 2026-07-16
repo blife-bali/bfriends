@@ -8,6 +8,7 @@ import FormField from '@/components/admin/FormField';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface NewsItem {
   id?: number;
@@ -76,11 +77,15 @@ export default function NewsPage() {
   };
 
   return (
-    <AdminLayout title="News" username={username}>
+    <AdminLayout title="Journal / news" username={username}>
+      <AdminPageHint variant="live">
+        Shown on <strong>Journal</strong> (<code>/community/journal</code>) and each article detail page
+        <code> /community/news/[slug]</code>.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>BFriends Journal</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add News</button>
+          <h2>Journal articles</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add article</button>
         </div>
         <DataTable
           columns={[

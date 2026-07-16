@@ -5,8 +5,10 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
-import ImageUploader from '@/components/admin/ImageUploader';
+// [ NOTES ] ImageUploader only used by hidden home-narrative fields (title / image) that are not on the public homepage. [ END NOTES ] //
+// import ImageUploader from '@/components/admin/ImageUploader';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface ProcessStep {
   id?: number; number: string; title: string; description: string;
@@ -76,14 +78,27 @@ export default function ProcessHomePage() {
   };
 
   return (
-    <AdminLayout title="Customer Journey (Home)" username={username}>
+    <AdminLayout title="Home narrative" username={username}>
+      <AdminPageHint variant="live">
+        On the <strong>homepage</strong>, these paragraphs appear as the narrative text above the journey steps
+        (first active entry).
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Customer Journey (Home)</h2>
+          <h2>Home narrative</h2>
         </div>
         <DataTable
           columns={[
-            { key: 'title', label: 'Headline' },
+            // [ NOTES ] Title column hidden — title is not shown on the homepage; still stored in DB. [ END NOTES ] //
+            // { key: 'title', label: 'Internal label' },
+            {
+              key: 'description',
+              label: 'Narrative preview',
+              render: (v: string) => {
+                const first = (v || '').split('\n\n').map((s) => s.trim()).filter(Boolean)[0] || '';
+                return first.length > 80 ? first.slice(0, 80) + '…' : first || '—';
+              },
+            },
             { key: 'sort_order', label: 'Order' },
             { key: 'is_active', label: 'Status', render: (v: number) => (
               <span className={`admin-badge ${v ? 'admin-badge-active' : 'admin-badge-inactive'}`}>{v ? 'Active' : 'Inactive'}</span>
@@ -102,18 +117,27 @@ export default function ProcessHomePage() {
               <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
                 onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             </div>
+            {/* [ NOTES ] Headline/title field is not on the public homepage yet. Existing title is preserved on save. [ END NOTES ] */}
+            {/*
             <FormField label="Headline" name="title" value={editing.title}
               onChange={(v: string) => setEditing({ ...editing, title: v })} required />
-            <FormField label="Conclusion Text 1" name="conclusion_1" type="textarea" value={editing.conclusion_1 || ''}
-              onChange={(v: string) => setEditing({ ...editing, conclusion_1: v })} />
-            <FormField label="Conclusion Text 2" name="conclusion_2" type="textarea" value={editing.conclusion_2 || ''}
-              onChange={(v: string) => setEditing({ ...editing, conclusion_2: v })} />
-            <FormField label="Conclusion Text 3" name="conclusion_3" type="textarea" value={editing.conclusion_3 || ''}
-              onChange={(v: string) => setEditing({ ...editing, conclusion_3: v })} />
+            */}
+            <FormField label="Paragraph 1" name="conclusion_1" type="textarea" value={editing.conclusion_1 || ''}
+              onChange={(v: string) => setEditing({ ...editing, conclusion_1: v })}
+              hint="Shown on the homepage as the first narrative paragraph." />
+            <FormField label="Paragraph 2" name="conclusion_2" type="textarea" value={editing.conclusion_2 || ''}
+              onChange={(v: string) => setEditing({ ...editing, conclusion_2: v })}
+              hint="Shown on the homepage as the second narrative paragraph." />
+            <FormField label="Paragraph 3" name="conclusion_3" type="textarea" value={editing.conclusion_3 || ''}
+              onChange={(v: string) => setEditing({ ...editing, conclusion_3: v })}
+              hint="Shown on the homepage as the third narrative paragraph." />
+            {/* [ NOTES ] Image field is not on the public homepage yet. Existing image is preserved on save. [ END NOTES ] */}
+            {/*
             <div className="admin-form-group">
               <label>Image</label>
               <ImageUploader value={editing.image} onChange={(url: string) => setEditing({ ...editing, image: url })} />
             </div>
+            */}
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
             <div className="admin-modal-actions">

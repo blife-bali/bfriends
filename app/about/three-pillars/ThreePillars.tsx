@@ -1,50 +1,14 @@
 import PillarCard from "./pillar-card/PillarCard";
 import styles from "./ThreePillars.module.css";
+import type { AboutPillar } from "@/lib/supabase-content";
 
-type Pillar = {
-  image: string;
-  imageAlt: string;
-  title: string;
-  description: string;
-  buttonLabel: string;
-  href?: string;
-};
-
-const PILLARS: Pillar[] = [
-  {
-    image: "/images/Integrate/DDK09278.webp",
-    imageAlt: "Exterior of the BFriends signature building in Kerobokan, Bali",
-    title: "About BFriends",
-    description: "(to be writing soon)",
-    buttonLabel: "Explore BFriends →",
-    href: "/treatments",
-  },
-  {
-    image: "/images/Nurture/DDK09121.webp",
-    imageAlt: "BFriends journey partners guiding a wellness experience",
-    title: "Meet Our Experts",
-    description:
-      "Behind every personalized journey is a multidisciplinary team dedicated to understanding, guiding, and supporting your wellness goals.",
-    buttonLabel: "Meet the Journey Partners →",
-    href: "/journey-partners",
-  },
-  {
-    image: "/images/connection.webp",
-    imageAlt: "Map of Bali showing BFriends and Daewoong business units",
-    title: "The BProject",
-    description:
-      "Discover the integrated wellness ecosystem developed by Bali Daewoong, bringing together hospitality, workspace, wellness, and lifestyle destinations under one vision.",
-    buttonLabel: "Explore Our Destinations →",
-  },
-];
-
-export default function ThreePillars() {
+export default function ThreePillars({ pillars }: { pillars: AboutPillar[] }) {
   return (
     <section className={styles.section} aria-label="Explore BFriends">
       <div className={styles.grid}>
-        {PILLARS.map((pillar) => (
+        {pillars.map((pillar) => (
           <PillarCard
-            key={pillar.title}
+            key={pillar.id}
             image={pillar.image}
             imageAlt={pillar.imageAlt}
             title={pillar.title}

@@ -14,15 +14,12 @@ export const metadata: Metadata = {
   description: 'Content Management System for BFriends',
 };
 
+// [ NOTES ] Do not render <html>/<body> here — root app/layout.tsx already owns those.
+// Nested document tags caused hydration errors and broke CMS Save button clicks. [ END NOTES ] //
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={libreBodoni.variable}>
-      <head>
-        <link rel="stylesheet" href="https://use.typekit.net/kbz3vui.css" />
-      </head>
-      <body className="antialiased" style={{ margin: 0 }}>
-        {children}
-      </body>
-    </html>
+    <div className={`${libreBodoni.variable} antialiased`} style={{ margin: 0, minHeight: '100%' }}>
+      {children}
+    </div>
   );
 }

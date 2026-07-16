@@ -7,6 +7,7 @@ import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface EcosystemItem {
   id?: number;
@@ -65,11 +66,15 @@ export default function EcosystemPage() {
   };
 
   return (
-    <AdminLayout title="BLife Ecosystem" username={username}>
+    <AdminLayout title="BLife ecosystem" username={username}>
+      <AdminPageHint variant="unused">
+        Items can be managed here and there is a public API route, but the website footer still uses
+        hardcoded ecosystem links. Edits here will not change the footer yet.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Philosophy / BLife Ecosystem Items</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Item</button>
+          <h2>BLife ecosystem items</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add item</button>
         </div>
         <DataTable
           columns={[

@@ -468,6 +468,36 @@ export async function getCoreBeliefs() {
   return tryDb<any>('SELECT * FROM bfriends_core_beliefs WHERE is_active = 1 ORDER BY sort_order');
 }
 
+export type IntroPillar = {
+  id: number;
+  title: string;
+  body: string;
+  sort_order: number;
+};
+
+/** Homepage intro pillar cards (under the headline). */
+export async function getIntroPillars(): Promise<IntroPillar[]> {
+  try {
+    await pool.execute(`
+      CREATE TABLE IF NOT EXISTS bfriends_intro_pillars (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(200) NOT NULL,
+        body TEXT NOT NULL,
+        sort_order INT DEFAULT 0,
+        is_active TINYINT(1) DEFAULT 1,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    `);
+    const [rows] = await pool.execute(
+      'SELECT id, title, body, sort_order FROM bfriends_intro_pillars WHERE is_active = 1 ORDER BY sort_order, id'
+    );
+    return rows as IntroPillar[];
+  } catch {
+    return [];
+  }
+}
+
 export async function getEcosystemItems() {
   return tryDb<any>('SELECT * FROM bfriends_ecosystem_items WHERE is_active = 1 ORDER BY sort_order');
 }

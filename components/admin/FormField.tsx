@@ -9,9 +9,16 @@ interface FormFieldProps {
   options?: { value: string; label: string }[];
   placeholder?: string;
   required?: boolean;
+  /** Short note under the field explaining where it appears on the site */
+  hint?: string;
 }
 
-export default function FormField({ label, name, type = 'text', value, onChange, options, placeholder, required }: FormFieldProps) {
+function FieldHint({ hint }: { hint?: string }) {
+  if (!hint) return null;
+  return <p className="admin-field-hint">{hint}</p>;
+}
+
+export default function FormField({ label, name, type = 'text', value, onChange, options, placeholder, required, hint }: FormFieldProps) {
   if (type === 'checkbox') {
     return (
       <div className="admin-form-group">
@@ -24,6 +31,7 @@ export default function FormField({ label, name, type = 'text', value, onChange,
           />
           {label}
         </label>
+        <FieldHint hint={hint} />
       </div>
     );
   }
@@ -37,6 +45,7 @@ export default function FormField({ label, name, type = 'text', value, onChange,
             <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
+        <FieldHint hint={hint} />
       </div>
     );
   }
@@ -52,6 +61,7 @@ export default function FormField({ label, name, type = 'text', value, onChange,
           placeholder={placeholder}
           required={required}
         />
+        <FieldHint hint={hint} />
       </div>
     );
   }
@@ -67,6 +77,7 @@ export default function FormField({ label, name, type = 'text', value, onChange,
         placeholder={placeholder}
         required={required}
       />
+      <FieldHint hint={hint} />
     </div>
   );
 }

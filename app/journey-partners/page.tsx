@@ -2,15 +2,20 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import JourneyPartners from "./JourneyPartners";
 import styles from "./JourneyPartners.module.css";
-import { mockJourneyPartnersPage } from "@/mock/journey-partners";
+import { getJourneyPartnersPage } from "@/lib/supabase-content";
 
-export const metadata: Metadata = {
-  title: mockJourneyPartnersPage.seo_title,
-  description: mockJourneyPartnersPage.seo_description,
-};
+export const dynamic = "force-dynamic";
 
-export default function JourneyPartnersPage() {
-  const page = mockJourneyPartnersPage;
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getJourneyPartnersPage();
+  return {
+    title: page.seo_title,
+    description: page.seo_description,
+  };
+}
+
+export default async function JourneyPartnersPage() {
+  const page = await getJourneyPartnersPage();
 
   return (
     <main className={styles.page}>

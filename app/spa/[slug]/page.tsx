@@ -32,7 +32,8 @@ const SPA_CROSS_LINKS: Record<string, { label: string; href: string }[]> = {
 };
 
 export async function generateStaticParams() {
-  return getSpaSlugs().map((slug) => ({ slug }));
+  const slugs = await getSpaSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

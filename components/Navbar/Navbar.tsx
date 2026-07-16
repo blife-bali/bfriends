@@ -134,6 +134,7 @@ function MobileMenuList({
   isCommunityPage,
   isContactPage,
   programItems,
+  treatmentItems,
   onNavClick,
   onToggleMenu,
   onItemClick,
@@ -147,6 +148,7 @@ function MobileMenuList({
   isCommunityPage: boolean;
   isContactPage: boolean;
   programItems: NavItem[];
+  treatmentItems: NavItem[];
   onNavClick: (label: string) => void;
   onToggleMenu: (menu: ActiveMenuId) => void;
   onItemClick: (label: string, menuId: NavColumnId) => void;
@@ -155,6 +157,7 @@ function MobileMenuList({
 
   const getSubmenuItems = (colId: NavColumnId): NavItem[] => {
     if (colId === "programs") return programItems;
+    if (colId === "treatments") return treatmentItems;
     return [...(navColumns.find((c) => c.id === colId)?.items || [])];
   };
 
@@ -251,6 +254,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isInteractionEnabled, setIsInteractionEnabled] = useState(false);
   const [programItems, setProgramItems] = useState<NavItem[]>([]);
+  const [treatmentItems, setTreatmentItems] = useState<NavItem[]>([]);
   const navRef = useRef<HTMLDivElement>(null);
   const mainContainerRef = useRef<HTMLDivElement>(null);
 
@@ -280,7 +284,30 @@ export default function Navbar() {
       }
     }
 
+    async function loadTreatments() {
+      try {
+        const response = await fetch("/api/treatments", { cache: "no-store" });
+        if (!response.ok) return;
+        const data: { id: string; label: string; href: string; sort_order: number }[] = await response.json();
+        if (!isMounted) return;
+        setTreatmentItems(
+          data.map((item) => {
+            const [primary, secondary] = item.label.split(" | ");
+            return {
+              label: item.label,
+              labelPrimary: primary,
+              labelSecondary: secondary,
+              href: item.href,
+            };
+          }),
+        );
+      } catch {
+        if (isMounted) setTreatmentItems([]);
+      }
+    }
+
     loadPrograms();
+    loadTreatments();
 
     return () => {
       isMounted = false;
@@ -386,7 +413,9 @@ export default function Navbar() {
   const dropdownItems =
     activeMenu === "programs"
       ? programItems
-      : [...(navColumns.find((c) => c.id === activeMenu)?.items ?? [])];
+      : activeMenu === "treatments"
+        ? treatmentItems
+        : [...(navColumns.find((c) => c.id === activeMenu)?.items ?? [])];
 
   const isProgramsDropdown = activeMenu === "programs";
   const isTreatmentsDropdown = activeMenu === "treatments";
@@ -606,6 +635,7 @@ export default function Navbar() {
                 isCommunityPage={isCommunityPage}
                 isContactPage={isContactPage}
                 programItems={programItems}
+                treatmentItems={treatmentItems}
                 onNavClick={handleNavClick}
                 onToggleMenu={toggleMenu}
                 onItemClick={handleMobileSubmenuClick}

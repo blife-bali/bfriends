@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Program {
   id: number;
@@ -37,10 +38,14 @@ export default function ProgramsPage() {
 
   return (
     <AdminLayout title="Programs" username={username}>
+      <AdminPageHint variant="live">
+        Powers <code>/programs</code>, each program detail page, spa session lists, navigation, and the sitemap.
+        Edit a program to manage steps, pillars, and sessions (pricing / service list).
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>BFriends Programs</h2>
-          <Link href="/admin/programs/new" className="admin-btn admin-btn-primary">+ Add Program</Link>
+          <h2>Programs</h2>
+          <Link href="/admin/programs/new" className="admin-btn admin-btn-primary">+ Add program</Link>
         </div>
         <DataTable
           columns={[

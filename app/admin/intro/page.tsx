@@ -5,9 +5,11 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
-import ImageUploader from '@/components/admin/ImageUploader';
+// [ NOTES ] ImageUploader only used by hidden intro fields (body / image / CTA) that are not on the public homepage. [ END NOTES ] //
+// import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Intro {
   id?: number;
@@ -68,11 +70,14 @@ export default function IntroPage() {
   };
 
   return (
-    <AdminLayout title="Intro Sections" username={username}>
+    <AdminLayout title="Intro headline" username={username}>
+      <AdminPageHint variant="live">
+        Shown on the <strong>homepage</strong> as the section headline below the hero.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Intro Sections</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Intro</button>
+          <h2>Intro headline</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add intro</button>
         </div>
         <DataTable
           columns={[
@@ -97,20 +102,19 @@ export default function IntroPage() {
                 onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             </div>
             <FormField label="Headline" name="headline" value={editing.headline}
-              onChange={(v: string) => setEditing({ ...editing, headline: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, headline: v })} required
+              hint="Shown on the homepage intro section." />
+            {/* [ NOTES ] Body, image, and CTA are not on the public homepage yet. Existing values are still preserved on save. [ END NOTES ] */}
+            {/*
             <FormField label="Body" name="body" type="textarea" value={editing.body}
-              onChange={(v: string) => setEditing({ ...editing, body: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, body: v })} />
             <div className="admin-form-group">
               <label>Image</label>
               <ImageUploader value={editing.image_url} onChange={(url: string) => setEditing({ ...editing, image_url: url })} />
             </div>
-            <div className="admin-form-group">
-              <small style={{ color: 'var(--admin-muted)' }}>
-                Intro image for Home and About / Philosophy.
-              </small>
-            </div>
             <FormField label="Show CTA" name="show_cta" type="checkbox" value={!!editing.show_cta}
               onChange={(v: boolean) => setEditing({ ...editing, show_cta: v ? 1 : 0 })} />
+            */}
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
             <div className="admin-modal-actions">

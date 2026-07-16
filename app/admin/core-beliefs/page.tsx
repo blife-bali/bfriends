@@ -7,6 +7,7 @@ import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface CoreBelief {
   id?: number;
@@ -64,11 +65,14 @@ export default function CoreBeliefsPage() {
   };
 
   return (
-    <AdminLayout title="Core Beliefs" username={username}>
+    <AdminLayout title="Core beliefs" username={username}>
+      <AdminPageHint variant="unused">
+        Stored in the database and editable here, but no public page currently displays core beliefs.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Philosophy / Core Beliefs</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Belief</button>
+          <h2>Core beliefs</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add belief</button>
         </div>
         <DataTable
           columns={[

@@ -9,6 +9,7 @@ import RichTextEditor from '@/components/admin/RichTextEditor';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
 import { stripHtml } from '@/lib/rich-text';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Faq {
   id?: number;
@@ -71,9 +72,12 @@ export default function FaqPage() {
 
   return (
     <AdminLayout title="FAQ" username={username}>
+      <AdminPageHint variant="live">
+        Shown on the <strong>FAQ</strong> page (<code>/faq</code>). The homepage FAQ block is currently turned off.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>FAQ / Frequently Asked Questions</h2>
+          <h2>Frequently asked questions</h2>
           <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add FAQ</button>
         </div>
         <DataTable

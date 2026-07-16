@@ -288,6 +288,22 @@ CREATE TABLE IF NOT EXISTS bfriends_charm_usage (
   is_active TINYINT(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- 18b. Homepage intro pillars (three cards under intro headline)
+CREATE TABLE IF NOT EXISTS bfriends_intro_pillars (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  body TEXT NOT NULL,
+  sort_order INT DEFAULT 0,
+  is_active TINYINT(1) DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO bfriends_intro_pillars (title, body, sort_order, is_active) VALUES
+  ('Data-Driven Assessment', 'Gain valuable insights into your body''s current condition through a comprehensive wellness assessment.', 0, 1),
+  ('Personalised Recommendations', 'Receive tailored guidance based on your individual needs, goals, and lifestyle.', 1, 1),
+  ('Expert-Led Support', 'Work alongside experienced wellness professionals who help you navigate every stage of your journey.', 2, 1);
+
 -- 19. Core beliefs (philosophy page)
 CREATE TABLE IF NOT EXISTS bfriends_core_beliefs (
   id INT AUTO_INCREMENT PRIMARY KEY,

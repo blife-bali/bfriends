@@ -19,6 +19,7 @@ import {
   getNews,
   getPublicPrograms,
   getFaqs,
+  getIntroPillars,
 } from "@/lib/cms";
 import SiteLocation from "@/components/SiteLocation/SiteLocation";
 import SiteNewsletterCta from "@/components/SiteNewsletterCta/SiteNewsletterCta";
@@ -34,9 +35,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [hero, intro, whyCards, processSteps, journeySteps, events, news, publicPrograms, faqs] = await Promise.all([
+  const [hero, intro, introPillars, whyCards, processSteps, journeySteps, events, news, publicPrograms, faqs] = await Promise.all([
     getHeroByPage("home"),
     getIntroByPage("home"),
+    getIntroPillars(),
     getWhyCards(),
     getProcessSteps("home"),
     getProcessSteps("customer-journey"),
@@ -63,6 +65,7 @@ export default async function HomePage() {
       />
       <NewIntroSection
         headline={intro?.headline}
+        pillars={introPillars.map((p) => ({ title: p.title, body: p.body }))}
         steps={processSteps}
         journeySteps={journeySteps}
       />

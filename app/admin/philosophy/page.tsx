@@ -8,6 +8,7 @@ import FormField from '@/components/admin/FormField';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Philosophy {
   id?: number;
@@ -70,10 +71,14 @@ export default function PhilosophyPage() {
   };
 
   return (
-    <AdminLayout title="Philosophy" username={username}>
+    <AdminLayout title="Philosophy sections" username={username}>
+      <AdminPageHint variant="unused">
+        Content is editable here but the public <strong>About</strong> page (<code>/about</code>) still uses
+        hardcoded copy. Changing these sections will not update the website until About is connected.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Philosophy Sections</h2>
+          <h2>Philosophy sections</h2>
           <button
             onClick={() => setEditing({ section_key: '', headline: '', body: '', image: '', seo_title: '', seo_description: '', sort_order: 0, is_active: 1 })}
             className="admin-btn admin-btn-primary"

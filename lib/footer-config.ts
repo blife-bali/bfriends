@@ -1,6 +1,5 @@
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import { getEcosystemHref } from "@/lib/site-ecosystem-links";
-import { mockTreatments, treatmentNameInline } from "@/mock/treatments";
 
 export type FooterLink = {
   label: string;
@@ -26,10 +25,3 @@ export const footerAboutLinks: readonly FooterLink[] = [
   { label: "Event & Workshop", href: "/community/event-workshop" },
   { label: "BFriends Journal", href: "/community/journal" },
 ];
-
-export const footerTreatmentLinks: readonly FooterLink[] = [...mockTreatments]
-  .sort((a, b) => a.sort_order - b.sort_order)
-  .map((treatment) => ({
-    label: treatmentNameInline(treatment),
-    href: `/treatments/${treatment.id}`,
-  }));

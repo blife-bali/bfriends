@@ -12,29 +12,49 @@ type MenuItem =
 const menuItems: MenuItem[] = [
   { type: 'link', href: '/admin/dashboard', label: 'Dashboard', icon: 'grid' },
 
+  { type: 'section', label: 'Website' },
+
   { type: 'group', id: 'home', label: 'Home', icon: 'home', children: [
     { href: '/admin/hero', label: 'Hero' },
-    { href: '/admin/intro', label: 'Intro' },
-    { href: '/admin/process-home', label: 'BFriends Journey' },
-    { href: '/admin/why-bfriends', label: 'Why BFriends' },
-    { href: '/admin/video-block', label: 'Video Block' },
+    { href: '/admin/intro', label: 'Intro headline' },
+    { href: '/admin/intro-pillars', label: 'Intro pillars' },
+    { href: '/admin/process-home', label: 'Home narrative' },
   ]},
+
+  { type: 'link', href: '/admin/programs', label: 'Programs', icon: 'zap' },
+  { type: 'link', href: '/admin/treatments', label: 'Treatments', icon: 'heart' },
+  { type: 'link', href: '/admin/spa-pages', label: 'Spa pages', icon: 'layers' },
 
   { type: 'group', id: 'about', label: 'About', icon: 'book-open', children: [
-    { href: '/admin/journey-section', label: 'Journey Section' },
-    { href: '/admin/ecosystem', label: 'BLife Ecosystem' },
+    { href: '/admin/about-content', label: 'About body' },
+    { href: '/admin/journey-section', label: 'BFriends Journey intro' },
+    { href: '/admin/process', label: 'Journey steps' },
+    { href: '/admin/journey-partners', label: 'Journey partners' },
   ]},
 
-  { type: 'link', href: '/admin/process', label: 'BFriends Journey', icon: 'map' },
-  { type: 'link', href: '/admin/programs', label: 'Programs', icon: 'zap' },
+  { type: 'link', href: '/admin/contact', label: 'Contact', icon: 'map' },
 
-  { type: 'link', href: '/admin/events', label: 'Events', icon: 'calendar' },
-  { type: 'link', href: '/admin/news', label: 'News', icon: 'file-text' },
+  { type: 'group', id: 'community', label: 'Community', icon: 'calendar', children: [
+    { href: '/admin/events', label: 'Events & workshops' },
+    { href: '/admin/news', label: 'Journal / news' },
+  ]},
+
+  { type: 'link', href: '/admin/membership', label: 'Membership', icon: 'award' },
   { type: 'link', href: '/admin/faq', label: 'FAQ', icon: 'help-circle' },
 
-  { type: 'section', label: 'System' },
-  { type: 'link', href: '/admin/pages', label: 'Page Headers', icon: 'book-open' },
+  { type: 'section', label: 'Site setup' },
+  { type: 'link', href: '/admin/pages', label: 'Page headers & SEO', icon: 'book-open' },
   { type: 'link', href: '/admin/settings', label: 'Settings', icon: 'settings' },
+
+  // [ NOTES ] CMS nav for content not rendered on the public site yet. Uncomment the block below to restore those menu items. [ END NOTES ] //
+  // { type: 'section', label: 'Not on website yet' },
+  // { type: 'group', id: 'unused', label: 'Stored only', icon: 'layers', children: [
+  //   { href: '/admin/why-bfriends', label: 'Why BFriends' },
+  //   { href: '/admin/video-block', label: 'Video block' },
+  //   { href: '/admin/philosophy', label: 'Philosophy sections' },
+  //   { href: '/admin/core-beliefs', label: 'Core beliefs' },
+  //   { href: '/admin/ecosystem', label: 'BLife ecosystem' },
+  // ]},
 ];
 
 const icons: Record<string, React.ReactNode> = {

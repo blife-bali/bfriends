@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Contact from "./Contact";
-import { mockContactPage } from "@/mock/contact";
+import { getContactPage } from "@/lib/supabase-content";
 
-export const metadata: Metadata = {
-  title: mockContactPage.seo_title,
-  description: mockContactPage.seo_description,
-};
+export const dynamic = "force-dynamic";
 
-export default function ContactPage() {
-  return <Contact />;
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getContactPage();
+  return {
+    title: page.seo_title,
+    description: page.seo_description,
+  };
+}
+
+export default async function ContactPage() {
+  const page = await getContactPage();
+  return <Contact page={page} />;
 }

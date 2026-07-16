@@ -8,6 +8,7 @@ import FormField from '@/components/admin/FormField';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Event {
   id?: number;
@@ -76,11 +77,15 @@ export default function EventsPage() {
   };
 
   return (
-    <AdminLayout title="Events" username={username}>
+    <AdminLayout title="Events & workshops" username={username}>
+      <AdminPageHint variant="live">
+        Shown on <strong>Event & Workshop</strong> (<code>/community/event-workshop</code>) and each event detail page
+        (<code> /community/event/[slug]</code>.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Events & Workshops</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add Event</button>
+          <h2>Events & workshops</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add event</button>
         </div>
         <DataTable
           columns={[

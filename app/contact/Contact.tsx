@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarClock, Clock, MapPin } from "lucide-react";
-import { mockContactPage } from "@/mock/contact";
+import type { MockContactPage } from "@/mock/contact";
 import ContactNavbar from "./ContactNavbar";
 import styles from "./Contact.module.css";
 
@@ -25,8 +25,7 @@ const PLATFORM_ICONS = {
   ),
 } as const;
 
-export default function Contact() {
-  const page = mockContactPage;
+export default function Contact({ page }: { page: MockContactPage }) {
   const guestServices = page.hours_sections[0];
   const additionalHours = page.hours_sections[1];
 

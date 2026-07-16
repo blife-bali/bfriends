@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { trackEvent } from "@/lib/gtag";
@@ -8,7 +9,7 @@ import {
   footerAboutLinks,
   footerContactLinks,
   footerEcosystemLinks,
-  footerTreatmentLinks,
+  type FooterLink,
 } from "@/lib/footer-config";
 
 function FooterLink({
@@ -79,6 +80,29 @@ function FooterLinksGroup({
 }
 
 export default function Footer() {
+  const [treatmentLinks, setTreatmentLinks] = useState<readonly FooterLink[]>([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadTreatments() {
+      try {
+        const response = await fetch("/api/treatments", { cache: "no-store" });
+        if (!response.ok) return;
+        const data: { label: string; href: string }[] = await response.json();
+        if (!isMounted) return;
+        setTreatmentLinks(data.map((item) => ({ label: item.label, href: item.href })));
+      } catch {
+        if (isMounted) setTreatmentLinks([]);
+      }
+    }
+
+    loadTreatments();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <footer>
       <section className={styles.footerSection}>
@@ -115,7 +139,7 @@ export default function Footer() {
 
             <FooterLinksGroup title="About BFriends" links={footerAboutLinks} category="page" />
 
-            <FooterLinksGroup title="Treatments" links={footerTreatmentLinks} category="page" />
+            <FooterLinksGroup title="Treatments" links={treatmentLinks} category="page" />
           </div>
 
           <div className={styles.footerCopyright}>

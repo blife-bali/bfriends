@@ -7,6 +7,7 @@ import DataTable from '@/components/admin/DataTable';
 import FormField from '@/components/admin/FormField';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface MembershipContent { id?: number; section_key: string; headline: string; body: string; image: string; seo_title: string; seo_description: string; is_active: number; }
 interface CharmTier { id?: number; name: string; tagline: string; credits: number; bonus: string; is_popular: number; sort_order: number; is_active: number; }
@@ -63,18 +64,23 @@ export default function MembershipPage() {
 
   return (
     <AdminLayout title="Membership" username={username}>
+      <AdminPageHint variant="live">
+        Controls <strong>Charm</strong> (<code>/membership/charm</code>) and <strong>Passport</strong>
+        (<code> /membership/bfriends-passport</code>. Use section keys <code>charm_concept</code> and
+        <code> passport_why</code> for the copy blocks those pages read.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-tabs" style={{ marginBottom: 20 }}>
-          <button className={`admin-tab ${tab === 'content' ? 'active' : ''}`} onClick={() => setTab('content')}>Content</button>
-          <button className={`admin-tab ${tab === 'tiers' ? 'active' : ''}`} onClick={() => setTab('tiers')}>Charm Tiers</button>
-          <button className={`admin-tab ${tab === 'usage' ? 'active' : ''}`} onClick={() => setTab('usage')}>Charm Usage</button>
-          <button className={`admin-tab ${tab === 'passport-benefits' ? 'active' : ''}`} onClick={() => setTab('passport-benefits')}>Passport Benefits</button>
+          <button className={`admin-tab ${tab === 'content' ? 'active' : ''}`} onClick={() => setTab('content')}>Copy blocks</button>
+          <button className={`admin-tab ${tab === 'tiers' ? 'active' : ''}`} onClick={() => setTab('tiers')}>Charm tiers</button>
+          <button className={`admin-tab ${tab === 'usage' ? 'active' : ''}`} onClick={() => setTab('usage')}>Charm usage</button>
+          <button className={`admin-tab ${tab === 'passport-benefits' ? 'active' : ''}`} onClick={() => setTab('passport-benefits')}>Passport benefits</button>
         </div>
 
         {tab === 'content' && (
           <>
             <div className="admin-card-header">
-              <h2>Membership Content</h2>
+              <h2>Membership copy blocks</h2>
               <button onClick={() => setEditing({ section_key: '', headline: '', body: '', image: '', seo_title: '', seo_description: '', is_active: 1 })} className="admin-btn admin-btn-primary">+ Add</button>
             </div>
             <DataTable
@@ -158,9 +164,11 @@ export default function MembershipPage() {
             <h3>{editing.id ? 'Edit' : 'Add'}</h3>
             {tab === 'content' && (
               <>
-                <FormField label="Section Key" name="section_key" value={editing.section_key || ''} onChange={(v: string) => setEditing({ ...editing, section_key: v })} />
+                <FormField label="Section Key" name="section_key" value={editing.section_key || ''} onChange={(v: string) => setEditing({ ...editing, section_key: v })}
+                  hint="Use charm_concept for Charm page copy, passport_why for Passport “Why Passport?” text." />
                 <FormField label="Headline" name="headline" value={editing.headline || ''} onChange={(v: string) => setEditing({ ...editing, headline: v })} />
-                <FormField label="Body" name="body" type="textarea" value={editing.body || ''} onChange={(v: string) => setEditing({ ...editing, body: v })} />
+                <FormField label="Body" name="body" type="textarea" value={editing.body || ''} onChange={(v: string) => setEditing({ ...editing, body: v })}
+                  hint="For passport_why, the body is the “Why Passport?” paragraph on the Passport page." />
                 <FormField label="SEO Title" name="seo_title" value={editing.seo_title || ''} onChange={(v: string) => setEditing({ ...editing, seo_title: v })} placeholder="Override default page title for search engines" />
                 <FormField label="SEO Description" name="seo_description" type="textarea" value={editing.seo_description || ''} onChange={(v: string) => setEditing({ ...editing, seo_description: v })} placeholder="Override default page description for search engines" />
                 <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active} onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />

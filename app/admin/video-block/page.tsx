@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import AdminLayout from '@/components/admin/AdminLayout';
 import VideoUploader from '@/components/admin/VideoUploader';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 export default function VideoBlockPage() {
   const [username, setUsername] = useState('');
@@ -24,13 +25,17 @@ export default function VideoBlockPage() {
   };
 
   return (
-    <AdminLayout title="Video Block" username={username}>
+    <AdminLayout title="Video block" username={username}>
+      <AdminPageHint variant="unused">
+        This form is not connected to the database or the website. The homepage video section is currently
+        turned off; use <strong>Home → Hero</strong> to change the live homepage video.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Video Block</h2>
+          <h2>Video block (prototype)</h2>
         </div>
         <p style={{ color: 'var(--admin-muted)', fontSize: 13, marginBottom: 20 }}>
-          This form is not yet connected to the database. Changes are only saved locally in this session.
+          Uploads here stay in this session only and will not publish to the site.
         </p>
 
         <div className="admin-form-group">

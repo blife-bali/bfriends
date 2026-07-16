@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
-import { getTreatmentBySlug, getTreatmentSlugs } from "@/lib/treatments";
-import { treatmentNameInline } from "@/mock/treatments";
+import { getTreatmentBySlug, getTreatmentSlugs, treatmentNameInline } from "@/lib/supabase-content";
 import { Section as AboutSection } from "./about";
 import { Section as SpecsSection } from "./specs";
 import { Section as CtaSection } from "./cta";
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
-  return getTreatmentSlugs().map((slug) => ({ slug }));
+  const slugs = await getTreatmentSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -17,7 +19,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const treatment = getTreatmentBySlug(slug);
+  const treatment = await getTreatmentBySlug(slug);
   if (!treatment) return {};
 
   return {
@@ -37,7 +39,7 @@ export default async function TreatmentDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const treatment = getTreatmentBySlug(slug);
+  const treatment = await getTreatmentBySlug(slug);
   if (!treatment) notFound();
 
   return (

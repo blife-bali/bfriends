@@ -8,6 +8,7 @@ import FormField from '@/components/admin/FormField';
 import VideoUploader from '@/components/admin/VideoUploader';
 import ConfirmDialog from '@/components/admin/ConfirmDialog';
 import Toast from '@/components/admin/Toast';
+import AdminPageHint from '@/components/admin/AdminPageHint';
 
 interface Hero {
   id?: number;
@@ -67,11 +68,14 @@ export default function HeroPage() {
   };
 
   return (
-    <AdminLayout title="Hero Sections" username={username}>
+    <AdminLayout title="Home hero" username={username}>
+      <AdminPageHint variant="live">
+        Shown at the top of the <strong>homepage</strong> (<code>/</code>): title, subtitle, and background video.
+      </AdminPageHint>
       <div className="admin-card">
         <div className="admin-card-header">
-          <h2>Hero Sections</h2>
-          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Tambah Hero</button>
+          <h2>Home hero</h2>
+          <button onClick={() => setEditing({ ...empty })} className="admin-btn admin-btn-primary">+ Add hero</button>
         </div>
         <DataTable
           columns={[
@@ -92,33 +96,33 @@ export default function HeroPage() {
       {editing && (
         <div className="admin-modal-overlay" onClick={() => setEditing(null)}>
           <div className="admin-modal" style={{ width: 600 }} onClick={(e) => e.stopPropagation()}>
-            <h3>{editing.id ? 'Edit Hero' : 'Tambah Hero'}</h3>
+            <h3>{editing.id ? 'Edit hero' : 'Add hero'}</h3>
             <div className="admin-form-row">
               <FormField label="Sort Order" name="sort_order" type="number" value={editing.sort_order}
                 onChange={(v: number) => setEditing({ ...editing, sort_order: v })} />
             </div>
             <FormField label="Title" name="title" value={editing.title}
-              onChange={(v: string) => setEditing({ ...editing, title: v })} required />
+              onChange={(v: string) => setEditing({ ...editing, title: v })} required
+              hint="Main headline over the homepage hero video." />
             <FormField label="Subtitle" name="subtitle" type="textarea" value={editing.subtitle}
-              onChange={(v: string) => setEditing({ ...editing, subtitle: v })} />
+              onChange={(v: string) => setEditing({ ...editing, subtitle: v })}
+              hint="Supporting line under the title." />
             <div className="admin-form-group">
-              <label>Video URL</label>
+              <label>Video</label>
               <VideoUploader value={editing.video_url} onChange={(url: string) => setEditing({ ...editing, video_url: url })} />
-            </div>
-            <div className="admin-form-group">
-              <small style={{ color: 'var(--admin-muted)' }}>Hero video for the Home page.</small>
+              <p className="admin-field-hint">Background video on the homepage hero.</p>
             </div>
             <FormField label="Active" name="is_active" type="checkbox" value={!!editing.is_active}
               onChange={(v: boolean) => setEditing({ ...editing, is_active: v ? 1 : 0 })} />
             <div className="admin-modal-actions">
-              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Batal</button>
-              <button onClick={handleSave} className="admin-btn admin-btn-primary">Simpan</button>
+              <button onClick={() => setEditing(null)} className="admin-btn admin-btn-outline">Cancel</button>
+              <button onClick={handleSave} className="admin-btn admin-btn-primary">Save</button>
             </div>
           </div>
         </div>
       )}
 
-      {deleteTarget && <ConfirmDialog message={`Hapus hero "${deleteTarget.title}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
+      {deleteTarget && <ConfirmDialog message={`Delete hero "${deleteTarget.title}"?`} onConfirm={handleDelete} onCancel={() => setDeleteTarget(null)} />}
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
     </AdminLayout>
   );
