@@ -1,9 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { createClient } from '@supabase/supabase-js';
-import { mockTreatments, mockTreatmentsPage } from '../mock/treatments.ts';
-import { mockContactPage } from '../mock/contact.ts';
-import { mockJourneyPartnersPage } from '../mock/journey-partners.ts';
-import { mockSpaPages } from '../mock/spa.ts';
+import { mockTreatments, mockTreatmentsPage } from '../mock/treatments';
+import { mockContactPage } from '../mock/contact';
+import { mockJourneyPartnersPage } from '../mock/journey-partners';
+import { mockSpaPages } from '../mock/spa';
 
 for (const line of readFileSync('.env', 'utf8').split(/\r?\n/)) {
   const trimmed = line.trim();
