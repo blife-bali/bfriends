@@ -40,15 +40,17 @@ export default function PagesPage() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const router = useRouter();
 
+  async function loadHeaders() { const r = await fetch('/api/admin/page-headers'); if (r.ok) setHeaders(await r.json()); };
+
   useEffect(() => {
     fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
       if (!d.isLoggedIn) router.push('/admin/login');
       else setUsername(d.username);
     });
-    loadHeaders();
+    void Promise.resolve().then(() => { loadHeaders(); });
   }, [router]);
 
-  const loadHeaders = async () => { const r = await fetch('/api/admin/page-headers'); if (r.ok) setHeaders(await r.json()); };
+  
 
   const saveHeader = async () => {
     if (!editing) return;
@@ -65,7 +67,7 @@ export default function PagesPage() {
     await fetch(`/api/admin/page-headers/${deleteTarget.id}`, { method: 'DELETE' });
     setToast({ message: 'Deleted!', type: 'success' });
     setDeleteTarget(null);
-    loadHeaders();
+    void Promise.resolve().then(() => { loadHeaders(); });
   };
 
   return (

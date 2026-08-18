@@ -46,15 +46,7 @@ export default function AdminContactPage() {
   const [saving, setSaving] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    loadData();
-  }, [router]);
-
-  const loadData = async () => {
+  async function loadData() {
     const res = await fetch('/api/admin/supabase/contact-page');
     if (res.status === 503) {
       setSupabaseReady(false);
@@ -71,6 +63,16 @@ export default function AdminContactPage() {
       });
     }
   };
+
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    void Promise.resolve().then(() => { loadData(); });
+  }, [router]);
+
+  
 
   const save = async () => {
     if (saving) return;

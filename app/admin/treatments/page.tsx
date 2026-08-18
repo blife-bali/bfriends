@@ -84,15 +84,7 @@ export default function AdminTreatmentsPage() {
   const [supabaseReady, setSupabaseReady] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    loadAll();
-  }, [router]);
-
-  const loadAll = async () => {
+  async function loadAll() {
     const [pageRes, itemsRes] = await Promise.all([
       fetch('/api/admin/supabase/treatments-page'),
       fetch('/api/admin/supabase/treatments'),
@@ -105,6 +97,16 @@ export default function AdminTreatmentsPage() {
     if (pageRes.ok) setPage({ ...emptyPage, ...(await pageRes.json()) });
     if (itemsRes.ok) setItems(await itemsRes.json());
   };
+
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    void Promise.resolve().then(() => { loadAll(); });
+  }, [router]);
+
+  
 
   const savePage = async () => {
     const res = await fetch('/api/admin/supabase/treatments-page', {
@@ -152,7 +154,7 @@ export default function AdminTreatmentsPage() {
     await fetch(`/api/admin/supabase/treatments/${deleteTarget.id}`, { method: 'DELETE' });
     setToast({ message: 'Treatment deleted!', type: 'success' });
     setDeleteTarget(null);
-    loadAll();
+    void Promise.resolve().then(() => { loadAll(); });
   };
 
   const seedSupabase = async () => {

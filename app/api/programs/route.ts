@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
+import { type DbRow } from '@/lib/db';
 import { getPrograms } from '@/lib/cms';
 
 export async function GET() {
   try {
     const programs = await getPrograms();
-    const items = (programs as any[]).map((program) => ({
+    const items = (programs as DbRow[]).map((program) => ({
       name: program.name,
       slug: program.slug,
       image: program.image || null,

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import type { EventItem } from "@/lib/event-data";
 import EventCard from "@/components/EventCard/EventCard";
 import styles from "./EventsJournal.module.css";
 
@@ -11,21 +12,29 @@ const SORT_OPTIONS = [
   { value: "oldest", label: "Oldest first" },
 ] as const;
 
-function sortEvents(items: any[], order: "newest" | "oldest"): any[] {
+type JournalEvent = EventItem & { sort_order?: number };
+
+function sortEvents(items: JournalEvent[], order: "newest" | "oldest"): JournalEvent[] {
   const copy = [...items];
   if (order === "newest") {
     copy.sort((a, b) => (b.sort_order ?? b.index ?? 0) - (a.sort_order ?? a.index ?? 0));
   } else {
-    copy.sort((a, b) => (a.sort_order ?? a.index ?? 0) - (b.sort_order ?? b.index ?? 0));
+    copy.sort((a, b) => (a.sort_order ?? a.index ?? 0) - (b.sort_order ?? a.index ?? 0));
   }
   return copy;
 }
 
-export default function EventsContent({ initialEvents = [] }: { initialEvents?: any[] }) {
+export default function EventsContent({ initialEvents = [] }: { initialEvents?: JournalEvent[] }) {
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
   const [page, setPage] = useState(1);
+  const filterKey = `${search}|${ecosystem}|${sort}`;
+  const [appliedFilterKey, setAppliedFilterKey] = useState(filterKey);
+  if (appliedFilterKey !== filterKey) {
+    setAppliedFilterKey(filterKey);
+    setPage(1);
+  }
 
   const ecosystems = useMemo(() => {
     const set = new Set(initialEvents.map((e) => e.ecosystem));
@@ -46,10 +55,6 @@ export default function EventsContent({ initialEvents = [] }: { initialEvents?: 
     }
     return sortEvents(list, sort);
   }, [search, ecosystem, sort, initialEvents]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [search, ecosystem, sort]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(Math.max(1, page), totalPages);

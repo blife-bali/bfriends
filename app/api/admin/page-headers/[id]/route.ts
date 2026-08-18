@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 export async function GET(
@@ -16,7 +16,7 @@ export async function GET(
       'SELECT * FROM bfriends_page_headers WHERE id = ?',
       [id]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     if (items.length === 0) {
       return NextResponse.json({ error: 'Page header not found' }, { status: 404 });
     }
@@ -56,7 +56,7 @@ export async function PUT(
       ]
     );
 
-    const updateResult = result as any;
+    const updateResult = asInsertResult(result);
     if (updateResult.affectedRows === 0) {
       return NextResponse.json({ error: 'Page header not found' }, { status: 404 });
     }
@@ -83,7 +83,7 @@ export async function DELETE(
       [id]
     );
 
-    const deleteResult = result as any;
+    const deleteResult = asInsertResult(result);
     if (deleteResult.affectedRows === 0) {
       return NextResponse.json({ error: 'Page header not found' }, { status: 404 });
     }

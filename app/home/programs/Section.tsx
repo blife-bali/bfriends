@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { type DbRow } from '@/lib/db';
 import Image from "next/image";
 import styles from "./Section.module.css";
 import { Card } from "./index";
 import { trackEvent } from "@/lib/gtag";
 
-export default function Section({ programs = [] }: { programs?: any[] }) {
+export default function Section({ programs = [] }: { programs?: DbRow[] }) {
   const [selectedProgramKey, setSelectedProgramKey] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isTab, setIsTab] = useState(false);
@@ -25,8 +26,8 @@ export default function Section({ programs = [] }: { programs?: any[] }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getProgramKey = (program: any) => program.slug || program.name?.toLowerCase() || "";
-  const getProgramIndicator = (program: any) => program.name?.charAt(0) || "";
+  const getProgramKey = (program: DbRow) => String(program.slug || program.name || "").toLowerCase();
+  const getProgramIndicator = (program: DbRow) => String(program.name ?? "").charAt(0) || "";
   const selectedProgram = programs.find((p) => getProgramKey(p) === selectedProgramKey) || programs[0];
 
   const handlePointClick = (programKey: string) => {

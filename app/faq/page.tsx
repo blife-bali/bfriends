@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { type DbRow } from '@/lib/db';
 import FAQItem from "./faq-item";
 import styles from "./page.module.css";
 import { getFaqs } from "@/lib/cms";
@@ -27,7 +28,7 @@ export default async function FaqPage() {
         </header>
 
         <section className={styles.list} aria-label="Frequently asked questions list">
-          {faqs.map((item: any, index: number) => (
+          {faqs.map((item: DbRow, index: number) => (
             <FAQItem
               key={item.id}
               question={item.question}

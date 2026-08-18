@@ -36,18 +36,20 @@ export default function NewsPage() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const router = useRouter();
 
+  async function loadItems() {
+    const res = await fetch('/api/admin/news');
+    if (res.ok) setItems(await res.json());
+  };
+
   useEffect(() => {
     fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
       if (!d.isLoggedIn) router.push('/admin/login');
       else setUsername(d.username);
     });
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   }, [router]);
 
-  const loadItems = async () => {
-    const res = await fetch('/api/admin/news');
-    if (res.ok) setItems(await res.json());
-  };
+  
 
   const generateSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -73,7 +75,7 @@ export default function NewsPage() {
     await fetch(`/api/admin/news/${deleteTarget.id}`, { method: 'DELETE' });
     setToast({ message: 'News deleted!', type: 'success' });
     setDeleteTarget(null);
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   };
 
   return (

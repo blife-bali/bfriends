@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 export async function GET(
@@ -41,7 +41,7 @@ export async function POST(
       [id, session_type_id ?? null, title, description, image, icon, sort_order ?? 0]
     );
 
-    const insertResult = result as any;
+    const insertResult = asInsertResult(result);
     return NextResponse.json({ id: insertResult.insertId, message: 'Session created successfully' }, { status: 201 });
   } catch (error) {
     console.error('Error creating session:', error);

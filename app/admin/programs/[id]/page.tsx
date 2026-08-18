@@ -62,15 +62,7 @@ export default function ProgramDetailPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    if (!isNew) loadProgram();
-  }, [router, params.id]);
-
-  const loadProgram = async () => {
+  async function loadProgram() {
     const res = await fetch(`/api/admin/programs/${params.id}`);
     if (res.ok) {
       const data = await res.json();
@@ -99,6 +91,16 @@ export default function ProgramDetailPage() {
     }
   };
 
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    if (!isNew) void Promise.resolve().then(() => { loadProgram(); });
+  }, [router, params.id]);
+
+  
+
   const handleSave = async () => {
     if (isSaving) return;
     setIsSaving(true);
@@ -125,7 +127,8 @@ export default function ProgramDetailPage() {
     router.push('/admin/programs');
   };
 
-  const update = (field: string, value: any) => setProgram({ ...program, [field]: value });
+  const update = (field: string, value: unknown) =>
+    setProgram({ ...program, [field]: value } as typeof program);
 
   const tabs = [
     { key: 'general', label: 'General' },

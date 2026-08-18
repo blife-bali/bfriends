@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Card.module.css";
 import Button from "@/components/ui/Button/Button";
@@ -15,11 +14,7 @@ interface CardProps {
 }
 
 export default function Card({ program, onClose, isMobile }: CardProps) {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, [program]);
+  const isVisible = true;
 
   return (
     <div className={`${styles.card} ${isVisible ? styles.cardVisible : styles.cardHidden} ${isMobile ? styles.cardModal : ''}`}>

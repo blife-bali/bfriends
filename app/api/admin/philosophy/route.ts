@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 export async function GET() {
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       [section_key, headline, bodyContent, image, sort_order ?? 0, is_active ?? 1]
     );
 
-    const insertResult = result as any;
+    const insertResult = asInsertResult(result);
     return NextResponse.json({ id: insertResult.insertId, message: 'Philosophy section created successfully' }, { status: 201 });
   } catch (error) {
     console.error('Error creating philosophy section:', error);

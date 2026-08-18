@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./WhyCard.module.css";
 
-interface WhyCardProps {
+export interface WhyCardProps {
   image: string;
   title: string;
   subheading: string;

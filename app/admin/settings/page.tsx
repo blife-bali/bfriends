@@ -20,15 +20,7 @@ export default function SettingsPage() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    loadGaId();
-  }, [router]);
-
-  const loadGaId = async () => {
+  async function loadGaId() {
     const res = await fetch('/api/admin/settings');
     if (res.ok) {
       const data: Setting[] = await res.json();
@@ -36,6 +28,16 @@ export default function SettingsPage() {
       if (ga) setGaId(ga.setting_value);
     }
   };
+
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    void Promise.resolve().then(() => { loadGaId(); });
+  }, [router]);
+
+  
 
   // [ NOTES ] Handlers for the hidden generic key/value settings editor below. [ END NOTES ] //
   // const handleAddSetting = async () => { ... };

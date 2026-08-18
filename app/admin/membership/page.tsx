@@ -13,6 +13,7 @@ interface MembershipContent { id?: number; section_key: string; headline: string
 interface CharmTier { id?: number; name: string; tagline: string; credits: number; bonus: string; is_popular: number; sort_order: number; is_active: number; }
 interface CharmUsage { id?: number; service: string; credits: number; sort_order: number; is_active: number; }
 interface PassportBenefit { id?: number; title: string; description: string; icon_name: string; sort_order: number; is_active: number; }
+type MembershipEdit = Partial<MembershipContent & CharmTier & CharmUsage & PassportBenefit>;
 
 export default function MembershipPage() {
   const [tab, setTab] = useState<'content' | 'tiers' | 'usage' | 'passport-benefits'>('content');
@@ -20,21 +21,13 @@ export default function MembershipPage() {
   const [tiers, setTiers] = useState<CharmTier[]>([]);
   const [usage, setUsage] = useState<CharmUsage[]>([]);
   const [benefits, setBenefits] = useState<PassportBenefit[]>([]);
-  const [editing, setEditing] = useState<any>(null);
-  const [deleteTarget, setDeleteTarget] = useState<any>(null);
+  const [editing, setEditing] = useState<MembershipEdit | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<MembershipEdit | null>(null);
   const [username, setUsername] = useState('');
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    loadData();
-  }, [router]);
-
-  const loadData = async () => {
+  async function loadData() {
     const [c, t, u, b] = await Promise.all([
       fetch('/api/admin/membership').then(r => r.ok ? r.json() : []),
       fetch('/api/admin/charm-tiers').then(r => r.ok ? r.json() : []),
@@ -44,7 +37,18 @@ export default function MembershipPage() {
     setContent(c); setTiers(t); setUsage(u); setBenefits(b);
   };
 
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    void Promise.resolve().then(() => { loadData(); });
+  }, [router]);
+
+  
+
   const handleSave = async () => {
+    if (!editing) return;
     const apiMap: Record<string, string> = { content: 'membership', tiers: 'charm-tiers', usage: 'charm-usage', 'passport-benefits': 'passport-benefits' };
     const api = apiMap[tab];
     const isEdit = !!editing.id;

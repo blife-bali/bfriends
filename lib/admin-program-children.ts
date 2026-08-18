@@ -1,6 +1,5 @@
-/**
- * Persist program steps + session types + sessions inside an open DB transaction.
- */
+import type { PoolConnection } from "mysql2/promise";
+import { asInsertResult, type DbRow } from "@/lib/db";
 
 export type SessionTypeInput = {
   title?: string;
@@ -17,7 +16,7 @@ export type SessionTypeInput = {
 
 function normalizeSessionTypes(
   session_types?: SessionTypeInput[] | null,
-  legacySessions?: any[] | null
+  legacySessions?: SessionTypeInput["sessions"] | null
 ): SessionTypeInput[] {
   if (Array.isArray(session_types) && session_types.length > 0) {
     return session_types;
@@ -28,14 +27,21 @@ function normalizeSessionTypes(
   return [];
 }
 
+type ProgramStepInput = {
+  step_id?: string;
+  title?: string;
+  description?: string;
+  sort_order?: number;
+};
+
 export async function replaceProgramChildren(
-  connection: any,
+  connection: PoolConnection,
   programId: string,
-  steps: any[] = [],
+  steps: ProgramStepInput[] = [],
   session_types?: SessionTypeInput[] | null,
-  legacySessions?: any[] | null
+  legacySessions?: SessionTypeInput["sessions"] | null
 ) {
-  const resolveStepSortOrder = (step: any, fallbackIndex: number) => {
+  const resolveStepSortOrder = (step: ProgramStepInput, fallbackIndex: number) => {
     const numberFromStepId = Number.parseInt(String(step?.step_id ?? ""), 10);
     if (Number.isFinite(numberFromStepId)) return numberFromStepId - 1;
     return step?.sort_order ?? fallbackIndex;
@@ -69,7 +75,7 @@ export async function replaceProgramChildren(
       `INSERT INTO bfriends_program_session_types (program_id, title, sort_order) VALUES (?, ?, ?)`,
       [programId, (g.title || "Sessions").trim() || "Sessions", g.sort_order ?? ti]
     );
-    const typeId = (typeRes as any).insertId as number;
+    const typeId = asInsertResult(typeRes).insertId;
     const sessions = g.sessions || [];
     for (let si = 0; si < sessions.length; si++) {
       const session = sessions[si];
@@ -92,11 +98,11 @@ export async function replaceProgramChildren(
 }
 
 /** Build nested session_types for admin GET from flat DB rows. */
-export function buildSessionTypesForAdmin(typesRows: any[], sessionsRows: any[]) {
-  const types = [...(typesRows as any[])].sort(
+export function buildSessionTypesForAdmin(typesRows: DbRow[], sessionsRows: DbRow[]) {
+  const types = [...typesRows].sort(
     (a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0)
   );
-  const sessions = [...(sessionsRows as any[])];
+  const sessions = [...sessionsRows];
   const nested = types.map((t) => ({
     id: t.id,
     title: t.title,
@@ -119,15 +125,15 @@ export function buildSessionTypesForAdmin(typesRows: any[], sessionsRows: any[])
   return nested;
 }
 
-export function buildSessionGroupsPublic(typesRows: any[], sessionsRows: any[]) {
+export function buildSessionGroupsPublic(typesRows: DbRow[], sessionsRows: DbRow[]) {
   const admin = buildSessionTypesForAdmin(typesRows, sessionsRows);
   return admin.map((g) => ({
     name: g.title,
-    sessions: (g.sessions || []).map((s: any) => ({
-      name: s.title,
-      extra: s.extra ?? "",
-      desc: s.description ?? "",
-      image: s.image ?? "",
+    sessions: (g.sessions || []).map((s) => ({
+      name: String(s.title ?? ""),
+      extra: String(s.extra ?? ""),
+      desc: String(s.description ?? ""),
+      image: String(s.image ?? ""),
     })),
   }));
 }

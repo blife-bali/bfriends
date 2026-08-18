@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { type DbRow } from '@/lib/db';
 import PageHeader from "@/components/PageHeader/PageHeader";
 import PassportContent from "@/app/membership/bfriends-passport/PassportContent";
 import styles from "./BfriendsPassport.module.css";
@@ -27,7 +28,7 @@ export default async function BFriendsPassportPage() {
     getPassportBenefits(),
   ]);
 
-  const passportWhy = (membershipContent as any[]).find((r) => r.section_key === "passport_why");
+  const passportWhy = (membershipContent as DbRow[]).find((r) => r.section_key === "passport_why");
 
   return (
     <>

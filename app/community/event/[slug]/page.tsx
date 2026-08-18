@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { type DbRow } from '@/lib/db';
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -11,7 +12,7 @@ import styles from "./Article.module.css";
 
 export async function generateStaticParams() {
   const events = await getEvents();
-  return events.map((e: any) => ({ slug: e.slug }));
+  return events.map((e: DbRow) => ({ slug: e.slug }));
 }
 
 export async function generateMetadata({
@@ -51,7 +52,7 @@ export default async function EventSlugPage({
     .filter(Boolean);
 
   const allEvents = await getEvents();
-  const others = allEvents.filter((e: any) => String(e.id) !== String(event.id)).slice(0, 3);
+  const others = allEvents.filter((e: DbRow) => String(e.id) !== String(event.id)).slice(0, 3);
   const path = `/community/event/${event.slug}`;
 
   return (

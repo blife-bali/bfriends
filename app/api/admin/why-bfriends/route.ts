@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult, mysqlErrorCode, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 async function ensureHiddenInHomeColumn() {
@@ -7,9 +7,9 @@ async function ensureHiddenInHomeColumn() {
     await pool.execute(
       'ALTER TABLE bfriends_why_cards ADD COLUMN hidden_in_home TINYINT(1) DEFAULT 0 AFTER is_active'
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Ignore if the column already exists.
-    if (error?.code !== 'ER_DUP_FIELDNAME') throw error;
+    if (mysqlErrorCode(error) !== 'ER_DUP_FIELDNAME') throw error;
   }
 }
 
@@ -44,13 +44,13 @@ export async function POST(req: NextRequest) {
       [point, subpoint || null, image || null, sort_order || 0, is_active !== undefined ? is_active : 1, hidden_in_home !== undefined ? hidden_in_home : 0]
     );
 
-    const insertResult = result as any;
+    const insertResult = asInsertResult(result);
     const [newRows] = await pool.execute(
       'SELECT * FROM bfriends_why_cards WHERE id = ?',
       [insertResult.insertId]
     );
 
-    return NextResponse.json((newRows as any[])[0], { status: 201 });
+    return NextResponse.json((newRows as DbRow[])[0], { status: 201 });
   } catch (error) {
     console.error('Why-BFriends POST error:', error);
     return NextResponse.json({ error: 'Failed to create why card' }, { status: 500 });

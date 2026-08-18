@@ -23,18 +23,20 @@ export default function ProgramsPage() {
   const [username, setUsername] = useState('');
   const router = useRouter();
 
+  async function loadItems() {
+    const res = await fetch('/api/admin/programs');
+    if (res.ok) setItems(await res.json());
+  };
+
   useEffect(() => {
     fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
       if (!d.isLoggedIn) router.push('/admin/login');
       else setUsername(d.username);
     });
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   }, [router]);
 
-  const loadItems = async () => {
-    const res = await fetch('/api/admin/programs');
-    if (res.ok) setItems(await res.json());
-  };
+  
 
   return (
     <AdminLayout title="Programs" username={username}>

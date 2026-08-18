@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { mysqlErrorCode, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 async function ensureHiddenInHomeColumn() {
@@ -7,9 +7,9 @@ async function ensureHiddenInHomeColumn() {
     await pool.execute(
       'ALTER TABLE bfriends_why_cards ADD COLUMN hidden_in_home TINYINT(1) DEFAULT 0 AFTER is_active'
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Ignore if the column already exists.
-    if (error?.code !== 'ER_DUP_FIELDNAME') throw error;
+    if (mysqlErrorCode(error) !== 'ER_DUP_FIELDNAME') throw error;
   }
 }
 
@@ -25,7 +25,7 @@ export async function GET(
       [id]
     );
 
-    const items = rows as any[];
+    const items = rows as DbRow[];
     if (items.length === 0) {
       return NextResponse.json({ error: 'Why card not found' }, { status: 404 });
     }
@@ -54,7 +54,7 @@ export async function PUT(
       'SELECT id FROM bfriends_why_cards WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as DbRow[]).length === 0) {
       return NextResponse.json({ error: 'Why card not found' }, { status: 404 });
     }
 
@@ -68,7 +68,7 @@ export async function PUT(
       [id]
     );
 
-    return NextResponse.json((updated as any[])[0]);
+    return NextResponse.json((updated as DbRow[])[0]);
   } catch (error) {
     console.error('Why-BFriends PUT error:', error);
     return NextResponse.json({ error: 'Failed to update why card' }, { status: 500 });
@@ -89,7 +89,7 @@ export async function DELETE(
       'SELECT id FROM bfriends_why_cards WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as DbRow[]).length === 0) {
       return NextResponse.json({ error: 'Why card not found' }, { status: 404 });
     }
 

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import NewsCard from "@/components/NewsCard/NewsCard";
+import type { NewsItem } from "@/lib/news-data";
 import styles from "./NewsJournal.module.css";
 
 const PAGE_SIZE = 16;
@@ -11,7 +12,9 @@ const SORT_OPTIONS = [
   { value: "oldest", label: "Oldest first" },
 ] as const;
 
-function sortNews(items: any[], order: "newest" | "oldest"): any[] {
+type JournalNews = NewsItem & { sort_order?: number };
+
+function sortNews(items: JournalNews[], order: "newest" | "oldest"): JournalNews[] {
   const copy = [...items];
   if (order === "newest") {
     copy.sort((a, b) => (b.sort_order ?? b.index ?? 0) - (a.sort_order ?? a.index ?? 0));
@@ -21,11 +24,17 @@ function sortNews(items: any[], order: "newest" | "oldest"): any[] {
   return copy;
 }
 
-export default function NewsContent({ initialNews = [] }: { initialNews?: any[] }) {
+export default function NewsContent({ initialNews = [] }: { initialNews?: JournalNews[] }) {
   const [search, setSearch] = useState("");
   const [ecosystem, setEcosystem] = useState<string>("all");
   const [sort, setSort] = useState<"newest" | "oldest">("newest");
   const [page, setPage] = useState(1);
+  const filterKey = `${search}|${ecosystem}|${sort}`;
+  const [appliedFilterKey, setAppliedFilterKey] = useState(filterKey);
+  if (appliedFilterKey !== filterKey) {
+    setAppliedFilterKey(filterKey);
+    setPage(1);
+  }
 
   const ecosystems = useMemo(() => {
     const set = new Set(initialNews.map((n) => n.ecosystem));
@@ -48,10 +57,6 @@ export default function NewsContent({ initialNews = [] }: { initialNews?: any[] 
     }
     return sortNews(list, sort);
   }, [search, ecosystem, sort, initialNews]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [search, ecosystem, sort]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(Math.max(1, page), totalPages);

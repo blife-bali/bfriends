@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
-import pool from '@/lib/db';
+import pool, { type DbRow } from '@/lib/db';
 import { getSession } from '@/lib/session';
 
 export async function POST(req: NextRequest) {
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       [username]
     );
 
-    const users = rows as any[];
+    const users = rows as DbRow[];
     if (users.length === 0) {
       return NextResponse.json({ error: 'Username atau password salah' }, { status: 401 });
     }

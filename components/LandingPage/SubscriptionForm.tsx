@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, ArrowUpRight, Check } from "lucide-react";
+import { Mail, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./SubscriptionForm.module.css";
 import { trackEvent } from "@/lib/gtag";
@@ -94,9 +94,9 @@ export default function SubscriptionForm() {
               <div className={styles.successIconWrapper}>
                 <Check className="w-6 h-6 text-white" />
               </div>
-              <h3 className={styles.successTitle}>You're on the list!</h3>
+              <h3 className={styles.successTitle}>You&apos;re on the list!</h3>
               <p className={styles.successText}>
-                Thank you for joining our movement. We'll keep you updated on our launch.
+                Thank you for joining our movement. We&apos;ll keep you updated on our launch.
               </p>
             </div>
             

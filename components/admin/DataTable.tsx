@@ -1,19 +1,24 @@
 'use client';
 
-interface Column {
+interface Column<T extends object> {
   key: string;
   label: string;
-  render?: (value: any, row: any) => React.ReactNode;
+  render?(value: unknown, row: T): React.ReactNode;
 }
 
-interface DataTableProps {
-  columns: Column[];
-  data: any[];
-  onEdit?: (row: any) => void;
-  onDelete?: (row: any) => void;
+interface DataTableProps<T extends object> {
+  columns: Column<T>[];
+  data: T[];
+  onEdit?(row: T): void;
+  onDelete?(row: T): void;
 }
 
-export default function DataTable({ columns, data, onEdit, onDelete }: DataTableProps) {
+export default function DataTable<T extends object>({
+  columns,
+  data,
+  onEdit,
+  onDelete,
+}: DataTableProps<T>) {
   if (data.length === 0) {
     return (
       <div className="admin-empty">
@@ -35,10 +40,12 @@ export default function DataTable({ columns, data, onEdit, onDelete }: DataTable
         </thead>
         <tbody>
           {data.map((row, i) => (
-            <tr key={row.id || i}>
+            <tr key={String((row as { id?: unknown }).id ?? i)}>
               {columns.map((col) => (
                 <td key={col.key}>
-                  {col.render ? col.render(row[col.key], row) : String(row[col.key] ?? '')}
+                  {col.render
+                    ? col.render((row as Record<string, unknown>)[col.key], row)
+                    : String((row as Record<string, unknown>)[col.key] ?? '')}
                 </td>
               ))}
               {(onEdit || onDelete) && (

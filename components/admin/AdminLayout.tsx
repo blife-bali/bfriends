@@ -1,35 +1,40 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import AdminSidebar from './AdminSidebar';
 import AdminHeader from './AdminHeader';
 
 const SIDEBAR_COLLAPSED_KEY = 'bfriends-admin-sidebar-collapsed';
+const SIDEBAR_EVENT = 'bfriends-admin-sidebar';
+
+function subscribeCollapsed(onChange: () => void) {
+  window.addEventListener('storage', onChange);
+  window.addEventListener(SIDEBAR_EVENT, onChange);
+  return () => {
+    window.removeEventListener('storage', onChange);
+    window.removeEventListener(SIDEBAR_EVENT, onChange);
+  };
+}
+
+function getCollapsedSnapshot() {
+  try {
+    return localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
 
 export default function AdminLayout({ children, title, username }: { children: React.ReactNode; title: string; username?: string }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const sidebarCollapsed = useSyncExternalStore(subscribeCollapsed, getCollapsedSnapshot, () => false);
 
-  useEffect(() => {
+  const toggleSidebarCollapsed = () => {
     try {
-      if (typeof window !== 'undefined' && localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === '1') {
-        setSidebarCollapsed(true);
-      }
+      localStorage.setItem(SIDEBAR_COLLAPSED_KEY, getCollapsedSnapshot() ? '0' : '1');
+      window.dispatchEvent(new Event(SIDEBAR_EVENT));
     } catch {
       /* ignore */
     }
-  }, []);
-
-  const toggleSidebarCollapsed = () => {
-    setSidebarCollapsed((c) => {
-      const next = !c;
-      try {
-        localStorage.setItem(SIDEBAR_COLLAPSED_KEY, next ? '1' : '0');
-      } catch {
-        /* ignore */
-      }
-      return next;
-    });
   };
 
   return (

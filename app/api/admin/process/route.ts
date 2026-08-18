@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult, mysqlErrorCode, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 async function ensureProcessPageKeyColumn() {
@@ -7,8 +7,8 @@ async function ensureProcessPageKeyColumn() {
     await pool.execute(
       "ALTER TABLE bfriends_process_steps ADD COLUMN page_key VARCHAR(50) NOT NULL DEFAULT 'customer-journey' AFTER id"
     );
-  } catch (error: any) {
-    if (error?.code !== 'ER_DUP_FIELDNAME') throw error;
+  } catch (error: unknown) {
+    if (mysqlErrorCode(error) !== 'ER_DUP_FIELDNAME') throw error;
   }
 }
 
@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
     let [rows] = pageKey
       ? await pool.execute('SELECT * FROM bfriends_process_steps WHERE page_key = ? ORDER BY sort_order', [pageKey])
       : await pool.execute('SELECT * FROM bfriends_process_steps ORDER BY sort_order');
-    if (pageKey === 'home' && (rows as any[]).length === 0) {
+    if (pageKey === 'home' && (rows as DbRow[]).length === 0) {
       await pool.execute(
         'INSERT INTO bfriends_process_steps (page_key, number, title, description, image, sort_order, is_active) VALUES (?, ?, ?, ?, ?, ?, ?)',
         [
@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
       [rows] = await pool.execute('SELECT * FROM bfriends_process_steps WHERE page_key = ? ORDER BY sort_order', ['home']);
     }
 
-    const steps = rows as any[];
+    const steps = rows as DbRow[];
     const stepsWithSubpoints = await Promise.all(
       steps.map(async (step) => {
         const [subpoints] = await pool.execute(
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
       [page_key || 'customer-journey', number || null, title, description || null, image || null, sort_order || 0, is_active !== undefined ? is_active : 1]
     );
 
-    const insertResult = result as any;
+    const insertResult = asInsertResult(result);
     const stepId = insertResult.insertId;
 
     if (subpoints && Array.isArray(subpoints) && subpoints.length > 0) {
@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
       [stepId]
     );
 
-    return NextResponse.json({ ...(newRows as any[])[0], subpoints: newSubpoints }, { status: 201 });
+    return NextResponse.json({ ...(newRows as DbRow[])[0], subpoints: newSubpoints }, { status: 201 });
   } catch (error) {
     console.error('Process POST error:', error);
     return NextResponse.json({ error: 'Failed to create process step' }, { status: 500 });

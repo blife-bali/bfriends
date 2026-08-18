@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { sanitizeRichText } from '@/lib/rich-text';
 
@@ -13,7 +13,7 @@ export async function GET(
       'SELECT * FROM bfriends_faqs WHERE id = ?',
       [id]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     if (items.length === 0) {
       return NextResponse.json({ error: 'FAQ not found' }, { status: 404 });
     }
@@ -40,7 +40,7 @@ export async function PUT(
       'SELECT id FROM bfriends_faqs WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as DbRow[]).length === 0) {
       return NextResponse.json({ error: 'FAQ not found' }, { status: 404 });
     }
 
@@ -56,7 +56,7 @@ export async function PUT(
       [id]
     );
 
-    return NextResponse.json((updated as any[])[0]);
+    return NextResponse.json((updated as DbRow[])[0]);
   } catch (error) {
     console.error('FAQ PUT error:', error);
     return NextResponse.json({ error: 'Failed to update FAQ' }, { status: 500 });
@@ -77,7 +77,7 @@ export async function DELETE(
       'SELECT id FROM bfriends_faqs WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as DbRow[]).length === 0) {
       return NextResponse.json({ error: 'FAQ not found' }, { status: 404 });
     }
 

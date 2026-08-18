@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 export async function GET() {
@@ -31,13 +31,13 @@ export async function POST(req: NextRequest) {
       [headline, text, image ?? null, sort_order ?? 0, is_active ?? 1]
     );
 
-    const insertResult = result as any;
+    const insertResult = asInsertResult(result);
     const [newRows] = await pool.execute(
       'SELECT * FROM bfriends_journey_sections WHERE id = ?',
       [insertResult.insertId]
     );
 
-    return NextResponse.json((newRows as any[])[0], { status: 201 });
+    return NextResponse.json((newRows as DbRow[])[0], { status: 201 });
   } catch (error) {
     console.error('Journey section POST error:', error);
     return NextResponse.json({ error: 'Failed to create journey section' }, { status: 500 });

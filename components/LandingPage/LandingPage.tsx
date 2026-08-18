@@ -126,7 +126,7 @@ function ScrollContent({ progress }: { progress: MotionValue<number> }) {
   const mobileHeroContainerBottom = useTransform(progress, [0, 0.5], ["-20vh", "0vh"]);
 
   // Select values based on state
-  const getResponsiveValue = (desktop: any, tablet: any, mobile: any) => {
+  const getResponsiveValue = <T,>(desktop: T, tablet: T, mobile: T): T => {
     if (screenSize === 'mobile') return mobile;
     if (screenSize === 'tablet') return tablet;
     return desktop;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { type DbRow } from '@/lib/db';
 import PageHeader from "@/components/PageHeader/PageHeader";
 import CharmContent from "./CharmContent";
 import styles from "./Charm.module.css";
@@ -28,7 +29,7 @@ export default async function CharmPage() {
     getMembershipContent(),
   ]);
 
-  const charmConcept = (membershipContent as any[]).find((r) => r.section_key === "charm_concept");
+  const charmConcept = (membershipContent as DbRow[]).find((r) => r.section_key === "charm_concept");
 
   return (
     <>

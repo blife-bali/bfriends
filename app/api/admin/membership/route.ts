@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 export async function GET() {
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         [section_key, headline, contentBody, image, is_active ?? 1, id]
       );
 
-      const updateResult = result as any;
+      const updateResult = asInsertResult(result);
       if (updateResult.affectedRows === 0) {
         return NextResponse.json({ error: 'Membership content not found' }, { status: 404 });
       }
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
       [section_key, headline, contentBody, image, is_active ?? 1]
     );
 
-    const insertResult = result as any;
+    const insertResult = asInsertResult(result);
     return NextResponse.json({ id: insertResult.insertId, message: 'Membership content created successfully' }, { status: 201 });
   } catch (error) {
     console.error('Error creating membership content:', error);

@@ -7,7 +7,18 @@ import Button from "@/components/ui/Button/Button";
 import { BOOK_NOW_URL } from "@/lib/site-contact";
 import styles from "./WhyBFriends.module.css";
 
-export default function WhyBFriends({ cards = [] }: { cards?: any[] }) {
+export default function WhyBFriends({
+  cards = [],
+}: {
+  cards?: Array<{
+    id?: number | string;
+    image: string;
+    title?: string;
+    subheading?: string;
+    point?: string;
+    subpoint?: string;
+  }>;
+}) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -95,11 +106,11 @@ export default function WhyBFriends({ cards = [] }: { cards?: any[] }) {
         <div className={styles.carousel} ref={carouselRef}>
           <div className={styles.carouselTrack}>
             {cards.map((card) => (
-              <div key={card.id} className={styles.carouselItem}>
+              <div key={card.id ?? card.image} className={styles.carouselItem}>
                 <WhyCard
                   image={card.image}
-                  title={card.point}
-                  subheading={card.subpoint}
+                  title={card.point ?? card.title ?? ""}
+                  subheading={card.subpoint ?? card.subheading ?? ""}
                 />
               </div>
             ))}

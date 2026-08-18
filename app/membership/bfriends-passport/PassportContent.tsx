@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
 import { Key, Briefcase, Users, Gift, Heart, Star, Shield, Sparkles, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./BfriendsPassport.module.css";
 
-const ICON_MAP: Record<string, any> = { Key, Briefcase, Users, Gift, Heart, Star, Shield, Sparkles };
+const ICON_MAP: Record<string, LucideIcon> = { Key, Briefcase, Users, Gift, Heart, Star, Shield, Sparkles };
 
 const DEFAULT_PHILOSOPHY_COPY =
   "Wellness doesn't happen in isolation. It happens in the fitness rhythm between work, rest, and movement. The Passport is your seamless entry into the BLife, removing the friction between your ambition and your health.";

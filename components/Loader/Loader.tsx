@@ -17,7 +17,10 @@ export default function Loader({ onComplete }: LoaderProps) {
   const completedRef = useRef(false);
 
   const onCompleteRef = useRef(onComplete);
-  onCompleteRef.current = onComplete;
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   const finish = () => {
     if (completedRef.current) return;

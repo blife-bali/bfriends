@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { type DbRow } from '@/lib/db';
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -11,7 +12,7 @@ import styles from "./Article.module.css";
 
 export async function generateStaticParams() {
   const news = await getNews();
-  return (news as any[]).map((n) => ({ slug: n.slug }));
+  return (news as DbRow[]).map((n) => ({ slug: n.slug }));
 }
 
 export async function generateMetadata({
@@ -23,16 +24,17 @@ export async function generateMetadata({
   const news = await getNewsBySlug(slug);
   if (!news) return {};
 
-  const title = (news as any).seo_title || `${(news as any).name} | BFriends`;
+  const n = news;
+  const title = n.seo_title || `${n.name} | BFriends`;
   const description =
-    (news as any).seo_description ||
-    (news as any).text?.replace(/\n/g, " ").slice(0, 160) ||
-    `Read ${(news as any).name} on BFriends.`;
+    n.seo_description ||
+    String(n.text ?? "").replace(/\n/g, " ").slice(0, 160) ||
+    `Read ${n.name} on BFriends.`;
 
   return {
     title,
     description,
-    openGraph: { title, description, images: (news as any).image ? [{ url: (news as any).image }] : [] },
+    openGraph: { title, description, images: n.image ? [{ url: String(n.image) }] : [] },
   };
 }
 
@@ -45,14 +47,14 @@ export default async function NewsSlugPage({
   const news = await getNewsBySlug(slug);
   if (!news) notFound();
 
-  const n = news as any;
-  const paragraphs = n.text
+  const n = news;
+  const paragraphs = String(n.text ?? "")
     .split(/\n\n+/)
-    .map((p: string) => p.trim())
+    .map((p) => p.trim())
     .filter(Boolean);
 
   const allNews = await getNews();
-  const others = (allNews as any[]).filter((item) => String(item.id) !== String(n.id)).slice(0, 3);
+  const others = (allNews as DbRow[]).filter((item) => String(item.id) !== String(n.id)).slice(0, 3);
   const path = `/community/news/${n.slug}`;
 
   return (
@@ -85,7 +87,7 @@ export default async function NewsSlugPage({
             <p className={styles.metaItem}>{n.timestamp}</p>
           </aside>
           <div className={styles.body}>
-            {paragraphs.map((p: string, i: number) => (
+            {paragraphs.map((p, i) => (
               <p key={i} className={styles.paragraph}>
                 {p}
               </p>

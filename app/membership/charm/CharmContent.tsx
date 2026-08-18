@@ -22,14 +22,29 @@ const DEFAULT_CONCEPT_HEADING = "Precision Has Its Rewards.";
 const DEFAULT_CONCEPT_COPY =
   "For those who know exactly what they need. Charm is our exclusive currency for premium services—from Clinical Facials at Nulook to Private Physio at BFriends. Purchase in bulk, secure your priority, and enjoy privileged rates.";
 
+type CharmTier = {
+  id?: string | number;
+  name: string;
+  tagline: string;
+  credits: number;
+  bonus: string;
+  is_popular?: boolean | number;
+  popular?: boolean | number;
+};
+
+type CharmUsageItem = {
+  service: string;
+  credits: number;
+};
+
 export default function CharmContent({
   tiers = DEFAULT_TIERS,
   usageItems = DEFAULT_USAGE,
   conceptHeading = DEFAULT_CONCEPT_HEADING,
   conceptCopy = DEFAULT_CONCEPT_COPY,
 }: {
-  tiers?: any[];
-  usageItems?: any[];
+  tiers?: CharmTier[];
+  usageItems?: CharmUsageItem[];
   conceptHeading?: string;
   conceptCopy?: string;
 }) {

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { mysqlErrorCode, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 async function ensureProcessPageKeyColumn() {
@@ -7,8 +7,8 @@ async function ensureProcessPageKeyColumn() {
     await pool.execute(
       "ALTER TABLE bfriends_process_steps ADD COLUMN page_key VARCHAR(50) NOT NULL DEFAULT 'customer-journey' AFTER id"
     );
-  } catch (error: any) {
-    if (error?.code !== 'ER_DUP_FIELDNAME') throw error;
+  } catch (error: unknown) {
+    if (mysqlErrorCode(error) !== 'ER_DUP_FIELDNAME') throw error;
   }
 }
 
@@ -24,7 +24,7 @@ export async function GET(
       [id]
     );
 
-    const items = rows as any[];
+    const items = rows as DbRow[];
     if (items.length === 0) {
       return NextResponse.json({ error: 'Process step not found' }, { status: 404 });
     }
@@ -58,7 +58,7 @@ export async function PUT(
       'SELECT id FROM bfriends_process_steps WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as DbRow[]).length === 0) {
       return NextResponse.json({ error: 'Process step not found' }, { status: 404 });
     }
 
@@ -92,7 +92,7 @@ export async function PUT(
       [id]
     );
 
-    return NextResponse.json({ ...(updated as any[])[0], subpoints: updatedSubpoints });
+    return NextResponse.json({ ...(updated as DbRow[])[0], subpoints: updatedSubpoints });
   } catch (error) {
     console.error('Process PUT error:', error);
     return NextResponse.json({ error: 'Failed to update process step' }, { status: 500 });
@@ -113,7 +113,7 @@ export async function DELETE(
       'SELECT id FROM bfriends_process_steps WHERE id = ?',
       [id]
     );
-    if ((existing as any[]).length === 0) {
+    if ((existing as DbRow[]).length === 0) {
       return NextResponse.json({ error: 'Process step not found' }, { status: 404 });
     }
 

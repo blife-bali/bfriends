@@ -30,18 +30,20 @@ export default function JourneySectionPage() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const router = useRouter();
 
+  async function loadItems() {
+    const res = await fetch('/api/admin/journey-section');
+    if (res.ok) setItems(await res.json());
+  };
+
   useEffect(() => {
     fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
       if (!d.isLoggedIn) router.push('/admin/login');
       else setUsername(d.username);
     });
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   }, [router]);
 
-  const loadItems = async () => {
-    const res = await fetch('/api/admin/journey-section');
-    if (res.ok) setItems(await res.json());
-  };
+  
 
   const handleSave = async () => {
     if (!editing) return;
@@ -64,7 +66,7 @@ export default function JourneySectionPage() {
     await fetch(`/api/admin/journey-section/${deleteTarget.id}`, { method: 'DELETE' });
     setToast({ message: 'Journey section deleted!', type: 'success' });
     setDeleteTarget(null);
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   };
 
   return (

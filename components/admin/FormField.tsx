@@ -5,7 +5,7 @@ interface FormFieldProps {
   name: string;
   type?: 'text' | 'textarea' | 'select' | 'checkbox' | 'number';
   value: string | number | boolean;
-  onChange: (value: any) => void;
+  onChange(value: string | number | boolean): void;
   options?: { value: string; label: string }[];
   placeholder?: string;
   required?: boolean;

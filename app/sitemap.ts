@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { type DbRow } from '@/lib/db';
 import { getProgramSlugs, getEvents, getNews } from '@/lib/cms'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://bfriends.id'
@@ -35,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
 
     const events = await getEvents()
-    eventPages = events.map((e: any) => ({
+    eventPages = events.map((e: DbRow) => ({
       url: `${SITE_URL}/community/event/${e.slug}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
@@ -43,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
 
     const news = await getNews()
-    newsPages = news.map((n: any) => ({
+    newsPages = news.map((n: DbRow) => ({
       url: `${SITE_URL}/community/news/${n.slug}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,

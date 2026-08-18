@@ -35,6 +35,7 @@ interface JourneyStep {
   id: number;
   number?: string;
   title: string;
+  description?: string;
   subpoints?: ProcessSubpoint[];
 }
 
@@ -80,7 +81,7 @@ export default function SystemSection({
   steps = [],
   carouselSteps = [],
 }: {
-  steps?: any[];
+  steps?: JourneyStep[];
   carouselSteps?: JourneyStep[];
 }) {
   const ref = useRef<HTMLElement>(null);
@@ -129,11 +130,14 @@ export default function SystemSection({
   useMotionValueEvent(smoothProgress, "change", updateActiveIndices);
 
   useEffect(() => {
-    updateActiveIndices(smoothProgress.get());
+    const frame = requestAnimationFrame(() => updateActiveIndices(smoothProgress.get()));
 
     const handleResize = () => updateActiveIndices(smoothProgress.get());
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [smoothProgress, updateActiveIndices, carouselSteps.length]);
 
   useEffect(() => {

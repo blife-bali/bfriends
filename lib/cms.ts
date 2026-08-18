@@ -1,4 +1,4 @@
-import pool from '@/lib/db';
+import pool, { type DbRow } from '@/lib/db';
 import { buildSessionGroupsPublic } from '@/lib/admin-program-children';
 
 export type PublicProgram = {
@@ -75,11 +75,11 @@ async function tryDb<T>(query: string): Promise<T[]> {
 }
 
 export async function getHeroSections() {
-  return tryDb<any>('SELECT * FROM bfriends_hero_sections WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_hero_sections WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getIntroSections() {
-  return tryDb<any>('SELECT * FROM bfriends_intro_sections WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_intro_sections WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getWhyCards(includeHiddenInHome = false) {
@@ -88,16 +88,16 @@ export async function getWhyCards(includeHiddenInHome = false) {
       ? 'SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order'
       : 'SELECT * FROM bfriends_why_cards WHERE is_active = 1 AND COALESCE(hidden_in_home, 0) = 0 ORDER BY sort_order';
     const [rows] = await pool.execute(query);
-    return rows as any[];
+    return rows as DbRow[];
   } catch {
     // Fallback for DBs that do not have hidden_in_home yet.
-    return tryDb<any>('SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order');
+    return tryDb<DbRow>('SELECT * FROM bfriends_why_cards WHERE is_active = 1 ORDER BY sort_order');
   }
 }
 
 export async function getProcessSteps(pageKey: 'home' | 'customer-journey' = 'customer-journey') {
   try {
-    let rows: any;
+    let rows: unknown;
     try {
       [rows] = await pool.execute(
         'SELECT * FROM bfriends_process_steps WHERE is_active = 1 AND page_key = ? ORDER BY sort_order',
@@ -110,7 +110,7 @@ export async function getProcessSteps(pageKey: 'home' | 'customer-journey' = 'cu
         'SELECT * FROM bfriends_process_steps WHERE is_active = 1 ORDER BY sort_order'
       );
     }
-    const steps = rows as any[];
+    const steps = rows as DbRow[];
 
     for (const step of steps) {
       const [subs] = await pool.execute(
@@ -130,7 +130,7 @@ export async function getPrograms() {
     const [rows] = await pool.execute(
       'SELECT * FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order'
     );
-    const programs = rows as any[];
+    const programs = rows as DbRow[];
 
     for (const prog of programs) {
       prog.buttonLabel = prog.button_label;
@@ -153,12 +153,12 @@ export async function getProgramBySlug(slug: string) {
       'SELECT * FROM bfriends_programs WHERE slug = ? AND is_active = 1',
       [slug]
     );
-    const programs = rows as any[];
+    const programs = rows as DbRow[];
     if (programs.length === 0) return null;
 
     const prog = programs[0];
 
-    let sessions: any[] = [];
+    let sessions: DbRow[] = [];
     let sessionGroups: ReturnType<typeof buildSessionGroupsPublic> = [];
     try {
       const [typeRows] = await pool.execute(
@@ -169,14 +169,14 @@ export async function getProgramBySlug(slug: string) {
         'SELECT title, extra, description, image, session_type_id FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
         [prog.id]
       );
-      sessions = sessionRows as any[];
-      sessionGroups = buildSessionGroupsPublic(typeRows as any[], sessionRows as any[]);
+      sessions = sessionRows as DbRow[];
+      sessionGroups = buildSessionGroupsPublic(typeRows as DbRow[], sessionRows as DbRow[]);
     } catch {
       const [sessionRows] = await pool.execute(
         'SELECT title, extra, description, image FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
         [prog.id]
       );
-      sessions = sessionRows as any[];
+      sessions = sessionRows as DbRow[];
       sessionGroups = sessions.length > 0
         ? [{
             name: 'Signature Sessions',
@@ -214,14 +214,14 @@ export async function getProgramSlugs(): Promise<string[]> {
     const [rows] = await pool.execute(
       'SELECT slug FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order'
     );
-    const slugs = (rows as any[]).map((r) => r.slug);
+    const slugs = (rows as DbRow[]).map((r) => r.slug);
     return [...slugs, ...Object.keys(PROGRAM_SLUG_ALIASES)];
   } catch {
     return Object.keys(PROGRAM_SLUG_ALIASES);
   }
 }
 
-async function mapProgramRowToPublicProgram(prog: any): Promise<PublicProgram> {
+async function mapProgramRowToPublicProgram(prog: DbRow): Promise<PublicProgram> {
   const [typeRows] = await pool.execute(
     'SELECT * FROM bfriends_program_session_types WHERE program_id = ? ORDER BY sort_order, id',
     [prog.id]
@@ -256,7 +256,7 @@ async function mapProgramRowToPublicProgram(prog: any): Promise<PublicProgram> {
       title: prog.pillars_title ?? '',
       sub: prog.pillars_paragraph ?? '',
     },
-    sessions_group: buildSessionGroupsPublic(typeRows as any[], sessionRows as any[]),
+    sessions_group: buildSessionGroupsPublic(typeRows as DbRow[], sessionRows as DbRow[]),
     what_you_find: parseStringList(prog.what_you_find),
     who_its_for: parseStringList(prog.who_its_for),
   };
@@ -267,7 +267,7 @@ export async function getPublicPrograms(): Promise<PublicProgram[]> {
     const [rows] = await pool.execute(
       'SELECT * FROM bfriends_programs WHERE is_active = 1 ORDER BY sort_order, id'
     );
-    const programs = rows as any[];
+    const programs = rows as DbRow[];
     return Promise.all(programs.map(mapProgramRowToPublicProgram));
   } catch {
     return [];
@@ -281,7 +281,7 @@ export async function getPublicProgramBySlug(slug: string): Promise<PublicProgra
       'SELECT * FROM bfriends_programs WHERE LOWER(slug) = LOWER(?) AND is_active = 1 LIMIT 1',
       [resolvedSlug]
     );
-    const programs = rows as any[];
+    const programs = rows as DbRow[];
     if (programs.length === 0) return null;
     const program = await mapProgramRowToPublicProgram(programs[0]);
     if (resolvedSlug !== slug) {
@@ -301,7 +301,7 @@ export async function getPublicProgramSlugs(): Promise<string[]> {
 }
 
 export async function getEvents() {
-  const rows = await tryDb<any>(
+  const rows = await tryDb<DbRow>(
     'SELECT * FROM bfriends_events WHERE is_active = 1 ORDER BY sort_order'
   );
   return rows.map((e) => ({
@@ -317,7 +317,7 @@ export async function getEventBySlug(slug: string) {
       'SELECT * FROM bfriends_events WHERE slug = ? AND is_active = 1',
       [slug]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     if (items.length > 0) {
       const item = items[0];
       item.date = item.event_date;
@@ -331,7 +331,7 @@ export async function getEventBySlug(slug: string) {
 }
 
 export async function getNews() {
-  return tryDb<any>(
+  return tryDb<DbRow>(
     'SELECT * FROM bfriends_news WHERE is_active = 1 ORDER BY sort_order'
   );
 }
@@ -342,7 +342,7 @@ export async function getNewsBySlug(slug: string) {
       'SELECT * FROM bfriends_news WHERE slug = ? AND is_active = 1',
       [slug]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     return items.length > 0 ? items[0] : null;
   } catch {
     return null;
@@ -350,11 +350,11 @@ export async function getNewsBySlug(slug: string) {
 }
 
 export async function getPageHeaders() {
-  return tryDb<any>('SELECT * FROM bfriends_page_headers');
+  return tryDb<DbRow>('SELECT * FROM bfriends_page_headers');
 }
 
 export async function getPhilosophySections() {
-  return tryDb<any>('SELECT * FROM bfriends_philosophy_sections WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_philosophy_sections WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getPageSeo(pageKey: string): Promise<{ seo_title: string; seo_description: string }> {
@@ -365,7 +365,7 @@ export async function getPageSeo(pageKey: string): Promise<{ seo_title: string; 
       'SELECT seo_title, seo_description FROM bfriends_page_headers WHERE page_key = ?',
       [pageKey]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     if (items.length > 0 && items[0].seo_title) {
       return {
         seo_title: items[0].seo_title,
@@ -378,13 +378,13 @@ export async function getPageSeo(pageKey: string): Promise<{ seo_title: string; 
 
 export async function getHeroByPage(page: string) {
   const all = await getHeroSections();
-  const filtered = (all as any[]).filter((h) => h.page === page);
+  const filtered = (all as DbRow[]).filter((h) => h.page === page);
   return filtered.length > 0 ? filtered[0] : null;
 }
 
 export async function getIntroByPage(page: string) {
   const all = await getIntroSections();
-  const filtered = (all as any[]).filter((s) => s.page === page);
+  const filtered = (all as DbRow[]).filter((s) => s.page === page);
   return filtered.length > 0 ? filtered[0] : null;
 }
 
@@ -394,7 +394,7 @@ export async function getPhilosophySectionByKey(key: string) {
       'SELECT * FROM bfriends_philosophy_sections WHERE section_key = ? AND is_active = 1',
       [key]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     return items.length > 0 ? items[0] : null;
   } catch {
     return null;
@@ -407,7 +407,7 @@ export async function getPageHeader(pageKey: string) {
       'SELECT * FROM bfriends_page_headers WHERE page_key = ?',
       [pageKey]
     );
-    const items = rows as any[];
+    const items = rows as DbRow[];
     return items.length > 0 ? items[0] : null;
   } catch {
     return null;
@@ -453,19 +453,19 @@ export async function resolvePageHeader(
 }
 
 export async function getMembershipContent() {
-  return tryDb<any>('SELECT * FROM bfriends_membership_content WHERE is_active = 1');
+  return tryDb<DbRow>('SELECT * FROM bfriends_membership_content WHERE is_active = 1');
 }
 
 export async function getCharmTiers() {
-  return tryDb<any>('SELECT * FROM bfriends_charm_tiers WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_charm_tiers WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getCharmUsage() {
-  return tryDb<any>('SELECT * FROM bfriends_charm_usage WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_charm_usage WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getCoreBeliefs() {
-  return tryDb<any>('SELECT * FROM bfriends_core_beliefs WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_core_beliefs WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export type IntroPillar = {
@@ -499,13 +499,13 @@ export async function getIntroPillars(): Promise<IntroPillar[]> {
 }
 
 export async function getEcosystemItems() {
-  return tryDb<any>('SELECT * FROM bfriends_ecosystem_items WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_ecosystem_items WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getSiteSettings() {
   try {
     const [rows] = await pool.execute('SELECT setting_key, setting_value FROM bfriends_site_settings');
-    const settings = rows as any[];
+    const settings = rows as DbRow[];
     const map: Record<string, string> = {};
     for (const s of settings) map[s.setting_key] = s.setting_value;
     return map;
@@ -519,15 +519,15 @@ export async function getSiteSettings() {
 }
 
 export async function getJourneySection() {
-  const rows = await tryDb<any>('SELECT * FROM bfriends_journey_sections WHERE is_active = 1 ORDER BY sort_order LIMIT 1');
+  const rows = await tryDb<DbRow>('SELECT * FROM bfriends_journey_sections WHERE is_active = 1 ORDER BY sort_order LIMIT 1');
   return rows.length > 0 ? rows[0] : null;
 }
 
 export async function getFaqs() {
-  return tryDb<any>('SELECT * FROM bfriends_faqs WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_faqs WHERE is_active = 1 ORDER BY sort_order');
 }
 
 export async function getPassportBenefits() {
-  return tryDb<any>('SELECT * FROM bfriends_passport_benefits WHERE is_active = 1 ORDER BY sort_order');
+  return tryDb<DbRow>('SELECT * FROM bfriends_passport_benefits WHERE is_active = 1 ORDER BY sort_order');
 }
 

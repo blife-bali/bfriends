@@ -30,18 +30,20 @@ export default function WhyBFriendsPage() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const router = useRouter();
 
+  async function loadItems() {
+    const res = await fetch('/api/admin/why-bfriends');
+    if (res.ok) setItems(await res.json());
+  };
+
   useEffect(() => {
     fetch('/api/admin/auth/session').then(r => r.json()).then(d => {
       if (!d.isLoggedIn) router.push('/admin/login');
       else setUsername(d.username);
     });
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   }, [router]);
 
-  const loadItems = async () => {
-    const res = await fetch('/api/admin/why-bfriends');
-    if (res.ok) setItems(await res.json());
-  };
+  
 
   const handleSave = async () => {
     const isEdit = !!editing?.id;
@@ -62,7 +64,7 @@ export default function WhyBFriendsPage() {
     await fetch(`/api/admin/why-bfriends/${deleteTarget.id}`, { method: 'DELETE' });
     setToast({ message: 'Card deleted!', type: 'success' });
     setDeleteTarget(null);
-    loadItems();
+    void Promise.resolve().then(() => { loadItems(); });
   };
 
   return (

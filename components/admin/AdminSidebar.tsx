@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -125,11 +125,9 @@ export default function AdminSidebar({
   onToggleCollapse: () => void;
 }) {
   const pathname = usePathname();
-  const [groupsOpen, setGroupsOpen] = useState<Record<string, boolean>>({});
-
-  useEffect(() => {
-    setGroupsOpen(getInitialGroupsOpen(pathname));
-  }, []);// eslint-disable-line react-hooks/exhaustive-deps
+  const [groupsOpen, setGroupsOpen] = useState<Record<string, boolean>>(() =>
+    getInitialGroupsOpen(pathname)
+  );
 
   const toggleGroup = (id: string) => {
     setGroupsOpen((prev) => {

@@ -144,11 +144,14 @@ export default function JourneyFlow({
   useMotionValueEvent(smoothProgress, "change", updateActiveIndices);
 
   useEffect(() => {
-    updateActiveIndices(smoothProgress.get());
+    const frame = requestAnimationFrame(() => updateActiveIndices(smoothProgress.get()));
 
     const handleResize = () => updateActiveIndices(smoothProgress.get());
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [smoothProgress, updateActiveIndices, steps.length]);
 
   useEffect(() => {

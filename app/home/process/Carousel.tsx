@@ -47,10 +47,11 @@ export default function Carousel({
 
   useEffect(() => {
     if (!emblaApi) return;
-    updateScrollProgress();
+    const frame = requestAnimationFrame(() => updateScrollProgress());
     emblaApi.on("scroll", updateScrollProgress);
     emblaApi.on("reInit", updateScrollProgress);
     return () => {
+      cancelAnimationFrame(frame);
       emblaApi.off("scroll", updateScrollProgress);
       emblaApi.off("reInit", updateScrollProgress);
     };

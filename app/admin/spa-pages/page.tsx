@@ -66,15 +66,7 @@ export default function AdminSpaPagesPage() {
   const [supabaseReady, setSupabaseReady] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    loadItems();
-  }, [router]);
-
-  const loadItems = async () => {
+  async function loadItems() {
     const res = await fetch('/api/admin/supabase/spa-pages');
     if (res.status === 503) {
       setSupabaseReady(false);
@@ -83,6 +75,16 @@ export default function AdminSpaPagesPage() {
     setSupabaseReady(true);
     if (res.ok) setItems(await res.json());
   };
+
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    void Promise.resolve().then(() => { loadItems(); });
+  }, [router]);
+
+  
 
   const openEdit = (row: SpaPage) => {
     setEditing({ ...row });

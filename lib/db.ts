@@ -1,4 +1,21 @@
-import mysql, { type Pool } from 'mysql2/promise';
+import mysql, { type Pool, type ResultSetHeader, type RowDataPacket } from 'mysql2/promise';
+
+/** MySQL row; columns depend on the query. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- CMS selects vary by table
+export type DbRow = any;
+export type { ResultSetHeader, RowDataPacket };
+
+export function asInsertResult(result: unknown): ResultSetHeader {
+  return result as ResultSetHeader;
+}
+
+export function mysqlErrorCode(error: unknown): string | undefined {
+  if (error && typeof error === 'object' && 'code' in error) {
+    const code = (error as { code?: unknown }).code;
+    return typeof code === 'string' ? code : undefined;
+  }
+  return undefined;
+}
 
 declare global {
   // eslint-disable-next-line no-var

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
-import pool from '@/lib/db';
+import pool, { asInsertResult, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { replaceProgramChildren } from '@/lib/admin-program-children';
 import { programsData } from '@/lib/programs-data';
@@ -22,7 +22,7 @@ export async function GET() {
     for (const table of tables) {
       try {
         const [rows] = await pool.execute(`SELECT COUNT(*) as count FROM ${table}`);
-        counts[table] = (rows as any[])[0].count;
+        counts[table] = (rows as DbRow[])[0].count;
       } catch { counts[table] = -1; }
     }
     return NextResponse.json({ counts });
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 
     // 1. Admin user
     const [existingAdmin] = await pool.execute('SELECT id FROM bfriends_admin_users WHERE username = ?', ['admin']);
-    if ((existingAdmin as any[]).length === 0) {
+    if ((existingAdmin as DbRow[]).length === 0) {
       const hash = await bcrypt.hash('admin123', 10);
       await pool.execute('INSERT INTO bfriends_admin_users (username, password_hash, display_name) VALUES (?, ?, ?)', ['admin', hash, 'Administrator']);
       results.push('Admin user created');
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
 
     // 2. Hero sections
     const [existingHero] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_hero_sections');
-    if ((existingHero as any[])[0].c === 0) {
+    if ((existingHero as DbRow[])[0].c === 0) {
       await pool.execute(
         `INSERT INTO bfriends_hero_sections (page, title, subtitle, video_url, image_url, sort_order) VALUES (?, ?, ?, ?, ?, ?)`,
         ['home', 'Find What Your Body Needs Today', 'A personalized wellness journey powered by advanced body assessment technology and expert guidance, designed to evolve with your body\'s changing needs.', '/videos/bfriends-hero.mp4', '/images/hero/hero-bg.jpg', 0]
@@ -76,7 +76,7 @@ export async function POST(req: Request) {
 
     // 3. Intro sections
     const [existingIntro] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_intro_sections');
-    if ((existingIntro as any[])[0].c === 0) {
+    if ((existingIntro as DbRow[])[0].c === 0) {
       await pool.execute(
         `INSERT INTO bfriends_intro_sections (page, headline, body, image_url, show_cta, sort_order) VALUES (?, ?, ?, ?, ?, ?)`,
         ['home', 'Where Wellness Becomes a Way of Life', 'BFriends is a precision-driven wellness ecosystem that combines fitness, recovery, therapy, and beauty under one roof. Every program is designed around your body\'s unique needs.', '/images/intro/intro.jpg', 1, 0]
@@ -86,7 +86,7 @@ export async function POST(req: Request) {
 
     // 4. Why BFriends cards
     const [existingWhy] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_why_cards');
-    if ((existingWhy as any[])[0].c === 0) {
+    if ((existingWhy as DbRow[])[0].c === 0) {
       for (let i = 0; i < whyBFriendsData.length; i++) {
         const item = whyBFriendsData[i];
         await pool.execute(
@@ -99,14 +99,14 @@ export async function POST(req: Request) {
 
     // 5. Process steps + subpoints
     const [existingProcess] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_process_steps');
-    if ((existingProcess as any[])[0].c === 0) {
+    if ((existingProcess as DbRow[])[0].c === 0) {
       for (let i = 0; i < processData.length; i++) {
         const step = processData[i];
         const [res] = await pool.execute(
           'INSERT INTO bfriends_process_steps (number, title, description, image, sort_order) VALUES (?, ?, ?, ?, ?)',
           [step.number, step.title, step.description, step.image, i]
         );
-        const stepId = (res as any).insertId;
+        const stepId = (asInsertResult(res)).insertId;
         if (step.subpoints) {
           for (let j = 0; j < step.subpoints.length; j++) {
             const sp = step.subpoints[j];
@@ -122,7 +122,7 @@ export async function POST(req: Request) {
 
     // 6. Programs + steps + pillars + sessions
     const [existingPrograms] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_programs');
-    if ((existingPrograms as any[])[0].c === 0) {
+    if ((existingPrograms as DbRow[])[0].c === 0) {
       for (let i = 0; i < programsData.length; i++) {
         const p = programsData[i];
         const [res] = await pool.execute(
@@ -148,7 +148,7 @@ export async function POST(req: Request) {
             i,
           ]
         );
-        const progId = (res as any).insertId;
+        const progId = (asInsertResult(res)).insertId;
 
         // Pillars
         if (p.pillars) {
@@ -203,7 +203,7 @@ export async function POST(req: Request) {
 
     // 7. Events
     const [existingEvents] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_events');
-    if ((existingEvents as any[])[0].c === 0) {
+    if ((existingEvents as DbRow[])[0].c === 0) {
       for (let i = 0; i < eventData.length; i++) {
         const e = eventData[i];
         await pool.execute(
@@ -216,7 +216,7 @@ export async function POST(req: Request) {
 
     // 8. News
     const [existingNews] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_news');
-    if ((existingNews as any[])[0].c === 0) {
+    if ((existingNews as DbRow[])[0].c === 0) {
       for (let i = 0; i < newsData.length; i++) {
         const n = newsData[i];
         await pool.execute(
@@ -229,7 +229,7 @@ export async function POST(req: Request) {
 
     // 9. Page headers
     const [existingHeaders] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_page_headers');
-    if ((existingHeaders as any[])[0].c === 0) {
+    if ((existingHeaders as DbRow[])[0].c === 0) {
       const headers = [
         { page_key: 'philosophy', title: 'Our Philosophy', breadcrumb: 'About / Philosophy', image: '/images/about/philosophy.jpg' },
         { page_key: 'customer-journey', title: 'Customer Journey', breadcrumb: 'About / Customer Journey', image: '/images/about/customer-journey.jpg' },
@@ -249,7 +249,7 @@ export async function POST(req: Request) {
 
     // 10. Philosophy sections
     const [existingPhil] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_philosophy_sections');
-    if ((existingPhil as any[])[0].c === 0) {
+    if ((existingPhil as DbRow[])[0].c === 0) {
       const phils = [
         { section_key: 'manifesto', headline: 'Our Manifesto', body: 'We believe wellness is not a destination but a continuous practice. BFriends exists to guide that practice with precision, care, and community.', sort_order: 0 },
         { section_key: 'core-beliefs', headline: 'Core Beliefs', body: 'Precision over intensity. Consistency over perfection. Evidence over trend. These are the pillars that guide everything we do at BFriends.', sort_order: 1 },
@@ -267,7 +267,7 @@ export async function POST(req: Request) {
 
     // 11. Site settings
     const [existingSettings] = await pool.execute('SELECT COUNT(*) as c FROM bfriends_site_settings');
-    if ((existingSettings as any[])[0].c === 0) {
+    if ((existingSettings as DbRow[])[0].c === 0) {
       const settings = [
         { key: 'site_name', value: 'BFriends' },
         { key: 'contact_phone', value: '+62 811-2874-2021' },

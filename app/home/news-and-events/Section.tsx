@@ -6,13 +6,15 @@ import EventCard from "@/components/EventCard/EventCard";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import Button from "@/components/ui/Button/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { EventItem } from "@/lib/event-data";
+import type { NewsItem } from "@/lib/news-data";
 import { trackEvent } from "@/lib/gtag";
 
 type CarouselItem =
-  | { type: "event"; data: any }
-  | { type: "news"; data: any };
+  | { type: "event"; data: EventItem }
+  | { type: "news"; data: NewsItem };
 
-function interleaveEventsAndNews(events: any[], news: any[]): CarouselItem[] {
+function interleaveEventsAndNews(events: EventItem[], news: NewsItem[]): CarouselItem[] {
   const out: CarouselItem[] = [];
   const max = Math.max(events.length, news.length);
   for (let i = 0; i < max; i++) {
@@ -22,7 +24,7 @@ function interleaveEventsAndNews(events: any[], news: any[]): CarouselItem[] {
   return out;
 }
 
-export default function Section({ events = [], news = [] }: { events?: any[]; news?: any[] }) {
+export default function Section({ events = [], news = [] }: { events?: EventItem[]; news?: NewsItem[] }) {
   const items = useMemo(
     () => interleaveEventsAndNews(events, news),
     [events, news]

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { replaceProgramChildren } from '@/lib/admin-program-children';
 
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
         ]
       );
 
-      const insertResult = result as any;
+      const insertResult = asInsertResult(result);
       const programId = insertResult.insertId as number;
 
       await replaceProgramChildren(connection, String(programId), steps, session_types, sessions);

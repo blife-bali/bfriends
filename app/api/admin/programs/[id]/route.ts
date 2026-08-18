@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import pool, { asInsertResult, type DbRow } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { replaceProgramChildren, buildSessionTypesForAdmin } from '@/lib/admin-program-children';
 
@@ -17,7 +17,7 @@ export async function GET(
       'SELECT * FROM bfriends_programs WHERE id = ?',
       [id]
     );
-    const programs = rows as any[];
+    const programs = rows as DbRow[];
     if (programs.length === 0) {
       return NextResponse.json({ error: 'Program not found' }, { status: 404 });
     }
@@ -40,7 +40,7 @@ export async function GET(
       'SELECT * FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
       [id]
     );
-    const session_types = buildSessionTypesForAdmin(sessionTypes as any[], sessions as any[]);
+    const session_types = buildSessionTypesForAdmin(sessionTypes as DbRow[], sessions as DbRow[]);
 
     return NextResponse.json({
       ...programs[0],
@@ -115,7 +115,7 @@ export async function PUT(
         ]
       );
 
-      const updateResult = result as any;
+      const updateResult = asInsertResult(result);
       if (updateResult.affectedRows === 0) {
         await connection.rollback();
         return NextResponse.json({ error: 'Program not found' }, { status: 404 });
@@ -134,10 +134,10 @@ export async function PUT(
         'SELECT * FROM bfriends_program_sessions WHERE program_id = ? ORDER BY sort_order, id',
         [id]
       );
-      const session_types = buildSessionTypesForAdmin(typeRows as any[], sessionRows as any[]);
+      const session_types = buildSessionTypesForAdmin(typeRows as DbRow[], sessionRows as DbRow[]);
 
       return NextResponse.json({
-        ...(programRows as any[])[0],
+        ...(programRows as DbRow[])[0],
         steps: stepRows,
         sessions: sessionRows,
         session_types,
@@ -174,7 +174,7 @@ export async function DELETE(
       [id]
     );
 
-    const deleteResult = result as any;
+    const deleteResult = asInsertResult(result);
     if (deleteResult.affectedRows === 0) {
       return NextResponse.json({ error: 'Program not found' }, { status: 404 });
     }

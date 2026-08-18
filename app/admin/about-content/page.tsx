@@ -51,15 +51,7 @@ export default function AdminAboutContentPage() {
   const [saving, setSaving] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
-      if (!d.isLoggedIn) router.push('/admin/login');
-      else setUsername(d.username);
-    });
-    loadAll();
-  }, [router]);
-
-  const loadAll = async () => {
+  async function loadAll() {
     const res = await fetch('/api/admin/supabase/about');
     if (res.status === 503) {
       setSupabaseReady(false);
@@ -72,6 +64,16 @@ export default function AdminAboutContentPage() {
       setPillars(json.pillars ?? []);
     }
   };
+
+  useEffect(() => {
+    fetch('/api/admin/auth/session').then((r) => r.json()).then((d) => {
+      if (!d.isLoggedIn) router.push('/admin/login');
+      else setUsername(d.username);
+    });
+    void Promise.resolve().then(() => { loadAll(); });
+  }, [router]);
+
+  
 
   const saveAll = async (nextPillars?: Pillar[]) => {
     if (saving) return;
