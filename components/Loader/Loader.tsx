@@ -1,38 +1,43 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./Loader.module.css";
 
 const LOGO_FILL_DURATION_MS = 1200;
+const HOLD_MS = 400;
+const FADE_MS = 1400;
 
 interface LoaderProps {
   onComplete?: () => void;
-  /** When true, overlay fades out (e.g. parent switched to startup, same Loader instance) */
-  fadeOut?: boolean;
 }
 
-export default function Loader({ onComplete, fadeOut = false }: LoaderProps) {
+export default function Loader({ onComplete }: LoaderProps) {
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const completedRef = useRef(false);
+
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
+
+  const finish = () => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+    onCompleteRef.current?.();
+  };
 
   useEffect(() => {
-    if (fadeOut) {
-      /* Parent set phase to startup: trigger fade so we reveal Startup underneath */
-      const raf = requestAnimationFrame(() => setIsFadingOut(true));
-      return () => cancelAnimationFrame(raf);
-    }
-
-    const completeAt = LOGO_FILL_DURATION_MS;
-    const t = setTimeout(() => {
-      onComplete?.();
-      setIsFadingOut(true);
-    }, completeAt);
-    return () => clearTimeout(t);
-  }, [onComplete, fadeOut]);
+    const fadeAt = LOGO_FILL_DURATION_MS + HOLD_MS;
+    const fadeTimer = setTimeout(() => setIsFadingOut(true), fadeAt);
+    const doneTimer = setTimeout(finish, fadeAt + FADE_MS);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(doneTimer);
+    };
+  }, []);
 
   return (
     <div
-      className={`${styles.overlay} ${isFadingOut ? styles.fadeOut : ""} ${fadeOut ? styles.logoComplete : ""}`}
+      className={`${styles.overlay} ${isFadingOut ? styles.fadeOut : ""}`}
       style={{
         position: "fixed",
         top: 0,
@@ -48,6 +53,10 @@ export default function Loader({ onComplete, fadeOut = false }: LoaderProps) {
         justifyContent: "center",
       }}
       aria-hidden="true"
+      onTransitionEnd={(e) => {
+        if (e.target !== e.currentTarget) return;
+        if (e.propertyName === "opacity") finish();
+      }}
     >
       <div className={styles.logoWrapper}>
         <Image

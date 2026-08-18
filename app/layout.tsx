@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Libre_Bodoni } from "next/font/google";
 import MainLayout from "@/components/MainLayout/MainLayout";
-import PageEntryClient from "@/components/PageEntry/PageEntryClient";
+import PageEntry from "@/components/PageEntry/PageEntry";
 import AnalyticsProvider from "@/components/Analytics/AnalyticsProvider";
 import LenisProvider from "@/components/Lenis/LenisProvider";
 import { SoundProvider } from "@/contexts/SoundContext";
@@ -96,7 +96,7 @@ export default async function RootLayout({
         <LenisProvider>
           <SoundProvider>
             <MainLayout>
-              <PageEntryClient>{children}</PageEntryClient>
+              <PageEntry>{children}</PageEntry>
             </MainLayout>
           </SoundProvider>
         </LenisProvider>
