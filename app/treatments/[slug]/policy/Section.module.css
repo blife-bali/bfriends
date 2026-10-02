@@ -1,0 +1,374 @@
+@reference "../../../globals.css";
+
+.section {
+  --policy-text: var(--color-white-100);
+  --policy-muted: color-mix(in srgb, var(--color-white-100) 72%, transparent);
+  --policy-accent: var(--color-green-40);
+  --policy-line: color-mix(in srgb, var(--color-white-100) 14%, transparent);
+  --policy-surface: color-mix(in srgb, var(--color-white-100) 5%, transparent);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-blue-120);
+  color: var(--policy-text);
+  padding: var(--section-padding-y) 0;
+  box-sizing: border-box;
+}
+
+/* Faint climbing photo fading into the background at the top */
+.background {
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(720px, 80%);
+  pointer-events: none;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center 35%;
+  opacity: 0.22;
+  filter: grayscale(0.4);
+}
+
+.backgroundOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-blue-120) 55%, transparent) 0%,
+    var(--color-blue-120) 100%
+  );
+}
+
+.container {
+  position: relative;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 5vw, 72px);
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: end;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.9vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--policy-accent);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--policy-text);
+}
+
+.intro {
+  margin: 0;
+  max-width: 44ch;
+  justify-self: end;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.65;
+  color: var(--policy-muted);
+}
+
+/* Booking callout — the one light element in the section */
+.booking {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(24px, 3.5vw, 56px);
+  padding: clamp(28px, 3vw, 40px) clamp(24px, 3.5vw, 48px);
+  background-color: var(--color-white-100);
+  color: var(--color-blue-100);
+}
+
+.bookingBadge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: clamp(24px, 3.5vw, 56px);
+  border-right: 1px solid color-mix(in srgb, var(--color-blue-100) 14%, transparent);
+}
+
+.bookingIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-green-100);
+}
+
+.bookingBadgeText {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 5.5vw, 80px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-blue-100);
+}
+
+.bookingCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookingTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.bookingBody {
+  margin: 0;
+  max-width: 60ch;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: var(--color-cream-140);
+}
+
+/* Shared block */
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blockTitle {
+  margin: 0;
+  padding-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--policy-text);
+  border-bottom: 1px solid var(--policy-line);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 2.4vw, 32px);
+  background-color: var(--policy-surface);
+  border: 1px solid var(--policy-line);
+}
+
+.iconCircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--policy-accent) 45%, transparent);
+  background-color: color-mix(in srgb, var(--policy-accent) 10%, transparent);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--policy-accent);
+}
+
+/* Terms */
+.terms {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--policy-line);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--policy-muted);
+}
+
+.termLabel {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--policy-accent);
+}
+
+.termTitle {
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--policy-text);
+}
+
+.termBody {
+  margin: 12px 0 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--policy-muted);
+}
+
+.note {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--policy-muted);
+}
+
+.noteIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: var(--policy-accent);
+}
+
+/* Rules */
+.rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.ruleHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--policy-line);
+}
+
+.ruleTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--policy-text);
+}
+
+.ruleItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ruleItem {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--policy-muted);
+}
+
+.ruleItem + .ruleItem {
+  border-top: 1px dashed var(--policy-line);
+}
+
+.ruleCheck {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  color: var(--policy-accent);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .intro {
+    justify-self: start;
+  }
+
+  .rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bookingBadge {
+    padding: 0 0 20px;
+    border-right: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-blue-100) 14%, transparent);
+  }
+
+  .terms {
+    grid-template-columns: 1fr;
+  }
+
+  .termBody,
+  .ruleItem {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cardTop {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,147 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e4]:
+    - generic [ref=f1e6]:
+      - generic [ref=f1e7]:
+        - 'generic "Language: English"':
+          - generic:
+            - img "United States flag"
+          - generic: English
+      - link "BFriends Home" [ref=f1e9] [cursor=pointer]:
+        - /url: /
+        - img "BFriends" [ref=f1e10]
+      - generic [ref=f1e11]:
+        - link "Help" [ref=f1e12] [cursor=pointer]:
+          - /url: /faq
+        - link "Book Now" [ref=f1e14] [cursor=pointer]:
+          - /url: https://bfriends.zenoti.com/webstoreNew/services/aeb534b8-c0ba-4ccd-ae3f-4fba2da74035
+    - navigation [ref=f1e17]:
+      - link "Home" [ref=f1e19] [cursor=pointer]:
+        - /url: /
+      - link "About BFriends" [ref=f1e21] [cursor=pointer]:
+        - /url: /about
+      - button "Programmes" [ref=f1e23] [cursor=pointer]
+      - button "Treatments" [ref=f1e25] [cursor=pointer]
+      - link "Contact" [ref=f1e27] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=f1e31]:
+    - paragraph [ref=f1e32]: DARE | WALL CLIMBING
+    - heading "Growth Through Challenge" [level=1] [ref=f1e33]
+  - main [ref=f1e34]:
+    - region [ref=f1e35]:
+      - generic [ref=f1e36]:
+        - paragraph [ref=f1e37]: About DARE | WALL CLIMBING
+        - heading "Growth Through Challenge" [level=2] [ref=f1e38]
+        - paragraph [ref=f1e39]: Climbing combines physical movement and mental focus to create a rewarding experience that strengthens the body while building confidence and perseverance.
+    - region [ref=f1e40]:
+      - generic [ref=f1e42]:
+        - heading "Specifications" [level=2] [ref=f1e44]
+        - list [ref=f1e45]:
+          - listitem [ref=f1e46]:
+            - generic [ref=f1e48]: "01"
+            - article [ref=f1e50]:
+              - heading "Facility Overview" [level=3] [ref=f1e51]
+              - list [ref=f1e52]:
+                - listitem [ref=f1e53]:
+                  - generic [ref=f1e54]: 15-Meter Climbing Wall
+          - listitem [ref=f1e55]:
+            - generic [ref=f1e57]: "02"
+            - article [ref=f1e59]:
+              - heading "Available Programmes" [level=3] [ref=f1e60]
+              - list [ref=f1e61]:
+                - listitem [ref=f1e62]:
+                  - generic [ref=f1e63]: Adult Wall Climbing
+                  - generic [ref=f1e64]: Full-body movement experience focused on strength, coordination, balance, and endurance.
+                - listitem [ref=f1e65]:
+                  - generic [ref=f1e66]: Kids Wall Climbing
+                  - generic [ref=f1e67]: Fun and engaging climbing experiences that support confidence, coordination, and problem-solving skills.
+          - listitem [ref=f1e68]:
+            - generic [ref=f1e70]: "03"
+            - article [ref=f1e71]:
+              - heading "What Makes It Unique" [level=3] [ref=f1e72]
+              - list [ref=f1e73]:
+                - listitem [ref=f1e74]:
+                  - generic [ref=f1e75]: Suitable for both adults and children
+                - listitem [ref=f1e76]:
+                  - generic [ref=f1e77]: Combines physical challenge with personal growth
+                - listitem [ref=f1e78]:
+                  - generic [ref=f1e79]: Integrated within the broader BFriends wellness ecosystem
+    - region [ref=f1e80]:
+      - generic [ref=f1e81]:
+        - generic [ref=f1e82]:
+          - generic [ref=f1e83]:
+            - paragraph [ref=f1e84]: Climbing Policy
+            - heading "Before You Climb" [level=2] [ref=f1e85]
+          - paragraph [ref=f1e86]: Please read these guidelines before your session. They keep every climber on the wall safe.
+        - note [ref=f1e87]:
+          - generic [ref=f1e88]: H-1
+          - generic [ref=f1e94]:
+            - heading "Advance Booking Required" [level=3] [ref=f1e95]
+            - paragraph [ref=f1e96]: All climbing activities require a reservation at least one (1) day in advance (H-1).
+        - generic [ref=f1e97]:
+          - heading "Climbing Terms & Conditions" [level=3] [ref=f1e98]
+          - list [ref=f1e99]:
+            - listitem [ref=f1e100]:
+              - generic [ref=f1e101]: No instructor needed
+              - generic [ref=f1e107]: Licensed climbers
+              - generic [ref=f1e108]: Climb on your own
+              - paragraph [ref=f1e109]: Guests who hold a valid climbing license are permitted to climb independently without an instructor.
+            - listitem [ref=f1e110]:
+              - generic [ref=f1e111]: Instructor required
+              - generic [ref=f1e118]: Non-licensed climbers
+              - generic [ref=f1e119]: Climb with our instructor
+              - paragraph [ref=f1e120]: Guests who do not hold a climbing license are required to climb under the supervision of our certified instructor.
+          - paragraph [ref=f1e121]:
+            - generic [ref=f1e124]: For safety reasons, our team reserves the right to verify climbing licenses prior to the activity.
+        - generic [ref=f1e125]:
+          - heading "General Rules & Regulations" [level=3] [ref=f1e126]
+          - list [ref=f1e127]:
+            - listitem [ref=f1e128]:
+              - heading "Safety & Equipment" [level=4] [ref=f1e134]
+              - list [ref=f1e135]:
+                - listitem [ref=f1e136]:
+                  - generic [ref=f1e139]: All climbers must use safety equipment that meets safety standards. Personal equipment must be inspected and approved by our staff.
+                - listitem [ref=f1e140]:
+                  - generic [ref=f1e143]: Helmets and harnesses must be worn at all times while climbing.
+                - listitem [ref=f1e144]:
+                  - generic [ref=f1e147]: All safety checks must be completed with our staff before climbing.
+            - listitem [ref=f1e148]:
+              - heading "Eligibility & Health" [level=4] [ref=f1e154]
+              - list [ref=f1e155]:
+                - listitem [ref=f1e156]:
+                  - generic [ref=f1e159]: Minimum age to climb is 6 years old. Participants under 18 must have written consent from a parent or guardian.
+                - listitem [ref=f1e160]:
+                  - generic [ref=f1e163]: Climbing is not recommended for guests who are pregnant, have heart conditions, high blood pressure, or other serious medical conditions.
+                - listitem [ref=f1e164]:
+                  - generic [ref=f1e167]: Guests must not be under the influence of alcohol, drugs, or any impairing substances.
+            - listitem [ref=f1e168]:
+              - heading "Conduct & Attire" [level=4] [ref=f1e173]
+              - list [ref=f1e174]:
+                - listitem [ref=f1e175]:
+                  - generic [ref=f1e178]: Proper climbing attire and climbing shoes are required. No sandals, bare feet, or loose jewelry.
+                - listitem [ref=f1e179]:
+                  - generic [ref=f1e182]: Please follow all instructions given by our instructors and staff at all times.
+                - listitem [ref=f1e183]:
+                  - generic [ref=f1e186]: Do not disturb or distract other climbers while they are on the wall.
+            - listitem [ref=f1e187]:
+              - heading "Liability" [level=4] [ref=f1e193]
+              - list [ref=f1e194]:
+                - listitem [ref=f1e195]:
+                  - generic [ref=f1e198]: All participants are required to sign a liability waiver and risk acknowledgment form before participating.
+                - listitem [ref=f1e199]:
+                  - generic [ref=f1e202]: Management is not responsible for any loss, damage, or injury to personal belongings or persons that occur due to negligence of safety rules.
+    - region [ref=f1e203]:
+      - generic [ref=f1e204]:
+        - heading "Take The Next Step In Your Wellness Journey" [level=2] [ref=f1e205]
+        - paragraph [ref=f1e206]: Explore programmes designed to help you move, grow, and thrive.
+        - generic [ref=f1e207]:
+          - link "Book Schedule" [ref=f1e208] [cursor=pointer]:
+            - /url: https://bfriends.zenoti.com/webstoreNew/services/aeb534b8-c0ba-4ccd-ae3f-4fba2da74035
+          - link "Back to Treatments" [ref=f1e210] [cursor=pointer]:
+            - /url: /treatments
+  - generic "Quick actions" [ref=f1e217]:
+    - link "Call us" [ref=f1e218] [cursor=pointer]:
+      - /url: tel:+6281128742021
+    - link "FAQ" [ref=f1e221] [cursor=pointer]:
+      - /url: /faq
+    - button "Play ambience" [ref=f1e225] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f1e235] [cursor=pointer]

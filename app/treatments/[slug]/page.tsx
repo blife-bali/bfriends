@@ -5,6 +5,7 @@ import { getTreatmentBySlug, getTreatmentSlugs, treatmentNameInline } from "@/li
 import { Section as AboutSection } from "./about";
 import { Section as SpecsSection } from "./specs";
 import { Section as CtaSection } from "./cta";
+import { Section as PolicySection, TREATMENT_POLICY_BY_SLUG } from "./policy";
 
 export const dynamic = "force-dynamic";
 
@@ -41,6 +42,7 @@ export default async function TreatmentDetailPage({
   const { slug } = await params;
   const treatment = await getTreatmentBySlug(slug);
   if (!treatment) notFound();
+  const policy = TREATMENT_POLICY_BY_SLUG[treatment.id];
 
   return (
     <>
@@ -54,6 +56,7 @@ export default async function TreatmentDetailPage({
       <main>
         <AboutSection treatment={treatment} />
         <SpecsSection treatment={treatment} />
+        {policy && <PolicySection policy={policy} image={treatment.image} />}
         <CtaSection cta={treatment.cta} image={treatment.image} />
       </main>
     </>
